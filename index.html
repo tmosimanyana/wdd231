@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tinny.B.Mosimanyana's personal webpage showcasing course work and certificates.">
+    <meta name="author" content="Tinny.B.Mosimanyana">
+    <title><Tinny class="Tinny.B. Mosimanyana"></Tinny> - Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="images/profile.jpg" alt="Tinny.B.Mosimanyana">
+            <h1>Tinny.B.Mosimanyana</h1>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="nav-menu">
+            <a href="#" class="active">Home</a>
+            <a href="#">Chamber</a>
+            <a href="#">GitHub Profile</a>
+            <a href="#">LinkedIn</a>
+        </nav>
+    </header>
+    <main>
+        <section class="course-work">
+            <h2>Course Work</h2>
+            <ul>
+                <li>CSE 110: Introduction to Computer Science</li>
+                <li>WDD 130: Web Design 1</li>
+                <li>CSE 111: Programming with Functions</li>
+            </ul>
+        </section>
+        <section class="location">
+            <h2>Gaborone, Botswana</h2>
+            <img src="images/zebras.jpg" alt="zebras">
+            <p>zebras</p>
+        </section>
+        <section class="certificate">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="certificate-buttons">
+                <button class="filter-btn active" data-filter="All">All</button>
+                <button class="filter-btn" data-filter="CSE">CSE</button>
+                <button class="filter-btn" data-filter="WDD">WDD</button>
+            </div>
+            <div class="course-list">
+                <!-- Courses will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>©<span id="currentyear"></span> Tinny Bothepha Mosimanyana🌸 Botswana</p>
+        <p id="lastModified"></p>
+        <img src="images/Botswana_flag.png" alt="Botswana Flag">
+    </footer>
+</body>
+</html>
