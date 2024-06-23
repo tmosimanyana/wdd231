@@ -1,67 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <link rel="icon" href="images/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kweneng Chamber of Commerce Directory">
+    <meta name="description" content="Directory of members of the Gaborone Technology and Innovation Chamber of Commerce.">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <link rel="icon" href="images/favicon.ico">
+    <meta property="og:title" content="Gaborone Technology and Innovation Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/favicon.ico">
+    <meta property="og:url" content="http://www.yourwebsite.com/directory.html">
+    <title>Gaborone Technology and Innovation Chamber of Commerce - Directory</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Kweneng Chamber of Commerce Directory</title>
-    <meta property="og:title" content="Kweneng Chamber of Commerce Directory">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="path/to/image.jpg">
-    <meta property="og:url" content="http://www.example.com">
+    <script src="js/main.js" defer></script>
 </head>
+
 <body>
     <header>
-        <h1>Kweneng Chamber of Commerce Directory</h1>
-        <nav>
-            <!-- Add your navigation links here -->
+        <div class="header-content">
+            <img src="images/profile.jpg" alt="Tinny B. Mosimanyana">
+            <h1>Tinny B. Mosimanyana</h1>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="nav-menu">
+            <a href="#" class="active">Home</a>
+            <a href="#">Chamber</a>
+            <a href="#">GitHub Profile</a>
+            <a href="#">LinkedIn</a>
         </nav>
     </header>
-
     <main>
-        <section id="directory">
-            <h2>Member Directory</h2>
-            <div id="member-list"></div>
+        <section class="course-work">
+            <h2>Course Work</h2>
+            <ul>
+                <li>CSE 110: Introduction to Computer Science</li>
+                <li>WDD 130: Web Design 1</li>
+                <li>CSE 111: Programming with Functions</li>
+            </ul>
+        </section>
+        <section class="location">
+            <h2>Gaborone, Botswana</h2>
+            <img src="images/zebras.jpg" alt="zebras">
+            <p>Zebras</p>
+        </section>
+        <section class="certificate">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="certificate-buttons">
+                <button class="filter-btn active" data-filter="All">All</button>
+                <button class="filter-btn" data-filter="CSE">CSE</button>
+                <button class="filter-btn" data-filter="WDD">WDD</button>
+            </div>
+            <div class="course-list">
+                <!-- Members will be dynamically inserted here -->
+            </div>
         </section>
     </main>
-
     <footer>
-        <p>Contact Information: info@kwenengchamber.com</p>
-        <p>Developed by <Tinny class="B Mosimanyana"></Tinny>  for WDD 231</p>
-        <p id="last-modified"></p>
-        <script>
-            document.getElementById('last-modified').textContent = 'Last modified: ' + document.lastModified;
-        </script>
+        <p>©<span id="currentyear"></span> Tinny Bothepha Mosimanyana🌸 Botswana</p>
+        <p id="lastModified"></p>
+        <img src="images/Botswana_flag.png" alt="Botswana Flag">
     </footer>
-
-    <script>
-        async function fetchMembers() {
-            const response = await fetch('data/members.json');
-            const members = await response.json();
-            const memberList = document.getElementById('member-list');
-
-            members.forEach(member => {
-                const memberCard = document.createElement('div');
-                memberCard.className = 'member-card';
-
-                memberCard.innerHTML = `
-                    <img src="images/${member.image}" alt="${member.name}">
-                    <h3>${member.name}</h3>
-                    <p>${member.description}</p>
-                    <p>Address: ${member.address}</p>
-                    <p>Phone: ${member.phone}</p>
-                    <a href="${member.website}" target="_blank">Website</a>
-                `;
-
-                memberList.appendChild(memberCard);
-            });
-        }
-
-        fetchMembers();
-    </script>
 </body>
+
 </html>
