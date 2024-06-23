@@ -1,0 +1,66 @@
+[
+    {
+      "name": "Company One",
+      "address": "123 Main Street, Timbuktu",
+      "phone": "123-456-7890",
+      "website": "http://www.companyone.com",
+      "image": "company-one.png",
+      "membership_level": 3,
+      "description": "Leading provider of business solutions."
+    },
+    {
+      "name": "Company Two",
+      "address": "456 Elm Street, Timbuktu",
+      "phone": "987-654-3210",
+      "website": "http://www.companytwo.com",
+      "image": "company-two.png",
+      "membership_level": 2,
+      "description": "Experts in financial services."
+    },
+    {
+      "name": "Company Three",
+      "address": "789 Oak Street, Timbuktu",
+      "phone": "555-123-4567",
+      "website": "http://www.companythree.com",
+      "image": "company-three.png",
+      "membership_level": 1,
+      "description": "Quality construction and engineering."
+    },
+    {
+      "name": "Company Four",
+      "address": "101 Maple Avenue, Timbuktu",
+      "phone": "333-222-1111",
+      "website": "http://www.companyfour.com",
+      "image": "company-four.png",
+      "membership_level": 3,
+      "description": "Innovative tech solutions for modern businesses."
+    },
+    {
+      "name": "Company Five",
+      "address": "202 Pine Street, Timbuktu",
+      "phone": "444-555-6666",
+      "website": "http://www.companyfive.com",
+      "image": "company-five.png",
+      "membership_level": 2,
+      "description": "Top-notch legal services and consultation."
+    },
+    {
+      "name": "Company Six",
+      "address": "303 Cedar Lane, Timbuktu",
+      "phone": "777-888-9999",
+      "website": "http://www.companysix.com",
+      "image": "company-six.png",
+      "membership_level": 1,
+      "description": "Premium real estate and property management."
+    },
+    {
+      "name": "Company Seven",
+      "address": "404 Birch Road, Timbuktu",
+      "phone": "222-333-4444",
+      "website": "http://www.companyseven.com",
+      "image": "company-seven.png",
+      "membership_level": 3,
+      "description": "Comprehensive healthcare and medical services."
+    }
+  ]
+  
