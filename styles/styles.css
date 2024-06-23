@@ -1,21 +1,35 @@
 /* styles.css */
 
-.roboto-thin {
-    font-family: "Roboto", sans-serif;
-    font-weight: 100;
-    font-style: normal;
+/* Main Navigation */
+nav#nav-menu {
+    display: flex;
+    justify-content: center; /* Adjust as needed */
+    align-items: center; /* Adjust as needed */
+    background-color: #f0f0f0; /* Example background color */
+    padding: 10px;
 }
 
-.roboto-light {
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    font-style: normal;
+nav#nav-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 10px 15px;
 }
 
-.roboto-regular {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+nav#nav-menu a.active {
+    font-weight: bold;
+    color: #007bff; /* Example active link color */
 }
 
-/* Add other styles as needed */
+/* Example Flex Container */
+.section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.section .item {
+    flex: 1;
+    margin: 10px;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
