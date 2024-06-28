@@ -1,90 +1,42 @@
-/* Basic reset for better cross-browser consistency */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f4;
     color: #333;
 }
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main {
+    padding: 1em;
     text-align: center;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1rem;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-}
-
-#menu-toggle {
-    display: none;
-}
-
-section {
-    padding: 2rem;
-    max-width: 800px;
-    margin: auto;
+button:hover {
+    background-color: #45a049;
 }
 
 footer {
-    background: #333;
-    color: #fff;
+    background-color: #333;
+    color: white;
     text-align: center;
-    padding: 1rem 0;
+    padding: 1em 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
-
-@media (max-width: 768px) {
-    nav ul {
-        display: none;
-        flex-direction: column;
-        gap: 0;
-    }
-    nav ul.show {
-        display: flex;
-    }
-    #menu-toggle {
-        display: inline;
-    }
-}
-
-.course {
-    border: 1px solid #ddd;
-    padding: 1rem;
-    margin-bottom: 1rem;
-    background: #fff;
-}
-
-.course.completed {
-    background: #e0ffe0;
-}
-
-#course-filters button {
-    margin: 0.5rem;
-}
-
-#total-credits {
-    font-weight: bold;
-    margin-top: 1rem;
-}
-
-
