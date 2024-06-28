@@ -1,4 +1,21 @@
 /* styles.css */
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Roboto'), local('Roboto-Regular'),
+         url('fonts/roboto/Roboto-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: local('Roboto'), local('Roboto-Bold'),
+         url('fonts/roboto/Roboto-Bold.woff2') format('woff2');
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -101,3 +118,4 @@ footer {
 footer p {
     margin: 0;
 }
+
