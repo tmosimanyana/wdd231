@@ -1,4 +1,3 @@
-// script.js
 document.addEventListener('DOMContentLoaded', function () {
     // Set the current year
     document.getElementById('currentyear').textContent = new Date().getFullYear();

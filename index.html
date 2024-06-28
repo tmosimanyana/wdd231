@@ -6,8 +6,19 @@
     <meta name="author" content="Tinny Mosimanyana">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tinny Mosimanyana</title>
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Include Google Fonts API -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
     <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- External JavaScript -->
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
@@ -49,53 +60,5 @@
         <p>&copy; <span id="currentyear"></span> Tinny Mosimanyana, Botswana</p>
         <p id="lastModified"></p>
     </footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // Set the current year
-            document.getElementById('currentyear').textContent = new Date().getFullYear();
-
-            // Set the last modified date
-            document.getElementById('lastModified').textContent = `Last Update: ${document.lastModified}`;
-
-            // Array of course objects
-            const courses = [
-                { code: 'CSE 110', name: 'Introduction to Computer Science', type: 'CSE', completed: false },
-                { code: 'WDD 130', name: 'Web Design I', type: 'WDD', completed: true },
-                { code: 'CSE 111', name: 'Programming with JavaScript', type: 'CSE', completed: false },
-                { code: 'CSE 210', name: 'Data Structures', type: 'CSE', completed: false },
-                { code: 'WDD 131', name: 'Web Design II', type: 'WDD', completed: true },
-                { code: 'WDD 231', name: 'Advanced CSS', type: 'WDD', completed: false }
-            ];
-
-            // Function to display courses
-            function displayCourses(filter = 'all') {
-                const courseList = document.getElementById('course-list');
-                courseList.innerHTML = '';
-                courses
-                    .filter(course => filter === 'all' || course.type === filter)
-                    .forEach(course => {
-                        const courseCard = document.createElement('div');
-                        courseCard.className = 'course-card';
-                        if (course.completed) {
-                            courseCard.classList.add('completed');
-                        }
-                        courseCard.innerHTML = `
-                            <h3>${course.code}</h3>
-                            <p>${course.name}</p>
-                        `;
-                        courseList.appendChild(courseCard);
-                    });
-            }
-
-            // Initial display of all courses
-            displayCourses();
-
-            // Filter function for buttons
-            window.filterCourses = function (filter) {
-                displayCourses(filter);
-            };
-        });
-    </script>
 </body>
 </html>
