@@ -19,16 +19,25 @@ header {
     text-align: center;
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: center;
     gap: 1rem;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
+}
+
+#menu-toggle {
+    display: none;
 }
 
 section {
@@ -44,21 +53,38 @@ footer {
     padding: 1rem 0;
 }
 
-/* Simplified @font-face declarations */
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Mu4WxKOzY.woff2) format('woff2');
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        gap: 0;
+    }
+    nav ul.show {
+        display: flex;
+    }
+    #menu-toggle {
+        display: inline;
+    }
 }
 
-@font-face {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-display: swap;
-    src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlfBBc4.woff2) format('woff2');
+.course {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background: #fff;
+}
+
+.course.completed {
+    background: #e0ffe0;
+}
+
+#course-filters button {
+    margin: 0.5rem;
+}
+
+#total-credits {
+    font-weight: bold;
+    margin-top: 1rem;
 }
 
 
