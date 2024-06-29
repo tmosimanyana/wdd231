@@ -3,27 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
-    <!-- External CSS for Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <!-- Local CSS file -->
+    <meta name="description" content="Responsive webpage example for Rubia M. Francesco">
+    <meta name="author" content="Tinny B. Mosimanyana">
+    <title>Tinny B. Mosimanyana</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
 </head>
 <body>
-    <!-- Your content goes here -->
     <header>
-        <h1>Welcome to My Website</h1>
+        <h1>Rubia M. Francesco</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
-        <p>This is a paragraph styled with Roboto font.</p>
-        <button id="myButton">Click Me</button>
+        <section>
+            <h2>Course Work</h2>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Tinny Mosimanyana,Botswana</h2>
+            <img src="images/Botswana_flag.png" alt="Botswana_flag">
+        </section>
+        <section>
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="course-cards">
+                <button>CSE 110</button>
+                <button>WDD 130</button>
+                <button>CSE 111</button>
+                <button>CSE 210</button>
+                <button>WDD 131</button>
+                <button>WDD 231</button>
+            </div>
+        </section>
     </main>
     <footer>
-        <p>&copy; 2024 Your Website</p>
+        <p>&copy; <span id="currentyear"></span> Tinny B. Mosimanyana, Botswana</p>
+        <p id="lastModified"></p>
     </footer>
-
-    <!-- External JavaScript File -->
-    <script src="script.js"></script>
 </body>
 </html>
 
