@@ -1,17 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Current year
-    document.getElementById('currentyear').textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', function () {
+    // Set current year
+    const currentYearSpan = document.getElementById('currentyear');
+    const currentYear = new Date().getFullYear();
+    currentYearSpan.textContent = currentYear;
 
-    // Last modified date
-    document.getElementById('lastModified').textContent = `Last modified: ${document.lastModified}`;
-
-    // Responsive navigation menu
-    const menuToggle = document.getElementById('menu-toggle');
-    const menu = document.getElementById('menu');
-
-    menuToggle.addEventListener('click', () => {
-        menu.classList.toggle('show');
-    });
+    // Set last modified date
+    const lastModified = document.getElementById('lastModified');
+    lastModified.textContent = 'Last Update: ' + document.lastModified;
 });
+
+
 
 
