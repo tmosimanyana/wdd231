@@ -5,6 +5,18 @@ body {
     box-sizing: border-box;
 }
 
+.roboto-thin {
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 header {
     text-align: center;
     background: #f4f4f4;
@@ -75,6 +87,7 @@ footer {
 .course.completed {
     background: #c8e6c9;
 }
+
 
 
 
