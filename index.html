@@ -3,51 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Course Home Page">
-    <meta name="author" content="Tinny Mosimanyana">
-    <title>Course Home Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap"></noscript>
+    <meta name="description" content="Tinny Bothepha Mosimanyana's course home page.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <title>Tinny Bothepha Mosimanyana - Course Home Page</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/main.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Welcome to the Course Home Page</h1>
+        <img src="images/profile.jpg" alt="Tinny Bothepha Mosimanyana">
+        <h1>Tinny Bothepha Mosimanyana</h1>
+        <p>Gaborone, Botswana</p>
     </header>
     <nav>
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
-        <ul class="nav-menu">
-            <li><a href="#" class="roboto-regular">Home</a></li>
-            <li><a href="#" class="roboto-regular">Chamber</a></li>
-            <li><a href="#" class="roboto-regular">GitHub Profile</a></li>
-            <li><a href="#" class="roboto-regular">LinkedIn</a></li>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#chamber">Chamber</a></li>
+            <li><a href="#github">GitHub Profile</a></li>
+            <li><a href="#linkedin">LinkedIn</a></li>
         </ul>
     </nav>
     <main>
-        <section id="section1">
-            <h2>Section 1</h2>
-            <p>Content for section 1...</p>
+        <section id="course-work">
+            <h2>Course Work</h2>
+            <ul>
+                <li>Course 1</li>
+                <li>Course 2</li>
+                <li>Course 3</li>
+            </ul>
         </section>
-        <section id="section2">
-            <h2>Section 2</h2>
-            <p>Content for section 2...</p>
+        <section id="location">
+            <h2>Toloria, Madagascar</h2>
+            <img src="images/musukujane-tree.jpg" alt="musukujane-tree">
         </section>
-        <section id="section3">
-            <h2>Section 3</h2>
-            <p>Content for section 3...</p>
+        <section id="courses">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter-buttons">
+                <button>All</button>
+                <button>CSE</button>
+                <button>WDD</button>
+            </div>
+            <div class="course-list">
+                <!-- Courses will be populated here by JavaScript -->
+            </div>
         </section>
     </main>
     <footer>
-        <p>&copy; <span id="currentyear"></span> Tinny Mosimanyana, Botswana Gaborone</p>
+        <p>&copy; <span id="currentyear"></span> Tinny Bothepha Mosimanyana, Gaborone, Botswana</p>
         <p id="lastModified"></p>
     </footer>
-    <script src="courses.js" defer></script>
-    <script src="script.js" defer></script>
 </body>
 </html>
-
 

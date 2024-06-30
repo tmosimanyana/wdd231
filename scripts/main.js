@@ -1,41 +1,51 @@
-document.addEventListener('DOMContentLoaded', function() {
+// scripts/main.js
+document.addEventListener('DOMContentLoaded', () => {
+    // Update the current year in the footer
+    const currentYearSpan = document.getElementById('currentyear');
+    currentYearSpan.textContent = new Date().getFullYear();
+
+    // Update the last modified date in the footer
+    const lastModifiedParagraph = document.getElementById('lastModified');
+    lastModifiedParagraph.textContent = 'Last Updated: ' + document.lastModified;
+
+    // Course data
     const courses = [
-        { code: 'CSE 110', name: 'Introduction to Computer Science', credits: 3, completed: true },
-        { code: 'WDD 130', name: 'Web Design 1', credits: 3, completed: true },
-        { code: 'CSE 111', name: 'Programming with Functions', credits: 3, completed: true },
-        { code: 'CSE 210', name: 'Data Structures', credits: 3, completed: false },
-        { code: 'WDD 131', name: 'Web Design 2', credits: 3, completed: false },
-        { code: 'WDD 231', name: 'Web Frontend Development', credits: 3, completed: false }
+        { id: 'CSE 110', title: 'Introduction to Computer Science', completed: true },
+        { id: 'WDD 130', title: 'Web Development Basics', completed: true },
+        { id: 'CSE 111', title: 'Programming Fundamentals', completed: false },
+        { id: 'CSE 210', title: 'Advanced Programming', completed: false },
+        { id: 'WDD 131', title: 'Intermediate Web Development', completed: true },
+        { id: 'WDD 231', title: 'Advanced Web Development', completed: false }
     ];
 
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const courseContainer = document.querySelector('.course-list');
-    const currentYear = document.getElementById('currentyear');
-    const lastModified = document.getElementById('lastModified');
-
-    function displayCourses(filter) {
-        courseContainer.innerHTML = '';
-        courses
-            .filter(course => filter === 'All' || course.code.startsWith(filter))
-            .forEach(course => {
-                const courseCard = document.createElement('div');
-                courseCard.classList.add('course-card');
-                if (course.completed) courseCard.classList.add('completed');
-                courseCard.innerHTML = `<strong>${course.code}</strong><br>${course.name}<br>${course.credits} credits`;
-                courseContainer.appendChild(courseCard);
-            });
-    }
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            displayCourses(button.getAttribute('data-filter'));
-        });
+    // Populate the course list
+    const courseList = document.querySelector('.course-list');
+    courses.forEach(course => {
+        const courseButton = document.createElement('button');
+        courseButton.textContent = `${course.id} - ${course.title}`;
+        if (course.completed) {
+            courseButton.classList.add('completed');
+        }
+        courseList.appendChild(courseButton);
     });
 
-    currentYear.textContent = new Date().getFullYear();
-    lastModified.textContent = `Last Update: ${document.lastModified}`;
-
-    displayCourses('All');
+    // Filter courses
+    const filterButtons = document.querySelectorAll('.filter-buttons button');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const category = button.textContent;
+            courseList.innerHTML = '';
+            courses.forEach(course => {
+                if (category === 'All' || course.id.startsWith(category)) {
+                    const courseButton = document.createElement('button');
+                    courseButton.textContent = `${course.id} - ${course.title}`;
+                    if (course.completed) {
+                        courseButton.classList.add('completed');
+                    }
+                    courseList.appendChild(courseButton);
+                }
+            });
+        });
+    });
 });
+

@@ -1,35 +1,123 @@
-/* styles.css */
+/* styles/styles.css */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f8f9fa;
+}
 
-/* Main Navigation */
-nav#nav-menu {
+header {
+    text-align: center;
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+}
+
+header img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+nav ul {
     display: flex;
-    justify-content: center; /* Adjust as needed */
-    align-items: center; /* Adjust as needed */
-    background-color: #f0f0f0; /* Example background color */
+    justify-content: center;
+    background-color: #007bff;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #0056b3;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+#location img {
+    width: 100%;
+    height: auto;
+}
+
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.filter-buttons button {
+    margin: 0 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+}
+
+.filter-buttons button:hover {
+    background-color: #5a6268;
+}
+
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.course-list button {
+    margin: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #28a745;
+    color: white;
+    border: none;
+}
+
+.course-list button.completed {
+    background-color: #ffc107;
+    color: black;
+}
+
+.course-list button:hover {
+    background-color: #218838;
+}
+
+footer {
+    text-align: center;
+    background-color: #343a40;
+    color: white;
     padding: 10px;
 }
 
-nav#nav-menu a {
-    text-decoration: none;
-    color: #333;
-    padding: 10px 15px;
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    .filter-buttons {
+        flex-direction: column;
+    }
+
+    .course-list {
+        flex-direction: column;
+    }
 }
 
-nav#nav-menu a.active {
-    font-weight: bold;
-    color: #007bff; /* Example active link color */
-}
-
-/* Example Flex Container */
-.section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.section .item {
-    flex: 1;
-    margin: 10px;
-    padding: 20px;
-    background-color: #f0f0f0;
-}
