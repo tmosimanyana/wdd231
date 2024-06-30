@@ -1,81 +1,82 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Example weather data
-    const weatherData = {
-        current: {
-            temperature: 75,
-            condition: 'Partly Cloudy',
-            high: 85,
-            low: 52,
-            humidity: 34,
-            sunrise: '7:30am',
-            sunset: '9:59pm'
-        },
-        forecast: [
-            { day: 'Today', temperature: 90 },
-            { day: 'Wednesday', temperature: 89 },
-            { day: 'Thursday', temperature: 68 }
-        ]
+    // Fetch and display members
+    const businessDirectory = document.querySelector('.business-directory');
+    const searchInput = document.getElementById('search');
+    const filterSelect = document.getElementById('filter');
+    const toggleViewButton = document.getElementById('toggle-view');
+
+    let members = [];
+    let isGridView = true;
+
+    const fetchMembers = async () => {
+        try {
+            const response = await fetch('data/members.json');
+            members = await response.json();
+            displayMembers();
+        } catch (error) {
+            console.error('Error fetching members:', error);
+        }
     };
 
-    // Update the current weather section
-    const currentWeatherTemp = document.querySelector('.current-weather p:nth-of-type(1)');
-    const currentWeatherCondition = document.querySelector('.current-weather p:nth-of-type(2)');
-    const currentWeatherHigh = document.querySelector('.current-weather p:nth-of-type(3)');
-    const currentWeatherLow = document.querySelector('.current-weather p:nth-of-type(4)');
-    const currentWeatherHumidity = document.querySelector('.current-weather p:nth-of-type(5)');
-    const currentWeatherSunrise = document.querySelector('.current-weather p:nth-of-type(6)');
-    const currentWeatherSunset = document.querySelector('.current-weather p:nth-of-type(7)');
+    const displayMembers = () => {
+        businessDirectory.innerHTML = '';
+        const filteredMembers = members.filter(member => {
+            const matchesSearch = member.name.toLowerCase().includes(searchInput.value.toLowerCase());
+            const matchesFilter = filterSelect.value === 'all' || member.membershipLevel === parseInt(filterSelect.value);
+            return matchesSearch && matchesFilter;
+        });
 
-    currentWeatherTemp.textContent = `${weatherData.current.temperature}°F`;
-    currentWeatherCondition.textContent = weatherData.current.condition;
-    currentWeatherHigh.textContent = `High: ${weatherData.current.high}°F`;
-    currentWeatherLow.textContent = `Low: ${weatherData.current.low}°F`;
-    currentWeatherHumidity.textContent = `Humidity: ${weatherData.current.humidity}%`;
-    currentWeatherSunrise.textContent = `Sunrise: ${weatherData.current.sunrise}`;
-    currentWeatherSunset.textContent = `Sunset: ${weatherData.current.sunset}`;
+        filteredMembers.forEach(member => {
+            const businessCard = document.createElement('div');
+            businessCard.classList.add('business-card');
 
-    // Update the weather forecast section
-    const weatherForecast = document.querySelector('.weather-forecast');
-    weatherData.forecast.forEach(day => {
-        const forecastItem = document.createElement('p');
-        forecastItem.textContent = `${day.day}: ${day.temperature}°F`;
-        weatherForecast.appendChild(forecastItem);
+            const businessName = document.createElement('h3');
+            businessName.textContent = member.name;
+
+            const businessTagline = document.createElement('p');
+            businessTagline.textContent = member.tagline;
+
+            const businessEmail = document.createElement('p');
+            businessEmail.textContent = `EMAIL: ${member.email}`;
+
+            const businessPhone = document.createElement('p');
+            businessPhone.textContent = `PHONE: ${member.phone}`;
+
+            const businessUrl = document.createElement('p');
+            businessUrl.textContent = `URL: ${member.url}`;
+
+            businessCard.appendChild(businessName);
+            businessCard.appendChild(businessTagline);
+            businessCard.appendChild(businessEmail);
+            businessCard.appendChild(businessPhone);
+            businessCard.appendChild(businessUrl);
+
+            businessDirectory.appendChild(businessCard);
+        });
+
+        if (isGridView) {
+            businessDirectory.classList.add('grid-view');
+            businessDirectory.classList.remove('list-view');
+        } else {
+            businessDirectory.classList.add('list-view');
+            businessDirectory.classList.remove('grid-view');
+        }
+    };
+
+    searchInput.addEventListener('input', displayMembers);
+    filterSelect.addEventListener('change', displayMembers);
+    toggleViewButton.addEventListener('click', () => {
+        isGridView = !isGridView;
+        displayMembers();
     });
 
-    // Example business data
-    const businessData = [
-        { name: 'Business Name 1', tagline: 'Business Tag Line 1', email: 'info@gmail.com', phone: '800-555-1234', url: 'http://mybusiness.com' },
-        { name: 'Business Name 2', tagline: 'Business Tag Line 2', email: 'info@gmail.com', phone: '800-555-1234', url: 'http://mybusiness.com' },
-        { name: 'Business Name 3', tagline: 'Business Tag Line 3', email: 'info@gmail.com', phone: '800-555-1234', url: 'http://mybusiness.com' }
-    ];
+    fetchMembers();
 
-    // Update the business directory section
-    const businessDirectory = document.querySelector('.business-directory');
-    businessData.forEach(business => {
-        const businessCard = document.createElement('div');
-        businessCard.classList.add('business-card');
-
-        const businessName = document.createElement('h3');
-        businessName.textContent = business.name;
-
-        const businessTagline = document.createElement('p');
-        businessTagline.textContent = business.tagline;
-
-        const businessEmail = document.createElement('p');
-        businessEmail.textContent = `EMAIL: ${business.email}`;
-
-        const businessPhone = document.createElement('p');
-        businessPhone.textContent = `PHONE: ${business.phone}`;
-
-        const businessUrl = document.createElement('p');
-        businessUrl.innerHTML = `URL: <a href="${business.url}" target="_blank">${business.url}</a>`;
-
-        businessCard.appendChild(businessName);
-        businessCard.appendChild(businessTagline);
-        businessCard.appendChild(businessEmail);
-        businessCard.appendChild(businessPhone);
-        businessCard.appendChild(businessUrl);
-
-        businessDirectory.appendChild(businessCard);
-    });
+    // Display current year and last modification date
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('lastModified').textContent = document.lastModified;
 });
+
+
+
+

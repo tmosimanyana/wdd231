@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timbuktu Chamber of Commerce</title>
+    <title>Timbuktu Chamber Directory</title>
+    <meta name="description" content="Directory of members of the Timbuktu Chamber of Commerce">
+    <meta name="author" content="Your Name">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Timbuktu Chamber Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="hero.jpg">
+    <meta property="og:url" content="https://www.timbuktuchamber.org">
+    <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="styles.css">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
@@ -25,70 +31,32 @@
         </nav>
     </header>
 
-    <div class="hero">
-        <img src="hero.jpg" alt="Hero Image">
-        <h2>Keynote Tickets</h2>
-    </div>
-
-    <div class="content">
-        <div class="sidebar">
-            <h3>Events</h3>
-            <!-- Event list here -->
+    <main>
+        <div class="hero">
+            <img src="hero.jpg" alt="Hero Image">
+            <h2>Keynote Tickets</h2>
         </div>
-        <div class="main">
-            <h1>Home</h1>
 
-            <div class="weather">
-                <div class="current-weather">
-                    <h2>Current Weather</h2>
-                    <p>75°F</p>
-                    <p>Partly Cloudy</p>
-                    <p>High: 85°F</p>
-                    <p>Low: 52°F</p>
-                    <p>Humidity: 34%</p>
-                    <p>Sunrise: 7:30am</p>
-                    <p>Sunset: 9:50pm</p>
-                </div>
-                <div class="weather-forecast">
-                    <h2>Weather Forecast</h2>
-                    <p>Today: 90°F</p>
-                    <p>Wednesday: 89°F</p>
-                    <p>Thursday: 68°F</p>
-                </div>
-            </div>
+        <section class="directory-controls">
+            <input type="text" id="search" placeholder="Search members...">
+            <select id="filter">
+                <option value="all">All Membership Levels</option>
+                <option value="1">Member</option>
+                <option value="2">Silver</option>
+                <option value="3">Gold</option>
+            </select>
+            <button id="toggle-view">Toggle View</button>
+        </section>
 
-            <div class="business-directory">
-                <div class="business-card">
-                    <h3>Business Name</h3>
-                    <p>Business Tag Line</p>
-                    <p>EMAIL: info@gmail.com</p>
-                    <p>PHONE: 800-555-1234</p>
-                    <p>URL: <a href="http://mybusiness.com" target="_blank">mybusiness.com</a></p>
-                </div>
-                <div class="business-card">
-                    <h3>Business Name</h3>
-                    <p>Business Tag Line</p>
-                    <p>EMAIL: info@gmail.com</p>
-                    <p>PHONE: 800-555-1234</p>
-                    <p>URL: <a href="http://mybusiness.com" target="_blank">mybusiness.com</a></p>
-                </div>
-                <div class="business-card">
-                    <h3>Business Name</h3>
-                    <p>Business Tag Line</p>
-                    <p>EMAIL: info@gmail.com</p>
-                    <p>PHONE: 800-555-1234</p>
-                    <p>URL: <a href="http://mybusiness.com" target="_blank">mybusiness.com</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
+        <section class="business-directory grid-view"></section>
+    </main>
 
     <footer>
         <p>Timbuktu Chamber of Commerce</p>
         <p>10 Rue de La Paix</p>
         <p>Timbuktu, Mali 999</p>
-        <p>Email: <a href="mailto:info@timbuktucc.org">info@timbuktucc.org</a></p>
-        <p>Phone: <a href="tel:+2235552300">(223) 555-2300</a></p>
+        <p>info@timbuktucc.org</p>
+        <p>(223) 555-2300</p>
         <p>
             <a href="#"><i class="fab fa-youtube"></i></a>
             <a href="#"><i class="fab fa-twitter"></i></a>
@@ -96,11 +64,13 @@
         </p>
         <p>
             WDD231 Class Project
-            &copy; 2023 Timbuktu Chamber of Commerce
-            Last Modification: 10/21/202X 22:12:35
+            &copy; <span id="year"></span> Timbuktu Chamber of Commerce
+            Last Modification: <span id="lastModified"></span>
         </p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
+
 
