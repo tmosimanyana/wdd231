@@ -1,5 +1,4 @@
-/* Reset and normalize styles */
-@import url('normalize.css');
+@import url('https://tmosimanyana.github.io/wdd231/chamber/normalize.css');
 
 body {
     font-family: sans-serif;
@@ -64,7 +63,7 @@ nav li {
 .grid-view .business-card {
     flex: 1 1 30%;
     margin: 10px;
-    border: 1px solid #ddd;
+    border: #ddd solid 1px;
     padding: 20px;
     transition: transform 0.2s;
 }
@@ -72,7 +71,7 @@ nav li {
 .list-view .business-card {
     flex: 1 1 100%;
     margin: 10px;
-    border: 1px solid #ddd;
+    border: #ddd solid 1px;
     padding: 20px;
     transition: transform 0.2s;
 }
@@ -90,6 +89,7 @@ footer {
     padding: 20px;
     text-align: center;
 }
+
 
 
 
