@@ -1,0 +1,58 @@
+[
+    {
+        "name": "Business Name 1",
+        "tagline": "Business Tag Line 1",
+        "email": "info1@gmail.com",
+        "phone": "800-555-1231",
+        "url": "mybusiness1.com",
+        "membershipLevel": 1
+    },
+    {
+        "name": "Business Name 2",
+        "tagline": "Business Tag Line 2",
+        "email": "info2@gmail.com",
+        "phone": "800-555-1232",
+        "url": "mybusiness2.com",
+        "membershipLevel": 2
+    },
+    {
+        "name": "Business Name 3",
+        "tagline": "Business Tag Line 3",
+        "email": "info3@gmail.com",
+        "phone": "800-555-1233",
+        "url": "mybusiness3.com",
+        "membershipLevel": 3
+    },
+    {
+        "name": "Business Name 4",
+        "tagline": "Business Tag Line 4",
+        "email": "info4@gmail.com",
+        "phone": "800-555-1234",
+        "url": "mybusiness4.com",
+        "membershipLevel": 1
+    },
+    {
+        "name": "Business Name 5",
+        "tagline": "Business Tag Line 5",
+        "email": "info5@gmail.com",
+        "phone": "800-555-1235",
+        "url": "mybusiness5.com",
+        "membershipLevel": 2
+    },
+    {
+        "name": "Business Name 6",
+        "tagline": "Business Tag Line 6",
+        "email": "info6@gmail.com",
+        "phone": "800-555-1236",
+        "url": "mybusiness6.com",
+        "membershipLevel": 3
+    },
+    {
+        "name": "Business Name 7",
+        "tagline": "Business Tag Line 7",
+        "email": "info7@gmail.com",
+        "phone": "800-555-1237",
+        "url": "mybusiness7.com",
+        "membershipLevel": 1
+    }
+]
