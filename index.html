@@ -9,64 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        header, nav, main, footer {
-            padding: 1rem;
-            margin: 1rem;
-            border: 1px solid #ddd;
-        }
-        nav a {
-            margin: 0 0.5rem;
-            text-decoration: none;
-            font-weight: 400;
-        }
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
-        }
-        nav a:hover {
-            color: #f00;
-            transition: color 0.3s;
-        }
-        main {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-        footer p {
-            margin: 0.5rem 0;
-        }
-        .hamburger-menu {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        .hamburger-menu span {
-            height: 3px;
-            width: 25px;
-            background: #000;
-            margin: 4px;
-            border-radius: 2px;
-        }
-        @media (max-width: 768px) {
-            nav {
-                display: none;
-                flex-direction: column;
-            }
-            .hamburger-menu {
-                display: flex;
-            }
-            nav.active {
-                display: flex;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -96,53 +40,20 @@
             <h2>Section 3</h2>
             <p>Content for section 3...</p>
         </section>
+        <section id="courses-section">
+            <h2>Courses</h2>
+            <div>
+                <button onclick="filterCourses('all')">All</button>
+                <button onclick="filterCourses('CSE')">CSE</button>
+                <button onclick="filterCourses('WDD')">WDD</button>
+            </div>
+            <div id="courses-container"></div>
+        </section>
     </main>
     <footer>
         <p>&copy; <span id="currentyear"></span> Tinny Bothepha Mosimanyana, Botswana Gaborone</p>
         <p id="lastModified"></p>
     </footer>
-    <script>
-        document.getElementById('currentyear').textContent = new Date().getFullYear();
-        document.getElementById('lastModified').textContent = 'Last Modified: ' + document.lastModified;
-
-        function toggleMenu() {
-            var navMenu = document.getElementById('navMenu');
-            navMenu.classList.toggle('active');
-        }
-
-        // Example course list data and functionality
-        const courses = [
-            { id: 1, name: 'HTML Basics', credits: 3, completed: true },
-            { id: 2, name: 'CSS Fundamentals', credits: 3, completed: false },
-            { id: 3, name: 'JavaScript Essentials', credits: 4, completed: false }
-        ];
-
-        function displayCourses() {
-            const courseList = document.createElement('ul');
-            let totalCredits = 0;
-
-            courses.forEach(course => {
-                const courseItem = document.createElement('li');
-                courseItem.textContent = `${course.name} - ${course.credits} credits`;
-                if (course.completed) {
-                    courseItem.style.textDecoration = 'line-through';
-                }
-                courseList.appendChild(courseItem);
-                totalCredits += course.credits;
-            });
-
-            const main = document.querySelector('main');
-            main.appendChild(courseList);
-
-            const creditsDisplay = document.createElement('p');
-            creditsDisplay.textContent = `Total Credits: ${totalCredits}`;
-            main.appendChild(creditsDisplay);
-        }
-
-        displayCourses();
-    </script>
 </body>
 </html>
 
-
-        
