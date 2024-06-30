@@ -1,81 +1,42 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Fetch and display members
-    const businessDirectory = document.querySelector('.business-directory');
-    const searchInput = document.getElementById('search');
-    const filterSelect = document.getElementById('filter');
-    const toggleViewButton = document.getElementById('toggle-view');
+// Fetch the member data and populate the directory
+async function fetchMembers() {
+    const response = await fetch('data/members.json');
+    const members = await response.json();
+    displayMembers(members);
+}
 
-    let members = [];
-    let isGridView = true;
-
-    const fetchMembers = async () => {
-        try {
-            const response = await fetch('data/members.json');
-            members = await response.json();
-            displayMembers();
-        } catch (error) {
-            console.error('Error fetching members:', error);
-        }
-    };
-
-    const displayMembers = () => {
-        businessDirectory.innerHTML = '';
-        const filteredMembers = members.filter(member => {
-            const matchesSearch = member.name.toLowerCase().includes(searchInput.value.toLowerCase());
-            const matchesFilter = filterSelect.value === 'all' || member.membershipLevel === parseInt(filterSelect.value);
-            return matchesSearch && matchesFilter;
-        });
-
-        filteredMembers.forEach(member => {
-            const businessCard = document.createElement('div');
-            businessCard.classList.add('business-card');
-
-            const businessName = document.createElement('h3');
-            businessName.textContent = member.name;
-
-            const businessTagline = document.createElement('p');
-            businessTagline.textContent = member.tagline;
-
-            const businessEmail = document.createElement('p');
-            businessEmail.textContent = `EMAIL: ${member.email}`;
-
-            const businessPhone = document.createElement('p');
-            businessPhone.textContent = `PHONE: ${member.phone}`;
-
-            const businessUrl = document.createElement('p');
-            businessUrl.textContent = `URL: ${member.url}`;
-
-            businessCard.appendChild(businessName);
-            businessCard.appendChild(businessTagline);
-            businessCard.appendChild(businessEmail);
-            businessCard.appendChild(businessPhone);
-            businessCard.appendChild(businessUrl);
-
-            businessDirectory.appendChild(businessCard);
-        });
-
-        if (isGridView) {
-            businessDirectory.classList.add('grid-view');
-            businessDirectory.classList.remove('list-view');
-        } else {
-            businessDirectory.classList.add('list-view');
-            businessDirectory.classList.remove('grid-view');
-        }
-    };
-
-    searchInput.addEventListener('input', displayMembers);
-    filterSelect.addEventListener('change', displayMembers);
-    toggleViewButton.addEventListener('click', () => {
-        isGridView = !isGridView;
-        displayMembers();
+// Display members in the specified view
+function displayMembers(members) {
+    const directory = document.querySelector('.business-directory');
+    directory.innerHTML = '';
+    members.forEach(member => {
+        const card = document.createElement('div');
+        card.classList.add('business-card');
+        card.innerHTML = `
+            <h3>${member.name}</h3>
+            <p>${member.address}</p>
+            <p>${member.phone}</p>
+            <p><a href="${member.website}" target="_blank">${member.website}</a></p>
+            <p>Membership Level: ${member.membershipLevel}</p>
+        `;
+        directory.appendChild(card);
     });
+}
 
-    fetchMembers();
-
-    // Display current year and last modification date
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('lastModified').textContent = document.lastModified;
+// Toggle view between grid and list
+document.getElementById('toggle-view').addEventListener('click', () => {
+    const directory = document.querySelector('.business-directory');
+    directory.classList.toggle('grid-view');
+    directory.classList.toggle('list-view');
 });
+
+// Update year and last modified date in the footer
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = document.lastModified;
+
+// Initialize
+fetchMembers();
+
 
 
 

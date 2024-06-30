@@ -1,4 +1,4 @@
-@import url('https://tmosimanyana.github.io/wdd231/chamber/normalize.css');
+@import url('normalize.css');
 
 body {
     font-family: sans-serif;
@@ -60,20 +60,26 @@ nav li {
     padding: 20px;
 }
 
-.grid-view .business-card {
-    flex: 1 1 30%;
+.business-card {
     margin: 10px;
     border: #ddd solid 1px;
     padding: 20px;
     transition: transform 0.2s;
+    text-align: center;
+}
+
+.grid-view .business-card {
+    flex: 1 1 30%;
 }
 
 .list-view .business-card {
     flex: 1 1 100%;
-    margin: 10px;
-    border: #ddd solid 1px;
-    padding: 20px;
-    transition: transform 0.2s;
+}
+
+.business-card img {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 10px;
 }
 
 .business-card:hover {
@@ -89,6 +95,7 @@ footer {
     padding: 20px;
     text-align: center;
 }
+
 
 
 
