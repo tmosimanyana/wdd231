@@ -1,3 +1,5 @@
+// courses.js
+
 const courses = [
     {
         subject: 'CSE',
