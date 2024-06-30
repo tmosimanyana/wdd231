@@ -1,68 +1,98 @@
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #f0f0f0;
+    color: #333;
 }
+
 header, nav, main, footer {
     padding: 1rem;
     margin: 1rem;
+    background-color: #fff;
     border: 1px solid #ddd;
 }
-nav a {
-    margin: 0 0.5rem;
-    text-decoration: none;
-    font-weight: 400;
-}
+
+/* Navigation Styles */
 nav {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-nav a:hover {
-    color: #f00;
-    transition: color 0.3s;
-}
-main {
-    display: grid;
-    grid-template-columns: 1fr;
+
+.nav-menu {
+    list-style-type: none;
+    display: flex;
     gap: 1rem;
 }
-footer p {
-    margin: 0.5rem 0;
+
+.nav-menu li {
+    margin: 0;
 }
-.hamburger-menu {
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.nav-menu a:hover {
+    background-color: #ddd;
+}
+
+/* Hamburger Menu Styles */
+.menu-toggle {
+    cursor: pointer;
     display: none;
     flex-direction: column;
-    cursor: pointer;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
 }
-.hamburger-menu span {
-    height: 3px;
-    width: 25px;
-    background: #000;
-    margin: 4px;
-    border-radius: 2px;
+
+.bar {
+    width: 100%;
+    height: 4px;
+    background-color: #333;
+    transition: transform 0.3s ease;
 }
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-    nav {
+    .menu-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
         display: none;
         flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #f0f0f0;
+        z-index: 1000;
     }
-    .hamburger-menu {
+    
+    .nav-menu.active {
         display: flex;
     }
-    nav.active {
-        display: flex;
+    
+    .nav-menu li {
+        text-align: center;
+    }
+    
+    .nav-menu a {
+        padding: 1rem;
     }
 }
-.course {
-    border: 1px solid #ddd;
-    padding: 1rem;
-    margin: 1rem 0;
-    border-radius: 4px;
-}
-.course.completed {
-    background-color: #e0ffe0;
-}
+
+
+
 
 
 
