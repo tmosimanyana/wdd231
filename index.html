@@ -6,17 +6,21 @@
     <meta name="description" content="Tinny Bothepha Mosimanyana's course home page.">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
     <title>Tinny Bothepha Mosimanyana - Course Home Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/main.js" defer></script>
 </head>
 <body>
     <header>
         <img src="images/profile.jpg" alt="Tinny Bothepha Mosimanyana">
-        <h1>Tinny Bothepha Mosimanyana</h1>
-        <p>Gaborone, Botswana</p>
+        <h1 class="roboto-regular">Tinny Bothepha Mosimanyana</h1>
+        <p class="roboto-regular">Gaborone, Botswana</p>
     </header>
     <nav>
-        <ul>
+        <button class="hamburger">&#9776;</button>
+        <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#chamber">Chamber</a></li>
             <li><a href="#github">GitHub Profile</a></li>
@@ -25,23 +29,23 @@
     </nav>
     <main>
         <section id="course-work">
-            <h2>Course Work</h2>
+            <h2 class="roboto-regular">Course Work</h2>
             <ul>
-                <li>Course 1</li>
-                <li>Course 2</li>
-                <li>Course 3</li>
+                <li class="roboto-thin">Course 1</li>
+                <li class="roboto-thin">Course 2</li>
+                <li class="roboto-thin">Course 3</li>
             </ul>
         </section>
         <section id="location">
-            <h2>Toloria, Madagascar</h2>
+            <h2 class="roboto-regular">Gaborone, Botswana</h2>
             <img src="images/musukujane-tree.jpg" alt="musukujane-tree">
         </section>
         <section id="courses">
-            <h2>Web and Computer Programming Certificate</h2>
+            <h2 class="roboto-regular">Web and Computer Programming Certificate</h2>
             <div class="filter-buttons">
-                <button>All</button>
-                <button>CSE</button>
-                <button>WDD</button>
+                <button onclick="filterCourses('all')" class="roboto-thin">All</button>
+                <button onclick="filterCourses('CSE')" class="roboto-thin">CSE</button>
+                <button onclick="filterCourses('WDD')" class="roboto-thin">WDD</button>
             </div>
             <div class="course-list">
                 <!-- Courses will be populated here by JavaScript -->
@@ -49,9 +53,10 @@
         </section>
     </main>
     <footer>
-        <p>&copy; <span id="currentyear"></span> Tinny Bothepha Mosimanyana, Gaborone, Botswana</p>
-        <p id="lastModified"></p>
+        <p class="roboto-thin">&copy; <span id="currentyear"></span> Tinny Bothepha Mosimanyana, Gaborone, Botswana</p>
+        <p id="lastModified" class="roboto-thin"></p>
     </footer>
 </body>
 </html>
+
 
