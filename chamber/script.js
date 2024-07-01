@@ -1,3 +1,4 @@
+
 // Fetch the member data and populate the directory
 async function fetchMembers() {
     const response = await fetch('data/members.json');
@@ -13,6 +14,7 @@ function displayMembers(members) {
         const card = document.createElement('div');
         card.classList.add('business-card');
         card.innerHTML = `
+            <img src="images/${member.image}" alt="${member.name}">
             <h3>${member.name}</h3>
             <p>${member.address}</p>
             <p>${member.phone}</p>
@@ -30,11 +32,10 @@ document.getElementById('toggle-view').addEventListener('click', () => {
     directory.classList.toggle('list-view');
 });
 
-// Update year and last modified date in the footer
-document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = document.lastModified;
+// Display the last modified date in the footer
+document.getElementById('last-modified').textContent = document.lastModified;
 
-// Initialize
+// Fetch and display members on page load
 fetchMembers();
 
 
