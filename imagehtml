@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OG Image</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1200px;
+      height: 630px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f0f0f0;
+      font-family: 'Roboto', sans-serif;
+      text-align: center;
+      position: relative;
+      background-image: url('path_to_your_background_image.jpg'); /* Optional */
+      background-size: cover;
+      background-position: center;
+    }
+    .container {
+      width: 1100px;
+      height: 530px;
+      background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+      border: 5px solid #ccc;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .logo {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+    .title {
+      font-size: 48px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+    .subtitle {
+      font-size: 28px;
+      margin-bottom: 40px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="og-image">
+    <img src="path_to_your_logo.png" alt="Logo" class="logo">
+    <div class="title">Chamber of Commerce Directory</div>
+    <div class="subtitle">Connecting Businesses, Building Community</div>
+  </div>
+
+  <script>
+    // JavaScript to convert HTML to an image
+    function downloadImage() {
+      const container = document.querySelector('.container');
+
+      html2canvas(container).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'og_image.png';
+        link.href = canvas.toDataURL();
+        link.click();
+      });
+    }
+  </script>
+  
+  <!-- Include html2canvas library -->
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+  
+  <!-- Button to trigger download -->
+  <button onclick="downloadImage()">Download Image</button>
+</body>
+</html>
