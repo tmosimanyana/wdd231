@@ -1,96 +1,73 @@
+/* Normalize CSS */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 
+/* Global Styles */
 body {
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #f0f0f0;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-}
-
-.logo img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav li {
-    margin-right: 20px;
-}
-
-.hero {
-    background-color: #eee;
-    padding: 20px;
+    background-color: #333;
+    color: white;
+    padding: 1rem;
     text-align: center;
 }
 
-.hero img {
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.list-view {
+    display: block;
+}
+
+.member-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.member-card img {
     width: 100%;
     height: auto;
 }
 
-.directory-controls {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
+@media (max-width: 600px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
 }
-
-.business-directory {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
-}
-
-.grid-view .business-card {
-    flex: 1 1 30%;
-    margin: 10px;
-    border: #ddd solid 1px;
-    padding: 20px;
-    transition: transform 0.2s;
-}
-
-.list-view .business-card {
-    flex: 1 1 100%;
-    margin: 10px;
-    border: #ddd solid 1px;
-    padding: 20px;
-    transition: transform 0.2s;
-}
-
-.business-card:hover {
-    transform: scale(1.05);
-}
-
-.business-card h3 {
-    margin-top: 0;
-}
-
-footer {
-    background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-}
-
-
-
 
 
