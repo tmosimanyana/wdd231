@@ -7,6 +7,14 @@ body {
     color: #333;
 }
 
+.roboto-thin {
+    font-weight: 100;
+}
+
+.roboto-regular {
+    font-weight: 400;
+}
+
 .container {
     width: 90%;
     max-width: 1200px;
@@ -23,6 +31,7 @@ header {
 header h1 {
     margin: 0;
     text-align: center;
+    font-weight: 400; /* Using roboto-regular */
 }
 
 nav ul {
@@ -39,7 +48,7 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 400; /* Using roboto-regular */
 }
 
 #nav-toggle {
@@ -79,6 +88,7 @@ section {
 section h2 {
     text-align: center;
     color: #333;
+    font-weight: 100; /* Using roboto-thin */
 }
 
 #course-list {
@@ -120,4 +130,6 @@ footer {
 
 footer p {
     margin: 0.5rem 0;
+    font-weight: 400; /* Using roboto-regular */
 }
+
