@@ -1,116 +1,105 @@
-/* General Styles */
+/* General styles */
 body {
     font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background-color: #333;
-    color: white;
-    padding: 10px 20px;
+    color: #fff;
+    padding: 10px 0;
 }
 
 header .logo img {
-    height: 50px;
+    width: 150px;
 }
 
-nav ul {
+header nav ul {
     list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.member-list {
     display: flex;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-}
-
-.hamburger-menu {
-    display: none;
-    background: none;
-    border: none;
-    font-size: 24px;
-    color: white;
-}
-
-.hero img {
-    width: 100%;
-    height: auto;
-}
-
-.hero .button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #0056b3;
-    color: white;
-    text-decoration: none;
+.member-card {
+    background: #fff;
+    padding: 15px;
     border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: calc(33.333% - 20px);
+    box-sizing: border-box;
 }
 
-.info-section {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-}
-
-.info-section div {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin: 5px;
-}
-
-.directory {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-}
-
-.directory .business {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    margin: 5px;
+.member-card h2 {
+    margin-top: 0;
 }
 
 footer {
     background-color: #333;
-    color: white;
+    color: #fff;
+    padding: 20px 0;
     text-align: center;
-    padding: 20px;
 }
 
-footer .social-media img {
-    height: 24px;
+footer .social-media a {
     margin: 0 10px;
 }
 
-/* Mobile Styles */
+footer .social-media img {
+    width: 24px;
+}
+
+/* Grid view styles */
+.grid-view .member-card {
+    width: calc(33.333% - 20px);
+}
+
+/* List view styles */
+.list-view {
+    flex-direction: column;
+}
+
+.list-view .member-card {
+    width: 100%;
+}
+
+/* Responsive styles */
 @media (max-width: 768px) {
-    nav ul {
-        display: none;
+    .member-list {
         flex-direction: column;
     }
 
-    .hamburger-menu {
-        display: block;
-    }
-
-    .hero .button {
-        display: block;
-        text-align: center;
-        margin: 10px auto;
-    }
-
-    .info-section, .directory {
-        flex-direction: column;
-        align-items: center;
+    .member-card {
+        width: 100%;
     }
 }
+
+
 
 
 

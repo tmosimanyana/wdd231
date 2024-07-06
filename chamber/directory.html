@@ -3,112 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore our directory of chamber members and discover local businesses in G.C Chemachema.">
-    <meta name="author" content="Tinny B. Mosimanyana">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Directory | G.C Chemachema Chamber of Commerce">
+    <meta name="description" content="Directory of members of the Timbuktu Chamber of Commerce">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <meta property="og:title" content="Gaborone Chemachema Chamber of Commerce Directory">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/og-image.png"> <!-- Updated to local URL -->
-    <meta property="og:url" content="directory.html"> <!-- Updated to local URL -->
-    <meta property="og:description" content="Explore our directory of chamber members and discover local businesses in G.C Chemachema.">
-
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico">
-
-    <!-- Stylesheets -->
+    <meta property="og:image" content="https://web.facebook.com/photo/?fbid=742876181367575&set=pcb.742876698034190">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/directory.html">
+    <title>Gaborone Chemachema Chamber of Commerce Directory</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <link rel="stylesheet" href="styles.css">
-
-    <title>Directory | G.C Chemachema Chamber of Commerce</title>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="images/chamber-logo.png" alt="G.C Chemachema Chamber of Commerce Logo">
-            <h1>G.C Chemachema Chamber of Commerce</h1>
+            <img src="images/chamber-logo.png" alt="Gaborone Chemachema Chamber of Commerce">
         </div>
         <nav>
-            <button class="hamburger-menu">☰</button>
-            <ul class="nav-links">
+            <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Business Directory</a></li>
+                <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="podcast.html">Podcast</a></li>
-                <li><a href="events.html">Events</a></li>
             </ul>
         </nav>
     </header>
-
+    
     <main>
-        <section class="hero">
-            <img src="images/hero.jpg" alt="Hero Image">
-            <a href="keynote.html" class="button">Keynote Tickets</a>
-        </section>
-        <section class="content">
-            <h2>Home</h2>
-            <div class="info-section">
-                <div class="events">
-                    <h3>Events</h3>
-                    <p>Details about upcoming events.</p>
-                </div>
-                <div class="current-weather">
-                    <h3>Current Weather</h3>
-                    <p>75°F, Party Cloudy</p>
-                    <p>High: 85°, Low: 52°</p>
-                    <p>Humidity: 34%</p>
-                    <p>Sunrise: 7:30am, Sunset: 9:59pm</p>
-                </div>
-                <div class="weather-forecast">
-                    <h3>Weather Forecast</h3>
-                    <p>Today: 90°F</p>
-                    <p>Wednesday: 89°F</p>
-                    <p>Thursday: 68°F</p>
-                </div>
-            </div>
-        </section>
-        <section class="directory">
-            <div class="business">
-                <h3>Business Name</h3>
-                <p>Business Tag Line</p>
-                <p>EMAIL: info@gmail.com</p>
-                <p>PHONE: 800-555-1234</p>
-                <p>URL: <a href="mybusiness.com">mybusiness.com</a></p>
-            </div>
-            <div class="business">
-                <h3>Business Name</h3>
-                <p>Business Tag Line</p>
-                <p>EMAIL: info@gmail.com</p>
-                <p>PHONE: 800-555-1234</p>
-                <p>URL: <a href="mybusiness.com">mybusiness.com</a></p>
-            </div>
-            <div class="business">
-                <h3>Business Name</h3>
-                <p>Business Tag Line</p>
-                <p>EMAIL: info@gmail.com</p>
-                <p>PHONE: 800-555-1234</p>
-                <p>URL: <a href="mybusiness.com">mybusiness.com</a></p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>Contact us at <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
-        <p>Chat with us on <a href="https://wa.me/26776376661" target="_blank">WhatsApp</a></p>
-        <p>&copy; <span id="current-year"></span> G.C Chemachema Chamber of Commerce | Last modified: <span id="last-modified"></span></p>
-        <script src="script.js"></script>
-        <p>Bobididi Ward, Molepolole, Gaborone</p>
-        <p>mbothepha@gmail.com</p>
-        <p>+267 76376661</p>
-        <div class="social-media">
-            <a href="https://youtube.com"><img src="images/youtube.png" alt="YouTube"></a>
-            <a href="https://twitter.com"><img src="images/twitter.jpg" alt="Twitter"></a>
-            <a href="https://linkedin.com"><img src="images/linkedin.png" alt="LinkedIn"></a>
+        <h1>Directory</h1>
+        <button id="toggle-view">Toggle View</button>
+        <div class="member-list grid-view">
+            <!-- Member cards will be inserted here by JavaScript -->
         </div>
-        <p>WDD231 Class Project | Tinny.B.Mosimanyana</p>
+    </main>
+    
+    <footer>
+        <div class="contact-info">
+            <p>Gaborone Chemachema Chamber of Commerce</p>
+            <p>P O Box 894</p>
+            <p>Botswana, Gaborone</p>
+            <p>Email: <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
+            <p>Phone: (267) 76376661</p>
+        </div>
+        <div class="social-media">
+            <a href="#"><img src="images/youtube-icon.png" alt="YouTube"></a>
+            <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+        </div>
+        <div class="developer-info">
+            <p>WDD 231 Class Project by <span class="Tinny">Tinny Bothepha Mosimanyana</span></p>
+            <p>Last Modified: <span id="last-modified"></span></p>
+        </div>
     </footer>
+    
+    <script src="script.js"></script>
 </body>
 </html>
+
+
+
 
 
