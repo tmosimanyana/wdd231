@@ -1,7 +1,4 @@
-/* Normalize CSS */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
-
-/* Global Styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -9,65 +6,111 @@ body {
 }
 
 header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     background-color: #333;
     color: white;
-    padding: 1rem;
-    text-align: center;
+    padding: 10px 20px;
+}
+
+header .logo img {
+    height: 50px;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 15px;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-nav ul li a {
+nav a {
     color: white;
     text-decoration: none;
 }
 
-main {
-    padding: 2rem;
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+.hero .button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.info-section {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.info-section div {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px;
+}
+
+.directory {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.directory .business {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 5px;
 }
 
 footer {
     background-color: #333;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 20px;
 }
 
-.grid-view {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
+footer .social-media img {
+    height: 24px;
+    margin: 0 10px;
 }
 
-.list-view {
-    display: block;
-}
+/* Mobile Styles */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+    }
 
-.member-card {
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 1rem;
-    text-align: center;
-}
-
-.member-card img {
-    width: 100%;
-    height: auto;
-}
-
-@media (max-width: 600px) {
-    nav ul li {
+    .hamburger-menu {
         display: block;
-        margin: 10px 0;
+    }
+
+    .hero .button {
+        display: block;
+        text-align: center;
+        margin: 10px auto;
+    }
+
+    .info-section, .directory {
+        flex-direction: column;
+        align-items: center;
     }
 }
+
 
 

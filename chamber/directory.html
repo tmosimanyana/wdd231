@@ -1,46 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Directory of Chamber Members">
-    <meta name="author" content="Tinny.B.Mosimanyana">
-    <meta property="og:title" content="Directory | G.Cchemachema chamber of commerce">
+    <meta name="description" content="Explore our directory of chamber members and discover local businesses in G.C Chemachema.">
+    <meta name="author" content="Tinny B. Mosimanyana">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Directory | G.C Chemachema Chamber of Commerce">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="C:\Users\tinny\Documents\wdd231\chamber\images"">
-    <meta property="og:url" content="C:\Users\tinny\Documents\wdd231\chamber\directory.html">
-    <link rel="icon" href="favicon.ico">
+    <meta property="og:image" content="https://mychamberofcommerce.com/images/og-image.png">
+    <meta property="og:url" content="https://mychamberofcommerce.com/directory.html">
+    <meta property="og:description" content="Explore our directory of chamber members and discover local businesses in G.C Chemachema.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="https://mychamberofcommerce.com/favicon.ico">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="styles.css">
-    <title>Directory | Your Town Chamber of Commerce</title>
+
+    <title>Directory | G.C Chemachema Chamber of Commerce</title>
 </head>
 <body>
     <header>
-        <h1>Your Town Chamber of Commerce</h1>
+        <div class="logo">
+            <img src="images/chamber-logo.png" alt="G.C Chemachema Chamber of Commerce Logo">
+            <h1>G.C Chemachema Chamber of Commerce</h1>
+        </div>
         <nav>
-            <ul>
+            <button class="hamburger-menu">☰</button>
+            <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Directory</a></li>
+                <li><a href="directory.html">Business Directory</a></li>
                 <li><a href="join.html">Join</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="podcast.html">Podcast</a></li>
+                <li><a href="events.html">Events</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section>
-            <button id="toggle-view">Toggle View</button>
-            <div id="members-list" class="grid-view">
-                <!-- Member cards will be inserted here by JavaScript -->
+        <section class="hero">
+            <img src="images/hero.jpg" alt="hero.jpg">
+            <a href="keynote.html" class="button">Keynote Tickets</a>
+        </section>
+        <section class="content">
+            <h2>Home</h2>
+            <div class="info-section">
+                <div class="events">
+                    <h3>Events</h3>
+                    <p>Details about upcoming events.</p>
+                </div>
+                <div class="current-weather">
+                    <h3>Current Weather</h3>
+                    <p>75°F, Party Cloudy</p>
+                    <p>High: 85°, Low: 52°</p>
+                    <p>Humidity: 34%</p>
+                    <p>Sunrise: 7:30am, Sunset: 9:59pm</p>
+                </div>
+                <div class="weather-forecast">
+                    <h3>Weather Forecast</h3>
+                    <p>Today: 90°F</p>
+                    <p>Wednesday: 89°F</p>
+                    <p>Thursday: 68°F</p>
+                </div>
+            </div>
+        </section>
+        <section class="directory">
+            <div class="business">
+                <h3>Business Name</h3>
+                <p>Business Tag Line</p>
+                <p>EMAIL: info@gmail.com</p>
+                <p>PHONE: 800-555-1234</p>
+                <p>URL: mybusiness.com</p>
+            </div>
+            <div class="business">
+                <h3>Business Name</h3>
+                <p>Business Tag Line</p>
+                <p>EMAIL: info@gmail.com</p>
+                <p>PHONE: 800-555-1234</p>
+                <p>URL: mybusiness.com</p>
+            </div>
+            <div class="business">
+                <h3>Business Name</h3>
+                <p>Business Tag Line</p>
+                <p>EMAIL: info@gmail.com</p>
+                <p>PHONE: 800-555-1234</p>
+                <p>URL: mybusiness.com</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Contact us at <a href="mbothepha@gmail.com">mbothepha@gmail.com</a></p>
-        <p>&copy; <span id="year"></span> G.Chemachema chamber of commerce | Last modified: <span id="mod-date"></span></p>
+        <p>Contact us at <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
+        <p>&copy; <span id="year"></span> G.C Chemachema Chamber of Commerce | Last modified: <span id="mod-date"></span></p>
+        <p>Bobididi Ward,Molepolole,Gaborone</p>
+        <p>mbothepha@gmail.com</p>
+        <p>+267 76376661</p>
+        <div class="social-media">
+            <a href="https://youtube.com"><img src="youtube.png" alt="YouTube"></a>
+            <a href="https://twitter.com"><img src="twitter.png" alt="Twitter"></a>
+            <a href="https://linkedin.com"><img src="linkedin.png" alt="LinkedIn"></a>
+        </div>
+        <p>WDD231 Class Project | Tinny.B.Mosimanyana</p>
         <script src="script.js"></script>
     </footer>
 </body>
 </html>
+
 
 
