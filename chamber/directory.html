@@ -3,70 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Directory of members of the Gaborone Chemachema Chamber of Commerce">
+    <meta name="description" content="Gaborone Chemachema Chamber of Commerce - Connecting Local Businesses and Community">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <meta property="og:title" content="Gaborone Chemachema Chamber of Commerce Directory">
+    <meta property="og:title" content="Gaborone Chemachema Chamber of Commerce">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://web.facebook.com/photo/?fbid=742876181367575&set=pcb.742876698034190">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/directory.html">
-    <title>Gaborone Chemachema Chamber of Commerce Directory</title>
+    <meta property="og:image" content="https://example.com/images/hero-image.jpg">
+    <meta property="og:url" content="https://example.com/index.html">
+    <title>Gaborone Chemachema Chamber of Commerce</title>
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <!-- External CSS -->
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css" integrity="sha256-Jf7FIFHZ4EUSUjv4K4hrm0RSd5B44kWEdYJLfVuLEiI=" crossorigin="anonymous">
-    <!-- Local CSS -->
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <!-- REVIEW: Review CSS file use -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="images/chamber-logo.png" alt="Gaborone Chemachema Chamber of Commerce">
+        <div class="container">
+            <div class="logo">
+                <img src="images/chamber-logo.png" alt="Gaborone Chemachema Chamber of Commerce">
+            </div>
+            <nav>
+                <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-            </ul>
-        </nav>
     </header>
     
     <main>
-        <h1>Directory</h1>
-        <button id="toggle-view">Toggle View</button>
-        <div class="member-list grid-view">
-            <!-- Member cards will be inserted here by JavaScript -->
-        </div>
+        <section class="hero">
+            <div class="container">
+                <h1>Welcome to Gaborone Chemachema Chamber of Commerce</h1>
+                <p>Your gateway to local business and community information.</p>
+                <button><a href="join.html">Join Us</a></button>
+            </div>
+        </section>
+        <section class="community-info container">
+            <h2>Community Highlights</h2>
+            <p>Discover our vibrant community and local events.</p>
+        </section>
+        <section class="weather container">
+            <h2>Current Weather</h2>
+            <!-- Weather Widget or API Integration -->
+        </section>
+        <section class="business-spotlights container">
+            <h2>Business Spotlights</h2>
+            <!-- Featured Business Information -->
+        </section>
     </main>
     
     <footer>
-        <div class="contact-info">
-            <p>Gaborone Chemachema Chamber of Commerce</p>
-            <p>P O Box 894</p>
-            <p>Botswana, Gaborone</p>
-            <p>Email: <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
-            <p>Phone: (267) 76376661</p>
-        </div>
-        <div class="social-media">
-            <a href="#"><img src="images/youtube-icon.png" alt="YouTube"></a>
-            <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
-            <a href="#"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
-        </div>
-        <div class="developer-info">
-            <p>WDD 231 Class Project by <span class="Tinny">Tinny Bothepha Mosimanyana</span></p>
-            <p>Last Modified: <span id="last-modified"></span></p>
+        <div class="container">
+            <div class="contact-info">
+                <p>Gaborone Chemachema Chamber of Commerce</p>
+                <p>P O Box 894</p>
+                <p>Botswana, Gaborone</p>
+                <p>Email: <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
+                <p>Phone: (267) 76376661</p>
+            </div>
+            <div class="social-media">
+                <a href="#"><img src="images/youtube-icon.png" alt="YouTube"></a>
+                <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
+            </div>
+            <div class="developer-info">
+                <p>WDD 231 Class Project by <span class="Tinny">Tinny Bothepha Mosimanyana</span></p>
+                <p>Last Modified: <span id="last-modified"></span></p>
+            </div>
         </div>
     </footer>
     
-    <!-- External JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
-    <!-- Your Custom JavaScript -->
     <script src="js/script.js"></script>
 </body>
 </html>
+
+
 
 
 

@@ -1,84 +1,116 @@
-/* Resetting default styles */
-html, body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Normalize CSS */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css');
 
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
     color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
 header {
-    background-color: #333;
+    background: #004d99;
     color: #fff;
     padding: 10px 0;
 }
 
-.logo img {
-    max-width: 100px;
+header .container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav ul {
-    list-style-type: none;
+header .logo img {
+    max-width: 120px;
+}
+
+nav {
+    position: relative;
+}
+
+.nav-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    display: block;
+}
+
+.nav-links {
+    display: none;
+    list-style: none;
     padding: 0;
     margin: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 10px;
+.nav-links li {
+    margin: 0;
 }
 
-nav ul li a {
+.nav-links li a {
     color: #fff;
     text-decoration: none;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 20px;
-}
-
-.member-list {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.member-list.grid-view .member-card {
-    width: 30%;
-    margin: 10px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    display: block;
     padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #fff;
 }
 
-.member-list.list-view .member-card {
-    width: 100%;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+.nav-links li a:hover {
+    background: #003366;
+}
+
+.hero {
+    background: #0099cc;
+    color: #fff;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.hero .container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    margin: 0;
+}
+
+button {
+    background: #0066cc;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #004d99;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.community-info, .weather, .business-spotlights {
+    margin: 20px 0;
 }
 
 footer {
-    background-color: #333;
+    background: #003366;
     color: #fff;
+    padding: 20px 0;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+}
+
+footer .container {
+    width: 90%;
+    margin: 0 auto;
 }
 
 footer a {
@@ -86,22 +118,54 @@ footer a {
     text-decoration: none;
 }
 
-footer a:hover {
-    text-decoration: underline;
+.social-media a {
+    margin: 0 10px;
 }
 
-/* Responsive styles */
-@media (max-width: 768px) {
-    .member-list.grid-view .member-card {
-        width: 45%;
+.social-media img {
+    width: 24px;
+    height: 24px;
+}
+
+.developer-info {
+    margin-top: 10px;
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .nav-toggle {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-links li {
+        margin: 0 10px;
+    }
+
+    .nav-links li a {
+        padding: 10px 20px;
+        border: none;
+    }
+
+    .hero {
+        padding: 50px 0;
+    }
+
+    .hero .container {
+        width: 80%;
     }
 }
 
-@media (max-width: 480px) {
-    .member-list.grid-view .member-card {
-        width: 100%;
+@media (min-width: 1024px) {
+    .container {
+        width: 80%;
     }
 }
+
 
 
 
