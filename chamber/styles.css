@@ -1,101 +1,99 @@
-/* General styles */
+/* Base styles */
 body {
     font-family: Arial, sans-serif;
-    color: #333;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-header {
+header, footer {
     background-color: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 1rem;
+    text-align: center;
 }
 
-header .logo img {
-    width: 150px;
+header h1 {
+    margin: 0;
 }
 
-header nav ul {
+nav ul {
     list-style: none;
     padding: 0;
 }
 
-header nav ul li {
+nav ul li {
     display: inline;
-    margin: 0 15px;
+    margin: 0 1rem;
 }
 
-header nav ul li a {
+nav ul li a {
     color: #fff;
     text-decoration: none;
 }
 
 main {
-    padding: 20px;
+    padding: 1rem;
 }
 
-h1 {
-    color: #333;
-}
-
-.member-list {
+/* Hero Image Section */
+#hero {
+    background: url('https://mychamberofcommerce.com/images/hero.jpg') no-repeat center center;
+    background-size: cover;
+    height: 300px;
     display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+    align-items: center;
+    justify-content: center;
 }
 
-.member-card {
-    background: #fff;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: calc(33.333% - 20px);
-    box-sizing: border-box;
-}
-
-.member-card h2 {
-    margin-top: 0;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
+.hero-content {
     text-align: center;
+    color: #fff;
 }
 
-footer .social-media a {
-    margin: 0 10px;
+.cta-button {
+    background-color: #f90;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 5px;
 }
 
-footer .social-media img {
-    width: 24px;
+/* Current Events Section */
+#current-events {
+    margin: 2rem 0;
 }
 
-/* Grid view styles */
-.grid-view .member-card {
-    width: calc(33.333% - 20px);
+/* Weather Section */
+#weather {
+    margin: 2rem 0;
 }
 
-/* List view styles */
-.list-view {
-    flex-direction: column;
+/* Company Spotlight Section */
+#spotlights {
+    margin: 2rem 0;
 }
 
-.list-view .member-card {
-    width: 100%;
+.spotlight {
+    margin-bottom: 1rem;
 }
 
-/* Responsive styles */
+.spotlight-logo {
+    max-width: 100px;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-    .member-list {
-        flex-direction: column;
+    header, footer {
+        padding: 0.5rem;
     }
 
-    .member-card {
-        width: 100%;
+    #hero {
+        height: 200px;
+    }
+
+    .cta-button {
+        padding: 0.5rem;
     }
 }
 

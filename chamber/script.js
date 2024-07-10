@@ -1,17 +1,17 @@
 // script.js
 document.addEventListener('DOMContentLoaded', function() {
-    const toggleButton = document.getElementById('toggle-view');
-    const memberList = document.querySelector('.member-list');
+    const yearSpan = document.getElementById('year');
+    const modDateSpan = document.getElementById('mod-date');
 
-    toggleButton.addEventListener('click', function() {
-        memberList.classList.toggle('list-view');
-        memberList.classList.toggle('grid-view');
-    });
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 
-    // Example: Display last modified date
-    const lastModifiedElement = document.getElementById('last-modified');
-    lastModifiedElement.textContent = document.lastModified;
+    if (modDateSpan) {
+        modDateSpan.textContent = document.lastModified;
+    }
 });
+
 
 
 
