@@ -3,79 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gaborone Chemachema Chamber of Commerce - Connecting Local Businesses and Community">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <meta property="og:title" content="Gaborone Chemachema Chamber of Commerce">
+    <meta name="description" content="Explore our directory of chamber members and discover local businesses in My Town.">
+    <meta name="author" content="Tinny B. Mosimanyana">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Directory | G.C Chemachema Chamber of Commerce">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/images/hero-image.jpg">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/directory.html">
-    <title>Gaborone Chemachema Chamber of Commerce</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <meta property="og:image" content="images/og-image.png">
+    <meta property="og:url" content="https://yourdomain.com/directory.html">
+    <meta property="og:description" content="Explore our directory of chamber members and discover local businesses in My Town.">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <title>Directory | G.C Chemachema Chamber of Commerce</title>
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="logo">
-                <img src="images/chamber-logo.png" alt="Gaborone Chemachema Chamber of Commerce">
-            </div>
-            <nav>
-                <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="discover.html">Discover</a></li>
-                    <li><a href="directory.html">Directory</a></li>
-                    <li><a href="join.html">Join</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>G.C Chemachema Chamber of Commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
     </header>
-    
+
     <main>
-        <section class="hero">
-            <div class="container">
-                <h1>Welcome to Gaborone Chemachema Chamber of Commerce</h1>
-                <p>Your gateway to local business and community information.</p>
-                <a href="join.html" class="btn">Join Us</a>
-            </div>
-        </section>
-        <section class="community-info container">
-            <h2>Community Highlights</h2>
-            <p>Discover our vibrant community and local events.</p>
-        </section>
-        <section class="weather container">
-            <h2>Current Weather</h2>
-            <!-- Weather Widget or API Integration -->
-        </section>
-        <section class="business-spotlights container">
-            <h2>Business Spotlights</h2>
-            <!-- Featured Business Information -->
+        <section>
+            <h2>Directory</h2>
+            <p>Explore our directory of chamber members.</p>
         </section>
     </main>
-    
+
     <footer>
-        <div class="container">
-            <div class="contact-info">
-                <p>Gaborone Chemachema Chamber of Commerce</p>
-                <p>P O Box 894</p>
-                <p>Botswana, Gaborone</p>
-                <p>Email: <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
-                <p>Phone: (267) 76376661</p>
-            </div>
-            <div class="social-media">
-                <a href="#"><img src="images/youtube-icon.png" alt="YouTube"></a>
-                <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
-                <a href="#"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
-            </div>
-            <div class="developer-info">
-                <p>WDD 231 Class Project by <span class="Tinny">Tinny Bothepha Mosimanyana</span></p>
-                <p>Last Modified: <span id="last-modified"></span></p>
-            </div>
-        </div>
+        <p>Contact us at <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
+        <p>&copy; <span id="year"></span> G.C Chemachema Chamber of Commerce | Last modified: <span id="mod-date"></span></p>
+        <script src="scripts/script.js"></script>
     </footer>
-    
-    <script src="js/script.js"></script>
 </body>
 </html>
 
