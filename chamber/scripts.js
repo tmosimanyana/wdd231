@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Weather Section
     const weatherApiKey = 'YOUR_API_KEY';
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=Molepolole,BW&units=metric&appid=${weatherApiKey}`;
-    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=Molepolole,BW&units=metric&appid=${weatherApiKey}`;
 
     fetch(weatherUrl)
         .then(response => response.json())
@@ -14,18 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
         })
         .catch(error => console.error('Error fetching weather data:', error));
-
-    fetch(forecastUrl)
-        .then(response => response.json())
-        .then(data => {
-            const weatherInfo = document.getElementById('weather-info');
-            for (let i = 0; i < data.list.length; i += 8) {
-                weatherInfo.innerHTML += `
-                    <p>Forecast (${new Date(data.list[i].dt_txt).toLocaleDateString()}): ${data.list[i].main.temp.toFixed(0)}°C, ${capitalizeFirstLetter(data.list[i].weather[0].description)}</p>
-                `;
-            }
-        })
-        .catch(error => console.error('Error fetching forecast data:', error));
 
     // Business Spotlights
     fetch('spotlights.json')
@@ -48,3 +35,4 @@ document.addEventListener('DOMContentLoaded', function () {
         return string.replace(/\b\w/g, char => char.toUpperCase());
     }
 });
+
