@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Weather Section
-    const weatherApiKey = 'YOUR_API_KEY';
+    const weatherApiKey = '5c7e429e1b20f30b60de00a18bcc0e92';
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=Molepolole,BW&units=metric&appid=${weatherApiKey}`;
 
     fetch(weatherUrl)
