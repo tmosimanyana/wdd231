@@ -1,30 +1,24 @@
-/* Base styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 header, footer {
     background-color: #333;
     color: #fff;
-    padding: 1rem;
     text-align: center;
-}
-
-header h1 {
-    margin: 0;
+    padding: 1rem 0;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 1rem;
+    margin-right: 10px;
 }
 
 nav ul li a {
@@ -36,65 +30,54 @@ main {
     padding: 1rem;
 }
 
-/* Hero Image Section */
-#hero {
-    background: url('https://mychamberofcommerce.com/images/hero.jpg') no-repeat center center;
-    background-size: cover;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+#hero img {
+    width: 100%;
+    height: auto;
 }
 
-.hero-content {
-    text-align: center;
-    color: #fff;
+.montage img {
+    width: 100%;
+    height: auto;
 }
 
 .cta-button {
-    background-color: #f90;
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 20px;
+    background-color: #007BFF;
     color: #fff;
-    padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
 }
 
-/* Current Events Section */
-#current-events {
-    margin: 2rem 0;
+.cta-button:hover {
+    background-color: #0056b3;
 }
 
-/* Weather Section */
-#weather {
-    margin: 2rem 0;
+#weather-info, #spotlights, #business-list {
+    margin-top: 1rem;
 }
 
-/* Company Spotlight Section */
-#spotlights {
-    margin: 2rem 0;
+form {
+    display: flex;
+    flex-direction: column;
 }
 
-.spotlight {
-    margin-bottom: 1rem;
+form label, form input, form select, form button {
+    margin-bottom: 10px;
 }
 
-.spotlight-logo {
-    max-width: 100px;
+form button {
+    padding: 10px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header, footer {
-        padding: 0.5rem;
-    }
-
-    #hero {
-        height: 200px;
-    }
-
-    .cta-button {
-        padding: 0.5rem;
-    }
+form button:hover {
+    background-color: #0056b3;
 }
 
 
