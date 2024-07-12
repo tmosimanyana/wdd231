@@ -1,35 +1,36 @@
-body {
-    font-family: 'Roboto', sans-serif;
+/* Reset and general styles */
+body, html {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
 }
 
+/* Header styles */
 header {
-    display: flex;
-    align-items: center;
+    background-color: #f0f0f0;
     padding: 20px;
-    background-color: #f8f8f8;
-    border-bottom: 1px solid #ddd;
+    text-align: center;
 }
 
-header img {
-    border-radius: 50%;
-    margin-right: 20px;
+#profile-picture {
+    width: 100px; /* Adjusted size */
+    height: 100px; /* Adjusted size */
+    border-radius: 50%; /* Rounded shape for profile picture */
 }
 
 header h1 {
-    flex-grow: 1;
+    margin-top: 10px;
+    font-size: 24px;
 }
 
 nav ul {
-    display: flex;
-    list-style: none;
+    list-style-type: none;
     padding: 0;
 }
 
 nav ul li {
-    margin-right: 15px;
+    display: inline;
+    margin-right: 10px;
 }
 
 nav ul li a {
@@ -37,47 +38,39 @@ nav ul li a {
     color: #333;
 }
 
+nav ul li a:hover {
+    color: #555;
+}
+
+/* Main content styles */
 main {
     padding: 20px;
 }
 
 section {
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
-section h2 {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-}
-
-section img {
+#hero-image {
     max-width: 100%;
     height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px; /* Optional: Rounded corners for hero image */
 }
 
-#courses {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.course {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    flex: 1 1 calc(33.333% - 20px);
-    box-sizing: border-box;
-}
-
-.course.completed {
-    background-color: #e0ffe0;
-    border-color: #a0ffa0;
-}
-
+/* Footer styles */
 footer {
-    background-color: #f8f8f8;
-    padding: 20px;
+    background-color: #333;
+    color: #fff;
     text-align: center;
-    border-top: 1px solid #ddd;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 5px 0;
 }
 
