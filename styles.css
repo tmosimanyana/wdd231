@@ -1,83 +1,27 @@
-/* Reset and general styles */
-body, html {
-    margin: 0;
-    padding: 0;
+body {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Header styles */
-header {
-    background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-}
-
 #profile-picture {
-    width: 100px; /* Adjusted size */
-    height: 100px; /* Adjusted size */
-    border-radius: 50%; /* Rounded shape for profile picture */
-}
-
-header h1 {
-    margin-top: 10px;
-    font-size: 24px;
+    width: 100px;
+    height: auto;
+    border-radius: 50%;
 }
 
 nav ul {
+    display: flex;
     list-style-type: none;
     padding: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-}
-
-nav ul li a:hover {
-    color: #555;
-}
-
-/* Main content styles */
-main {
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 30px;
+    margin-right: 15px;
 }
 
 #hero-image {
-    max-width: 100%; /* Ensure the image scales with its container */
-    height: auto; /* Maintain aspect ratio */
-    display: block; /* Ensures the image behaves as a block element */
-    margin: 0 auto; /* Centers the image horizontally */
-    border-radius: 8px; /* Optional: Rounded corners for hero image */
-    max-height: 300px; /* Adjust for optimal display on different screens */
-}
-
-@media (max-width: 768px) {
-    #hero-image {
-        max-height: 200px; /* Example: Adjust for smaller screens */
-    }
-}
-
-/* Footer styles */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
     width: 100%;
+    height: auto;
 }
 
-footer p {
-    margin: 5px 0;
-}
+/* Additional styles can be added here */
 
