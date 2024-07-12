@@ -1,34 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const currentYear = new Date().getFullYear();
-    document.getElementById("currentyear").textContent = currentYear;
+    // Set the current year in the footer
+    const currentYearSpan = document.getElementById('currentyear');
+    currentYearSpan.textContent = new Date().getFullYear();
 
-    const lastModified = document.lastModified;
-    document.getElementById("lastModified").textContent = `Last Update: ${lastModified}`;
+    // Set the last modified date in the footer
+    const lastModifiedSpan = document.getElementById('lastModified');
+    lastModifiedSpan.textContent = `Last updated: ${document.lastModified}`;
 
+    // Course list array
     const courses = [
-        { code: "CSE 110", completed: true },
-        { code: "WDD 130", completed: false },
-        { code: "CSE 111", completed: true },
-        { code: "CSE 210", completed: false },
-        { code: "WDD 131", completed: true },
-        { code: "WDD 231", completed: false },
+        { code: 'CSE 110', name: 'Introduction to Programming', category: 'CSE', completed: true },
+        { code: 'CSE 210', name: 'Data Structures', category: 'CSE', completed: false },
+        { code: 'WDD 130', name: 'Web Design', category: 'WDD', completed: true },
+        { code: 'WDD 131', name: 'Web Development', category: 'WDD', completed: false },
+        { code: 'CSE 111', name: 'Discrete Mathematics', category: 'CSE', completed: true },
+        { code: 'WDD 231', name: 'Advanced Web Development', category: 'WDD', completed: false }
     ];
 
-    function displayCourses(filter = 'all') {
-        const courseContainer = document.getElementById('courses');
+    const courseContainer = document.getElementById('courses');
+
+    // Function to display courses based on filter
+    function displayCourses(filter) {
         courseContainer.innerHTML = '';
-        courses.forEach(course => {
-            if (filter === 'all' || course.code.startsWith(filter)) {
-                const courseDiv = document.createElement('div');
-                courseDiv.textContent = course.code;
-                if (course.completed) {
-                    courseDiv.style.backgroundColor = 'lightgreen';
-                }
-                courseContainer.appendChild(courseDiv);
-            }
+        let filteredCourses = courses;
+        if (filter !== 'all') {
+            filteredCourses = courses.filter(course => course.category === filter);
+        }
+
+        filteredCourses.forEach(course => {
+            const courseDiv = document.createElement('div');
+            courseDiv.textContent = `${course.code}: ${course.name}`;
+            courseDiv.classList.add(course.completed ? 'completed' : 'pending');
+            courseContainer.appendChild(courseDiv);
         });
     }
 
-    window.filterCourses = displayCourses;
-    displayCourses();
+    // Filter buttons functionality
+    window.filterCourses = (filter) => {
+        displayCourses(filter);
+    };
+
+    // Display all courses initially
+    displayCourses('all');
 });
+
