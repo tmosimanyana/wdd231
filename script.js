@@ -1,47 +1,56 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Update current year in the footer
-    document.getElementById("currentyear").textContent = new Date().getFullYear();
+document.addEventListener('DOMContentLoaded', () => {
+    const coursesContainer = document.getElementById('courses-container');
+    const currentYear = document.getElementById('current-year');
+    const lastModified = document.getElementById('last-modified');
+    const totalCreditsElem = document.getElementById('total-credits');
+    
+    // Display current year and last modified date
+    currentYear.textContent = new Date().getFullYear();
+    lastModified.textContent = `Last Modified: ${document.lastModified}`;
 
-    // Update last modified date in the footer
-    document.getElementById("lastModified").textContent = `Last Update: ${document.lastModified}`;
-
-    // Array of course objects
-    const courses = [
-        { id: 1, code: "CSE 110", name: "Intro to Computer Science", category: "CSE", completed: false },
-        { id: 2, code: "WDD 130", name: "Web Development", category: "WDD", completed: true },
-        { id: 3, code: "CSE 111", name: "Data Structures", category: "CSE", completed: false },
-        { id: 4, code: "CSE 210", name: "Algorithms", category: "CSE", completed: false },
-        { id: 5, code: "WDD 131", name: "Advanced Web Development", category: "WDD", completed: true },
-        { id: 6, code: "WDD 231", name: "Web Programming", category: "WDD", completed: false }
-    ];
-
-    // Function to display courses based on filter
-    function displayCourses(filter) {
-        const courseContainer = document.getElementById("courses");
-        courseContainer.innerHTML = "";
-
-        const filteredCourses = filter === "all" ? courses : courses.filter(course => course.category === filter);
-
-        filteredCourses.forEach(course => {
-            const courseElement = document.createElement("div");
-            courseElement.className = `course ${course.completed ? 'completed' : ''}`;
-            courseElement.textContent = `${course.code} - ${course.name}`;
-            courseContainer.appendChild(courseElement);
+    function renderCourses(courses) {
+        coursesContainer.innerHTML = '';
+        let totalCredits = 0;
+        
+        courses.forEach(course => {
+            const courseCard = document.createElement('div');
+            courseCard.classList.add('course-card');
+            if (course.completed) {
+                courseCard.classList.add('completed');
+            }
+            
+            courseCard.innerHTML = `
+                <h3>${course.title}</h3>
+                <p><strong>Subject:</strong> ${course.subject}</p>
+                <p><strong>Number:</strong> ${course.number}</p>
+                <p><strong>Credits:</strong> ${course.credits}</p>
+                <p><strong>Description:</strong> ${course.description}</p>
+                <p><strong>Technology:</strong> ${course.technology.join(', ')}</p>
+            `;
+            
+            coursesContainer.appendChild(courseCard);
+            if (course.completed) {
+                totalCredits += course.credits;
+            }
         });
+
+        totalCreditsElem.textContent = totalCredits;
     }
 
-    // Event listeners for filter buttons
-    document.querySelector("button[onclick='filterCourses(\"all\")']").addEventListener("click", function() {
-        displayCourses("all");
-    });
-    document.querySelector("button[onclick='filterCourses(\"CSE\")']").addEventListener("click", function() {
-        displayCourses("CSE");
-    });
-    document.querySelector("button[onclick='filterCourses(\"WDD\")']").addEventListener("click", function() {
-        displayCourses("WDD");
-    });
+    function filterCourses(subject) {
+        if (subject === 'all') {
+            renderCourses(courses);
+        } else {
+            const filteredCourses = courses.filter(course => course.subject === subject);
+            renderCourses(filteredCourses);
+        }
+    }
 
-    // Initial display of all courses
-    displayCourses("all");
+    // Initial rendering of all courses
+    renderCourses(courses);
+
+    // Export the filterCourses function to be accessible in the HTML file
+    window.filterCourses = filterCourses;
 });
+
 
