@@ -4,29 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Home Page</title>
+    <meta name="description" content="Explore the course list for the Web and Computer Programming Certificate. Filter courses by CSE or WDD, view completed courses, and see total credits dynamically." />
+    <meta name="author" content="Your Name Here" />
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <script src="courses.js" defer></script>
     <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>Course List</h1>
+        <h1>Course Home Page</h1>
         <nav>
-            <button onclick="filterCourses('all')">All Courses</button>
-            <button onclick="filterCourses('CSE')">CSE Courses</button>
-            <button onclick="filterCourses('WDD')">WDD Courses</button>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </nav>
     </header>
     <main>
-        <section id="courses-container">
-            <!-- Courses will be dynamically populated here -->
+        <section id="certificate-section">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div id="course-list">
+                <!-- Course cards will be dynamically populated here -->
+            </div>
+            <div>
+                <button onclick="filterCourses('all')">All Courses</button>
+                <button onclick="filterCourses('CSE')">CSE Courses</button>
+                <button onclick="filterCourses('WDD')">WDD Courses</button>
+            </div>
+            <p>Total credits required: <span id="total-credits">0</span></p>
         </section>
-        <footer>
-            <p>&copy; <span id="current-year"></span> - Web and Computer Programming Certificate</p>
-            <p id="last-modified"></p>
-            <p>Total Credits: <span id="total-credits">0</span></p>
-        </footer>
     </main>
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Your Name Here</p>
+        <p id="lastModified"></p>
+    </footer>
 </body>
 </html>
 
