@@ -1,50 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Course Home Page</title>
-        <meta name="description" content="Explore the course list for the Web and Computer Programming Certificate. Filter courses by CSE or WDD, view completed courses, and see total credits dynamically." />
-        <meta name="author" content="Tinny Bothepha Mosimanyana" />
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
-        <script src="courses.js" defer></script>
-        <script src="script.js" defer></script>
-    </head>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Home Page</title>
+    <meta name="description" content="Explore the course list for the Web and Computer Programming Certificate. Filter courses by CSE or WDD, view completed courses, and see total credits dynamically." />
+    <meta name="author" content="Tinny Mosimanyana" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="courses.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
 <body>
     <header>
         <h1>Course Home Page</h1>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#" id="show-all">All Courses</a></li>
+                <li><a href="#" id="show-cse">CSE Courses</a></li>
+                <li><a href="#" id="show-wdd">WDD Courses</a></li>
             </ul>
         </nav>
     </header>
+
     <main>
-        <section id="certificate-section">
-            <h2>Web and Computer Programming Certificate</h2>
-            <div id="course-list">
-                <!-- Course cards will be dynamically populated here -->
-            </div>
-            <div>
-                <button onclick="filterCourses('all')">All Courses</button>
-                <button onclick="filterCourses('CSE')">CSE Courses</button>
-                <button onclick="filterCourses('WDD')">WDD Courses</button>
-            </div>
-            <p>Total credits required: <span id="total-credits">0</span></p>
+        <section id="course-list">
+            <h2>Course List</h2>
+            <!-- Course cards will be dynamically inserted here -->
+        </section>
+
+        <section id="course-filters">
+            <h2>Filter Courses</h2>
+            <button id="show-all">Show All</button>
+            <button id="show-cse">Show CSE Courses</button>
+            <button id="show-wdd">Show WDD Courses</button>
+        </section>
+
+        <section id="credit-summary">
+            <h2>Credit Summary</h2>
+            <p>Total Credits Required: <span id="total-credits">0</span></p>
         </section>
     </main>
+
     <footer>
-        <p>&copy; <span id="currentYear"></span> Tinny B.Mosimanyana</p>
-        <p id="lastModified"></p>
+        <p>&copy; <span id="current-year"></span> Your Company Name. All rights reserved.</p>
+        <p>Last modified: <span id="last-modified"></span></p>
     </footer>
+
+    <script>
+        // JavaScript for dynamic content
+        document.addEventListener('DOMContentLoaded', () => {
+            const currentYear = new Date().getFullYear();
+            document.getElementById('current-year').textContent = currentYear;
+
+            document.getElementById('last-modified').textContent = document.lastModified;
+
+            // Example courses data
+            const courses = [
+                {
+                    subject: 'CSE',
+                    number: 110,
+                    title: 'Introduction to Programming',
+                    credits: 2,
+                    certificate: 'Web and Computer Programming',
+                    description: 'This course will introduce students to programming. It will introduce the building blocks of programming languages (variables, decisions, calculations, loops, array, and input/output) and use them to solve problems.',
+                    technology: ['Python'],
+                    completed: true
+                },
+                {
+                    subject: 'WDD',
+                    number: 130,
+                    title: 'Web Fundamentals',
+                    credits: 2,
+                    certificate: 'Web and Computer Programming',
+                    description: 'This course introduces students to the World Wide Web and to careers in web site design and development. The course is hands on with students actually participating in simple web designs and programming. It is anticipated that students who complete this course will understand the fields of web design and development and will have a good idea if they want to pursue this degree as a major.',
+                    technology: ['HTML', 'CSS'],
+                    completed: false
+                }
+                // Add more courses as needed
+            ];
+
+            const courseListElement = document.getElementById('course-list');
+            const totalCreditsElement = document.getElementById('total-credits');
+
+            function renderCourses(filter) {
+                courseListElement.innerHTML = '';
+                let totalCredits = 0;
+
+                courses.filter(course => filter === 'all' || course.subject === filter).forEach(course => {
+                    const courseCard = document.createElement('div');
+                    courseCard.className = `course-card ${course.completed ? 'completed' : ''}`;
+                    courseCard.innerHTML = `
+                        <h3>${course.title}</h3>
+                        <p><strong>Course Code:</strong> ${course.subject} ${course.number}</p>
+                        <p><strong>Description:</strong> ${course.description}</p>
+                        <p><strong>Credits:</strong> ${course.credits}</p>
+                        <p><strong>Technologies:</strong> ${course.technology.join(', ')}</p>
+                    `;
+                    courseListElement.appendChild(courseCard);
+                    totalCredits += course.credits;
+                });
+
+                totalCreditsElement.textContent = totalCredits;
+            }
+
+            document.getElementById('show-all').addEventListener('click', () => renderCourses('all'));
+            document.getElementById('show-cse').addEventListener('click', () => renderCourses('CSE'));
+            document.getElementById('show-wdd').addEventListener('click', () => renderCourses('WDD'));
+
+            renderCourses('all');
+        });
+    </script>
 </body>
 </html>
-
