@@ -6,9 +6,53 @@
     <title>Tinny B. Mosimanyana - Course Home Page</title>
     <meta name="description" content="Course home page for Tinny B. Mosimanyana">
     <meta name="author" content="Tinny B. Mosimanyana">
+    
+    <!-- Google Font API embed code required -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro&family=Markazi+Text:wght@400;450&display=swap" rel="stylesheet">
 
-    <!-- Link to your main CSS file -->
-    <link rel="stylesheet" href="styles.css">
+    <!-- Embedded CSS -->
+    <style>
+        body {
+            font-family: 'Crimson Pro', serif;
+            font-size: 48px;
+        }
+
+        .markazi-text {
+            font-family: 'Markazi Text';
+            font-weight: 400;
+        }
+
+        @supports (font-variation-settings: "wght" 450) {
+            .markazi-text {
+                font-weight: 450;
+            }
+        }
+
+        #profile-picture {
+            width: 100px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin-right: 15px;
+        }
+
+        #hero-image {
+            width: 100%;
+            height: auto;
+        }
+
+        /* Additional styles can be added here */
+    </style>
 </head>
 <body>
     <header>
@@ -54,8 +98,9 @@
         <p id="lastModified"></p>
     </footer>
 
+    <!-- Embedded JavaScript -->
     <script>
-        // Your JavaScript code goes here
+        // JavaScript code
         function filterCourses(category) {
             // Implement your course filtering logic here
         }
