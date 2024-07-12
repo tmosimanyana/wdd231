@@ -6,14 +6,40 @@
     <title>Tinny B. Mosimanyana - Course Home Page</title>
     <meta name="description" content="Course home page for Tinny B. Mosimanyana">
     <meta name="author" content="Tinny B. Mosimanyana">
+    
+    <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts API link -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
+    <!-- Link to your main CSS file -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- Embedded JavaScript -->
+    <script>
+        // Your JavaScript code goes here
+        function filterCourses(category) {
+            // Implement your course filtering logic here
+        }
+
+        // Example of setting current year dynamically
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+    </script>
+
+    <style>
+        /* Additional inline styles if needed */
+        #profile-picture {
+            width: 100px; /* Adjust the width as per your design */
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 50%; /* Optional: Rounded corners for a nicer look */
+        }
+    </style>
 </head>
 <body>
     <header>
-        <img src="images/profile.png" alt="Profile Picture">
+        <img src="images/profile.png" alt="Profile Picture" id="profile-picture">
         <h1>Tinny B. Mosimanyana</h1>
         <nav>
             <ul>
@@ -35,7 +61,7 @@
         </section>
         <section>
             <h2>Gaborone, Botswana</h2>
-            <img src="images/gaborone-dam.jpg" alt="Gaborone Dam">
+            <img src="images/gaborone-dam.jpg" alt="Gaborone Dam" id="hero-image">
             <p>Gaborone Dam</p>
         </section>
         <section>
@@ -54,6 +80,5 @@
         <p>&copy; <span id="currentyear"></span> Tinny Bothepha Mosimanyana, Botswana</p>
         <p id="lastModified"></p>
     </footer>
-    <script src="script.js" defer></script>
 </body>
 </html>
