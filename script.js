@@ -1,56 +1,58 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const coursesContainer = document.getElementById('courses-container');
-    const currentYear = document.getElementById('current-year');
-    const lastModified = document.getElementById('last-modified');
-    const totalCreditsElem = document.getElementById('total-credits');
-    
-    // Display current year and last modified date
-    currentYear.textContent = new Date().getFullYear();
-    lastModified.textContent = `Last Modified: ${document.lastModified}`;
+// courses.js
+const courses = [
+    {
+        subject: 'CSE',
+        number: 110,
+        title: 'Introduction to Programming',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course will introduce students to programming...',
+        technology: ['Python'],
+        completed: true // Example: Mark course as completed
+    },
+    // Add more course objects as needed
+];
 
-    function renderCourses(courses) {
-        coursesContainer.innerHTML = '';
+// script.js
+document.addEventListener('DOMContentLoaded', function() {
+    const courseList = document.getElementById('course-list');
+    const totalCreditsElement = document.getElementById('total-credits');
+
+    // Function to filter courses based on subject (CSE or WDD)
+    function filterCourses(subject) {
+        courseList.innerHTML = ''; // Clear existing courses
         let totalCredits = 0;
-        
+
         courses.forEach(course => {
-            const courseCard = document.createElement('div');
-            courseCard.classList.add('course-card');
-            if (course.completed) {
-                courseCard.classList.add('completed');
-            }
-            
-            courseCard.innerHTML = `
-                <h3>${course.title}</h3>
-                <p><strong>Subject:</strong> ${course.subject}</p>
-                <p><strong>Number:</strong> ${course.number}</p>
-                <p><strong>Credits:</strong> ${course.credits}</p>
-                <p><strong>Description:</strong> ${course.description}</p>
-                <p><strong>Technology:</strong> ${course.technology.join(', ')}</p>
-            `;
-            
-            coursesContainer.appendChild(courseCard);
-            if (course.completed) {
+            if (subject === 'all' || course.subject === subject) {
+                const courseCard = document.createElement('div');
+                courseCard.classList.add('course-card');
+                if (course.completed) {
+                    courseCard.classList.add('completed');
+                }
+                courseCard.innerHTML = `
+                    <h3>${course.title}</h3>
+                    <p>${course.description}</p>
+                    <p>Credits: ${course.credits}</p>
+                `;
+                courseList.appendChild(courseCard);
                 totalCredits += course.credits;
             }
         });
 
-        totalCreditsElem.textContent = totalCredits;
+        totalCreditsElement.textContent = totalCredits;
     }
 
-    function filterCourses(subject) {
-        if (subject === 'all') {
-            renderCourses(courses);
-        } else {
-            const filteredCourses = courses.filter(course => course.subject === subject);
-            renderCourses(filteredCourses);
-        }
-    }
-
-    // Initial rendering of all courses
-    renderCourses(courses);
-
-    // Export the filterCourses function to be accessible in the HTML file
-    window.filterCourses = filterCourses;
+    // Initial load: Show all courses
+    filterCourses('all');
 });
+
+// Display current year in footer
+const currentYear = new Date().getFullYear();
+document.getElementById('currentYear').textContent = currentYear;
+
+// Display last modified date in footer
+const lastModified = new Date(document.lastModified).toLocaleString();
+document.getElementById('lastModified').textContent = `Last Modified: ${lastModified}`;
 
 
