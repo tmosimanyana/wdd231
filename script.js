@@ -1,46 +1,47 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Set the current year in the footer
-    const currentYearSpan = document.getElementById('currentyear');
-    currentYearSpan.textContent = new Date().getFullYear();
+document.addEventListener("DOMContentLoaded", function() {
+    // Update current year in the footer
+    document.getElementById("currentyear").textContent = new Date().getFullYear();
 
-    // Set the last modified date in the footer
-    const lastModifiedSpan = document.getElementById('lastModified');
-    lastModifiedSpan.textContent = `Last updated: ${document.lastModified}`;
+    // Update last modified date in the footer
+    document.getElementById("lastModified").textContent = `Last Update: ${document.lastModified}`;
 
-    // Course list array
+    // Array of course objects
     const courses = [
-        { code: 'CSE 110', name: 'Introduction to Programming', category: 'CSE', completed: true },
-        { code: 'CSE 210', name: 'Data Structures', category: 'CSE', completed: false },
-        { code: 'WDD 130', name: 'Web Design', category: 'WDD', completed: true },
-        { code: 'WDD 131', name: 'Web Development', category: 'WDD', completed: false },
-        { code: 'CSE 111', name: 'Discrete Mathematics', category: 'CSE', completed: true },
-        { code: 'WDD 231', name: 'Advanced Web Development', category: 'WDD', completed: false }
+        { id: 1, code: "CSE 110", name: "Intro to Computer Science", category: "CSE", completed: false },
+        { id: 2, code: "WDD 130", name: "Web Development", category: "WDD", completed: true },
+        { id: 3, code: "CSE 111", name: "Data Structures", category: "CSE", completed: false },
+        { id: 4, code: "CSE 210", name: "Algorithms", category: "CSE", completed: false },
+        { id: 5, code: "WDD 131", name: "Advanced Web Development", category: "WDD", completed: true },
+        { id: 6, code: "WDD 231", name: "Web Programming", category: "WDD", completed: false }
     ];
-
-    const courseContainer = document.getElementById('courses');
 
     // Function to display courses based on filter
     function displayCourses(filter) {
-        courseContainer.innerHTML = '';
-        let filteredCourses = courses;
-        if (filter !== 'all') {
-            filteredCourses = courses.filter(course => course.category === filter);
-        }
+        const courseContainer = document.getElementById("courses");
+        courseContainer.innerHTML = "";
+
+        const filteredCourses = filter === "all" ? courses : courses.filter(course => course.category === filter);
 
         filteredCourses.forEach(course => {
-            const courseDiv = document.createElement('div');
-            courseDiv.textContent = `${course.code}: ${course.name}`;
-            courseDiv.classList.add(course.completed ? 'completed' : 'pending');
-            courseContainer.appendChild(courseDiv);
+            const courseElement = document.createElement("div");
+            courseElement.className = `course ${course.completed ? 'completed' : ''}`;
+            courseElement.textContent = `${course.code} - ${course.name}`;
+            courseContainer.appendChild(courseElement);
         });
     }
 
-    // Filter buttons functionality
-    window.filterCourses = (filter) => {
-        displayCourses(filter);
-    };
+    // Event listeners for filter buttons
+    document.querySelector("button[onclick='filterCourses(\"all\")']").addEventListener("click", function() {
+        displayCourses("all");
+    });
+    document.querySelector("button[onclick='filterCourses(\"CSE\")']").addEventListener("click", function() {
+        displayCourses("CSE");
+    });
+    document.querySelector("button[onclick='filterCourses(\"WDD\")']").addEventListener("click", function() {
+        displayCourses("WDD");
+    });
 
-    // Display all courses initially
-    displayCourses('all');
+    // Initial display of all courses
+    displayCourses("all");
 });
 
