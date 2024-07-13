@@ -9,7 +9,7 @@
     <meta name="author" content="Tinny Bothepha Mosimanyana">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/script.js" defer></script>
 </head>
@@ -21,22 +21,23 @@
             <h1>Tinny B. Mosimanyana</h1>
         </div>
         <nav>
-            <ul>
+            <ul id="nav-menu">
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#">Chamber</a></li>
                 <li><a href="#">GitHub Profile</a></li>
                 <li><a href="#">LinkedIn</a></li>
             </ul>
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
+            </div>
         </nav>
     </header>
 
     <main>
         <section class="course-work">
             <h2>Course Work</h2>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
+            <ul id="course-list">
+                <!-- Course buttons will be dynamically inserted here -->
             </ul>
         </section>
 
@@ -53,9 +54,10 @@
                 <button id="show-cse">CSE</button>
                 <button id="show-wdd">WDD</button>
             </div>
-            <div id="course-list">
-                <!-- Course buttons will be dynamically inserted here -->
+            <div id="course-cards">
+                <!-- Course cards will be dynamically inserted here -->
             </div>
+            <p id="total-credits">Total Credits: 0</p>
         </section>
     </main>
 
