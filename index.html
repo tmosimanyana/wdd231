@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,40 +14,55 @@
     <script src="courses.js" defer></script>
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <header>
-        <h1>Course Home Page</h1>
+        <div class="header-container">
+            <img src="path/to/your/image.jpg" alt="Profile Picture" class="profile-pic">
+            <h1>Rubia M. Francesco</h1>
+        </div>
         <nav>
             <ul>
-                <li><a href="#" id="show-all">All Courses</a></li>
-                <li><a href="#" id="show-cse">CSE Courses</a></li>
-                <li><a href="#" id="show-wdd">WDD Courses</a></li>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="#">LinkedIn</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="course-list">
-            <h2>Course List</h2>
-            <!-- Course cards will be dynamically inserted here -->
+        <section class="course-work">
+            <h2>Course Work</h2>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
         </section>
 
-        <section id="course-filters">
-            <h2>Filter Courses</h2>
-            <button id="show-all">Show All</button>
-            <button id="show-cse">Show CSE Courses</button>
-            <button id="show-wdd">Show WDD Courses</button>
+        <section class="feature-course">
+            <h2>Toloria, Madagascar</h2>
+            <img src="path/to/baobab-trees.jpg" alt="Baobab Trees">
+            <p>Baobab Trees</p>
         </section>
 
-        <section id="credit-summary">
-            <h2>Credit Summary</h2>
-            <p>Total Credits Required: <span id="total-credits">0</span></p>
+        <section class="course-filter">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter-buttons">
+                <button id="show-all">All</button>
+                <button id="show-cse">CSE</button>
+                <button id="show-wdd">WDD</button>
+            </div>
+            <div id="course-list">
+                <!-- Course buttons will be dynamically inserted here -->
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="current-year"></span> Your Company Name. All rights reserved.</p>
-        <p>Last modified: <span id="last-modified"></span></p>
+        <p>&copy; <span id="current-year"></span> Rubia Magdelena Francesco 🌺 Madagascar</p>
+        <p>Last Update: <span id="last-modified"></span></p>
     </footer>
 
     <script>
@@ -57,53 +73,26 @@
 
             document.getElementById('last-modified').textContent = document.lastModified;
 
-            // Example courses data
             const courses = [
-                {
-                    subject: 'CSE',
-                    number: 110,
-                    title: 'Introduction to Programming',
-                    credits: 2,
-                    certificate: 'Web and Computer Programming',
-                    description: 'This course will introduce students to programming. It will introduce the building blocks of programming languages (variables, decisions, calculations, loops, array, and input/output) and use them to solve problems.',
-                    technology: ['Python'],
-                    completed: true
-                },
-                {
-                    subject: 'WDD',
-                    number: 130,
-                    title: 'Web Fundamentals',
-                    credits: 2,
-                    certificate: 'Web and Computer Programming',
-                    description: 'This course introduces students to the World Wide Web and to careers in web site design and development. The course is hands on with students actually participating in simple web designs and programming. It is anticipated that students who complete this course will understand the fields of web design and development and will have a good idea if they want to pursue this degree as a major.',
-                    technology: ['HTML', 'CSS'],
-                    completed: false
-                }
-                // Add more courses as needed
+                { subject: 'CSE', number: 110, title: 'CSE 110', completed: true },
+                { subject: 'WDD', number: 130, title: 'WDD 130', completed: false },
+                { subject: 'CSE', number: 111, title: 'CSE 111', completed: true },
+                { subject: 'CSE', number: 210, title: 'CSE 210', completed: false },
+                { subject: 'WDD', number: 131, title: 'WDD 131', completed: false },
+                { subject: 'WDD', number: 231, title: 'WDD 231', completed: false }
             ];
 
             const courseListElement = document.getElementById('course-list');
-            const totalCreditsElement = document.getElementById('total-credits');
 
             function renderCourses(filter) {
                 courseListElement.innerHTML = '';
-                let totalCredits = 0;
-
-                courses.filter(course => filter === 'all' || course.subject === filter).forEach(course => {
-                    const courseCard = document.createElement('div');
-                    courseCard.className = `course-card ${course.completed ? 'completed' : ''}`;
-                    courseCard.innerHTML = `
-                        <h3>${course.title}</h3>
-                        <p><strong>Course Code:</strong> ${course.subject} ${course.number}</p>
-                        <p><strong>Description:</strong> ${course.description}</p>
-                        <p><strong>Credits:</strong> ${course.credits}</p>
-                        <p><strong>Technologies:</strong> ${course.technology.join(', ')}</p>
-                    `;
-                    courseListElement.appendChild(courseCard);
-                    totalCredits += course.credits;
-                });
-
-                totalCreditsElement.textContent = totalCredits;
+                courses.filter(course => filter === 'all' || course.subject === filter)
+                    .forEach(course => {
+                        const courseButton = document.createElement('button');
+                        courseButton.className = `course-button ${course.completed ? 'completed' : ''}`;
+                        courseButton.textContent = course.title;
+                        courseListElement.appendChild(courseButton);
+                    });
             }
 
             document.getElementById('show-all').addEventListener('click', () => renderCourses('all'));
@@ -114,4 +103,5 @@
         });
     </script>
 </body>
+
 </html>
