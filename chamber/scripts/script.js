@@ -1,68 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
+document.addEventListener('DOMContentLoaded', () => {
+    // Update current year and last modified
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    document.getElementById('last-modified').textContent = document.lastModified;
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Home Page</title>
-    <meta name="description" content="Explore the course list for the Web and Computer Programming Certificate. Filter courses by CSE or WDD, view completed courses, and see total credits dynamically.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/script.js" defer></script>
-</head>
+    // Responsive Menu
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
 
-<body>
-    <header>
-        <div class="header-container">
-            <img src="images/profile.png" alt="Profile Picture" class="profile-pic">
-            <h1>Tinny B. Mosimanyana</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
-            </ul>
-        </nav>
-    </header>
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+    });
 
-    <main>
-        <section class="course-work">
-            <h2>Course Work</h2>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </section>
+    const courses = [
+        { code: 'CSE121', name: 'Introduction to Computer Science', type: 'CSE', credits: 3, completed: true },
+        { code: 'CSE122', name: 'Data Structures', type: 'CSE', credits: 4, completed: true },
+        { code: 'WDD130', name: 'Web Development Basics', type: 'WDD', credits: 3, completed: false },
+        { code: 'WDD230', name: 'Advanced Web Development', type: 'WDD', credits: 4, completed: false }
+    ];
 
-        <section class="feature-course">
-            <h2>Gaborone, Botswana</h2>
-            <img src="images/gaborone-dam.jpg" alt="Gaborone Dam">
-            <p>Gaborone Dam</p>
-        </section>
+    const courseContainer = document.getElementById('course-cards');
 
-        <section class="course-filter">
-            <h2>Web and Computer Programming Certificate</h2>
-            <div class="filter-buttons">
-                <button id="show-all">All</button>
-                <button id="show-cse">CSE</button>
-                <button id="show-wdd">WDD</button>
-            </div>
-            <div id="course-list">
-                <!-- Course buttons will be dynamically inserted here -->
-            </div>
-        </section>
-    </main>
+    function displayCourses(filter = 'all') {
+        courseContainer.innerHTML = '';
+        const filteredCourses = filter === 'all' ? courses : courses.filter(course => course.type === filter);
+        filteredCourses.forEach(course => {
+            const courseCard = document.createElement('div');
+            courseCard.classList.add('course-card');
+            if (course.completed) {
+                courseCard.classList.add('completed');
+            }
+            courseCard.innerHTML = `
+                <h3>${course.code}: ${course.name}</h3>
+                <p>Credits: ${course.credits}</p>
+            `;
+            courseContainer.appendChild(courseCard);
+        });
 
-    <footer>
-        <p>&copy; <span id="current-year"></span> Tinny Bothepha Mosimanyana 🌺 Botswana</p>
-        <p>Last Update: <span id="last-modified"></span></p>
-    </footer>
-</body>
+        const totalCredits = filteredCourses.reduce((total, course) => total + course.credits, 0);
+        document.getElementById('total-credits').textContent = `Total Credits: ${totalCredits}`;
+    }
 
-</html>
+    document.getElementById('show-all').addEventListener('click', () => displayCourses('all'));
+    document.getElementById('show-cse').addEventListener('click', () => displayCourses('CSE'));
+    document.getElementById('show-wdd').addEventListener('click', () => displayCourses('WDD'));
+
+    displayCourses('all');
+});

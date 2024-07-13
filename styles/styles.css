@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.6;
 }
 
 header {
@@ -27,6 +28,10 @@ header {
 
 nav {
     background-color: #444;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
 nav ul {
@@ -34,7 +39,6 @@ nav ul {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
 }
 
 nav ul li {
@@ -51,6 +55,58 @@ nav ul li a {
 nav ul li a.active,
 nav ul li a:hover {
     background-color: #555;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    display: block;
+    height: 2px;
+    width: 25px;
+    background-color: white;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .menu-toggle.active .hamburger {
+        transform: rotate(45deg);
+    }
+
+    .menu-toggle.active .hamburger::before {
+        transform: rotate(90deg);
+        top: 0;
+    }
+
+    .menu-toggle.active .hamburger::after {
+        transform: rotate(90deg);
+        top: 0;
+    }
+
+    .menu-toggle.active + ul {
+        display: flex;
+    }
 }
 
 main {
@@ -108,15 +164,24 @@ main {
     background-color: #555;
 }
 
-#course-list button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin: 5px 0;
-    background-color: #eee;
+#course-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.course-card {
+    background-color: #f9f9f9;
     border: 1px solid #ddd;
-    cursor: pointer;
-    text-align: left;
+    padding: 20px;
+    margin: 10px;
+    width: calc(33% - 40px);
+    box-sizing: border-box;
+    transition: background-color 0.3s;
+}
+
+.course-card.completed {
+    background-color: #c8e6c9;
 }
 
 footer {
