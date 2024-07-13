@@ -1,0 +1,52 @@
+{
+    "members": [
+        {
+            "companyName": "Company A",
+            "logo": "images/company-a-logo.png",
+            "phone": "123-456-7890",
+            "address": "123 Main St,Gaborone",
+            "website": "http://companya.com",
+            "membershipLevel": "Gold"
+        },
+        {
+            "companyName": "Company B",
+            "logo": "images/company-b-logo.png",
+            "phone": "987-654-3210",
+            "address": "456 Elm St,Gaborone",
+            "website": "http://companyb.com",
+            "membershipLevel": "Silver"
+        },
+        {
+            "companyName": "Company C",
+            "logo": "images/company-c-logo.png",
+            "phone": "555-555-5555",
+            "address": "789 Oak St,Gaborone",
+            "website": "http://companyc.com",
+            "membershipLevel": "Gold"
+        },
+        {
+            "companyName": "Company D",
+            "logo": "images/company-d-logo.png",
+            "phone": "321-654-0987",
+            "address": "101 Pine St,Gaborone",
+            "website": "http://companyd.com",
+            "membershipLevel": "Silver"
+        },
+        {
+            "companyName": "Company E",
+            "logo": "images/company-e-logo.png",
+            "phone": "654-321-9876",
+            "address": "202 Cedar St,Gaborone",
+            "website": "http://companye.com",
+            "membershipLevel": "Gold"
+        },
+        {
+            "companyName": "Company F",
+            "logo": "images/company-f-logo.png",
+            "phone": "789-123-4560",
+            "address": "303 Birch St,Gaborone",
+            "website": "http://companyf.com",
+            "membershipLevel": "Silver"
+        }
+    ]
+}
