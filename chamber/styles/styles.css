@@ -1,0 +1,150 @@
+/* General styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+nav ul li a.active {
+    font-weight: bold;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 800px; /* Default desktop height */
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    max-width: 90%;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+/* Current Events Section */
+.current-events {
+    padding: 20px;
+    background-color: #e9ecef;
+}
+
+/* Weather Section */
+.weather {
+    padding: 20px;
+}
+
+#weather-container p {
+    margin: 5px 0;
+}
+
+/* Company Spotlights Section */
+.company-spotlights {
+    padding: 20px;
+    background-color: #f1f1f1;
+}
+
+#spotlights-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.spotlight-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+}
+
+.company-logo {
+    width: 100px;
+    height: auto;
+}
+
+.company-name, .company-phone, .company-address, .company-website, .membership-level {
+    margin: 5px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-section {
+        height: 400px; /* Adjust height for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        height: 300px; /* Adjust height for mobile */
+    }
+
+    .hero-text {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .cta-button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}

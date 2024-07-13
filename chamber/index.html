@@ -4,71 +4,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamber of Commerce Home Page</title>
-    <meta name="description" content="Welcome to the Chamber of Commerce. Discover local businesses, current events, and more.">
+    <title>Chamber of Commerce</title>
+    <meta name="description" content="Explore the Chamber of Commerce website, with information on local events, member businesses, and opportunities to join.">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <meta property="og:title" content="Chamber of Commerce Home Page">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="images/hero.jpg">
-    <meta property="og:url" content="http://example.com/index.html">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
     <header>
         <div class="header-container">
             <img src="images/profile.png" alt="Profile Picture" class="profile-pic">
-            <h1>Chamber of Commerce</h1>
+            <h1>Tinny B. Mosimanyana</h1>
         </div>
         <nav>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="#">LinkedIn</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="hero">
-            <img src="images/hero.jpg" alt="Chamber Hero Image">
-            <h2>Welcome to the Chamber of Commerce</h2>
-            <p>Your gateway to local businesses and community events.</p>
-            <a href="join.html" class="cta-button">Join the Chamber</a>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <img src="images/hero-image.jpg" alt="Chamber Hero Image" class="hero-image">
+            <div class="hero-text">
+                <h1>Welcome to the Chamber of Commerce</h1>
+                <p>Connecting businesses and fostering community growth in Gaborone.</p>
+                <a href="#" class="cta-button">Join the Chamber</a>
+            </div>
         </section>
 
-        <section id="current-events">
+        <!-- Current Events Section -->
+        <section class="current-events">
             <h2>Current Events</h2>
-            <div id="events-list">
-                <p>Check back soon for the latest events happening in the community.</p>
+            <!-- Add current events content here -->
+            <p>Check out the latest happenings in our community!</p>
+        </section>
+
+        <!-- Weather Section -->
+        <section class="weather">
+            <h2>Weather</h2>
+            <!-- Weather data will be dynamically inserted here by JavaScript -->
+            <div id="weather-container">
+                <p id="temperature">Temperature: --</p>
+                <p id="weather-description">Weather: --</p>
+                <div id="forecast">
+                    <p id="day1">Day 1: --</p>
+                    <p id="day2">Day 2: --</p>
+                    <p id="day3">Day 3: --</p>
+                </div>
             </div>
         </section>
 
-        <section id="weather">
-            <h2>Current Weather</h2>
-            <div id="weather-info">
-                <p>Loading weather data...</p>
-            </div>
-        </section>
-
-        <section id="spotlights">
+        <!-- Company Spotlights Section -->
+        <section class="company-spotlights">
             <h2>Company Spotlights</h2>
+            <!-- Company spotlight content will be dynamically inserted here by JavaScript -->
             <div id="spotlights-container">
-                <p>Loading company spotlights...</p>
+                <div class="spotlight-item">
+                    <img src="" alt="Company Logo" class="company-logo">
+                    <h3 class="company-name">Company Name</h3>
+                    <p class="company-phone">Phone: --</p>
+                    <p class="company-address">Address: --</p>
+                    <a href="#" class="company-website">Website</a>
+                    <p class="membership-level">Membership Level: --</p>
+                </div>
+                <!-- More spotlight items can be added here -->
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="current-year"></span> Chamber of Commerce. All rights reserved.</p>
-        <p>Last modified: <span id="last-modified"></span></p>
-        <p>Site developed by Tinny Bothepha Mosimanyana for WDD 231</p>
+        <p>&copy; <span id="current-year"></span> Tinny Bothepha Mosimanyana 🌺 Botswana</p>
+        <p>Last Update: <span id="last-modified"></span></p>
     </footer>
-    <script src="js/scripts.js"></script>
+
+    <script src="scripts/script.js" defer></script>
 </body>
 
 </html>
