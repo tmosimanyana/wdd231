@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -5,6 +6,7 @@ body {
     background-color: #f8f8f8;
 }
 
+/* Header */
 header {
     background-color: #2a3f54;
     color: #fff;
@@ -49,6 +51,7 @@ nav ul li a.active {
     text-decoration: underline;
 }
 
+/* Main Content */
 main {
     padding: 1rem;
 }
@@ -125,6 +128,7 @@ section {
     background-color: #a14b56;
 }
 
+/* Footer */
 footer {
     background-color: #2a3f54;
     color: #fff;
@@ -135,6 +139,7 @@ footer {
     bottom: 0;
 }
 
+/* Responsive Styles */
 @media (max-width: 600px) {
     nav ul {
         flex-direction: column;
