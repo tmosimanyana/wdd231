@@ -1,4 +1,4 @@
-// my OpenWeatherMap API key
+// Replaced with my OpenWeatherMap API key
 const API_KEY = '5c7e429e1b20f30b60de00a18bcc0e92';
 const CITY = 'Gaborone';
 const WEATHER_API_URL = `https://api.openweathermap.org/data/2.5/forecast?q=${CITY}&units=metric&appid=${API_KEY}`;
@@ -11,11 +11,18 @@ async function fetchWeather() {
         if (data.list && data.list.length > 0) {
             const current = data.list[0];
             const temp = current.main.temp.toFixed(0);
-            const description = current.weather.map(w => w.description).join(', ').replace(/\b\w/g, char => char.toUpperCase());
+            // Capitalize each word in the weather description
+            const descriptions = current.weather.map(w => w.description);
+            const description = descriptions.map(d => d.replace(/\b\w/g, char => char.toUpperCase())).join(', ');
+
+            // Forecast for the next 3 days
             const forecast = data.list.slice(1, 4).map(day => ({
                 date: new Date(day.dt * 1000).toDateString(),
-                temp: day.main.temp.toFixed(0)
+                temp: day.main.temp.toFixed(0) // Ensure zero decimal points
             }));
+
+            // Display all weather events
+            const events = descriptions.join(', ');
 
             document.getElementById('weather-info').innerHTML = `
                 <p>Current Temperature: ${temp}°C</p>
@@ -24,6 +31,7 @@ async function fetchWeather() {
                 <ul>
                     ${forecast.map(day => `<li>${day.date}: ${day.temp}°C</li>`).join('')}
                 </ul>
+                <p>Weather Events: ${events}</p>
             `;
         } else {
             document.getElementById('weather-info').innerHTML = `<p>No weather data available.</p>`;

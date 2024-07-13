@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Home page for the Chamber of Commerce, featuring current events, weather, and company spotlights.">
+    <meta name="description" content="Chamber of Commerce Home Page">
     <meta name="author" content="Tinny Mosimanyana">
     <meta property="og:title" content="Chamber of Commerce Home Page">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/home-hero.jpg">
+    <meta property="og:image" content="images/hero-image.jpg">
     <meta property="og:url" content="http://example.com/index.html">
-    <title>Chamber of Commerce Home</title>
+    <title>Chamber of Commerce Home Page</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
 </head>
@@ -27,27 +27,38 @@
     </header>
 
     <main>
+        <!-- Hero Image -->
         <section id="hero">
-            <img src="images/home-hero.jpg" alt="Hero Image">
+            <img src="images/hero-image.jpg" alt="Chamber Hero Image">
+            <h2>Welcome to the Chamber of Commerce</h2>
+            <p>Your gateway to local businesses and community events.</p>
             <a href="join.html" class="cta-button">Join the Chamber</a>
         </section>
 
+        <!-- Current Events Section -->
         <section id="current-events">
             <h2>Current Events</h2>
-            <!-- Placeholder for current events -->
-        </section>
-
-        <section id="weather">
-            <h2>Current Weather</h2>
-            <div id="weather-info">
-                <!-- Weather data will be inserted here -->
+            <div id="events-list">
+                <!-- Placeholder content for current events -->
+                <p>Check back soon for the latest events happening in the community.</p>
             </div>
         </section>
 
-        <section id="company-spotlights">
+        <!-- Weather Section -->
+        <section id="weather">
+            <h2>Current Weather</h2>
+            <div id="weather-info">
+                <!-- Weather data will be dynamically inserted here -->
+                <p>Loading weather data...</p>
+            </div>
+        </section>
+
+        <!-- Company Spotlights Section -->
+        <section id="spotlights">
             <h2>Company Spotlights</h2>
-            <div id="spotlights">
+            <div id="spotlights-container">
                 <!-- Company spotlights will be dynamically inserted here -->
+                <p>Loading company spotlights...</p>
             </div>
         </section>
     </main>
