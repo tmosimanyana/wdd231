@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +12,6 @@
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/script.js" defer></script>
 </head>
-
 <body>
     <header>
         <div class="header-container">
@@ -23,37 +21,34 @@
         <nav>
             <ul>
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Directory</a></li>
-                <li><a href="#">Join Us</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <img src="images/hero.jpg" alt="Chamber of Commerce Hero Image" class="hero-image">
-            <div class="hero-text">
-                <h2>Welcome to the Chamber of Commerce</h2>
-                <a href="#">Join Us Today</a>
+            <div class="hero-content">
+                <h2>Welcome to Our Chamber of Commerce</h2>
+                <a href="join.html" class="cta-button">Join the Chamber</a>
             </div>
         </section>
 
         <section class="current-events">
             <h2>Current Events</h2>
-            <ul>
-                <li>Event 1: Description</li>
-                <li>Event 2: Description</li>
-                <li>Event 3: Description</li>
-            </ul>
+            <p>No events scheduled at the moment. Check back later for updates!</p>
         </section>
 
         <section class="weather">
             <h2>Weather Forecast</h2>
-            <div id="weather-info">
-                <p id="current-temp"></p>
-                <p id="current-desc"></p>
-                <div id="forecast"></div>
+            <div id="current-weather">
+                <p id="current-temp">Current Temperature: --°C</p>
+                <p id="current-desc">Weather: --</p>
+            </div>
+            <div id="forecast">
+                <!-- 3-day forecast will be dynamically inserted here -->
             </div>
         </section>
 
@@ -70,5 +65,4 @@
         <p>Last Update: <span id="last-modified"></span></p>
     </footer>
 </body>
-
 </html>

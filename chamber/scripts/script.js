@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 const temp = entry.main.temp.toFixed(0);
                 const desc = entry.weather.map(w => w.description.charAt(0).toUpperCase() + w.description.slice(1)).join(', ');
                 forecastContainer.innerHTML += `
-                    <div>
+                    <div class="forecast-day">
                         <h3>${date}</h3>
                         <p>Temp: ${temp}°C</p>
                         <p>${desc}</p>
