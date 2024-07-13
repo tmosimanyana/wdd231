@@ -4,63 +4,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Home Page</title>
-    <meta name="description" content="Explore the course list for the Web and Computer Programming Certificate. Filter courses by CSE or WDD, view completed courses, and see total credits dynamically.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <title>Chamber of Commerce Home</title>
+    <meta name="description" content="Welcome to the Chamber of Commerce. Explore local businesses, check current events, and get weather updates.">
+    <meta name="author" content="Your Name">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/script.js" defer></script>
+    <script src="scripts/main.js" defer></script>
 </head>
 
 <body>
     <header>
         <div class="header-container">
-            <img src="images/profile.png" alt="Profile Picture" class="profile-pic">
-            <h1>Tinny B. Mosimanyana</h1>
+            <img src="images/logo.png" alt="Chamber of Commerce Logo" class="logo">
+            <h1>Chamber of Commerce</h1>
         </div>
         <nav>
             <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="course-work">
-            <h2>Course Work</h2>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </section>
-
-        <section class="feature-course">
-            <h2>Gaborone, Botswana</h2>
-            <img src="images/gaborone-dam.jpg" alt="Gaborone Dam">
-            <p>Gaborone Dam</p>
-        </section>
-
-        <section class="course-filter">
-            <h2>Web and Computer Programming Certificate</h2>
-            <div class="filter-buttons">
-                <button id="show-all">All</button>
-                <button id="show-cse">CSE</button>
-                <button id="show-wdd">WDD</button>
+        <section class="hero">
+            <img src="images/hero-image.jpg" alt="Hero Image" class="hero-image">
+            <div class="hero-content">
+                <h2>Welcome to the Chamber of Commerce</h2>
+                <a href="join.html" class="cta-button">Join Us Today</a>
             </div>
-            <div id="course-list">
-                <!-- Course buttons will be dynamically inserted here -->
+        </section>
+
+        <section class="current-events">
+            <h2>Current Events</h2>
+            <div id="events-list">
+                <!-- Current events will be dynamically inserted here -->
+                <p>No current events to display. Check back later!</p>
+            </div>
+        </section>
+
+        <section class="weather">
+            <h2>Current Weather</h2>
+            <div id="weather-info">
+                <!-- Weather data will be dynamically inserted here -->
+            </div>
+        </section>
+
+        <section class="company-spotlights">
+            <h2>Company Spotlights</h2>
+            <div id="spotlights">
+                <!-- Company spotlights will be dynamically inserted here -->
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="current-year"></span> Tinny Bothepha Mosimanyana 🌺 Botswana</p>
+        <p>&copy; <span id="current-year"></span> Chamber of Commerce. All rights reserved.</p>
         <p>Last Update: <span id="last-modified"></span></p>
     </footer>
 </body>
