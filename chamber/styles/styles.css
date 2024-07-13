@@ -1,59 +1,63 @@
-/* General styles */
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 header {
-    background-color: #f8f9fa;
+    background-color: #333;
+    color: #fff;
     padding: 20px;
-    border-bottom: 1px solid #dee2e6;
 }
 
 .header-container {
     display: flex;
     align-items: center;
+    justify-content: space-between;
 }
 
 .profile-pic {
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    margin-right: 20px;
+}
+
+nav {
+    background-color: #444;
 }
 
 nav ul {
     list-style: none;
+    margin: 0;
     padding: 0;
+    display: flex;
+}
+
+nav li {
     margin: 0;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-nav ul li a {
+nav a {
+    display: block;
+    padding: 15px;
+    color: #fff;
     text-decoration: none;
-    color: #007bff;
 }
 
-nav ul li a.active {
-    font-weight: bold;
+nav a.active, nav a:hover {
+    background-color: #555;
 }
 
 /* Hero Section */
-.hero-section {
+.hero {
     position: relative;
-    width: 100%;
-    height: 800px; /* Default desktop height */
-    overflow: hidden;
 }
 
 .hero-image {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
 }
 
@@ -62,90 +66,67 @@ nav ul li a.active {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: white;
+    color: #fff;
     text-align: center;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
-    max-width: 90%;
 }
 
-.cta-button {
+.hero-text h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.hero-text a {
     display: inline-block;
+    margin-top: 20px;
     padding: 10px 20px;
-    color: white;
-    background-color: #007bff;
+    background-color: #000;
+    color: #fff;
     text-decoration: none;
     border-radius: 5px;
-    margin-top: 10px;
 }
 
-.cta-button:hover {
-    background-color: #0056b3;
-}
-
-/* Current Events Section */
-.current-events {
+/* Main Sections */
+.current-events, .weather, .company-spotlights {
     padding: 20px;
-    background-color: #e9ecef;
+    margin: 10px 0;
 }
 
-/* Weather Section */
-.weather {
-    padding: 20px;
+.current-events ul {
+    list-style: none;
+    padding: 0;
 }
 
-#weather-container p {
-    margin: 5px 0;
+.current-events li {
+    padding: 10px 0;
 }
 
-/* Company Spotlights Section */
-.company-spotlights {
-    padding: 20px;
-    background-color: #f1f1f1;
+/* Weather */
+#weather-info p {
+    margin: 10px 0;
 }
 
-#spotlights-container {
+#forecast {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
 }
 
-.spotlight-item {
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: #ffffff;
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-}
-
-.company-logo {
-    width: 100px;
-    height: auto;
-}
-
-.company-name, .company-phone, .company-address, .company-website, .membership-level {
-    margin: 5px 0;
+#forecast div {
+    flex: 1;
+    padding: 10px;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .hero-section {
-        height: 600px; /* Adjust height for tablets */
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-section {
-        height: 400px; /* Adjust height for mobile */
+    .hero-text h2 {
+        font-size: 1.5rem;
     }
 
-    .hero-text {
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    .cta-button {
+    .hero-text a {
         padding: 8px 16px;
-        font-size: 14px;
+    }
+
+    #forecast {
+        flex-direction: column;
     }
 }
+

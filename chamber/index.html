@@ -4,75 +4,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chamber of Commerce</title>
-    <meta name="description" content="Explore the Chamber of Commerce website, with information on local events, member businesses, and opportunities to join.">
+    <title>Chamber of Commerce - Home</title>
+    <meta name="description" content="Welcome to the Chamber of Commerce. Explore our community, stay updated with current events, check the weather, and view company spotlights.">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/script.js" defer></script>
 </head>
 
 <body>
     <header>
         <div class="header-container">
-            <img src="images/profile.jpeg" alt="Profile Picture" class="profile-pic">
-            <h1>Tinny B. Mosimanyana</h1>
+            <img src="images/profile.png" alt="Profile Picture" class="profile-pic">
+            <h1>Chamber of Commerce</h1>
         </div>
         <nav>
             <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Directory</a></li>
+                <li><a href="#">Join Us</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero-section">
-            <img src="images/hero.jpg" alt="Chamber Hero Image" class="hero-image">
+        <section class="hero">
+            <img src="images/hero.jpg" alt="Chamber of Commerce Hero Image" class="hero-image">
             <div class="hero-text">
-                <h1>Welcome to the Chamber of Commerce</h1>
-                <p>Connecting businesses and fostering community growth in Gaborone.</p>
-                <a href="join.html" class="cta-button">Join the Chamber</a>
+                <h2>Welcome to the Chamber of Commerce</h2>
+                <a href="#">Join Us Today</a>
             </div>
         </section>
 
-        <!-- Current Events Section -->
         <section class="current-events">
             <h2>Current Events</h2>
-            <p>Check out the latest happenings in our community!</p>
-            <!-- Add current events content here -->
+            <ul>
+                <li>Event 1: Description</li>
+                <li>Event 2: Description</li>
+                <li>Event 3: Description</li>
+            </ul>
         </section>
 
-        <!-- Weather Section -->
         <section class="weather">
-            <h2>Weather</h2>
-            <div id="weather-container">
-                <p id="temperature">Temperature: --</p>
-                <p id="weather-description">Weather: --</p>
-                <div id="forecast">
-                    <p id="day1">Day 1: --</p>
-                    <p id="day2">Day 2: --</p>
-                    <p id="day3">Day 3: --</p>
-                </div>
+            <h2>Weather Forecast</h2>
+            <div id="weather-info">
+                <p id="current-temp"></p>
+                <p id="current-desc"></p>
+                <div id="forecast"></div>
             </div>
         </section>
 
-        <!-- Company Spotlights Section -->
         <section class="company-spotlights">
             <h2>Company Spotlights</h2>
             <div id="spotlights-container">
-                <!-- Spotlight items will be dynamically inserted here by JavaScript -->
+                <!-- Company spotlights will be dynamically inserted here -->
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="current-year"></span> Tinny Bothepha Mosimanyana 🌺 Botswana</p>
+        <p>&copy; <span id="current-year"></span> Chamber of Commerce. All rights reserved.</p>
         <p>Last Update: <span id="last-modified"></span></p>
     </footer>
-
-    <script src="scripts/script.js" defer></script>
 </body>
 
 </html>
