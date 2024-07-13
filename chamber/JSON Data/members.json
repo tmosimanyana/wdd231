@@ -1,0 +1,59 @@
+[
+    {
+        "name": "business One",
+        "address": "123 Main St, Gaborone",
+        "phone": "123-456-7890",
+        "website": "http://business one.com",
+        "image": "business- one.jpg",
+        "membership_level": 1
+    },
+    {
+        "name": "business Two",
+        "address": "456 Elm St, Gaborone",
+        "phone": "234-567-8901",
+        "website": "http://business two.com",
+        "image": "business-two.jpg",
+        "membership_level": 2
+    },
+    {
+        "name": "business Three",
+        "address": "789 Oak St, Gaborone",
+        "phone": "345-678-9012",
+        "website": "http://business three.com",
+        "image": "business-three.jpg",
+        "membership_level": 3
+    },
+    {
+        "name": "business Four",
+        "address": "101 Pine St, Gaborone",
+        "phone": "456-789-0123",
+        "website": "http://business four.com",
+        "image": "business- four.jpg",
+        "membership_level": 1
+    },
+    {
+        "name": "business Five",
+        "address": "202 Maple St, Gaborone",
+        "phone": "567-890-1234",
+        "website": "http://business five.com",
+        "image": "business- Six.jpg",
+        "membership_level": 2
+    },
+    {
+        "name": "business Six",
+        "address": "303 Birch St, Gaborone",
+        "phone": "678-901-2345",
+        "website": "http://business six.com",
+        "image": "business- Six.jpg",
+        "membership_level": 3
+    },
+    {
+        "name": "business Seven",
+        "address": "404 Cedar St, Gaborone",
+        "phone": "789-012-3456",
+        "website": "http://business Seven.com",
+        "image": "business- Seven.jpg",
+        "membership_level": 1
+    }
+]
+
