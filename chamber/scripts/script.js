@@ -1,63 +1,68 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const weatherAPIKey = '5c7e429e1b20f30b60de00a18bcc0e92';
-    const weatherEndpoint = `https://api.openweathermap.org/data/2.5/forecast?q=Gaborone,BW&units=metric&appid=${weatherAPIKey}`;
-    const spotlightsEndpoint = 'members.json'; // Adjust the path if needed
+<!DOCTYPE html>
+<html lang="en">
 
-    // Update current year and last modified
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-    document.getElementById('last-modified').textContent = document.lastModified;
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Home Page</title>
+    <meta name="description" content="Explore the course list for the Web and Computer Programming Certificate. Filter courses by CSE or WDD, view completed courses, and see total credits dynamically.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/script.js" defer></script>
+</head>
 
-    // Fetch and display weather data
-    fetch(weatherEndpoint)
-        .then(response => response.json())
-        .then(data => {
-            const current = data.list[0];
-            const forecast = data.list.filter((_, index) => index % 8 === 0); // Get one entry per day
+<body>
+    <header>
+        <div class="header-container">
+            <img src="images/profile.png" alt="Profile Picture" class="profile-pic">
+            <h1>Tinny B. Mosimanyana</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
 
-            document.getElementById('current-temp').textContent = `Current Temperature: ${current.main.temp.toFixed(0)}°C`;
-            document.getElementById('current-desc').textContent = `Weather: ${current.weather.map(w => w.description.charAt(0).toUpperCase() + w.description.slice(1)).join(', ')}`;
+    <main>
+        <section class="course-work">
+            <h2>Course Work</h2>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </section>
 
-            const forecastContainer = document.getElementById('forecast');
-            forecast.forEach(entry => {
-                const date = new Date(entry.dt * 1000).toLocaleDateString();
-                const temp = entry.main.temp.toFixed(0);
-                const desc = entry.weather.map(w => w.description.charAt(0).toUpperCase() + w.description.slice(1)).join(', ');
-                forecastContainer.innerHTML += `
-                    <div class="forecast-day">
-                        <h3>${date}</h3>
-                        <p>Temp: ${temp}°C</p>
-                        <p>${desc}</p>
-                    </div>
-                `;
-            });
-        })
-        .catch(error => console.error('Error fetching weather data:', error));
+        <section class="feature-course">
+            <h2>Gaborone, Botswana</h2>
+            <img src="images/gaborone-dam.jpg" alt="Gaborone Dam">
+            <p>Gaborone Dam</p>
+        </section>
 
-    // Fetch and display company spotlights
-    fetch(spotlightsEndpoint)
-        .then(response => response.json())
-        .then(data => {
-            const spotlightsContainer = document.getElementById('spotlights-container');
-            const filteredMembers = data.members.filter(member => member.membershipLevel === 'Gold' || member.membershipLevel === 'Silver');
-            const randomMembers = [];
-            
-            while (randomMembers.length < 2 && filteredMembers.length > 0) {
-                const randomIndex = Math.floor(Math.random() * filteredMembers.length);
-                randomMembers.push(filteredMembers.splice(randomIndex, 1)[0]);
-            }
+        <section class="course-filter">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter-buttons">
+                <button id="show-all">All</button>
+                <button id="show-cse">CSE</button>
+                <button id="show-wdd">WDD</button>
+            </div>
+            <div id="course-list">
+                <!-- Course buttons will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
 
-            randomMembers.forEach(member => {
-                spotlightsContainer.innerHTML += `
-                    <div class="spotlight">
-                        <img src="${member.logo}" alt="${member.companyName} Logo" class="spotlight-logo">
-                        <h3>${member.companyName}</h3>
-                        <p>Phone: ${member.phone}</p>
-                        <p>Address: ${member.address}</p>
-                        <p>Membership Level: ${member.membershipLevel}</p>
-                        <a href="${member.website}" target="_blank">Visit Website</a>
-                    </div>
-                `;
-            });
-        })
-        .catch(error => console.error('Error fetching company spotlights:', error));
-});
+    <footer>
+        <p>&copy; <span id="current-year"></span> Tinny Bothepha Mosimanyana 🌺 Botswana</p>
+        <p>Last Update: <span id="last-modified"></span></p>
+    </footer>
+</body>
+
+</html>
