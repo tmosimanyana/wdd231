@@ -3,38 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaborone Chamber of Commerce | Connecting Local Businesses & Community</title>
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Gaborone Chamber of Commerce | Connecting Local Businesses & Community">
-    <meta property="og:description" content="Explore the Gaborone Chamber of Commerce for resources, networking opportunities, and community connections for local businesses.">
-    <meta property="og:image" content="GaboroneChamber/images/og-image.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="http://127.0.0.1:5500/GaboroneChamber/directory.html">
+    <meta name="description" content="Chamber of Commerce Directory Page">
+    <meta name="author" content="Your Name">
+    <meta property="og:title" content="Chamber of Commerce Directory">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Gaborone Chamber">
-
-    <!-- Additional Meta Tags -->
-    <meta name="description" content="Explore the Gaborone Chamber of Commerce for local business resources, networking opportunities, and community events.">
-    <link rel="stylesheet" href="styles.css">
+    <meta property="og:image" content="images/directory-favicon.png">
+    <meta property="og:url" content="http://example.com/directory.html">
+    <title>Chamber of Commerce Directory</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Content of your page -->
     <header>
-        <h1>Welcome to the Gaborone Chamber of Commerce</h1>
-        <!-- Navigation and other header content -->
+        <div class="container">
+            <h1>Chamber of Commerce Directory</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    
+
     <main>
-        <!-- Main content of your page -->
+        <button id="toggleView">Toggle View</button>
+        <div id="members-container" class="grid-view">
+            <!-- Member cards or list items will be dynamically inserted here -->
+        </div>
     </main>
-    
+
     <footer>
-        <!-- Footer content -->
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Chamber of Commerce. All rights reserved.</p>
+            <p>Last modified: <span id="lastModifiedDate"></span></p>
+            <p>Site developed by Your Name for WDD 231</p>
+        </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="scripts.js"></script>
+    <script src="js/scripts.js"></script>
 </body>
 </html>
+
+    
+    
