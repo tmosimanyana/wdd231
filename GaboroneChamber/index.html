@@ -3,64 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to the Gaborone  Chamber of Commerce. Discover local businesses, events, and more.">
-    <meta name="author" content="Tinny Mosimanyana">
-    <meta property="og:title" content="Gaborone  Chamber of Commerce Home Page">
+    <meta name="description" content="Home page for the Chamber of Commerce, featuring current events, weather, and company spotlights.">
+    <meta name="author" content="Your Name">
+    <meta property="og:title" content="Chamber of Commerce Home Page">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/hero-image.jpg">
-    <meta property="og:url" content="http://127.0.0.1:5500/GaboroneChamber/index.html">
-    <title>Timbuktu Chamber of Commerce</title>
+    <meta property="og:image" content="images/home-hero.jpg">
+    <meta property="og:url" content="http://example.com/index.html">
+    <title>Chamber of Commerce Home</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
-        <h1>Gaborone  Chamber of Commerce</h1>
+        <h1>Chamber of Commerce</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
-                <li><a href="podcast.html">Podcast</a></li>
-                <li><a href="weather.html">Weather</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="hero">
-            <img src="images/hero-image.jpg" alt="Hero Image">
-            <a href="join.html" id="cta-button">Join the Chamber of Commerce</a>
+            <img src="images/home-hero.jpg" alt="Hero Image">
+            <a href="join.html" class="cta-button">Join the Chamber</a>
         </section>
-        
+
         <section id="current-events">
             <h2>Current Events</h2>
-            <p>Check out our latest events and activities happening in Gaborone.</p>
-            <!-- Placeholder content; update with actual events -->
+            <!-- Placeholder for current events -->
         </section>
-        
+
         <section id="weather">
             <h2>Current Weather</h2>
-            <div id="weather-data">
-                <!-- Weather data will be dynamically inserted here -->
+            <div id="weather-info">
+                <!-- Weather data will be inserted here -->
             </div>
         </section>
-        
-        <section id="company-spotlight">
-            <h2>Company Spotlight</h2>
-            <div id="spotlight-container">
-                <!-- Company spotlight data will be dynamically inserted here -->
+
+        <section id="company-spotlights">
+            <h2>Company Spotlights</h2>
+            <div id="spotlights">
+                <!-- Company spotlights will be dynamically inserted here -->
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentYear"></span>Gaborone  Chamber of Commerce. All rights reserved.</p>
+        <p>&copy; <span id="currentYear"></span> Chamber of Commerce. All rights reserved.</p>
         <p>Last modified: <span id="lastModifiedDate"></span></p>
-        <p>Site developed by Tinny Mosimanyana for WDD 231</p>
+        <p>Site developed by Your Name for WDD 231</p>
+        <script src="js/scripts.js"></script>
     </footer>
-
-    <script src="js/scripts.js"></script>
 </body>
 </html>
