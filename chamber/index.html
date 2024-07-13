@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamber of Commerce Home Page</title>
+    <meta name="description" content="Welcome to the Chamber of Commerce. Discover local businesses, current events, and more.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <meta property="og:title" content="Chamber of Commerce Home Page">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/hero-image.jpg">
+    <meta property="og:url" content="http://example.com/index.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <img src="images/profile.png" alt="Profile Picture" class="profile-pic">
+            <h1>Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <img src="images/hero-image.jpg" alt="Chamber Hero Image">
+            <h2>Welcome to the Chamber of Commerce</h2>
+            <p>Your gateway to local businesses and community events.</p>
+            <a href="join.html" class="cta-button">Join the Chamber</a>
+        </section>
+
+        <section id="current-events">
+            <h2>Current Events</h2>
+            <div id="events-list">
+                <p>Check back soon for the latest events happening in the community.</p>
+            </div>
+        </section>
+
+        <section id="weather">
+            <h2>Current Weather</h2>
+            <div id="weather-info">
+                <p>Loading weather data...</p>
+            </div>
+        </section>
+
+        <section id="spotlights">
+            <h2>Company Spotlights</h2>
+            <div id="spotlights-container">
+                <p>Loading company spotlights...</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="current-year"></span> Chamber of Commerce. All rights reserved.</p>
+        <p>Last modified: <span id="last-modified"></span></p>
+        <p>Site developed by Tinny Bothepha Mosimanyana for WDD 231</p>
+    </footer>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>
