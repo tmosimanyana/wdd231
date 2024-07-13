@@ -1,79 +1,64 @@
-document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-    document.getElementById('last-modified').textContent = document.lastModified;
+document.addEventListener('DOMContentLoaded', () => {
+    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replace with your actual API key
+    const city = 'Gaborone,BW'; // Change this to your city
 
-    fetchWeatherData();
-    fetchCompanySpotlights();
-});
-
-function fetchWeatherData() {
-    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92';
-    const city = 'Gaborone';
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-    fetch(url)
+    // Fetch weather data
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`)
         .then(response => response.json())
         .then(data => {
-            displayWeatherData(data);
+            // Process weather data
+            const currentWeather = data.list[0];
+            const forecast = data.list.filter((_, index) => index % 8 === 0); // 3-day forecast, every 8 hours
+
+            document.getElementById('weather-info').innerHTML = `
+                <h3>Current Temperature: ${Math.round(currentWeather.main.temp)}°C</h3>
+                <h4>Weather Description: ${currentWeather.weather.map(w => w.description.charAt(0).toUpperCase() + w.description.slice(1)).join(', ')}</h4>
+                <h3>3-Day Forecast:</h3>
+                <ul>
+                    ${forecast.map(f => `
+                        <li>
+                            <strong>${new Date(f.dt * 1000).toLocaleDateString()}</strong>: ${Math.round(f.main.temp)}°C, ${f.weather.map(w => w.description.charAt(0).toUpperCase() + w.description.slice(1)).join(', ')}
+                        </li>
+                    `).join('')}
+                </ul>
+            `;
         })
         .catch(error => {
             console.error('Error fetching weather data:', error);
+            document.getElementById('weather-info').innerHTML = 'Error loading weather data.';
         });
-}
 
-function displayWeatherData(data) {
-    const weatherInfo = document.getElementById('weather-info');
-    const temperature = data.main.temp.toFixed(0);
-    const descriptions = data.weather.map(item => capitalizeWords(item.description)).join(', ');
-
-    let weatherHTML = `
-        <p>Current Temperature: ${temperature}°C</p>
-        <p>Weather Description: ${descriptions}</p>
-    `;
-
-    weatherInfo.innerHTML = weatherHTML;
-}
-
-function capitalizeWords(str) {
-    return str.replace(/\b\w/g, char => char.toUpperCase());
-}
-
-function fetchCompanySpotlights() {
-    const url = 'data/members.json';
-
-    fetch(url)
+    // Fetch company spotlights
+    fetch('data/members.json')
         .then(response => response.json())
         .then(data => {
-            displayCompanySpotlights(data.members);
+            const qualifiedMembers = data.members.filter(member => member.membershipLevel === 'Gold' || member.membershipLevel === 'Silver');
+            const spotlights = [];
+            
+            while (spotlights.length < 3 && qualifiedMembers.length) {
+                const randomIndex = Math.floor(Math.random() * qualifiedMembers.length);
+                const selected = qualifiedMembers.splice(randomIndex, 1)[0];
+                spotlights.push(selected);
+            }
+
+            document.getElementById('spotlights-container').innerHTML = spotlights.map(member => `
+                <div class="spotlight">
+                    <img src="${member.logo}" alt="${member.companyName} Logo">
+                    <h3>${member.companyName}</h3>
+                    <p><strong>Phone:</strong> ${member.phone}</p>
+                    <p><strong>Address:</strong> ${member.address}</p>
+                    <p><strong>Website:</strong> <a href="${member.website}" target="_blank">${member.website}</a></p>
+                    <p><strong>Membership Level:</strong> ${member.membershipLevel}</p>
+                </div>
+            `).join('');
         })
         .catch(error => {
-            console.error('Error fetching company data:', error);
+            console.error('Error fetching company spotlights:', error);
+            document.getElementById('spotlights-container').innerHTML = 'Error loading company spotlights.';
         });
-}
 
-function displayCompanySpotlights(members) {
-    const spotlightsContainer = document.getElementById('spotlights-container');
-    const goldAndSilverMembers = members.filter(member => member.membershipLevel === 'Gold' || member.membershipLevel === 'Silver');
-    const selectedMembers = getRandomMembers(goldAndSilverMembers, 3);
-
-    let spotlightsHTML = '';
-    selectedMembers.forEach(member => {
-        spotlightsHTML += `
-            <div class="spotlight">
-                <img src="${member.logo}" alt="${member.companyName} Logo">
-                <h3>${member.companyName}</h3>
-                <p>${member.phone}</p>
-                <p>${member.address}</p>
-                <p><a href="${member.website}" target="_blank">Visit Website</a></p>
-                <p>Membership Level: ${member.membershipLevel}</p>
-            </div>
-        `;
-    });
-
-    spotlightsContainer.innerHTML = spotlightsHTML;
-}
-
-function getRandomMembers(array, num) {
-    const shuffled = array.sort(() => 0.5 - Math.random());
-    return shuffled.slice(0, num);
-}
+    // Update footer with current year and last modified date
+    const currentYear = new Date().getFullYear();
+    document.getElementById('current-year').textContent = currentYear;
+    document.getElementById('last-modified').textContent = new Date(document.lastModified).toLocaleDateString();
+});

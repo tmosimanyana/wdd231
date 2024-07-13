@@ -1,81 +1,136 @@
+/* Global Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
 header {
-    background-color: #333;
-    color: white;
+    background-color: #0044cc;
+    color: #fff;
     padding: 1rem;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 1rem;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-nav ul li a.active {
-    text-decoration: underline;
 }
 
 .header-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-.header-container .profile-pic {
-    border-radius: 50%;
+.logo {
     height: 50px;
-    margin-right: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a.active {
+    font-weight: bold;
 }
 
 main {
-    padding: 1rem;
+    padding: 2rem;
 }
 
 #hero {
+    position: relative;
     text-align: center;
+    color: #fff;
 }
 
 #hero img {
     width: 100%;
     height: auto;
+    max-height: 400px;
+    object-fit: cover;
 }
 
-#hero h2 {
-    font-size: 2rem;
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
 }
 
 .cta-button {
-    display: inline-block;
+    background-color: #ff9900;
+    color: #fff;
     padding: 0.5rem 1rem;
-    background-color: #007BFF;
-    color: white;
     text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+#current-events, #weather, #spotlights {
+    margin-top: 2rem;
+}
+
+#weather-info {
+    padding: 1rem;
+    background: #f0f0f0;
     border-radius: 5px;
 }
 
-section {
-    margin-bottom: 2rem;
+#spotlights-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.spotlight {
+    background: #f9f9f9;
+    padding: 1rem;
+    border-radius: 5px;
+    width: calc(50% - 1rem);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.spotlight img {
+    max-width: 100%;
+    height: auto;
 }
 
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #0044cc;
+    color: #fff;
+    padding: 1rem;
     text-align: center;
-    padding: 1rem 0;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    .spotlight {
+        width: 100%;
+    }
+}
+
 
