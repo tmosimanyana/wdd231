@@ -92,30 +92,6 @@ main {
     background-color: #0056b3;
 }
 
-/* Course Section */
-.course-work, .feature-course, .course-filter {
-    margin-bottom: 40px;
-}
-
-.filter-buttons {
-    display: flex;
-    gap: 10px;
-}
-
-.filter-buttons button {
-    padding: 10px 20px;
-    border: 1px solid #007BFF;
-    background-color: #fff;
-    color: #007BFF;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.filter-buttons button:hover {
-    background-color: #007BFF;
-    color: #fff;
-}
-
 /* Spotlight Section */
 #company-spotlight {
     padding: 20px;
