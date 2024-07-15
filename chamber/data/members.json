@@ -1,58 +1,67 @@
 [
     {
-        "name": "Tech Innovators Ltd.",
-        "logo": "images/tech-innovators-logo.png",
-        "phone": "555-1234",
-        "address": "123 Innovation Drive, Gaborone",
-        "website": "https://techinnovators.bw",
-        "membershipLevel": "Gold"
+      "name": "Creative Tech",
+      "address": "123 Tech Lane, Gaborone, Botswana",
+      "phone": "+267 123 4567",
+      "website": "http://www.creativetech.com",
+      "image": "creative-tech-logo.png",
+      "membership": 3,
+      "description": "Leading innovation in tech solutions."
     },
     {
-        "name": "Future Solutions Inc.",
-        "logo": "images/future-solutions-logo.png",
-        "phone": "555-5678",
-        "address": "456 Technology Road, Gaborone",
-        "website": "https://futuresolutions.com",
-        "membershipLevel": "Silver"
+      "name": "Digital Dynamics",
+      "address": "456 Innovation Blvd,Gaborone, Botswana",
+      "phone": "+267 765 4321",
+      "website": "http://www.digitaldynamics.com",
+      "image": "digital-dynamics-logo.png",
+      "membership": 2,
+      "description": "Digital solutions for modern problems."
     },
     {
-        "name": "Creative Tech Co.",
-        "logo": "images/creative-tech-logo.png",
-        "phone": "555-8765",
-        "address": "789 Startup Avenue, Gaborone",
-        "website": "https://creativetech.bw",
-        "membershipLevel": "Gold"
+      "name": "Future Solutions",
+      "address": "789 Future St, Molepolole, Botswana",
+      "phone": "+267 234 5678",
+      "website": "http://www.futuresolutions.com",
+      "image": "future-solutions-logo.png",
+      "membership": 1,
+      "description": "Innovative solutions for a better tomorrow."
     },
     {
-        "name": "Innovation Hub Ltd.",
-        "logo": "images/innovation-hub-logo.png",
-        "phone": "555-4321",
-        "address": "101 Innovation Park, Gaborone",
-        "website": "https://innovationhub.bw",
-        "membershipLevel": "Silver"
+      "name": "Innovation Hub",
+      "address": "101 Hub Road, Gaborone, Botswana",
+      "phone": "+267 345 6789",
+      "website": "http://www.innovationhub.com",
+      "image": "innovation-hub-logo.png",
+      "membership": 3,
+      "description": "The center of tech innovation."
     },
     {
-        "name": "Tech Ventures Group",
-        "logo": "images/tech-ventures-logo.png",
-        "phone": "555-6789",
-        "address": "202 Tech Plaza, Gaborone",
-        "website": "https://techventures.bw",
-        "membershipLevel": "Gold"
+      "name": "Startup Solutions",
+      "address": "202 Startup Ave, Gaborone, Botswana",
+      "phone": "+267 456 7890",
+      "website": "http://www.startupsolutions.com",
+      "image": "startup-solutions-logo.png",
+      "membership": 2,
+      "description": "Helping startups succeed."
     },
     {
-        "name": "Digital Dynamics Ltd.",
-        "logo": "images/digital-dynamics-logo.png",
-        "phone": "555-3456",
-        "address": "303 Digital Avenue, Gaborone",
-        "website": "https://digitaldynamics.bw",
-        "membershipLevel": "Silver"
+      "name": "Tech Innovators",
+      "address": "303 Innovation St, Gaborone, Botswana",
+      "phone": "+267 567 8901",
+      "website": "http://www.techinnovators.com",
+      "image": "tech-innovators-logo.png",
+      "membership": 1,
+      "description": "Innovating the tech landscape."
     },
     {
-        "name": "StartUp Solutions",
-        "logo": "images/startup-solutions-logo.png",
-        "phone": "555-7890",
-        "address": "404 Startup Street, Gaborone",
-        "website": "https://startupsolutions.bw",
-        "membershipLevel": "Gold"
+      "name": "Tech Ventures",
+      "address": "404 Venture Blvd, Lobatse, Botswana",
+      "phone": "+267 678 9012",
+      "website": "http://www.techventures.com",
+      "image": "tech-ventures-logo.png",
+      "membership": 3,
+      "description": "Venturing into the future of technology."
     }
-]
+  ]
+  
+
