@@ -1,47 +1,66 @@
 document.addEventListener('DOMContentLoaded', () => {
     const memberList = document.getElementById('member-list');
-    const gridViewButton = document.getElementById('grid-view');
-    const listViewButton = document.getElementById('list-view');
+    const gridViewBtn = document.getElementById('grid-view');
+    const listViewBtn = document.getElementById('list-view');
 
-    // Fetch and display member data
-    fetch('data/members.json')
-        .then(response => response.json())
-        .then(data => displayMembers(data))
-        .catch(error => console.error('Error fetching member data:', error));
-
-    // Display members in the DOM
-    function displayMembers(members) {
-        memberList.innerHTML = members.map(member => createMemberCard(member)).join('');
+    async function fetchMembers() {
+        const response = await fetch('data/members.json');
+        const members = await response.json();
+        displayMembers(members, 'grid');
     }
 
-    // Create member card HTML
-    function createMemberCard(member) {
-        return `
-            <div class="member-card">
-                <img src="images/${member.image}" alt="${member.name}">
-                <div class="member-card-content">
-                    <h3>${member.name}</h3>
-                    <p>${member.address}</p>
-                    <p>${member.phone}</p>
-                    <p><a href="${member.website}" target="_blank">${member.website}</a></p>
-                </div>
-            </div>
-        `;
+    function displayMembers(members, view) {
+        memberList.innerHTML = '';
+        memberList.className = view === 'grid' ? 'grid-view' : 'list-view';
+
+        members.forEach(member => {
+            const memberDiv = document.createElement('div');
+            memberDiv.className = 'member';
+
+            const memberImage = document.createElement('img');
+            memberImage.src = `images/${member.image}`;
+            memberImage.alt = `${member.name} Logo`;
+
+            const memberInfo = document.createElement('div');
+            memberInfo.className = 'member-info';
+
+            const memberName = document.createElement('h3');
+            memberName.textContent = member.name;
+
+            const memberAddress = document.createElement('p');
+            memberAddress.textContent = member.address;
+
+            const memberPhone = document.createElement('p');
+            memberPhone.textContent = member.phone;
+
+            const memberWebsite = document.createElement('a');
+            memberWebsite.href = member.website;
+            memberWebsite.textContent = 'Visit Website';
+
+            memberInfo.appendChild(memberName);
+            memberInfo.appendChild(memberAddress);
+            memberInfo.appendChild(memberPhone);
+            memberInfo.appendChild(memberWebsite);
+
+            memberDiv.appendChild(memberImage);
+            memberDiv.appendChild(memberInfo);
+
+            memberList.appendChild(memberDiv);
+        });
     }
 
-    // Toggle between grid view and list view
-    gridViewButton.addEventListener('click', () => {
-        memberList.classList.add('grid-view');
-        memberList.classList.remove('list-view');
+    gridViewBtn.addEventListener('click', () => {
+        fetchMembers().then(members => displayMembers(members, 'grid'));
     });
 
-    listViewButton.addEventListener('click', () => {
-        memberList.classList.add('list-view');
-        memberList.classList.remove('grid-view');
+    listViewBtn.addEventListener('click', () => {
+        fetchMembers().then(members => displayMembers(members, 'list'));
     });
 
-    // Display the current year and last modification date in the footer
+    // Fetch and display members on page load
+    fetchMembers();
+
+    // Update the footer with the current year and last modified date
     document.getElementById('year').textContent = new Date().getFullYear();
     document.getElementById('last-modified').textContent = document.lastModified;
 });
-
