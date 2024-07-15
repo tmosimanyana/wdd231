@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92';
     const cityId = '933773'; // Gaborone city ID
 
-    // Fetch current weather data
     async function fetchWeather() {
         try {
             const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=${apiKey}&units=metric`);
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Fetch 3-day weather forecast data
     async function fetchForecast() {
         try {
             const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${cityId}&appid=${apiKey}&units=metric`);
@@ -27,11 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Fetch weather data on load
     fetchWeather();
     fetchForecast();
 
-    // Fetch member data and display spotlight
     async function fetchMembers() {
         try {
             const response = await fetch('data/members.json');
@@ -59,6 +55,5 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Fetch members on load
     fetchMembers();
 });
