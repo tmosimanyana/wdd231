@@ -1,67 +1,58 @@
 [
-    {
+  {
       "name": "Creative Tech",
-      "address": "123 Tech Lane, Gaborone, Botswana",
+      "address": "123 Innovation St, Gaborone",
       "phone": "+267 123 4567",
-      "website": "http://www.creativetech.com",
+      "website": "http://www.creativetech.co.bw",
       "image": "creative-tech-logo.png",
-      "membership": 3,
-      "description": "Leading innovation in tech solutions."
-    },
-    {
+      "membershipLevel": 3
+  },
+  {
       "name": "Digital Dynamics",
-      "address": "456 Innovation Blvd,Gaborone, Botswana",
-      "phone": "+267 765 4321",
-      "website": "http://www.digitaldynamics.com",
+      "address": "456 Digital Dr, Gaborone",
+      "phone": "+267 987 6543",
+      "website": "http://www.digitaldynamics.co.bw",
       "image": "digital-dynamics-logo.png",
-      "membership": 2,
-      "description": "Digital solutions for modern problems."
-    },
-    {
+      "membershipLevel": 2
+  },
+  {
       "name": "Future Solutions",
-      "address": "789 Future St, Molepolole, Botswana",
-      "phone": "+267 234 5678",
-      "website": "http://www.futuresolutions.com",
+      "address": "789 Future Ave, Gaborone",
+      "phone": "+267 555 1234",
+      "website": "http://www.futuresolutions.co.bw",
       "image": "future-solutions-logo.png",
-      "membership": 1,
-      "description": "Innovative solutions for a better tomorrow."
-    },
-    {
+      "membershipLevel": 1
+  },
+  {
       "name": "Innovation Hub",
-      "address": "101 Hub Road, Gaborone, Botswana",
-      "phone": "+267 345 6789",
-      "website": "http://www.innovationhub.com",
+      "address": "321 Innovation St, Gaborone",
+      "phone": "+267 333 2222",
+      "website": "http://www.innovationhub.co.bw",
       "image": "innovation-hub-logo.png",
-      "membership": 3,
-      "description": "The center of tech innovation."
-    },
-    {
+      "membershipLevel": 3
+  },
+  {
       "name": "Startup Solutions",
-      "address": "202 Startup Ave, Gaborone, Botswana",
-      "phone": "+267 456 7890",
-      "website": "http://www.startupsolutions.com",
+      "address": "654 Startup Dr, Gaborone",
+      "phone": "+267 222 3333",
+      "website": "http://www.startupsolutions.co.bw",
       "image": "startup-solutions-logo.png",
-      "membership": 2,
-      "description": "Helping startups succeed."
-    },
-    {
+      "membershipLevel": 2
+  },
+  {
       "name": "Tech Innovators",
-      "address": "303 Innovation St, Gaborone, Botswana",
-      "phone": "+267 567 8901",
-      "website": "http://www.techinnovators.com",
+      "address": "987 Tech Rd, Gaborone",
+      "phone": "+267 111 4444",
+      "website": "http://www.techinnovators.co.bw",
       "image": "tech-innovators-logo.png",
-      "membership": 1,
-      "description": "Innovating the tech landscape."
-    },
-    {
+      "membershipLevel": 1
+  },
+  {
       "name": "Tech Ventures",
-      "address": "404 Venture Blvd, Lobatse, Botswana",
-      "phone": "+267 678 9012",
-      "website": "http://www.techventures.com",
+      "address": "654 Tech Blvd, Gaborone",
+      "phone": "+267 666 5555",
+      "website": "http://www.techventures.co.bw",
       "image": "tech-ventures-logo.png",
-      "membership": 3,
-      "description": "Venturing into the future of technology."
-    }
-  ]
-  
-
+      "membershipLevel": 3
+  }
+]
