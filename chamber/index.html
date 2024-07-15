@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Timbuktu Chamber of Commerce</title>
+    <title>Gaborone Tech Startup Chamber of Commerce</title>
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="logo">Timbuktu Chamber of Commerce</div>
+            <div class="logo">Gaborone Tech Startup Chamber of Commerce</div>
             <nav>
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -22,7 +23,7 @@
     </header>
     <main>
         <section class="hero">
-            <img src="hero-image.jpg" alt="Scalable, responsive hero image">
+            <img src="images/hero-image.png" alt="Scalable, responsive hero image">
             <button>Keynote Tickets</button>
         </section>
         <section class="content">
@@ -32,58 +33,44 @@
             </div>
             <div class="current-weather">
                 <h2>Current Weather</h2>
-                <p>75°F</p>
-                <p>Partly Cloudy</p>
-                <p>High: 85°F</p>
-                <p>Low: 52°F</p>
-                <p>Humidity: 35%</p>
-                <p>Sunrise: 7:30am</p>
-                <p>Sunset: 9:59pm</p>
+                <p id="current-temp">Loading...</p>
+                <p id="current-desc">Loading...</p>
             </div>
             <div class="weather-forecast">
                 <h2>Weather Forecast</h2>
-                <p>Today: 90°F</p>
-                <p>Wednesday: 89°F</p>
-                <p>Thursday: 68°F</p>
+                <p id="forecast-day-1">Loading...</p>
+                <p id="forecast-day-2">Loading...</p>
+                <p id="forecast-day-3">Loading...</p>
             </div>
         </section>
         <section class="business-directory">
             <div class="business-card">
-                <img src="business1.jpg" alt="Business Image">
-                <p>Business Name</p>
-                <p>Business Tag Line</p>
-                <p>Email: info@gmail.com</p>
-                <p>Phone: 800-555-1234</p>
-                <p>URL: mybusiness.com</p>
+                <img src="images/creative-tech-logo.png" alt="Creative Tech Logo">
+                <p>Creative Tech</p>
+                <p>123 Innovation St, Gaborone</p>
+                <p>Email: info@creativetech.co.bw</p>
+                <p>Phone: +267 123 4567</p>
+                <p>URL: <a href="http://www.creativetech.co.bw" target="_blank">www.creativetech.co.bw</a></p>
             </div>
-            <div class="business-card">
-                <img src="business2.jpg" alt="Business Image">
-                <p>Business Name</p>
-                <p>Business Tag Line</p>
-                <p>Email: info@gmail.com</p>
-                <p>Phone: 800-555-1234</p>
-                <p>URL: mybusiness.com</p>
-            </div>
-            <div class="business-card">
-                <img src="business3.jpg" alt="Business Image">
-                <p>Business Name</p>
-                <p>Business Tag Line</p>
-                <p>Email: info@gmail.com</p>
-                <p>Phone: 800-555-1234</p>
-                <p>URL: mybusiness.com</p>
+            <!-- Add other business cards similarly -->
+        </section>
+        <section class="spotlight">
+            <h2>Member Spotlight</h2>
+            <div id="spotlight-container">
+                <!-- Spotlight members will be dynamically inserted here -->
             </div>
         </section>
     </main>
     <footer>
         <div class="container">
-            <p>Timbuktu Chamber of Commerce</p>
-            <p>10 Rue De La Paix, Timbuktu, Mali 999</p>
-            <p>Email: info@timbuktucc.org</p>
-            <p>Phone: (223) 555-2300</p>
+            <p>Gaborone Tech Startup Chamber of Commerce</p>
+            <p>10 Commerce St, Gaborone, Botswana</p>
+            <p>Email: info@gaboronecoc.org</p>
+            <p>Phone: +267 555 2300</p>
             <div class="social-media">
-                <a href="#"><img src="icon-facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="icon-twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="icon-linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="images/icon-facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/icon-twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/icon-linkedin.png" alt="LinkedIn"></a>
             </div>
         </div>
     </footer>
