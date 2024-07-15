@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiKey = 'YOUR_API_KEY';
+    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92';
     const cityId = '933773'; // Gaborone city ID
 
     // Fetch current weather data
