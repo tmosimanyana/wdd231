@@ -1,161 +1,120 @@
-/* Normalize CSS */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f5f5f5;
+    line-height: 1.6;
 }
 
-header, footer {
+header {
     background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
+    color: #fff;
+    padding: 1rem 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
 }
 
-nav ul li {
-    display: inline;
-    margin-right: 10px;
-}
-
-nav ul li a {
-    color: white;
+nav a {
+    color: #fff;
     text-decoration: none;
-    padding: 14px 20px;
 }
 
-nav ul li a:hover {
-    background-color: #575757;
+.hero {
+    position: relative;
+    text-align: center;
 }
 
-main {
-    padding: 2em;
-    max-width: 800px;
-    margin: auto;
-    background: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 2em;
-}
-
-form label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-form input[type="text"],
-form input[type="email"],
-form input[type="tel"],
-form select,
-form textarea {
+.hero img {
     width: 100%;
-    padding: 0.5em;
-    margin-top: 5px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    height: auto;
 }
 
-form input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 0.75em 1.5em;
+.hero button {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
 }
 
-form input[type="submit"]:hover {
-    background-color: #45a049;
-}
-
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-    animation: fadeIn 0.5s;
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    animation: slideIn 0.5s;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-@keyframes fadeIn {
-    from {opacity: 0;}
-    to {opacity: 1;}
-}
-
-@keyframes slideIn {
-    from {margin-top: -300px;}
-    to {margin-top: 15%;}
-}
-
-.membership-levels {
+.content {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    padding: 2rem 0;
 }
 
-.membership-levels .card {
-    flex: 1 1 calc(25% - 10px);
-    margin: 5px;
-    padding: 1em;
-    background: #f5f5f5;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.content > div {
+    width: 30%;
+}
+
+.business-directory {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 0;
+}
+
+.business-card {
+    width: 30%;
     text-align: center;
-    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.membership-levels .card:hover {
-    transform: scale(1.05);
-    background-color: #e2e2e2;
+.business-card img {
+    width: 100%;
+    height: auto;
 }
 
-.membership-levels .card p {
-    margin: 10px 0;
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
 }
 
-.form-data {
-    list-style: none;
-    padding: 0;
+footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.form-data li {
-    margin-bottom: 10px;
+footer .social-media a {
+    margin: 0 10px;
 }
 
+@media (max-width: 768px) {
+    .content, .business-directory {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content > div, .business-card {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    header .container {
+        flex-direction: column;
+    }
+
+    .hero button {
+        bottom: 10px;
+    }
+}
