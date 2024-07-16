@@ -1,0 +1,148 @@
+/* chamber-project/css/styles.css */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: #333333;
+    background-color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #336699;
+    color: #FFFFFF;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+footer {
+    background-color: #6699CC;
+    color: #FFFFFF;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+footer .contact-info, footer .development-info {
+    margin: 0;
+}
+
+main {
+    padding: 20px;
+}
+
+/* Hero Section */
+#hero {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.cta-button {
+    background-color: #FF9933;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #CC6600;
+}
+
+/* Events Section */
+#events {
+    margin-top: 40px;
+}
+
+#events h2 {
+    text-align: center;
+}
+
+#events-list {
+    list-style: none;
+    padding: 0;
+}
+
+#events-list li {
+    padding: 10px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+/* Weather Section */
+#weather {
+    margin-top: 40px;
+}
+
+#weather h2 {
+    text-align: center;
+}
+
+#current-weather {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#weather-forecast {
+    display: flex;
+    justify-content: space-around;
+}
+
+/* Spotlights Section */
+#spotlights {
+    margin-top: 40px;
+}
+
+#spotlights h2 {
+    text-align: center;
+}
+
+#spotlight-companies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.spotlight-card {
+    border: 1px solid #CCCCCC;
+    padding: 20px;
+    margin: 10px;
+    flex: 1 1 calc(33.333% - 40px);
+    box-sizing: border-box;
+}
+
+.spotlight-card img {
+    max-width: 100%;
+}
