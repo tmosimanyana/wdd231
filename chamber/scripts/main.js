@@ -1,43 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const membersContainer = document.getElementById('members');
-    const gridViewButton = document.getElementById('grid-view');
-    const listViewButton = document.getElementById('list-view');
+    fetch('data/members.json')
+        .then(response => response.json())
+        .then(data => {
+            const spotlightContainer = document.getElementById('spotlight-container');
+            const goldAndSilverMembers = data.filter(member => member.membershipLevel >= 2);
 
-    async function fetchMembers() {
-        const response = await fetch('data/members.json');
-        const members = await response.json();
-        displayMembers(members, 'grid');
-    }
+            const getRandomMembers = (array, num) => {
+                const shuffled = array.sort(() => 0.5 - Math.random());
+                return shuffled.slice(0, num);
+            };
 
-    function displayMembers(members, view) {
-        membersContainer.innerHTML = '';
-        members.forEach(member => {
-            const memberDiv = document.createElement('div');
-            memberDiv.classList.add(view === 'grid' ? 'member-card' : 'member-list-item');
-            memberDiv.innerHTML = `
-                <img src="images/${member.image}" alt="${member.name} Logo">
-                <h2>${member.name}</h2>
-                <p>${member.address}</p>
-                <p>${member.phone}</p>
-                <p><a href="${member.website}" target="_blank">${member.website}</a></p>
-                <p>Membership Level: ${member.membership_level}</p>
-            `;
-            membersContainer.appendChild(memberDiv);
-        });
-    }
+            const spotlights = getRandomMembers(goldAndSilverMembers, 3);
 
-    gridViewButton.addEventListener('click', () => {
-        fetchMembers().then(members => displayMembers(members, 'grid'));
-    });
-
-    listViewButton.addEventListener('click', () => {
-        fetchMembers().then(members => displayMembers(members, 'list'));
-    });
-
-    // Initial load
-    fetchMembers();
-
-    // Update footer year and last modified date
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('last-modified').textContent = document.lastModified;
+            spotlights.forEach(member => {
+                spotlightContainer.innerHTML += `
+                    <div class="spotlight">
+                        <img src="images/${member.image}" alt="${member.name} Logo">
+                        <h3>${member.name}</h3>
+                        <p>Phone: ${member.phone}</p>
+                        <p>Address: ${member.address}</p>
+                        <a href="${member.website}" target="_blank">Visit Website</a>
+                        <p>Membership Level: ${member.membershipLevel === 3 ? 'Gold' : 'Silver'}</p>
+                    </div>
+                `;
+            });
+        })
+        .catch(error => console.error('Error fetching member data:', error));
 });
