@@ -1,81 +1,79 @@
-/* styles.css */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Normalize/Reset CSS */
+@import url('normalize.css');
 
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #333;
+    background: #333;
     color: #fff;
-    padding: 10px 0;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.logo img {
-    max-height: 50px;
+    padding: 1rem 0;
+    text-align: center;
 }
 
 nav ul {
-    list-style: none;
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
 }
 
-nav a {
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
     color: #fff;
     text-decoration: none;
 }
 
-.hero img {
-    width: 100%;
-    height: auto;
-}
-
-.hero button {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-}
-
-.content {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-}
-
-.business-directory {
-    padding: 20px;
-}
-
-.business-card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    text-align: center;
+main {
+    padding: 2rem;
 }
 
 footer {
-    background-color: #333;
+    background: #333;
     color: #fff;
-    padding: 20px 0;
     text-align: center;
+    padding: 1rem 0;
 }
 
-footer .social-media a {
-    margin: 0 10px;
+#membersContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
+.grid-view .member-card {
+    width: 30%;
+    margin: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.list-view .member-card {
+    width: 100%;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .grid-view .member-card,
+    .list-view .member-card {
+        width: 90%;
+    }
+}
