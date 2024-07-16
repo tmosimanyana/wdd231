@@ -1,58 +1,58 @@
 [
     {
         "name": "Company A",
-        "address": "Address A, Gaborone",
+        "address": "123 Tech Road",
         "phone": "123-456-7890",
-        "website": "http://companya.com",
+        "website": "https://companya.com",
         "image": "company-a-logo.png",
-        "membership_level": 1
+        "membershipLevel": 3
+    },
+    {
+        "name": "Company B",
+        "address": "456 Innovation Ave",
+        "phone": "987-654-3210",
+        "website": "https://companyb.com",
+        "image": "company-b-logo.png",
+        "membershipLevel": 2
     },
     {
         "name": "Company C",
-        "address": "Address C, Gaborone",
-        "phone": "123-456-7890",
-        "website": "http://companyc.com",
+        "address": "789 Startup Blvd",
+        "phone": "555-123-4567",
+        "website": "https://companyc.com",
         "image": "company-c-logo.png",
-        "membership_level": 2
+        "membershipLevel": 1
     },
     {
         "name": "Company D",
-        "address": "Address D, Gaborone",
-        "phone": "123-456-7890",
-        "website": "http://companyd.com",
+        "address": "1011 Entrepreneur Ln",
+        "phone": "555-765-4321",
+        "website": "https://companyd.com",
         "image": "company-d-logo.png",
-        "membership_level": 3
+        "membershipLevel": 3
     },
     {
         "name": "Company E",
-        "address": "Address E, Gaborone",
-        "phone": "123-456-7890",
-        "website": "http://companye.com",
+        "address": "1213 Venture St",
+        "phone": "555-111-2222",
+        "website": "https://companye.com",
         "image": "company-e-logo.png",
-        "membership_level": 1
+        "membershipLevel": 2
     },
     {
         "name": "Company F",
-        "address": "Address F, Gaborone",
-        "phone": "123-456-7890",
-        "website": "http://companyf.com",
+        "address": "1415 Innovation Park",
+        "phone": "555-333-4444",
+        "website": "https://companyf.com",
         "image": "company-f-logo.png",
-        "membership_level": 2
+        "membershipLevel": 1
     },
     {
         "name": "Company G",
-        "address": "Address G, Gaborone",
-        "phone": "123-456-7890",
-        "website": "http://companyg.com",
+        "address": "1617 Tech Valley",
+        "phone": "555-666-7777",
+        "website": "https://companyg.com",
         "image": "company-g-logo.png",
-        "membership_level": 3
-    },
-    {
-        "name": "Company H",
-        "address": "Address H, Gaborone",
-        "phone": "123-456-7890",
-        "website": "http://companyh.com",
-        "image": "company-h-logo.png",
-        "membership_level": 1
+        "membershipLevel": 3
     }
 ]
