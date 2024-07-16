@@ -4,106 +4,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-
-        header, footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 1em 0;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 10px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 14px 20px;
-        }
-
-        nav ul li a:hover {
-            background-color: #575757;
-        }
-
-        main {
-            padding: 2em;
-            max-width: 800px;
-            margin: auto;
-            background: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            margin-top: 2em;
-        }
-
-        .form-data {
-            list-style: none;
-            padding: 0;
-        }
-
-        .form-data li {
-            margin-bottom: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <h1>Gaborone Tech Startups Chamber of Commerce</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Business Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="podcast.html">Podcast</a></li>
-                <li><a href="events.html">Events</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Gaborone Tech Startup Chamber of Commerce">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-
-    <!-- Main Content -->
     <main>
-        <h2>Thank You for Joining the Chamber</h2>
-        <p>Here are the details you submitted:</p>
-        <ul class="form-data" id="form-data">
-            <!-- Form data will be displayed here -->
-        </ul>
+        <section class="thank-you">
+            <h1>Thank You for Your Application</h1>
+            <p>We have received your application with the following details:</p>
+            <ul>
+                <li>First Name: <span id="first-name"></span></li>
+                <li>Last Name: <span id="last-name"></span></li>
+                <li>Email: <span id="email"></span></li>
+                <li>Mobile Phone: <span id="mobile"></span></li>
+                <li>Organization Name: <span id="org-name"></span></li>
+                <li>Submission Time: <span id="timestamp"></span></li>
+            </ul>
+        </section>
     </main>
-
-    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Gaborone Tech Startups Chamber of Commerce. All rights reserved.</p>
-        <p><a href="contact.html">Contact Us</a> | <a href="privacy.html">Privacy Policy</a></p>
+        <div class="container">
+            <p>Gaborone Tech Startup Chamber of Commerce</p>
+            <p>10 Main St, Gaborone, Botswana</p>
+            <p>Email: info@gaboronetechstartup.com</p>
+            <p>Phone: (267) 555-2300</p>
+            <div class="social-media">
+                <a href="#"><img src="images/icon-facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/icon-twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/icon-linkedin.png" alt="LinkedIn"></a>
+            </div>
+            <p>Tinny Bothepha Mosimanyana - WDD 231</p>
+            <p>Last modified: <span id="last-modified"></span></p>
+        </div>
     </footer>
-
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const params = new URLSearchParams(window.location.search);
-            const formData = document.getElementById('form-data');
+        // Get query parameters from URL
+        const params = new URLSearchParams(window.location.search);
 
-            params.forEach((value, key) => {
-                const li = document.createElement('li');
-                li.textContent = `${key.replace('-', ' ')}: ${value}`;
-                formData.appendChild(li);
-            });
-        });
+        // Display form data
+        document.getElementById('first-name').textContent = params.get('first-name');
+        document.getElementById('last-name').textContent = params.get('last-name');
+        document.getElementById('email').textContent = params.get('email');
+        document.getElementById('mobile').textContent = params.get('mobile');
+        document.getElementById('org-name').textContent = params.get('org-name');
+        document.getElementById('timestamp').textContent = params.get('timestamp');
     </script>
 </body>
 </html>
