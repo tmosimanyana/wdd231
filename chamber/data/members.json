@@ -1,67 +1,58 @@
 [
     {
-        "name": "Tech Innovators",
-        "address": "123 Innovation Street, Gaborone",
-        "phone": "+267 123 4567",
-        "website": "http://techinnovators.co.bw",
-        "image": "images/tech_innovators.jpg",
-        "membership": "3",
-        "other": "Specializes in AI and ML solutions."
+        "name": "Company A",
+        "address": "Address A, Gaborone",
+        "phone": "123-456-7890",
+        "website": "http://companya.com",
+        "image": "company-a-logo.png",
+        "membership_level": 1
     },
     {
-        "name": "Startup Hub",
-        "address": "456 Startup Avenue, Gaborone",
-        "phone": "+267 234 5678",
-        "website": "http://startuphubbw.com",
-        "image": "images/startup_hub.jpg",
-        "membership": "2",
-        "other": "Focus on providing co-working spaces."
+        "name": "Company C",
+        "address": "Address C, Gaborone",
+        "phone": "123-456-7890",
+        "website": "http://companyc.com",
+        "image": "company-c-logo.png",
+        "membership_level": 2
     },
     {
-        "name": "CodeBots",
-        "address": "789 Coding Lane, Gaborone",
-        "phone": "+267 345 6789",
-        "website": "http://codebotsbw.com",
-        "image": "images/codebots.jpg",
-        "membership": "1",
-        "other": "Offers coding bootcamps and workshops."
+        "name": "Company D",
+        "address": "Address D, Gaborone",
+        "phone": "123-456-7890",
+        "website": "http://companyd.com",
+        "image": "company-d-logo.png",
+        "membership_level": 3
     },
     {
-        "name": "Gaborone Tech",
-        "address": "101 Tech Road, Gaborone",
-        "phone": "+267 456 7890",
-        "website": "http://gaboronetech.com",
-        "image": "images/gaborone_tech.jpg",
-        "membership": "3",
-        "other": "Provides IT consulting services."
+        "name": "Company E",
+        "address": "Address E, Gaborone",
+        "phone": "123-456-7890",
+        "website": "http://companye.com",
+        "image": "company-e-logo.png",
+        "membership_level": 1
     },
     {
-        "name": "InnovateBW",
-        "address": "202 Innovation Boulevard, Gaborone",
-        "phone": "+267 567 8901",
-        "website": "http://innovatebw.com",
-        "image": "images/innovatebw.jpg",
-        "membership": "2",
-        "other": "Focus on startup incubation and acceleration."
+        "name": "Company F",
+        "address": "Address F, Gaborone",
+        "phone": "123-456-7890",
+        "website": "http://companyf.com",
+        "image": "company-f-logo.png",
+        "membership_level": 2
     },
     {
-        "name": "FutureTech",
-        "address": "303 Future Street, Gaborone",
-        "phone": "+267 678 9012",
-        "website": "http://futuretechbw.com",
-        "image": "images/futuretech.jpg",
-        "membership": "1",
-        "other": "Specializes in blockchain technology."
+        "name": "Company G",
+        "address": "Address G, Gaborone",
+        "phone": "123-456-7890",
+        "website": "http://companyg.com",
+        "image": "company-g-logo.png",
+        "membership_level": 3
     },
     {
-        "name": "TechPioneers",
-        "address": "404 Pioneers Path, Gaborone",
-        "phone": "+267 789 0123",
-        "website": "http://techpioneersbw.com",
-        "image": "images/techpioneers.jpg",
-        "membership": "3",
-        "other": "Focus on VR and AR innovations."
+        "name": "Company H",
+        "address": "Address H, Gaborone",
+        "phone": "123-456-7890",
+        "website": "http://companyh.com",
+        "image": "company-h-logo.png",
+        "membership_level": 1
     }
 ]
-
-  
