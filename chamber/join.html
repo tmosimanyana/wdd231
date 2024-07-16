@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
     <style>
-        /* Add custom styles for modals and cards */
+        /* These styles should ideally be moved to an external CSS file */
         .modal {
             display: none;
             position: fixed;
@@ -42,8 +42,8 @@
         .card {
             opacity: 0;
             transform: translateY(50px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
         }
-        /* Responsive styles */
         @media (min-width: 768px) {
             .form-section {
                 width: 60%;
@@ -177,39 +177,7 @@
             <p>Last modified: <span id="last-modified"></span></p>
         </div>
     </footer>
-    <script>
-        // Set the timestamp value
-        document.getElementById('timestamp').value = new Date().toISOString();
-
-        // Modal functionality
-        document.querySelectorAll('.modal-link').forEach(link => {
-            link.addEventListener('click', event => {
-                event.preventDefault();
-                document.querySelector(link.getAttribute('href')).style.display = 'block';
-            });
-        });
-
-        document.querySelectorAll('.close').forEach(closeBtn => {
-            closeBtn.addEventListener('click', () => {
-                document.getElementById(closeBtn.dataset.modal).style.display = 'none';
-            });
-        });
-
-        window.addEventListener('click', event => {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-            }
-        });
-
-        // Animation for membership cards
-        window.onload = () => {
-            document.querySelectorAll('.card').forEach(card => {
-                card.style.transition = 'opacity 1s ease-in-out, transform 1s ease-in-out';
-                card.style.opacity = 1;
-                card.style.transform = 'translateY(0)';
-            });
-        };
-    </script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
 
