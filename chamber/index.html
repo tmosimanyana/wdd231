@@ -11,47 +11,67 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="images/og-image.png">
     <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="logo"><img src="images/logo.png" alt="Gaborone Tech Startup Chamber of Commerce"></div>
+            <div class="logo">
+                <img src="images/logo.png" alt="Gaborone Tech Startup Chamber of Commerce">
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Directory</a></li>
-                    <li><a href="#">Join</a></li>
-                    <li><a href="#">Discover</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="events.html">Events</a></li>
                 </ul>
             </nav>
         </div>
     </header>
     <main>
-        <h1>Gaborone Tech Startup Chamber of Commerce</h1>
         <section class="hero">
-            <img src="images/he" alt="Gaborone Tech Startup Chamber of Commerce">
-            <button>Keynote Tickets</button>
-        </section>
-        <section class="content">
-            <div class="events">
-                <h2>Events</h2>
-                <p>Placeholder for current events</p>
-            </div>
-            <div class="current-weather">
-                <h2>Current Weather</h2>
-                <p id="current-temp">Temperature: </p>
-                <p id="current-desc">Description: </p>
-            </div>
-            <div class="weather-forecast">
-                <h2>Weather Forecast</h2>
-                <p id="forecast-day-1">Day 1: </p>
-                <p id="forecast-day-2">Day 2: </p>
-                <p id="forecast-day-3">Day 3: </p>
+            <img src="images/hero-image.png" alt="Gaborone Tech Startup Chamber of Commerce">
+            <div class="hero-text">
+                <h1>Welcome to the Gaborone Tech Startups Chamber of Commerce</h1>
+                <p>Supporting and promoting the growth of tech startups in Gaborone.</p>
+                <a href="join.html" class="cta-button">Join Us</a>
             </div>
         </section>
-        <section class="business-directory">
-            <div id="spotlight-container"></div>
+        <section class="events">
+            <h2>Current Events</h2>
+            <p>Stay updated with our upcoming events and workshops.</p>
+            <!-- Add events content here -->
+        </section>
+        <section class="weather">
+            <h2>Current Weather</h2>
+            <div id="weather-widget">
+                <!-- Weather widget content -->
+            </div>
+        </section>
+        <section class="spotlights">
+            <h2>Business Spotlights</h2>
+            <div class="spotlight-container">
+                <div class="spotlight">
+                    <img src="images/company-a-logo.png" alt="Company A Logo">
+                    <h3>Company A</h3>
+                    <p>Description of Company A.</p>
+                </div>
+                <div class="spotlight">
+                    <img src="images/company-c-logo.png" alt="Company C Logo">
+                    <h3>Company C</h3>
+                    <p>Description of Company C.</p>
+                </div>
+                <div class="spotlight">
+                    <img src="images/company-d-logo.png" alt="Company D Logo">
+                    <h3>Company D</h3>
+                    <p>Description of Company D.</p>
+                </div>
+            </div>
         </section>
     </main>
     <footer>
@@ -65,8 +85,11 @@
                 <a href="#"><img src="images/icon-twitter.png" alt="Twitter"></a>
                 <a href="#"><img src="images/icon-linkedin.png" alt="LinkedIn"></a>
             </div>
+            <p>Tinny Bothepha Mosimanyana - WDD 231</p>
+            <p>Last modified: <span id="last-modified"></span></p>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/weather.js"></script>
 </body>
 </html>

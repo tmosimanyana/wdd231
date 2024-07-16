@@ -1,84 +1,124 @@
-/* styles/style.css */
+/* Normalize.css already included */
 
+/* Basic Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
-    background-image: url(images\hero-image.png);
+    color: #333;
 }
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 10px 20px;
 }
 
-header h1 {
-    margin: 0;
+.logo img {
+    height: 50px;
 }
 
 nav ul {
     list-style: none;
+    margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
-    background: #444;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    margin: 0 10px;
 }
 
 nav ul li a {
-    color: #fff;
     text-decoration: none;
+    color: #333;
+    font-weight: bold;
 }
 
-main {
-    padding: 2rem;
+.hero {
+    position: relative;
+    text-align: center;
+    color: white;
 }
 
-.view-toggle {
-    margin-bottom: 1rem;
+.hero img {
+    width: 100%;
+    height: auto;
 }
 
-#member-list.grid-view {
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.hero .cta-button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff6347;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+section {
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.events, .weather, .spotlights {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.spotlight-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 20px;
 }
 
-#member-list.list-view {
-    display: block;
-}
-
-.member {
+.spotlight {
+    flex: 1 1 30%;
+    background-color: #fff;
     border: 1px solid #ddd;
-    padding: 1rem;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    border-radius: 10px;
+    padding: 20px;
     text-align: center;
-    width: calc(33.333% - 1rem);
 }
 
-.member img {
+.spotlight img {
     max-width: 100px;
-    margin-bottom: 1rem;
-}
-
-.member-info h3 {
-    margin: 0.5rem 0;
+    height: auto;
+    margin-bottom: 10px;
 }
 
 footer {
-    background: #333;
-    color: #fff;
+    background-color: #f4f4f4;
+    padding: 20px;
     text-align: center;
-    padding: 1rem 0;
-    position: absolute;
-    width: 100%;
-    bottom: 0;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-text {
+        padding: 10px;
+    }
+    .spotlight-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
