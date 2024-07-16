@@ -1,33 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to the Gaborone Tech Startups Chamber of Commerce. Join us to engage with the local tech community.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <meta property="og:title" content="Gaborone Tech Startups Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-image.png">
-    <meta property="og:url" content="http://tmosimanyana.github.io/wdd231/chamber/index.html">
-    <title>Home - Gaborone Tech Startups Chamber of Commerce</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Gaborone Tech Startups Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-</head>
-<body>
+    <!-- Header -->
     <header>
         <h1>Gaborone Tech Startups Chamber of Commerce</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Directory</a></li>
+                <li><a href="directory.html">Business Directory</a></li>
                 <li><a href="join.html">Join</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="podcast.html">Podcast</a></li>
@@ -35,60 +22,45 @@
             </ul>
         </nav>
     </header>
+
+    <!-- Main Content -->
     <main>
-        <main>
-            <!-- Hero Image Section -->
-            <section id="hero">
-                <img src="images/hero.jpg" alt="Gaborone Tech Startups Chamber of Commerce" class="hero-image">
-                <div class="hero-text">
-                    <h2>Welcome to the Gaborone Tech Startups Chamber of Commerce</h2>
-                    <p>Connecting and empowering the tech community in Gaborone.</p>
-                    <a href="join.html" class="cta-button">Join Us</a>
-                </div>
-            </section>
-        
-            <!-- Current Events Section -->
-            <section id="events">
-                <h2>Upcoming Events</h2>
-                <ul id="events-list">
-                    <!-- Events will be dynamically loaded here -->
-                </ul>
-            </section>
-        
-            <!-- Weather Section -->
-            <section id="weather">
-                <h2>Current Weather</h2>
-                <div id="current-weather">
-                    <p id="temperature"></p>
-                    <p id="weather-description"></p>
-                </div>
-                <div id="weather-forecast">
-                    <!-- Forecast will be dynamically loaded here -->
-                </div>
-            </section>
-        
-            <!-- Company Spotlights Section -->
-            <section id="spotlights">
-                <h2>Member Spotlights</h2>
-                <div id="spotlight-companies">
-                    <!-- Spotlight companies will be dynamically loaded here -->
-                </div>
-            </section>
-        </main>
-        
+        <section class="hero">
+            <img src="hero-image.jpg" alt="Hero Image">
+            <div class="hero-text">
+                <h2>Welcome to Gaborone Tech Startups Chamber of Commerce</h2>
+                <p>Empowering tech startups for a brighter future</p>
+                <a href="join.html" class="cta-button">Join Us Today</a>
+            </div>
+        </section>
+
+        <section class="current-events">
+            <h2>Current Events</h2>
+            <!-- Current events content -->
+        </section>
+
+        <section class="weather">
+            <h2>Weather in Gaborone</h2>
+            <div id="weather-content">
+                <p>Loading weather data...</p>
+            </div>
+        </section>
+
+        <section class="company-spotlights">
+            <h2>Company Spotlights</h2>
+            <div id="spotlight-container">
+                <!-- Company spotlight content will be loaded here -->
+            </div>
+        </section>
     </main>
+
+    <!-- Footer -->
     <footer>
-        <div class="contact-info">
-            <p>Gaborone Tech Startups Chamber of Commerce</p>
-            <p>Email: info@gtcc.bw</p>
-            <p>Phone: +267 123 4567</p>
-        </div>
-        <div class="development-info">
-            <p>&copy; <span id="year"></span> Your Name</p>
-            <p>WDD 231 Class Project</p>
-            <p>Last Modified: <span id="last-modified"></span></p>
-        </div>
+        <p>&copy; 2024 Gaborone Tech Startups Chamber of Commerce. All rights reserved.</p>
+        <p><a href="contact.html">Contact Us</a> | <a href="privacy.html">Privacy Policy</a></p>
     </footer>
-    <script src="js/main.js"></script>
+
+    <script src="scripts.js"></script>
+    <script src="weather.js"></script>
 </body>
 </html>
