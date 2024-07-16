@@ -1,58 +1,60 @@
+// chamber-project/data/members.json
 [
     {
-        "name": "Company A",
-        "address": "123 Tech Road",
-        "phone": "123-456-7890",
-        "website": "https://companya.com",
-        "image": "company-a-logo.png",
-        "membershipLevel": 3
+        "name": "Tech Innovators Ltd",
+        "address": "123 Innovation Drive, Gaborone, Botswana",
+        "phone": "+267 123 4567",
+        "website": "http://techinnovators.co.bw",
+        "image": "tech_innovators.png",
+        "membership_level": 3
     },
     {
-        "name": "Company B",
-        "address": "456 Innovation Ave",
-        "phone": "987-654-3210",
-        "website": "https://companyb.com",
-        "image": "company-b-logo.png",
-        "membershipLevel": 2
+        "name": "BotsTech Solutions",
+        "address": "456 Future Lane, Gaborone, Botswana",
+        "phone": "+267 234 5678",
+        "website": "http://botstechsolutions.bw",
+        "image": "botstech_solutions.png",
+        "membership_level": 2
     },
     {
-        "name": "Company C",
-        "address": "789 Startup Blvd",
-        "phone": "555-123-4567",
-        "website": "https://companyc.com",
-        "image": "company-c-logo.png",
-        "membershipLevel": 1
+        "name": "NextGen Software",
+        "address": "789 Vision Street, Gaborone, Botswana",
+        "phone": "+267 345 6789",
+        "website": "http://nextgensoftware.bw",
+        "image": "nextgen_software.png",
+        "membership_level": 1
     },
     {
-        "name": "Company D",
-        "address": "1011 Entrepreneur Ln",
-        "phone": "555-765-4321",
-        "website": "https://companyd.com",
-        "image": "company-d-logo.png",
-        "membershipLevel": 3
+        "name": "Innovate Africa",
+        "address": "321 Future Park, Gaborone, Botswana",
+        "phone": "+267 456 7890",
+        "website": "http://innovateafrica.bw",
+        "image": "innovate_africa.png",
+        "membership_level": 2
     },
     {
-        "name": "Company E",
-        "address": "1213 Venture St",
-        "phone": "555-111-2222",
-        "website": "https://companye.com",
-        "image": "company-e-logo.png",
-        "membershipLevel": 2
+        "name": "SmartTech Solutions",
+        "address": "654 Tech Boulevard, Gaborone, Botswana",
+        "phone": "+267 567 8901",
+        "website": "http://smarttech.bw",
+        "image": "smarttech_solutions.png",
+        "membership_level": 3
     },
     {
-        "name": "Company F",
-        "address": "1415 Innovation Park",
-        "phone": "555-333-4444",
-        "website": "https://companyf.com",
-        "image": "company-f-logo.png",
-        "membershipLevel": 1
+        "name": "GreenTech Innovations",
+        "address": "987 Green Avenue, Gaborone, Botswana",
+        "phone": "+267 678 9012",
+        "website": "http://greentech.bw",
+        "image": "greentech_innovations.png",
+        "membership_level": 1
     },
     {
-        "name": "Company G",
-        "address": "1617 Tech Valley",
-        "phone": "555-666-7777",
-        "website": "https://companyg.com",
-        "image": "company-g-logo.png",
-        "membershipLevel": 3
+        "name": "FutureTech Enterprises",
+        "address": "159 Future Road, Gaborone, Botswana",
+        "phone": "+267 789 0123",
+        "website": "http://futuretech.bw",
+        "image": "futuretech_enterprises.png",
+        "membership_level": 3
     }
 ]
+
