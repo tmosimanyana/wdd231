@@ -6,11 +6,11 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&ap
     .then(response => response.json())
     .then(data => {
         const temp = data.main.temp.toFixed(0);
-        const description = data.weather.map(w => capitalize(w.description)).join(', ');
+        const descriptions = data.weather.map(w => capitalize(w.description)).join(', ');
 
         weatherContent.innerHTML = `
             <p>Current Temperature: ${temp}°C</p>
-            <p>Current Weather: ${description}</p>
+            <p>Current Weather: ${descriptions}</p>
         `;
 
         fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&cnt=4&appid=${apiKey}`)
@@ -33,3 +33,4 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&ap
 function capitalize(text) {
     return text.replace(/\b\w/g, char => char.toUpperCase());
 }
+
