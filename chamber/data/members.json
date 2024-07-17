@@ -1,68 +1,59 @@
-{
-    "members": [
-        {
-            "name": "Tech Innovators",
-            "logo": "images/tech_innovators_logo.png",
-            "phone": "(267) 555-1234",
-            "address": "123 Innovation Drive, Gaborone",
-            "website": "http://techinnovators.com",
-            "membershipLevel": "Gold"
-        },
-        {
-            "name": "Future Coders",
-            "logo": "images/future_coders_logo.png",
-            "phone": "(267) 555-5678",
-            "address": "456 Code Street, Gaborone",
-            "website": "http://futurecoders.com",
-            "membershipLevel": "Silver"
-        },
-        {
-            "name": "AI Pioneers",
-            "logo": "images/ai_pioneers_logo.png",
-            "phone": "(267) 555-2345",
-            "address": "789 AI Lane, Gaborone",
-            "website": "http://aipioneers.com",
-            "membershipLevel": "Gold"
-        },
-        {
-            "name": "Botswana Tech Solutions",
-            "logo": "images/bts_logo.png",
-            "phone": "(267) 555-6789",
-            "address": "101 Tech Boulevard, Gaborone",
-            "website": "http://botswanatechsolutions.com",
-            "membershipLevel": "Silver"
-        },
-        {
-            "name": "Gaborone Startups",
-            "logo": "images/gaborone_startups_logo.png",
-            "phone": "(267) 555-3456",
-            "address": "202 Startup Street, Gaborone",
-            "website": "http://gaboronestartups.com",
-            "membershipLevel": "Gold"
-        },
-        {
-            "name": "Innovative Minds",
-            "logo": "images/innovative_minds_logo.png",
-            "phone": "(267) 555-7890",
-            "address": "303 Innovation Drive, Gaborone",
-            "website": "http://innovativeminds.com",
-            "membershipLevel": "Silver"
-        },
-        {
-            "name": "NextGen Developers",
-            "logo": "images/nextgen_developers_logo.png",
-            "phone": "(267) 555-4567",
-            "address": "404 Dev Lane, Gaborone",
-            "website": "http://nextgendevelopers.com",
-            "membershipLevel": "Gold"
-        },
-        {
-            "name": "Tech Gurus",
-            "logo": "images/tech_gurus_logo.png",
-            "phone": "(267) 76357022",
-            "address": "505 Guru Road, Gaborone",
-            "website": "http://techgurus.com",
-            "membershipLevel": "Silver"
-        }
-    ]
-}
+[
+    {
+        "name": "Tech Innovators",
+        "address": "123 Innovation Drive, Gaborone",
+        "phone": "(267) 123-4567",
+        "website": "http://www.techinnovators.com",
+        "image": "tech-innovators.png",
+        "level": 3
+    },
+    {
+        "name": "Startup Hub",
+        "address": "456 Startup Street, Gaborone",
+        "phone": "(267) 234-5678",
+        "website": "http://www.startuphub.com",
+        "image": "startup-hub.png",
+        "level": 2
+    },
+    {
+        "name": "Tech Pioneers",
+        "address": "789 Pioneer Avenue, Gaborone",
+        "phone": "(267) 345-6789",
+        "website": "http://www.techpioneers.com",
+        "image": "tech-pioneers.png",
+        "level": 1
+    },
+    {
+        "name": "Innovation Labs",
+        "address": "101 Lab Lane, Gaborone",
+        "phone": "(267) 456-7890",
+        "website": "http://www.innovationlabs.com",
+        "image": "innovation-labs.png",
+        "level": 3
+    },
+    {
+        "name": "NextGen Solutions",
+        "address": "202 Solution Street, Gaborone",
+        "phone": "(267) 567-8901",
+        "website": "http://www.nextgensolutions.com",
+        "image": "nextgen-solutions.png",
+        "level": 2
+    },
+    {
+        "name": "Future Tech",
+        "address": "303 Future Avenue, Gaborone",
+        "phone": "(267) 678-9012",
+        "website": "http://www.futuretech.com",
+        "image": "future-tech.png",
+        "level": 1
+    },
+    {
+        "name": "Digital Innovators",
+        "address": "404 Digital Drive, Gaborone",
+        "phone": "(267) 789-0123",
+        "website": "http://www.digitalinnovators.com",
+        "image": "digital-innovators.png",
+        "level": 3
+    }
+]
+
