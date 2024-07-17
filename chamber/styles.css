@@ -1,96 +1,85 @@
-/* Normalize CSS */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
-
+/* Example styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-header {
+header, footer {
     background-color: #333;
     color: #fff;
-    padding: 1rem 0;
-}
-
-header h1 {
-    margin: 0;
+    padding: 10px 0;
     text-align: center;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    margin: 0.5rem 0 0 0;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    display: inline;
+    margin: 0 10px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
 }
 
-main {
-    margin: 2rem 0;
-}
-
-section {
-    margin-bottom: 2rem;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
+.hero {
+    position: relative;
     text-align: center;
-    padding: 1rem 0;
+    color: white;
 }
 
-footer a {
-    color: #fff;
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hero-text h2 {
+    font-size: 2.5em;
+}
+
+.hero-text .cta-button {
+    background-color: #008cba;
+    color: white;
+    padding: 10px 20px;
     text-decoration: none;
+    font-size: 1.2em;
 }
 
-footer .social {
-    margin: 1rem 0;
+.company-spotlights {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
 }
 
-footer .social a {
-    margin: 0 0.5rem;
+.spotlight-member {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
+    width: calc(33.333% - 40px);
+    box-sizing: border-box;
 }
 
-/* Other styles for your website */
-
-/* Spotlight section styles */
-#spotlights .spotlight {
-    border: 1px solid #ccc;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    background-color: #f9f9f9;
-    margin-bottom: 1rem;
-    text-align: center;
+.spotlight-member img {
+    max-width: 100%;
+    height: auto;
 }
 
-#spotlights .spotlight img {
-    max-width: 100px;
-    display: block;
-    margin: 0 auto 1rem;
+.spotlight-member h3 {
+    font-size: 1.2em;
 }
 
-#spotlights .spotlight h4 {
-    margin: 0.5rem 0;
+.spotlight-member p {
+    margin: 5px 0;
 }
-
-/* More styles if necessary */

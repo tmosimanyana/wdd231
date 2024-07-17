@@ -7,14 +7,14 @@ fetch('chamber-members.json')
             member.membership_level === 'Gold' || member.membership_level === 'Silver'
         );
 
-        const randomMembers = getRandomElements(goldAndSilverMembers, 2);
+        const randomMembers = getRandomElements(goldAndSilverMembers, 3);
 
         randomMembers.forEach(member => {
             const memberDiv = document.createElement('div');
             memberDiv.classList.add('spotlight-member');
 
             memberDiv.innerHTML = `
-                <img src="${member.logo}" alt="${member.name} Logo">
+                <img src="images/${member.logo}" alt="${member.name} Logo">
                 <h3>${member.name}</h3>
                 <p>${member.phone}</p>
                 <p>${member.address}</p>

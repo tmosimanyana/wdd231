@@ -3,65 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Directory | Gaborone Tech Startups Chamber of Commerce</title>
-    <meta name="description" content="A comprehensive directory of tech startups in Gaborone, Botswana.">
-    <meta name="author" content="Tinny Mosimanyana">
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-    <!-- Social Media Meta Tags -->
-    <meta property="og:title" content="Directory | Gaborone Tech Startups Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="images/og-image.jpg">
-    <meta property="og:url" content="https://www.gaboronetechstartups.com/directory.html">
-
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <title>Gaborone Tech Startups Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header Section -->
+    <!-- Header -->
     <header>
-        <div class="container">
-            <h1>Gaborone Tech Startups Chamber of Commerce</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="discover.html">Discover</a></li>
-                    <li><a href="directory.html">Directory</a></li>
-                    <li><a href="join.html">Join</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="podcast.html">Podcast</a></li>
-                    <li><a href="events.html">Events</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Gaborone Tech Startups Chamber of Commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Business Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="podcast.html">Podcast</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </nav>
     </header>
 
     <!-- Main Content -->
-    <main class="container">
-        <h2>Member Directory</h2>
-        <button id="toggleView">Toggle View</button>
-        <div id="membersContainer" class="grid-view"></div>
+    <main>
+        <section class="hero">
+            <img src="images/hero-image.png" alt="Hero Image">
+            <div class="hero-text">
+                <h2>Welcome to Gaborone Tech Startups Chamber of Commerce</h2>
+                <p>Empowering tech startups for a brighter future</p>
+                <a href="join.html" class="cta-button">Join Us Today</a>
+            </div>
+        </section>
+
+        <section class="current-events">
+            <h2>Current Events</h2>
+            <!-- Current events content -->
+        </section>
+
+        <section class="weather">
+            <h2>Weather in Gaborone</h2>
+            <div id="weather-content">
+                <p>Loading weather data...</p>
+            </div>
+        </section>
+
+        <section class="company-spotlights">
+            <h2>Company Spotlights</h2>
+            <div id="spotlight-container">
+                <!-- Company spotlight content will be loaded here -->
+            </div>
+        </section>
     </main>
 
-    <!-- Footer Section -->
+    <!-- Footer -->
     <footer>
-        <div class="container">
-            <p>Gaborone Tech Startups Chamber of Commerce<br>Email: info@gaboronetechstartups.com<br>Phone: (267) 555-2300</p>
-            <p class="social">
-                <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
-                <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
-                <a href="#"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
-                <a href="#"><img src="images/youtube-icon.png" alt="YouTube"></a>
-            </p>
-            <p>&copy; <span id="currentYear"></span> Gaborone Tech Startups Chamber of Commerce. Last Modification: <span id="lastModified"></span></p>
-            <p>WDD231 Class Project by Tinny Mosimanyana</p>
-        </div>
+        <p>&copy; 2024 Gaborone Tech Startups Chamber of Commerce. All rights reserved.</p>
+        <p><a href="contact.html">Contact Us</a> | <a href="privacy.html">Privacy Policy</a></p>
     </footer>
 
-    <!-- JavaScript Files -->
-    <script src="scripts/scripts.js"></script>
+    <script src="scripts.js"></script>
+    <script src="weather.js"></script>
+    <script src="spotlight.js"></script>
 </body>
 </html>
