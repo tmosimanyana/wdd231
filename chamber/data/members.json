@@ -1,59 +1,50 @@
 [
     {
-        "name": "Tech Innovators",
-        "address": "123 Innovation Drive, Gaborone",
-        "phone": "(267) 123-4567",
-        "website": "http://www.techinnovators.com",
-        "image": "tech-innovators.png",
-        "level": 3
+        "name": "BotsTech Solutions",
+        "logo": "botstech_solutions.png",
+        "phone": "+267 123 4567",
+        "address": "123 Tech Street, Gaborone",
+        "website": "http://www.botstechsolutions.com",
+        "membership_level": "Gold"
     },
     {
-        "name": "Startup Hub",
-        "address": "456 Startup Street, Gaborone",
-        "phone": "(267) 234-5678",
-        "website": "http://www.startuphub.com",
-        "image": "startup-hub.png",
-        "level": 2
+        "name": "FutureTech Enterprises",
+        "logo": "futuretech_enterprises.png",
+        "phone": "+267 987 6543",
+        "address": "456 Tech Avenue, Gaborone",
+        "website": "http://www.futuretechenterprises.com",
+        "membership_level": "Silver"
     },
     {
-        "name": "Tech Pioneers",
-        "address": "789 Pioneer Avenue, Gaborone",
-        "phone": "(267) 345-6789",
-        "website": "http://www.techpioneers.com",
-        "image": "tech-pioneers.png",
-        "level": 1
+        "name": "GreenTech Innovations",
+        "logo": "greentech_innovations.png",
+        "phone": "+267 654 3210",
+        "address": "789 Green Blvd, Gaborone",
+        "website": "http://www.greentechinnovations.com",
+        "membership_level": "Gold"
     },
     {
-        "name": "Innovation Labs",
-        "address": "101 Lab Lane, Gaborone",
-        "phone": "(267) 456-7890",
-        "website": "http://www.innovationlabs.com",
-        "image": "innovation-labs.png",
-        "level": 3
+        "name": "Innovate Africa",
+        "logo": "innovate_africa.png",
+        "phone": "+267 321 9876",
+        "address": "321 Innovate Lane, Gaborone",
+        "website": "http://www.innovateafrica.com",
+        "membership_level": "Silver"
     },
     {
-        "name": "NextGen Solutions",
-        "address": "202 Solution Street, Gaborone",
-        "phone": "(267) 567-8901",
-        "website": "http://www.nextgensolutions.com",
-        "image": "nextgen-solutions.png",
-        "level": 2
+        "name": "NextGen Software",
+        "logo": "nextgen_software.png",
+        "phone": "+267 654 7890",
+        "address": "654 Software St, Gaborone",
+        "website": "http://www.nextgensoftware.com",
+        "membership_level": "Gold"
     },
     {
-        "name": "Future Tech",
-        "address": "303 Future Avenue, Gaborone",
-        "phone": "(267) 678-9012",
-        "website": "http://www.futuretech.com",
-        "image": "future-tech.png",
-        "level": 1
-    },
-    {
-        "name": "Digital Innovators",
-        "address": "404 Digital Drive, Gaborone",
-        "phone": "(267) 789-0123",
-        "website": "http://www.digitalinnovators.com",
-        "image": "digital-innovators.png",
-        "level": 3
+        "name": "SmartTech Solutions",
+        "logo": "smarttech_solutions.png",
+        "phone": "+267 789 0123",
+        "address": "789 SmartTech Road, Gaborone",
+        "website": "http://www.smarttechsolutions.com",
+        "membership_level": "Silver"
     }
 ]
-
