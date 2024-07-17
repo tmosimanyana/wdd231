@@ -1,74 +1,160 @@
-/* Example styles */
+/* Normalize CSS */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
 }
 
 header, footer {
     background-color: #333;
-    color: #fff;
-    padding: 10px 0;
+    color: white;
     text-align: center;
+    padding: 1em 0;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
+    margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin-right: 10px;
 }
 
 nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.hero {
-    position: relative;
-    text-align: center;
     color: white;
+    text-decoration: none;
+    padding: 14px 20px;
 }
 
-.hero img {
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+main {
+    padding: 2em;
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 2em;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form select,
+form textarea {
     width: 100%;
-    height: auto;
+    padding: 0.5em;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
 }
 
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.hero-text h2 {
-    font-size: 2.5em;
-}
-
-.hero-text .cta-button {
-    background-color: #008cba;
+form input[type="submit"] {
+    background-color: #4CAF50;
     color: white;
-    padding: 10px 20px;
+    padding: 0.75em 1.5em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+    animation: fadeIn 0.5s;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    animation: slideIn 0.5s;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
     text-decoration: none;
-    font-size: 1.2em;
+    cursor: pointer;
 }
 
-.company-spotlights {
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slideIn {
+    from {margin-top: -300px;}
+    to {margin-top: 15%;}
+}
+
+.membership-levels {
     display: flex;
+    justify-content: space-between;
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px 0;
 }
 
-.spotlight-member {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin: 10px;
-    width: calc(33.333% - 40px);
-    box-sizing: border-box;
+.membership-levels .card {
+    flex: 1 1 calc(25% - 10px);
+    margin: 5px;
+    padding: 1em;
+    background: #f5f5f5;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.spotlight-member img
+.membership-levels .card:hover {
+    transform: scale(1.05);
+    background-color: #e2e2e2;
+}
+
+.membership-levels .card p {
+    margin: 10px 0;
+}
+
+.form-data {
+    list-style: none;
+    padding: 0;
+}
+
+.form-data li {
+    margin-bottom: 10px;
+}

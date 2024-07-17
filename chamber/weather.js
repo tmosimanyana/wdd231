@@ -33,4 +33,3 @@ fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&ap
 function capitalize(text) {
     return text.replace(/\b\w/g, char => char.toUpperCase());
 }
-
