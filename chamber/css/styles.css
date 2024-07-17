@@ -1,17 +1,15 @@
-/* chamber-project/css/styles.css */
-
+/* General Styles */
 body {
-    font-family: 'Open Sans', sans-serif;
-    color: #333333;
-    background-color: #FFFFFF;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
 header {
-    background-color: #336699;
-    color: #FFFFFF;
-    padding: 20px;
+    background-color: #005f99;
+    color: white;
+    padding: 1rem;
 }
 
 header h1 {
@@ -21,128 +19,102 @@ header h1 {
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 nav ul li {
-    display: inline;
-    margin-right: 20px;
+    margin: 0 1rem;
 }
 
 nav ul li a {
-    color: #FFFFFF;
+    color: white;
     text-decoration: none;
-}
-
-footer {
-    background-color: #6699CC;
-    color: #FFFFFF;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-footer .contact-info, footer .development-info {
-    margin: 0;
 }
 
 main {
-    padding: 20px;
+    padding: 2rem;
 }
 
-/* Hero Section */
-#hero {
-    position: relative;
-    text-align: center;
+h2 {
+    color: #005f99;
+}
+
+/* Directory Styles */
+#directory {
+    margin-top: 2rem;
+}
+
+.view-toggle {
+    margin-bottom: 1rem;
+}
+
+.view-toggle button {
+    padding: 0.5rem 1rem;
+    margin-right: 0.5rem;
+    cursor: pointer;
+}
+
+.view-toggle button.active {
+    background-color: #005f99;
     color: white;
 }
 
-.hero-image {
-    width: 100%;
-    height: auto;
+.grid-view .member-card,
+.list-view .member-card {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
 }
 
-.hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 20px;
-}
-
-.cta-button {
-    background-color: #FF9933;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.cta-button:hover {
-    background-color: #CC6600;
-}
-
-/* Events Section */
-#events {
-    margin-top: 40px;
-}
-
-#events h2 {
-    text-align: center;
-}
-
-#events-list {
-    list-style: none;
-    padding: 0;
-}
-
-#events-list li {
-    padding: 10px;
-    border-bottom: 1px solid #CCCCCC;
-}
-
-/* Weather Section */
-#weather {
-    margin-top: 40px;
-}
-
-#weather h2 {
-    text-align: center;
-}
-
-#current-weather {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#weather-forecast {
-    display: flex;
-    justify-content: space-around;
-}
-
-/* Spotlights Section */
-#spotlights {
-    margin-top: 40px;
-}
-
-#spotlights h2 {
-    text-align: center;
-}
-
-#spotlight-companies {
+.grid-view {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    gap: 1rem;
 }
 
-.spotlight-card {
-    border: 1px solid #CCCCCC;
-    padding: 20px;
-    margin: 10px;
-    flex: 1 1 calc(33.333% - 40px);
+.grid-view .member-card {
+    flex: 1 1 calc(33% - 1rem);
     box-sizing: border-box;
 }
 
-.spotlight-card img {
-    max-width: 100%;
+.list-view .member-card {
+    flex: 1 1 100%;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #f1f1f1;
+    padding: 1rem 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer .contact-info,
+footer .development-info {
+    margin-bottom: 1rem;
+}
+
+footer p {
+    margin: 0.5rem 0;
+}
+
+footer #year,
+footer #last-modified {
+    font-weight: bold;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    footer {
+        text-align: left;
+        padding: 1rem;
+    }
 }
