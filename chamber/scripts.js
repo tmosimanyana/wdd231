@@ -1,46 +1,110 @@
-const spotlightContainer = document.getElementById('spotlight-container');
+document.addEventListener('DOMContentLoaded', () => {
+    fetchWeatherData();
+    loadSpotlights();
+});
 
-fetch('chamber-members.json')
-    .then(response => response.json())
-    .then(data => {
-        const goldAndSilverMembers = data.filter(member => 
-            member.membership_level === 'Gold' || member.membership_level === 'Silver'
-        );
+function fetchWeatherData() {
+    const apiKey = 'your_openweathermap_api_key';
+    const cityId = 'your_city_id'; // Gaborone city ID
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?id=${cityId}&appid=${apiKey}&units=metric`;
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?id=${cityId}&appid=${apiKey}&units=metric`;
 
-        const randomMembers = getRandomElements(goldAndSilverMembers, 2);
+    fetch(weatherUrl)
+        .then(response => response.json())
+        .then(data => {
+            const temp = Math.round(data.main.temp);
+            const description = capitalizeWords(data.weather.map(w => w.description).join(', '));
 
-        randomMembers.forEach(member => {
-            const memberDiv = document.createElement('div');
-            memberDiv.classList.add('spotlight-member');
+            document.getElementById('current-temp').textContent = temp;
+            document.getElementById('weather-description').textContent = description;
+        })
+        .catch(error => console.error('Error fetching weather data:', error));
 
-            memberDiv.innerHTML = `
-                <img src="${member.logo}" alt="${member.name} Logo">
-                <h3>${member.name}</h3>
-                <p>${member.phone}</p>
-                <p>${member.address}</p>
-                <a href="${member.website}" target="_blank">Visit Website</a>
-                <p>Membership Level: ${member.membership_level}</p>
-            `;
+    fetch(forecastUrl)
+        .then(response => response.json())
+        .then(data => {
+            const forecastList = document.getElementById('forecast-list');
+            forecastList.innerHTML = '';
 
-            spotlightContainer.appendChild(memberDiv);
-        });
-    })
-    .catch(error => {
-        spotlightContainer.innerHTML = `<p>Failed to load company spotlights.</p>`;
-        console.error('Error fetching company spotlights:', error);
-    });
+            for (let i = 0; i < 3; i++) {
+                const forecast = data.list[i * 8]; // get forecast for the same time each day
+                const temp = Math.round(forecast.main.temp);
+                const description = capitalizeWords(forecast.weather.map(w => w.description).join(', '));
+                const date = new Date(forecast.dt_txt);
 
-function getRandomElements(arr, n) {
-    const result = [];
-    const taken = new Array(arr.length);
+                const li = document.createElement('li');
+                li.textContent = `${date.toDateString()}: ${temp}°C, ${description}`;
+                forecastList.appendChild(li);
+            }
+        })
+        .catch(error => console.error('Error fetching forecast data:', error));
+}
 
-    if (n > arr.length) return arr;
+function capitalizeWords(str) {
+    return str.replace(/\b\w/g, char => char.toUpperCase());
+}
 
-    while (n--) {
-        const x = Math.floor(Math.random() * arr.length);
-        result.push(arr[x in taken ? taken[x] : x]);
-        taken[x] = --arr.length in taken ? taken[arr.length] : arr.length;
+function loadSpotlights() {
+    const membersUrl = 'members.json'; // Your JSON data source
+    fetch(membersUrl)
+        .then(response => response.json())
+        .then(data => {
+            const goldSilverMembers = data.members.filter(member => ['Gold', 'Silver'].includes(member.membershipLevel));
+            const selectedMembers = getRandomElements(goldSilverMembers, 3);
+
+            const spotlightContainer = document.getElementById('spotlight-container');
+            spotlightContainer.innerHTML = '';
+
+            selectedMembers.forEach(member => {
+                const div = document.createElement('div');
+                div.className = 'spotlight';
+
+                const logo = document.createElement('img');
+                logo.src = member.logo;
+                logo.alt = `${member.name} logo`;
+                div.appendChild(logo);
+
+                const name = document.createElement('h4');
+                name.textContent = member.name;
+                div.appendChild(name);
+
+                const phone = document.createElement('p');
+                phone.textContent = `Phone: ${member.phone}`;
+                div.appendChild(phone);
+
+                const address = document.createElement('p');
+                address.textContent = `Address: ${member.address}`;
+                div.appendChild(address);
+
+                const website = document.createElement('p');
+                const link = document.createElement('a');
+                link.href = member.website;
+                link.textContent = member.website;
+                website.appendChild(link);
+                div.appendChild(website);
+
+                const membershipLevel = document.createElement('p');
+                membershipLevel.textContent = `Membership Level: ${member.membershipLevel}`;
+                div.appendChild(membershipLevel);
+
+                spotlightContainer.appendChild(div);
+            });
+        })
+        .catch(error => console.error('Error fetching member data:', error));
+}
+
+function getRandomElements(arr, count) {
+    const shuffled = arr.slice(0);
+    let i = arr.length;
+    const min = i - count;
+    let temp, index;
+
+    while (i-- > min) {
+        index = Math.floor((i + 1) * Math.random());
+        temp = shuffled[index];
+        shuffled[index] = shuffled[i];
+        shuffled[i] = temp;
     }
 
-    return result;
+    return shuffled.slice(min);
 }

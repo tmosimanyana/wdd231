@@ -1,60 +1,68 @@
-// chamber-project/data/members.json
-[
-    {
-        "name": "Tech Innovators Ltd",
-        "address": "123 Innovation Drive, Gaborone, Botswana",
-        "phone": "+267 123 4567",
-        "website": "http://techinnovators.co.bw",
-        "image": "tech_innovators.png",
-        "membership_level": 3
-    },
-    {
-        "name": "BotsTech Solutions",
-        "address": "456 Future Lane, Gaborone, Botswana",
-        "phone": "+267 234 5678",
-        "website": "http://botstechsolutions.bw",
-        "image": "botstech_solutions.png",
-        "membership_level": 2
-    },
-    {
-        "name": "NextGen Software",
-        "address": "789 Vision Street, Gaborone, Botswana",
-        "phone": "+267 345 6789",
-        "website": "http://nextgensoftware.bw",
-        "image": "nextgen_software.png",
-        "membership_level": 1
-    },
-    {
-        "name": "Innovate Africa",
-        "address": "321 Future Park, Gaborone, Botswana",
-        "phone": "+267 456 7890",
-        "website": "http://innovateafrica.bw",
-        "image": "innovate_africa.png",
-        "membership_level": 2
-    },
-    {
-        "name": "SmartTech Solutions",
-        "address": "654 Tech Boulevard, Gaborone, Botswana",
-        "phone": "+267 567 8901",
-        "website": "http://smarttech.bw",
-        "image": "smarttech_solutions.png",
-        "membership_level": 3
-    },
-    {
-        "name": "GreenTech Innovations",
-        "address": "987 Green Avenue, Gaborone, Botswana",
-        "phone": "+267 678 9012",
-        "website": "http://greentech.bw",
-        "image": "greentech_innovations.png",
-        "membership_level": 1
-    },
-    {
-        "name": "FutureTech Enterprises",
-        "address": "159 Future Road, Gaborone, Botswana",
-        "phone": "+267 789 0123",
-        "website": "http://futuretech.bw",
-        "image": "futuretech_enterprises.png",
-        "membership_level": 3
-    }
-]
-
+{
+    "members": [
+        {
+            "name": "Tech Innovators",
+            "logo": "images/tech_innovators_logo.png",
+            "phone": "(267) 555-1234",
+            "address": "123 Innovation Drive, Gaborone",
+            "website": "http://techinnovators.com",
+            "membershipLevel": "Gold"
+        },
+        {
+            "name": "Future Coders",
+            "logo": "images/future_coders_logo.png",
+            "phone": "(267) 555-5678",
+            "address": "456 Code Street, Gaborone",
+            "website": "http://futurecoders.com",
+            "membershipLevel": "Silver"
+        },
+        {
+            "name": "AI Pioneers",
+            "logo": "images/ai_pioneers_logo.png",
+            "phone": "(267) 555-2345",
+            "address": "789 AI Lane, Gaborone",
+            "website": "http://aipioneers.com",
+            "membershipLevel": "Gold"
+        },
+        {
+            "name": "Botswana Tech Solutions",
+            "logo": "images/bts_logo.png",
+            "phone": "(267) 555-6789",
+            "address": "101 Tech Boulevard, Gaborone",
+            "website": "http://botswanatechsolutions.com",
+            "membershipLevel": "Silver"
+        },
+        {
+            "name": "Gaborone Startups",
+            "logo": "images/gaborone_startups_logo.png",
+            "phone": "(267) 555-3456",
+            "address": "202 Startup Street, Gaborone",
+            "website": "http://gaboronestartups.com",
+            "membershipLevel": "Gold"
+        },
+        {
+            "name": "Innovative Minds",
+            "logo": "images/innovative_minds_logo.png",
+            "phone": "(267) 555-7890",
+            "address": "303 Innovation Drive, Gaborone",
+            "website": "http://innovativeminds.com",
+            "membershipLevel": "Silver"
+        },
+        {
+            "name": "NextGen Developers",
+            "logo": "images/nextgen_developers_logo.png",
+            "phone": "(267) 555-4567",
+            "address": "404 Dev Lane, Gaborone",
+            "website": "http://nextgendevelopers.com",
+            "membershipLevel": "Gold"
+        },
+        {
+            "name": "Tech Gurus",
+            "logo": "images/tech_gurus_logo.png",
+            "phone": "(267) 555-8901",
+            "address": "505 Guru Road, Gaborone",
+            "website": "http://techgurus.com",
+            "membershipLevel": "Silver"
+        }
+    ]
+}

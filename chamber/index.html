@@ -3,50 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to the Gaborone Tech Startups Chamber of Commerce.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <meta property="og:title" content="Gaborone Tech Startups Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-image.png">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
-    <title>Home - Gaborone Tech Startups Chamber of Commerce</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Gaborone Tech Startups Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Gaborone Tech Startups Chamber of Commerce</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="podcast.html">Podcast</a></li>
-                <li><a href="events.html">Events</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Gaborone Tech Startups Chamber of Commerce</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
-    <main>
-        <section id="home">
-            <h2>Welcome to the Gaborone Tech Startups Chamber of Commerce</h2>
-            <p>This website serves as a resource hub for tech startups in Gaborone. Explore the site to discover more.</p>
+
+    <main class="container">
+        <h2>Welcome to the Gaborone Tech Startups Chamber of Commerce</h2>
+        <section>
+            <h3>Community Highlights</h3>
+            <!-- Highlights content -->
+        </section>
+        <section id="weather">
+            <h3>Weather</h3>
+            <div id="current-weather">
+                <p>Current Temperature: <span id="current-temp"></span>°C</p>
+                <p>Weather Description: <span id="weather-description"></span></p>
+            </div>
+            <div id="forecast">
+                <h4>3-Day Forecast</h4>
+                <ul id="forecast-list"></ul>
+            </div>
+        </section>
+        <section id="spotlights">
+            <h3>Business Spotlights</h3>
+            <div id="spotlight-container">
+                <!-- Spotlight content will be loaded here -->
+            </div>
         </section>
     </main>
+
     <footer>
-        <div class="contact-info">
+        <div class="container">
             <p>Gaborone Tech Startups Chamber of Commerce</p>
-            <p>Email:mbothepha@gmail.com</p>
-            <p>Phone: +267 76376661</p>
-        </div>
-        <div class="development-info">
-            <p>&copy; <span id="year"></span> Tinny Bothepha Mosimanyana</p>
-            <p>WDD 231 Class Project</p>
-            <p>Last Modified: <span id="last-modified"></span></p>
+            <p>Email: <a href="mailto:mbothepha@gmail.com">info@gaboronetechstartups.org</a></p>
+            <p>Phone: (267) 76376661</p>
+            <div class="social">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">YouTube</a>
+            </div>
+            <p>WDD231 Class Project - Tinny Mosimanyana</p>
+            <p id="last-modified"></p>
         </div>
     </footer>
-    <script src="js/main.js"></script>
+
+    <script src="scripts.js"></script>
+    <script>
+        document.getElementById('last-modified').textContent = 'Last Modified: ' + document.lastModified;
+    </script>
 </body>
 </html>
