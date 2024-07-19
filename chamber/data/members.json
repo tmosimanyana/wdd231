@@ -4,7 +4,7 @@
         "address": "123 Tech Lane, Gaborone",
         "phone": "+267 123 4567",
         "website": "http://www.techinnovations.com",
-        "image": "member1.jpg",
+        "image": "business1.png",
         "membershipLevel": 3
     },
     {
@@ -12,7 +12,7 @@
         "address": "456 Eco Street, Gaborone",
         "phone": "+267 234 5678",
         "website": "http://www.greenearth.com",
-        "image": "member2.jpg",
+        "image": "business2.png",
         "membershipLevel": 2
     },
     {
@@ -20,7 +20,7 @@
         "address": "789 Fashion Ave, Gaborone",
         "phone": "+267 345 6789",
         "website": "http://www.urbanstyles.com",
-        "image": "member3.jpg",
+        "image": "business3.png",
         "membershipLevel": 1
     },
     {
@@ -28,7 +28,7 @@
         "address": "101 Wellness Road, Gaborone",
         "phone": "+267 456 7890",
         "website": "http://www.healthylivingpharmacy.com",
-        "image": "member4.jpg",
+        "image": "business4.png",
         "membershipLevel": 2
     },
     {
@@ -36,7 +36,7 @@
         "address": "202 Binary Blvd, Gaborone",
         "phone": "+267 567 8901",
         "website": "http://www.digitalsolutions.com",
-        "image": "member5.jpg",
+        "image": "business5.png",
         "membershipLevel": 3
     },
     {
@@ -44,7 +44,7 @@
         "address": "303 Gourmet Way, Gaborone",
         "phone": "+267 678 9012",
         "website": "http://www.culinarydelights.com",
-        "image": "member6.jpg",
+        "image": "business7.png",
         "membershipLevel": 1
     },
     {
@@ -52,7 +52,7 @@
         "address": "404 Explorer Ln, Gaborone",
         "phone": "+267 789 0123",
         "website": "http://www.adventureoutdoors.com",
-        "image": "member7.jpg",
+        "image": "business8.png",
         "membershipLevel": 3
     }
 ]
