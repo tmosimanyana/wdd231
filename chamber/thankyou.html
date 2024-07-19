@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thank You</title>
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/style.css">
+    <title>Thank You - Gaborone Chamber of Commerce</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <header>
         <div class="container">
             <div class="logo">
-                <img src="images/logo.png" alt="Gaborone Tech Startup Chamber of Commerce">
+                <img src="images/logo.png" alt="Gaborone Chamber of Commerce Logo">
             </div>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
                     <li><a href="directory.html">Directory</a></li>
                     <li><a href="join.html">Join</a></li>
-                    <li><a href="discover.html">Discover</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="podcast.html">Podcast</a></li>
                     <li><a href="events.html">Events</a></li>
@@ -26,46 +26,31 @@
             </nav>
         </div>
     </header>
+
     <main>
-        <section class="thank-you">
-            <h1>Thank You for Your Application</h1>
-            <p>We have received your application with the following details:</p>
-            <ul>
-                <li>First Name: <span id="first-name"></span></li>
-                <li>Last Name: <span id="last-name"></span></li>
-                <li>Email: <span id="email"></span></li>
-                <li>Mobile Phone: <span id="mobile"></span></li>
-                <li>Organization Name: <span id="org-name"></span></li>
-                <li>Submission Time: <span id="timestamp"></span></li>
-            </ul>
-        </section>
+        <h1>Thank You for Your Application!</h1>
+        <p>We appreciate your interest in joining the Gaborone Chamber of Commerce. Here is the information you provided:</p>
+        <ul>
+            <li><strong>First Name:</strong> <span id="thankyou-first-name"></span></li>
+            <li><strong>Last Name:</strong> <span id="thankyou-last-name"></span></li>
+            <li><strong>Email Address:</strong> <span id="thankyou-email"></span></li>
+            <li><strong>Mobile Phone Number:</strong> <span id="thankyou-phone"></span></li>
+            <li><strong>Business Name:</strong> <span id="thankyou-business-name"></span></li>
+            <li><strong>Date Submitted:</strong> <span id="thankyou-timestamp"></span></li>
+        </ul>
     </main>
+
     <footer>
-        <div class="container">
-            <p>Gaborone Tech Startup Chamber of Commerce</p>
-            <p>10 Main St, Gaborone, Botswana</p>
-            <p>Email: info@gaboronetechstartup.com</p>
-            <p>Phone: (267) 555-2300</p>
+        <div class="footer-content">
+            <p>&copy; <span id="year"></span> Gaborone Chamber of Commerce. Last modified: <span id="last-modified"></span></p>
             <div class="social-media">
-                <a href="#"><img src="images/icon-facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="images/icon-twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="images/icon-linkedin.png" alt="LinkedIn"></a>
+                <a href="#"><img src="images/icon-facebook.jpeg" alt="Facebook"></a>
+                <a href="#"><img src="images/whatsapp.jpeg" alt="WhatsApp"></a>
+                <a href="#"><img src="images/linkedIn.jpeg" alt="LinkedIn"></a>
             </div>
-            <p>Tinny Bothepha Mosimanyana - WDD 231</p>
-            <p>Last modified: <span id="last-modified"></span></p>
         </div>
     </footer>
-    <script>
-        // Get query parameters from URL
-        const params = new URLSearchParams(window.location.search);
 
-        // Display form data
-        document.getElementById('first-name').textContent = params.get('first-name');
-        document.getElementById('last-name').textContent = params.get('last-name');
-        document.getElementById('email').textContent = params.get('email');
-        document.getElementById('mobile').textContent = params.get('mobile');
-        document.getElementById('org-name').textContent = params.get('org-name');
-        document.getElementById('timestamp').textContent = params.get('timestamp');
-    </script>
+    <script src="js/thankyou.js" defer></script>
 </body>
 </html>

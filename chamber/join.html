@@ -3,57 +3,210 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaborone Chamber of Commerce - Join</title>
-    <link rel="icon" href="images/favicon.ico">
+    <title>Join the Gaborone Chamber of Commerce</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Additional CSS for Membership Cards */
+        .membership-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .membership-card {
+            flex: 1;
+            min-width: 200px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .membership-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .membership-cards {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <div class="container">
             <div class="logo">
                 <img src="images/logo.png" alt="Gaborone Chamber of Commerce Logo">
             </div>
             <nav>
-                <ul class="navigation">
+                <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="discover.html">Discover</a></li>
-                    <li><a href="directory.html">Business Directory</a></li>
+                    <li><a href="directory.html">Directory</a></li>
                     <li><a href="join.html">Join</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="podcast.html">Podcast</a></li>
                     <li><a href="events.html">Events</a></li>
                 </ul>
-                <button class="menu-toggle" aria-label="Toggle menu">&#9776;</button>
             </nav>
         </div>
     </header>
-
-    <!-- Main Content -->
-    <main>
+    
+    <div class="hero">
+        <img src="images/hero-image.png" alt="Hero Image" class="hero-image">
         <h1>Join the Gaborone Chamber of Commerce</h1>
-        <section class="membership-benefits">
-            <h2>Membership Benefits</h2>
-            <p>Joining the chamber offers numerous benefits, including:</p>
-            <ul>
-                <li>Networking opportunities</li>
-                <li>Business resources and support</li>
-                <li>Marketing and advertising assistance</li>
-                <li>Access to exclusive events and workshops</li>
-                <li>Directory listing on our website</li>
-            </ul>
-        </section>
+        <p>Be part of a growing community that supports local businesses.</p>
+        <a href="join.html" class="cta-button">Join Now</a>
+    </div>
 
-        <section class="membership-levels">
-            <h2>Membership Levels</h2>
-            <div class="membership-card">
-                <h3>Non-Profit</h3>
-                <p>Includes directory listing and access to all events.</p>
-                <p>Price: Free</p>
+    <main class="form-container">
+        <form action="thankyou.html" method="get">
+            <fieldset>
+                <legend>Membership Application</legend>
+                <label for="first-name">
+                    First Name:
+                    <input type="text" id="first-name" name="first-name" title="First Name" autocomplete="given-name" required>
+                </label>
+
+                <label for="last-name">
+                    Last Name:
+                    <input type="text" id="last-name" name="last-name" title="Last Name" autocomplete="family-name" required>
+                </label>
+
+                <label for="org-title">
+                    Organizational Title:
+                    <input type="text" id="org-title" name="org-title" title="Organizational Title" pattern="[A-Za-z\s\-]{7,}" autocomplete="organization-title">
+                </label>
+
+                <label for="email">
+                    Email Address:
+                    <input type="email" id="email" name="email" title="Email Address" autocomplete="email" placeholder="example@domain.com" required>
+                </label>
+
+                <label for="phone">
+                    Mobile Phone Number:
+                    <input type="tel" id="phone" name="phone" title="Mobile Phone Number" autocomplete="tel" required>
+                </label>
+
+                <label for="business-name">
+                    Business/Organization Name:
+                    <input type="text" id="business-name" name="business-name" title="Business/Organization Name" autocomplete="organization" required>
+                </label>
+
+                <label for="membership-level">
+                    Membership Level:
+                    <select id="membership-level" name="membership-level" required>
+                        <option value="NP">NP Membership</option>
+                        <option value="Bronze">Bronze Membership</option>
+                        <option value="Silver">Silver Membership</option>
+                        <option value="Gold">Gold Membership</option>
+                    </select>
+                </label>
+
+                <label for="description">
+                    Business/Organization Description:
+                    <textarea id="description" name="description" title="Business/Organization Description"></textarea>
+                </label>
+
+                <input type="hidden" id="timestamp" name="timestamp" value="" />
+                <input type="submit" value="Submit Application">
+            </fieldset>
+        </form>
+
+        <div class="membership-cards">
+            <!-- Membership Cards with Modals -->
+            <div class="membership-card" data-modal="modal-np">
+                <h3>NP Membership</h3>
+                <a href="#" class="info-link">Learn More</a>
             </div>
-            <div class="membership-card">
-                <h3>Silver</h3>
-                <p>Includes all Non-Profit benefits plus:</p>
-                <
+            <div class="membership-card" data-modal="modal-bronze">
+                <h3>Bronze Membership</h3>
+                <a href="#" class="info-link">Learn More</a>
+            </div>
+            <div class="membership-card" data-modal="modal-silver">
+                <h3>Silver Membership</h3>
+                <a href="#" class="info-link">Learn More</a>
+            </div>
+            <div class="membership-card" data-modal="modal-gold">
+                <h3>Gold Membership</h3>
+                <a href="#" class="info-link">Learn More</a>
+            </div>
+        </div>
+    </main>
 
+    <!-- Modals -->
+    <div id="modal-np" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>NP Membership Benefits</h2>
+            <p>Details about NP Membership benefits.</p>
+        </div>
+    </div>
+    <div id="modal-bronze" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Bronze Membership Benefits</h2>
+            <p>Details about Bronze Membership benefits.</p>
+        </div>
+    </div>
+    <div id="modal-silver" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Silver Membership Benefits</h2>
+            <p>Details about Silver Membership benefits.</p>
+        </div>
+    </div>
+    <div id="modal-gold" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Gold Membership Benefits</h2>
+            <p>Details about Gold Membership benefits.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="year"></span> Gaborone Chamber of Commerce. Last modified: <span id="last-modified"></span></p>
+            <div class="social-media">
+                <a href="#"><img src="images/icon-facebook.jpeg" alt="Facebook"></a>
+                <a href="#"><img src="images/whatsapp.jpeg" alt="WhatsApp"></a>
+                <a href="#"><img src="images/linkedIn.jpeg" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/form.js" defer></script>
+    <script src="js/modals.js" defer></script>
+</body>
+</html>
