@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaborone Chamber of Commerce - Home</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- OpenWeatherMap API Script5c7e429e1b20f30b60de00a18bcc0e92  -->
+    <script src="https://api.openweathermap.org/data/2.5/weather?appid=YOUR_API_KEY&units=metric&q=Gaborone" defer></script>
+    <script src="js/weather.js" defer></script>
+    <script src="js/spotlights.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Gaborone Chamber of Commerce Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html">Join</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="hero">
+        <img src="images/hero-image.jpg" alt="Hero Image" class="hero-image">
+        <h1>Welcome to the Gaborone Chamber of Commerce</h1>
+        <p>Empowering local businesses and fostering community growth.</p>
+        <a href="join.html" class="cta-button">Join the Chamber</a>
+    </div>
+
+    <main class="home-content">
+        <section class="current-events">
+            <h2>Current Events</h2>
+            <!-- Event details will be added here -->
+        </section>
+
+        <section class="weather">
+            <h2>Current Weather</h2>
+            <div id="weather-data">
+                <p>Temperature: <span id="temperature"></span>&#8451;</p>
+                <p>Weather: <span id="weather-description"></span></p>
+                <h3>3-Day Forecast</h3>
+                <div id="forecast">
+                    <!-- Forecast data will be added here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="spotlights">
+            <h2>Company Spotlights</h2>
+            <div id="spotlight-container">
+                <!-- Company spotlight details will be inserted here by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; <span id="year"></span> Gaborone Chamber of Commerce. Last modified: <span id="last-modified"></span></p>
+            <div class="social-media">
+                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

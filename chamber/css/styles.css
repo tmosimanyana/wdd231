@@ -1,133 +1,97 @@
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
+    color: #333;
     background-color: #F2F2F2;
-    color: #333333;
-    margin: 0;
-    padding: 0;
 }
 
 header {
     background-color: #004080;
-    color: #FFFFFF;
-    padding: 10px 0;
-}
-
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    color: white;
 }
 
 .logo img {
-    height: 50px;
+    width: 150px;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     display: flex;
-    gap: 20px;
-    margin: 0;
-    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
 }
 
 nav ul li a {
-    color: #FFFFFF;
+    color: white;
     text-decoration: none;
-    font-weight: 700;
 }
 
+/* Hero Section */
 .hero {
-    background-color: #E67E22;
-    color: #FFFFFF;
     text-align: center;
-    padding: 50px 20px;
+    padding: 20px;
 }
 
-.directory {
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #E67E22;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Main Content */
+.home-content {
+    padding: 20px;
+}
+
+/* Weather Section */
+.weather {
+    margin-top: 20px;
+}
+
+#weather-data {
+    font-size: 1.2em;
+}
+
+/* Spotlights Section */
+.spotlights {
+    margin-top: 20px;
+}
+
+#spotlight-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-    gap: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
-.business-card {
-    background-color: #FFFFFF;
-    width: calc(33.333% - 40px);
-    margin: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-    overflow: hidden;
-    transition: transform 0.2s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 15px;
-}
-
-.business-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-.business-info {
-    padding: 15px;
-    text-align: center;
-}
-
-.business-info h3 {
-    color: #004080;
-    margin-top: 10px;
-}
-
+/* Footer */
 footer {
-    background-color: #333333;
-    color: #FFFFFF;
-    padding: 20px 0;
+    background-color: #004080;
+    color: white;
     text-align: center;
-}
-
-.footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-content a {
-    color: #FFFFFF;
-    text-decoration: none;
-    margin: 0 5px;
+    padding: 10px 0;
 }
 
 .social-media img {
-    width: 24px;
-    height: 24px;
+    width: 30px;
     margin: 0 5px;
 }
 
-/* Responsive Styles */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .business-card {
-        width: calc(50% - 40px);
-    }
-
     nav ul {
         flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .business-card {
-        width: calc(100% - 40px);
     }
 
-    .hero {
-        padding: 30px 10px;
+    nav ul li {
+        margin-bottom: 10px;
     }
 }
