@@ -1,120 +1,133 @@
-/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F2F2F2;
+    color: #333333;
     margin: 0;
     padding: 0;
-    color: #333;
 }
 
 header {
-    background-color: #005f99;
-    color: white;
-    padding: 1rem;
+    background-color: #004080;
+    color: #FFFFFF;
+    padding: 10px 0;
 }
 
-header h1 {
-    margin: 0;
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 50px;
 }
 
 nav ul {
-    list-style: none;
-    padding: 0;
+    list-style-type: none;
     display: flex;
-    justify-content: center;
-}
-
-nav ul li {
-    margin: 0 1rem;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li a {
-    color: white;
+    color: #FFFFFF;
     text-decoration: none;
+    font-weight: 700;
 }
 
-main {
-    padding: 2rem;
+.hero {
+    background-color: #E67E22;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 50px 20px;
 }
 
-h2 {
-    color: #005f99;
-}
-
-/* Directory Styles */
-#directory {
-    margin-top: 2rem;
-}
-
-.view-toggle {
-    margin-bottom: 1rem;
-}
-
-.view-toggle button {
-    padding: 0.5rem 1rem;
-    margin-right: 0.5rem;
-    cursor: pointer;
-}
-
-.view-toggle button.active {
-    background-color: #005f99;
-    color: white;
-}
-
-.grid-view .member-card,
-.list-view .member-card {
-    border: 1px solid #ccc;
-    padding: 1rem;
-    margin-bottom: 1rem;
-}
-
-.grid-view {
+.directory {
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    justify-content: center;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.grid-view .member-card {
-    flex: 1 1 calc(33% - 1rem);
-    box-sizing: border-box;
+.business-card {
+    background-color: #FFFFFF;
+    width: calc(33.333% - 40px);
+    margin: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
 }
 
-.list-view .member-card {
-    flex: 1 1 100%;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #f1f1f1;
-    padding: 1rem 0;
-    text-align: center;
-    position: fixed;
+.business-card img {
     width: 100%;
-    bottom: 0;
+    height: 150px;
+    object-fit: cover;
 }
 
-footer .contact-info,
-footer .development-info {
-    margin-bottom: 1rem;
+.business-info {
+    padding: 15px;
+    text-align: center;
 }
 
-footer p {
-    margin: 0.5rem 0;
+.business-info h3 {
+    color: #004080;
+    margin-top: 10px;
 }
 
-footer #year,
-footer #last-modified {
-    font-weight: bold;
+footer {
+    background-color: #333333;
+    color: #FFFFFF;
+    padding: 20px 0;
+    text-align: center;
 }
 
-/* Responsive design */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-content a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.social-media img {
+    width: 24px;
+    height: 24px;
+    margin: 0 5px;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
-    nav ul li {
-        display: block;
-        margin-bottom: 0.5rem;
+    .business-card {
+        width: calc(50% - 40px);
     }
 
-    footer {
-        text-align: left;
-        padding: 1rem;
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .business-card {
+        width: calc(100% - 40px);
+    }
+
+    .hero {
+        padding: 30px 10px;
     }
 }
