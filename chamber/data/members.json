@@ -1,50 +1,58 @@
 [
     {
-        "name": "BotsTech Solutions",
-        "logo": "botstech_solutions.png",
+        "name": "Tech Innovations Ltd",
+        "address": "123 Tech Lane, Gaborone",
         "phone": "+267 123 4567",
-        "address": "123 Tech Street, Gaborone",
-        "website": "http://www.botstechsolutions.com",
-        "membership_level": "Gold"
+        "website": "http://www.techinnovations.com",
+        "image": "member1.jpg",
+        "membershipLevel": 3
     },
     {
-        "name": "FutureTech Enterprises",
-        "logo": "futuretech_enterprises.png",
-        "phone": "+267 987 6543",
-        "address": "456 Tech Avenue, Gaborone",
-        "website": "http://www.futuretechenterprises.com",
-        "membership_level": "Silver"
+        "name": "Green Earth Co",
+        "address": "456 Eco Street, Gaborone",
+        "phone": "+267 234 5678",
+        "website": "http://www.greenearth.com",
+        "image": "member2.jpg",
+        "membershipLevel": 2
     },
     {
-        "name": "GreenTech Innovations",
-        "logo": "greentech_innovations.png",
-        "phone": "+267 654 3210",
-        "address": "789 Green Blvd, Gaborone",
-        "website": "http://www.greentechinnovations.com",
-        "membership_level": "Gold"
+        "name": "Urban Styles Boutique",
+        "address": "789 Fashion Ave, Gaborone",
+        "phone": "+267 345 6789",
+        "website": "http://www.urbanstyles.com",
+        "image": "member3.jpg",
+        "membershipLevel": 1
     },
     {
-        "name": "Innovate Africa",
-        "logo": "innovate_africa.png",
-        "phone": "+267 321 9876",
-        "address": "321 Innovate Lane, Gaborone",
-        "website": "http://www.innovateafrica.com",
-        "membership_level": "Silver"
+        "name": "Healthy Living Pharmacy",
+        "address": "101 Wellness Road, Gaborone",
+        "phone": "+267 456 7890",
+        "website": "http://www.healthylivingpharmacy.com",
+        "image": "member4.jpg",
+        "membershipLevel": 2
     },
     {
-        "name": "NextGen Software",
-        "logo": "nextgen_software.png",
-        "phone": "+267 654 7890",
-        "address": "654 Software St, Gaborone",
-        "website": "http://www.nextgensoftware.com",
-        "membership_level": "Gold"
+        "name": "Digital Solutions Inc",
+        "address": "202 Binary Blvd, Gaborone",
+        "phone": "+267 567 8901",
+        "website": "http://www.digitalsolutions.com",
+        "image": "member5.jpg",
+        "membershipLevel": 3
     },
     {
-        "name": "SmartTech Solutions",
-        "logo": "smarttech_solutions.png",
+        "name": "Culinary Delights Catering",
+        "address": "303 Gourmet Way, Gaborone",
+        "phone": "+267 678 9012",
+        "website": "http://www.culinarydelights.com",
+        "image": "member6.jpg",
+        "membershipLevel": 1
+    },
+    {
+        "name": "Adventure Outdoors",
+        "address": "404 Explorer Ln, Gaborone",
         "phone": "+267 789 0123",
-        "address": "789 SmartTech Road, Gaborone",
-        "website": "http://www.smarttechsolutions.com",
-        "membership_level": "Silver"
+        "website": "http://www.adventureoutdoors.com",
+        "image": "member7.jpg",
+        "membershipLevel": 3
     }
 ]
