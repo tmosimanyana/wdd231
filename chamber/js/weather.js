@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
+    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replace with your OpenWeatherMap API key
     const city = 'Gaborone';
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
@@ -26,7 +26,7 @@ function updateForecast(city, apiKey) {
             forecastContainer.innerHTML = '';
 
             for (let i = 0; i < 3; i++) {
-                const day = data.list[i * 8]; // Each day has 8 readings
+                const day = data.list[i * 8];
                 const temp = Math.round(day.main.temp);
                 const weather = capitalizeWords(day.weather.map(w => w.description).join(', '));
                 forecastContainer.innerHTML += `<p>Day ${i + 1}: ${temp}&#8451; - ${weather}</p>`;
