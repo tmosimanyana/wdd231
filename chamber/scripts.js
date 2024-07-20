@@ -1,79 +1,58 @@
-document.addEventListener("DOMContentLoaded", async () => {
-    const jsonURL = 'data/members.json';
-
-    // Fetch member data
-    async function fetchMemberData() {
+document.addEventListener('DOMContentLoaded', () => {
+    async function fetchMembers() {
         try {
-            const response = await fetch(jsonURL);
-            if (!response.ok) throw new Error('Network response was not ok.');
-            const data = await response.json();
-            return data;
+            const response = await fetch('data/members.json');
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const members = await response.json();
+            displayMembers(members);
         } catch (error) {
-            console.error('Error fetching member data:', error);
+            console.error('There was a problem with the fetch operation:', error);
         }
     }
 
-    // Populate member data into the directory
-    function displayMembers(members, viewType) {
+    function displayMembers(members) {
         const membersSection = document.getElementById('members');
         membersSection.innerHTML = ''; // Clear existing content
 
         members.forEach(member => {
-            const memberElement = document.createElement('div');
-            memberElement.classList.add('directory-item');
+            const memberDiv = document.createElement('div');
+            memberDiv.className = 'directory-item';
 
-            memberElement.innerHTML = `
-                <img src="images/${member.image}" alt="${member.name} Logo">
+            memberDiv.innerHTML = `
+                <img src="images/${member.image}" alt="${member.name}">
                 <h3>${member.name}</h3>
                 <p>${member.address}</p>
                 <p>${member.phone}</p>
-                <p><a href="${member.website}" target="_blank">Visit Website</a></p>
+                <a href="${member.website}" target="_blank">${member.website}</a>
                 <p>${member.description}</p>
             `;
 
-            if (viewType === 'grid') {
-                memberElement.classList.add('directory-item-grid');
-            } else {
-                memberElement.classList.add('directory-item-list');
-            }
-
-            membersSection.appendChild(memberElement);
+            membersSection.appendChild(memberDiv);
         });
     }
 
-    // Toggle between grid and list views
-    function setupViewToggle(members) {
-        const gridViewButton = document.getElementById('gridView');
-        const listViewButton = document.getElementById('listView');
+    // Toggle view functionality
+    document.getElementById('gridView').addEventListener('click', () => {
+        document.getElementById('members').classList.add('directory-grid');
+        document.getElementById('members').classList.remove('directory-list');
+        document.getElementById('gridView').classList.add('active');
+        document.getElementById('listView').classList.remove('active');
+    });
 
-        gridViewButton.addEventListener('click', () => {
-            gridViewButton.classList.add('active');
-            listViewButton.classList.remove('active');
-            displayMembers(members, 'grid');
-        });
+    document.getElementById('listView').addEventListener('click', () => {
+        document.getElementById('members').classList.add('directory-list');
+        document.getElementById('members').classList.remove('directory-grid');
+        document.getElementById('listView').classList.add('active');
+        document.getElementById('gridView').classList.remove('active');
+    });
 
-        listViewButton.addEventListener('click', () => {
-            listViewButton.classList.add('active');
-            gridViewButton.classList.remove('active');
-            displayMembers(members, 'list');
-        });
+    // Display current year and last modified date
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    document.getElementById('lastModified').textContent = document.lastModified;
 
-        // Set initial view
-        gridViewButton.click();
-    }
-
-    // Update footer with current year and last modification date
-    function updateFooter() {
-        const currentYear = new Date().getFullYear();
-        const lastModified = new Date(document.lastModified).toLocaleDateString();
-        document.getElementById('currentYear').textContent = currentYear;
-        document.getElementById('lastModified').textContent = lastModified;
-    }
-
-    // Initialize
-    const members = await fetchMemberData();
-    if (members) {
-        setupViewToggle(members);
-    }
-    updateFooter();
+    // Fetch and display members
+    fetchMembers();
 });
+
