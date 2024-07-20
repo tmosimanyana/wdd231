@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    // Define URLs
     const jsonURL = 'data/members.json';
 
     // Fetch member data
@@ -29,7 +28,7 @@ document.addEventListener("DOMContentLoaded", async () => {
                 <p>${member.address}</p>
                 <p>${member.phone}</p>
                 <p><a href="${member.website}" target="_blank">Visit Website</a></p>
-                <p>Membership Level: ${getMembershipLevel(member.membershipLevel)}</p>
+                <p>${member.description}</p>
             `;
 
             if (viewType === 'grid') {
@@ -61,16 +60,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
         // Set initial view
         gridViewButton.click();
-    }
-
-    // Get membership level description
-    function getMembershipLevel(level) {
-        switch (level) {
-            case 1: return 'Member';
-            case 2: return 'Silver';
-            case 3: return 'Gold';
-            default: return 'Unknown';
-        }
     }
 
     // Update footer with current year and last modification date
