@@ -27,17 +27,18 @@
         </div>
     </header>
 
-    <main>
-        <h1>Thank You for Your Application!</h1>
-        <p>We appreciate your interest in joining the Gaborone Chamber of Commerce. Here is the information you provided:</p>
+    <main class="thankyou-content">
+        <h1>Thank You for Joining Us!</h1>
+        <p>We appreciate your interest in joining the Gaborone Chamber of Commerce. Below is the information you submitted:</p>
         <ul>
-            <li><strong>First Name:</strong> <span id="thankyou-first-name"></span></li>
-            <li><strong>Last Name:</strong> <span id="thankyou-last-name"></span></li>
-            <li><strong>Email Address:</strong> <span id="thankyou-email"></span></li>
-            <li><strong>Mobile Phone Number:</strong> <span id="thankyou-phone"></span></li>
-            <li><strong>Business Name:</strong> <span id="thankyou-business-name"></span></li>
-            <li><strong>Date Submitted:</strong> <span id="thankyou-timestamp"></span></li>
+            <li>First Name: <span id="first-name"></span></li>
+            <li>Last Name: <span id="last-name"></span></li>
+            <li>Email: <span id="email"></span></li>
+            <li>Mobile Phone: <span id="phone"></span></li>
+            <li>Business/Organization Name: <span id="org-name"></span></li>
+            <li>Submission Time: <span id="timestamp"></span></li>
         </ul>
+        <p>For any queries or further information, please contact us.</p>
     </main>
 
     <footer>
@@ -45,12 +46,24 @@
             <p>&copy; <span id="year"></span> Gaborone Chamber of Commerce. Last modified: <span id="last-modified"></span></p>
             <div class="social-media">
                 <a href="#"><img src="images/icon-facebook.jpeg" alt="Facebook"></a>
-                <a href="#"><img src="images/whatsapp.jpeg" alt="WhatsApp"></a>
+                <a href="#"><img src="images/whatsapp.jpeg" alt="Whatsapp"></a>
                 <a href="#"><img src="images/linkedIn.jpeg" alt="LinkedIn"></a>
             </div>
         </div>
     </footer>
+    <script>
+        // Populate the thank you page with submitted data
+        const urlParams = new URLSearchParams(window.location.search);
 
-    <script src="js/thankyou.js" defer></script>
+        document.getElementById('first-name').textContent = urlParams.get('first-name');
+        document.getElementById('last-name').textContent = urlParams.get('last-name');
+        document.getElementById('email').textContent = urlParams.get('email');
+        document.getElementById('phone').textContent = urlParams.get('phone');
+        document.getElementById('org-name').textContent = urlParams.get('org-name');
+        document.getElementById('timestamp').textContent = urlParams.get('timestamp');
+
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('last-modified').textContent = document.lastModified;
+    </script>
 </body>
 </html>
