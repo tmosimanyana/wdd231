@@ -3,76 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaborone Chamber of Commerce - Home</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <!-- OpenWeatherMap API Script -->
-    <script src="https://api.openweathermap.org/data/2.5/weather?appid=5c7e429e1b20f30b60de00a18bcc0e92&units=metric&q=Gaborone" defer></script>
-    <script src="js/weather.js" defer></script>
-    <script src="js/spotlights.js" defer></script>
+    <meta name="description" content="Home page for the Gaborone Chamber of Commerce">
+    <meta name="author" content="Tinny Mosimanyana">
+    <meta property="og:title" content="Gaborone Chamber of Commerce Home">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/hero-image.jpg">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
+    <title>Gaborone Chamber of Commerce Home</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/normalize.css"> <!-- Local Normalize CSS file -->
+    <link rel="stylesheet" href="styles/styles.css"> <!-- Custom CSS file -->
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <header>
-        <div class="container">
-            <div class="logo">
-                <img src="images/logo.png" alt="Gaborone Chamber of Commerce Logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="discover.html">Discover</a></li>
-                    <li><a href="directory.html">Directory</a></li>
-                    <li><a href="join.html">Join</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="podcast.html">Podcast</a></li>
-                    <li><a href="events.html">Events</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Gaborone Chamber of Commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="podcast.html">Podcast</a></li>
+                <li><a href="events.html">Events</a></li>
+            </ul>
+        </nav>
     </header>
-    
-    <div class="hero">
-        <img src="images/hero-image.png" alt="Hero Image" class="hero-image">
-        <h1>Welcome to the Gaborone Chamber of Commerce</h1>
-        <p>Empowering local businesses and fostering community growth.</p>
-        <a href="join.html" class="cta-button">Join the Chamber</a>
-    </div>
 
-    <main class="home-content">
-        <section class="current-events">
+    <main>
+        <section id="hero">
+            <img src="images/hero-image.jpg" alt="Gaborone Chamber of Commerce Hero Image">
+            <a href="join.html" class="cta-button">Join the Chamber</a>
+        </section>
+
+        <section id="current-events">
             <h2>Current Events</h2>
-            <!-- Event details will be dynamically added here -->
+            <ul>
+                <!-- Example event items -->
+                <li>Networking Event - July 25, 2024</li>
+                <li>Business Workshop - August 15, 2024</li>
+            </ul>
         </section>
 
-        <section class="weather">
+        <section id="weather">
             <h2>Current Weather</h2>
-            <div id="weather-data">
-                <p>Temperature: <span id="temperature"></span>&#8451;</p>
-                <p>Weather: <span id="weather-description"></span></p>
-                <h3>3-Day Forecast</h3>
-                <div id="forecast">
-                    <!-- Forecast data will be dynamically added here -->
-                </div>
-            </div>
+            <p><strong>Temperature:</strong> <span id="current-temperature">--°C</span></p>
+            <p><strong>Description:</strong> <span id="current-weather">--</span></p>
+
+            <h3>3-Day Forecast</h3>
+            <ul>
+                <li><span id="day1-date">--</span>: <span id="day1-temp">--°C</span></li>
+                <li><span id="day2-date">--</span>: <span id="day2-temp">--°C</span></li>
+                <li><span id="day3-date">--</span>: <span id="day3-temp">--°C</span></li>
+            </ul>
         </section>
 
-        <section class="spotlights">
+        <section id="spotlights">
             <h2>Company Spotlights</h2>
-            <div id="spotlight-container">
-                <!-- Company spotlight details will be dynamically inserted here by JavaScript -->
-            </div>
+            <!-- Spotlight members will be populated here by JavaScript -->
         </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <p>&copy; <span id="year"></span> Gaborone Chamber of Commerce. Last modified: <span id="last-modified"></span></p>
-            <div class="social-media">
-                <a href="#"><img src="images/icon-facebook.jpeg" alt="Facebook"></a>
-                <a href="#"><img src="images/whatsapp.jpeg" alt="WhatsApp"></a>
-                <a href="#"><img src="images/linkedIn.jpeg" alt="LinkedIn"></a>
-            </div>
-        </div>
+        <p>&copy; <span id="currentYear"></span> Gaborone Chamber of Commerce</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+        <p>Created by Tinny Mosimanyana for WDD 231</p>
     </footer>
 </body>
 </html>
