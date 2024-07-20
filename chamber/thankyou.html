@@ -3,34 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thank you for joining the Gaborone Chamber of Commerce">
+    <meta name="description" content="Thank you for your application">
     <meta name="author" content="Tinny Mosimanyana">
+    <meta property="og:title" content="Thank You for Your Application">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/image.png">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/thankyou.html">
     <title>Thank You</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles/normalize.css"> <!-- Local Normalize CSS file -->
-    <link rel="stylesheet" href="styles/styles.css"> <!-- Custom CSS file -->
-    <style>
-        .thank-you {
-            max-width: 800px;
-            margin: auto;
-            padding: 2rem;
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-        .thank-you h1 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        .thank-you p {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
 <body>
     <header>
-        <h1>Gaborone Chamber of Commerce</h1>
+        <h1>Thank You for Your Application</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -45,15 +31,16 @@
     </header>
 
     <main>
-        <section class="thank-you">
-            <h1>Thank You for Your Application!</h1>
-            <p>We appreciate your interest in joining the Gaborone Chamber of Commerce. Below is the information you submitted:</p>
-            <p><strong>First Name:</strong> <span id="first-name"></span></p>
-            <p><strong>Last Name:</strong> <span id="last-name"></span></p>
-            <p><strong>Email Address:</strong> <span id="email"></span></p>
-            <p><strong>Mobile Phone Number:</strong> <span id="mobile"></span></p>
-            <p><strong>Business/Organization Name:</strong> <span id="organization-name"></span></p>
-            <p><strong>Date Submitted:</strong> <span id="timestamp"></span></p>
+        <section>
+            <h2>Application Summary</h2>
+            <p>Thank you for applying to join the Gaborone Chamber of Commerce. Below is a summary of your application:</p>
+
+            <p><strong>First Name:</strong> <span id="firstName"></span></p>
+            <p><strong>Last Name:</strong> <span id="lastName"></span></p>
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>Mobile Phone Number:</strong> <span id="phone"></span></p>
+            <p><strong>Business/Organization Name:</strong> <span id="businessName"></span></p>
+            <p><strong>Date of Submission:</strong> <span id="timestamp"></span></p>
         </section>
     </main>
 
@@ -64,16 +51,14 @@
     </footer>
 
     <script>
-        document.getElementById('first-name').textContent = new URLSearchParams(window.location.search).get('first-name');
-        document.getElementById('last-name').textContent = new URLSearchParams(window.location.search).get('last-name');
-        document.getElementById('email').textContent = new URLSearchParams(window.location.search).get('email');
-        document.getElementById('mobile').textContent = new URLSearchParams(window.location.search).get('mobile');
-        document.getElementById('organization-name').textContent = new URLSearchParams(window.location.search).get('organization-name');
-        document.getElementById('timestamp').textContent = new URLSearchParams(window.location.search).get('timestamp');
-
-        const currentYear = new Date().getFullYear();
-        document.getElementById('currentYear').textContent = currentYear;
-        document.getElementById('lastModified').textContent = document.lastModified;
+        // Get URL parameters and populate the summary
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('firstName').textContent = urlParams.get('firstName');
+        document.getElementById('lastName').textContent = urlParams.get('lastName');
+        document.getElementById('email').textContent = urlParams.get('email');
+        document.getElementById('phone').textContent = urlParams.get('phone');
+        document.getElementById('businessName').textContent = urlParams.get('businessName');
+        document.getElementById('timestamp').textContent = urlParams.get('timestamp');
     </script>
 </body>
 </html>

@@ -1,73 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join the Gaborone Chamber of Commerce to enjoy exclusive benefits and networking opportunities.">
+    <meta name="description" content="Join the Gaborone Chamber of Commerce">
     <meta name="author" content="Tinny Mosimanyana">
-    <meta property="og:title" content="Join the Gaborone Chamber of Commerce">
+    <meta property="og:title" content="Join Gaborone Chamber of Commerce">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero.png">
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/image.png">
     <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/join.html">
-    <link rel="icon" href="images/favicon.ico">
+    <title>Join Gaborone Chamber of Commerce</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css">
     <style>
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .membership-card {
-            animation: fadeInScale 0.8s ease-out forwards;
-            transition: all 0.3s ease-in-out;
-            opacity: 0.9;
-            margin: 10px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            background: #fff;
-        }
-
-        .membership-card:hover {
-            opacity: 1;
-            transform: scale(1.05);
-        }
-
+        /* Modal styles */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 1;
             left: 0;
             top: 0;
             width: 100%;
             height: 100%;
             overflow: auto;
+            background-color: rgb(0,0,0);
             background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
         }
-
         .modal-content {
             background-color: #fefefe;
-            margin: 15% auto;
+            margin: 5% auto;
             padding: 20px;
             border: 1px solid #888;
             width: 80%;
         }
-
         .close {
             color: #aaa;
             float: right;
             font-size: 28px;
             font-weight: bold;
         }
-
         .close:hover,
         .close:focus {
             color: black;
@@ -75,41 +48,34 @@
             cursor: pointer;
         }
 
-        .modal-content h3 {
-            margin-top: 0;
+        /* Card styles */
+        .membership-card {
+            margin: 10px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
-
-        @media (min-width: 768px) {
-            .membership-container {
-                display: flex;
-                justify-content: space-between;
-                align-items: flex-start;
-            }
-
-            .membership-card {
-                width: 22%;
-            }
+        .membership-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
-
-        @media (max-width: 767px) {
-            .membership-card {
-                width: 100%;
-                margin-bottom: 10px;
-            }
+        .membership-card a {
+            color: #007BFF;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
-    <title>Join the Gaborone Chamber of Commerce</title>
 </head>
-
 <body>
     <header>
-        <h1>Gaborone Chamber of Commerce</h1>
+        <h1>Join Gaborone Chamber of Commerce</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html" class="active">Join</a></li>
+                <li><a href="join.html">Join</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="podcast.html">Podcast</a></li>
                 <li><a href="events.html">Events</a></li>
@@ -118,175 +84,144 @@
     </header>
 
     <main>
-        <section id="hero">
-            <h2>Become a Member</h2>
-            <p>Join the Gaborone Chamber of Commerce and enjoy exclusive benefits and networking opportunities.</p>
-        </section>
-
         <form action="thankyou.html" method="get">
             <fieldset>
                 <legend>Membership Application</legend>
 
-                <!-- First Name -->
-                <div>
-                    <label for="first-name">First Name:</label>
-                    <input type="text" id="first-name" name="first-name" required 
-                           autocomplete="given-name" title="Enter your first name" placeholder="John">
-                </div>
+                <label for="firstName">First Name:
+                    <input type="text" id="firstName" name="firstName" title="Applicant's first name" autocomplete="given-name" required>
+                </label><br>
 
-                <!-- Last Name -->
-                <div>
-                    <label for="last-name">Last Name:</label>
-                    <input type="text" id="last-name" name="last-name" required 
-                           autocomplete="family-name" title="Enter your last name" placeholder="Doe">
-                </div>
+                <label for="lastName">Last Name:
+                    <input type="text" id="lastName" name="lastName" title="Applicant's last name" autocomplete="family-name" required>
+                </label><br>
 
-                <!-- Organization Title -->
-                <div>
-                    <label for="organization-title">Organizational Title:</label>
-                    <input type="text" id="organization-title" name="organization-title" required 
-                           pattern="[A-Za-z\s-]{7,}" title="Enter your organizational title (at least 7 characters, only letters, spaces, and hyphens allowed)" 
-                           autocomplete="organization-title" placeholder="Senior Manager">
-                </div>
+                <label for="organizationTitle">Organizational Title:
+                    <input type="text" id="organizationTitle" name="organizationTitle" title="Organizational title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" required>
+                </label><br>
 
-                <!-- Email Address -->
-                <div>
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" required 
-                           autocomplete="email" title="Enter your email address" placeholder="example@example.com">
-                </div>
+                <label for="email">Email:
+                    <input type="email" id="email" name="email" title="Email address" autocomplete="email" placeholder="example@domain.com" required>
+                </label><br>
 
-                <!-- Phone Number -->
-                <div>
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required 
-                           autocomplete="tel" title="Enter your mobile phone number" placeholder="123-456-7890">
-                </div>
+                <label for="phone">Mobile Phone Number:
+                    <input type="tel" id="phone" name="phone" title="Mobile phone number" autocomplete="tel" required>
+                </label><br>
 
-                <!-- Business Name -->
-                <div>
-                    <label for="organization-name">Business/Organization Name:</label>
-                    <input type="text" id="organization-name" name="organization-name" required 
-                           autocomplete="organization" title="Enter your business or organization's name" placeholder="Example Org">
-                </div>
+                <label for="businessName">Business/Organization Name:
+                    <input type="text" id="businessName" name="businessName" title="Business or organization name" autocomplete="organization" required>
+                </label><br>
 
-                <!-- Membership Level -->
-                <div>
-                    <label for="membership-level">Membership Level:</label>
-                    <select id="membership-level" name="membership-level" required 
-                            title="Select your membership level">
-                        <option value="">Select a Membership Level</option>
+                <label for="membershipLevel">Membership Level:
+                    <select id="membershipLevel" name="membershipLevel">
                         <option value="np">NP Membership</option>
                         <option value="bronze">Bronze Membership</option>
                         <option value="silver">Silver Membership</option>
                         <option value="gold">Gold Membership</option>
                     </select>
-                </div>
+                </label><br>
 
-                <!-- Description -->
-                <div>
-                    <label for="description">Business/Organization Description:</label>
-                    <textarea id="description" name="description" rows="4" 
-                              title="Provide a brief description of your business or organization"></textarea>
-                </div>
+                <label for="description">Business/Organization Description:
+                    <textarea id="description" name="description" title="Description of business or organization"></textarea>
+                </label><br>
 
-                <!-- Hidden Field for Timestamp -->
-                <input type="hidden" id="form-submission-time" name="form-submission-time" value="" />
+                <input type="hidden" id="timestamp" name="timestamp" value="" />
 
-                <!-- Submit Button -->
-                <div>
-                    <input type="submit" value="Submit Application">
-                </div>
+                <button type="submit">Submit</button>
             </fieldset>
         </form>
 
-        <!-- Membership Level Cards -->
-        <section class="membership-container">
-            <!-- NP Membership Card -->
+        <div class="membership-cards">
+            <!-- Membership Level Cards -->
             <div class="membership-card">
                 <h3>NP Membership</h3>
-                <p>No fee for non-profit organizations.</p>
-                <a href="#modal-np" class="open-modal">Learn More</a>
+                <p>No fee, for non-profit organizations.</p>
+                <a href="#" data-modal="modal1">More Info</a>
             </div>
-
-            <!-- Bronze Membership Card -->
             <div class="membership-card">
                 <h3>Bronze Membership</h3>
-                <p>Basic benefits at an affordable price.</p>
-                <a href="#modal-bronze" class="open-modal">Learn More</a>
+                <p>Basic level membership with minimal benefits.</p>
+                <a href="#" data-modal="modal2">More Info</a>
             </div>
-
-            <!-- Silver Membership Card -->
             <div class="membership-card">
                 <h3>Silver Membership</h3>
-                <p>Enhanced benefits and more visibility.</p>
-                <a href="#modal-silver" class="open-modal">Learn More</a>
+                <p>Intermediate level with additional benefits.</p>
+                <a href="#" data-modal="modal3">More Info</a>
             </div>
-
-            <!-- Gold Membership Card -->
             <div class="membership-card">
                 <h3>Gold Membership</h3>
-                <p>Premium benefits and maximum exposure.</p>
-                <a href="#modal-gold" class="open-modal">Learn More</a>
+                <p>Premium membership with extensive benefits.</p>
+                <a href="#" data-modal="modal4">More Info</a>
             </div>
-        </section>
+        </div>
 
         <!-- Modals -->
-        <div id="modal-np" class="modal">
+        <div id="modal1" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <h3>NP Membership Benefits</h3>
-                <p>Details about NP Membership benefits...</p>
+                <span class="close" data-modal="modal1">&times;</span>
+                <h2>NP Membership Benefits</h2>
+                <p>Details about NP Membership benefits.</p>
             </div>
         </div>
-
-        <div id="modal-bronze" class="modal">
+        <div id="modal2" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <h3>Bronze Membership Benefits</h3>
-                <p>Details about Bronze Membership benefits...</p>
+                <span class="close" data-modal="modal2">&times;</span>
+                <h2>Bronze Membership Benefits</h2>
+                <p>Details about Bronze Membership benefits.</p>
             </div>
         </div>
-
-        <div id="modal-silver" class="modal">
+        <div id="modal3" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <h3>Silver Membership Benefits</h3>
-                <p>Details about Silver Membership benefits...</p>
+                <span class="close" data-modal="modal3">&times;</span>
+                <h2>Silver Membership Benefits</h2>
+                <p>Details about Silver Membership benefits.</p>
             </div>
         </div>
-
-        <div id="modal-gold" class="modal">
+        <div id="modal4" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
-                <h3>Gold Membership Benefits</h3>
-                <p>Details about Gold Membership benefits...</p>
+                <span class="close" data-modal="modal4">&times;</span>
+                <h2>Gold Membership Benefits</h2>
+                <p>Details about Gold Membership benefits.</p>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 Gaborone Chamber of Commerce. All rights reserved.</p>
+        <p>&copy; <span id="currentYear"></span> Gaborone Chamber of Commerce</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+        <p>Created by Tinny Mosimanyana for WDD 231</p>
     </footer>
 
+    <script src="scripts/scripts.js"></script>
     <script>
-        // Script to handle modal display
-        document.querySelectorAll('.open-modal').forEach(button => {
-            button.addEventListener('click', () => {
-                const modalId = button.getAttribute('href').substring(1);
+        // Script to handle timestamp
+        document.getElementById('timestamp').value = new Date().toISOString();
+
+        // Script to handle modals
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.close');
+        const links = document.querySelectorAll('.membership-card a');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const modalId = this.getAttribute('data-modal');
                 document.getElementById(modalId).style.display = 'block';
             });
         });
 
-        document.querySelectorAll('.close').forEach(closeButton => {
-            closeButton.addEventListener('click', () => {
-                closeButton.closest('.modal').style.display = 'none';
+        closeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const modalId = this.getAttribute('data-modal');
+                document.getElementById(modalId).style.display = 'none';
             });
         });
 
-        // Set the timestamp value on page load
-        document.getElementById('form-submission-time').value = new Date().toISOString();
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
+        });
     </script>
 </body>
-
 </html>
