@@ -35,31 +35,24 @@
         <form action="thankyou.html" method="get">
             <fieldset>
                 <legend>Membership Application</legend>
-
                 <label for="firstName">First Name:
                     <input type="text" id="firstName" name="firstName" title="Applicant's first name" autocomplete="given-name" required>
                 </label><br>
-
                 <label for="lastName">Last Name:
                     <input type="text" id="lastName" name="lastName" title="Applicant's last name" autocomplete="family-name" required>
                 </label><br>
-
                 <label for="organizationTitle">Organizational Title:
                     <input type="text" id="organizationTitle" name="organizationTitle" title="Organizational title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" required>
                 </label><br>
-
                 <label for="email">Email:
                     <input type="email" id="email" name="email" title="Email address" autocomplete="email" placeholder="example@domain.com" required>
                 </label><br>
-
                 <label for="phone">Mobile Phone Number:
                     <input type="tel" id="phone" name="phone" title="Mobile phone number" autocomplete="tel" required>
                 </label><br>
-
                 <label for="businessName">Business/Organization Name:
                     <input type="text" id="businessName" name="businessName" title="Business or organization name" autocomplete="organization" required>
                 </label><br>
-
                 <label for="membershipLevel">Membership Level:
                     <select id="membershipLevel" name="membershipLevel">
                         <option value="np">NP Membership</option>
@@ -68,35 +61,31 @@
                         <option value="gold">Gold Membership</option>
                     </select>
                 </label><br>
-
                 <label for="description">Business/Organization Description:
                     <textarea id="description" name="description" title="Description of business or organization"></textarea>
                 </label><br>
-
                 <input type="hidden" id="timestamp" name="timestamp" value="" />
-
                 <button type="submit">Submit</button>
             </fieldset>
         </form>
 
         <div class="membership-cards">
-            <!-- Membership Level Cards -->
-            <div class="membership-card" data-modal="modal1">
+            <div class="membership-card" data-modal="modal1" tabindex="0">
                 <h3>NP Membership</h3>
                 <p>No fee, for non-profit organizations.</p>
                 <a href="#">More Info</a>
             </div>
-            <div class="membership-card" data-modal="modal2">
+            <div class="membership-card" data-modal="modal2" tabindex="0">
                 <h3>Bronze Membership</h3>
                 <p>Basic level membership with minimal benefits.</p>
                 <a href="#">More Info</a>
             </div>
-            <div class="membership-card" data-modal="modal3">
+            <div class="membership-card" data-modal="modal3" tabindex="0">
                 <h3>Silver Membership</h3>
                 <p>Intermediate level with additional benefits.</p>
                 <a href="#">More Info</a>
             </div>
-            <div class="membership-card" data-modal="modal4">
+            <div class="membership-card" data-modal="modal4" tabindex="0">
                 <h3>Gold Membership</h3>
                 <p>Premium membership with extensive benefits.</p>
                 <a href="#">More Info</a>
@@ -106,28 +95,28 @@
         <!-- Modals -->
         <div id="modal1" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <span class="close" aria-label="Close">&times;</span>
                 <h2>NP Membership Benefits</h2>
                 <p>Details about NP Membership benefits.</p>
             </div>
         </div>
         <div id="modal2" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <span class="close" aria-label="Close">&times;</span>
                 <h2>Bronze Membership Benefits</h2>
                 <p>Details about Bronze Membership benefits.</p>
             </div>
         </div>
         <div id="modal3" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <span class="close" aria-label="Close">&times;</span>
                 <h2>Silver Membership Benefits</h2>
                 <p>Details about Silver Membership benefits.</p>
             </div>
         </div>
         <div id="modal4" class="modal">
             <div class="modal-content">
-                <span class="close">&times;</span>
+                <span class="close" aria-label="Close">&times;</span>
                 <h2>Gold Membership Benefits</h2>
                 <p>Details about Gold Membership benefits.</p>
             </div>
@@ -142,10 +131,10 @@
 
     <script src="scripts/scripts.js"></script>
     <script>
-        // Script to handle timestamp
+        // Set timestamp
         document.getElementById('timestamp').value = new Date().toISOString();
 
-        // Script to handle modals
+        // Modal handling
         const modals = document.querySelectorAll('.modal');
         const closeButtons = document.querySelectorAll('.close');
         const links = document.querySelectorAll('.membership-card a');
@@ -155,13 +144,13 @@
                 event.preventDefault();
                 const modalId = this.parentElement.getAttribute('data-modal');
                 document.getElementById(modalId).style.display = 'block';
+                document.getElementById(modalId).querySelector('.modal-content').focus();
             });
         });
 
         closeButtons.forEach(button => {
             button.addEventListener('click', function() {
-                const modalId = this.parentElement.parentElement.id;
-                document.getElementById(modalId).style.display = 'none';
+                this.parentElement.parentElement.style.display = 'none';
             });
         });
 
