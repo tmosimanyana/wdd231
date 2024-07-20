@@ -1,58 +1,47 @@
 [
     {
-        "name": "Tech Innovations Ltd",
-        "address": "123 Tech Lane, Gaborone",
+        "name": "ABC Corp",
+        "address": "123 Main St, Gaborone",
         "phone": "+267 123 4567",
-        "website": "http://www.techinnovations.com",
+        "website": "http://www.abccorp.bw",
         "image": "business1.png",
-        "membershipLevel": 3
+        "membership_level": 2,
+        "description": "Silver member"
     },
     {
-        "name": "Green Earth Co",
-        "address": "456 Eco Street, Gaborone",
+        "name": "XYZ Ltd",
+        "address": "456 Elm St, Gaborone",
         "phone": "+267 234 5678",
-        "website": "http://www.greenearth.com",
+        "website": "http://www.xyzltd.bw",
         "image": "business2.png",
-        "membershipLevel": 2
+        "membership_level": 1,
+        "description": "Member"
     },
     {
-        "name": "Urban Styles Boutique",
-        "address": "789 Fashion Ave, Gaborone",
+        "name": "DEF Solutions",
+        "address": "789 Oak St, Gaborone",
         "phone": "+267 345 6789",
-        "website": "http://www.urbanstyles.com",
+        "website": "http://www.defsolutions.bw",
         "image": "business3.png",
-        "membershipLevel": 1
+        "membership_level": 3,
+        "description": "Gold member"
     },
     {
-        "name": "Healthy Living Pharmacy",
-        "address": "101 Wellness Road, Gaborone",
-        "phone": "+267 456 7890",
-        "website": "http://www.healthylivingpharmacy.com",
-        "image": "business4.png",
-        "membershipLevel": 2
-    },
-    {
-        "name": "Digital Solutions Inc",
-        "address": "202 Binary Blvd, Gaborone",
-        "phone": "+267 567 8901",
-        "website": "http://www.digitalsolutions.com",
-        "image": "business5.png",
-        "membershipLevel": 3
-    },
-    {
-        "name": "Culinary Delights Catering",
-        "address": "303 Gourmet Way, Gaborone",
+        "name": "GHI Tech",
+        "address": "303 Cedar St, Gaborone",
         "phone": "+267 678 9012",
-        "website": "http://www.culinarydelights.com",
-        "image": "business7.png",
-        "membershipLevel": 1
+        "website": "http://www.ghitech.bw",
+        "image": "business4.png",
+        "membership_level": 1,
+        "description": "Member"
     },
     {
-        "name": "Adventure Outdoors",
-        "address": "404 Explorer Ln, Gaborone",
+        "name": "JKL Enterprises",
+        "address": "404 Birch St, Gaborone",
         "phone": "+267 789 0123",
-        "website": "http://www.adventureoutdoors.com",
-        "image": "business8.png",
-        "membershipLevel": 3
+        "website": "http://www.jklenterprises.bw",
+        "image": "business5.png",
+        "membership_level": 3,
+        "description": "Gold member"
     }
 ]
