@@ -1,4 +1,4 @@
-const WEATHER_API_KEY = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
+const WEATHER_API_KEY = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replaced with my OpenWeatherMap API key
 const WEATHER_CITY = 'Gaborone,BW'; // Chamber location
 
 async function fetchWeatherData() {
