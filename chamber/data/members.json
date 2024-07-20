@@ -45,21 +45,21 @@
         "description": "Member"
     },
     {
-        "name": "MNO Industries",
-        "address": "505 Maple St, Gaborone",
+        "name": "MNO Services",
+        "address": "505 Birch St, Gaborone",
         "phone": "+267 890 1234",
-        "website": "http://www.mnoindustries.bw",
+        "website": "http://www.mnoservices.bw",
         "image": "business2.png",
         "membership_level": 3,
         "description": "Gold member"
     },
     {
-        "name": "PQR Holdings",
-        "address": "606 Birch St, Gaborone",
+        "name": "PQR Innovations",
+        "address": "606 Maple St, Gaborone",
         "phone": "+267 901 2345",
-        "website": "http://www.pqrholdings.bw",
+        "website": "http://www.pqrinnovations.bw",
         "image": "business1.png",
-        "membership_level": 2,
-        "description": "Silver member"
+        "membership_level": 1,
+        "description": "Member"
     }
 ]
