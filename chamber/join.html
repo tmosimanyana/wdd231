@@ -25,11 +25,17 @@
             border: 1px solid #ccc;
             border-radius: 8px;
             background-color: #fff;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease;
+            opacity: 0; /* Initial opacity */
+            transform: translateY(20px); /* Initial position */
         }
         .membership-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .membership-card.visible {
+            opacity: 1; /* Final opacity */
+            transform: translateY(0); /* Final position */
         }
         .modal {
             display: none;
@@ -88,7 +94,6 @@
             <form action="thankyou.html" method="get">
                 <fieldset>
                     <legend>Membership Application</legend>
-
                     <label for="first-name">
                         First Name:
                         <input type="text" id="first-name" name="first-name" required title="Your first name" autocomplete="given-name">
@@ -122,7 +127,7 @@
                     <label for="membership-level">
                         Membership Level:
                         <select id="membership-level" name="membership-level" required>
-                            <option value="" disabled selected>Select Membership Level</option>
+                            <option value="">Select Membership Level</option> <!-- Placeholder option -->
                             <option value="np">NP Membership</option>
                             <option value="bronze">Bronze Membership</option>
                             <option value="silver">Silver Membership</option>
@@ -144,19 +149,19 @@
 
         <section id="membership-cards" class="membership-cards">
             <!-- Membership Cards -->
-            <div class="membership-card">
+            <div class="membership-card" data-card="np">
                 <h3>NP Membership</h3>
                 <a href="#np-modal" class="modal-link">More Info</a>
             </div>
-            <div class="membership-card">
+            <div class="membership-card" data-card="bronze">
                 <h3>Bronze Membership</h3>
                 <a href="#bronze-modal" class="modal-link">More Info</a>
             </div>
-            <div class="membership-card">
+            <div class="membership-card" data-card="silver">
                 <h3>Silver Membership</h3>
                 <a href="#silver-modal" class="modal-link">More Info</a>
             </div>
-            <div class="membership-card">
+            <div class="membership-card" data-card="gold">
                 <h3>Gold Membership</h3>
                 <a href="#gold-modal" class="modal-link">More Info</a>
             </div>
@@ -203,23 +208,41 @@
     </footer>
 
     <script>
+        // Set the timestamp for the hidden input field
         document.getElementById('timestamp').value = new Date().toISOString();
 
+        // Handle modal opening and closing
         document.querySelectorAll('.modal-link').forEach(link => {
             link.addEventListener('click', function(event) {
                 event.preventDefault();
                 const modalId = this.getAttribute('href').substring(1);
                 document.getElementById(modalId).classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
             });
         });
 
         function closeModal(modalId) {
             document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = ''; // Re-enable scrolling when modal is closed
         }
 
-        // Update the footer with the current year and last modified date
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        // Add animation/transition to membership cards
+        document.querySelectorAll('.membership-card').forEach(card => {
+            card.style.opacity = 0; // Initial opacity
+            card.style.transform = 'translateY(20px)'; // Initial position
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+                card.style.opacity = 1;
+                card.style.transform = 'translateY(0)';
+                card.classList.add('visible'); // Ensure the card becomes visible after animation
+            }, 100); // Delay for the effect to kick in
+        });
+
+        // Update footer's last modified date
         document.getElementById('lastModified').textContent = document.lastModified;
+
+        // Update current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
