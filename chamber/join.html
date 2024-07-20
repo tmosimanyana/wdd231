@@ -122,6 +122,7 @@
                     <label for="membership-level">
                         Membership Level:
                         <select id="membership-level" name="membership-level" required>
+                            <option value="" disabled selected>Select Membership Level</option>
                             <option value="np">NP Membership</option>
                             <option value="bronze">Bronze Membership</option>
                             <option value="silver">Silver Membership</option>
@@ -215,6 +216,10 @@
         function closeModal(modalId) {
             document.getElementById(modalId).classList.remove('active');
         }
+
+        // Update the footer with the current year and last modified date
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = document.lastModified;
     </script>
 </body>
 </html>
