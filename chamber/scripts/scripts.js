@@ -1,5 +1,5 @@
 // Your OpenWeatherMap API key
-const API_KEY = 'YOUR_OPENWEATHERMAP_API_KEY';
+const API_KEY = '5c7e429e1b20f30b60de00a18bcc0e92';
 const LOCATION = 'Gaborone,BW'; // Chamber location
 
 // Function to capitalize each word in a string
