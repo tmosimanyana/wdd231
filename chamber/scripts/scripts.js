@@ -1,6 +1,6 @@
 // Fetch weather data using OpenWeatherMap API
 async function fetchWeather() {
-    const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
+    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replace with your OpenWeatherMap API key
     const city = 'Gaborone';
     const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
 
