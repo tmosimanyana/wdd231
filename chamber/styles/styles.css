@@ -75,7 +75,6 @@ main {
 #current-events ul, #weather ul {
   list-style: none;
   padding: 0;
-  margin: 0;
 }
 
 #weather h2, #spotlights h2 {
@@ -102,9 +101,54 @@ footer {
   color: #ffffff;
   padding: 1rem;
   text-align: center;
-  position: relative; /* Changed from absolute to relative */
+  position: absolute;
+  bottom: 0;
   width: 100%;
-  bottom: 0; /* Removed from footer as it is handled by position */
+}
+
+footer p {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Membership Card Animations */
+.membership-cards {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+}
+
+.membership-card {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  width: 22%;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.membership-card:nth-child(1) {
+  transition-delay: 0.2s;
+}
+
+.membership-card:nth-child(2) {
+  transition-delay: 0.4s;
+}
+
+.membership-card:nth-child(3) {
+  transition-delay: 0.6s;
+}
+
+.membership-card:nth-child(4) {
+  transition-delay: 0.8s;
+}
+
+.membership-card:hover {
+  background-color: #E67E22;
+  color: #ffffff;
 }
 
 /* Responsive Styles */
@@ -127,59 +171,4 @@ footer {
   .spotlight-logo {
       margin-right: 1rem;
   }
-}
-
-/* Membership Card Styles */
-.membership-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.membership-card {
-  flex: 1 1 200px;
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  background-color: #fff;
-  transition: transform 0.5s ease, box-shadow 0.5s ease, opacity 0.5s ease; /* Added opacity transition */
-  opacity: 0.8; /* Initial opacity */
-}
-
-.membership-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  opacity: 1; /* Full opacity on hover */
-}
-
-/* Modal Styles */
-.modal {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 1rem;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
-  transition: opacity 0.5s ease, transform 0.5s ease; /* Added transitions */
-}
-
-.modal.active {
-  display: block;
-  opacity: 1; /* Ensures modal is fully opaque when active */
-}
-
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.modal-close {
-  cursor: pointer;
 }
