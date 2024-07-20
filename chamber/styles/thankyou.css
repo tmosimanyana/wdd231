@@ -1,0 +1,12 @@
+/* thankyou.css */
+
+/* General styles for thank you page */
+section {
+    margin: 20px;
+}
+h2 {
+    color: #004080; /* Primary color */
+}
+p {
+    font-size: 1.1em;
+}

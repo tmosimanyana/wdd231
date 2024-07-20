@@ -13,59 +13,7 @@
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css">
-    <style>
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0,0,0);
-            background-color: rgba(0,0,0,0.4);
-            padding-top: 60px;
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        /* Card styles */
-        .membership-card {
-            margin: 10px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .membership-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        .membership-card a {
-            color: #007BFF;
-            text-decoration: none;
-            font-weight: bold;
-        }
-    </style>
+    <link rel="stylesheet" href="styles/join.css">
 </head>
 <body>
     <header>
@@ -133,53 +81,53 @@
 
         <div class="membership-cards">
             <!-- Membership Level Cards -->
-            <div class="membership-card">
+            <div class="membership-card" data-modal="modal1">
                 <h3>NP Membership</h3>
                 <p>No fee, for non-profit organizations.</p>
-                <a href="#" data-modal="modal1">More Info</a>
+                <a href="#">More Info</a>
             </div>
-            <div class="membership-card">
+            <div class="membership-card" data-modal="modal2">
                 <h3>Bronze Membership</h3>
                 <p>Basic level membership with minimal benefits.</p>
-                <a href="#" data-modal="modal2">More Info</a>
+                <a href="#">More Info</a>
             </div>
-            <div class="membership-card">
+            <div class="membership-card" data-modal="modal3">
                 <h3>Silver Membership</h3>
                 <p>Intermediate level with additional benefits.</p>
-                <a href="#" data-modal="modal3">More Info</a>
+                <a href="#">More Info</a>
             </div>
-            <div class="membership-card">
+            <div class="membership-card" data-modal="modal4">
                 <h3>Gold Membership</h3>
                 <p>Premium membership with extensive benefits.</p>
-                <a href="#" data-modal="modal4">More Info</a>
+                <a href="#">More Info</a>
             </div>
         </div>
 
         <!-- Modals -->
         <div id="modal1" class="modal">
             <div class="modal-content">
-                <span class="close" data-modal="modal1">&times;</span>
+                <span class="close">&times;</span>
                 <h2>NP Membership Benefits</h2>
                 <p>Details about NP Membership benefits.</p>
             </div>
         </div>
         <div id="modal2" class="modal">
             <div class="modal-content">
-                <span class="close" data-modal="modal2">&times;</span>
+                <span class="close">&times;</span>
                 <h2>Bronze Membership Benefits</h2>
                 <p>Details about Bronze Membership benefits.</p>
             </div>
         </div>
         <div id="modal3" class="modal">
             <div class="modal-content">
-                <span class="close" data-modal="modal3">&times;</span>
+                <span class="close">&times;</span>
                 <h2>Silver Membership Benefits</h2>
                 <p>Details about Silver Membership benefits.</p>
             </div>
         </div>
         <div id="modal4" class="modal">
             <div class="modal-content">
-                <span class="close" data-modal="modal4">&times;</span>
+                <span class="close">&times;</span>
                 <h2>Gold Membership Benefits</h2>
                 <p>Details about Gold Membership benefits.</p>
             </div>
@@ -205,14 +153,14 @@
         links.forEach(link => {
             link.addEventListener('click', function(event) {
                 event.preventDefault();
-                const modalId = this.getAttribute('data-modal');
+                const modalId = this.parentElement.getAttribute('data-modal');
                 document.getElementById(modalId).style.display = 'block';
             });
         });
 
         closeButtons.forEach(button => {
             button.addEventListener('click', function() {
-                const modalId = this.getAttribute('data-modal');
+                const modalId = this.parentElement.parentElement.id;
                 document.getElementById(modalId).style.display = 'none';
             });
         });
