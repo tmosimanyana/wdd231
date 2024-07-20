@@ -56,40 +56,7 @@
         <p>Gaborone Chamber of Commerce &copy; <span id="currentYear"></span> | Last Modified: <span id="lastModified"></span></p>
     </footer>
 
-    <!-- Inline JavaScript -->
-    <script>
-        // Modal Handling
-        document.querySelectorAll('.modal-link').forEach(link => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault();
-                const modalId = link.getAttribute('href').substring(1);
-                document.getElementById(modalId).classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling when modal is open
-            });
-        });
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.remove('active');
-            document.body.style.overflow = ''; // Re-enable scrolling when modal is closed
-        }
-
-        // Add animation/transition to membership cards
-        document.querySelectorAll('.membership-card').forEach(card => {
-            card.style.opacity = 0; // Initial opacity
-            card.style.transform = 'translateY(20px)'; // Initial position
-            setTimeout(() => {
-                card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-                card.style.opacity = 1;
-                card.style.transform = 'translateY(0)';
-                card.classList.add('visible'); // Ensure the card becomes visible after animation
-            }, 100); // Delay for the effect to kick in
-        });
-
-        // Update footer's last modified date
-        document.getElementById('lastModified').textContent = document.lastModified;
-
-        // Update current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-    </script>
+    <!-- External JavaScript -->
+    <script src="scripts/scripts.js"></script>
 </body>
 </html>
