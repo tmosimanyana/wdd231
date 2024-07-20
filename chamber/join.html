@@ -1,106 +1,53 @@
-<!DOCTYPE html>
-<html lang="en-US">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Apply to join the Gaborone Chamber of Commerce. Explore membership levels and benefits to support your business growth.">
-    <meta name="author" content="Tinny Mosimanyana">
-    <meta property="og:title" content="Join the Gaborone Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero.png">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/join.html">
-    <link rel="icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/styles.css">
-    <title>Join the Gaborone Chamber of Commerce - Membership Application</title>
-</head>
-<body>
-    <header>
-        <h1>Gaborone Chamber of Commerce</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="events.html">Events</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="hero">
-            <h2>Become a Member</h2>
-            <p>Join the Gaborone Chamber of Commerce and take advantage of exclusive benefits and networking opportunities.</p>
-        </section>
+<main>
+    <section id="hero">
+        <h2>Become a Member</h2>
+        <p>Join the Gaborone Chamber of Commerce and take advantage of exclusive benefits and networking opportunities.</p>
+    </section>
 
-        <form action="thankyou.html" method="get">
-            <fieldset>
-                <legend>Membership Application</legend>
-                
-                <label for="first-name">First Name:
-                    <input type="text" id="first-name" name="first-name" required title="Your first name" autocomplete="given-name">
-                </label>
+    <form action="thankyou.html" method="get">
+        <fieldset>
+            <legend>Membership Application</legend>
+            
+            <label for="first-name">First Name:
+                <input type="text" id="first-name" name="first-name" required title="Enter your first name" autocomplete="given-name">
+            </label>
 
-                <label for="last-name">Last Name:
-                    <input type="text" id="last-name" name="last-name" required title="Your last name" autocomplete="family-name">
-                </label>
+            <label for="last-name">Last Name:
+                <input type="text" id="last-name" name="last-name" required title="Enter your last name" autocomplete="family-name">
+            </label>
 
-                <label for="organization-title">Organizational Title:
-                    <input type="text" id="organization-title" name="organization-title" title="Your organizational title" pattern="[A-Za-z\s\-]{7,}" autocomplete="organization-title">
-                </label>
+            <label for="organization-title">Organizational Title:
+                <input type="text" id="organization-title" name="organization-title" title="Enter your organizational title" pattern="[A-Za-z\s\-]{7,}" autocomplete="organization-title">
+            </label>
 
-                <label for="email">Email Address:
-                    <input type="email" id="email" name="email" required title="Your email address" autocomplete="email" placeholder="example@example.com">
-                </label>
+            <label for="email">Email Address:
+                <input type="email" id="email" name="email" required title="Enter your email address" autocomplete="email" placeholder="example@example.com">
+            </label>
 
-                <label for="mobile">Mobile Phone Number:
-                    <input type="tel" id="mobile" name="mobile" required title="Your mobile phone number" autocomplete="tel">
-                </label>
+            <label for="mobile">Mobile Phone Number:
+                <input type="tel" id="mobile" name="mobile" required title="Enter your mobile phone number" autocomplete="tel">
+            </label>
 
-                <label for="organization-name">Business/Organization Name:
-                    <input type="text" id="organization-name" name="organization-name" required title="Name of your business or organization" autocomplete="organization">
-                </label>
+            <label for="organization-name">Business/Organization Name:
+                <input type="text" id="organization-name" name="organization-name" required title="Enter the name of your business or organization" autocomplete="organization">
+            </label>
 
-                <label for="membership-level">Membership Level:
-                    <select id="membership-level" name="membership-level" required>
-                        <option value="">Select a Membership Level</option>
-                        <option value="np">NP Membership</option>
-                        <option value="bronze">Bronze Membership</option>
-                        <option value="silver">Silver Membership</option>
-                        <option value="gold">Gold Membership</option>
-                    </select>
-                </label>
+            <label for="membership-level">Membership Level:
+                <select id="membership-level" name="membership-level" required title="Select your membership level">
+                    <option value="">Select a Membership Level</option>
+                    <option value="np">NP Membership</option>
+                    <option value="bronze">Bronze Membership</option>
+                    <option value="silver">Silver Membership</option>
+                    <option value="gold">Gold Membership</option>
+                </select>
+            </label>
 
-                <label for="description">Business/Organization Description:
-                    <textarea id="description" name="description" title="Describe your business or organization"></textarea>
-                </label>
+            <label for="description">Business/Organization Description:
+                <textarea id="description" name="description" title="Describe your business or organization" rows="4" placeholder="Provide a brief description of your business or organization"></textarea>
+            </label>
 
-                <input type="hidden" id="timestamp" name="timestamp" value="">
-                <input type="submit" value="Submit">
-            </fieldset>
-        </form>
-    </main>
-    <footer>
-        <p>&copy; 2024 Gaborone Chamber of Commerce. All rights reserved.</p>
-    </footer>
-
-    <script>
-        // Set timestamp value
-        document.getElementById('timestamp').value = new Date().toISOString();
-
-        // Modal functionality
-        document.querySelectorAll('.modal-link').forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                const modalId = this.getAttribute('href').substring(1);
-                document.getElementById(modalId).classList.add('active');
-            });
-        });
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.remove('active');
-        }
-    </script>
-</body>
-</html>
+            <input type="hidden" id="timestamp" name="timestamp" value="">
+            <input type="submit" value="Submit Application">
+        </fieldset>
+    </form>
+</main>
