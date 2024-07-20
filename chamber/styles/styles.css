@@ -1,108 +1,86 @@
-/* Normalize CSS */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
-
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
+    padding: 20px;
+    background-color: #F2F2F2;
+    color: #333333;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
+    background-color: #004080;
+    color: #ffffff;
+    padding: 10px 0;
 }
 
 header h1 {
-    margin: 0;
     text-align: center;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
-    display: flex;
-    justify-content: center;
-    margin: 0.5rem 0 0 0;
+    text-align: center;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    display: inline;
+    margin: 0 10px;
 }
 
 nav ul li a {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
-    font-weight: bold;
 }
 
-main {
-    margin: 2rem 0;
-}
-
-section {
-    margin-bottom: 2rem;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
+/* View Toggle */
+.view-toggle {
     text-align: center;
-    padding: 1rem 0;
+    margin-bottom: 20px;
 }
 
-footer a {
-    color: #fff;
-    text-decoration: none;
+.view-toggle button {
+    background-color: #004080;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin: 0 5px;
 }
 
-footer .social {
-    margin: 1rem 0;
+.view-toggle button.active {
+    background-color: #E67E22;
 }
 
-footer .social a {
-    margin: 0 0.5rem;
+/* Directory Grid */
+.directory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
 }
 
-/* Member Directory Styles */
-#membersContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+/* Directory List */
+.directory-list {
+    display: block;
 }
 
-.member-card, .member-list-item {
+.directory-item {
     border: 1px solid #ccc;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    background-color: #f9f9f9;
+    padding: 10px;
+    background-color: #ffffff;
+    margin-bottom: 20px;
 }
 
-.member-card img, .member-list-item img {
-    max-width: 100px;
-    display: block;
-    margin: 0 auto 1rem;
+.member-image {
+    width: 100%;
+    height: auto;
 }
 
-.member-card h4, .member-list-item h4 {
-    margin: 0.5rem 0;
-}
-
-.grid-view .member-list-item {
-    display: none;
-}
-
-.list-view .member-card {
-    display: none;
-}
-
-.list-view .member-list-item {
-    display: block;
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #004080;
+    color: #ffffff;
 }
