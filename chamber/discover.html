@@ -3,111 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover page for the Gaborone Chamber of Commerce">
-    <meta name="author" content="Tinny Mosimanyana">
-    <meta property="og:title" content="Discover Gaborone Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/image.png">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/discover.html">
-    <title>Discover Gaborone Chamber of Commerce</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <title>Gaborone Chamber of Commerce - Discovertitle>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Discover Gaborone Chamber of Commerce</h1>
+        <h1>Your Header</h1>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="podcast.html">Podcast</a></li>
-                <li><a href="events.html">Events</a></li>
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <main class="discover-grid">
-        <aside class="sidebar">
-            <div id="visit-message"></div>
-            <div class="info-section">
-                <h2>Events & Attractions</h2>
-                <p>Discover upcoming events and attractions in Gaborone.</p>
-                <ul>
-                    <li>Business Expo - July 30</li>
-                    <li>Cultural Festival - August 15</li>
-                    <li>Tech Conference - September 10</li>
-                </ul>
-            </div>
-        </aside>
-        <section class="main-content">
-            <h2>Local Photos of Interest</h2>
-            <div class="image-gallery">
-                <figure>
-                    <img data-src="images/photo1.jpg" alt="Photo 1" loading="lazy">
-                    <figcaption>Beautiful Gaborone Skyline</figcaption>
-                </figure>
-                <figure>
-                    <img data-src="images/photo2.jpg" alt="Photo 2" loading="lazy">
-                    <figcaption>Nature Reserve</figcaption>
-                </figure>
-                <figure>
-                    <img data-src="images/photo3.jpg" alt="Photo 3" loading="lazy">
-                    <figcaption>Historic Monument</figcaption>
-                </figure>
-                <figure>
-                    <img data-src="images/photo4.jpg" alt="Photo 4" loading="lazy">
-                    <figcaption>Local Market</figcaption>
-                </figure>
-                <figure>
-                    <img data-src="images/photo5.jpg" alt="Photo 5" loading="lazy">
-                    <figcaption>City Park</figcaption>
-                </figure>
-                <figure>
-                    <img data-src="images/photo6.jpg" alt="Photo 6" loading="lazy">
-                    <figcaption>Art Gallery</figcaption>
-                </figure>
+    <main>
+        <div class="hero-section">
+            <h2>Welcome to Our Site</h2>
+            <img src="images/hero.png" alt="Hero Image">
+            <a href="#join" class="cta-button">Join Now</a>
+        </div>
+
+        <section class="section">
+            <h2>About Us</h2>
+            <p>Welcome to the Gaborone Chamber of Commerce, your premier resource for local business networking and growth. Our organization is dedicated to supporting businesses in Gaborone by providing valuable resources, networking opportunities, and a platform for business promotion. Join us to connect with fellow entrepreneurs and stay informed about local events and business developments.</p>
+
+        </section>
+
+        <section class="section">
+            <h2>Membership Options</h2>
+            <div class="membership-cards">
+                <div class="membership-card">
+                    <h3>Basic Membership</h3>
+                    <p>Details about the basic membership option.</p>
+                </div>
+                <div class="membership-card">
+                    <h3>Premium Membership</h3>
+                    <p>Details about the premium membership option.</p>
+                </div>
+                <div class="membership-card">
+                    <h3>Business Membership</h3>
+                    <p>Details about the business membership option.</p>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentYear"></span> Gaborone Chamber of Commerce</p>
-        <p>Last Modified: <span id="lastModified"></span></p>
-        <p>Created by Tinny Mosimanyana for WDD 231</p>
+        <p>&copy; 2024 Tinny Mosimanyana. All rights reserved.</p>
     </footer>
-
-    <script src="scripts/scripts.js"></script>
+    
     <script>
-        // Lazy loading images
-        document.addEventListener("DOMContentLoaded", function() {
-            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
-            lazyImages.forEach(img => {
-                img.src = img.getAttribute('data-src');
-            });
-
-            // Local Storage for Last Visit
-            const visitMessage = document.getElementById('visit-message');
-            const lastVisit = localStorage.getItem('lastVisit');
-            const now = Date.now();
-            
-            if (lastVisit) {
-                const daysBetween = Math.floor((now - lastVisit) / (1000 * 60 * 60 * 24));
-                if (daysBetween < 1) {
-                    visitMessage.textContent = "Back so soon! Awesome!";
-                } else if (daysBetween === 1) {
-                    visitMessage.textContent = "You last visited 1 day ago.";
-                } else {
-                    visitMessage.textContent = `You last visited ${daysBetween} days ago.`;
-                }
-            } else {
-                visitMessage.textContent = "Welcome! Let us know if you have any questions.";
-            }
-
-            localStorage.setItem('lastVisit', now);
+        document.addEventListener('DOMContentLoaded', function () {
+            const footerElement = document.querySelector('footer p');
+            const date = new Date().toLocaleDateString();
+            footerElement.innerHTML += ` | Last modified: ${date}`;
         });
     </script>
 </body>
