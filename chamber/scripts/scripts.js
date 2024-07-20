@@ -1,86 +1,82 @@
-// Fetch weather data using OpenWeatherMap API
-async function fetchWeather() {
-    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replace with your OpenWeatherMap API key
-    const city = 'Gaborone';
-    const url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
+// Your OpenWeatherMap API key
+const API_KEY = '5c7e429e1b20f30b60de00a18bcc0e92';
+const LOCATION = 'Gaborone,BW'; // Chamber location
 
+// Function to capitalize each word in a string
+function capitalizeWords(str) {
+    return str.replace(/\b\w/g, char => char.toUpperCase());
+}
+
+// Function to fetch and display weather data
+async function fetchWeather() {
     try {
-        const response = await fetch(url);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${LOCATION}&units=metric&appid=${API_KEY}`);
         const data = await response.json();
 
-        // Display current temperature and weather description
-        const currentTemp = data.list[0].main.temp;
-        const currentWeather = data.list[0].weather.map(w => capitalizeWords(w.description)).join(', ');
+        // Current weather
+        const currentWeather = data.list[0];
+        const currentTemperature = Math.round(currentWeather.main.temp);
+        const weatherDescription = capitalizeWords(currentWeather.weather.map(w => w.description).join(', '));
 
-        document.getElementById('current-temperature').textContent = `${currentTemp.toFixed(0)}°C`;
-        document.getElementById('current-weather').textContent = currentWeather;
+        document.getElementById('current-temperature').textContent = `${currentTemperature}°C`;
+        document.getElementById('current-weather').textContent = weatherDescription;
 
-        // Display three-day forecast
-        document.getElementById('day1-temp').textContent = `${data.list[8].main.temp.toFixed(0)}°C`;
-        document.getElementById('day2-temp').textContent = `${data.list[16].main.temp.toFixed(0)}°C`;
-        document.getElementById('day3-temp').textContent = `${data.list[24].main.temp.toFixed(0)}°C`;
-
-        // Example dates for the forecast
-        document.getElementById('day1-date').textContent = new Date(data.list[8].dt * 1000).toLocaleDateString();
-        document.getElementById('day2-date').textContent = new Date(data.list[16].dt * 1000).toLocaleDateString();
-        document.getElementById('day3-date').textContent = new Date(data.list[24].dt * 1000).toLocaleDateString();
+        // 3-day forecast
+        const forecast = data.list.slice(0, 3);
+        forecast.forEach((item, index) => {
+            const date = new Date(item.dt_txt).toLocaleDateString();
+            const temp = Math.round(item.main.temp);
+            document.getElementById(`day${index + 1}-date`).textContent = date;
+            document.getElementById(`day${index + 1}-temp`).textContent = `${temp}°C`;
+        });
     } catch (error) {
         console.error('Error fetching weather data:', error);
     }
 }
 
-// Capitalize each word in a string
-function capitalizeWords(str) {
-    return str.replace(/\b\w/g, char => char.toUpperCase());
-}
-
-// Load company spotlights from JSON data
-async function loadSpotlights() {
+// Function to fetch and display spotlight companies
+async function fetchSpotlights() {
     try {
         const response = await fetch('data/members.json');
         const members = await response.json();
+        const spotlightMembers = members.filter(member => member.membership_level === 2 || member.membership_level === 3);
+        const randomSpotlights = spotlightMembers.sort(() => 0.5 - Math.random()).slice(0, 3);
 
-        // Filter gold and silver members
-        const spotlightMembers = members.filter(member => member.membership_level > 1);
+        const spotlightsContainer = document.getElementById('spotlights');
+        spotlightsContainer.innerHTML = '';
 
-        // Randomly select two or three spotlight members
-        const shuffled = spotlightMembers.sort(() => 0.5 - Math.random());
-        const selectedMembers = shuffled.slice(0, 3);
+        randomSpotlights.forEach(member => {
+            const spotlightElement = document.createElement('div');
+            spotlightElement.classList.add('spotlight');
 
-        // Display spotlight members
-        const spotlightContainer = document.getElementById('spotlight-members');
-        selectedMembers.forEach((member) => {
-            const memberDiv = document.createElement('div');
-            memberDiv.classList.add('spotlight-member');
-
-            memberDiv.innerHTML = `
-                <img src="images/${member.image}" alt="${member.name}" class="spotlight-logo">
-                <h4>${member.name}</h4>
-                <p>Phone: ${member.phone}</p>
-                <p>Address: ${member.address}</p>
-                <a href="${member.website}" target="_blank">Visit Website</a>
-                <p class="membership-level">${member.description}</p>
+            spotlightElement.innerHTML = `
+                <img src="images/${member.image}" alt="${member.name} Logo" class="spotlight-logo">
+                <h3>${member.name}</h3>
+                <p><strong>Phone:</strong> ${member.phone}</p>
+                <p><strong>Address:</strong> ${member.address}</p>
+                <p><strong>Website:</strong> <a href="${member.website}" target="_blank">${member.website}</a></p>
+                <p><strong>Membership Level:</strong> ${member.membership_level === 3 ? 'Gold' : 'Silver'}</p>
             `;
 
-            spotlightContainer.appendChild(memberDiv);
+            spotlightsContainer.appendChild(spotlightElement);
         });
     } catch (error) {
-        console.error('Error loading member spotlights:', error);
+        console.error('Error fetching spotlight data:', error);
     }
 }
 
-// Set copyright year and last modified date in the footer
-function setFooterDates() {
+// Function to display current year and last modified date
+function displayFooterInfo() {
     const currentYear = new Date().getFullYear();
     document.getElementById('currentYear').textContent = currentYear;
 
-    const lastModified = new Date(document.lastModified);
-    document.getElementById('lastModified').textContent = lastModified.toLocaleDateString();
+    const lastModifiedDate = new Date(document.lastModified).toLocaleDateString();
+    document.getElementById('lastModified').textContent = lastModifiedDate;
 }
 
-// Initialize functions on page load
+// Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
     fetchWeather();
-    loadSpotlights();
-    setFooterDates();
+    fetchSpotlights();
+    displayFooterInfo();
 });
