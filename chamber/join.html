@@ -1,35 +1,31 @@
 <main>
     <section id="hero">
         <h2>Become a Member</h2>
-        <p>Join the Gaborone Chamber of Commerce and take advantage of exclusive benefits and networking opportunities.</p>
+        <p>Join the Gaborone Chamber of Commerce and enjoy exclusive benefits and networking opportunities.</p>
     </section>
 
-    <form action="thankyou.html" method="get">
+    <form action="thankyou.html" method="post">
         <fieldset>
             <legend>Membership Application</legend>
-            
+
             <label for="first-name">First Name:
-                <input type="text" id="first-name" name="first-name" required title="Enter your first name" autocomplete="given-name">
+                <input type="text" id="first-name" name="first-name" required placeholder="John" title="Enter your first name">
             </label>
 
             <label for="last-name">Last Name:
-                <input type="text" id="last-name" name="last-name" required title="Enter your last name" autocomplete="family-name">
+                <input type="text" id="last-name" name="last-name" required placeholder="Doe" title="Enter your last name">
             </label>
 
-            <label for="organization-title">Organizational Title:
-                <input type="text" id="organization-title" name="organization-title" title="Enter your organizational title" pattern="[A-Za-z\s\-]{7,}" autocomplete="organization-title">
+            <label for="organization-name">Organization Name:
+                <input type="text" id="organization-name" name="organization-name" required placeholder="Example Org" title="Enter your organization's name">
             </label>
 
             <label for="email">Email Address:
-                <input type="email" id="email" name="email" required title="Enter your email address" autocomplete="email" placeholder="example@example.com">
+                <input type="email" id="email" name="email" required placeholder="example@example.com" title="Enter your email address">
             </label>
 
-            <label for="mobile">Mobile Phone Number:
-                <input type="tel" id="mobile" name="mobile" required title="Enter your mobile phone number" autocomplete="tel">
-            </label>
-
-            <label for="organization-name">Business/Organization Name:
-                <input type="text" id="organization-name" name="organization-name" required title="Enter the name of your business or organization" autocomplete="organization">
+            <label for="phone">Phone Number:
+                <input type="tel" id="phone" name="phone" required placeholder="123-456-7890" title="Enter your phone number">
             </label>
 
             <label for="membership-level">Membership Level:
@@ -42,12 +38,13 @@
                 </select>
             </label>
 
-            <label for="description">Business/Organization Description:
-                <textarea id="description" name="description" title="Describe your business or organization" rows="4" placeholder="Provide a brief description of your business or organization"></textarea>
+            <label for="description">Business Description:
+                <textarea id="description" name="description" rows="4" placeholder="Describe your business or organization" title="Provide a brief description of your business or organization"></textarea>
             </label>
 
-            <input type="hidden" id="timestamp" name="timestamp" value="">
-            <input type="submit" value="Submit Application">
+            <input type="hidden" id="form-submission-time" name="form-submission-time" value="<?php echo time(); ?>">
+
+            <button type="submit">Submit Application</button>
         </fieldset>
     </form>
 </main>
