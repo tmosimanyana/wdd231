@@ -1,61 +1,69 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", async () => {
+    const membersSection = document.getElementById('members');
     const gridButton = document.getElementById('gridView');
     const listButton = document.getElementById('listView');
-    const membersContainer = document.getElementById('members');
 
+    // Fetch member data
     async function fetchMembers() {
         try {
             const response = await fetch('data/members.json');
-            const data = await response.json();
-            displayMembers(data);
+            const members = await response.json();
+            displayMembers(members);
         } catch (error) {
             console.error('Error fetching member data:', error);
         }
     }
 
+    // Display members in grid or list view
     function displayMembers(members) {
-        membersContainer.innerHTML = '';
+        membersSection.innerHTML = '';
         members.forEach(member => {
-            const memberDiv = document.createElement('div');
-            memberDiv.classList.add('directory-item');
-            memberDiv.innerHTML = `
+            const memberCard = document.createElement('div');
+            memberCard.className = 'directory-item';
+            memberCard.innerHTML = `
                 <img src="images/${member.image}" alt="${member.name}">
                 <h3>${member.name}</h3>
                 <p>${member.address}</p>
                 <p>${member.phone}</p>
                 <p><a href="${member.website}" target="_blank">Visit Website</a></p>
-                <p>${member.description}</p>
+                <p>Membership Level: ${getMembershipLevel(member.level)}</p>
             `;
-            membersContainer.appendChild(memberDiv);
+            membersSection.appendChild(memberCard);
         });
     }
 
-    function toggleView(view) {
-        if (view === 'grid') {
-            membersContainer.classList.add('directory-grid');
-            membersContainer.classList.remove('directory-list');
-            gridButton.classList.add('active');
-            listButton.classList.remove('active');
-        } else {
-            membersContainer.classList.add('directory-list');
-            membersContainer.classList.remove('directory-grid');
-            gridButton.classList.remove('active');
-            listButton.classList.add('active');
+    // Convert membership level number to text
+    function getMembershipLevel(level) {
+        switch (level) {
+            case 1: return 'Member';
+            case 2: return 'Silver';
+            case 3: return 'Gold';
+            default: return 'Unknown';
         }
     }
 
-    gridButton.addEventListener('click', () => toggleView('grid'));
-    listButton.addEventListener('click', () => toggleView('list'));
+    // Toggle view
+    gridButton.addEventListener('click', () => {
+        membersSection.classList.add('directory-grid');
+        membersSection.classList.remove('directory-list');
+        gridButton.classList.add('active');
+        listButton.classList.remove('active');
+    });
 
-    fetchMembers();
-    toggleView('grid'); // Default view
-    updateFooter();
-});
+    listButton.addEventListener('click', () => {
+        membersSection.classList.add('directory-list');
+        membersSection.classList.remove('directory-grid');
+        listButton.classList.add('active');
+        gridButton.classList.remove('active');
+    });
 
-function updateFooter() {
+    // Update footer information
     const currentYear = new Date().getFullYear();
-    const lastModified = new Date(document.lastModified).toLocaleDateString();
-
     document.getElementById('currentYear').textContent = currentYear;
+
+    const lastModified = new Date(document.lastModified).toLocaleDateString();
     document.getElementById('lastModified').textContent = lastModified;
-}
+
+    // Initial fetch of member data
+    fetchMembers();
+});
