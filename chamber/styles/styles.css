@@ -1,0 +1,113 @@
+/* Normalize CSS */
+@import url('normalize.css');
+
+/* Custom Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #F2F2F2;
+    color: #333333;
+}
+
+header {
+    background: #004080;
+    color: #ffffff;
+    padding: 10px 0;
+}
+
+header h1 {
+    margin: 0;
+    padding: 0 20px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.view-toggle {
+    margin-bottom: 20px;
+}
+
+.view-toggle button {
+    background: #E67E22;
+    border: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.view-toggle button.active {
+    background: #004080;
+}
+
+.directory-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.directory-list {
+    display: block;
+}
+
+.member-card {
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 20px;
+    width: calc(33.333% - 40px);
+    box-sizing: border-box;
+}
+
+.member-card img {
+    width: 100%;
+}
+
+.member-card h3 {
+    margin: 0;
+    color: #004080;
+}
+
+.member-card p {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .member-card {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 480px) {
+    .member-card {
+        width: 100%;
+    }
+
+    .directory-grid {
+        flex-direction: column;
+    }
+}
+
+footer {
+    background: #004080;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
