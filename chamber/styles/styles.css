@@ -1,199 +1,200 @@
-/* Normalize CSS */
-html {
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-  }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-size: 16px;
-    color: #333333;
-    background-color: #F2F2F2;
-  }
-  
-  /* Main Navigation */
-  header {
-    background-color: #004080;
-    color: white;
-    padding: 10px 20px;
-    text-align: center;
-  }
-  
+/* styles.css */
+
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #F2F2F2; /* Background Color */
+  color: #333333; /* Text Color */
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+header, footer {
+  background-color: #004080; /* Primary Color */
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+}
+
+header h1, footer p {
+  margin: 0;
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #E67E22; /* Secondary Color */
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #E67E22; /* Secondary Color */
+  color: #ffffff;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #d96418; /* Slightly darker shade for hover */
+}
+
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+h2 {
+  color: #004080; /* Primary Color */
+  margin-top: 0;
+  font-size: 2em;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#hero {
+  text-align: center;
+  position: relative;
+}
+
+#hero img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+#hero .cta-button {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#weather p, #weather ul {
+  font-size: 1em;
+  margin: 0.5rem 0;
+}
+
+#spotlights {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.spotlight-member {
+  width: 30%;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  text-align: center;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.spotlight-member:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.spotlight-logo {
+  max-width: 120px;
+  max-height: 120px;
+  margin: 0 auto 1rem;
+  display: block;
+  border-radius: 50%;
+}
+
+.spotlight-member h4 {
+  color: #004080; /* Primary Color */
+  font-size: 1.4em;
+}
+
+.spotlight-member p, .spotlight-member a {
+  color: #333333; /* Text Color */
+  font-size: 0.9em;
+  margin: 0.5rem 0;
+}
+
+.spotlight-member a {
+  text-decoration: none;
+  color: #E67E22; /* Secondary Color */
+  font-weight: bold;
+}
+
+.spotlight-member a:hover {
+  text-decoration: underline;
+}
+
+footer p {
+  margin: 0.5rem 0;
+  font-size: 0.9em;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
   nav ul {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
+      flex-direction: column;
   }
-  
-  nav ul li {
-    margin: 0 10px;
+
+  nav li {
+      margin: 0.5rem 0;
   }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
-  }
-  
-  nav ul li a:hover {
-    color: #E67E22;
-  }
-  
-  /* Hero Section */
-  .hero {
-    background-image: url('images/hero.jpg'); /* Replace with your actual image path */
-    background-size: cover;
-    background-position: center;
-    color: white;
-    text-align: center;
-    padding: 60px 20px;
-  }
-  
-  .hero h2 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-  }
-  
-  .hero a {
-    display: inline-block;
-    background-color: #E67E22;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 5px;
-    font-size: 1.1em;
-  }
-  
-  .hero a:hover {
-    background-color: #ff8c2f;
-  }
-  
-  /* Main Content */
+
   main {
-    padding: 20px;
+      padding: 1rem;
   }
-  
-  section {
-    margin-bottom: 40px;
-  }
-  
-  /* Events Section */
-  .events {
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .events h3 {
-    color: #004080;
-    font-size: 1.8em;
-    margin-bottom: 20px;
-  }
-  
-  /* Weather Section */
-  .weather {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .weather .weather-day {
-    flex: 1 1 calc(33.333% - 20px);
-    text-align: center;
-  }
-  
-  .weather .weather-day h4 {
-    font-size: 1.2em;
-    margin-bottom: 10px;
-    color: #E67E22;
-  }
-  
-  .weather .weather-day p {
-    font-size: 1em;
-    margin-bottom: 5px;
-  }
-  
-  /* Spotlights Section */
-  .spotlights {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .spotlight {
-    flex: 1 1 calc(33.333% - 20px);
-    background-color: #ffffff;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    text-align: center;
-  }
-  
-  .spotlight img {
-    max-width: 100%;
-    max-height: 150px;
-    margin-bottom: 15px;
-  }
-  
-  .spotlight h4 {
-    color: #004080;
-    font-size: 1.5em;
-    margin-bottom: 10px;
-  }
-  
-  .spotlight p {
-    font-size: 1em;
-    margin-bottom: 5px;
-  }
-  
-  .spotlight a {
-    color: #E67E22;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .spotlight a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #004080;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-  }
-  
-  footer p {
-    margin: 5px 0;
-    font-size: 1em;
-  }
-  
-  @media (max-width: 768px) {
-    nav ul {
+
+  #spotlights {
       flex-direction: column;
-    }
-  
-    .weather .weather-day {
-      flex: 1 1 100%;
-    }
-  
-    .spotlights {
-      flex-direction: column;
-    }
   }
-  
+
+  .spotlight-member {
+      width: 100%;
+  }
+
+  h2 {
+      font-size: 1.5em;
+  }
+
+  .spotlight-member {
+      padding: 0.8rem;
+  }
+
+  .spotlight-member h4 {
+      font-size: 1.2em;
+  }
+}
