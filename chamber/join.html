@@ -14,59 +14,6 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/join.css">
-    <style>
-        /* CSS for modal transitions and membership cards */
-        .modal {
-            display: none; 
-            position: fixed; 
-            z-index: 1; 
-            left: 0;
-            top: 0;
-            width: 100%; 
-            height: 100%; 
-            overflow: auto; 
-            background-color: rgba(0,0,0,0.4); 
-            transition: opacity 0.3s ease;
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto; 
-            padding: 20px; 
-            border: 1px solid #888; 
-            width: 80%;
-            max-width: 500px;
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .membership-card {
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            padding: 16px;
-            margin: 8px;
-            text-align: center;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        .membership-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-        @media (max-width: 600px) {
-            .membership-card {
-                margin: 4px;
-                padding: 12px;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -76,7 +23,7 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
+                <li><a href="join.html" class="active">Join</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="podcast.html">Podcast</a></li>
                 <li><a href="events.html">Events</a></li>
@@ -88,37 +35,45 @@
         <form action="thankyou.html" method="get">
             <fieldset>
                 <legend>Membership Application</legend>
+
                 <label for="firstName">First Name:
                     <input type="text" id="firstName" name="firstName" title="Applicant's first name" autocomplete="given-name" required>
                 </label><br>
+
                 <label for="lastName">Last Name:
                     <input type="text" id="lastName" name="lastName" title="Applicant's last name" autocomplete="family-name" required>
                 </label><br>
+
                 <label for="organizationTitle">Organizational Title:
                     <input type="text" id="organizationTitle" name="organizationTitle" title="Organizational title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" required>
                 </label><br>
+
                 <label for="email">Email:
                     <input type="email" id="email" name="email" title="Email address" autocomplete="email" placeholder="example@domain.com" required>
                 </label><br>
+
                 <label for="phone">Mobile Phone Number:
                     <input type="tel" id="phone" name="phone" title="Mobile phone number" autocomplete="tel" required>
                 </label><br>
+
                 <label for="businessName">Business/Organization Name:
                     <input type="text" id="businessName" name="businessName" title="Business or organization name" autocomplete="organization" required>
                 </label><br>
+
                 <label for="membershipLevel">Membership Level:
                     <select id="membershipLevel" name="membershipLevel" required>
-                        <option value="" disabled selected>Select a membership level</option>
                         <option value="np">NP Membership</option>
                         <option value="bronze">Bronze Membership</option>
                         <option value="silver">Silver Membership</option>
                         <option value="gold">Gold Membership</option>
                     </select>
                 </label><br>
+
                 <label for="description">Business/Organization Description:
                     <textarea id="description" name="description" title="Description of business or organization"></textarea>
                 </label><br>
-                <input type="hidden" id="timestamp" name="timestamp">
+
+                <input type="hidden" id="timestamp" name="timestamp" value="" />
                 <button type="submit">Submit</button>
             </fieldset>
         </form>
@@ -147,31 +102,31 @@
         </div>
 
         <!-- Modals -->
-        <div id="modal1" class="modal" aria-hidden="true">
-            <div class="modal-content" role="dialog" aria-labelledby="modal1Title">
-                <button class="close" aria-label="Close">&times;</button>
-                <h2 id="modal1Title">NP Membership Benefits</h2>
+        <div id="modal1" class="modal" role="dialog" aria-labelledby="modal1-title" aria-hidden="true">
+            <div class="modal-content">
+                <span class="close" aria-label="Close">&times;</span>
+                <h2 id="modal1-title">NP Membership Benefits</h2>
                 <p>Details about NP Membership benefits.</p>
             </div>
         </div>
-        <div id="modal2" class="modal" aria-hidden="true">
-            <div class="modal-content" role="dialog" aria-labelledby="modal2Title">
-                <button class="close" aria-label="Close">&times;</button>
-                <h2 id="modal2Title">Bronze Membership Benefits</h2>
+        <div id="modal2" class="modal" role="dialog" aria-labelledby="modal2-title" aria-hidden="true">
+            <div class="modal-content">
+                <span class="close" aria-label="Close">&times;</span>
+                <h2 id="modal2-title">Bronze Membership Benefits</h2>
                 <p>Details about Bronze Membership benefits.</p>
             </div>
         </div>
-        <div id="modal3" class="modal" aria-hidden="true">
-            <div class="modal-content" role="dialog" aria-labelledby="modal3Title">
-                <button class="close" aria-label="Close">&times;</button>
-                <h2 id="modal3Title">Silver Membership Benefits</h2>
+        <div id="modal3" class="modal" role="dialog" aria-labelledby="modal3-title" aria-hidden="true">
+            <div class="modal-content">
+                <span class="close" aria-label="Close">&times;</span>
+                <h2 id="modal3-title">Silver Membership Benefits</h2>
                 <p>Details about Silver Membership benefits.</p>
             </div>
         </div>
-        <div id="modal4" class="modal" aria-hidden="true">
-            <div class="modal-content" role="dialog" aria-labelledby="modal4Title">
-                <button class="close" aria-label="Close">&times;</button>
-                <h2 id="modal4Title">Gold Membership Benefits</h2>
+        <div id="modal4" class="modal" role="dialog" aria-labelledby="modal4-title" aria-hidden="true">
+            <div class="modal-content">
+                <span class="close" aria-label="Close">&times;</span>
+                <h2 id="modal4-title">Gold Membership Benefits</h2>
                 <p>Details about Gold Membership benefits.</p>
             </div>
         </div>
@@ -185,40 +140,35 @@
 
     <script src="scripts/scripts.js"></script>
     <script>
-        // JavaScript for modal functionality and dynamic date
-        document.addEventListener('DOMContentLoaded', () => {
-            const modals = document.querySelectorAll('.modal');
-            const cards = document.querySelectorAll('.membership-card');
-            const closeButtons = document.querySelectorAll('.close');
+        // Set timestamp
+        document.getElementById('timestamp').value = new Date().toISOString();
 
-            cards.forEach(card => {
-                card.addEventListener('click', () => {
-                    const modalId = card.getAttribute('data-modal');
-                    document.getElementById(modalId).style.display = 'block';
-                    document.getElementById(modalId).setAttribute('aria-hidden', 'false');
-                });
+        // Modal handling
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.close');
+        const links = document.querySelectorAll('.membership-card a');
+
+        links.forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.preventDefault();
+                const modalId = this.parentElement.getAttribute('data-modal');
+                const modal = document.getElementById(modalId);
+                modal.style.display = 'block';
+                modal.querySelector('.modal-content').focus();
             });
+        });
 
-            closeButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    button.closest('.modal').style.display = 'none';
-                    button.closest('.modal').setAttribute('aria-hidden', 'true');
-                });
+        closeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                this.closest('.modal').style.display = 'none';
             });
+        });
 
-            window.addEventListener('click', (event) => {
-                if (event.target.classList.contains('modal')) {
-                    event.target.style.display = 'none';
-                    event.target.setAttribute('aria-hidden', 'true');
-                }
-            });
-
-            // Set dynamic footer dates
-            const currentYear = new Date().getFullYear();
-            document.getElementById('currentYear').textContent = currentYear;
-            document.getElementById('lastModified').textContent = document.lastModified;
+        window.addEventListener('click', function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.style.display = 'none';
+            }
         });
     </script>
 </body>
 </html>
-
