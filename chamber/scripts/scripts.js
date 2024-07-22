@@ -1,52 +1,98 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // URL for the JSON data
-    const url = 'path/to/your/members-data.json';  // Update with the correct path to your JSON data
+const weatherApiKey = 'your_openweathermap_api_key'; // Replace with your OpenWeatherMap API key
+const weatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=-24.6569&lon=25.9080&units=metric&exclude=minutely,hourly,alerts&appid=${weatherApiKey}`;
+const spotlightDataUrl = 'path_to_your_json_file.json'; // Update with the path to your JSON data
 
-    // Function to fetch and display company spotlights
-    async function displaySpotlights() {
-        try {
-            // Fetch the JSON data
-            const response = await fetch(url);
-            const members = await response.json();
+// Fetch and display weather data
+async function getWeatherData() {
+    try {
+        const response = await fetch(weatherUrl);
+        const data = await response.json();
 
-            // Filter for Silver and Gold members
-            const qualifiedMembers = members.filter(member => member.membership_level === 2 || member.membership_level === 3);
+        // Current weather
+        const currentTemperature = data.current.temp.toFixed(0);
+        const currentWeather = data.current.weather.map(w => w.description.charAt(0).toUpperCase() + w.description.slice(1)).join(', ');
 
-            // Randomly select 2 or 3 members
-            const selectedMembers = [];
-            while (selectedMembers.length < 3 && qualifiedMembers.length > 0) {
-                const randomIndex = Math.floor(Math.random() * qualifiedMembers.length);
-                selectedMembers.push(qualifiedMembers.splice(randomIndex, 1)[0]);
-            }
+        document.getElementById('current-temperature').textContent = `${currentTemperature}°C`;
+        document.getElementById('current-weather').textContent = currentWeather;
 
-            // Populate the spotlights section
-            const spotlightContainer = document.getElementById('spotlight-container');
-            spotlightContainer.innerHTML = ''; // Clear existing content
-
-            selectedMembers.forEach(member => {
-                // Create the spotlight card
-                const card = document.createElement('div');
-                card.className = 'spotlight-card';
-
-                // Add member details to the card
-                card.innerHTML = `
-                    <img src="images/${member.image}" alt="${member.name} logo" class="spotlight-logo">
-                    <h3>${member.name}</h3>
-                    <p><strong>Phone:</strong> ${member.phone}</p>
-                    <p><strong>Address:</strong> ${member.address}</p>
-                    <p><strong>Website:</strong> <a href="${member.website}" target="_blank">${member.website}</a></p>
-                    <p><strong>Membership Level:</strong> ${member.description}</p>
-                `;
-
-                // Append the card to the container
-                spotlightContainer.appendChild(card);
-            });
-        } catch (error) {
-            console.error('Error fetching or displaying member data:', error);
+        // 3-Day Forecast
+        for (let i = 1; i <= 3; i++) {
+            const date = new Date(data.daily[i].dt * 1000).toLocaleDateString();
+            const temp = data.daily[i].temp.day.toFixed(0);
+            document.getElementById(`day${i}-date`).textContent = date;
+            document.getElementById(`day${i}-temp`).textContent = `${temp}°C`;
         }
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
     }
+}
 
-    // Call the function to display spotlights
-    displaySpotlights();
-});
+// Fetch and display spotlight data
+async function getSpotlightData() {
+    try {
+        const response = await fetch(spotlightDataUrl);
+        const data = await response.json();
 
+        // Filter for Gold and Silver members
+        const filteredMembers = data.filter(member => member.membership_level === 1 || member.membership_level === 2);
+
+        // Randomly select 2 or 3 members
+        const shuffledMembers = filteredMembers.sort(() => 0.5 - Math.random());
+        const spotlightMembers = shuffledMembers.slice(0, 3);
+
+        const spotlightsContainer = document.getElementById('spotlights');
+
+        spotlightMembers.forEach(member => {
+            const card = document.createElement('section');
+            card.className = 'spotlight-card';
+
+            const img = document.createElement('img');
+            img.setAttribute('src', `images/${member.image}`);
+            img.setAttribute('alt', `Logo of ${member.name}`);
+            img.setAttribute('loading', 'lazy');
+
+            const details = document.createElement('div');
+
+            const name = document.createElement('h3');
+            name.textContent = member.name;
+
+            const phone = document.createElement('p');
+            phone.textContent = `Phone: ${member.phone}`;
+
+            const address = document.createElement('p');
+            address.textContent = `Address: ${member.address}`;
+
+            const website = document.createElement('a');
+            website.setAttribute('href', member.website);
+            website.setAttribute('target', '_blank');
+            website.textContent = 'Visit Website
+            website.textContent = 'Visit Website';
+
+            const membershipLevel = document.createElement('p');
+            membershipLevel.textContent = `Membership Level: ${member.description}`;
+
+            details.appendChild(name);
+            details.appendChild(phone);
+            details.appendChild(address);
+            details.appendChild(website);
+            details.appendChild(membershipLevel);
+
+            card.appendChild(img);
+            card.appendChild(details);
+
+            spotlightsContainer.appendChild(card);
+        });
+    } catch (error) {
+        console.error('Error fetching spotlight data:', error);
+    }
+}
+
+// Initialize page
+function initializePage() {
+    getWeatherData();
+    getSpotlightData();
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    document.getElementById('lastModified').textContent = new Date(document.lastModified).toLocaleDateString();
+}
+
+initializePage();
