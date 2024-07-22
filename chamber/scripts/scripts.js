@@ -1,6 +1,6 @@
 // Define the URLs for the APIs
-const weatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=Gaborone&appid=YOUR_API_KEY&units=metric';
-const forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=Gaborone&appid=YOUR_API_KEY&units=metric';
+const weatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=Gaborone&appid=5c7e429e1b20f30b60de00a18bcc0e92KEY&units=metric';
+const forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=Gaborone&appid=5c7e429e1b20f30b60de00a18bcc0e92KEY&units=metric';
 const membersUrl = 'chamber/data/members.json'; // Updated path to your JSON file
 
 // Function to fetch weather data
