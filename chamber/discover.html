@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover | Gaborone Chamber of Commerce</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <script defer src="scripts/discover.js"></script>
 </head>
 <body>
     <header>
@@ -20,22 +21,37 @@
     </header>
 
     <main>
-        <section id="discover">
-            <h2>Discover Local Business Opportunities</h2>
-            <p>Explore the vibrant business community of Gaborone. Find out more about local companies, events, and opportunities to engage with other business owners.</p>
-        </section>
+        <div class="grid-container">
+            <aside class="sidebar">
+                <h2>Visitor Information</h2>
+                <div id="visitor-message"></div>
+                <h2>Sidebar Content</h2>
+                <p>Include additional information such as demographics, events, and more.</p>
+            </aside>
+            <section class="main-content">
+                <h2>Local Photos of Interest</h2>
+                <div class="gallery">
+                    <img src="images/photo1.jpg" alt="Local Photo 1" class="lazy">
+                    <img src="images/photo2.jpg" alt="Local Photo 2" class="lazy">
+                    <img src="images/photo3.jpg" alt="Local Photo 3" class="lazy">
+                    <img src="images/photo4.jpg" alt="Local Photo 4" class="lazy">
+                    <img src="images/photo5.jpg" alt="Local Photo 5" class="lazy">
+                    <img src="images/photo6.jpg" alt="Local Photo 6" class="lazy">
+                </div>
+            </section>
+        </div>
     </main>
 
     <footer>
         <p>Last modified: <span id="last-modified-date"></span></p>
-        <p>© 2024 Gaborone Chamber of Commerce. All rights reserved.</p>
+        <p>© <span id="current-year"></span> Gaborone Chamber of Commerce. All rights reserved.</p>
         <a href="discover.html">Discover More</a>
     </footer>
-
-    <script src="scripts/scripts.js"></script>
+    
     <script>
-        // Set the last modified date in the footer
+        // Set the last modified date and copyright year in the footer
         document.getElementById('last-modified-date').textContent = document.lastModified;
+        document.getElementById('current-year').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

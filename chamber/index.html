@@ -6,6 +6,8 @@
     <title>Home | Gaborone Chamber of Commerce</title>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
     <header>
@@ -22,13 +24,13 @@
 
     <main>
         <section id="hero">
-            <img src="images/hero.png" alt="Hero Image">
+            <img src="images/hero-image.jpg" alt="Hero Image">
             <a href="join.html" class="cta-button">Join the Chamber</a>
         </section>
 
         <section id="events">
             <h2>Current Events</h2>
-            <!-- Events content will be dynamically loaded here -->
+            <!-- Events content goes here -->
         </section>
 
         <section id="weather">
@@ -47,15 +49,12 @@
     </main>
 
     <footer>
+        <p id="copyright-year"></p>
         <p>Last modified: <span id="last-modified-date"></span></p>
         <p>© 2024 Gaborone Chamber of Commerce. All rights reserved.</p>
         <a href="discover.html">Discover More</a>
     </footer>
 
-    <script src="scripts/scripts.js"></script>
-    <script>
-        // Set the last modified date in the footer
-        document.getElementById('last-modified-date').textContent = document.lastModified;
-    </script>
+    <script src="scripts/scripts.js" defer></script>
 </body>
 </html>

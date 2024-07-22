@@ -1,6 +1,6 @@
 // Fetch and display weather data
 async function fetchWeatherData() {
-    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replaced with my OpenWeatherMap API key
+    const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY'; // Replace with your OpenWeatherMap API key
     const city = 'Gaborone';
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
@@ -25,7 +25,7 @@ function displayWeather(data) {
     const description = document.getElementById('description');
 
     // Capitalize each word in the description
-    const weatherDescription = data.weather.map(desc => desc.description.charAt(0).toUpperCase() + desc.description.slice(1)).join(', ');
+    const weatherDescription = data.weather.map(desc => desc.description.split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')).join(', ');
 
     temperature.textContent = `Temperature: ${Math.round(data.main.temp)}°C`;
     description.textContent = `Description: ${weatherDescription}`;
@@ -114,8 +114,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set the copyright year and last modified date
     const currentYear = new Date().getFullYear();
-    document.querySelector('footer').insertAdjacentHTML('beforeend', `<p>&copy; ${currentYear} Gaborone Chamber of Commerce. All rights reserved.</p>`);
+    document.querySelector('footer').innerHTML += `<p>&copy; ${currentYear} Gaborone Chamber of Commerce. All rights reserved.</p>`;
+    document.getElementById('last-modified-date').textContent = document.lastModified;
 
     // Add event listener for view toggle
     document.getElementById('view-toggle').addEventListener('click', toggleView);
 });
+
