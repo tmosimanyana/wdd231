@@ -35,45 +35,37 @@
         <form action="thankyou.html" method="get">
             <fieldset>
                 <legend>Membership Application</legend>
-
                 <label for="firstName">First Name:
                     <input type="text" id="firstName" name="firstName" title="Applicant's first name" autocomplete="given-name" required>
                 </label><br>
-
                 <label for="lastName">Last Name:
                     <input type="text" id="lastName" name="lastName" title="Applicant's last name" autocomplete="family-name" required>
                 </label><br>
-
                 <label for="organizationTitle">Organizational Title:
                     <input type="text" id="organizationTitle" name="organizationTitle" title="Organizational title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" required>
                 </label><br>
-
                 <label for="email">Email:
                     <input type="email" id="email" name="email" title="Email address" autocomplete="email" placeholder="example@domain.com" required>
                 </label><br>
-
                 <label for="phone">Mobile Phone Number:
                     <input type="tel" id="phone" name="phone" title="Mobile phone number" autocomplete="tel" required>
                 </label><br>
-
                 <label for="businessName">Business/Organization Name:
                     <input type="text" id="businessName" name="businessName" title="Business or organization name" autocomplete="organization" required>
                 </label><br>
-
                 <label for="membershipLevel">Membership Level:
                     <select id="membershipLevel" name="membershipLevel" required>
+                        <option value="" disabled selected>Select membership level</option>
                         <option value="np">NP Membership</option>
                         <option value="bronze">Bronze Membership</option>
                         <option value="silver">Silver Membership</option>
                         <option value="gold">Gold Membership</option>
                     </select>
                 </label><br>
-
                 <label for="description">Business/Organization Description:
                     <textarea id="description" name="description" title="Description of business or organization"></textarea>
                 </label><br>
-
-                <input type="hidden" id="timestamp" name="timestamp" value="" />
+                <input type="hidden" id="timestamp" name="timestamp" value="">
                 <button type="submit">Submit</button>
             </fieldset>
         </form>
@@ -146,29 +138,32 @@
         // Modal handling
         const modals = document.querySelectorAll('.modal');
         const closeButtons = document.querySelectorAll('.close');
-        const links = document.querySelectorAll('.membership-card a');
+        const cards = document.querySelectorAll('.membership-card');
 
-        links.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                const modalId = this.parentElement.getAttribute('data-modal');
+        cards.forEach(card => {
+            card.addEventListener('click', () => {
+                const modalId = card.getAttribute('data-modal');
                 const modal = document.getElementById(modalId);
-                modal.style.display = 'block';
-                modal.querySelector('.modal-content').focus();
+                modal.classList.add('show');
             });
         });
 
         closeButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                this.closest('.modal').style.display = 'none';
+            button.addEventListener('click', () => {
+                const modal = button.closest('.modal');
+                modal.classList.remove('show');
             });
         });
 
-        window.addEventListener('click', function(event) {
+        window.addEventListener('click', (event) => {
             if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
+                event.target.classList.remove('show');
             }
         });
+
+        // Update footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = document.lastModified;
     </script>
 </body>
 </html>
