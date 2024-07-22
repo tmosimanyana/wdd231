@@ -1,4 +1,4 @@
-const weatherApiKey = 'your_openweathermap_api_key'; // Replace with your OpenWeatherMap API key
+const weatherApiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replace with your OpenWeatherMap API key
 const weatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=-24.6569&lon=25.9080&units=metric&exclude=minutely,hourly,alerts&appid=${weatherApiKey}`;
 const spotlightDataUrl = 'path_to_your_json_file.json'; // Update with the path to your JSON data
 
