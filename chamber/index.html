@@ -1,79 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Home page for the Gaborone Chamber of Commerce">
-    <meta name="author" content="Tinny Mosimanyana">
-    <meta property="og:title" content="Gaborone Chamber of Commerce Home">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero.png">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
-    <title>Gaborone Chamber of Commerce Home</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Home | Gaborone Chamber of Commerce</title>
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css">
 </head>
-
 <body>
     <header>
         <h1>Gaborone Chamber of Commerce</h1>
         <nav>
             <ul>
-                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="podcast.html">Podcast</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section id="hero">
-            <h2>Welcome to the Gaborone Chamber of Commerce</h2>
-            <img src="images/hero.png" alt="Gaborone Chamber of Commerce Hero Image" loading="lazy">
+            <img src="images/hero.png" alt="Hero Image">
             <a href="join.html" class="cta-button">Join the Chamber</a>
         </section>
 
-        <section id="current-events">
+        <section id="events">
             <h2>Current Events</h2>
-            <ul>
-                <li>Networking Event - July 25, 2024</li>
-                <li>Business Workshop - August 15, 2024</li>
-            </ul>
+            <!-- Events content will be dynamically loaded here -->
         </section>
 
         <section id="weather">
             <h2>Current Weather</h2>
-            <p><strong>Temperature:</strong> <span id="current-temperature">--°C</span></p>
-            <p><strong>Description:</strong> <span id="current-weather">--</span></p>
-
-            <h3>3-Day Forecast</h3>
-            <ul>
-                <li><span id="day1-date">--</span>: <span id="day1-temp">--°C</span></li>
-                <li><span id="day2-date">--</span>: <span id="day2-temp">--°C</span></li>
-                <li><span id="day3-date">--</span>: <span id="day3-temp">--°C</span></li>
-            </ul>
+            <div id="weather-data">
+                <p id="temperature"></p>
+                <p id="description"></p>
+                <div id="forecast"></div>
+            </div>
         </section>
 
-        <section id="spotlights">
+        <section id="company-spotlights">
             <h2>Company Spotlights</h2>
             <div id="spotlight-cards"></div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentYear"></span> Gaborone Chamber of Commerce</p>
-        <p>Last Modified: <span id="lastModified"></span></p>
-        <p>Created by Tinny Mosimanyana for WDD 231</p>
-        <p><a href="attributions.html">Resource Attributions</a></p>
+        <p>Last modified: <span id="last-modified-date"></span></p>
+        <p>© 2024 Gaborone Chamber of Commerce. All rights reserved.</p>
+        <a href="discover.html">Discover More</a>
     </footer>
 
-    <!-- Include the JavaScript file -->
-    <script src="scripts/scripts.js" defer></script>
+    <script src="scripts/scripts.js"></script>
+    <script>
+        // Set the last modified date in the footer
+        document.getElementById('last-modified-date').textContent = document.lastModified;
+    </script>
 </body>
-
 </html>
