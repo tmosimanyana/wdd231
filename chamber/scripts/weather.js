@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const weatherElement = document.getElementById('weather');
-    const apiKey = 'YOUR_API_KEY';
+    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92';
     const city = 'Gaborone';
     const country = 'BW';
 
