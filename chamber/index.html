@@ -15,6 +15,100 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/scripts.js" type="module"></script>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333333;
+            background-color: #F2F2F2;
+        }
+
+        header {
+            background-color: #004080;
+            padding: 10px 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cta-button {
+            background-color: #E67E22;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        footer {
+            background-color: #004080;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        footer a {
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: #FFFFFF;
+            padding: 20px;
+            border-radius: 5px;
+            width: 80%;
+            max-width: 500px;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                display: none;
+            }
+
+            .menu-icon {
+                display: block;
+                cursor: pointer;
+            }
+
+            nav.active ul {
+                display: flex;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -108,32 +202,13 @@
                     spotlightElement.innerHTML = `
                         <h3>${spotlight.name}</h3>
                         <p>${spotlight.description}</p>
-                        <button data-info="${spotlight.info}">More Info</button>
+                        <a href="${spotlight.link}" class="cta-button">More Info</a>
                     `;
                     spotlightsSection.appendChild(spotlightElement);
-
-                    spotlightElement.querySelector('button').addEventListener('click', () => {
-                        showModal(spotlight.info);
-                    });
                 });
             } catch (error) {
                 console.error('Error fetching spotlights:', error);
             }
-        }
-
-        function showModal(info) {
-            const modal = document.createElement('div');
-            modal.classList.add('modal');
-            modal.innerHTML = `
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <p>${info}</p>
-                </div>
-            `;
-            document.body.appendChild(modal);
-            modal.querySelector('.close').addEventListener('click', () => {
-                document.body.removeChild(modal);
-            });
         }
 
         fetchWeather();
