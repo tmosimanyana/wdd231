@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,10 +12,11 @@
     <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
     <title>Gaborone Chamber of Commerce Home</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles/normalize.css"> <!-- Local Normalize CSS file -->
-    <link rel="stylesheet" href="styles/styles.css"> <!-- Custom CSS file -->
-    <script src="scripts/scripts.js" type="module" defer></script>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/scripts.js" type="module"></script>
 </head>
+
 <body>
     <header>
         <h1>Gaborone Chamber of Commerce</h1>
@@ -26,7 +28,6 @@
                 <li><a href="join.html">Join</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="podcast.html">Podcast</a></li>
-                <li><a href="events.html">Events</a></li>
             </ul>
         </nav>
     </header>
@@ -72,7 +73,7 @@
         <p><a href="attributions.html">Resource Attributions</a></p>
     </footer>
 
-    <script type="module">
+    <script>
         // JavaScript to update footer dates and other dynamic content
         document.getElementById('lastModified').textContent = document.lastModified;
         document.getElementById('currentYear').textContent = new Date().getFullYear();
@@ -95,7 +96,7 @@
             }
         }
 
-        // Example code to fetch company spotlights
+        // code to fetch company spotlights
         async function fetchSpotlights() {
             try {
                 const response = await fetch('https://api.example.com/spotlights'); // Replace with actual API
@@ -139,4 +140,5 @@
         fetchSpotlights();
     </script>
 </body>
+
 </html>
