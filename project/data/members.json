@@ -1,0 +1,66 @@
+[
+    {
+        "name": "ABC Corp",
+        "address": "123 Main St, Gaborone",
+        "phone": "+267 123 4567",
+        "website": "http://www.abccorp.bw",
+        "image": "business7.png",
+        "membership_level": 2,
+        "description": "Silver member"
+    },
+    {
+        "name": "XYZ Ltd",
+        "address": "456 Elm St, Gaborone",
+        "phone": "+267 234 5678",
+        "website": "http://www.xyzltd.bw",
+        "image": "business6.png",
+        "membership_level": 1,
+        "description": "Member"
+    },
+    {
+        "name": "DEF Solutions",
+        "address": "789 Oak St, Gaborone",
+        "phone": "+267 345 6789",
+        "website": "http://www.defsolutions.bw",
+        "image": "business5.png",
+        "membership_level": 3,
+        "description": "Gold member"
+    },
+    {
+        "name": "GHI Tech",
+        "address": "303 Cedar St, Gaborone",
+        "phone": "+267 678 9012",
+        "website": "http://www.ghitech.bw",
+        "image": "business4.png",
+        "membership_level": 2,
+        "description": "Silver member"
+    },
+    {
+        "name": "JKL Enterprises",
+        "address": "404 Pine St, Gaborone",
+        "phone": "+267 789 0123",
+        "website": "http://www.jklenterprises.bw",
+        "image": "business3.png",
+        "membership_level": 1,
+        "description": "Member"
+    },
+    {
+        "name": "MNO Services",
+        "address": "505 Birch St, Gaborone",
+        "phone": "+267 890 1234",
+        "website": "http://www.mnoservices.bw",
+        "image": "business2.png",
+        "membership_level": 3,
+        "description": "Gold member"
+    },
+    {
+        "name": "PQR Innovations",
+        "address": "606 Maple St, Gaborone",
+        "phone": "+267 901 2345",
+        "website": "http://www.pqrinnovations.bw",
+        "image": "business1.png",
+        "membership_level": 1,
+        "description": "Member"
+    }
+]
+
