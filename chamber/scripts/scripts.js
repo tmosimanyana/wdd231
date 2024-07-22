@@ -49,3 +49,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // Call the function to display spotlights
     displaySpotlights();
 });
+
