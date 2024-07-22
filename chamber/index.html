@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaborone Chamber of Commerce</title>
-    <meta name="description" content="Welcome to the Gaborone Chamber of Commerce. Join us to support and grow your business in Botswana.">
+    <title>Directory - Gaborone Chamber of Commerce</title>
+    <meta name="description" content="Explore the directory of local businesses in Gaborone. Find and connect with businesses in our community.">
     <meta name="author" content="Tinny Mosimanyana">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
@@ -25,33 +25,22 @@
     </header>
 
     <main>
-        <section class="hero">
-            <img src="images/hero.png" alt="Gaborone City" class="hero-image">
-            <div class="hero-content">
-                <h1>Welcome to the Gaborone Chamber of Commerce</h1>
-                <a href="join.html" class="cta-button">Join the Chamber</a>
-            </div>
+        <section class="directory-intro">
+            <h1>Business Directory</h1>
+            <p>Welcome to the Gaborone Chamber of Commerce business directory. Browse through our member businesses to find the services and products you need.</p>
         </section>
 
-        <section class="current-events">
-            <h2>Current Events</h2>
-            <ul>
-                <li>Networking Event - July 25, 2024</li>
-                <li>Business Workshop - August 15, 2024</li>
-            </ul>
-        </section>
-
-        <section class="weather">
-            <h2>Weather in Gaborone</h2>
-            <div id="weather">
-                <!-- Weather data will be populated here -->
-            </div>
-        </section>
-
-        <section class="company-spotlights">
-            <h2>Company Spotlights</h2>
-            <div id="spotlights">
-                <!-- Company spotlights will be populated here -->
+        <section class="directory-list">
+            <h2>Our Members</h2>
+            <div class="directory-grid">
+                <!-- Example business card -->
+                <div class="directory-card">
+                    <h3>Business Name</h3>
+                    <p>Business Description</p>
+                    <p><strong>Contact:</strong> +267 12345678</p>
+                    <p><strong>Website:</strong> <a href="#">www.example.com</a></p>
+                </div>
+                <!-- Repeat the directory-card div for each business -->
             </div>
         </section>
     </main>
@@ -63,8 +52,6 @@
         <p>Last modified: <span id="lastModified"></span></p>
     </footer>
 
-    <script src="scripts/weather.js"></script>
-    <script src="scripts/spotlights.js"></script>
     <script>
         document.getElementById('lastModified').textContent = document.lastModified;
     </script>
