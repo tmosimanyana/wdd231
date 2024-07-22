@@ -1,63 +1,121 @@
-const weatherApiKey = 'YOUR_API_KEY';
-const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?q=Gaborone&units=metric&appid=${weatherApiKey}`;
-const memberDataUrl = 'chamber/data/members.json';
+// Fetch and display weather data
+async function fetchWeatherData() {
+    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replaced with my OpenWeatherMap API key
+    const city = 'Gaborone';
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
 
-// Get weather data
-async function getWeather() {
     try {
-        const response = await fetch(weatherUrl);
-        const data = await response.json();
-        const weatherContainer = document.querySelector('.weather');
-        const current = data.list[0];
-        let forecast = '<ul>';
-        data.list.slice(0, 3).forEach(day => {
-            forecast += `<li>${new Date(day.dt * 1000).toLocaleDateString()}: ${Math.round(day.main.temp)}°C, ${day.weather.map(w => w.description.charAt(0).toUpperCase() + w.description.slice(1)).join(', ')}</li>`;
-        });
-        forecast += '</ul>';
-        weatherContainer.innerHTML = `
-            <p>Current temperature: ${Math.round(current.main.temp)}°C</p>
-            <p>Weather: ${current.weather.map(w => w.description.charAt(0).toUpperCase() + w.description.slice(1)).join(', ')}</p>
-            <h3>3-Day Forecast:</h3>
-            ${forecast}
-        `;
+        // Fetch current weather data
+        const weatherResponse = await fetch(weatherUrl);
+        const weatherData = await weatherResponse.json();
+        displayWeather(weatherData);
+
+        // Fetch 3-day forecast data
+        const forecastResponse = await fetch(forecastUrl);
+        const forecastData = await forecastResponse.json();
+        displayForecast(forecastData);
     } catch (error) {
         console.error('Error fetching weather data:', error);
     }
 }
 
-// Get member data
-async function getMembers() {
-    try {
-        const response = await fetch(memberDataUrl);
-        const members = await response.json();
-        const spotlightsContainer = document.getElementById('spotlights-container');
-        const spotlightMembers = members.filter(member => member.membership_level === 2 || member.membership_level === 3);
-        const shuffled = spotlightMembers.sort(() => 0.5 - Math.random()).slice(0, 3);
+function displayWeather(data) {
+    const temperature = document.getElementById('temperature');
+    const description = document.getElementById('description');
 
-        spotlightsContainer.innerHTML = shuffled.map(member => `
-            <div class="spotlight-card">
-                <img src="chamber/images/${member.image}" alt="${member.name} logo">
-                <h3>${member.name}</h3>
-                <p>Phone: ${member.phone}</p>
-                <p>Address: ${member.address}</p>
-                <p><a href="${member.website}" target="_blank">Visit Website</a></p>
-                <p>Membership Level: ${member.description}</p>
-            </div>
-        `).join('');
+    // Capitalize each word in the description
+    const weatherDescription = data.weather.map(desc => desc.description.charAt(0).toUpperCase() + desc.description.slice(1)).join(', ');
+
+    temperature.textContent = `Temperature: ${Math.round(data.main.temp)}°C`;
+    description.textContent = `Description: ${weatherDescription}`;
+}
+
+function displayForecast(data) {
+    const forecast = document.getElementById('forecast');
+    const forecastDays = ['Today', 'Tomorrow', 'Day After Tomorrow'];
+    
+    forecast.innerHTML = '<h3>3-Day Forecast</h3>';
+    let dayCount = 0;
+
+    // Iterate over forecast data
+    data.list.forEach(entry => {
+        if (dayCount >= 3) return; // Stop after 3 days
+
+        const date = new Date(entry.dt * 1000);
+        const dayOfWeek = date.toLocaleDateString('en-US', { weekday: 'long' });
+        const temp = Math.round(entry.main.temp);
+
+        // Add forecast info to the forecast section
+        forecast.innerHTML += `
+            <p>${forecastDays[dayCount]} (${dayOfWeek}): ${temp}°C, ${capitalizeEachWord(entry.weather.map(desc => desc.description).join(', '))}</p>
+        `;
+
+        dayCount++;
+    });
+}
+
+// Capitalize each word in a string
+function capitalizeEachWord(str) {
+    return str.replace(/\b\w/g, char => char.toUpperCase());
+}
+
+// Fetch and display company data
+async function fetchCompanyData() {
+    const url = 'data/members.json';
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        displayCompanies(data);
     } catch (error) {
-        console.error('Error fetching member data:', error);
+        console.error('Error fetching company data:', error);
     }
 }
 
-// Update last modified date
-function updateLastModified() {
-    const lastModified = new Date(document.lastModified).toLocaleDateString();
-    document.getElementById('last-modified').textContent = `Last modified: ${lastModified}`;
+function displayCompanies(companies) {
+    const spotlightCards = document.getElementById('spotlight-cards');
+    spotlightCards.innerHTML = ''; // Clear existing content
+
+    // Filter companies by membership level (Gold and Silver)
+    const filteredCompanies = companies.filter(company => company.membership_level === 2 || company.membership_level === 3);
+
+    // Shuffle the array and select 2-3 companies
+    const shuffledCompanies = filteredCompanies.sort(() => 0.5 - Math.random());
+    const selectedCompanies = shuffledCompanies.slice(0, 3);
+
+    selectedCompanies.forEach(company => {
+        const card = document.createElement('div');
+        card.classList.add('company-card');
+
+        card.innerHTML = `
+            <img src="images/${company.image}" alt="${company.name} logo">
+            <h3>${company.name}</h3>
+            <p><strong>Phone:</strong> ${company.phone}</p>
+            <p><strong>Address:</strong> ${company.address}</p>
+            <p><strong>Website:</strong> <a href="${company.website}" target="_blank">${company.website}</a></p>
+            <p><strong>Membership Level:</strong> ${company.description}</p>
+        `;
+
+        spotlightCards.appendChild(card);
+    });
 }
 
-// Initialize
+// Toggle view mode
+function toggleView() {
+    const spotlightCards = document.getElementById('spotlight-cards');
+    spotlightCards.classList.toggle('grid-view');
+}
+
+// Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
-    getWeather();
-    getMembers();
-    updateLastModified();
+    fetchWeatherData();
+    fetchCompanyData();
+
+    // Set the copyright year and last modified date
+    const currentYear = new Date().getFullYear();
+    document.querySelector('footer').insertAdjacentHTML('beforeend', `<p>&copy; ${currentYear} Gaborone Chamber of Commerce. All rights reserved.</p>`);
+
+    // Add event listener for view toggle
+    document.getElementById('view-toggle').addEventListener('click', toggleView);
 });
