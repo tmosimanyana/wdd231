@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/join.css">
     <style>
-        /* Added CSS for modal transitions */
+        /* CSS for modal transitions and membership cards */
         .modal {
             display: none; 
             position: fixed; 
@@ -34,6 +34,7 @@
             padding: 20px; 
             border: 1px solid #888; 
             width: 80%;
+            max-width: 500px;
         }
         .close {
             color: #aaa;
@@ -46,6 +47,24 @@
             color: black;
             text-decoration: none;
             cursor: pointer;
+        }
+        .membership-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 16px;
+            margin: 8px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .membership-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        @media (max-width: 600px) {
+            .membership-card {
+                margin: 4px;
+                padding: 12px;
+            }
         }
     </style>
 </head>
@@ -89,6 +108,7 @@
                 </label><br>
                 <label for="membershipLevel">Membership Level:
                     <select id="membershipLevel" name="membershipLevel" required>
+                        <option value="" disabled selected>Select a membership level</option>
                         <option value="np">NP Membership</option>
                         <option value="bronze">Bronze Membership</option>
                         <option value="silver">Silver Membership</option>
@@ -98,7 +118,7 @@
                 <label for="description">Business/Organization Description:
                     <textarea id="description" name="description" title="Description of business or organization"></textarea>
                 </label><br>
-                <input type="hidden" id="timestamp" name="timestamp" />
+                <input type="hidden" id="timestamp" name="timestamp">
                 <button type="submit">Submit</button>
             </fieldset>
         </form>
@@ -128,30 +148,30 @@
 
         <!-- Modals -->
         <div id="modal1" class="modal" aria-hidden="true">
-            <div class="modal-content">
+            <div class="modal-content" role="dialog" aria-labelledby="modal1Title">
                 <button class="close" aria-label="Close">&times;</button>
-                <h2>NP Membership Benefits</h2>
+                <h2 id="modal1Title">NP Membership Benefits</h2>
                 <p>Details about NP Membership benefits.</p>
             </div>
         </div>
         <div id="modal2" class="modal" aria-hidden="true">
-            <div class="modal-content">
+            <div class="modal-content" role="dialog" aria-labelledby="modal2Title">
                 <button class="close" aria-label="Close">&times;</button>
-                <h2>Bronze Membership Benefits</h2>
+                <h2 id="modal2Title">Bronze Membership Benefits</h2>
                 <p>Details about Bronze Membership benefits.</p>
             </div>
         </div>
         <div id="modal3" class="modal" aria-hidden="true">
-            <div class="modal-content">
+            <div class="modal-content" role="dialog" aria-labelledby="modal3Title">
                 <button class="close" aria-label="Close">&times;</button>
-                <h2>Silver Membership Benefits</h2>
+                <h2 id="modal3Title">Silver Membership Benefits</h2>
                 <p>Details about Silver Membership benefits.</p>
             </div>
         </div>
         <div id="modal4" class="modal" aria-hidden="true">
-            <div class="modal-content">
+            <div class="modal-content" role="dialog" aria-labelledby="modal4Title">
                 <button class="close" aria-label="Close">&times;</button>
-                <h2>Gold Membership Benefits</h2>
+                <h2 id="modal4Title">Gold Membership Benefits</h2>
                 <p>Details about Gold Membership benefits.</p>
             </div>
         </div>
@@ -165,43 +185,40 @@
 
     <script src="scripts/scripts.js"></script>
     <script>
-        // Set timestamp
-        document.getElementById('timestamp').value = new Date().toISOString();
+        // JavaScript for modal functionality and dynamic date
+        document.addEventListener('DOMContentLoaded', () => {
+            const modals = document.querySelectorAll('.modal');
+            const cards = document.querySelectorAll('.membership-card');
+            const closeButtons = document.querySelectorAll('.close');
 
-        // Modal handling
-        const modals = document.querySelectorAll('.modal');
-        const closeButtons = document.querySelectorAll('.close');
-        const links = document.querySelectorAll('.membership-card a');
-
-        links.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                const modalId = this.parentElement.getAttribute('data-modal');
-                const modal = document.getElementById(modalId);
-                modal.style.display = 'block';
-                modal.setAttribute('aria-hidden', 'false');
-                modal.querySelector('.modal-content').focus();
+            cards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const modalId = card.getAttribute('data-modal');
+                    document.getElementById(modalId).style.display = 'block';
+                    document.getElementById(modalId).setAttribute('aria-hidden', 'false');
+                });
             });
-        });
 
-        closeButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                const modal = this.parentElement.parentElement;
-                modal.style.display = 'none';
-                modal.setAttribute('aria-hidden', 'true');
+            closeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    button.closest('.modal').style.display = 'none';
+                    button.closest('.modal').setAttribute('aria-hidden', 'true');
+                });
             });
-        });
 
-        window.addEventListener('click', function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-                event.target.setAttribute('aria-hidden', 'true');
-            }
-        });
+            window.addEventListener('click', (event) => {
+                if (event.target.classList.contains('modal')) {
+                    event.target.style.display = 'none';
+                    event.target.setAttribute('aria-hidden', 'true');
+                }
+            });
 
-        // Update footer with current year and last modified date
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        document.getElementById('lastModified').textContent = document.lastModified;
+            // Set dynamic footer dates
+            const currentYear = new Date().getFullYear();
+            document.getElementById('currentYear').textContent = currentYear;
+            document.getElementById('lastModified').textContent = document.lastModified;
+        });
     </script>
 </body>
 </html>
+
