@@ -1,98 +1,52 @@
-const weatherApiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replace with your OpenWeatherMap API key
-const weatherUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=-24.6569&lon=25.9080&units=metric&exclude=minutely,hourly,alerts&appid=${weatherApiKey}`;
-const spotlightDataUrl = 'path_to_your_json_file.json'; // Update with the path to your JSON data
+// Define the URLs for the APIs
+const weatherUrl = 'https://api.openweathermap.org/data/2.5/weather?q=Gaborone&appid=YOUR_API_KEY&units=metric';
+const forecastUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=Gaborone&appid=YOUR_API_KEY&units=metric';
+const membersUrl = 'path/to/members.json';
 
-// Fetch and display weather data
+// Function to fetch weather data
 async function getWeatherData() {
     try {
         const response = await fetch(weatherUrl);
         const data = await response.json();
 
-        // Current weather
-        const currentTemperature = data.current.temp.toFixed(0);
-        const currentWeather = data.current.weather.map(w => w.description.charAt(0).toUpperCase() + w.description.slice(1)).join(', ');
+        document.getElementById('current-temperature').textContent = `${Math.round(data.main.temp)}°C`;
+        document.getElementById('current-weather').textContent = data.weather.map(w => w.description.charAt(0).toUpperCase() + w.description.slice(1)).join(', ');
 
-        document.getElementById('current-temperature').textContent = `${currentTemperature}°C`;
-        document.getElementById('current-weather').textContent = currentWeather;
-
-        // 3-Day Forecast
-        for (let i = 1; i <= 3; i++) {
-            const date = new Date(data.daily[i].dt * 1000).toLocaleDateString();
-            const temp = data.daily[i].temp.day.toFixed(0);
-            document.getElementById(`day${i}-date`).textContent = date;
-            document.getElementById(`day${i}-temp`).textContent = `${temp}°C`;
-        }
+        await getForecastData();
     } catch (error) {
         console.error('Error fetching weather data:', error);
     }
 }
 
-// Fetch and display spotlight data
-async function getSpotlightData() {
+// Function to fetch forecast data
+async function getForecastData() {
     try {
-        const response = await fetch(spotlightDataUrl);
+        const response = await fetch(forecastUrl);
         const data = await response.json();
 
-        // Filter for Gold and Silver members
-        const filteredMembers = data.filter(member => member.membership_level === 1 || member.membership_level === 2);
-
-        // Randomly select 2 or 3 members
-        const shuffledMembers = filteredMembers.sort(() => 0.5 - Math.random());
-        const spotlightMembers = shuffledMembers.slice(0, 3);
-
-        const spotlightsContainer = document.getElementById('spotlights');
-
-        spotlightMembers.forEach(member => {
-            const card = document.createElement('section');
-            card.className = 'spotlight-card';
-
-            const img = document.createElement('img');
-            img.setAttribute('src', `images/${member.image}`);
-            img.setAttribute('alt', `Logo of ${member.name}`);
-            img.setAttribute('loading', 'lazy');
-
-            const details = document.createElement('div');
-
-            const name = document.createElement('h3');
-            name.textContent = member.name;
-
-            const phone = document.createElement('p');
-            phone.textContent = `Phone: ${member.phone}`;
-
-            const address = document.createElement('p');
-            address.textContent = `Address: ${member.address}`;
-
-            const website = document.createElement('a');
-            website.setAttribute('href', member.website);
-            website.setAttribute('target', '_blank');
-            website.textContent = 'Visit Website
-            website.textContent = 'Visit Website';
-
-            const membershipLevel = document.createElement('p');
-            membershipLevel.textContent = `Membership Level: ${member.description}`;
-
-            details.appendChild(name);
-            details.appendChild(phone);
-            details.appendChild(address);
-            details.appendChild(website);
-            details.appendChild(membershipLevel);
-
-            card.appendChild(img);
-            card.appendChild(details);
-
-            spotlightsContainer.appendChild(card);
+        const forecast = data.list.filter(item => item.dt_txt.includes('12:00:00')).slice(0, 3);
+        forecast.forEach((item, index) => {
+            document.getElementById(`day${index + 1}-date`).textContent = new Date(item.dt_txt).toLocaleDateString();
+            document.getElementById(`day${index + 1}-temp`).textContent = `${Math.round(item.main.temp)}°C`;
         });
     } catch (error) {
-        console.error('Error fetching spotlight data:', error);
+        console.error('Error fetching forecast data:', error);
     }
 }
 
-// Initialize page
-function initializePage() {
-    getWeatherData();
-    getSpotlightData();
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
-    document.getElementById('lastModified').textContent = new Date(document.lastModified).toLocaleDateString();
-}
+// Function to fetch member data and display spotlights
+async function getSpotlights() {
+    try {
+        const response = await fetch(membersUrl);
+        const data = await response.json();
+        
+        const spotlights = data.filter(member => member.membership_level === 2 || member.membership_level === 3);
+        const randomSpotlights = spotlights.sort(() => 0.5 - Math.random()).slice(0, 3);
 
-initializePage();
+        const spotlightContainer = document.getElementById('spotlight-cards');
+        spotlightContainer.innerHTML = ''; // Clear existing content
+
+        randomSpotlights.forEach(member => {
+            const card = document.createElement('div');
+            card.classList.add('spotlight-card');
+
