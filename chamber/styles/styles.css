@@ -1,212 +1,138 @@
-/* General Styles */
-body {
-  font-family: 'Roboto', sans-serif;
-  color: #333333; /* Use a consistent text color */
-  background-color: #F2F2F2; /* Uniform background color */
+/* Basic Reset */
+body, h1, h2, h3, p, ul, li {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
 }
 
 header {
-  background-color: #004080; /* Primary color for header */
-  color: #ffffff;
-  padding: 1rem;
-  text-align: center;
+  background: #333;
+  color: #fff;
+  padding: 1rem 0;
 }
 
 header h1 {
-  margin: 0;
-  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 0.5rem;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 0;
   text-align: center;
 }
 
 nav ul li {
   display: inline;
-  margin: 0 1rem;
+  margin: 0 0.5rem;
 }
 
 nav ul li a {
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
-  font-size: 1rem;
+  padding: 0.5rem 1rem;
 }
 
-nav ul li a.active {
-  border-bottom: 2px solid #E67E22; /* Secondary color for active links */
+nav ul li a.active,
+nav ul li a:hover {
+  background: #555;
+  border-radius: 5px;
 }
 
 main {
   padding: 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
-.hero-section {
-  background-color: #004080;
-  color: #ffffff;
+#hero {
   text-align: center;
-  padding: 2rem 1rem;
+  margin-bottom: 1rem;
 }
 
-.hero-section img {
+#hero img {
   max-width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 .cta-button {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: #E67E22;
-  color: #ffffff;
+  background: #007bff;
+  color: #fff;
   text-decoration: none;
   border-radius: 5px;
-  font-size: 1.2rem;
 }
 
-.section {
-  margin-top: 2rem;
-  padding: 1rem;
-  background-color: #ffffff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+#current-events, #weather, #spotlights {
+  margin-bottom: 2rem;
 }
 
-.section h2 {
-  margin-top: 0;
-}
-
-.list {
+#weather ul {
   list-style: none;
-  padding: 0;
 }
 
-.list li {
-  margin-bottom: 0.5rem;
-}
-
-footer {
-  background-color: #004080;
-  color: #ffffff;
+.spotlight-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 1rem;
-  text-align: center;
-  position: relative;
-  width: 100%;
-}
-
-footer p {
-  margin: 0;
-  font-size: 0.9rem;
-}
-
-/* Membership Card Animations */
-.membership-cards {
+  margin-bottom: 1rem;
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-
-.membership-card {
-  background-color: #ffffff;
-  border: 1px solid #cccccc;
-  border-radius: 8px;
-  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  width: 22%;
-  animation: fadeIn 1s forwards;
-  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-  margin: 10px;
 }
 
-.membership-card:hover {
-  background-color: #E67E22;
-  color: #ffffff;
-  transform: scale(1.05);
-  opacity: 1;
+.spotlight-card img {
+  max-width: 100px;
+  height: auto;
+  border-radius: 5px;
 }
 
-/* Keyframes for Initial Load Animation */
-@keyframes fadeIn {
-  from {
-      opacity: 0;
-      transform: translateY(20px);
-  }
-  to {
-      opacity: 1;
-      transform: translateY(0);
-  }
+.spotlight-card h3 {
+  margin: 0.5rem 0;
+}
+
+.spotlight-card p {
+  margin: 0.5rem 0;
+}
+
+.spotlight-card a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.spotlight-card a:hover {
+  text-decoration: underline;
 }
 
 /* Responsive Styles */
 @media (min-width: 768px) {
-  .list {
-      display: flex;
-      justify-content: space-around;
+  .spotlight-card {
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: left;
   }
 
-  .list li {
-      flex: 1;
-      text-align: center;
-  }
-
-  .spotlight {
-      display: flex;
-      align-items: center;
-  }
-
-  .spotlight-logo {
+  .spotlight-card img {
       margin-right: 1rem;
-  }
-
-  /* Specific responsive styles for the discover page */
-  .discover-grid {
-      display: grid;
-      grid-template-columns: 1fr 3fr;
-      gap: 1rem;
-  }
-
-  .sidebar {
-      grid-column: 1 / 2;
-      background-color: #ffffff;
-      border-radius: 8px;
-      padding: 1rem;
-  }
-
-  .gallery {
-      grid-column: 2 / 3;
-  }
-
-  .gallery img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      transition: transform 0.3s ease-in-out;
-  }
-
-  .gallery img:hover {
-      transform: scale(1.05);
   }
 }
 
-/* Mobile Styles */
-@media (max-width: 767px) {
-  .membership-cards {
-      flex-direction: column;
-      align-items: center;
+@media (min-width: 1024px) {
+  #hero {
+      text-align: left;
   }
 
-  .discover-grid {
-      grid-template-columns: 1fr;
-  }
-
-  .gallery img:hover {
-      transform: none;
+  #hero img {
+      max-width: 80%;
   }
 }
