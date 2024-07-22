@@ -1,123 +1,51 @@
-const membersURL = 'data/members.json'; // Path to your JSON data file
-const weatherAPIKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replaced with my  OpenWeatherMap API key
-const weatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=Gaborone&units=metric&appid=${weatherAPIKey}`;
+document.addEventListener('DOMContentLoaded', () => {
+    // URL for the JSON data
+    const url = 'path/to/your/members-data.json';  // Update with the correct path to your JSON data
 
-const getSpotlightData = async () => {
-    try {
-        const response = await fetch(membersURL);
-        const data = await response.json();
-        displaySpotlights(data);
-    } catch (error) {
-        console.error('Error fetching spotlight data:', error);
-    }
-};
+    // Function to fetch and display company spotlights
+    async function displaySpotlights() {
+        try {
+            // Fetch the JSON data
+            const response = await fetch(url);
+            const members = await response.json();
 
-const displaySpotlights = (data) => {
-    // Filter Gold and Silver members
-    const qualifiedMembers = data.filter(member => member.membership_level === 2 || member.membership_level === 3);
-    
-    // Shuffle and select 2 or 3 members
-    const spotlightMembers = [];
-    while (spotlightMembers.length < 3 && qualifiedMembers.length > 0) {
-        const randomIndex = Math.floor(Math.random() * qualifiedMembers.length);
-        spotlightMembers.push(qualifiedMembers.splice(randomIndex, 1)[0]);
-    }
+            // Filter for Silver and Gold members
+            const qualifiedMembers = members.filter(member => member.membership_level === 2 || member.membership_level === 3);
 
-    const spotlightsSection = document.getElementById('spotlights');
-    spotlightsSection.innerHTML = ''; // Clear any previous content
-
-    spotlightMembers.forEach(member => {
-        const card = document.createElement('div');
-        card.classList.add('spotlight-card');
-
-        const logo = document.createElement('img');
-        logo.setAttribute('src', `images/${member.image}`);
-        logo.setAttribute('alt', `Logo of ${member.name}`);
-        logo.setAttribute('loading', 'lazy');
-
-        const name = document.createElement('h3');
-        name.textContent = member.name;
-
-        const phone = document.createElement('p');
-        phone.textContent = `Phone: ${member.phone}`;
-
-        const address = document.createElement('p');
-        address.textContent = `Address: ${member.address}`;
-
-        const website = document.createElement('a');
-        website.setAttribute('href', member.website);
-        website.setAttribute('target', '_blank');
-        website.textContent = 'Visit Website';
-
-        const membership = document.createElement('p');
-        membership.textContent = `Membership Level: ${member.description}`;
-
-        card.appendChild(logo);
-        card.appendChild(name);
-        card.appendChild(phone);
-        card.appendChild(address);
-        card.appendChild(website);
-        card.appendChild(membership);
-
-        spotlightsSection.appendChild(card);
-    });
-};
-
-const fetchWeatherData = async () => {
-    try {
-        const response = await fetch(weatherURL);
-        const data = await response.json();
-
-        displayWeather(data);
-    } catch (error) {
-        console.error('Error fetching weather data:', error);
-    }
-};
-
-const displayWeather = (data) => {
-    const currentTemperature = document.getElementById('current-temperature');
-    const currentWeather = document.getElementById('current-weather');
-    const day1Date = document.getElementById('day1-date');
-    const day1Temp = document.getElementById('day1-temp');
-    const day2Date = document.getElementById('day2-date');
-    const day2Temp = document.getElementById('day2-temp');
-    const day3Date = document.getElementById('day3-date');
-    const day3Temp = document.getElementById('day3-temp');
-
-    const { list } = data;
-    if (list.length) {
-        const today = list[0];
-        currentTemperature.textContent = `${Math.round(today.main.temp)}°C`;
-        currentWeather.textContent = today.weather.map(event => event.description.replace(/\b\w/g, char => char.toUpperCase())).join(', ');
-
-        // Assuming that list[8], list[16], list[24] are daily forecasts
-        const forecastDays = [list[8], list[16], list[24]];
-
-        forecastDays.forEach((forecast, index) => {
-            const date = new Date(forecast.dt_txt).toDateString();
-            const temp = Math.round(forecast.main.temp);
-            switch (index) {
-                case 0:
-                    day1Date.textContent = date;
-                    day1Temp.textContent = `${temp}°C`;
-                    break;
-                case 1:
-                    day2Date.textContent = date;
-                    day2Temp.textContent = `${temp}°C`;
-                    break;
-                case 2:
-                    day3Date.textContent = date;
-                    day3Temp.textContent = `${temp}°C`;
-                    break;
+            // Randomly select 2 or 3 members
+            const selectedMembers = [];
+            while (selectedMembers.length < 3 && qualifiedMembers.length > 0) {
+                const randomIndex = Math.floor(Math.random() * qualifiedMembers.length);
+                selectedMembers.push(qualifiedMembers.splice(randomIndex, 1)[0]);
             }
-        });
+
+            // Populate the spotlights section
+            const spotlightContainer = document.getElementById('spotlight-container');
+            spotlightContainer.innerHTML = ''; // Clear existing content
+
+            selectedMembers.forEach(member => {
+                // Create the spotlight card
+                const card = document.createElement('div');
+                card.className = 'spotlight-card';
+
+                // Add member details to the card
+                card.innerHTML = `
+                    <img src="images/${member.image}" alt="${member.name} logo" class="spotlight-logo">
+                    <h3>${member.name}</h3>
+                    <p><strong>Phone:</strong> ${member.phone}</p>
+                    <p><strong>Address:</strong> ${member.address}</p>
+                    <p><strong>Website:</strong> <a href="${member.website}" target="_blank">${member.website}</a></p>
+                    <p><strong>Membership Level:</strong> ${member.description}</p>
+                `;
+
+                // Append the card to the container
+                spotlightContainer.appendChild(card);
+            });
+        } catch (error) {
+            console.error('Error fetching or displaying member data:', error);
+        }
     }
-};
 
-// Initialize
-getSpotlightData();
-fetchWeatherData();
-
-// Update footer with current year and last modified date
-document.getElementById('currentYear').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = document.lastModified;
+    // Call the function to display spotlights
+    displaySpotlights();
+});
