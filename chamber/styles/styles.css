@@ -1,15 +1,7 @@
-/* Basic Reset */
-body, h1, h2, h3, p, ul, li {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* General styles */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
 }
 
 header {
@@ -19,82 +11,49 @@ header {
 }
 
 header h1 {
+  margin: 0;
   text-align: center;
-  margin-bottom: 0.5rem;
 }
 
 nav ul {
   list-style: none;
   padding: 0;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 nav ul li {
-  display: inline;
-  margin: 0 0.5rem;
+  margin: 0 1rem;
 }
 
 nav ul li a {
   color: #fff;
   text-decoration: none;
-  padding: 0.5rem 1rem;
-}
-
-nav ul li a.active,
-nav ul li a:hover {
-  background: #555;
-  border-radius: 5px;
 }
 
 main {
-  padding: 1rem;
+  padding: 2rem;
 }
 
-#hero {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-#hero img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  background: #007bff;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-}
-
-#current-events, #weather, #spotlights {
-  margin-bottom: 2rem;
-}
-
-#weather ul {
-  list-style: none;
+/* Spotlight Styles */
+#spotlight-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
 }
 
 .spotlight-card {
-  background: #fff;
   border: 1px solid #ddd;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
   padding: 1rem;
-  margin-bottom: 1rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background: #f9f9f9;
   text-align: center;
 }
 
-.spotlight-card img {
+.spotlight-logo {
   max-width: 100px;
   height: auto;
-  border-radius: 5px;
+  margin-bottom: 1rem;
 }
 
 .spotlight-card h3 {
@@ -103,36 +62,4 @@ main {
 
 .spotlight-card p {
   margin: 0.5rem 0;
-}
-
-.spotlight-card a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.spotlight-card a:hover {
-  text-decoration: underline;
-}
-
-/* Responsive Styles */
-@media (min-width: 768px) {
-  .spotlight-card {
-      flex-direction: row;
-      align-items: flex-start;
-      text-align: left;
-  }
-
-  .spotlight-card img {
-      margin-right: 1rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  #hero {
-      text-align: left;
-  }
-
-  #hero img {
-      max-width: 80%;
-  }
 }
