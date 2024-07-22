@@ -3,27 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join the Gaborone Chamber of Commerce">
+    <title>Directory - Gaborone Chamber of Commerce</title>
+    <meta name="description" content="Explore the directory of local businesses in Gaborone. Find and connect with businesses in our community.">
     <meta name="author" content="Tinny Mosimanyana">
-    <meta property="og:title" content="Join Gaborone Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/image.png">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/join.html">
-    <title>Join Gaborone Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/main.css">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/join.css">
 </head>
 <body>
     <header>
-        <h1>Join Gaborone Chamber of Commerce</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html" class="active">Join</a></li>
+                <li><a href="join.html">Join</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="podcast.html">Podcast</a></li>
                 <li><a href="events.html">Events</a></li>
@@ -32,137 +25,83 @@
     </header>
 
     <main>
-        <form action="thankyou.html" method="get">
-            <fieldset>
-                <legend>Membership Application</legend>
-                <label for="firstName">First Name:
-                    <input type="text" id="firstName" name="firstName" title="Applicant's first name" autocomplete="given-name" required>
-                </label><br>
-                <label for="lastName">Last Name:
-                    <input type="text" id="lastName" name="lastName" title="Applicant's last name" autocomplete="family-name" required>
-                </label><br>
-                <label for="organizationTitle">Organizational Title:
-                    <input type="text" id="organizationTitle" name="organizationTitle" title="Organizational title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" required>
-                </label><br>
-                <label for="email">Email:
-                    <input type="email" id="email" name="email" title="Email address" autocomplete="email" placeholder="example@domain.com" required>
-                </label><br>
-                <label for="phone">Mobile Phone Number:
-                    <input type="tel" id="phone" name="phone" title="Mobile phone number" autocomplete="tel" required>
-                </label><br>
-                <label for="businessName">Business/Organization Name:
-                    <input type="text" id="businessName" name="businessName" title="Business or organization name" autocomplete="organization" required>
-                </label><br>
-                <label for="membershipLevel">Membership Level:
-                    <select id="membershipLevel" name="membershipLevel" required>
-                        <option value="" disabled selected>Select membership level</option>
-                        <option value="np">NP Membership</option>
-                        <option value="bronze">Bronze Membership</option>
-                        <option value="silver">Silver Membership</option>
-                        <option value="gold">Gold Membership</option>
-                    </select>
-                </label><br>
-                <label for="description">Business/Organization Description:
-                    <textarea id="description" name="description" title="Description of business or organization"></textarea>
-                </label><br>
-                <input type="hidden" id="timestamp" name="timestamp" value="">
-                <button type="submit">Submit</button>
-            </fieldset>
-        </form>
+        <section class="directory-intro">
+            <h1>Business Directory</h1>
+            <p>Welcome to the Gaborone Chamber of Commerce business directory. Browse through our member businesses to find the services and products you need.</p>
+        </section>
 
-        <div class="membership-cards">
-            <div class="membership-card" data-modal="modal1" tabindex="0">
-                <h3>NP Membership</h3>
-                <p>No fee, for non-profit organizations.</p>
-                <a href="#">More Info</a>
+        <section class="directory-list">
+            <h2>Our Members</h2>
+            <div class="directory-grid">
+                <!-- Business Card Example -->
+                <div class="directory-card">
+                    <img src="images/business7.png" alt="ABC Corp">
+                    <h3>ABC Corp</h3>
+                    <p><strong>Address:</strong> 123 Main St, Gaborone</p>
+                    <p><strong>Phone:</strong> +267 123 4567</p>
+                    <p><strong>Website:</strong> <a href="http://www.abccorp.bw">www.abccorp.bw</a></p>
+                    <p><strong>Description:</strong> Silver member</p>
+                </div>
+                <div class="directory-card">
+                    <img src="images/business6.png" alt="XYZ Ltd">
+                    <h3>XYZ Ltd</h3>
+                    <p><strong>Address:</strong> 456 Elm St, Gaborone</p>
+                    <p><strong>Phone:</strong> +267 234 5678</p>
+                    <p><strong>Website:</strong> <a href="http://www.xyzltd.bw">www.xyzltd.bw</a></p>
+                    <p><strong>Description:</strong> Member</p>
+                </div>
+                <div class="directory-card">
+                    <img src="images/business5.png" alt="DEF Solutions">
+                    <h3>DEF Solutions</h3>
+                    <p><strong>Address:</strong> 789 Oak St, Gaborone</p>
+                    <p><strong>Phone:</strong> +267 345 6789</p>
+                    <p><strong>Website:</strong> <a href="http://www.defsolutions.bw">www.defsolutions.bw</a></p>
+                    <p><strong>Description:</strong> Gold member</p>
+                </div>
+                <div class="directory-card">
+                    <img src="images/business4.png" alt="GHI Tech">
+                    <h3>GHI Tech</h3>
+                    <p><strong>Address:</strong> 303 Cedar St, Gaborone</p>
+                    <p><strong>Phone:</strong> +267 678 9012</p>
+                    <p><strong>Website:</strong> <a href="http://www.ghitech.bw">www.ghitech.bw</a></p>
+                    <p><strong>Description:</strong> Silver member</p>
+                </div>
+                <div class="directory-card">
+                    <img src="images/business3.png" alt="JKL Enterprises">
+                    <h3>JKL Enterprises</h3>
+                    <p><strong>Address:</strong> 404 Pine St, Gaborone</p>
+                    <p><strong>Phone:</strong> +267 789 0123</p>
+                    <p><strong>Website:</strong> <a href="http://www.jklenterprises.bw">www.jklenterprises.bw</a></p>
+                    <p><strong>Description:</strong> Member</p>
+                </div>
+                <div class="directory-card">
+                    <img src="images/business2.png" alt="MNO Services">
+                    <h3>MNO Services</h3>
+                    <p><strong>Address:</strong> 505 Birch St, Gaborone</p>
+                    <p><strong>Phone:</strong> +267 890 1234</p>
+                    <p><strong>Website:</strong> <a href="http://www.mnoservices.bw">www.mnoservices.bw</a></p>
+                    <p><strong>Description:</strong> Gold member</p>
+                </div>
+                <div class="directory-card">
+                    <img src="images/business1.png" alt="PQR Innovations">
+                    <h3>PQR Innovations</h3>
+                    <p><strong>Address:</strong> 606 Maple St, Gaborone</p>
+                    <p><strong>Phone:</strong> +267 901 2345</p>
+                    <p><strong>Website:</strong> <a href="http://www.pqrinnovations.bw">www.pqrinnovations.bw</a></p>
+                    <p><strong>Description:</strong> Member</p>
+                </div>
             </div>
-            <div class="membership-card" data-modal="modal2" tabindex="0">
-                <h3>Bronze Membership</h3>
-                <p>Basic level membership with minimal benefits.</p>
-                <a href="#">More Info</a>
-            </div>
-            <div class="membership-card" data-modal="modal3" tabindex="0">
-                <h3>Silver Membership</h3>
-                <p>Intermediate level with additional benefits.</p>
-                <a href="#">More Info</a>
-            </div>
-            <div class="membership-card" data-modal="modal4" tabindex="0">
-                <h3>Gold Membership</h3>
-                <p>Premium membership with extensive benefits.</p>
-                <a href="#">More Info</a>
-            </div>
-        </div>
-
-        <!-- Modals -->
-        <div id="modal1" class="modal" role="dialog" aria-labelledby="modal1-title" aria-hidden="true">
-            <div class="modal-content">
-                <span class="close" aria-label="Close">&times;</span>
-                <h2 id="modal1-title">NP Membership Benefits</h2>
-                <p>Details about NP Membership benefits.</p>
-            </div>
-        </div>
-        <div id="modal2" class="modal" role="dialog" aria-labelledby="modal2-title" aria-hidden="true">
-            <div class="modal-content">
-                <span class="close" aria-label="Close">&times;</span>
-                <h2 id="modal2-title">Bronze Membership Benefits</h2>
-                <p>Details about Bronze Membership benefits.</p>
-            </div>
-        </div>
-        <div id="modal3" class="modal" role="dialog" aria-labelledby="modal3-title" aria-hidden="true">
-            <div class="modal-content">
-                <span class="close" aria-label="Close">&times;</span>
-                <h2 id="modal3-title">Silver Membership Benefits</h2>
-                <p>Details about Silver Membership benefits.</p>
-            </div>
-        </div>
-        <div id="modal4" class="modal" role="dialog" aria-labelledby="modal4-title" aria-hidden="true">
-            <div class="modal-content">
-                <span class="close" aria-label="Close">&times;</span>
-                <h2 id="modal4-title">Gold Membership Benefits</h2>
-                <p>Details about Gold Membership benefits.</p>
-            </div>
-        </div>
+        </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentYear"></span> Gaborone Chamber of Commerce</p>
-        <p>Last Modified: <span id="lastModified"></span></p>
-        <p>Created by Tinny Mosimanyana for WDD 231</p>
+        <p>Contact Information: mbothepha@gmail.com | +267 76376661</p>
+        <p>&copy; 2024 Gaborone Chamber of Commerce. All rights reserved.</p>
+        <p>Developed by Tinny Mosimanyana for WDD 231</p>
+        <p>Last modified: <span id="lastModified"></span></p>
     </footer>
 
-    <script src="scripts/scripts.js"></script>
     <script>
-        // Set timestamp
-        document.getElementById('timestamp').value = new Date().toISOString();
-
-        // Modal handling
-        const modals = document.querySelectorAll('.modal');
-        const closeButtons = document.querySelectorAll('.close');
-        const cards = document.querySelectorAll('.membership-card');
-
-        cards.forEach(card => {
-            card.addEventListener('click', () => {
-                const modalId = card.getAttribute('data-modal');
-                const modal = document.getElementById(modalId);
-                modal.classList.add('show');
-            });
-        });
-
-        closeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const modal = button.closest('.modal');
-                modal.classList.remove('show');
-            });
-        });
-
-        window.addEventListener('click', (event) => {
-            if (event.target.classList.contains('modal')) {
-                event.target.classList.remove('show');
-            }
-        });
-
-        // Update footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
         document.getElementById('lastModified').textContent = document.lastModified;
     </script>
 </body>
