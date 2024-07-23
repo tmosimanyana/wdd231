@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Us | Gaborone Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="scripts/include.js" defer></script>
+</head>
+<body>
+    <header></header>
+
+    <main>
+        <h1>Membership Form</h1>
+        <form action="thankyou.html" method="get">
+            <label for="first-name">First Name
+                <input type="text" id="first-name" name="first-name" title="Applicant's first name" required autocomplete="given-name">
+            </label>
+            <label for="last-name">Last Name
+                <input type="text" id="last-name" name="last-name" title="Applicant's last name" required autocomplete="family-name">
+            </label>
+            <label for="organization-title">Organizational Title
+                <input type="text" id="organization-title" name="organization-title" title="Applicant's organizational title" pattern="[A-Za-z\s-]{7,}" autocomplete="organization-title">
+            </label>
+            <label for="email">Email
+                <input type="email" id="email" name="email" title="Email address" required autocomplete="email" placeholder="example@example.com">
+            </label>
+            <label for="phone">Mobile Phone
+                <input type="tel" id="phone" name="phone" title="Mobile phone number" required autocomplete="tel">
+            </label>
+            <label for="organization">Business/Organization Name
+                <input type="text" id="organization" name="organization" title="Business or organization's name" required autocomplete="organization">
+            </label>
+            <fieldset>
+                <legend>Membership Level</legend>
+                <label>
+                    <input type="radio" name="membership-level" value="NP" checked>
+                    NP Membership (No fee)
+                </label>
+                <label>
+                    <input type="radio" name="membership-level" value="Bronze">
+                    Bronze Membership
+                </label>
+                <label>
+                    <input type="radio" name="membership-level" value="Silver">
+                    Silver Membership
+                </label>
+                <label>
+                    <input type="radio" name="membership-level" value="Gold">
+                    Gold Membership
+                </label>
+            </fieldset>
+            <label for="description">Business/Organization Description
+                <textarea id="description" name="description" title="Description of the business or organization"></textarea>
+            </label>
+            <input type="hidden" name="timestamp" id="timestamp" value="">
+            <input type="submit" value="Submit">
+        </form>
+
+        <!-- Membership Level Cards -->
+        <div class="membership-cards">
+            <div class="card" id="np-card">
+                <h3>NP Membership</h3>
+                <p>No fee</p>
+                <a href="#" data-modal="np-modal">More info</a>
+            </div>
+            <div class="card" id="bronze-card">
+                <h3>Bronze Membership</h3>
+                <p>Basic benefits</p>
+                <a href="#" data-modal="bronze-modal">More info</a>
+            </div>
+            <div class="card" id="silver-card">
+                <h3>Silver Membership</h3>
+                <p>Enhanced benefits</p>
+                <a href="#" data-modal="silver-modal">More info</a>
+            </div>
+            <div class="card" id="gold-card">
+                <h3>Gold Membership</h3>
+                <p>Premium benefits</p>
+                <a href="#" data-modal="gold-modal">More info</a>
+            </div>
+        </div>
+
+        <!-- Modals -->
+        <div class="modal" id="np-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>NP Membership Benefits</h2>
+                <p>Details about NP Membership.</p>
+            </div>
+        </div>
+        <div class="modal" id="bronze-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Bronze Membership Benefits</h2>
+                <p>Details about Bronze Membership.</p>
+            </div>
+        </div>
+        <div class="modal" id="silver-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Silver Membership Benefits</h2>
+                <p>Details about Silver Membership.</p>
+            </div>
+        </div>
+        <div class="modal" id="gold-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Gold Membership Benefits</h2>
+                <p>Details about Gold Membership.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set timestamp value
+            document.getElementById('timestamp').value = Date.now();
+
+            // Modal functionality
+            const modals = document.querySelectorAll('.modal');
+            const links = document.querySelectorAll('.card a');
+            const closeButtons = document.querySelectorAll('.modal .close');
+
+            links.forEach(link => {
+                link.addEventListener('click', event => {
+                    event.preventDefault();
+                    const modalId = link.dataset.modal;
+                    const modal = document.getElementById(modalId);
+                    modal.style.display = 'block';
+                });
+            });
+
+            closeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    button.closest('.modal').style.display = 'none';
+                });
+            });
+
+            window.addEventListener('click', event => {
+                if (event.target.classList.contains('modal')) {
+                    event.target.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
