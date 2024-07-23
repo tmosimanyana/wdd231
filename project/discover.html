@@ -10,7 +10,9 @@
     <script src="scripts/discover.js" defer></script>
 </head>
 <body>
-    <header></header>
+    <header>
+        <!-- Add header content here -->
+    </header>
 
     <main id="discover">
         <aside class="sidebar">
@@ -24,9 +26,42 @@
             <img class="lazy" data-src="images/photo4.jpg" alt="Photo 4">
             <img class="lazy" data-src="images/photo5.jpg" alt="Photo 5">
             <img class="lazy" data-src="images/photo6.jpg" alt="Photo 6">
+            <img class="lazy" data-src="images/photo7.jpg" alt="Photo 7">
+            <img class="lazy" data-src="images/photo8.jpg" alt="Photo 8">
+            <img class="lazy" data-src="images/photo9.jpg" alt="Photo 9">
         </div>
     </main>
 
-    <footer></footer>
+    <footer>
+        <!-- Add footer content here -->
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.add("loaded");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            } else {
+                // Fallback for browsers that don't support IntersectionObserver
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.add("loaded");
+                });
+            }
+        });
+    </script>
 </body>
 </html>
