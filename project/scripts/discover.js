@@ -1,47 +1,37 @@
-document.addEventListener("DOMContentLoaded", function() {
-    let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-    if ("IntersectionObserver" in window) {
-        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    let lazyImage = entry.target;
-                    lazyImage.src = lazyImage.dataset.src;
-                    lazyImage.classList.add("loaded");
-                    lazyImageObserver.unobserve(lazyImage);
-                }
-            });
-        });
-
-        lazyImages.forEach(function(lazyImage) {
-            lazyImageObserver.observe(lazyImage);
-        });
-    } else {
-        // Fallback for browsers that don't support IntersectionObserver
-        lazyImages.forEach(function(lazyImage) {
-            lazyImage.src = lazyImage.dataset.src;
-            lazyImage.classList.add("loaded");
-        });
-    }
-
-    // Visitor message using localStorage
-    const visitorMessage = document.getElementById('visitor-message');
+document.addEventListener('DOMContentLoaded', () => {
+    // Handle localStorage for last visit
     const lastVisit = localStorage.getItem('lastVisit');
-    const currentVisit = new Date().getTime();
+    const now = new Date();
+    localStorage.setItem('lastVisit', now.toISOString());
 
+    const messageElement = document.getElementById('visitor-message');
     if (lastVisit) {
-        const timeSinceLastVisit = currentVisit - lastVisit;
-        const daysSinceLastVisit = Math.floor(timeSinceLastVisit / (1000 * 60 * 60 * 24));
-
-        if (daysSinceLastVisit === 0) {
-            visitorMessage.textContent = 'Welcome back! You visited earlier today.';
-        } else if (daysSinceLastVisit === 1) {
-            visitorMessage.textContent = 'Welcome back! You visited yesterday.';
-        } else {
-            visitorMessage.textContent = `Welcome back! You visited ${daysSinceLastVisit} days ago.`;
-        }
+        messageElement.textContent = `Welcome back! Your last visit was on ${new Date(lastVisit).toLocaleDateString()}`;
     } else {
-        visitorMessage.textContent = 'Welcome to our Discover page!';
+        messageElement.textContent = 'Welcome to our site!';
     }
 
-    localStorage.setItem('lastVisit', currentVisit);
+    // Initialize lazy loading
+    const lazyImages = document.querySelectorAll('img.lazy');
+    const lazyLoad = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const img = entry.target;
+                img.src = img.dataset.src;
+                img.onload = () => img.classList.remove('lazy');
+                observer.unobserve(img);
+            }
+        });
+    };
+
+    const imageObserver = new IntersectionObserver(lazyLoad, {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    });
+
+    lazyImages.forEach(img => {
+        imageObserver.observe(img);
+    });
 });
+

@@ -3,14 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discover | Gaborone Chamber of Commerce</title>
-    <meta name="description" content="Discover the Gaborone Chamber of Commerce, your resource hub for businesses in Gaborone. Find events, networking opportunities, and business directories.">
+    <meta name="description" content="Discover the latest events, attractions, and important information in Gaborone with our comprehensive guide.">
     <meta name="author" content="Your Name">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <meta property="og:title" content="Discover | Gaborone Chamber of Commerce">
     <meta property="og:type" content="website">
     <meta property="og:image" content="images/og-image.jpg">
-    <meta property="og:url" content="https://yourdomain.com/discover">
+    <meta property="og:url" content="http://tmosimanyana.github.io/wdd231/chamber/discover.html">
+    <title>Discover | Gaborone Chamber of Commerce</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/discover.css">
     <script src="scripts/include.js" defer></script>
@@ -18,80 +17,36 @@
 </head>
 <body>
     <header>
-        <!-- Add header content here -->
+        <!-- Header content here, if any -->
     </header>
 
     <main id="discover">
-        <h1>Discover the Gaborone Chamber of Commerce</h1>
         <aside class="sidebar">
             <div id="visitor-message"></div>
             <!-- Add additional sidebar content here -->
         </aside>
         <div class="main-content">
-            <img class="lazy" data-src="images/photo1.jpg" alt="Photo 1">
-            <img class="lazy" data-src="images/photo2.jpg" alt="Photo 2">
-            <img class="lazy" data-src="images/photo3.jpg" alt="Photo 3">
-            <img class="lazy" data-src="images/photo4.jpg" alt="Photo 4">
-            <img class="lazy" data-src="images/photo5.jpg" alt="Photo 5">
-            <img class="lazy" data-src="images/photo6.jpg" alt="Photo 6">
-            <img class="lazy" data-src="images/photo7.jpg" alt="Photo 7">
-            <img class="lazy" data-src="images/photo8.jpg" alt="Photo 8">
-            <img class="lazy" data-src="images/photo9.jpg" alt="Photo 9">
+            <img class="lazy" data-src="images/photo1.jpg" alt="Photo 1" loading="lazy">
+            <img class="lazy" data-src="images/photo2.jpg" alt="Photo 2" loading="lazy">
+            <img class="lazy" data-src="images/photo3.jpg" alt="Photo 3" loading="lazy">
+            <img class="lazy" data-src="images/photo4.jpg" alt="Photo 4" loading="lazy">
+            <img class="lazy" data-src="images/photo5.jpg" alt="Photo 5" loading="lazy">
+            <img class="lazy" data-src="images/photo6.jpg" alt="Photo 6" loading="lazy">
+            <img class="lazy" data-src="images/photo7.jpg" alt="Photo 7" loading="lazy">
+            <img class="lazy" data-src="images/photo8.jpg" alt="Photo 8" loading="lazy">
+            <img class="lazy" data-src="images/photo9.jpg" alt="Photo 9" loading="lazy">
         </div>
     </main>
 
     <footer>
-        <!-- Add footer content here -->
+        <p>&copy; <span id="current-year"></span> Gaborone Chamber of Commerce. Last modified: <span id="last-modified-date"></span>.</p>
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-            if ("IntersectionObserver" in window) {
-                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            let lazyImage = entry.target;
-                            lazyImage.src = lazyImage.dataset.src;
-                            lazyImage.classList.add("loaded");
-                            lazyImageObserver.unobserve(lazyImage);
-                        }
-                    });
-                });
-
-                lazyImages.forEach(function(lazyImage) {
-                    lazyImageObserver.observe(lazyImage);
-                });
-            } else {
-                // Fallback for browsers that don't support IntersectionObserver
-                lazyImages.forEach(function(lazyImage) {
-                    lazyImage.src = lazyImage.dataset.src;
-                    lazyImage.classList.add("loaded");
-                });
-            }
-
-            // Visitor message using localStorage
-            const visitorMessage = document.getElementById('visitor-message');
-            const lastVisit = localStorage.getItem('lastVisit');
-            const currentVisit = new Date().getTime();
-
-            if (lastVisit) {
-                const timeSinceLastVisit = currentVisit - lastVisit;
-                const daysSinceLastVisit = Math.floor(timeSinceLastVisit / (1000 * 60 * 60 * 24));
-
-                if (daysSinceLastVisit === 0) {
-                    visitorMessage.textContent = 'Welcome back! You visited earlier today.';
-                } else if (daysSinceLastVisit === 1) {
-                    visitorMessage.textContent = 'Welcome back! You visited yesterday.';
-                } else {
-                    visitorMessage.textContent = `Welcome back! You visited ${daysSinceLastVisit} days ago.`;
-                }
-            } else {
-                visitorMessage.textContent = 'Welcome to our Discover page!';
-            }
-
-            localStorage.setItem('lastVisit', currentVisit);
-        });
+        // JavaScript to dynamically display current year and last modified date
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.getElementById('last-modified-date').textContent = document.lastModified;
     </script>
 </body>
 </html>
+
