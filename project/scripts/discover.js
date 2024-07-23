@@ -1,49 +1,47 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Lazy loading images
-    const lazyImages = document.querySelectorAll('img.lazy');
-
-    const lazyLoad = (image) => {
-        const src = image.getAttribute('data-src');
-        if (src) {
-            image.src = src;
-            image.onload = () => {
-                image.classList.add('loaded');
-            };
-        }
-    };
-
-    const imgOptions = {
-        threshold: 0,
-        rootMargin: '0px 0px 256px 0px'
-    };
-
-    const imgObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                lazyLoad(entry.target);
-                imgObserver.unobserve(entry.target);
-            }
+document.addEventListener("DOMContentLoaded", function() {
+    let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+    if ("IntersectionObserver" in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    let lazyImage = entry.target;
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.add("loaded");
+                    lazyImageObserver.unobserve(lazyImage);
+                }
+            });
         });
-    }, imgOptions);
 
-    lazyImages.forEach(image => {
-        imgObserver.observe(image);
-    });
+        lazyImages.forEach(function(lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+        });
+    } else {
+        // Fallback for browsers that don't support IntersectionObserver
+        lazyImages.forEach(function(lazyImage) {
+            lazyImage.src = lazyImage.dataset.src;
+            lazyImage.classList.add("loaded");
+        });
+    }
 
-    // Visitor message
+    // Visitor message using localStorage
     const visitorMessage = document.getElementById('visitor-message');
     const lastVisit = localStorage.getItem('lastVisit');
-    const now = Date.now();
-    localStorage.setItem('lastVisit', now);
+    const currentVisit = new Date().getTime();
 
-    if (!lastVisit) {
-        visitorMessage.textContent = "Welcome! Let us know if you have any questions.";
-    } else {
-        const daysSinceLastVisit = Math.floor((now - lastVisit) / (1000 * 60 * 60 * 24));
-        if (daysSinceLastVisit < 1) {
-            visitorMessage.textContent = "Back so soon! Awesome!";
+    if (lastVisit) {
+        const timeSinceLastVisit = currentVisit - lastVisit;
+        const daysSinceLastVisit = Math.floor(timeSinceLastVisit / (1000 * 60 * 60 * 24));
+
+        if (daysSinceLastVisit === 0) {
+            visitorMessage.textContent = 'Welcome back! You visited earlier today.';
+        } else if (daysSinceLastVisit === 1) {
+            visitorMessage.textContent = 'Welcome back! You visited yesterday.';
         } else {
-            visitorMessage.textContent = `You last visited ${daysSinceLastVisit} ${daysSinceLastVisit === 1 ? 'day' : 'days'} ago.`;
+            visitorMessage.textContent = `Welcome back! You visited ${daysSinceLastVisit} days ago.`;
         }
+    } else {
+        visitorMessage.textContent = 'Welcome to our Discover page!';
     }
+
+    localStorage.setItem('lastVisit', currentVisit);
 });
