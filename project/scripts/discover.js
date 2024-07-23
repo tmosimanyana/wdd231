@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const img = entry.target;
-                img.src = img.dataset.src;
+                img.src = img.dataset.src; // Use src from data-src attribute
                 img.onload = () => img.classList.remove('lazy');
                 observer.unobserve(img);
             }
