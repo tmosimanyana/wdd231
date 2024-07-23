@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discover | Gaborone Chamber of Commerce</title>
+    <meta name="description" content="Discover the Gaborone Chamber of Commerce, your resource hub for businesses in Gaborone. Find events, networking opportunities, and business directories.">
+    <meta name="author" content="Your Name">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Discover | Gaborone Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:url" content="https://yourdomain.com/discover">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/discover.css">
     <script src="scripts/include.js" defer></script>
@@ -11,25 +18,11 @@
 </head>
 <body>
     <header>
-        <!-- Added header content here -->
-        <header>
-            <div class="logo">
-                <img src="images/logo.jpeg" alt="Gaborone Chamber of Commerce Logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="discover.html">Discover</a></li>
-                    <li><a href="form.html">Join Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <button class="menu-toggle">☰ Menu</button>
-            </nav>
-        </header>
-        
+        <!-- Add header content here -->
     </header>
 
     <main id="discover">
+        <h1>Discover the Gaborone Chamber of Commerce</h1>
         <aside class="sidebar">
             <div id="visitor-message"></div>
             <!-- Add additional sidebar content here -->
@@ -48,8 +41,7 @@
     </main>
 
     <footer>
-        <!-- Added footer content here -->
-
+        <!-- Add footer content here -->
     </footer>
 
     <script>
@@ -77,6 +69,28 @@
                     lazyImage.classList.add("loaded");
                 });
             }
+
+            // Visitor message using localStorage
+            const visitorMessage = document.getElementById('visitor-message');
+            const lastVisit = localStorage.getItem('lastVisit');
+            const currentVisit = new Date().getTime();
+
+            if (lastVisit) {
+                const timeSinceLastVisit = currentVisit - lastVisit;
+                const daysSinceLastVisit = Math.floor(timeSinceLastVisit / (1000 * 60 * 60 * 24));
+
+                if (daysSinceLastVisit === 0) {
+                    visitorMessage.textContent = 'Welcome back! You visited earlier today.';
+                } else if (daysSinceLastVisit === 1) {
+                    visitorMessage.textContent = 'Welcome back! You visited yesterday.';
+                } else {
+                    visitorMessage.textContent = `Welcome back! You visited ${daysSinceLastVisit} days ago.`;
+                }
+            } else {
+                visitorMessage.textContent = 'Welcome to our Discover page!';
+            }
+
+            localStorage.setItem('lastVisit', currentVisit);
         });
     </script>
 </body>
