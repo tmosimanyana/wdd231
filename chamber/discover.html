@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discover | Gaborone Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/discover.css">
+    <script src="scripts/include.js" defer></script>
+    <script src="scripts/discover.js" defer></script>
+</head>
+<body>
+    <header>
+        <!-- Added header content here -->
+        <header>
+            <div class="logo">
+                <img src="images/logo.jpeg" alt="Gaborone Chamber of Commerce Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="form.html">Join Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button class="menu-toggle">☰ Menu</button>
+            </nav>
+        </header>
+        
+    </header>
+
+    <main id="discover">
+        <aside class="sidebar">
+            <div id="visitor-message"></div>
+            <!-- Add additional sidebar content here -->
+        </aside>
+        <div class="main-content">
+            <img class="lazy" data-src="images/photo1.jpg" alt="Photo 1">
+            <img class="lazy" data-src="images/photo2.jpg" alt="Photo 2">
+            <img class="lazy" data-src="images/photo3.jpg" alt="Photo 3">
+            <img class="lazy" data-src="images/photo4.jpg" alt="Photo 4">
+            <img class="lazy" data-src="images/photo5.jpg" alt="Photo 5">
+            <img class="lazy" data-src="images/photo6.jpg" alt="Photo 6">
+            <img class="lazy" data-src="images/photo7.jpg" alt="Photo 7">
+            <img class="lazy" data-src="images/photo8.jpg" alt="Photo 8">
+            <img class="lazy" data-src="images/photo9.jpg" alt="Photo 9">
+        </div>
+    </main>
+
+    <footer>
+        <!-- Added footer content here -->
+
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.add("loaded");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            } else {
+                // Fallback for browsers that don't support IntersectionObserver
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.add("loaded");
+                });
+            }
+        });
+    </script>
+</body>
+</html>
