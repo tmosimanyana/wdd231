@@ -1,0 +1,96 @@
+/* Normalize CSS */
+@import url('normalize.css');
+
+/* General Layout */
+body {
+    font-family: 'Roboto', sans-serif; /* Example font from Google Fonts */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, footer {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+header .logo img {
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+.menu-toggle {
+    display: none; /* Hide on larger screens */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide navigation on small screens */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav.active ul {
+        display: flex; /* Show navigation when active */
+    }
+
+    .menu-toggle {
+        display: block; /* Show menu toggle on small screens */
+    }
+}
+
+/* Discover Page Specific Styles */
+#discover .sidebar {
+    grid-area: sidebar;
+}
+
+#discover .main-content {
+    grid-area: main;
+}
+
+@media (max-width: 768px) {
+    #discover .sidebar {
+        display: none; /* Hide sidebar on small screens */
+    }
+}
