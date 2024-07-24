@@ -1,32 +1,42 @@
+/* General styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
+    color: #333;
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #f2f2f2;
 }
 
 header {
+    background-color: #004080;
+    color: #fff;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: #004080;
-    color: #fff;
+}
+
+header .logo img {
+    height: 50px;
 }
 
 nav ul {
     list-style: none;
-    margin: 0;
     padding: 0;
+    margin: 0;
     display: flex;
-    gap: 15px;
 }
 
-nav a {
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+}
+
+.menu-toggle {
+    display: none;
 }
 
 .hero {
@@ -35,57 +45,37 @@ nav a {
     color: white;
 }
 
-.hero img {
+.hero-image {
     width: 100%;
     height: auto;
-    display: block;
+    max-height: 400px;
+    object-fit: cover;
 }
 
 .cta-button {
     position: absolute;
-    top: 50%;
+    bottom: 20px;
     left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #e67e22;
+    transform: translateX(-50%);
+    background-color: #E67E22;
     color: #fff;
-    padding: 15px 30px;
+    padding: 10px 20px;
     text-decoration: none;
-    font-size: 1.2em;
     border-radius: 5px;
+    font-size: 16px;
 }
 
-section {
+.current-events, .weather, .spotlights {
     padding: 20px;
-}
-
-.weather, .spotlights {
-    background-color: #fff;
-    margin: 20px 0;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-#weather-details, #spotlight-container {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.spotlight-card {
-    background-color: #e67e22;
-    color: white;
-    padding: 15px;
-    margin: 10px;
-    border-radius: 8px;
-    width: calc(33% - 20px);
-    box-sizing: border-box;
     text-align: center;
 }
 
-.spotlight-card img {
-    max-width: 100%;
-    height: auto;
+.spotlight-card {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin: 10px;
     border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
 footer {
@@ -93,4 +83,18 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+    .menu-toggle {
+        display: block;
+    }
 }
