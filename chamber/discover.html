@@ -1,83 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!DOCTYPE html>
+<html lang="en-US">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover the latest events, attractions, and important information in Gaborone with our comprehensive guide.">
+    <meta name="author" content="Tinny Mosimanyana">
+    <meta property="og:title" content="Discover | Gaborone Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://tmosimanyana.github.io/wdd231/project/image.png">
+    <meta property="og:url" content="http://tmosimanyana.github.io/wdd231/project/discover.html">
     <title>Discover | Gaborone Chamber of Commerce</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/discover.css">
     <script src="scripts/include.js" defer></script>
     <script src="scripts/discover.js" defer></script>
 </head>
 <body>
+    <!-- Your content goes here -->
+</body>
+</html>
+
+</head>
+<body>
     <header>
-        <!-- Added header content here -->
-        <header>
-            <div class="logo">
-                <img src="images/logo.jpeg" alt="Gaborone Chamber of Commerce Logo">
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="discover.html">Discover</a></li>
-                    <li><a href="form.html">Join Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-                <button class="menu-toggle">☰ Menu</button>
-            </nav>
-        </header>
-        
+        <!-- Header content here -->
+        <h1>Discover Gaborone | Gaborone Chamber of Commerce</h1>
     </header>
 
     <main id="discover">
         <aside class="sidebar">
             <div id="visitor-message"></div>
-            <!-- Add additional sidebar content here -->
+            <div id="sidebar-content">
+                <h2>Upcoming Events</h2>
+                <p>Explore upcoming events in Gaborone...</p>
+            </div>
         </aside>
         <div class="main-content">
-            <img class="lazy" data-src="images/photo1.jpg" alt="Photo 1">
-            <img class="lazy" data-src="images/photo2.jpg" alt="Photo 2">
-            <img class="lazy" data-src="images/photo3.jpg" alt="Photo 3">
-            <img class="lazy" data-src="images/photo4.jpg" alt="Photo 4">
-            <img class="lazy" data-src="images/photo5.jpg" alt="Photo 5">
-            <img class="lazy" data-src="images/photo6.jpg" alt="Photo 6">
-            <img class="lazy" data-src="images/photo7.jpg" alt="Photo 7">
-            <img class="lazy" data-src="images/photo8.jpg" alt="Photo 8">
-            <img class="lazy" data-src="images/photo9.jpg" alt="Photo 9">
+            <div class="image-gallery">
+                <img class="lazy" src="images/photo1.jpg" alt="Photo 1" loading="lazy">
+                <img class="lazy" src="images/photo2.jpg" alt="Photo 2" loading="lazy">
+                <img class="lazy" src="images/photo3.jpg" alt="Photo 3" loading="lazy">
+                <img class="lazy" src="images/photo4.jpg" alt="Photo 4" loading="lazy">
+                <img class="lazy" src="images/photo5.jpg" alt="Photo 5" loading="lazy">
+                <img class="lazy" src="images/photo6.jpg" alt="Photo 6" loading="lazy">
+            </div>
         </div>
     </main>
 
     <footer>
-        <!-- Added footer content here -->
-
+        <p>&copy; <span id="current-year"></span> Gaborone Chamber of Commerce. Last modified: <span id="last-modified-date"></span>.</p>
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            let lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-            if ("IntersectionObserver" in window) {
-                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            let lazyImage = entry.target;
-                            lazyImage.src = lazyImage.dataset.src;
-                            lazyImage.classList.add("loaded");
-                            lazyImageObserver.unobserve(lazyImage);
-                        }
-                    });
-                });
-
-                lazyImages.forEach(function(lazyImage) {
-                    lazyImageObserver.observe(lazyImage);
-                });
-            } else {
-                // Fallback for browsers that don't support IntersectionObserver
-                lazyImages.forEach(function(lazyImage) {
-                    lazyImage.src = lazyImage.dataset.src;
-                    lazyImage.classList.add("loaded");
-                });
-            }
-        });
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.getElementById('last-modified-date').textContent = document.lastModified;
     </script>
 </body>
 </html>

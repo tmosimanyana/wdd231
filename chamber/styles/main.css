@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F2F2F2;
+    color: #333333;
+}
+
+header, footer {
+    background-color: #004080;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 10px;
+}
+
+.sidebar {
+    padding: 20px;
+    background-color: #E67E22;
+    color: white;
+}
+
+.main-content {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+.image-gallery img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.image-gallery img:hover {
+    transform: scale(1.05);
+}
+
+@media (max-width: 600px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .image-gallery img:hover {
+        transform: none; /* Disable hover effect on mobile */
+    }
+}

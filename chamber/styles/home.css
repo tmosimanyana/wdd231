@@ -1,0 +1,201 @@
+/* Reset and Normalize */
+@import url('normalize.css');
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+header, footer {
+    background: #333;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+}
+
+header h1, footer p {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: #444;
+    color: #fff;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 1em;
+    display: block;
+}
+
+nav a:hover {
+    background: #555;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+    margin-top: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Hero Section */
+.hero {
+    background: url('path/to/hero-image.jpg') no-repeat center center/cover;
+    height: 400px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.hero p {
+    font-size: 1.2em;
+}
+
+/* Current Events */
+.current-events, .weather, .spotlights {
+    background: #fff;
+    padding: 1em;
+    margin-bottom: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.current-events h2, .weather h2, .spotlights h2 {
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 0.5em;
+}
+
+.current-events ul {
+    list-style: none;
+    padding: 0;
+}
+
+.current-events li {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.current-events li:last-child {
+    border-bottom: none;
+}
+
+/* Weather Section */
+.weather {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.weather div {
+    flex: 1;
+}
+
+.weather img {
+    max-width: 50px;
+}
+
+/* Company Spotlights */
+.spotlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.spotlight-card {
+    flex: 1 1 calc(33.333% - 1em);
+    background: #fff;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.spotlight-card img {
+    max-width: 100px;
+    height: auto;
+    margin-bottom: 1em;
+}
+
+.spotlight-card h3 {
+    font-family: 'Roboto', sans-serif;
+    margin: 0.5em 0;
+}
+
+.spotlight-card p {
+    margin: 0.5em 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    .weather {
+        flex-direction: column;
+    }
+
+    .spotlights {
+        flex-direction: column;
+    }
+
+    .spotlight-card {
+        flex: 1 1 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        height: 200px;
+    }
+
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+}
+
+/* Footer */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+}
+
+footer p {
+    margin: 0.2em 0;
+}
