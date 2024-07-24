@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('last-modified').textContent = lastModified;
 
     // Weather Data
-    const apiKey = 'YOUR_OPENWEATHERMAP_API_KEY'; // Replace with your OpenWeatherMap API Key
+    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replace with your OpenWeatherMap API Key
     const city = 'Gaborone'; // Replace with the desired city
     const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
