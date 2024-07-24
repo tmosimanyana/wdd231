@@ -1,47 +1,51 @@
-document.addEventListener('DOMContentLoaded', async () => {
-    const spotlightContainer = document.getElementById('spotlight-container');
-    const gridViewButton = document.getElementById('grid-view');
-    const listViewButton = document.getElementById('list-view');
+// JavaScript to handle dynamic content and interactions
 
-    // Fetch and display members
-    async function fetchMembers() {
-        try {
-            const response = await fetch('data/members.json');
-            if (!response.ok) throw new Error('Network response was not ok.');
-            const members = await response.json();
-            displayMembers(members);
-        } catch (error) {
-            spotlightContainer.innerHTML = `<p>Error loading member spotlights: ${error.message}</p>`;
+// Function to fetch and display member data
+async function loadMemberData() {
+    const apiUrl = 'data/members.json'; // Update path based on your folder structure
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
         }
-    }
+        const members = await response.json();
+        const spotlightContainer = document.getElementById('spotlight-container');
 
-    // Display members
-    function displayMembers(members) {
         spotlightContainer.innerHTML = members.map(member => `
-            <div class="spotlight-card">
-                <img src="images/${member.image}" alt="${member.name}" class="spotlight-image">
+            <div class="spotlight-card" data-level="${member.membership_level}">
+                <img src="images/${member.image}" alt="${member.name}">
                 <h3>${member.name}</h3>
                 <p>${member.address}</p>
-                <p>Phone: ${member.phone}</p>
-                <p><a href="${member.website}" target="_blank">Website</a></p>
-                <p>Membership Level: ${['Member', 'Silver', 'Gold'][member.membershipLevel - 1]}</p>
-                <p>${member.description}</p>
+                <p>${member.phone}</p>
+                <p><a href="${member.website}" target="_blank">${member.website}</a></p>
             </div>
         `).join('');
+    } catch (error) {
+        console.error('Error loading member spotlights:', error);
+        document.getElementById('spotlight-container').innerHTML = '<p>Error loading member spotlights.</p>';
     }
+}
 
-    // Toggle views
-    function setView(view) {
-        spotlightContainer.className = view;
+// Toggle between grid and list view
+function toggleView(view) {
+    const container = document.getElementById('spotlight-container');
+    if (view === 'grid') {
+        container.classList.add('grid-view');
+        container.classList.remove('list-view');
+    } else if (view === 'list') {
+        container.classList.add('list-view');
+        container.classList.remove('grid-view');
     }
+}
 
-    gridViewButton.addEventListener('click', () => setView('grid-view'));
-    listViewButton.addEventListener('click', () => setView('list-view'));
+// Event listeners for view toggles
+document.querySelector('.grid-toggle').addEventListener('click', () => toggleView('grid'));
+document.querySelector('.list-toggle').addEventListener('click', () => toggleView('list'));
 
-    // Set footer info
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-    document.getElementById('last-modified').textContent = document.lastModified;
+// Set the current year and last modified date in the footer
+document.getElementById('current-year').textContent = new Date().getFullYear();
+document.getElementById('last-modified').textContent = document.lastModified;
 
-    // Initial fetch
-    fetchMembers();
-});
+// Load member data on page load
+document.addEventListener('DOMContentLoaded', loadMemberData);
+

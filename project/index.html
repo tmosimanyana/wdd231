@@ -10,6 +10,7 @@
     <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/project/index.html">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/script.js" defer></script>
+    <link rel="icon" href="images/favicon.ico">
 </head>
 <body>
     <header>
@@ -30,7 +31,7 @@
 
     <main>
         <section class="hero">
-            <img src="images/hero.jpg" alt="Chamber of Commerce Hero Image" class="hero-image">
+            <img src="images/hero.jpg" alt="Chamber of Commerce Hero Image">
             <a href="join.html" class="cta-button">Join the Chamber</a>
         </section>
 
@@ -48,19 +49,24 @@
 
         <section class="spotlights">
             <h2>Member Spotlights</h2>
-            <div>
-                <button id="grid-view">Grid View</button>
-                <button id="list-view">List View</button>
-            </div>
             <div id="spotlight-container" class="grid-view">
                 <!-- Spotlight content will be dynamically inserted here -->
             </div>
+            <button class="grid-toggle">Grid View</button>
+            <button class="list-toggle">List View</button>
         </section>
     </main>
 
     <footer>
         <p>&copy; <span id="current-year"></span> Gaborone Chamber of Commerce. All rights reserved.</p>
         <p>Last modified: <span id="last-modified"></span></p>
+        <p><a href="attributions.html">Attributions</a></p>
     </footer>
+
+    <script>
+        // Set the current year and last modified date in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.getElementById('last-modified').textContent = document.lastModified;
+    </script>
 </body>
 </html>
