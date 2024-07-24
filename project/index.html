@@ -3,39 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gaborone Chamber of Commerce</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="scripts/footer.js" defer></script>
+    <meta name="description" content="Welcome to the Gaborone Chamber of Commerce. Learn about our mission, current events, and spotlights on local businesses.">
+    <meta name="author" content="Tinny Mosimanyana">
+    <meta property="og:title" content="Home - Gaborone Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/home-thumbnail.jpg">
+    <meta property="og:url" content="index.html">
+    <link rel="stylesheet" href="styles.css"> <!-- General Stylesheet -->
+    <link rel="stylesheet" href="home.css"> <!-- Home Page Specific Stylesheet -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Home - Gaborone Chamber of Commerce</title>
 </head>
 <body>
-    <!-- Your content here -->
-
     <header>
         <div class="logo">
-            <a href="index.html">
-                <img src="images/logo.jpeg" alt="Gaborone Chamber of Commerce Logo">
-            </a>
+            <img src="images/logo.jpeg" alt="Gaborone Chamber of Commerce Logo">
         </div>
         <nav>
-            <button class="menu-toggle" aria-label="Toggle navigation">☰ Menu</button>
-            <ul class="nav-list">
-                <li><a href="index.html" aria-label="Home">Home</a></li>
-                <li><a href="discover.html" aria-label="Discover">Discover</a></li>
-                <li><a href="form.html" aria-label="Join Us">Join Us</a></li>
-                <li><a href="contact.html" aria-label="Contact">Contact</a></li>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="form.html">Join Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
+            <button class="menu-toggle">☰ Menu</button>
         </nav>
     </header>
-
-    <!-- Main content of the page -->
     <main>
-        <!-- Content goes here -->
+        <section class="hero">
+            <h1>Welcome to the Gaborone Chamber of Commerce</h1>
+            <a href="form.html" class="cta-button">Join Us Today</a>
+        </section>
+        <section class="current-events">
+            <h2>Current Events</h2>
+            <!-- Current events content -->
+        </section>
+        <section class="weather">
+            <h2>Weather</h2>
+            <!-- Weather content -->
+        </section>
+        <section class="spotlights">
+            <h2>Spotlights</h2>
+            <!-- Spotlight cards will be populated here -->
+        </section>
     </main>
-
     <footer>
         <p>&copy; <span id="current-year"></span> Gaborone Chamber of Commerce. All rights reserved.</p>
         <p>Last modified: <span id="last-modified"></span></p>
     </footer>
+    <script src="home.js"></script>
 </body>
 </html>
+
 

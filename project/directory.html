@@ -3,40 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gaborone Chamber of Commerce Directory">
+    <meta name="description" content="Directory of businesses in Gaborone Chamber of Commerce.">
     <meta name="author" content="Tinny Mosimanyana">
-    <meta property="og:title" content="Gaborone Chamber of Commerce Directory">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/images/directory-thumbnail.jpg">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/directory.html">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Directory - Gaborone Chamber of Commerce">
+    <meta property="og:description" content="Explore the directory of businesses in the Gaborone Chamber of Commerce.">
+    <meta property="og:image" content="images/directory-thumbnail.jpg">
+    <meta property="og:url" content="directory.html">
     <title>Directory - Gaborone Chamber of Commerce</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.ico">
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="images/logo.jpeg" alt="Gaborone Chamber of Commerce Logo">
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="form.html">Join Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-            <button class="menu-toggle">☰ Menu</button>
-        </nav>
+        <!-- Include header content here -->
     </header>
-    <main>
-        <h1>Business Directory</h1>
-        <button id="toggle-view">Switch to Grid View</button>
-        <div id="member-list" class="list-view"></div>
+    
+    <main class="directory">
+        <div class="view-toggle">
+            <button id="grid-view">Grid View</button>
+            <button id="list-view">List View</button>
+        </div>
+        <div id="members-list" class="grid-view">
+            <!-- Members will be loaded here by JavaScript -->
+        </div>
     </main>
+    
     <footer>
-        <p>&copy; <span id="current-year"></span> Gaborone Chamber of Commerce. All rights reserved.</p>
-        <p>Last modified: <span id="last-modified"></span></p>
+        <!-- Include footer content here -->
     </footer>
-    <script src="js/directory.js"></script>
+    
+    <script src="scripts/directory.js"></script>
 </body>
 </html>
