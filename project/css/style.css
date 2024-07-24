@@ -1,75 +1,4 @@
-/* General styles */
-body {
-    font-family: Arial, sans-serif;
-    color: #333;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #004080;
-    color: #fff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo img {
-    height: 50px;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.menu-toggle {
-    display: none;
-}
-
-.hero {
-    position: relative;
-    text-align: center;
-    color: white;
-}
-
-.hero-image {
-    width: 100%;
-    height: auto;
-    max-height: 400px;
-    object-fit: cover;
-}
-
-.cta-button {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #E67E22;
-    color: #fff;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-.current-events, .weather, .spotlights {
-    padding: 20px;
-    text-align: center;
-}
-
+/* Styles for spotlight cards */
 .spotlight-card {
     border: 1px solid #ddd;
     padding: 10px;
@@ -78,23 +7,29 @@ nav ul li a {
     background-color: #f9f9f9;
 }
 
-footer {
-    background-color: #004080;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
+.spotlight-image {
+    width: 100%;
+    height: auto;
+    max-height: 150px;
+    object-fit: cover;
 }
 
-footer p {
-    margin: 0;
+/* Grid view styles */
+.grid-view {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-    .menu-toggle {
-        display: block;
-    }
+.grid-view .spotlight-card {
+    flex: 1 1 calc(33.333% - 20px); /* 3 cards per row with gaps */
+}
+
+/* List view styles */
+.list-view {
+    display: block;
+}
+
+.list-view .spotlight-card {
+    margin: 10px 0;
 }
