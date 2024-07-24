@@ -4,73 +4,69 @@ const weatherApiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=Gaboro
 
 async function fetchWeatherData() {
     try {
-        const response = await fetch(weatherApiUrl);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`);
         const data = await response.json();
-        updateWeatherSection(data);
-    } catch (error) {
-        console.error('Error fetching weather data:', error);
-        document.getElementById('weather-details').innerHTML = '<p>Error loading weather data.</p>';
+
+        const temp = Math.round(data.main.temp);
+            const weatherDesc = data.weather.map(w => w.description.charAt(0).toUpperCase() + w.description.slice(1)).join(', ');
+            document.querySelector('#weather-details').innerHTML = `
+                <p>Temperature: ${temp}°C</p>
+                <p>Weather: ${weatherDesc}</p>
+                <p>Three-Day Forecast:</p>
+                <ul id="forecast"></ul>
+            `;
+
+            // Fetch 3-day forecast
+            const forecastResponse = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`);
+            const forecastData = await forecastResponse.json();
+            const forecastList = document.querySelector('#forecast');
+            for (let i = 0; i < 3; i++) {
+                const day = forecastData.list[i * 8];
+                forecastList.innerHTML += `<li>${new Date(day.dt * 1000).toDateString()}: ${Math.round(day.main.temp)}°C, ${day.weather.map(w => w.description.charAt(0).toUpperCase() + w.description.slice(1)).join(', ')}</li>`;
+            }
+        } catch (error) {
+            console.error('Error fetching weather data:', error);
+        }
     }
-}
 
-function updateWeatherSection(data) {
-    const weatherDetails = document.getElementById('weather-details');
-    const currentWeather = data.list[0];
-    const weatherDescription = currentWeather.weather.map(w => w.description).join(', ');
+    fetchWeather();
 
-    const weatherHtml = `
-        <p>Current Temperature: ${Math.round(currentWeather.main.temp)}°C</p>
-        <p>Weather: ${capitalizeWords(weatherDescription)}</p>
-        <p>Forecast:</p>
-        <ul>
-            ${data.list.slice(0, 3).map(forecast => `
-                <li>
-                    ${new Date(forecast.dt * 1000).toLocaleDateString()}: ${Math.round(forecast.main.temp)}°C
-                </li>
-            `).join('')}
-        </ul>
-    `;
+    // Fetch Member Spotlights
+    async function fetchSpotlights() {
+        try {
+            const response = await fetch('data/members.json');
+            const data = await response.json();
 
-    weatherDetails.innerHTML = weatherHtml;
-}
+            if (!Array.isArray(data)) {
+                throw new Error('Invalid data format');
+            }
 
-function capitalizeWords(str) {
-    return str.replace(/\b\w/g, char => char.toUpperCase());
-}
+            const spotlightContainer = document.getElementById('spotlight-container');
+            const goldOrSilverMembers = data.filter(member => member.membershipLevel === 'Gold' || member.membershipLevel === 'Silver');
+            const randomSpotlights = goldOrSilverMembers.sort(() => 0.5 - Math.random()).slice(0, 3);
 
-// Fetch weather data on page load
-fetchWeatherData();
+            if (randomSpotlights.length === 0) {
+                spotlightContainer.innerHTML = '<p>No members to display.</p>';
+                return;
+            }
 
-// Fetch member data and display spotlights
-async function fetchMemberData() {
-    try {
-        const response = await fetch('data/members.json');
-        const members = await response.json();
-        displaySpotlights(members);
-    } catch (error) {
-        console.error('Error fetching member data:', error);
+            randomSpotlights.forEach(member => {
+                spotlightContainer.innerHTML += `
+                    <div class="spotlight-card">
+                        <img src="${member.logo}" alt="${member.companyName} Logo" loading="lazy">
+                        <h3>${member.companyName}</h3>
+                        <p>Phone: ${member.phone}</p>
+                        <p>Address: ${member.address}</p>
+                        <p>Website: <a href="${member.website}" target="_blank">${member.website}</a></p>
+                        <p>Membership Level: ${member.membershipLevel}</p>
+                    </div>
+                `;
+            });
+        } catch (error) {
+            console.error('Error fetching member spotlights:', error);
+            document.getElementById('spotlight-container').innerHTML = '<p>Error loading member spotlights.</p>';
+        }
     }
-}
 
-function displaySpotlights(members) {
-    const spotlightContainer = document.getElementById('spotlight-container');
-    const eligibleMembers = members.filter(member => member.membershipLevel >= 2);
-    const shuffledMembers = eligibleMembers.sort(() => 0.5 - Math.random());
-    const selectedMembers = shuffledMembers.slice(0, 3);
-
-    const spotlightHtml = selectedMembers.map(member => `
-        <div class="spotlight-card">
-            <img src="images/${member.logo}" alt="${member.name} Logo">
-            <h3>${member.name}</h3>
-            <p>${member.phone}</p>
-            <p>${member.address}</p>
-            <a href="${member.website}" target="_blank">Visit Website</a>
-            <p>Membership Level: ${member.membershipLevel === 2 ? 'Silver' : 'Gold'}</p>
-        </div>
-    `).join('');
-
-    spotlightContainer.innerHTML = spotlightHtml;
-}
-
-// Fetch member data on page load
-fetchMemberData();
+    fetchSpotlights();
+</script>
