@@ -3,37 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover the history and events of Gaborone Chamber of Commerce.">
+    <meta name="description" content="Discover Gaborone Chamber of Commerce. Learn about the locale's history, events, and more.">
     <meta name="author" content="Tinny Mosimanyana">
     <meta property="og:title" content="Discover - Gaborone Chamber of Commerce">
-    <meta property="og:description" content="Learn about the history and upcoming events of the Gaborone Chamber of Commerce.">
+    <meta property="og:type" content="website">
     <meta property="og:image" content="images/discover-thumbnail.jpg">
     <meta property="og:url" content="discover.html">
+    <link rel="stylesheet" href="styles.css"> <!-- General Stylesheet -->
+    <link rel="stylesheet" href="discover.css"> <!-- Discover Page Specific Stylesheet -->
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <title>Discover - Gaborone Chamber of Commerce</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" href="images/favicon.ico">
 </head>
 <body>
     <header>
-        <!-- Include header content here -->
+        <div class="logo">
+            <img src="images/logo.jpeg" alt="Gaborone Chamber of Commerce Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="form.html">Join Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <button class="menu-toggle">☰ Menu</button>
+        </nav>
     </header>
-    
     <main>
-        <section class="history">
-            <h2>History</h2>
-            <p><!-- History content goes here --></p>
-        </section>
-        
-        <section class="events">
-            <h2>Current Events</h2>
-            <p><!-- Events content goes here --></p>
+        <section class="discover">
+            <h1>Discover Gaborone</h1>
+            <div class="hero">
+                <img src="images/discover-hero.jpg" alt="Gaborone City">
+                <div class="hero-overlay">
+                    <h2>Explore Our City</h2>
+                    <p>Learn more about the rich history and vibrant events in Gaborone.</p>
+                </div>
+            </div>
+            <section class="events">
+                <h2>Current Events</h2>
+                <ul>
+                    <!-- Event items will be populated here -->
+                </ul>
+            </section>
+            <section class="history">
+                <h2>History of Gaborone</h2>
+                <p>Gaborone, the capital of Botswana, is a city with a rich history. Explore its past and how it has evolved over the years.</p>
+            </section>
         </section>
     </main>
-    
     <footer>
-        <!-- Include footer content here -->
+        <p>&copy; <span id="current-year"></span> Gaborone Chamber of Commerce. All rights reserved.</p>
+        <p>Last modified: <span id="last-modified"></span></p>
     </footer>
-    
-    <script src="scripts/discover.js"></script>
+    <script src="discover.js"></script>
 </body>
 </html>
