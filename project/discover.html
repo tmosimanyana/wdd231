@@ -1,43 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!DOCTYPE html>
+<html lang="en-US">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Discover the latest events, attractions, and important information in Gaborone with our comprehensive guide.">
     <meta name="author" content="Tinny Mosimanyana">
     <meta property="og:title" content="Discover | Gaborone Chamber of Commerce">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/og-image.jpg">
-    <meta property="og:url" content="http://tmosimanyana.github.io/wdd231/chamber/discover.html">
+    <meta property="og:image" content="http://tmosimanyana.github.io/wdd231/project/image.png">
+    <meta property="og:url" content="http://tmosimanyana.github.io/wdd231/project/discover.html">
     <title>Discover | Gaborone Chamber of Commerce</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
     <script src="scripts/include.js" defer></script>
     <script src="scripts/discover.js" defer></script>
 </head>
 <body>
+    <!-- Your content goes here -->
+</body>
+</html>
+
+</head>
+<body>
     <header>
         <!-- Header content here -->
+        <h1>Discover Gaborone | Gaborone Chamber of Commerce</h1>
     </header>
 
     <main id="discover">
         <aside class="sidebar">
             <div id="visitor-message"></div>
             <div id="sidebar-content">
-                <!-- Add demographics, statistical data, events, attractions, and/or calendar content here -->
                 <h2>Upcoming Events</h2>
                 <p>Explore upcoming events in Gaborone...</p>
-                <!-- Example content -->
             </div>
         </aside>
         <div class="main-content">
             <div class="image-gallery">
-                <img class="lazy" data-src="images/photo1.jpg" alt="Photo 1" loading="lazy">
-                <img class="lazy" data-src="images/photo2.jpg" alt="Photo 2" loading="lazy">
-                <img class="lazy" data-src="images/photo3.jpg" alt="Photo 3" loading="lazy">
-                <img class="lazy" data-src="images/photo4.jpg" alt="Photo 4" loading="lazy">
-                <img class="lazy" data-src="images/photo5.jpg" alt="Photo 5" loading="lazy">
-                <img class="lazy" data-src="images/photo6.jpg" alt="Photo 6" loading="lazy">
-                <!-- Add more images as necessary -->
+                <img class="lazy" src="images/photo1.jpg" alt="Photo 1" loading="lazy">
+                <img class="lazy" src="images/photo2.jpg" alt="Photo 2" loading="lazy">
+                <img class="lazy" src="images/photo3.jpg" alt="Photo 3" loading="lazy">
+                <img class="lazy" src="images/photo4.jpg" alt="Photo 4" loading="lazy">
+                <img class="lazy" src="images/photo5.jpg" alt="Photo 5" loading="lazy">
+                <img class="lazy" src="images/photo6.jpg" alt="Photo 6" loading="lazy">
             </div>
         </div>
     </main>
@@ -47,7 +56,6 @@
     </footer>
 
     <script>
-        // JavaScript to dynamically display current year and last modified date
         document.getElementById('current-year').textContent = new Date().getFullYear();
         document.getElementById('last-modified-date').textContent = document.lastModified;
     </script>
