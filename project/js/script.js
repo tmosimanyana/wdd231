@@ -43,8 +43,8 @@ async function fetchSpotlights() {
 
 // Fetch weather data from the API
 async function fetchWeather() {
-    const apiKey = 'YOUR_API_KEY'; // Replace with your actual API key
-    const city = 'Gaborone'; // Replace with the city for which you want to fetch the weather
+    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replaced with my actual API key
+    const city = 'Gaborone'; // Replaced with the city for which I want to fetch the weather
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     try {
