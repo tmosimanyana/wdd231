@@ -3,18 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join the Gaborone Chamber of Commerce and enjoy various membership benefits.">
+    <meta name="description" content="Join the Gaborone Chamber of Commerce. Become a member today and enjoy exclusive benefits.">
     <meta name="author" content="Tinny Mosimanyana">
-    <meta property="og:title" content="Join the Gaborone Chamber of Commerce">
-    <meta property="og:description" content="Sign up for membership with the Gaborone Chamber of Commerce.">
-    <meta property="og:image" content="images/join-thumbnail.jpg">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/join.html">
-    <link rel="stylesheet" href="styles/reset.css">
+    <title>Join Us - Gaborone Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/join.css">
-    <title>Join Us | Gaborone Chamber of Commerce</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
+
     <header>
         <div class="logo">
             <img src="images/logo.jpeg" alt="Gaborone Chamber of Commerce Logo">
@@ -24,76 +22,111 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join Us</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
             <button class="menu-toggle">☰ Menu</button>
         </nav>
     </header>
+
     <main>
         <section class="form-section">
             <h1>Join the Gaborone Chamber of Commerce</h1>
             <form action="thankyou.html" method="get">
-                <fieldset>
-                    <legend>Applicant Information</legend>
-                    <label for="first-name">First Name:</label>
-                    <input type="text" id="first-name" name="first-name" title="Enter your first name" autocomplete="given-name" required>
-                    
-                    <label for="last-name">Last Name:</label>
-                    <input type="text" id="last-name" name="last-name" title="Enter your last name" autocomplete="family-name" required>
-                    
-                    <label for="org-title">Organizational Title:</label>
-                    <input type="text" id="org-title" name="org-title" title="Enter your organizational title" pattern="[A-Za-z\s-]{7,}" required>
-                    
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" title="Enter your email address" autocomplete="email" placeholder="example@domain.com" required>
-                    
-                    <label for="phone">Mobile Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" title="Enter your mobile phone number" autocomplete="tel" required>
-                    
-                    <label for="org-name">Business/Organization Name:</label>
-                    <input type="text" id="org-name" name="org-name" title="Enter your business/organization name" autocomplete="organization" required>
-                    
-                    <label for="membership">Membership Level:</label>
-                    <select id="membership" name="membership" title="Select your membership level" required>
-                        <option value="np">NP Membership (No Fee)</option>
-                        <option value="bronze">Bronze Membership</option>
-                        <option value="silver">Silver Membership</option>
-                        <option value="gold">Gold Membership</option>
-                    </select>
-                    
-                    <label for="description">Business/Organization Description:</label>
-                    <textarea id="description" name="description" title="Enter a description of your business/organization" required></textarea>
-                    
-                    <input type="hidden" id="timestamp" name="timestamp" value="">
-                    
-                    <button type="submit">Submit</button>
-                </fieldset>
+                <label for="first-name">First Name</label>
+                <input type="text" id="first-name" name="first-name" title="First Name" autocomplete="given-name" required>
+
+                <label for="last-name">Last Name</label>
+                <input type="text" id="last-name" name="last-name" title="Last Name" autocomplete="family-name" required>
+
+                <label for="org-title">Organizational Title</label>
+                <input type="text" id="org-title" name="org-title" title="Organizational Title" autocomplete="organization-title" pattern="[A-Za-z\s-]{7,}" placeholder="Your title" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" title="Email Address" autocomplete="email" placeholder="example@example.com" required>
+
+                <label for="phone">Mobile Phone Number</label>
+                <input type="tel" id="phone" name="phone" title="Mobile Phone Number" autocomplete="tel" required>
+
+                <label for="organization">Organization Name</label>
+                <input type="text" id="organization" name="organization" title="Organization Name" autocomplete="organization" required>
+
+                <label for="membership">Membership Level</label>
+                <select id="membership" name="membership" required>
+                    <option value="np">NP Membership</option>
+                    <option value="bronze">Bronze Membership</option>
+                    <option value="silver">Silver Membership</option>
+                    <option value="gold">Gold Membership</option>
+                </select>
+
+                <label for="description">Organization Description</label>
+                <textarea id="description" name="description" title="Organization Description"></textarea>
+
+                <input type="hidden" id="timestamp" name="timestamp">
+
+                <button type="submit">Submit</button>
             </form>
-            <div class="membership-cards">
-                <!-- Membership Level Cards -->
-                <div class="card" data-modal="np">
-                    <h3>NP Membership</h3>
-                    <a href="#" class="modal-trigger" data-modal="np">Learn More</a>
-                </div>
-                <div class="card" data-modal="bronze">
-                    <h3>Bronze Membership</h3>
-                    <a href="#" class="modal-trigger" data-modal="bronze">Learn More</a>
-                </div>
-                <div class="card" data-modal="silver">
-                    <h3>Silver Membership</h3>
-                    <a href="#" class="modal-trigger" data-modal="silver">Learn More</a>
-                </div>
-                <div class="card" data-modal="gold">
-                    <h3>Gold Membership</h3>
-                    <a href="#" class="modal-trigger" data-modal="gold">Learn More</a>
-                </div>
+        </section>
+
+        <section class="membership-cards">
+            <div class="card np">
+                <h2>NP Membership</h2>
+                <p>No fee for non-profit organizations.</p>
+                <a href="#" data-modal="np-modal">More Info</a>
+            </div>
+            <div class="card bronze">
+                <h2>Bronze Membership</h2>
+                <p>Basic membership benefits.</p>
+                <a href="#" data-modal="bronze-modal">More Info</a>
+            </div>
+            <div class="card silver">
+                <h2>Silver Membership</h2>
+                <p>Additional benefits including events.</p>
+                <a href="#" data-modal="silver-modal">More Info</a>
+            </div>
+            <div class="card gold">
+                <h2>Gold Membership</h2>
+                <p>All benefits plus advertising.</p>
+                <a href="#" data-modal="gold-modal">More Info</a>
             </div>
         </section>
+
+        <div class="modal" id="np-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>NP Membership</h2>
+                <p>Details about NP Membership benefits and opportunities for non-profit organizations.</p>
+            </div>
+        </div>
+        <div class="modal" id="bronze-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Bronze Membership</h2>
+                <p>Details about Bronze Membership benefits and opportunities.</p>
+            </div>
+        </div>
+        <div class="modal" id="silver-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Silver Membership</h2>
+                <p>Details about Silver Membership benefits including exclusive events.</p>
+            </div>
+        </div>
+        <div class="modal" id="gold-modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Gold Membership</h2>
+                <p>Details about Gold Membership benefits including advertising and priority services.</p>
+            </div>
+        </div>
     </main>
+
     <footer>
         <p>&copy; <span id="current-year"></span> Gaborone Chamber of Commerce. All rights reserved.</p>
         <p>Last modified: <span id="last-modified"></span></p>
+        <p>Contact: info@gaboronechamber.co.bw | +267 123 4567</p>
     </footer>
+
     <script src="scripts/join.js"></script>
 </body>
 </html>
