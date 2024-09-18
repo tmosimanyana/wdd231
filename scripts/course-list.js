@@ -78,30 +78,33 @@ document.addEventListener('DOMContentLoaded', () => {
             filteredCourses = courses.filter(course => course.subject === 'WDD');
         }
 
+        let totalCredits = 0;
+
         filteredCourses.forEach(course => {
             const courseCard = document.createElement('div');
-            courseCard.className = 'course-card';
+            courseCard.classList.add('course-card');
             if (course.completed) {
                 courseCard.classList.add('completed');
             }
+
             courseCard.innerHTML = `
-                <h3>${course.title}</h3>
-                <p>Subject: ${course.subject}</p>
-                <p>Number: ${course.number}</p>
-                <p>Credits: ${course.credits}</p>
-                <p>Description: ${course.description}</p>
+                <h3>${course.subject} ${course.number}: ${course.title}</h3>
+                <p><strong>Credits:</strong> ${course.credits}</p>
+                <p><strong>Description:</strong> ${course.description}</p>
+                <p><strong>Technologies:</strong> ${course.technology.join(', ')}</p>
             `;
+
             coursesContainer.appendChild(courseCard);
+            totalCredits += course.credits;
         });
 
-        // Calculate total credits
-        const totalCredits = courses.reduce((total, course) => total + (course.completed ? course.credits : 0), 0);
         totalCreditsElem.textContent = totalCredits;
     }
 
     showCSE.addEventListener('click', () => renderCourses('CSE'));
     showWDD.addEventListener('click', () => renderCourses('WDD'));
-    showAll.addEventListener('click', () => renderCourses(''));
+    showAll.addEventListener('click', () => renderCourses());
 
-    renderCourses('');  // Render all courses by default
+    // Initial render showing all courses
+    renderCourses();
 });

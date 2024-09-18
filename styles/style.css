@@ -3,47 +3,43 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 header {
     background-color: #007bff;
     color: white;
-    padding: 10px;
+    text-align: center;
+    padding: 20px;
 }
 
 nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    background-color: #0056b3;
+    padding: 10px;
 }
 
 #menu-button {
-    display: block;
-    background-color: #0056b3;
-    border: none;
-    color: white;
-    padding: 10px;
-    cursor: pointer;
+    display: none;
 }
 
 #nav-menu {
-    display: none;
+    display: flex;
+    gap: 20px;
     list-style-type: none;
     padding: 0;
-}
-
-#nav-menu.open {
-    display: block;
+    margin: 0;
 }
 
 #nav-menu li {
-    display: block;
-    margin: 5px 0;
+    display: inline;
 }
 
 #nav-menu a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
 }
 
 #nav-menu a:hover {
@@ -52,11 +48,19 @@ nav {
 
 main {
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#course-list {
+    text-align: center;
 }
 
 #courses-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
 }
 
 .course-card {
@@ -67,6 +71,7 @@ main {
     width: 200px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
+    text-align: left;
 }
 
 .course-card:hover {
@@ -86,17 +91,69 @@ main {
     margin: 5px 0;
 }
 
-@media (min-width: 768px) {
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    background-color: #007bff;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 768px) {
     #menu-button {
-        display: none;
+        display: block;
+        background-color: #0056b3;
+        border: none;
+        color: white;
+        padding: 10px;
+        cursor: pointer;
+        margin-bottom: 10px;
     }
 
     #nav-menu {
+        flex-direction: column;
+        align-items: center;
+        display: none;
+    }
+
+    #nav-menu.open {
         display: flex;
-        justify-content: space-around;
     }
 
     #nav-menu li {
-        display: inline;
+        margin: 5px 0;
+    }
+
+    #courses-container {
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .buttons-container {
+        flex-direction: column;
     }
 }
