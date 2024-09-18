@@ -3,45 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="WDD 231 Course Home Page">
+    <meta name="description" content="Course homepage for Web and Computer Programming certificate.">
     <meta name="author" content="Tinny Mosimanyana">
-    <title>WDD 231 Course Home Page</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <script src="scripts/navigation.js" defer></script>
-    <script src="scripts/dates.js" defer></script>
-    <script src="scripts/course-info.js" defer></script>
+    <title>Course Home Page</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/responsive-menu.js" defer></script>
+    <script src="scripts/footer-info.js" defer></script>
+    <script src="scripts/course-list.js" defer></script>
 </head>
 <body>
     <header>
-        <h1>WDD 231 Course Home Page</h1>
         <nav>
-            <ul>
+            <button id="menu-button" aria-label="Toggle menu">Menu</button>
+            <ul id="nav-menu">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Chamber</a></li>
-                <li><a href="https://github.com/your-github-username">GitHub Profile</a></li>
-                <li><a href="https://www.linkedin.com/in/your-linkedin-username">LinkedIn</a></li>
+                <li><a href="https://github.com/your-github-username" target="_blank">GitHub Profile</a></li>
+                <li><a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a></li>
             </ul>
         </nav>
     </header>
-
     <main>
-        <section>
-            <h2>Course Overview</h2>
-            <div id="courses-container"></div>
-            <p id="total-credits"></p>
-        </section>
-        <section>
-            <h2>About This Course</h2>
-            <p>Details about the course go here.</p>
-        </section>
-        <section>
-            <h2>Contact Information</h2>
-            <p>Contact details go here.</p>
+        <section id="course-list">
+            <h2>Courses</h2>
+            <div id="courses-container">
+                <!-- Course cards will be dynamically inserted here -->
+            </div>
+            <button id="show-cse">Show CSE Courses</button>
+            <button id="show-wdd">Show WDD Courses</button>
+            <button id="show-all">Show All Courses</button>
+            <p>Total Credits: <span id="total-credits"></span></p>
         </section>
     </main>
-
     <footer>
-        <p>&copy; <span id="currentyear"></span> Tinny Mosimanyana. Botswana</p>
+        <p>&copy; <span id="currentyear"></span> Your Name, Your Country</p>
         <p id="lastModified"></p>
     </footer>
 </body>
