@@ -7,11 +7,8 @@
     <meta name="author" content="Tinny B. Mosimanyana">
     <title>Tinny B. Mosimanyana</title>
 
-    <!-- Google Fonts Preconnect & Link -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
-
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -20,35 +17,36 @@
             <img src="images/profile.jpeg" alt="Tinny B. Mosimanyana">
             <h1 class="roboto-regular">Tinny B. Mosimanyana</h1>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#" class="roboto-thin">Home</a></li>
-                <li><a href="#" class="roboto-thin">Chamber</a></li>
-                <li><a href="#" class="roboto-thin">GitHub Profile</a></li>
-                <li><a href="#" class="roboto-thin">LinkedIn</a></li>
+        <nav class="navbar">
+            <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link">Chamber</a></li>
+                <li><a href="#" class="nav-link">GitHub Profile</a></li>
+                <li><a href="#" class="nav-link">LinkedIn</a></li>
             </ul>
         </nav>
     </header>
     
     <main>
         <section class="coursework">
-            <h2 class="roboto-regular">Course Work</h2>
+            <h2 class="heading">Course Work</h2>
             <ul>
-                <li class="roboto-thin">Course 1</li>
-                <li class="roboto-thin">Course 2</li>
-                <li class="roboto-thin">Course 3</li>
+                <li>Course 1</li>
+                <li>Course 2</li>
+                <li>Course 3</li>
             </ul>
         </section>
         
         <section class="location">
-            <h2 class="roboto-regular">Gaborone, Botswana</h2>
+            <h2 class="heading">Gaborone, Botswana</h2>
             <img src="images/morula_tree.jpeg" alt="Morula Trees">
-            <p class="roboto-thin">Morula Trees</p>
+            <p class="description">Morula Trees</p>
         </section>
     </main>
     
     <footer>
-        <p class="roboto-regular">©<span id="currentyear"></span> 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana</p>
+        <p class="roboto-regular">© <span id="currentyear"></span> 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana</p>
         <p id="lastModified" class="roboto-thin"></p>
         <img src="images/botswana_flag.jpeg" alt="Botswana Flag">
     </footer>
@@ -59,6 +57,11 @@
         
         // JavaScript to display the last modified date
         document.getElementById('lastModified').textContent = "Last Updated: " + document.lastModified;
+        
+        // Toggle for Hamburger Menu
+        document.querySelector('.nav-toggle').addEventListener('click', () => {
+            document.querySelector('.nav-menu').classList.toggle('nav-menu-visible');
+        });
     </script>
 </body>
 </html>

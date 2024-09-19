@@ -1,119 +1,112 @@
+/* General Styling */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
+    font-family: 'Roboto', sans-serif;
     background-color: #f4f4f4;
     color: #333;
-}
-
-header {
-    background-color: #2c3e50;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    position: relative;
-}
-
-header .profile img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-}
-
-header .profile h1 {
-    margin-top: 10px;
-}
-
-nav ul {
-    list-style: none;
+    margin: 0;
     padding: 0;
+    line-height: 1.6;
 }
 
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
+/* Layout and Responsive Design */
+header, main, footer {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-main {
+/* Header Styling */
+header {
     display: flex;
-    justify-content: space-around;
-    padding: 20px;
-}
-
-.coursework, .location {
-    width: 45%;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.coursework h2, .location h2 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.certificates {
-    background-color: #fff;
-    padding: 20px;
-    margin: 20px;
-    text-align: center;
-}
-
-.certificates h2 {
-    margin-bottom: 20px;
-}
-
-.filter-buttons button {
-    background-color: #2c3e50;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0077b6;
     color: white;
-    border: none;
-    padding: 10px;
-    margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
 }
 
-.filter-buttons button:hover {
-    background-color: #34495e;
+header h1 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
 }
 
-.certificate-grid {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    margin-top: 20px;
+.profile img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
 
-.certificate-grid .course {
-    background-color: #8b4513;
-    color: white;
-    border: none;
-    padding: 15px 30px;
-    margin: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-footer {
-    background-color: #2c3e50;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
+/* Navigation Menu */
+.navbar {
     position: relative;
-    bottom: 0;
-    width: 100%;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+}
+
+.nav-link:hover {
+    background-color: #00b4d8;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+/* Hamburger Menu for Small Screens */
+@media (max-width: 768px) {
+    .nav-menu {
+        flex-direction: column;
+        display: none;
+    }
+
+    .nav-menu.nav-menu-visible {
+        display: block;
+    }
+
+    .nav-toggle {
+        display: block;
+        font-size: 24px;
+        background-color: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+}
+
+/* Main Content */
+main {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.heading {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #0077b6;
+}
+
+.description {
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background-color: #0077b6;
+    color: white;
+    padding: 20px;
 }
 
 footer img {
     width: 30px;
     height: auto;
-    display: inline-block;
-    margin-left: 10px;
 }
