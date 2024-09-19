@@ -24,12 +24,14 @@ document.addEventListener('DOMContentLoaded', () => {
     function displayCourses(filter = 'all') {
         courseListDiv.innerHTML = ''; // Clear previous content
 
+        // Filter courses based on the selected filter
         const filteredCourses = courses.filter(course => {
             if (filter === 'CSE') return course.subject === 'CSE';
             if (filter === 'WDD') return course.subject === 'WDD';
             return true; // Show all
         });
 
+        // Create and append course cards
         filteredCourses.forEach(course => {
             const courseCard = document.createElement('div');
             courseCard.classList.add('course-card');
@@ -44,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Initial display
+    // Initial display of courses
     displayCourses();
 
     // Filter buttons
