@@ -1,91 +1,119 @@
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 header {
-    background-color: #34495e;
-    color: #ecf0f1;
+    background-color: #2c3e50;
+    color: #fff;
     padding: 20px;
     text-align: center;
+    position: relative;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: #2c3e50;
-    padding: 10px;
+header .profile img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
 }
 
-nav a {
-    color: white;
+header .profile h1 {
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
     text-decoration: none;
-    font-size: 16px;
-    margin: 10px;
-    padding: 10px;
-    background-color: #2c3e50;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-nav a:hover {
-    background-color: #f39c12;
+    font-weight: bold;
 }
 
 main {
-    padding: 20px;
-}
-
-#course-list {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-around;
-}
-
-.course-card {
-    border: 2px solid #2c3e50;
     padding: 20px;
-    margin: 10px;
-    width: 300px;
-    border-radius: 8px;
-    background-color: #ecf0f1;
 }
 
-.completed {
-    background-color: #2ecc71;
-    border-color: #27ae60;
+.coursework, .location {
+    width: 45%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.filters {
+.coursework h2, .location h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.certificates {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    text-align: center;
+}
+
+.certificates h2 {
+    margin-bottom: 20px;
+}
+
+.filter-buttons button {
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.filter-buttons button:hover {
+    background-color: #34495e;
+}
+
+.certificate-grid {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
     margin-top: 20px;
 }
 
-section {
-    margin-top: 40px;
+.certificate-grid .course {
+    background-color: #8b4513;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 footer {
-    background-color: #34495e;
-    color: white;
-    text-align: center;
+    background-color: #2c3e50;
+    color: #fff;
     padding: 10px;
-    position: fixed;
+    text-align: center;
+    position: relative;
     bottom: 0;
     width: 100%;
 }
 
-.roboto-thin {
-    font-family: "Roboto", sans-serif;
-    font-weight: 100;
-    font-style: normal;
-}
-
-.roboto-regular {
-    font-family: "Roboto", sans-serif;
-    font-weight: 400;
-    font-style: normal;
+footer img {
+    width: 30px;
+    height: auto;
+    display: inline-block;
+    margin-left: 10px;
 }

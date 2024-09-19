@@ -3,61 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tinny B. Mosimanyana's Course Page, showcasing courses, certificates, and contact information.">
-    <meta name="author" content="Tinny B. Mosimanyana">
-    <title>Tinny's Course Home</title>
-    
-    <!-- Google Fonts API -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
-
+    <title>Tinny B. Mosimanyana</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Correctly link the JavaScript file with defer -->
-    <script defer src="scripts.js"></script>
 </head>
 <body>
     <header>
-        <h1>Tinny B. Mosimanyana</h1>
-        <p>Location: Gaborone, Botswana</p>
+        <div class="profile">
+            <img src="profile.jpg" alt="Tinny B. Mosimanyana">
+            <h1>Tinny B. Mosimanyana</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </nav>
     </header>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="https://chamberwebsite.com" target="_blank">Chamber</a>
-        <a href="https://github.com/my-profile" target="_blank">GitHub Profile</a>
-        <a href="https://linkedin.com/in/tinny89" target="_blank">LinkedIn</a>
-    </nav>
-
+    
     <main>
-        <!-- Section 1: Course Work -->
-        <section id="course-work">
+        <section class="coursework">
             <h2>Course Work</h2>
-            <div id="course-list"></div>
-            <div class="filters">
-                <button id="show-all">Show All</button>
-                <button id="show-cse">CSE Courses</button>
-                <button id="show-wdd">WDD Courses</button>
-            </div>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
         </section>
-
-        <!-- Section 2: Certificates -->
-        <section id="certificates">
-            <h2>Certificates</h2>
-            <p>Currently working toward a certificate in Web and Computer Programming. It includes courses on web development, programming fundamentals, and database management.</p>
-        </section>
-
-        <!-- Section 3: Contact Info -->
-        <section id="contact">
-            <h2>Contact Information</h2>
-            <p>Email: mbothepha@gmail.com</p>
-            <p>Phone: +26776376661</p>
+        
+        <section class="location">
+            <h2>Gaborone,Botswana</h2>
+            <img src="morula.jpg" alt="morula Trees">
+            <p>morula Trees</p>
         </section>
     </main>
-
+    
+    <section class="certificates">
+        <h2>Web and Computer Programming Certificate</h2>
+        <div class="filter-buttons">
+            <button>All</button>
+            <button>CSE</button>
+            <button>WDD</button>
+        </div>
+        <div class="certificate-grid">
+            <button class="course">CSE 110</button>
+            <button class="course">WDD 130</button>
+            <button class="course">CSE 111</button>
+            <button class="course">CSE 210</button>
+            <button class="course">WDD 131</button>
+            <button class="course">WDD 231</button>
+        </div>
+    </section>
+    
     <footer>
-        <p>&copy; <span id="currentyear"></span> Tinny B. Mosimanyana</p>
-        <p id="lastModified"></p>
+        <p>©2025 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana</p>
+        <p>Last Update: 01/01/1970 12:00:00</p>
+        <img src="Botswana-flag.png" alt="Botswana Flag">
     </footer>
 </body>
 </html>
