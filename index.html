@@ -3,64 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio page for Tinny Bothepha Mosimanyana, showcasing certificates, coursework, and professional information.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <meta name="description" content="Portfolio page for Tinny B. Mosimanyana, showcasing certificates, coursework, and professional information.">
+    <meta name="author" content="Tinny B. Mosimanyana">
     <title>Tinny B. Mosimanyana</title>
+
+    <!-- Google Fonts Preconnect & Link -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="profile">
-            <img src="images/profile.jpeg" alt="Tinny Bothepha Mosimanyana">
-            <h1>Tinny B. Mosimanyana</h1>
+            <img src="images/profile.jpeg" alt="Tinny B. Mosimanyana">
+            <h1 class="roboto-regular">Tinny B. Mosimanyana</h1>
         </div>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#" class="roboto-thin">Home</a></li>
+                <li><a href="#" class="roboto-thin">Chamber</a></li>
+                <li><a href="#" class="roboto-thin">GitHub Profile</a></li>
+                <li><a href="#" class="roboto-thin">LinkedIn</a></li>
             </ul>
         </nav>
     </header>
     
     <main>
         <section class="coursework">
-            <h2>Course Work</h2>
+            <h2 class="roboto-regular">Course Work</h2>
             <ul>
-                <li>Course 1</li>
-                <li>Course 2</li>
-                <li>Course 3</li>
+                <li class="roboto-thin">Course 1</li>
+                <li class="roboto-thin">Course 2</li>
+                <li class="roboto-thin">Course 3</li>
             </ul>
         </section>
         
         <section class="location">
-            <h2>Gaborone, Botswana</h2>
+            <h2 class="roboto-regular">Gaborone, Botswana</h2>
             <img src="images/morula_tree.jpeg" alt="Morula Trees">
-            <p>Morula Trees</p>
+            <p class="roboto-thin">Morula Trees</p>
         </section>
     </main>
     
-    <section class="certificates">
-        <h2>Web and Computer Programming Certificate</h2>
-        <div class="filter-buttons">
-            <button>All</button>
-            <button>CSE</button>
-            <button>WDD</button>
-        </div>
-        <div class="certificate-grid">
-            <button class="course">CSE 110</button>
-            <button class="course">WDD 130</button>
-            <button class="course">CSE 111</button>
-            <button class="course">CSE 210</button>
-            <button class="course">WDD 131</button>
-            <button class="course">WDD 231</button>
-        </div>
-    </section>
-    
     <footer>
-        <p>©<span id="currentyear"></span> 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana</p>
-        <p id="lastModified"></p>
+        <p class="roboto-regular">©<span id="currentyear"></span> 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana</p>
+        <p id="lastModified" class="roboto-thin"></p>
         <img src="images/botswana_flag.jpeg" alt="Botswana Flag">
     </footer>
 
