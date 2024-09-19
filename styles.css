@@ -1,112 +1,145 @@
-/* General Styling */
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    background-color: #f4f4f4;
 }
 
-/* Layout and Responsive Design */
-header, main, footer {
-    margin: 0 auto;
-    padding: 20px;
-    max-width: 1200px;
-}
-
-/* Header Styling */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #0077b6;
-    color: white;
-}
-
-header h1 {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
-}
-
-.profile img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-}
-
-/* Navigation Menu */
-.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
     position: relative;
 }
 
-.nav-menu {
-    display: flex;
-    gap: 15px;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: white;
-    padding: 10px 15px;
-}
-
-.nav-link:hover {
-    background-color: #00b4d8;
-    transition: background-color 0.3s ease-in-out;
+.profile img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
 }
 
 .nav-toggle {
     display: none;
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
 }
 
-/* Hamburger Menu for Small Screens */
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.nav-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    display: block;
+    transition: background 0.3s;
+}
+
+.nav-link:hover {
+    background-color: #575757;
+}
+
+main {
+    padding: 2rem;
+}
+
+#filter-section {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.filter-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: background 0.3s;
+}
+
+.filter-button:hover {
+    background-color: #0056b3;
+}
+
+#courses-section {
+    margin-bottom: 2rem;
+}
+
+.course-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.course-card.completed {
+    border-color: #28a745;
+    background-color: #d4edda;
+}
+
+.total-credits {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+.spinner {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #007BFF;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
         flex-direction: column;
         display: none;
     }
-
     .nav-menu.nav-menu-visible {
-        display: block;
+        display: flex;
     }
-
     .nav-toggle {
         display: block;
-        font-size: 24px;
-        background-color: transparent;
-        border: none;
-        color: white;
-        cursor: pointer;
     }
-}
-
-/* Main Content */
-main {
-    display: grid;
-    gap: 20px;
-    grid-template-columns: 1fr 1fr;
-}
-
-.heading {
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
-    color: #0077b6;
-}
-
-.description {
-    font-size: 1rem;
-}
-
-/* Footer */
-footer {
-    text-align: center;
-    background-color: #0077b6;
-    color: white;
-    padding: 20px;
-}
-
-footer img {
-    width: 30px;
-    height: auto;
 }
