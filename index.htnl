@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web and Computer Programming Certificate</title>
+    <meta name="description" content="Certificate in Web and Computer Programming">
+    <meta name="author" content="Tinny B. Mosimanyana">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Tinny B. Mosimanyana</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Course List</h2>
+            <!-- Course details dynamically loaded with JavaScript -->
+        </section>
+        
+        <section>
+            <h2>About</h2>
+            <!-- About content -->
+        </section>
+        
+        <section>
+            <h2>Contact</h2>
+            <!-- Contact details -->
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="currentyear"></span> Tinny B. Mosimanyana, Botswana</p>
+        <p id="lastModified"></p>
+    </footer>
+
+    <script src="scripts.js" defer></script>
+</body>
+</html>
