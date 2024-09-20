@@ -1,4 +1,4 @@
-// Array of course objects (updated with completed status)
+// Array of course objects (Modify completed status)
 const courses = [
     {
         subject: 'CSE',
