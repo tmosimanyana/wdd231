@@ -1,0 +1,45 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: #007B7F; /* Teal */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+.profile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.course-card {
+    border: 2px solid gray; /* Default border color */
+    padding: 10px;
+    margin: 10px;
+}
+
+.course-card.completed {
+    border-color: green; /* Completed courses */
+}
+
+.filter {
+    margin-bottom: 20px;
+}
+
+nav {
+    display: none; /* Hide by default for mobile */
+}
+
+@media (min-width: 600px) {
+    nav {
+        display: block; /* Show on larger screens */
+    }
+}
+
+.hamburger {
+    cursor: pointer;
+    font-size: 24px;
+}

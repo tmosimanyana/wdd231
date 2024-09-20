@@ -1,118 +1,53 @@
-// Array of courses with updated completion status
 const courses = [
-    {
-        subject: 'CSE',
-        number: 110,
-        title: 'Introduction to Programming',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course will introduce students to programming.',
-        technology: ['Python'],
-        completed: true
-    },
-    {
-        subject: 'WDD',
-        number: 130,
-        title: 'Web Fundamentals',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course introduces students to the World Wide Web.',
-        technology: ['HTML', 'CSS'],
-        completed: true
-    },
-    {
-        subject: 'CSE',
-        number: 111,
-        title: 'Programming with Functions',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'Students learn to write, call, debug, and test functions.',
-        technology: ['Python'],
-        completed: false
-    },
-    {
-        subject: 'CSE',
-        number: 210,
-        title: 'Programming with Classes',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course introduces the notion of classes and objects.',
-        technology: ['C#'],
-        completed: false
-    },
-    {
-        subject: 'WDD',
-        number: 131,
-        title: 'Dynamic Web Fundamentals',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'Students will learn to create dynamic websites.',
-        technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: false
-    },
-    {
-        subject: 'WDD',
-        number: 231,
-        title: 'Frontend Web Development I',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'Focus on user experience and API usage.',
-        technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: true
-    }
+    { id: 1, name: "Course 1", credits: 3, completed: true, type: "CSE" },
+    { id: 2, name: "Course 2", credits: 4, completed: false, type: "WDD" },
+    { id: 3, name: "Course 3", credits: 3, completed: true, type: "CSE" },
+    { id: 4, name: "Course 4", credits: 4, completed: false, type: "WDD" }
 ];
 
-// Function to display the courses dynamically
-function displayCourses(filteredCourses = courses) {
-    const courseContainer = document.getElementById('course-list');
-    courseContainer.innerHTML = ''; // Clear previous content
+// Function to display courses
+function displayCourses(filter) {
+    const courseListDiv = document.getElementById("course-list");
+    courseListDiv.innerHTML = ""; // Clear existing content
+
+    const filteredCourses = filter === 'all' ? courses : courses.filter(course => course.type === filter);
 
     filteredCourses.forEach(course => {
-        const courseElement = document.createElement('div');
-        courseElement.classList.add('course');
-
-        // Apply different styles for completed courses
-        if (course.completed) {
-            courseElement.classList.add('completed');
-        }
-
-        courseElement.innerHTML = `
-            <h2>${course.subject} ${course.number}: ${course.title}</h2>
-            <p><strong>Credits:</strong> ${course.credits}</p>
-            <p><strong>Certificate:</strong> ${course.certificate}</p>
-            <p><strong>Description:</strong> ${course.description}</p>
-            <p><strong>Technologies:</strong> ${course.technology.join(', ')}</p>
+        const courseDiv = document.createElement("div");
+        courseDiv.className = "course-card";
+        courseDiv.style.borderColor = course.completed ? "green" : "gray"; // Change border color for completed courses
+        courseDiv.innerHTML = `
+            <h3>${course.name}</h3>
+            <p>Credits: ${course.credits}</p>
+            <p>Status: ${course.completed ? "Completed" : "In Progress"}</p>
         `;
-        courseContainer.appendChild(courseElement);
+        courseListDiv.appendChild(courseDiv);
     });
 
-    // Update total credits
-    const totalCredits = filteredCourses.reduce((acc, course) => acc + course.credits, 0);
-    document.getElementById('total-credits').textContent = `Total Credits: ${totalCredits}`;
+    // Calculate total credits
+    const totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
+    document.getElementById("total-credits").textContent = `Total Credits: ${totalCredits}`;
 }
 
-// Function to filter courses
-function filterCourses(subject) {
-    if (subject === 'all') {
-        displayCourses(courses);
-    } else {
-        const filteredCourses = courses.filter(course => course.subject === subject);
-        displayCourses(filteredCourses);
-    }
-}
+// Event listeners for filtering courses
+document.getElementById("filter-all").addEventListener("click", () => displayCourses('all'));
+document.getElementById("filter-cse").addEventListener("click", () => displayCourses('CSE'));
+document.getElementById("filter-wdd").addEventListener("click", () => displayCourses('WDD'));
 
-// Event listeners for filter buttons
-document.getElementById('show-all').addEventListener('click', () => filterCourses('all'));
-document.getElementById('show-cse').addEventListener('click', () => filterCourses('CSE'));
-document.getElementById('show-wdd').addEventListener('click', () => filterCourses('WDD'));
+// Display current year and last modified date in the footer
+document.addEventListener("DOMContentLoaded", function () {
+    const currentYear = new Date().getFullYear();
+    document.getElementById("current-year").textContent = currentYear;
 
-// Initial display of all courses
-document.addEventListener('DOMContentLoaded', () => {
-    displayCourses();
-
-    // Set current year in footer
-    document.getElementById('currentyear').textContent = new Date().getFullYear();
-
-    // Set last modified date
-    document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
+    const lastModified = document.lastModified;
+    document.getElementById("last-modified").textContent = lastModified;
 });
+
+// Responsive menu functionality
+document.getElementById("hamburger").addEventListener("click", function() {
+    const nav = document.querySelector("nav");
+    nav.style.display = nav.style.display === "block" ? "none" : "block";
+});
+
+// Initial display of courses
+displayCourses('all');
