@@ -1,58 +1,71 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Course home page for Tinny B. Mosimanyana, showcasing the Web and Computer Programming certificate, including course list and total credits.">
+    <meta name="description" content="Course home page for Tinny B. Mosimanyana, showcasing the Web and Computer Programming certificate.">
     <meta name="author" content="Tinny B. Mosimanyana">
-    <title>Web and Computer Programming Certificate - Tinny B. Mosimanyana</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>Web and Computer Programming Certificate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script defer src="scripts.js"></script>
 </head>
 <body>
     <header>
-        <h1>Web and Computer Programming Certificate</h1>
-        <div class="profile">
-            <img src="images/profile-pic.jpeg" alt="Profile Picture">
+        <div class="header-container">
+            <img src="images/profile-pic.jpg" alt="Profile Picture" class="profile-img">
+            <h1>Tinny B. Mosimanyana</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">Chamber</a></li>
+                    <li><a href="#">GitHub Profile</a></li>
+                    <li><a href="#">LinkedIn</a></li>
+                </ul>
+            </nav>
         </div>
-        <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
-        <nav class="navbar">
-            <ul class="nav-menu">
-                <li><a href="#" class="nav-link">Home</a></li>
-                <li><a href="#" class="nav-link">Courses</a></li>
-                <li><a href="#" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
-        <section id="filter-section">
-            <button class="filter-button" onclick="filterCourses('all')">Show All</button>
-            <button class="filter-button" onclick="filterCourses('CSE')">Show CSE Courses</button>
-            <button class="filter-button" onclick="filterCourses('WDD')">Show WDD Courses</button>
+        <section class="content-section">
+            <div class="course-work">
+                <h2>Course Work</h2>
+                <ul>
+                    <!-- Dynamically generated course work -->
+                </ul>
+            </div>
+            <div class="location">
+                <h2>Gaborone, Botswana</h2>
+                <img src="images/baobab-trees.jpg" alt="Baobab Trees" class="location-img">
+            </div>
         </section>
 
-        <section id="courses-section">
-            <h2>Courses</h2>
-            <div id="course-list"></div>
-        </section>
-
-        <section id="credits-section">
-            <div class="total-credits">
-                Total Credits: <span id="total-credits">0</span>
+        <section class="certificate-section">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter-buttons">
+                <button onclick="filterCourses('all')">All</button>
+                <button onclick="filterCourses('CSE')">CSE</button>
+                <button onclick="filterCourses('WDD')">WDD</button>
+            </div>
+            <div class="course-list">
+                <div class="course-item">CSE 110</div>
+                <div class="course-item">WDD 130</div>
+                <div class="course-item">CSE 111</div>
+                <div class="course-item">CSE 210</div>
+                <div class="course-item">WDD 131</div>
+                <div class="course-item">WDD 231</div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Copyright &copy; <span id="current-year"></span></p>
-        <p>Last modified: <span id="last-modified-date"></span></p>
-        <img src="images/footer-logo.jpeg" alt="Footer Logo">
+        <div class="footer-left">
+            <p>&copy; 2025 Tinny B. Mosimanyana | Gaborone, Botswana</p>
+        </div>
+        <div class="footer-right">
+            <img src="images/flag.png" alt="Botswana Flag" class="flag-img">
+            <p>Last Updated: <span id="last-update">01/01/1970 00:00:00</span></p>
+        </div>
     </footer>
-
-    <div class="spinner" id="loading-spinner"></div>
+    <script src="scripts.js"></script>
 </body>
 </html>
