@@ -20,7 +20,7 @@
     <header>
         <div class="profile">
             <img src="images/profile.jpeg" alt="Profile Picture" class="profile-pic">
-            <h1>Web and Computer Programming Certificate Courses</h1>
+            <h1>Tinny Bothepha Mosimanyana - Web and Computer Programming Certificate Courses</h1>
             <div class="hamburger" id="hamburger">&#9776;</div>
         </div>
         <nav>
@@ -64,7 +64,14 @@
     </footer>
 
     <script>
-        // JavaScript for dynamic content and functionality
+        // Course data (example data structure)
+        const courses = [
+            { title: "Introduction to Programming", code: "CSE101", credits: 3, type: "CSE" },
+            { title: "Web Development Fundamentals", code: "WDD201", credits: 4, type: "WDD" },
+            { title: "Data Structures", code: "CSE202", credits: 3, type: "CSE" },
+            { title: "Responsive Web Design", code: "WDD301", credits: 4, type: "WDD" }
+        ];
+
         document.addEventListener("DOMContentLoaded", function () {
             const currentYear = new Date().getFullYear();
             document.getElementById("current-year").textContent = currentYear;
@@ -72,8 +79,30 @@
             const lastModified = document.lastModified;
             document.getElementById("last-modified").textContent = lastModified;
 
-            // Add your course data and dynamic functions here
+            displayCourses(courses);
+            calculateTotalCredits(courses);
+
+            document.getElementById("filter-all").addEventListener("click", () => displayCourses(courses));
+            document.getElementById("filter-cse").addEventListener("click", () => displayCourses(courses.filter(course => course.type === "CSE")));
+            document.getElementById("filter-wdd").addEventListener("click", () => displayCourses(courses.filter(course => course.type === "WDD")));
         });
+
+        function displayCourses(courseArray) {
+            const courseListDiv = document.getElementById("course-list");
+            courseListDiv.innerHTML = ''; // Clear previous courses
+
+            courseArray.forEach(course => {
+                const courseItem = document.createElement("div");
+                courseItem.className = "course-item";
+                courseItem.innerHTML = `<h3>${course.title} (${course.code})</h3><p>Credits: ${course.credits}</p>`;
+                courseListDiv.appendChild(courseItem);
+            });
+        }
+
+        function calculateTotalCredits(courseArray) {
+            const totalCredits = courseArray.reduce((sum, course) => sum + course.credits, 0);
+            document.getElementById("total-credits").textContent = `Total Credits: ${totalCredits}`;
+        }
     </script>
 </body>
 </html>
