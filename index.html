@@ -1,69 +1,68 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web and Computer Programming Certificate Courses - Tinny Bothepha Mosimanyana</title>
-    <meta name="description" content="Explore the Web and Computer Programming Certificate courses by Tinny Bothepha Mosimanyana, featuring course details and resources.">
-    <meta name="author" content="Tinny Mosimanyana">
-    
-    <!-- Preconnect for Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Home Page</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="profile">
-            <img src="images/profile.jpeg" alt="Profile Picture" class="profile-pic">
-            <h1>Tinny Bothepha Mosimanyana - Web and Computer Programming Certificate Courses</h1>
-            <div class="hamburger" id="hamburger">&#9776;</div>
-        </div>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Chamber</a>
-            <a href="#">Courses</a>
-            <a href="#">Resources</a>
-            <a href="https://github.com/" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
-        </nav>
-    </header>
+  <!-- Header Section -->
+  <header>
+    <div class="profile">
+      <img src="path/to/profile.jpg" alt="Tinny B. Mosimanyana Profile Image">
+      <h1>Tinny B. Mosimanyana</h1>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Chamber</a></li>
+        <li><a href="#">GitHub Profile</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+      <div class="hamburger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
 
-    <main>
-        <section class="course-work">
-            <h2>Course Work</h2>
-            <button id="course-work-btn">Course Work</button>
-            <div class="dots">...</div>
-        </section>
+  <!-- Main Content Area -->
+  <main>
+    <section class="course-work">
+      <h2>Course Work</h2>
+      <ul id="course-list">
+        <!-- Course work will be dynamically populated here -->
+      </ul>
+    </section>
 
-        <section class="location">
-            <h2>Location</h2>
-            <img src="images/morula.jpg" alt="Morula Trees" class="location-img">
-            <p>Location: Gaborone, Botswana</p>
-        </section>
+    <section class="location">
+      <h2>Gaborone, Botswana</h2>
+      <img src="path/to/morula-tree.jpg" alt="Morula Tree in Gaborone">
+    </section>
+  </main>
 
-        <section class="certificate" id="certificate">
-            <h2>Web and Computer Programming Certificate</h2>
-            <div class="filter">
-                <button id="filter-all">All Courses</button>
-                <button id="filter-cse">CSE Courses</button>
-                <button id="filter-wdd">WDD Courses</button>
-                <button id="sort-credits">Sort by Credits</button>
-            </div>
-            <div id="course-list" class="course-list"></div>
-            <p id="total-credits"></p>
-        </section>
-    </main>
+  <!-- Web and Computer Programming Certificate Section -->
+  <section class="certificate">
+    <h2>Web and Computer Programming Certificate</h2>
+    <div class="filters">
+      <button id="all">All</button>
+      <button id="cse">CSE</button>
+      <button id="wdd">WDD</button>
+    </div>
+    <div id="courses">
+      <!-- Courses will be dynamically populated here -->
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; <span id="current-year"></span> Tinny Bothepha Mosimanyana, Botswana.</p>
-        <p id="last-modified"></p>
-        <img src="images/flag.png" alt="Flag" class="footer-flag">
-    </footer>
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Tinny B. Mosimanyana</p>
+    <p>Location: Gaborone, Botswana</p>
+    <p id="last-updated"></p>
+  </footer>
+
+  <script src="scripts.js"></script>
 </body>
 </html>
-
