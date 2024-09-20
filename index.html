@@ -1,21 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Home Page - Tinny Bothepha Mosimanyana</title>
-    <meta name="description" content="Course home page for Tinny Mosimanyana, showcasing the Web and Computer Programming Certificate courses and related information.">
+    <title>Web and Computer Programming Certificate Courses - Tinny Bothepha Mosimanyana</title>
+    <meta name="description" content="Explore the Web and Computer Programming Certificate courses by Tinny Bothepha Mosimanyana, featuring course details and resources.">
     <meta name="author" content="Tinny Mosimanyana">
+    
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
 <body>
     <header>
         <div class="profile">
             <img src="images/profile.jpeg" alt="Profile Picture" class="profile-pic">
-            <h1 class="name">Tinny Bothepha Mosimanyana</h1>
+            <h1>Web and Computer Programming Certificate Courses</h1>
             <div class="hamburger" id="hamburger">&#9776;</div>
         </div>
         <nav>
@@ -57,5 +62,18 @@
         <p id="last-modified"></p>
         <img src="images/flag.png" alt="Flag" class="footer-flag">
     </footer>
+
+    <script>
+        // JavaScript for dynamic content and functionality
+        document.addEventListener("DOMContentLoaded", function () {
+            const currentYear = new Date().getFullYear();
+            document.getElementById("current-year").textContent = currentYear;
+
+            const lastModified = document.lastModified;
+            document.getElementById("last-modified").textContent = lastModified;
+
+            // Add your course data and dynamic functions here
+        });
+    </script>
 </body>
 </html>
