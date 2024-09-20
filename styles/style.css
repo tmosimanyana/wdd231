@@ -1,5 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 header {
@@ -15,6 +17,27 @@ header {
     align-items: center;
 }
 
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+nav {
+    display: none; /* Hide by default for mobile */
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.filter {
+    margin-bottom: 20px;
+}
+
 .course-card {
     border: 2px solid gray; /* Default border color */
     padding: 10px;
@@ -25,21 +48,54 @@ header {
     border-color: green; /* Completed courses */
 }
 
-.filter {
-    margin-bottom: 20px;
+button {
+    margin: 5px;
 }
 
-nav {
-    display: none; /* Hide by default for mobile */
-}
+/* Media Queries */
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        align-items: center;
+    }
 
-@media (min-width: 600px) {
+    .hamburger {
+        display: block; /* Show hamburger icon on mobile */
+    }
+
     nav {
-        display: block; /* Show on larger screens */
+        display: block; /* Show navigation on mobile */
+        background-color: #005f70; /* Darker teal for nav */
+        padding: 10px;
+    }
+
+    nav a {
+        display: block; /* Stack links vertically */
+        padding: 10px;
+    }
+
+    .course-card {
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
     }
 }
 
-.hamburger {
-    cursor: pointer;
-    font-size: 24px;
+@media (max-width: 480px) {
+    header {
+        padding: 15px;
+    }
+
+    .profile-pic {
+        width: 80px;
+        height: 80px;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
 }

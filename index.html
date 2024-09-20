@@ -8,7 +8,6 @@
     <meta name="author" content="Tinny Mosimanyana">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
 </head>
@@ -28,13 +27,8 @@
     <main>
         <section class="course-work">
             <h2>Course Work</h2>
-            <div class="filter">
-                <button id="filter-all">All</button>
-                <button id="filter-cse">CSE</button>
-                <button id="filter-wdd">WDD</button>
-            </div>
-            <div id="course-list" class="course-list"></div>
-            <p id="total-credits"></p>
+            <button id="course-work-btn">Course Work</button>
+            <div class="dots">...</div>
         </section>
 
         <section class="location">
@@ -45,6 +39,15 @@
 
         <section class="certificate" id="certificate">
             <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter">
+                <button id="filter-all">All Courses</button>
+                <button id="filter-cse">CSE Courses</button>
+                <button id="filter-wdd">WDD Courses</button>
+                <button id="sort-credits">Sort by Credits</button>
+            </div>
+            <div id="course-list" class="course-list"></div>
+            <p id="total-credits"></p>
+            <button id="add-course-btn">Add New Course</button>
         </section>
     </main>
 
