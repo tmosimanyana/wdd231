@@ -1,3 +1,4 @@
+/* General Styles */
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -75,8 +76,10 @@ button {
     width: 300px;
 }
 
+/* Style for completed courses */
 .completed-course {
-    background-color: #e0f7fa;
+    background-color: #d0f4de;
+    border-color: #4caf50;
 }
 
 /* Footer */

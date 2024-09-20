@@ -1,4 +1,4 @@
-// Array of course objects
+// Array of course objects (updated with completed status)
 const courses = [
     {
         subject: 'CSE',
@@ -6,7 +6,7 @@ const courses = [
         title: 'Introduction to Programming',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course will introduce students to programming. It will introduce the building blocks of programming languages (variables, decisions, calculations, loops, array, and input/output) and use them to solve problems.',
+        description: 'This course will introduce students to programming...',
         technology: ['Python'],
         completed: true
     },
@@ -16,7 +16,7 @@ const courses = [
         title: 'Web Fundamentals',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course introduces students to the World Wide Web and to careers in web site design and development...',
+        description: 'This course introduces students to the World Wide Web...',
         technology: ['HTML', 'CSS'],
         completed: true
     },
@@ -26,9 +26,9 @@ const courses = [
         title: 'Programming with Functions',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'CSE 111 students become more organized, efficient...',
+        description: 'This course focuses on organized and efficient programming...',
         technology: ['Python'],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -36,7 +36,7 @@ const courses = [
         title: 'Programming with Classes',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course will introduce the notion of classes and objects...',
+        description: 'This course introduces the notion of classes and objects...',
         technology: ['C#'],
         completed: false
     },
@@ -73,7 +73,7 @@ function populateCourses(filter = 'All') {
         const courseBox = document.createElement('div');
         courseBox.className = 'course-box';
 
-        // Add completed styling if course is completed
+        // Add different styling for completed courses
         if (course.completed) {
             courseBox.classList.add('completed-course');
         }
@@ -89,18 +89,18 @@ function populateCourses(filter = 'All') {
     });
 }
 
-// Filter courses
+// Filter courses based on the subject
 function filterCourses(filter) {
     populateCourses(filter);
 }
 
-// Calculate total credits
-function totalCredits() {
-    const total = courses.reduce((acc, course) => acc + course.credits, 0);
-    document.getElementById('total-credits').textContent = `Total Credits: ${total}`;
+// Calculate and display total credits
+function displayTotalCredits() {
+    const totalCredits = courses.reduce((sum, course) => sum + course.credits, 0);
+    document.getElementById('total-credits').textContent = `Total Credits: ${totalCredits}`;
 }
 
-// Footer: current year and last modified date
+// Footer: Display current year and last modified date
 function updateFooter() {
     const currentYear = new Date().getFullYear();
     document.getElementById('footer-year').textContent = `© ${currentYear} Tinny B. Mosimanyana`;
@@ -110,7 +110,7 @@ function updateFooter() {
 // Initialize page
 window.onload = function() {
     populateCourses(); // Populate all courses by default
-    totalCredits(); // Display total credits
+    displayTotalCredits(); // Display total credits
     updateFooter(); // Update footer with current year and last modified
 };
 
