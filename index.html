@@ -3,69 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Course home page for Tinny B. Mosimanyana, showcasing the Web and Computer Programming certificate.">
-    <meta name="author" content="Tinny B. Mosimanyana">
-    <title>Web and Computer Programming Certificate</title>
+    <title>Course Home Page</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <div class="header-container">
-            <img src="images/profile-pic.jpg" alt="Profile Picture" class="profile-img">
-            <h1>Tinny B. Mosimanyana</h1>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#" class="active">Home</a></li>
-                    <li><a href="#">Chamber</a></li>
-                    <li><a href="#">GitHub Profile</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                </ul>
-            </nav>
+        <div class="profile">
+            <img src="images/profile.jpg" alt="Profile Picture" class="profile-pic">
+            <h1 class="name">Tinny Mosimanyana</h1>
+            <div class="hamburger" id="hamburger">&#9776;</div>
         </div>
     </header>
 
-    <main>
-        <section class="content-section">
-            <div class="course-work">
-                <h2>Course Work</h2>
-                <ul>
-                    <!-- Dynamically generated course work -->
-                </ul>
-            </div>
-            <div class="location">
-                <h2>Gaborone, Botswana</h2>
-                <img src="images/baobab-trees.jpg" alt="Baobab Trees" class="location-img">
-            </div>
-        </section>
+    <section class="course-work">
+        <button id="course-work-btn">Course Work</button>
+        <div class="dots">...</div>
+    </section>
 
-        <section class="certificate-section">
-            <h2>Web and Computer Programming Certificate</h2>
-            <div class="filter-buttons">
-                <button onclick="filterCourses('all')">All</button>
-                <button onclick="filterCourses('CSE')">CSE</button>
-                <button onclick="filterCourses('WDD')">WDD</button>
-            </div>
-            <div class="course-list">
-                <div class="course-item">CSE 110</div>
-                <div class="course-item">WDD 130</div>
-                <div class="course-item">CSE 111</div>
-                <div class="course-item">CSE 210</div>
-                <div class="course-item">WDD 131</div>
-                <div class="course-item">WDD 231</div>
-            </div>
-        </section>
-    </main>
+    <section class="location">
+        <img src="images/baobab.jpg" alt="Baobab Trees" class="location-img">
+        <p>Location: Gaborone, Botswana</p>
+    </section>
+
+    <section class="certificate">
+        <h2>Web and Computer Programming Certificate</h2>
+        <div class="filter">
+            <button onclick="filterCourses('all')">All</button>
+            <button onclick="filterCourses('CSE')">CSE</button>
+            <button onclick="filterCourses('WDD')">WDD</button>
+        </div>
+        <div id="course-list" class="course-list"></div>
+        <p id="total-credits"></p>
+    </section>
 
     <footer>
-        <div class="footer-left">
-            <p>&copy; 2025 Tinny B. Mosimanyana | Gaborone, Botswana</p>
-        </div>
-        <div class="footer-right">
-            <img src="images/flag.png" alt="Botswana Flag" class="flag-img">
-            <p>Last Updated: <span id="last-update">01/01/1970 00:00:00</span></p>
-        </div>
+        <p>&copy; <span id="current-year"></span> Tinny Mosimanyana</p>
+        <p>Last modified: <span id="last-modified"></span></p>
+        <img src="images/flag.png" alt="Flag" class="footer-flag">
     </footer>
-    <script src="scripts.js"></script>
 </body>
 </html>
