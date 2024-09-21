@@ -1,47 +1,88 @@
-// Get the current year for the footer  
-document.getElementById('currentyear').textContent = new Date().getFullYear();  
+// courses.js
+const courses = [
+    {
+        subject: 'CSE',
+        number: 110,
+        title: 'Introduction to Programming',
+        credits: 2,
+        completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 130,
+        title: 'Web Fundamentals',
+        credits: 2,
+        completed: false
+    },
+    {
+        subject: 'CSE',
+        number: 111,
+        title: 'Programming with Functions',
+        credits: 2,
+        completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 210,
+        title: 'Programming with Classes',
+        credits: 2,
+        completed: false
+    },
+    {
+        subject: 'WDD',
+        number: 131,
+        title: 'Dynamic Web Fundamentals',
+        credits: 2,
+        completed: false
+    },
+    {
+        subject: 'WDD',
+        number: 231,
+        title: 'Frontend Web Development I',
+        credits: 2,
+        completed: true
+    }
+];
 
-// Get the last modified date for the footer  
-document.getElementById('lastModified').textContent = `Last updated: ${document.lastModified}`;  
+// Display Courses
+function displayCourses(filter) {
+    const courseList = document.getElementById('course-list');
+    courseList.innerHTML = ''; // Clear previous content
 
-// Course array (replace with actual course data)  
-const courses = [  
-    { name: 'CSE 110', credits: 3, completed: true },  
-    { name: 'WDD 130', credits: 3, completed: false },  
-    { name: 'CSE 111', credits: 3, completed: true },  
-    { name: 'CSE 210', credits: 3, completed: false },  
-];  
+    const filteredCourses = courses.filter(course => {
+        if (filter === 'All') return true;
+        return course.subject === filter;
+    });
 
-// Function to display courses  
-function displayCourses(filter) {  
-    const courseList = document.getElementById('course-list');  
-    courseList.innerHTML = ''; // Clear previous content  
+    filteredCourses.forEach(course => {
+        const courseCard = document.createElement('div');
+        courseCard.className = 'course-card';
+        courseCard.textContent = `${course.subject} ${course.number} - ${course.title} - ${course.credits} credits`;
+        if (course.completed) {
+            courseCard.classList.add('completed');
+        }
+        courseList.appendChild(courseCard);
+    });
 
-    const filteredCourses = courses.filter(course => {  
-        if (filter === 'All') return true;  
-        return course.name.startsWith(filter);  
-    });  
+    // Calculate total credits
+    const totalCredits = filteredCourses.reduce((total, course) => total + course.credits, 0);
+    const totalCreditsElement = document.createElement('div');
+    totalCreditsElement.textContent = `Total Credits: ${totalCredits}`;
+    courseList.appendChild(totalCreditsElement);
+}
 
-    filteredCourses.forEach(course => {  
-        const courseCard = document.createElement('div');  
-        courseCard.className = 'course-card';  
-        courseCard.textContent = `${course.name} - ${course.credits} credits`;  
-        if (course.completed) {  
-            courseCard.classList.add('completed');  
-        }  
-        courseList.appendChild(courseCard);  
-    });  
-}  
+// Event Listeners for Filter Buttons
+document.addEventListener('DOMContentLoaded', () => {
+    displayCourses('All'); // Display all courses by default
 
-// Event listeners for filter buttons  
-document.addEventListener('DOMContentLoaded', () => {  
-    displayCourses('All'); // Display all courses by default  
+    const filterButtons = document.querySelectorAll('.filter-button');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            displayCourses(button.textContent);
+        });
+    });
 
-    // Add filter buttons  
-    const filterButtons = document.querySelectorAll('.filter-button');  
-    filterButtons.forEach(button => {  
-        button.addEventListener('click', () => {  
-            displayCourses(button.textContent);  
-        });  
-    });  
+    // Display current year and last modified date
+    document.getElementById('currentyear').textContent = new Date().getFullYear();
+    document.getElementById('lastModified').textContent = `Last updated: ${document.lastModified}`;
 });
