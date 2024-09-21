@@ -124,3 +124,12 @@ footer p {
         flex-direction: column;
     }
 }
+.completed-course {
+    background-color: #2E8B57;  /* Green for completed */
+    color: white;
+}
+
+.incomplete-course {
+    background-color: #8B4513;  /* Brown for incomplete */
+    color: white;
+}
