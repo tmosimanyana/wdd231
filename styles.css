@@ -1,0 +1,49 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+header {
+    background-color: teal;
+    padding: 10px;
+    color: white;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.main {
+    padding: 20px;
+}
+
+.course-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.course-card.completed {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+
+footer {
+    background-color: softgray;
+    padding: 10px;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+}
