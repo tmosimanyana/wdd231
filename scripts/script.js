@@ -13,68 +13,14 @@ yearElement.textContent = currentYear;
 const lastModifiedElement = document.querySelector('.last-modified');
 lastModifiedElement.textContent = document.lastModified;
 
-// Array of course objects
+// Array of course objects (updated completion status)
 const courses = [
-    {
-        subject: 'CSE',
-        number: 110,
-        title: 'Introduction to Programming',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course introduces programming basics.',
-        technology: ['Python'],
-        completed: true
-    },
-    {
-        subject: 'WDD',
-        number: 130,
-        title: 'Web Fundamentals',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'Introduces web design and development.',
-        technology: ['HTML', 'CSS'],
-        completed: false
-    },
-    {
-        subject: 'CSE',
-        number: 111,
-        title: 'Programming with Functions',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'Learn to write and test functions.',
-        technology: ['Python'],
-        completed: false
-    },
-    {
-        subject: 'CSE',
-        number: 210,
-        title: 'Programming with Classes',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'Introduces object-oriented programming concepts.',
-        technology: ['C#'],
-        completed: true
-    },
-    {
-        subject: 'WDD',
-        number: 131,
-        title: 'Dynamic Web Fundamentals',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'Create dynamic websites using JavaScript.',
-        technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: false
-    },
-    {
-        subject: 'WDD',
-        number: 231,
-        title: 'Frontend Web Development I',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'Focus on user experience and API usage.',
-        technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: false
-    }
+    { subject: 'CSE', number: 110, title: 'Introduction to Programming', credits: 2, completed: true },
+    { subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 2, completed: false },
+    { subject: 'CSE', number: 111, title: 'Programming with Functions', credits: 2, completed: true },
+    { subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 2, completed: true },
+    { subject: 'WDD', number: 131, title: 'Dynamic Web Fundamentals', credits: 2, completed: false },
+    { subject: 'WDD', number: 231, title: 'Frontend Web Development I', credits: 2, completed: false }
 ];
 
 // Function to dynamically display courses
@@ -85,14 +31,7 @@ function displayCourses(courseList) {
     courseList.forEach(course => {
         const courseButton = document.createElement('button');
         courseButton.textContent = `${course.subject} ${course.number} - ${course.title}`;
-        courseButton.title = course.description; // Tooltip for description
-
-        // Apply different style for completed courses
-        if (course.completed) {
-            courseButton.classList.add('completed-course');
-        } else {
-            courseButton.classList.add('incomplete-course');
-        }
+        courseButton.classList.add(course.completed ? 'completed-course' : 'incomplete-course');
 
         courseSection.appendChild(courseButton);
     });

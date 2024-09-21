@@ -3,17 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tinny B. Mosimanyana - Personal Website</title>
-    
-    <!-- Google Fonts -->
+    <title>Tinny B. Mosimanyana</title>
+    <meta name="description" content="Portfolio of Tinny B. Mosimanyana, showcasing coursework and projects in Web and Computer Programming.">
+    <meta name="keywords" content="Tinny Mosimanyana, Web Development, Computer Programming, Portfolio">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- Normalize CSS -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Defer JavaScript -->
-    <script src="js/script.js" defer></script>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.min.css">
+    <script src="scripts/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -28,11 +24,9 @@
                 <li><a href="#">GitHub Profile</a></li>
                 <li><a href="#">LinkedIn</a></li>
             </ul>
-            <!-- Hamburger Menu for Mobile -->
-            <button class="hamburger" aria-label="Toggle navigation">&#9776;</button>
+            <button class="hamburger">&#9776;</button>
         </nav>
     </header>
-
     <main>
         <section class="coursework">
             <h2>Course Work</h2>
@@ -42,13 +36,10 @@
                 <li>CSE 111 - Programming with Functions</li>
             </ul>
         </section>
-
         <section class="location">
-            <h2>Location</h2>
-            <p>Gaborone, Botswana</p>
+            <h2>Gaborone, Botswana</h2>
             <img src="images/morula.jpeg" alt="Morula Trees in Botswana">
         </section>
-
         <section class="certificate">
             <h2>Web and Computer Programming Certificate</h2>
             <div class="filters">
@@ -57,15 +48,9 @@
                 <button data-filter="WDD">WDD</button>
             </div>
             <div class="total-credits"></div>
-            <div class="course-buttons">
-                <button class="cse">CSE 110</button>
-                <button class="wdd">WDD 130</button>
-                <button class="cse">CSE 111</button>
-                <button class="wdd">WDD 131</button>
-            </div>
+            <div class="course-buttons"></div>
         </section>
     </main>
-
     <footer>
         <p>&copy; <span class="current-year"></span> 🌸 Tinny B. Mosimanyana 🌸 Botswana</p>
         <p>Last Update: <span class="last-modified"></span></p>
