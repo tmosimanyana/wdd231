@@ -1,93 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tinny B. Mosimanyana</title>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- Normalize CSS -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/style.css">
-
-    <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-    <!-- Defer JavaScript -->
-    <script src="scripts/script.js" defer></script>
-</head>
-
-<body>
-    <header>
-        <div class="profile">
-            <img src="images/profile-pic.jpg" alt="Profile Picture of Tinny B. Mosimanyana">
-            <h1>Tinny B. Mosimanyana</h1>
-        </div>
-        <nav>
-            <ul class="nav-menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
-            </ul>
-            <button class="hamburger">&#9776;</button>
-        </nav>
-    </header>
-
-    <main>
-        <section class="coursework">
-            <h2>Course Work</h2>
-            <div class="course-buttons"></div>
-            <div class="total-credits"></div>
-        </section>
-
-        <section class="location">
-            <h2>Gaborone, Botswana</h2>
-            <img src="images/morula.jpeg" alt="Morula Tree" style="width:100%;">
-        </section>
-    </main>
-
-    <footer>
-        <p>Last Modified: <span class="last-modified"></span></p>
-        <p>&copy; <span class="current-year"></span> Tinny B. Mosimanyana</p>
-    </footer>
-
-    <script>
-        // Code injected by live-server
-        if ('WebSocket' in window) {
-            (function () {
-                function refreshCSS() {
-                    var sheets = [].slice.call(document.getElementsByTagName("link"));
-                    var head = document.getElementsByTagName("head")[0];
-                    for (var i = 0; i < sheets.length; ++i) {
-                        var elem = sheets[i];
-                        var parent = elem.parentElement || head;
-                        parent.removeChild(elem);
-                        var rel = elem.rel;
-                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-                        }
-                        parent.appendChild(elem);
-                    }
-                }
-                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-                var address = protocol + window.location.host + window.location.pathname + '/ws';
-                var socket = new WebSocket(address);
-                socket.onmessage = function (msg) {
-                    if (msg.data === 'reload') window.location.reload();
-                    else if (msg.data === 'refreshcss') refreshCSS();
-                };
-                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-                    console.log('Live reload enabled.');
-                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-                }
-            })();
-        } else {
-            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-        }
-    </script>
-</body>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <meta name="description" content="Portfolio of Tinny B. Mosimanyana, showcasing my work and skills in web development.">  
+    <meta name="author" content="Tinny B. Mosimanyana">  
+    <link rel="stylesheet" href="styles.css">  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">  
+    <title>Tinny B. Mosimanyana</title>  
+    <script src="script.js" defer></script>  
+</head>  
+<body>  
+    <header>  
+        <h1>Tinny B. Mosimanyana</h1>  
+        <nav>  
+            <div class="hamburger" id="hamburger">&#9776;</div>  
+            <ul id="nav-links">  
+                <li><a href="#">Home</a></li>  
+                <li><a href="#">Chamber</a></li>  
+                <li><a href="#">GitHub Profile</a></li>  
+                <li><a href="#">LinkedIn</a></li>  
+            </ul>  
+        </nav>  
+    </header>  
+    
+    <main>  
+        <section class="course-work">  
+            <h2>Course Work</h2>  
+            <div id="course-list"></div>  
+            <div class="filter-buttons">  
+                <button id="all-courses">All</button>  
+                <button id="cse-courses">CSE</button>  
+                <button id="wdd-courses">WDD</button>  
+            </div>  
+        </section>  
+        
+        <section class="location">  
+            <h2>Gaborone, Botswana</h2>  
+            <img src="morula_trees.jpg" alt="Morula Trees">  
+        </section>  
+        
+        <section class="certificates">  
+            <h2>Web and Computer Programming Certificate</h2>  
+            <p>Total Credits Required: <span id="total-credits"></span></p>  
+        </section>  
+    </main>  
+    
+    <footer>  
+        <p>©<span id="currentyear"></span> Tinny B. Mosimanyana, Botswana</p>  
+        <p id="lastModified"></p>  
+    </footer>  
+</body>  
 </html>

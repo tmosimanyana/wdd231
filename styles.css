@@ -1,0 +1,125 @@
+body {  
+    font-family: 'Roboto', sans-serif;  
+    background-color: #f4f4f4;  
+    margin: 0;  
+    padding: 0;  
+}  
+
+header {  
+    background-color: #003366;  
+    color: white;  
+    padding: 10px 0;  
+    text-align: center;  
+    position: relative;  
+}  
+
+nav {  
+    display: flex;  
+    justify-content: space-between;  
+    align-items: center;  
+}  
+
+nav ul {  
+    list-style: none;  
+    padding: 0;  
+    display: flex;  
+}  
+
+nav ul li {  
+    margin: 0 15px;  
+}  
+
+nav a {  
+    color: white;  
+    text-decoration: none;  
+    transition: color 0.3s;  
+}  
+
+nav a:hover {  
+    color: #ffcc00;  
+}  
+
+.hamburger {  
+    display: none;  
+    font-size: 24px;  
+    cursor: pointer;  
+}  
+
+main {  
+    display: flex;  
+    justify-content: space-between;  
+    padding: 20px;  
+}  
+
+.course-work, .location, .certificates {  
+    background: white;  
+    padding: 20px;  
+    border-radius: 5px;  
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+    width: 30%;  
+}  
+
+.course-card {  
+    border: 1px solid #ddd;  
+    margin: 10px 0;  
+    padding: 10px;  
+    border-radius: 5px;  
+}  
+
+.completed {  
+    background-color: #8B4513;  
+    color: white;  
+}  
+
+.filter-buttons {  
+    margin-top: 10px;  
+}  
+
+button {  
+    margin: 5px;  
+    padding: 10px;  
+    background-color: #003366;  
+    color: white;  
+    border: none;  
+    border-radius: 5px;  
+    cursor: pointer;  
+}  
+
+button:hover {  
+    background-color: #00509e;  
+}  
+
+footer {  
+    text-align: center;  
+    padding: 10px 0;  
+    background-color: #003366;  
+    color: white;  
+}  
+
+@media (max-width: 768px) {  
+    nav ul {  
+        display: none; /* Hide links by default */  
+        flex-direction: column;  
+        position: absolute;  
+        top: 50px;  
+        left: 0;  
+        background-color: #003366;  
+        width: 100%;  
+    }  
+
+    nav ul.active {  
+        display: flex; /* Show links when active */  
+    }  
+
+    .hamburger {  
+        display: block; /* Show hamburger icon */  
+    }  
+
+    main {  
+        flex-direction: column; /* Stack sections vertically on small screens */  
+    }  
+
+    .course-work, .location, .certificates {  
+        width: 100%; /* Full width on small screens */  
+    }  
+}
