@@ -1,37 +1,60 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
     margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
 }
 
 header {
     text-align: center;
-    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #008080;
+    color: white;
+}
+
+nav button {
+    background-color: #004d4d;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background-color: #006666;
 }
 
 .course-list {
     display: flex;
-    flex-direction: column;
-    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
 }
 
-.course {
+.course-item {
     background-color: white;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
 }
 
 .completed {
-    background-color: #e0ffe0; /* Light green for completed courses */
+    background-color: #d1e7dd;
 }
 
-.filter-buttons {
-    margin: 20px 0;
+.credits {
+    text-align: center;
+    margin: 20px;
+    font-size: 1.2rem;
 }
 
 footer {
-    margin-top: 20px;
     text-align: center;
+    padding: 20px;
+    background-color: #004d4d;
+    color: white;
 }
