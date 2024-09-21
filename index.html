@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <title>Tinny B. Mosimanyana - Web and Computer Programming Certificate</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <title>Tinny B. Mosimanyana</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
 </head>
 <body>
     <header>
-        <div class="profile-header">
-            <img src="profile-picture.jpg" alt="Tinny B. Mosimanyana" class="profile pictures">
+        <div class="profile">
+            <img src="images/profile-pic.jpg" alt="Profile Picture of Tinny B. Mosimanyana">
             <h1>Tinny B. Mosimanyana</h1>
         </div>
         <nav>
@@ -26,45 +24,40 @@
     </header>
 
     <main>
-        <section class="course-info">
-            <div class="course-work">
-                <h2>Course Work</h2>
-                <ul>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </ul>
-            </div>
-            <div class="location-info">
-                <h2>Gaborone, Botswana</h2>
-                <img src="morula-trees.jpg" alt="morula trees" class="location-image">
-                <p>Morula Trees</p>
-            </div>
+        <section class="coursework">
+            <h2>Course Work</h2>
+            <ul>
+                <!-- Add coursework items -->
+                <li>CSE 110</li>
+                <li>WDD 130</li>
+                <li>CSE 111</li>
+            </ul>
         </section>
 
-        <section class="certificate-info">
+        <section class="location">
+            <h2>Gaborone, Botswana</h2>
+            <img src="images/morula.jpeg" alt="morula Trees">
+        </section>
+
+        <section class="certificate">
             <h2>Web and Computer Programming Certificate</h2>
-            <div class="filter-buttons">
-                <button id="all-courses">All</button>
-                <button id="cse-courses">CSE</button>
-                <button id="wdd-courses">WDD</button>
+            <div class="filters">
+                <button data-filter="all">All</button>
+                <button data-filter="CSE">CSE</button>
+                <button data-filter="WDD">WDD</button>
             </div>
-            <div class="course-grid">
-                <button class="course-btn">CSE 110</button>
-                <button class="course-btn">WDD 130</button>
-                <button class="course-btn">CSE 111</button>
-                <button class="course-btn">CSE 210</button>
-                <button class="course-btn">WDD 131</button>
-                <button class="course-btn">WDD 231</button>
+            <div class="course-buttons">
+                <button class="cse">CSE 110</button>
+                <button class="wdd">WDD 130</button>
+                <button class="cse">CSE 111</button>
+                <button class="wdd">WDD 131</button>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy;2025 <span class="footer-name">Tinny Bothepha Mosimanyana</span> 
-        <span class="footer-location">botswana</span></p>
+        <p>&copy; 2024 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana </p>
         <p>Last Update: 01/01/1970 12:00:00</p>
-        <img src="botswana-flag.png" alt="botswana flag" class="botswana-flag">
     </footer>
 </body>
 </html>
