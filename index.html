@@ -2,33 +2,55 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Course page for Tinny B. Mosimanyana">
+    <meta name="description" content="Course page for Tinny B. Mosimanyana, showcasing a list of courses in the Web and Computer Programming certificate.">
     <meta name="author" content="Tinny B. Mosimanyana">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course List</title>
+    
+    <title>Tinny B. Mosimanyana - Course List</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- External CSS -->
     <link rel="stylesheet" href="styles.css">
+    
+    <!-- External JavaScript -->
     <script defer src="scripts.js"></script>
 </head>
 <body>
     <header>
         <h1>Tinny B. Mosimanyana - Course List</h1>
         <nav>
-            <button id="show-all">All Courses</button>
-            <button id="filter-cse">Show CSE</button>
-            <button id="filter-wdd">Show WDD</button>
-            <button id="show-completed">Completed Courses</button>
+            <a href="#all-courses" id="show-all">All Courses</a>
+            <a href="#cse-courses" id="filter-cse">Show CSE</a>
+            <a href="#wdd-courses" id="filter-wdd">Show WDD</a>
+            <a href="#completed-courses" id="show-completed">Completed Courses</a>
         </nav>
     </header>
     
     <main>
-        <section class="course-list"></section>
-        <section class="credits">
+        <!-- Section 1: Introduction -->
+        <section id="introduction">
+            <h2>About This Course Page</h2>
+            <p>Welcome to the course list of Tinny B. Mosimanyana. This page displays courses related to the Web and Computer Programming certificate.</p>
+        </section>
+        
+        <!-- Section 2: Course List -->
+        <section id="all-courses" class="course-list"></section>
+        
+        <!-- Section 3: Total Credits -->
+        <section id="credits" class="credits">
+            <h2>Credits Summary</h2>
             <p id="total-credits">Total Credits: 0</p>
         </section>
     </main>
     
     <footer>
         <p>&copy; <span id="current-year"></span> Tinny B. Mosimanyana</p>
+        <p>Last Updated: <span id="last-modified"></span></p>
+        <p><a href="https://www.linkedin.com/in/tinny89" target="_blank">Connect on LinkedIn</a></p>
     </footer>
 </body>
 </html>
