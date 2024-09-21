@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+body{font-family:'Open Sans',Arial,sans-serif;margin:0;padding:0;background-color:#f0f0f0;color:#333;}
+header{background-color:#002E5B;color:white;padding:20px;display:flex;justify-content:space-between;align-items:center;}
+.profile img{border-radius:50%;width:80px;}
+nav ul{list-style:none;padding:0;margin:0;display:flex;justify-content:center;background-color:#333;}
+nav ul li{margin:0 10px;}
+nav ul li a{color:white;text-decoration:none;padding:10px;}
+nav ul li a:hover{background-color:#555;border-radius:5px;}
+.hamburger{display:none;background:none;border:none;color:white;font-size:28px;cursor:pointer;}
+main{display:grid;grid-template-columns:1fr 1fr;gap:20px;padding:20px;}
+section{background-color:white;padding:20px;box-shadow:0 0 10px rgba(0,0,0,0.1);}
+h2{background-color:#002E5B;color:white;padding:10px;font-weight:600;}
+.course-card{background-color:#8B4513;color:white;padding:10px;margin:5px;border-radius:5px;}
+.completed-course{background-color:#2E8B57;color:white;}
+footer{background-color:#002E5B;color:white;text-align:center;padding:20px;}
+footer p{margin:5px;}
+@media screen and (max-width:768px){
+    main{grid-template-columns:1fr;}
+    nav ul{flex-direction:column;display:none;}
+    .hamburger{display:inline-block;}
+    nav ul.show{display:flex;flex-direction:column;}
+}
