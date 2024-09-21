@@ -4,7 +4,7 @@ document.getElementById('year').textContent = new Date().getFullYear();
 // Set Last Modified Date
 document.getElementById('last-modified').textContent = document.lastModified;
 
-// Array of courses (this can be moved to an external JSON file and fetched if needed)
+// Array of courses
 const courses = [
     {
         subject: 'CSE',
