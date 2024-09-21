@@ -1,54 +1,70 @@
-<!DOCTYPE html>  
-<html lang="en">  
-<head>  
-    <meta charset="UTF-8">  
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-    <meta name="description" content="Tinny B. Mosimanyana's personal webpage">  
-    <meta name="author" content="Tinny B. Mosimanyana">  
-    <title>Tinny Bothepha Mosimanyana</title>  
-    <link rel="stylesheet" href="css/styles.css">  
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">  
-    <script src="js/scripts.js" defer></script>  
-</head>  
-<body>  
-    <header>  
-        <h1>Tinny Bothepha Mosimanyana</h1>  
-        <img src="images/profile-pic.jpg" alt="Profile picture of Tinny B. Mosimanyana" class="profile-pic">  
-        <nav>  
-            <ul>  
-                <li><a href="#">Home</a></li>  
-                <li><a href="#">Chamber</a></li>  
-                <li><a href="#">GitHub Profile</a></li>  
-                <li><a href="#">LinkedIn</a></li>  
-            </ul>  
-        </nav>  
-    </header>  
+<!DOCTYPE html>
+<html lang="en">
 
-    <main>  
-        <section>  
-            <h2>About Me</h2>  
-            <p>Welcome to my personal website!</p>  
-        </section>  
+<head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Tinny B. Mosimanyana's personal webpage">
+        <meta name="author" content="Tinny B. Mosimanyana">
+        <title>Tinny B. Mosimanyana</title>
+        
+        <!-- Preconnect for Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        
+        <!-- Link to normalize.css -->
+        <link rel="stylesheet" href="style/normalize.css">  
+        <link rel="stylesheet" href="css/styles.css">
+        
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+        
+        <script src="js/scripts.js" defer></script>
+    </head>
+    
+</head>
 
-        <section>  
-            <h2>Course Work</h2>  
-            <div>  
-                <button class="filter-button">All</button>  
-                <button class="filter-button">CSE</button>  
-                <button class="filter-button">WDD</button>  
-            </div>  
-            <div id="course-list"></div>  
-        </section>  
+<body>
+    <header>
+        <h1>Tinny B. Mosimanyana</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
 
-        <section>  
-            <h2>Morula Tree</h2>  
-            <img src="images/morula_tree.jpg" alt="Morula Tree">  
-        </section>  
-    </main>  
+    <main>
+        <section>
+            <h2>About Me</h2>
+            <p>Welcome to my personal website!</p>
+        </section>
 
-    <footer>  
-        <p>©<span id="currentyear"></span> Tinny B. Mosimanyana | Gaborone, Botswana</p>  
-        <p id="lastModified"></p>  
-    </footer>  
-</body>  
+        <section>
+            <h2>Course Work</h2>
+            <div>
+                <button class="filter-button">All</button>
+                <button class="filter-button">CSE</button>
+                <button class="filter-button">WDD</button>
+            </div>
+            <div id="course-list"></div>
+            <div id="total-credits"></div>
+        </section>
+
+        <section>
+            <h2>My Image</h2>
+            <img src="images/morula_tree.jpg" alt="Morula Tree">
+        </section>
+    </main>
+
+    <footer>
+        <p>©<span id="currentyear"></span> Tinny B. Mosimanyana | Gaborone, Botswana</p>
+        <p id="lastModified"></p>
+    </footer>
+</body>
+
 </html>
