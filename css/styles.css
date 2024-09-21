@@ -1,3 +1,9 @@
+.profile-pic {
+    width: 150px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 50%; /* Makes the image circular */
+    margin: 10px 0; /* Spacing around the image */
+}
 body {  
     font-family: 'Roboto', sans-serif;  
     margin: 0;  
