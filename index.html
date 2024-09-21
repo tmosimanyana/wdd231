@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to Tinny B. Mosimanyana's course home page. Explore courses in Web and Computer Programming, find out about completed courses, and check your total credits.">
+    <meta name="author" content="Tinny B. Mosimanyana">
     <title>Tinny B. Mosimanyana's Course Home</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
@@ -13,15 +15,29 @@
         <p>Location: Gaborone, Botswana</p>
     </header>
 
-    <div id="total-credits">Total Credits: 0</div>
+    <nav>
+        <div class="filter-buttons">
+            <button id="filter-all">All Courses</button>
+            <button id="filter-cse">CSE Courses</button>
+            <button id="filter-wdd">WDD Courses</button>
+        </div>
+    </nav>
 
-    <div class="filter-buttons">
-        <button id="filter-all">All Courses</button>
-        <button id="filter-cse">CSE Courses</button>
-        <button id="filter-wdd">WDD Courses</button>
-    </div>
+    <main>
+        <div id="total-credits">Total Credits: 0</div>
 
-    <section class="course-list"></section>
+        <section class="course-list"></section>
+        
+        <section>
+            <h2>Course Information</h2>
+            <p>This section provides detailed information about the courses available.</p>
+        </section>
+
+        <section>
+            <h2>Completed Courses</h2>
+            <p>This section allows users to track their completed courses.</p>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; <span id="current-year"></span> Tinny Bothepha Mosimanyana</p>
