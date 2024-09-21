@@ -24,6 +24,10 @@ header {
     width: 80px;
 }
 
+nav {
+    display: flex;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -41,6 +45,7 @@ nav ul li a {
     color: white;
     text-decoration: none;
     padding: 10px;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
 }
 
 nav ul li a:hover {
@@ -60,7 +65,7 @@ nav ul li a:hover {
 /* Main Content */
 main {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
     gap: 20px;
     padding: 20px;
 }
@@ -78,6 +83,7 @@ h2 {
     font-weight: 600;
 }
 
+/* Course Buttons and Filters */
 .course-buttons button, .filters button {
     background-color: #8B4513;
     color: white;
@@ -85,12 +91,14 @@ h2 {
     padding: 10px;
     margin: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth hover transition */
 }
 
 .course-buttons button:hover, .filters button:hover {
     background-color: #A0522D;
 }
 
+/* Footer */
 footer {
     background-color: #002E5B;
     color: white;
@@ -106,10 +114,6 @@ footer p {
 
 /* Mobile View */
 @media screen and (max-width: 768px) {
-    main {
-        grid-template-columns: 1fr;
-    }
-
     nav ul {
         flex-direction: column;
         display: none;
@@ -123,7 +127,13 @@ footer p {
         display: flex;
         flex-direction: column;
     }
+
+    main {
+        grid-template-columns: 1fr; /* Single column layout for mobile */
+    }
 }
+
+/* Completed and Incomplete Course Styles */
 .completed-course {
     background-color: #2E8B57;  /* Green for completed */
     color: white;
@@ -132,4 +142,9 @@ footer p {
 .incomplete-course {
     background-color: #8B4513;  /* Brown for incomplete */
     color: white;
+}
+
+/* Wayfinding styles */
+nav ul li a.active {
+    border-bottom: 2px solid #A0522D; /* Underline for active link */
 }
