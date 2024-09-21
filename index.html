@@ -1,64 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="A comprehensive course list for Web and Computer Programming Certificate.">
-    <meta name="author" content="Tinny B. Mosimanyana">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tinny B. Mosimanyana - Course List</title>
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="description" content="A comprehensive course list for the Web and Computer Programming Certificate.">  
+    <meta name="author" content="Tinny B. Mosimanyana">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Tinny B. Mosimanyana - Course List</title>  
 
-    <!-- Corrected Google Fonts with Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <!-- Corrected Google Fonts with Preconnect -->  
+    <link rel="preconnect" href="https://fonts.googleapis.com">  
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>  
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">  
 
-    <!-- Correct Path for External CSS -->
-    <link rel="stylesheet" href="./css/styles.css">
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <img src="images/profile-pic.jpg" alt="Tinny B. Mosimanyana" class="profile-pic">
-        <h1>Tinny B. Mosimanyana - Course List</h1>
-        <nav>
-            <ul>
-                <li><a href="#" onclick="filterCourses('all')">All Courses</a></li>
-                <li><a href="#" onclick="filterCourses('CSE')">CSE Courses</a></li>
-                <li><a href="#" onclick="filterCourses('WDD')">WDD Courses</a></li>
-                <li><a href="#" onclick="filterCourses('completed')">Completed Courses</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!-- Correct Path for External CSS -->  
+    <link rel="stylesheet" href="./css/styles.css">  
+</head>  
+<body>  
+    <!-- Header -->  
+    <header>  
+        <img src="images/profile-pic.jpg" alt="Profile picture of Tinny B. Mosimanyana" class="profile-pic">  
+        <h1>Tinny B. Mosimanyana - Course List</h1>  
+        <nav role="navigation">  
+            <ul>  
+                <li><a href="#" onclick="filterCourses('all'); event.preventDefault();">All Courses</a></li>  
+                <li><a href="#" onclick="filterCourses('CSE'); event.preventDefault();">CSE Courses</a></li>  
+                <li><a href="#" onclick="filterCourses('WDD'); event.preventDefault();">WDD Courses</a></li>  
+                <li><a href="#" onclick="filterCourses('completed'); event.preventDefault();">Completed Courses</a></li>  
+            </ul>  
+        </nav>  
+    </header>  
 
-    <!-- Main Content -->
-    <main>
-        <!-- Section 1: Introduction -->
-        <section>
-            <h2>Welcome to the Course List</h2>
-            <p>This page lists the courses for the Web and Computer Programming Certificate program. Use the navigation above to filter courses by category.</p>
-        </section>
+    <!-- Main Content -->  
+    <main>  
+        <!-- Section 1: Introduction -->  
+        <section>  
+            <h2>Welcome to the Course List</h2>  
+            <p>This page lists the courses for the Web and Computer Programming Certificate program. Use the navigation above to filter courses by category.</p>  
+        </section>  
 
-        <!-- Section 2: Course List -->
-        <section>
-            <h2>Courses for Web and Computer Programming Certificate</h2>
-            <div id="course-list"></div>
-            <p id="total-credits">Total Credits: 0</p>
-        </section>
+        <!-- Section 2: Course List -->  
+        <section>  
+            <h2>Courses for Web and Computer Programming Certificate</h2>  
+            <div id="course-list"></div>  
+            <p id="total-credits">Total Credits: 0</p>  
+        </section>  
 
-        <!-- Section 3: Additional Information -->
-        <section>
-            <h2>Program Overview</h2>
-            <p>This certificate covers various aspects of web development, programming, and database management to prepare students for a career in technology.</p>
-        </section>
-    </main>
+        <!-- Section 3: Additional Information -->  
+        <section>  
+            <h2>Program Overview</h2>  
+            <p>This certificate covers various aspects of web development, programming, and database management to prepare students for a career in technology.</p>  
+        </section>  
+    </main>  
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; <span id="year"></span> Tinny B. Mosimanyana. All rights reserved.</p>
-        <p>Last Modified: <span id="last-modified"></span></p>
-    </footer>
+    <!-- Footer -->  
+    <footer>  
+        <p>&copy; <span id="year"></span> Tinny B. Mosimanyana. All rights reserved.</p>  
+        <p>Last Modified: <span id="last-modified"></span></p>  
+    </footer>  
 
-    <!-- External JavaScript -->
-    <script src="scripts/scripts.js" defer></script>
-</body>
+    <!-- External JavaScript -->  
+    <script src="scripts/scripts.js" defer></script>  
+    
+    <script>  
+        // Sample JavaScript for managing courses (add the real logic as needed)  
+        const courses = [  
+            { title: "Introduction to Programming", subject: "CSE", number: "101", description: "Learn the basics of programming.", credits: 3, completed: true },  
+            { title: "Web Development Fundamentals", subject: "WDD", number: "201", description: "Learn web development techniques.", credits: 4, completed: false },  
+            { title: "Database Management Systems", subject: "CSE", number: "202", description: "Understand database management.", credits: 3, completed: true },  
+            // Add more courses as needed  
+        ];  
+
+        function filterCourses(category) {  
+            const courseListDiv = document.getElementById('course-list');  
+            courseListDiv.innerHTML = ''; // Clear previous results  
+            const filteredCourses = category === 'all' ? courses : courses.filter(course => category === 'completed' ? course.completed : course.subject === category);  
+
+            filteredCourses.forEach(course => {  
+                const courseCard = document.createElement('div');  
+                courseCard.classList.add('course-card');  
+                courseCard.innerHTML = `  
+                    <h3>${course.title} (${course.subject} ${course.number})</h3>  
+                    <p>${course.description}</p>  
+                    <p>Credits: ${course.credits}</p>  
+                    <p>Status: ${course.completed ? 'Completed' : 'Not Completed'}</p>  
+                `;  
+                courseListDiv.appendChild(courseCard);  
+            });  
+
+            displayTotalCredits(); // Update total credits after rendering  
+        }  
+
+        // Function to display total credits for completed courses  
+        function displayTotalCredits() {  
+            const totalCredits = courses.reduce((total, course) => total + (course.completed ? course.credits : 0), 0);  
+            document.getElementById('total-credits').textContent = `Total Credits: ${totalCredits}`;  
+        }  
+
+        // Update year and last modified date  
+        document.getElementById('year').textContent = new Date().getFullYear();  
+        document.getElementById('last-modified').textContent = document.lastModified;  
+
+        // Initial render of all courses  
+        filterCourses('all');  
+    </script>  
+</body>  
 </html>
