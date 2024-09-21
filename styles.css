@@ -1,125 +1,86 @@
-body {  
-    font-family: 'Roboto', sans-serif;  
-    background-color: #f4f4f4;  
-    margin: 0;  
-    padding: 0;  
-}  
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
 
-header {  
-    background-color: #003366;  
-    color: white;  
-    padding: 10px 0;  
-    text-align: center;  
-    position: relative;  
-}  
+header {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
 
-nav {  
-    display: flex;  
-    justify-content: space-between;  
-    align-items: center;  
-}  
+nav {
+    position: relative;
+}
 
-nav ul {  
-    list-style: none;  
-    padding: 0;  
-    display: flex;  
-}  
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 24px;
+}
 
-nav ul li {  
-    margin: 0 15px;  
-}  
+#nav-links {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
 
-nav a {  
-    color: white;  
-    text-decoration: none;  
-    transition: color 0.3s;  
-}  
+#nav-links li {
+    margin: 0 15px;
+}
 
-nav a:hover {  
-    color: #ffcc00;  
-}  
+#nav-links a {
+    color: white;
+    text-decoration: none;
+}
 
-.hamburger {  
-    display: none;  
-    font-size: 24px;  
-    cursor: pointer;  
-}  
+.course-work, .location, .certificates {
+    padding: 20px;
+    margin: 10px auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+}
 
-main {  
-    display: flex;  
-    justify-content: space-between;  
-    padding: 20px;  
-}  
+.filter-buttons {
+    margin: 10px 0;
+}
 
-.course-work, .location, .certificates {  
-    background: white;  
-    padding: 20px;  
-    border-radius: 5px;  
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
-    width: 30%;  
-}  
+.filter-buttons button {
+    margin-right: 10px;
+}
 
-.course-card {  
-    border: 1px solid #ddd;  
-    margin: 10px 0;  
-    padding: 10px;  
-    border-radius: 5px;  
-}  
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
 
-.completed {  
-    background-color: #8B4513;  
-    color: white;  
-}  
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
 
-.filter-buttons {  
-    margin-top: 10px;  
-}  
+    #nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: #333;
+        position: absolute;
+        width: 100%;
+        top: 100%;
+    }
 
-button {  
-    margin: 5px;  
-    padding: 10px;  
-    background-color: #003366;  
-    color: white;  
-    border: none;  
-    border-radius: 5px;  
-    cursor: pointer;  
-}  
+    #nav-links.active {
+        display: flex;
+    }
 
-button:hover {  
-    background-color: #00509e;  
-}  
-
-footer {  
-    text-align: center;  
-    padding: 10px 0;  
-    background-color: #003366;  
-    color: white;  
-}  
-
-@media (max-width: 768px) {  
-    nav ul {  
-        display: none; /* Hide links by default */  
-        flex-direction: column;  
-        position: absolute;  
-        top: 50px;  
-        left: 0;  
-        background-color: #003366;  
-        width: 100%;  
-    }  
-
-    nav ul.active {  
-        display: flex; /* Show links when active */  
-    }  
-
-    .hamburger {  
-        display: block; /* Show hamburger icon */  
-    }  
-
-    main {  
-        flex-direction: column; /* Stack sections vertically on small screens */  
-    }  
-
-    .course-work, .location, .certificates {  
-        width: 100%; /* Full width on small screens */  
-    }  
+    #nav-links li {
+        margin: 10px 0;
+    }
 }

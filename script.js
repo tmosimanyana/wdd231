@@ -1,57 +1,42 @@
-// Course List Array  
-const courses = [  
-    { name: "CSE 110", credits: 3, completed: true },  
-    { name: "WDD 130", credits: 3, completed: false },  
-    { name: "CSE 111", credits: 3, completed: true },  
-    { name: "WDD 131", credits: 3, completed: false },  
-    { name: "CSE 210", credits: 3, completed: true },  
-    { name: "WDD 231", credits: 3, completed: false }  
-];  
+document.getElementById("currentyear").textContent = new Date().getFullYear();
+document.getElementById("lastModified").textContent = "Last Modified: " + document.lastModified;
 
-// Function to dynamically populate the course list  
-function displayCourses(filter = 'all') {  
-    const courseList = document.getElementById('course-list');  
-    courseList.innerHTML = ''; // Clear existing courses  
-    courses.forEach(course => {  
-        if (filter === 'all' || course.name.startsWith(filter)) {  
-            const courseCard = document.createElement('div');  
-            courseCard.className = 'course-card';  
-            courseCard.innerHTML = `  
-                <h3>${course.name}</h3>  
-                <p>Credits: ${course.credits}</p>  
-            `;  
-            if (course.completed) {  
-                courseCard.classList.add('completed');  
-                courseCard.innerHTML += `<p>Status: Completed</p>`;  
-            } else {  
-                courseCard.innerHTML += `<p>Status: Not Completed</p>`;  
-            }  
-            courseList.appendChild(courseCard);  
-        }  
-    });  
-}  
+// Example course data for demonstration
+const courses = [
+    { name: "Introduction to Programming", type: "CSE" },
+    { name: "Web Fundamentals", type: "WDD" },
+    { name: "Dynamic Web Fundamentals", type: "WDD" },
+    { name: "Programming with Functions", type: "CSE" },
+    { name: "Programming with Classes", type: "CSE" },
+    { name: "Introduction to Databases", type: "CSE" },
+    { name: "Maths for Real Life", type: "CSE" }
+];
 
-// Function to calculate total credits  
-function calculateTotalCredits() {  
-    const totalCredits = courses.reduce((total, course) => total + course.credits, 0);  
-    document.getElementById('total-credits').textContent = totalCredits;  
-}  
+// Load course data
+function loadCourses(filter) {
+    const courseList = document.getElementById("course-list");
+    courseList.innerHTML = "";
+    const filteredCourses = filter ? courses.filter(course => course.type === filter) : courses;
+    filteredCourses.forEach(course => {
+        const courseItem = document.createElement("div");
+        courseItem.textContent = course.name;
+        courseList.appendChild(courseItem);
+    });
+    document.getElementById("total-credits").textContent = filteredCourses.length * 3; // Assuming each course is 3 credits
+}
 
-// Event listeners for filter buttons  
-document.getElementById('all-courses').addEventListener('click', () => displayCourses('all'));  
-document.getElementById('cse-courses').addEventListener('click', () => displayCourses('CSE'));  
-document.getElementById('wdd-courses').addEventListener('click', () => displayCourses('WDD'));  
+// Event listeners for filter buttons
+document.getElementById("all-courses").addEventListener("click", () => loadCourses());
+document.getElementById("cse-courses").addEventListener("click", () => loadCourses("CSE"));
+document.getElementById("wdd-courses").addEventListener("click", () => loadCourses("WDD"));
 
-// Populate current year and last modified date  
-document.getElementById('currentyear').textContent = new Date().getFullYear();  
-document.getElementById('lastModified').textContent = `Last Updated: ${document.lastModified}`;  
+// Initial load
+loadCourses();
 
-// Hamburger menu functionality  
-document.getElementById('hamburger').addEventListener('click', () => {  
-    const navLinks = document.getElementById('nav-links');  
-    navLinks.classList.toggle('active');  
-});  
+// Hamburger menu toggle
+const hamburger = document.getElementById("hamburger");
+const navLinks = document.getElementById("nav-links");
 
-// Initial display of courses and total credits  
-displayCourses();  
-calculateTotalCredits();
+hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
