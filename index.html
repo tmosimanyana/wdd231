@@ -5,26 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <link rel="stylesheet" href="styles.css">  
     <title>Rubia M. Francesco</title>  
+    <script src="script.js" defer></script>  
 </head>  
 <body>  
     <header>  
         <img src="images/profile-pic.jpg" alt="Rubia M. Francesco" class="profile-pic">  
         <h1>Rubia M. Francesco</h1>  
-        <nav>  
-            <a href="#">Home</a>  
-            <a href="#">Chamber</a>  
-            <a href="#">GitHub Profile</a>  
-            <a href="#">LinkedIn</a>  
+        <nav id="navbar">  
+            <a href="#" class="menu-toggle">Menu</a>  
+            <div class="nav-links">  
+                <a href="#">Home</a>  
+                <a href="#">Chamber</a>  
+                <a href="#">GitHub Profile</a>  
+                <a href="#">LinkedIn</a>  
+            </div>  
         </nav>  
     </header>  
 
     <main>  
         <section class="course-work">  
             <h2>Course Work</h2>  
-            <ul>  
-                <li>CSE 110 - Introduction to Programming</li>  
-                <li>WDD 130 - Web Fundamentals</li>  
-            </ul>  
+            <ul id="course-list"></ul>  
         </section>  
 
         <section class="location">  
@@ -40,22 +41,14 @@
                 <button onclick="filterCourses('cse')">CSE</button>  
                 <button onclick="filterCourses('wdd')">WDD</button>  
             </div>  
-            <div class="course-list">  
-                <button>CSE 110</button>  
-                <button>WDD 130</button>  
-                <button>CSE 111</button>  
-                <button>CSE 210</button>  
-                <button>WDD 131</button>  
-                <button>WDD 231</button>  
-            </div>  
+            <div id="filtered-course-list" class="course-list"></div>  
+            <p>Total Credits Required: <span id="total-credits"></span></p>  
         </section>  
     </main>  
 
     <footer>  
-        <p>©2025 <span>Rubia Magdalena Francesco</span> 🇲🇬 Madagascar</p>  
-        <p>Last Update: 01/01/1970 12:00:00</p>  
+        <p>©<span id="current-year"></span> <span>Rubia Magdalena Francesco</span> 🇲🇬 Madagascar</p>  
+        <p>Last Update: <span id="last-modified"></span></p>  
     </footer>  
-
-    <script src="script.js"></script>  
 </body>  
 </html>  

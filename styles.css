@@ -17,6 +17,20 @@ header {
     border-radius: 50%;  
 }  
 
+nav {  
+    position: relative;  
+}  
+
+.menu-toggle {  
+    display: none;  
+    cursor: pointer;  
+}  
+
+.nav-links {  
+    display: flex;  
+    justify-content: center;  
+}  
+
 nav a {  
     margin: 0 15px;  
     color: white;  
@@ -53,8 +67,9 @@ main {
     transition: background-color 0.3s;  
 }  
 
-.course-list button:hover {  
-    background-color: #A0522D;  
+.completed {  
+    background-color: #4CAF50;  
+    color: white;  
 }  
 
 footer {  
@@ -65,4 +80,24 @@ footer {
     position: relative;  
     bottom: 0;  
     width: 100%;  
+}  
+
+@media (max-width: 768px) {  
+    .menu-toggle {  
+        display: block;  
+    }  
+
+    .nav-links {  
+        display: none;  
+        flex-direction: column;  
+        position: absolute;  
+        background-color: #003366;  
+        top: 50px;  
+        left: 0;  
+        width: 100%;  
+    }  
+
+    .nav-links.active {  
+        display: flex;  
+    }  
 }  
