@@ -3,41 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Course home page for Tinny B. Mosimanyana, showcasing Web and Computer Programming Certificate courses">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <title>Course Home Page | Tinny B. Mosimanyana</title>
+    <title>Tinny B. Mosimanyana's Course Home</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- Header Section -->
-    <header class="header-container">
-        <img src="profile-pic.jpg" alt="Profile picture of Tinny B. Mosimanyana" class="profile-pic">
+    <header>
         <h1>Tinny B. Mosimanyana</h1>
-        <p>Gaborone, Botswana</p>
+        <p>Location: Gaborone, Botswana</p>
     </header>
 
-    <!-- Course Work Section -->
-    <section id="course-work">
-        <h2>Course Work</h2>
-        <div class="course-list">
-            <div class="course">CSE 110</div>
-            <div class="course">WDD 130</div>
-            <div class="course">CSE 111</div>
-            <div class="course">CSE 210</div>
-            <div class="course">WDD 131</div>
-            <div class="course">WDD 231</div>
-        </div>
-    </section>
+    <div id="total-credits">Total Credits: 0</div>
 
-    <!-- Image Section: Morula Trees -->
-    <section id="morula-trees">
-        <img src="morula-trees.jpg" alt="Image of Morula Trees in Botswana" class="responsive-img">
-    </section>
+    <div class="filter-buttons">
+        <button id="filter-all">All Courses</button>
+        <button id="filter-cse">CSE Courses</button>
+        <button id="filter-wdd">WDD Courses</button>
+    </div>
 
-    <!-- Footer Section -->
+    <section class="course-list"></section>
+
     <footer>
-        <p>&copy; 2024 Tinny Bothepha Mosimanyana. Last updated: 01/01/1970 12:00:00</p>
-        <img src="botswana-flag-icon.png" alt="Flag of Botswana" class="flag-icon">
+        <p>&copy; <span id="current-year"></span> Tinny Bothepha Mosimanyana</p>
+        <p>Last updated: <span id="last-modified"></span></p>
     </footer>
 </body>
 </html>
