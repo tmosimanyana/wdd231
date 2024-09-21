@@ -1,94 +1,63 @@
-/* Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #f4f4f4;
-    line-height: 1.6;
+    background-color: #F5F5F5; /* Light background for the body */
+    color: #333; /* Dark text color */
+    transition: background-color 0.3s, color 0.3s;
 }
 
-/* Header and Navigation Styles */
 header {
-    background-color: #008080;
+    background-color: #007BFF; /* Primary color for header */
     color: white;
-    padding: 1rem 0;
+    padding: 10px;
     text-align: center;
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
     list-style-type: none;
-    margin: 1rem 0;
+    padding: 0;
 }
 
 nav ul li {
-    margin: 0 1rem;
+    display: inline;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: white;
+    color: white; /* White text for nav links */
     text-decoration: none;
-    font-weight: bold;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-/* Main Content Styles */
-main {
-    padding: 2rem;
-    text-align: center;
 }
 
 h1, h2 {
-    color: #008080;
-}
-
-#course-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-    justify-content: center;
+    color: #FF6F61; /* Accent color for headings */
 }
 
 .course-card {
-    background-color: white;
-    border: 1px solid #ddd;
-    padding: 1rem;
-    border-radius: 5px;
-    width: 200px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white; /* White background for course cards */
+    border: 1px solid #ccc; /* Light border for cards */
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .course-card.completed {
-    background-color: #e0ffe0;
+    background-color: #E6FFEA; /* Light green for completed courses */
+    border: 1px solid #A0E0A0; /* Slightly darker border for completed */
 }
 
-.course-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-}
-
-.course-card p {
-    font-size: 1rem;
-    margin: 0.5rem 0;
-}
-
-/* Footer Styles */
 footer {
-    background-color: #f1f1f1;
+    background-color: #333; /* Dark footer */
+    color: white;
+    padding: 20px;
     text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
 }
 
-footer p {
-    font-size: 0.9rem;
-    color: #333;
+.dark-mode {
+    background-color: #333;
+    color: #F5F5F5;
+}
+
+.course-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
