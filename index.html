@@ -1,56 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta Tags for SEO, Performance, and Accessibility -->
     <meta charset="UTF-8">
-    <meta name="description" content="Course page for Tinny B. Mosimanyana, showcasing a list of courses in the Web and Computer Programming certificate.">
-    <meta name="author" content="Tinny B. Mosimanyana">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Tinny B. Mosimanyana - Course List</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    
-    <!-- External CSS -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- External JavaScript -->
-    <script defer src="scripts.js"></script>
+    <meta name="description" content="Course List for Web and Computer Programming Certificate - Developed by Tinny B. Mosimanyana. Explore programming courses with dynamic content and filters.">
+    <meta name="author" content="Tinny B. Mosimanyana">
+
+    <!-- Title of the Page -->
+    <title>Course List - Web and Computer Programming | Tinny B. Mosimanyana</title>
+
+    <!-- Link to CSS File -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+
+    <!-- Defer JavaScript for Performance -->
+    <script src="js/scripts.js" defer></script>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <h1>Tinny B. Mosimanyana - Course List</h1>
+        <h1>Tinny B. Mosimanyana</h1>
         <nav>
-            <a href="#all-courses" id="show-all">All Courses</a>
-            <a href="#cse-courses" id="filter-cse">Show CSE</a>
-            <a href="#wdd-courses" id="filter-wdd">Show WDD</a>
-            <a href="#completed-courses" id="show-completed">Completed Courses</a>
+            <ul>
+                <li><a href="#courses">Courses</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
         </nav>
     </header>
-    
+
+    <!-- Main Section -->
     <main>
-        <!-- Section 1: Introduction -->
-        <section id="introduction">
-            <h2>About This Course Page</h2>
-            <p>Welcome to the course list of Tinny B. Mosimanyana. This page displays courses related to the Web and Computer Programming certificate.</p>
+        <!-- Introduction Section -->
+        <section id="about">
+            <h2>About This Course List</h2>
+            <p>Welcome to the course list for the Web and Computer Programming certificate. Explore dynamic content, filter courses, and see completed courses highlighted.</p>
         </section>
-        
-        <!-- Section 2: Course List -->
-        <section id="all-courses" class="course-list"></section>
-        
-        <!-- Section 3: Total Credits -->
-        <section id="credits" class="credits">
-            <h2>Credits Summary</h2>
+
+        <!-- Course List Section -->
+        <section id="courses">
+            <h2>Courses</h2>
+            <div id="filter-options">
+                <button onclick="filterCourses('all')">Show All</button>
+                <button onclick="filterCourses('CSE')">CSE Courses</button>
+                <button onclick="filterCourses('WDD')">WDD Courses</button>
+            </div>
+            <div id="course-list">
+                <!-- Courses will be dynamically populated here by JavaScript -->
+            </div>
             <p id="total-credits">Total Credits: 0</p>
         </section>
     </main>
-    
+
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; <span id="current-year"></span> Tinny B. Mosimanyana</p>
-        <p>Last Updated: <span id="last-modified"></span></p>
-        <p><a href="https://www.linkedin.com/in/tinny89" target="_blank">Connect on LinkedIn</a></p>
+        <p>&copy; <span id="year"></span> Tinny B. Mosimanyana</p>
+        <p>Last modified: <span id="last-modified"></span></p>
     </footer>
+
+    <!-- JavaScript for dynamic content -->
+    <script>
+        // Set Current Year in Footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Set Last Modified Date
+        document.getElementById('last-modified').textContent = document.lastModified;
+
+        // Array of courses (this can be moved to an external JSON file and fetched if needed)
+        const courses = [
+            {
+                subject: 'CSE',
+                number: 110,
+                title: 'Introduction to Programming',
+                credits: 2,
+                completed: true,
+                description: 'Intro to programming using Python.'
+            },
+            {
+                subject: 'WDD',
+                number: 130,
+                title: 'Web Fundamentals',
+                credits: 2,
+                completed: false,
+                description: 'Basic web development with HTML and CSS.'
+            },
+            // Add more courses as needed...
+        ];
+
+        // Function to dynamically display courses
+        function displayCourses(courses) {
+            const courseList = document.getElementById('course-list');
+            courseList.innerHTML = ''; // Clear the current content
+
+            let totalCredits = 0;
+
+            courses.forEach(course => {
+                // Create course card
+                const courseCard = document.createElement('div');
+                courseCard.classList.add('course-card');
+                courseCard.classList.add(course.completed ? 'completed' : '');
+
+                // Course content
+                courseCard.innerHTML = `
+                    <h3>${course.subject} ${course.number}: ${course.title}</h3>
+                    <p>${course.description}</p>
+                    <p>Credits: ${course.credits}</p>
+                `;
+
+                // Append course card to list
+                courseList.appendChild(courseCard);
+
+                // Add up credits for completed courses
+                if (course.completed) {
+                    totalCredits += course.credits;
+                }
+            });
+
+            // Update total credits
+            document.getElementById('total-credits').textContent = `Total Credits: ${totalCredits}`;
+        }
+
+        // Display all courses initially
+        displayCourses(courses);
+
+        // Filter function
+        function filterCourses(subject) {
+            if (subject === 'all') {
+                displayCourses(courses);
+            } else {
+                const filteredCourses = courses.filter(course => course.subject === subject);
+                displayCourses(filteredCourses);
+            }
+        }
+    </script>
 </body>
 </html>
