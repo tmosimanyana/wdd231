@@ -3,21 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tinny Bothepha Mosimanyana's personal webpage">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>Tinny Bothepha Mosimanyana</title>
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="js/scripts.js" defer></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
-    <script src="scripts/scripts.js" defer></script>
 </head>
 <body>
     <header>
+        <img src="images/profile-pic.jpg" alt="Tinny Bothepha Mosimanyana" class="profile-pic">
         <h1>Tinny Bothepha Mosimanyana</h1>
         <nav>
-            <ul>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Chamber</a></li>
                 <li><a href="#">GitHub Profile</a></li>
@@ -27,12 +28,12 @@
     </header>
 
     <main>
-        <section>
+        <section class="about">
             <h2>About Me</h2>
-            <p>Welcome to my personal website!</p>
+            <p>Welcome to my personal website! I am an entrepreneur based in Gaborone, Botswana.</p>
         </section>
 
-        <section>
+        <section class="course-work">
             <h2>Course Work</h2>
             <div>
                 <button class="filter-button" data-filter="all">All</button>
@@ -40,18 +41,18 @@
                 <button class="filter-button" data-filter="WDD">WDD</button>
             </div>
             <div id="course-list"></div>
-            <p>Total Credits: <span id="total-credits">0</span></p>
         </section>
 
-        <section>
-            <h2>My Image</h2>
-            <img src="images/profile-pic.jpg" alt="Profile of Tinny Bothepha Mosimanyana">
+        <section class="toloria">
+            <h2>Morula Tree</h2>
+            <img src="images/morula_tree.jpg" alt="Morula Tree" class="morula-tree">
+            <p>Morula Trees are significant to the culture and ecology of Botswana.</p>
         </section>
     </main>
 
     <footer>
         <p>©<span id="currentyear"></span> Tinny Bothepha Mosimanyana | Gaborone, Botswana</p>
-        <p id="lastModified"></p>
+        <p>Last Update: <span id="lastModified"></span></p>
     </footer>
 </body>
 </html>

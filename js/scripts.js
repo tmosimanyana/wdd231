@@ -1,88 +1,60 @@
-// Get the current year for the footer
-document.getElementById('currentyear').textContent = new Date().getFullYear();
-
-// Get the last modified date for the footer
-document.getElementById('lastModified').textContent = `Last updated: ${document.lastModified}`;
-
-// Course array
-const courses = [
-    {
-        subject: 'CSE',
-        number: 110,
-        title: 'Introduction to Programming',
-        credits: 2,
-        completed: true // Mark completed
-    },
-    {
-        subject: 'WDD',
-        number: 130,
-        title: 'Web Fundamentals',
-        credits: 2,
-        completed: false
-    },
-    {
-        subject: 'CSE',
-        number: 111,
-        title: 'Programming with Functions',
-        credits: 2,
-        completed: true // Mark completed
-    },
-    {
-        subject: 'CSE',
-        number: 210,
-        title: 'Programming with Classes',
-        credits: 2,
-        completed: false
-    },
-    {
-        subject: 'WDD',
-        number: 131,
-        title: 'Dynamic Web Fundamentals',
-        credits: 2,
-        completed: false
-    },
-    {
-        subject: 'WDD',
-        number: 231,
-        title: 'Frontend Web Development I',
-        credits: 2,
-        completed: false
-    }
-];
-
-// Function to display courses
-function displayCourses(filter) {
-    const courseList = document.getElementById('course-list');
-    courseList.innerHTML = ''; // Clear previous content
-
-    const filteredCourses = courses.filter(course => {
-        if (filter === 'All') return true;
-        return course.subject === filter;
-    });
-
-    let totalCredits = 0;
-    filteredCourses.forEach(course => {
-        const courseCard = document.createElement('div');
-        courseCard.className = 'course-card';
-        courseCard.textContent = `${course.subject} ${course.number}: ${course.title} - ${course.credits} credits`;
-        if (course.completed) {
-            courseCard.classList.add('completed');
-        }
-        courseList.appendChild(courseCard);
-        totalCredits += course.credits;
-    });
-    document.getElementById('total-credits').textContent = totalCredits;
+// Show current year and last modified date
+function showFooterInfo() {
+    const currentYear = new Date().getFullYear();
+    document.getElementById('currentyear').textContent = currentYear;
+    document.getElementById('lastModified').textContent = document.lastModified;
 }
 
-// Event listeners for filter buttons
+// Toggle mobile navigation menu
 document.addEventListener('DOMContentLoaded', () => {
-    displayCourses('All'); // Display all courses by default
+    showFooterInfo(); // Show footer information
 
-    // Add filter buttons
-    const filterButtons = document.querySelectorAll('.filter-button');
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            displayCourses(button.textContent);
-        });
+    const mobileMenu = document.getElementById('mobile-menu');
+    const nav = document.querySelector('nav');
+
+    mobileMenu.addEventListener('click', () => {
+        nav.classList.toggle('active');
     });
+    
+    // Dynamically generate course list
+    const courses = [
+        { name: 'CSE 110', completed: true },
+        { name: 'WDD 130', completed: false },
+        { name: 'CSE 111', completed: true },
+        { name: 'CSE 210', completed: false },
+        { name: 'WDD 131', completed: true },
+        { name: 'WDD 231', completed: false }
+    ];
+
+    const courseListElement = document.getElementById('course-list');
+    const allButton = document.querySelector('.filter-button[data-filter="all"]');
+    const cseButton = document.querySelector('.filter-button[data-filter="CSE"]');
+    const wddButton = document.querySelector('.filter-button[data-filter="WDD"]');
+
+    function displayCourses(filter = 'all') {
+        courseListElement.innerHTML = '';
+        const filteredCourses = courses.filter(course => {
+            if (filter === 'all') return true;
+            return course.name.startsWith(filter);
+        });
+        
+        filteredCourses.forEach(course => {
+            const li = document.createElement('li');
+            li.textContent = course.name;
+            li.style.fontWeight = course.completed ? 'bold' : 'normal';
+            li.style.color = course.completed ? 'green' : 'black';
+            courseListElement.appendChild(li);
+        });
+
+        const totalCredits = filteredCourses.length * 3; // Assuming each course is 3 credits
+        const creditsInfo = document.createElement('p');
+        creditsInfo.textContent = `Total Credits: ${totalCredits}`;
+        courseListElement.appendChild(creditsInfo);
+    }
+
+    allButton.addEventListener('click', () => displayCourses('all'));
+    cseButton.addEventListener('click', () => displayCourses('CSE'));
+    wddButton.addEventListener('click', () => displayCourses('WDD'));
+
+    displayCourses(); // Initial display of all courses
 });
