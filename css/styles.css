@@ -1,15 +1,20 @@
 body {
     font-family: 'Roboto', sans-serif;
-    background-color: #F5F5F5; /* Light background for the body */
-    color: #333; /* Dark text color */
-    transition: background-color 0.3s, color 0.3s;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #333;
 }
 
 header {
-    background-color: #007BFF; /* Primary color for header */
+    background-color: #008080; /* Teal color */
     color: white;
-    padding: 10px;
+    padding: 20px;
     text-align: center;
+}
+
+h1 {
+    margin: 0;
 }
 
 nav ul {
@@ -17,47 +22,48 @@ nav ul {
     padding: 0;
 }
 
-nav ul li {
+nav li {
     display: inline;
     margin: 0 15px;
 }
 
-nav ul li a {
-    color: white; /* White text for nav links */
+nav a {
+    color: white;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
-h1, h2 {
-    color: #FF6F61; /* Accent color for headings */
+nav a:hover {
+    color: #ffcc00; /* Highlight color */
+}
+
+main {
+    padding: 20px;
 }
 
 .course-card {
-    background-color: white; /* White background for course cards */
-    border: 1px solid #ccc; /* Light border for cards */
-    border-radius: 8px;
-    padding: 20px;
-    margin: 10px;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.course-card.completed {
-    background-color: #E6FFEA; /* Light green for completed courses */
-    border: 1px solid #A0E0A0; /* Slightly darker border for completed */
-}
-
-footer {
-    background-color: #333; /* Dark footer */
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-.dark-mode {
-    background-color: #333;
-    color: #F5F5F5;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px 0;
+    transition: transform 0.2s;
 }
 
 .course-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+.completed {
+    background-color: #d4edda; /* Light green */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #008080;
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
 }

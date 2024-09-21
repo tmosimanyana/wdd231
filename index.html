@@ -20,20 +20,20 @@
     <!-- Header -->
     <header>
         <h1>Tinny B. Mosimanyana - Course List</h1>
-        <nav>
+        <nav aria-label="Course navigation">
             <ul>
-                <li><a href="#" onclick="filterCourses('all')">All Courses</a></li>
+                <li><a href="#" onclick="filterCourses('all')" aria-current="page">All Courses</a></li>
                 <li><a href="#" onclick="filterCourses('CSE')">CSE Courses</a></li>
                 <li><a href="#" onclick="filterCourses('WDD')">WDD Courses</a></li>
-                <li><a href="#" onclick="toggleDarkMode()">Toggle Dark Mode</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Main Content -->
-    <main>
+    <main role="main">
         <h2>Courses for Web and Computer Programming Certificate</h2>
-        <div id="course-list"></div>
+        <div id="loading">Loading courses...</div>
+        <div id="course-list" style="display: none;"></div>
         <p id="total-credits">Total Credits: 0</p>
     </main>
 
@@ -47,3 +47,4 @@
     <script src="scripts/scripts.js" defer></script>
 </body>
 </html>
+
