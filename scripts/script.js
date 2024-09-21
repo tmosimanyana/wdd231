@@ -21,7 +21,7 @@ const courses = [
         title: 'Introduction to Programming',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course will introduce students to programming. It will introduce the building blocks of programming languages (variables, decisions, calculations, loops, arrays, and input/output) and use them to solve problems.',
+        description: 'This course introduces programming basics.',
         technology: ['Python'],
         completed: true
     },
@@ -31,7 +31,7 @@ const courses = [
         title: 'Web Fundamentals',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course introduces students to the World Wide Web and to careers in web site design and development. The course is hands-on with students participating in simple web designs and programming.',
+        description: 'Introduces web design and development.',
         technology: ['HTML', 'CSS'],
         completed: false
     },
@@ -41,7 +41,7 @@ const courses = [
         title: 'Programming with Functions',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'CSE 111 students learn to research, call functions, write, call, debug, and test their own functions to solve various problems.',
+        description: 'Learn to write and test functions.',
         technology: ['Python'],
         completed: false
     },
@@ -51,7 +51,7 @@ const courses = [
         title: 'Programming with Classes',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course introduces classes and objects, encapsulation, inheritance, and polymorphism.',
+        description: 'Introduces object-oriented programming concepts.',
         technology: ['C#'],
         completed: true
     },
@@ -61,7 +61,7 @@ const courses = [
         title: 'Dynamic Web Fundamentals',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course builds on prior experience in Web Fundamentals and programming. Students learn to create dynamic websites using JavaScript.',
+        description: 'Create dynamic websites using JavaScript.',
         technology: ['HTML', 'CSS', 'JavaScript'],
         completed: false
     },
@@ -71,7 +71,7 @@ const courses = [
         title: 'Frontend Web Development I',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'Students focus on user experience, accessibility, compliance, performance optimization, and basic API usage.',
+        description: 'Focus on user experience and API usage.',
         technology: ['HTML', 'CSS', 'JavaScript'],
         completed: false
     }
@@ -84,7 +84,8 @@ function displayCourses(courseList) {
 
     courseList.forEach(course => {
         const courseButton = document.createElement('button');
-        courseButton.textContent = `${course.subject} ${course.number}`;
+        courseButton.textContent = `${course.subject} ${course.number} - ${course.title}`;
+        courseButton.title = course.description; // Tooltip for description
 
         // Apply different style for completed courses
         if (course.completed) {
