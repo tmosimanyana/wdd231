@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tinny B. Mosimanyana</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
+
+    <!-- Defer JavaScript -->
     <script src="scripts/script.js" defer></script>
 </head>
 <body>
@@ -14,12 +22,14 @@
             <h1>Tinny B. Mosimanyana</h1>
         </div>
         <nav>
-            <ul>
+            <ul class="nav-menu">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Chamber</a></li>
                 <li><a href="#">GitHub Profile</a></li>
                 <li><a href="#">LinkedIn</a></li>
             </ul>
+            <!-- Hamburger Menu for Mobile -->
+            <button class="hamburger">&#9776;</button>
         </nav>
     </header>
 
@@ -27,16 +37,15 @@
         <section class="coursework">
             <h2>Course Work</h2>
             <ul>
-                <!-- Add coursework items -->
-                <li>CSE 110</li>
-                <li>WDD 130</li>
-                <li>CSE 111</li>
+                <li>CSE 110 - Programming Basics</li>
+                <li>WDD 130 - Web Development Fundamentals</li>
+                <li>CSE 111 - Programming with Functions</li>
             </ul>
         </section>
 
         <section class="location">
             <h2>Gaborone, Botswana</h2>
-            <img src="images/morula.jpeg" alt="morula Trees">
+            <img src="images/morula.jpeg" alt="Morula Trees in Botswana">
         </section>
 
         <section class="certificate">
@@ -56,8 +65,9 @@
     </main>
 
     <footer>
-        <p>&copy; 2024 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana </p>
+        <p>&copy; 2024 🌸 Tinny B. Mosimanyana 🌸 Botswana </p>
         <p>Last Update: 01/01/1970 12:00:00</p>
     </footer>
+
 </body>
 </html>

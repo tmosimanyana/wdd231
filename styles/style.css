@@ -1,15 +1,22 @@
+/* Normalize CSS for consistency across browsers */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
+    color: #333;
 }
 
+/* Header */
 header {
     background-color: #002E5B;
     color: white;
     padding: 20px;
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .profile img {
@@ -18,12 +25,12 @@ header {
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
     justify-content: center;
-    background-color: black;
+    background-color: #333;
 }
 
 nav ul li {
@@ -36,6 +43,21 @@ nav ul li a {
     padding: 10px;
 }
 
+nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Main Content */
 main {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -53,16 +75,20 @@ h2 {
     background-color: #002E5B;
     color: white;
     padding: 10px;
+    font-weight: 600;
 }
 
-.course-buttons button {
+.course-buttons button, .filters button {
     background-color: #8B4513;
     color: white;
     border: none;
     padding: 10px;
     margin: 5px;
     cursor: pointer;
-    display: inline-block;
+}
+
+.course-buttons button:hover, .filters button:hover {
+    background-color: #A0522D;
 }
 
 footer {
@@ -76,6 +102,8 @@ footer p {
     margin: 5px;
 }
 
+/* Responsive Design */
+
 /* Mobile View */
 @media screen and (max-width: 768px) {
     main {
@@ -83,6 +111,16 @@ footer p {
     }
 
     nav ul {
+        flex-direction: column;
+        display: none;
+    }
+
+    .hamburger {
+        display: inline-block;
+    }
+
+    nav ul.show {
+        display: flex;
         flex-direction: column;
     }
 }
