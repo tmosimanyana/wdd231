@@ -3,86 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Tinny B. Mosimanyana's Portfolio and Web Development Project.">
-    <meta name="author" content="Tinny B.Mosimanyana">
-    <meta name="keywords" content="Portfolio, Web Development, Programming, Certificate, Courses">
-    <title>Tinny B.Mosimanana - Web Developer</title>
-
-    <!-- Link to Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- External CSS -->
+    <title>Course List</title>
+    <!-- Link to external CSS -->
     <link rel="stylesheet" href="styles.css">
-
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- JavaScript (deferred for performance) -->
+    <!-- External JavaScript file with defer attribute -->
     <script src="scripts.js" defer></script>
 </head>
 <body>
-    <!-- Header Section -->
     <header>
-        <div class="profile-header">
-            <img src="profile.jpg" alt="Tinny B. Mosimanyana" class="profile-img">
-            <h1>Tinny B. Mosimanyana</h1>
-        </div>
-        <!-- Navigation Menu -->
+        <button class="menu-toggle">☰ Menu</button>
         <nav>
             <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <!-- Coursework Section -->
-        <section class="coursework">
-            <h2>Course Work</h2>
-            <ul>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
+        <section class="filter-buttons">
+            <button class="btn-all">Show All</button>
+            <button class="btn-cse">Show CSE Courses</button>
+            <button class="btn-wdd">Show WDD Courses</button>
         </section>
 
-        <!-- Gaborone, Botswana Section -->
-        <section class="location">
-            <h2>Gaborone,Botswana</h2>
-            <img src="morula-trees.jpg" alt="Morula Trees">
-            <p> Trees</p>
+        <section class="courses">
+            <!-- Courses will be dynamically generated here -->
         </section>
 
-        <!-- Certificate Section -->
-        <section class="certificate">
-            <h2>Web and Computer Programming Certificate</h2>
-            <!-- Filter Buttons -->
-            <div class="filter-buttons">
-                <button>All</button>
-                <button>CSE</button>
-                <button>WDD</button>
-            </div>
-            <!-- Certificate Courses -->
-            <div class="courses">
-                <button>CSE 110</button>
-                <button>WDD 130</button>
-                <button>CSE 111</button>
-                <button>CSE 210</button>
-                <button>WDD 131</button>
-                <button>WDD 231</button>
-            </div>
-        </section>
+        <p class="total-credits"></p>
     </main>
 
-    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana</p>
-        <p>Last Update: 01/01/1970 12:00:00</p>
+        <p>&copy; <span class="current-year"></span> 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana</p>
+        <p class="last-modified"></p>
         <div class="flag">
             <img src="botswana-flag.png" alt="Botswana Flag">
         </div>
