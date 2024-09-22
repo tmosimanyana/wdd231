@@ -24,5 +24,12 @@ HTML
         <div id="courses"></div>
     </main>
     <script src="script.js"></script>
+    // Output the current year
+        document.getElementById('copyright').textContent = `© ${new Date().getFullYear()}`;
+
+        // Output the last modified date
+        document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
+    </script>
+
 </body>
 </html>
