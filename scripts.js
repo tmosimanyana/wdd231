@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 3. Define the course list
     const courses = [
-        { code: "CSE 110", name: "Introduction to Programming", completed: false },
+        { code: "CSE 110", name: "Introduction to Programming", completed: true },
         { code: "WDD 130", name: "Web Development Fundamentals", completed: true },
-        { code: "CSE 111", name: "Programming with Objects", completed: false },
-        { code: "CSE 210", name: "Data Structures", completed: true },
+        { code: "CSE 111", name: "Programming with Objects", completed: true },
+        { code: "CSE 210", name: "Data Structures", completed: false },
         { code: "WDD 131", name: "Advanced Web Development", completed: false },
-        { code: "WDD 231", name: "Web Applications", completed: true }
+        { code: "WDD 231", name: "Web Applications", completed: false }
     ];
 
     // 4. Function to render courses based on filter
