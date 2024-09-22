@@ -1,47 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <head>
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Course Page</title>
-            <link rel="stylesheet" href="styles.css">
-            
-            <!-- External JavaScript -->
-            <script src="courseList.js" defer></script>
-            <script src="scripts.js" defer></script>
-        </head>
-        
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Page</title>
+    <link rel="stylesheet" href="normalize.css"> <!-- Local Normalize CSS -->
+    <link rel="stylesheet" href="styles.css">
     
+    <!-- External JavaScript -->
+    <script src="courseList.js" defer></script>
+    <script src="scripts.js" defer></script>
+</head>
 <body>
 
     <header>
-        <header>
-            <div class="profile-info">
-                <img src="images/profile-pic.jpg" alt="Tinny B. Mosimanyana" class="profile-pic">
-                <h1>Tinny B. Mosimanyana</h1>
-            </div>
-            <button class="mobile-nav-button">☰</button>
-            <nav class="nav-bar">
-                <a href="#">Home</a>
-                <a href="#">Chamber</a>
-                <a href="#">GitHub Profile</a>
-                <a href="#">LinkedIn</a>
-            </nav>
-        </header>
-        
+        <div class="profile-info">
+            <img src="images/profile-pic.jpg" alt="Tinny B. Mosimanyana" class="profile-pic">
+            <h1>Tinny B. Mosimanyana</h1>
+        </div>
+        <button class="mobile-nav-button">☰</button>
+        <nav class="nav-bar">
+            <a href="#">Home</a>
+            <a href="#">Chamber</a>
+            <a href="#">GitHub Profile</a>
+            <a href="#">LinkedIn</a>
+        </nav>
     </header>
 
     <main>
         <section class="course-work">
             <h2>Course Work</h2>
-            <ul>
-                <li>•</li>
-                <li>•</li>
-                <li>•</li>
-            </ul>
+            <ul id="completed-courses"></ul>
+            <p>Total Credits: <span id="total-credits">0</span></p>
+            <p>Credits Remaining: <span id="credits-remaining">90</span></p>
         </section>
 
         <section class="location">

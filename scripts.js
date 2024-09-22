@@ -1,69 +1,36 @@
-// Wait until the DOM is fully loaded
-document.addEventListener('DOMContentLoaded', () => {
-    
-    // 1. Dynamically update the copyright year
-    const footerYear = document.querySelector('footer p');
-    const currentYear = new Date().getFullYear();
-    footerYear.textContent = `©${currentYear} 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana`;
+// Array to hold completed courses and their credits
+const completedCourses = [
+    { name: "Dynamic Web Fundamentals", credits: 2 },
+    { name: "Introduction to Databases", credits: 3 },
+    { name: "Programming with Classes", credits: 2 },
+    { name: "Programming with Functions", credits: 2 },
+    { name: "Web Fundamentals", credits: 2 },
+    { name: "Introduction to Programming", credits: 3 },
+    { name: "Math for Real Life", credits: 3 }
+];
 
-    // 2. Dynamically update the last modified date
-    const lastModified = document.querySelector('footer p:nth-child(2)');
-    lastModified.textContent = `Last Update: ${document.lastModified}`;
+// Function to calculate total credits
+function calculateTotalCredits() {
+    return completedCourses.reduce((total, course) => total + course.credits, 0);
+}
 
-    // 3. Define the course list
-    const courses = [
-        { code: "CSE 110", name: "Introduction to Programming", completed: true },
-        { code: "WDD 130", name: "Web Development Fundamentals", completed: true },
-        { code: "CSE 111", name: "Programming with Objects", completed: true },
-        { code: "CSE 210", name: "Data Structures", completed: false },
-        { code: "WDD 131", name: "Advanced Web Development", completed: false },
-        { code: "WDD 231", name: "Web Applications", completed: false }
-    ];
+// Function to update the HTML with completed courses and credits
+function updateCourseProgress() {
+    const totalCredits = calculateTotalCredits();
+    const creditsRemaining = 90 - totalCredits; // Assuming 90 credits are required for graduation
 
-    // 4. Function to render courses based on filter
-    function renderCourses(filter = 'All') {
-        const coursesContainer = document.querySelector('.certificate .courses');
-        coursesContainer.innerHTML = '';  // Clear previous courses
+    const completedCoursesList = document.getElementById("completed-courses");
+    completedCoursesList.innerHTML = ""; // Clear existing list
 
-        // Filter courses if necessary
-        const filteredCourses = courses.filter(course => 
-            filter === 'All' || course.code.startsWith(filter)
-        );
-
-        // Create and display each course as a button
-        filteredCourses.forEach(course => {
-            const courseButton = document.createElement('button');
-            courseButton.textContent = course.code;
-            courseButton.className = course.code.startsWith('CSE') ? 'cse' : 'wdd';
-
-            // If course is completed, apply different styling
-            if (course.completed) {
-                courseButton.style.backgroundColor = '#5a3d31';  // Darker color for completed
-            }
-
-            coursesContainer.appendChild(courseButton);
-        });
-    }
-
-    // Initially render all courses
-    renderCourses();
-
-    // 5. Add filter buttons functionality
-    const filterButtons = document.querySelectorAll('.certificate .filters button');
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            renderCourses(button.textContent);
-        });
+    completedCourses.forEach(course => {
+        const li = document.createElement("li");
+        li.textContent = course.name;
+        completedCoursesList.appendChild(li);
     });
 
-    // 6. Responsive navigation toggle (optional if you have a mobile menu button)
-    const mobileNavButton = document.querySelector('.mobile-nav-button');
-    const navBar = document.querySelector('.nav-bar');
+    document.getElementById("total-credits").textContent = totalCredits;
+    document.getElementById("credits-remaining").textContent = creditsRemaining;
+}
 
-    if (mobileNavButton) {
-        mobileNavButton.addEventListener('click', () => {
-            navBar.classList.toggle('open');
-        });
-    }
-
-});
+// Initialize the course progress on page load
+document.addEventListener("DOMContentLoaded", updateCourseProgress);
