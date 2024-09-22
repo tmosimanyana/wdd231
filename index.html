@@ -9,27 +9,40 @@ HTML
 </head>
 <body>
     <header>
+        <h1>Course Title</h1>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Course Work</a></li>
-                <li><a href="#">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#syllabus">Syllabus</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#resources">Resources</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        <h1>Rubia M. Francesco</h1>
     </header>
     <main>
-        <h2>Web and Computer Programming Curriculum</h2>
-        <div id="courses"></div>
+        <section id="overview">
+            <h2>Course Overview</h2>
+            <p>Brief description of the course.</p>
+        </section>
+        <section id="syllabus">
+            <h2>Syllabus</h2>
+            <p>Details about the syllabus.</p>
+        </section>
+        <section id="schedule">
+            <h2>Schedule</h2>
+            <p>Course schedule and important dates.</p>
+        </section>
+        <section id="resources">
+            <h2>Resources</h2>
+            <p>Links to course resources.</p>
+        </section>
+        <section id="contact">
+            <h2>Contact Information</h2>
+            <p>Instructor contact details.</p>
+        </section>
     </main>
-    <script src="script.js"></script>
-    // Output the current year
-        document.getElementById('copyright').textContent = `© ${new Date().getFullYear()}`;
-
-        // Output the last modified date
-        document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
-    </script>
-
+    <footer>
+        <p>&copy; 2024 Course Name. All rights reserved.</p>
+    </footer>
 </body>
-</html>
