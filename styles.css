@@ -159,3 +159,29 @@ footer img {
         width: 100%;
     }
 }
+/* Mobile nav button styling */
+.mobile-nav-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+/* Show the button on mobile */
+@media (max-width: 768px) {
+    .mobile-nav-button {
+        display: block;
+    }
+
+    .nav-bar {
+        display: none;
+    }
+
+    .nav-bar.open {
+        display: flex;
+        flex-direction: column;
+    }
+}
