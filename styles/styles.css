@@ -1,0 +1,150 @@
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Header styling */
+  header {
+    background-color: #003366;
+    color: white;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-pic {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+  }
+  
+  nav {
+    margin-top: 1rem;
+  }
+  
+  .menu-toggle {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+  }
+  
+  .nav-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-list a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-list a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Main content */
+  main {
+    padding: 1rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Course certificate section */
+  .course-certificates {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  
+  .filter-buttons {
+    margin-bottom: 1rem;
+  }
+  
+  .filter-btn {
+    background-color: #003366;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    cursor: pointer;
+  }
+  
+  .filter-btn:hover {
+    background-color: #002244;
+  }
+  
+  .courses {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .course-btn {
+    background-color: #663300;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem 0;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  .course-btn.inactive {
+    background-color: #ddd;
+    color: #999;
+    cursor: not-allowed;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .nav-list {
+      flex-direction: column;
+      display: none;
+    }
+  
+    .nav-list.open {
+      display: flex;
+    }
+  
+    .menu-toggle {
+      display: block;
+    }
+  
+    .filter-btn, .course-btn {
+      width: 100%;
+    }
+  }
+  
