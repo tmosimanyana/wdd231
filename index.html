@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Tinny B. Mosimanyana's personal course page, showcasing programming certificates.">
+  <meta name="author" content="Tinny B. Mosimanyana">
+  <title>Tinny B. Mosimanyana | Course Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="scripts/navigation.js" defer></script>
+  <script src="scripts/courses.js" defer></script>
+  <script src="scripts/dates.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="profile-header">
+      <img src="images/profile.webp" alt="Tinny B. Mosimanyana" class="profile-pic"> <!-- Updated here -->
+      <h1>Tinny B. Mosimanyana</h1>
+    </div>
+    <nav aria-label="Main navigation">
+      <button aria-label="Toggle navigation menu" class="menu-toggle">☰</button>
+      <ul class="nav-list">
+        <li><a href="#" class="active">Course Work</a></li>
+        <li><a href="#">Certificates</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section>
+      <h2>BYU-IDAHO Rexburg</h2>
+      <img src="images/city.jpg" alt="Rexburg, Idaho" class="feature-image">
+      <p>A street view in downtown Rexburg.</p>
+    </section>
+
+    <section>
+      <h2>About the Course</h2>
+      <p>This section provides an overview of the web and computer programming course, highlighting its objectives and structure.</p>
+    </section>
+
+    <section class="course-certificates">
+      <h2>Web and Computer Programming Certificate</h2>
+      <div class="filter-buttons">
+        <button class="filter-btn" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="CSE">CSE</button>
+        <button class="filter-btn" data-filter="WDD">WDD</button>
+      </div>
+
+      <div class="course-list"></div>
+      <p class="total-credits"></p>
+    </section>
+
+    <section>
+      <h2>Contact Information</h2>
+      <p>If you have any questions about the course, feel free to reach out via email or phone.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="current-year"></span> Tinny B. Mosimanyana | Botswana</p>
+    <p>Last Update: <span id="last-modified"></span></p>
+  </footer>
+</body>
+</html>
