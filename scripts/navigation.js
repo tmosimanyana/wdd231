@@ -3,6 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const navList = document.querySelector('.nav-list');
 
   menuToggle.addEventListener('click', () => {
-    navList.classList.toggle('show'); // Toggle visibility of the nav list
+      navList.classList.toggle('active');
   });
 });
