@@ -116,10 +116,6 @@ h2 {
     background-color: #3b6fa5;
 }
 
-.filter-btn.active {
-    background-color: #1e3a5d;
-}
-
 .courses {
     display: flex;
     flex-direction: row;
@@ -146,16 +142,6 @@ h2 {
     background-color: #5ca33b;
 }
 
-.course-btn.inactive {
-    background-color: #ddd;
-    color: #999;
-    cursor: not-allowed;
-}
-
-.course-btn:hover {
-    background-color: #5a3824;
-}
-
 /* Footer */
 footer {
     background-color: #2a4b6a;
@@ -169,23 +155,20 @@ footer {
 @media (max-width: 768px) {
     .nav-list {
         flex-direction: column;
-        display: none;
+        display: none; /* Hide by default */
+        position: absolute;
+        top: 50px;
+        left: 0;
+        right: 0;
+        background-color: #2a4b6a;
+        z-index: 10;
     }
 
     .nav-list.open {
-        display: flex;
+        display: flex; /* Show when active */
     }
 
     .menu-toggle {
-        display: block;
+        display: block; /* Show toggle button on mobile */
     }
-
-    .filter-btn, .course-btn {
-        width: 100%;
-    }
-}
-
-/* Accessibility & Contrast Compliance */
-.course-btn:focus, .filter-btn:focus, .nav-list a:focus {
-    outline: 3px solid #ffcc00;
 }
