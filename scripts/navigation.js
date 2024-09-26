@@ -1,7 +1,8 @@
-// Hamburger menu functionality
-const menuToggle = document.querySelector('.menu-toggle');
-const navList = document.querySelector('.nav-list');
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navList = document.querySelector('.nav-list');
 
-menuToggle.addEventListener('click', () => {
-  navList.classList.toggle('nav-list--open');
+  menuToggle.addEventListener('click', () => {
+    navList.classList.toggle('show'); // Toggle visibility of the nav list
+  });
 });
