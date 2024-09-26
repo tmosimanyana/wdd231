@@ -1,42 +1,44 @@
-// Define the courses array with course objects
 const courses = [
-  { id: 'CSE110', name: 'Introduction to Programming', credits: 3, category: 'CSE', completed: true },
-  { id: 'WDD130', name: 'Web Fundamentals', credits: 4, category: 'WDD', completed: true },
-  { id: 'CSE111', name: 'Programming with Functions', credits: 3, category: 'CSE', completed: false },
-  { id: 'WDD230', name: 'Dynamic Web Development', credits: 4, category: 'WDD', completed: false }
+  { code: 'CSE 110', title: 'Intro to Programming', category: 'CSE', credits: 3, completed: true },
+  { code: 'WDD 130', title: 'Web Design I', category: 'WDD', credits: 3, completed: false },
+  { code: 'CSE 210', title: 'Data Structures', category: 'CSE', credits: 3, completed: true },
+  { code: 'WDD 131', title: 'Web Design II', category: 'WDD', credits: 3, completed: false }
 ];
 
-// Function to display courses based on filter
-function displayCourses(filter = 'all') {
-  const courseList = document.querySelector('.course-list');
-  courseList.innerHTML = ''; // Clear previous content
-  const filteredCourses = filter === 'all' ? courses : courses.filter(course => course.category === filter);
-  
-  filteredCourses.forEach(course => {
-    const courseElement = document.createElement('div');
-    courseElement.classList.add('course-item');
-    courseElement.textContent = `${course.name} (${course.credits} credits)`;
-    
-    // Mark completed courses visually
-    if (course.completed) {
-      courseElement.classList.add('completed');
-    }
-    
-    courseList.appendChild(courseElement);
-  });
-  
-  // Display total credits
-  const totalCredits = filteredCourses.reduce((total, course) => total + course.credits, 0);
-  document.querySelector('.total-credits').textContent = `Total Credits: ${totalCredits}`;
-}
+const totalCreditsRequired = courses.reduce((sum, course) => sum + course.credits, 0);
+const courseList = document.querySelector('.course-list');
+const filterButtons = document.querySelectorAll('.filter-btn');
+const totalCreditsElement = document.querySelector('.total-credits');
+const requiredCreditsElement = document.querySelector('.required-credits');
 
-// Filter button event listeners
-document.querySelectorAll('.filter-btn').forEach(button => {
-  button.addEventListener('click', () => {
-    const filter = button.getAttribute('data-filter');
-    displayCourses(filter);
+let totalCredits = 0;
+
+// Display all courses by default
+displayCourses('all');
+
+// Filter courses by category
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const category = btn.getAttribute('data-filter');
+    displayCourses(category);
   });
 });
 
-// Initial load
-displayCourses();
+function displayCourses(filter) {
+  courseList.innerHTML = '';
+  totalCredits = 0;
+  courses.forEach(course => {
+    if (filter === 'all' || course.category === filter) {
+      courseList.innerHTML += `
+        <div class="course-card ${course.completed ? 'completed' : ''}">
+          <h3>${course.code}</h3>
+          <p>${course.title}</p>
+          <p>Credits: ${course.credits}</p>
+        </div>
+      `;
+      totalCredits += course.credits;
+    }
+  });
+  totalCreditsElement.textContent = `Total Credits Earned: ${totalCredits}`;
+  requiredCreditsElement.textContent = `Total Credits Required: ${totalCreditsRequired}`;
+}
