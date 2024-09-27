@@ -9,8 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script> <!-- External JavaScript file linked here -->
+    <link rel="stylesheet" href="style.css"> <!-- Ensure style.css is accessible -->
+    <script src="script.js" defer></script> <!-- Ensure script.js is accessible -->
 </head>
 <body>
     <header>
@@ -61,7 +61,7 @@
     </footer>
     
     <script>
-        // Dynamically update the current year and last modified date
+        // Update current year and last modified date
         document.getElementById('current-year').textContent = new Date().getFullYear();
         document.getElementById('last-update').textContent = document.lastModified;
     </script>
