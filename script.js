@@ -79,7 +79,7 @@
 
     // Event delegation for filtering
     const setupEventListeners = () => {
-        document.querySelector('nav').addEventListener('click', ({ target }) => {
+        document.querySelector('.filter-buttons').addEventListener('click', ({ target }) => {
             if (target.tagName === 'BUTTON') {
                 const filterType = target.id === 'filter-cse' ? 'CSE' : (target.id === 'filter-wdd' ? 'WDD' : 'all');
                 renderCourses(filterType);
