@@ -1,82 +1,53 @@
+// Course Data
 const courses = [
-    {
-        subject: 'CSE',
-        number: 110,
-        title: 'Introduction to Programming',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        completed: true
-    },
-    {
-        subject: 'WDD',
-        number: 130,
-        title: 'Web Fundamentals',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        completed: false
-    },
-    {
-        subject: 'CSE',
-        number: 111,
-        title: 'Programming with Functions',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        completed: false
-    },
-    {
-        subject: 'CSE',
-        number: 210,
-        title: 'Programming with Classes',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        completed: true
-    },
-    {
-        subject: 'WDD',
-        number: 131,
-        title: 'Dynamic Web Fundamentals',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        completed: true
-    },
-    {
-        subject: 'WDD',
-        number: 231,
-        title: 'Frontend Web Development I',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        completed: false
-    }
+    { subject: 'CSE', number: 110, title: 'Introduction to Programming', credits: 2, completed: true },
+    { subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 2, completed: false },
+    { subject: 'CSE', number: 111, title: 'Programming with Functions', credits: 2, completed: true },
+    { subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 2, completed: true },
+    { subject: 'WDD', number: 131, title: 'Dynamic Web Fundamentals', credits: 2, completed: false },
+    { subject: 'WDD', number: 231, title: 'Frontend Web Development I', credits: 2, completed: false }
 ];
 
-function filterCourses(filter) {
-    const courseList = document.getElementById('course-list');
-    courseList.innerHTML = '';
+// Function to calculate total credits dynamically
+function calculateTotalCredits(filteredCourses) {
+    return filteredCourses.reduce((total, course) => total + course.credits, 0);
+}
 
-    const filteredCourses = courses.filter(course => filter === 'All' || course.subject === filter);
+// Function to display courses based on filter
+function displayCourses(filteredCourses) {
+    const courseListElement = document.getElementById('course-list');
+    courseListElement.innerHTML = ''; // Clear existing courses
 
     filteredCourses.forEach(course => {
         const courseCard = document.createElement('div');
-        courseCard.classList.add('course-card');
-        if (course.completed) {
-            courseCard.classList.add('completed');
-        }
-
-        courseCard.textContent = `${course.subject} ${course.number}`;
-        courseList.appendChild(courseCard);
+        courseCard.className = 'course-card ' + (course.completed ? 'completed' : 'not-completed');
+        courseCard.innerHTML = `
+            <h3>${course.title} (${course.subject} ${course.number})</h3>
+            <p>Credits: ${course.credits}</p>
+            <p>Status: ${course.completed ? 'Completed' : 'Not Completed'}</p>
+        `;
+        courseListElement.appendChild(courseCard);
     });
 
-    updateTotalCredits(filteredCourses);
+    // Update total credits
+    const totalCredits = calculateTotalCredits(filteredCourses);
+    document.getElementById('credit-count').textContent = totalCredits;
 }
 
-function updateTotalCredits(filteredCourses) {
-    const totalCredits = filteredCourses.reduce((acc, course) => acc + course.credits, 0);
-    console.log(`Total Credits: ${totalCredits}`);
+// Function to filter courses
+function filterCourses(category) {
+    let filteredCourses;
+    if (category === 'all') {
+        filteredCourses = courses;
+    } else {
+        filteredCourses = courses.filter(course => course.subject === category);
+    }
+    displayCourses(filteredCourses);
 }
 
-// Dynamically update the year and last modified date
+// Initial display of all courses
+displayCourses(courses);
+
+// Set current year and last modified date
 document.getElementById('current-year').textContent = new Date().getFullYear();
 document.getElementById('last-modified').textContent = document.lastModified;
-
-// Initial load of all courses
-filterCourses('All');

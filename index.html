@@ -6,7 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Home Page</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <script src="script.js" defer></script> <!-- Link to external JavaScript -->
+    <style>
+        /* Internal CSS for Course Tracker */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .filter-buttons {
+            margin: 20px 0; /* Spacing around the filter buttons */
+            text-align: center; /* Center the filter buttons */
+        }
+
+        .filter-buttons button {
+            margin: 0 10px; /* Spacing between buttons */
+            padding: 10px 15px; /* Padding for button */
+            background-color: #007BFF; /* Button color */
+            color: white; /* Text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor */
+        }
+
+        .filter-buttons button:hover {
+            background-color: #0056b3; /* Darker color on hover */
+        }
+
+        .course-card {
+            border: 1px solid #ccc; /* Border for course card */
+            border-radius: 5px; /* Rounded corners */
+            padding: 15px; /* Padding for card */
+            margin: 10px 0; /* Spacing between cards */
+            background-color: #f9f9f9; /* Background color for card */
+        }
+
+        .completed {
+            background-color: #d4edda; /* Light green for completed courses */
+        }
+
+        .not-completed {
+            background-color: #f8d7da; /* Light red for not completed courses */
+        }
+
+        .credits {
+            font-weight: bold; /* Bold for total credits */
+            margin: 20px 0; /* Margin for credits section */
+            text-align: center; /* Center the text */
+        }
+    </style>
 </head>
 
 <body>
@@ -41,12 +89,15 @@
         <section class="certificate">
             <h2>Web and Computer Programming Certificate</h2>
             <div class="filter-buttons">
-                <button onclick="filterCourses('All')">All</button>
+                <button onclick="filterCourses('all')">All</button>
                 <button onclick="filterCourses('CSE')">CSE</button>
                 <button onclick="filterCourses('WDD')">WDD</button>
             </div>
             <div id="course-list" class="course-list">
                 <!-- Courses will be dynamically loaded here -->
+            </div>
+            <div class="credits" id="total-credits">
+                Total Credits Required: <span id="credit-count">0</span>
             </div>
         </section>
     </main>
@@ -55,6 +106,7 @@
         <p>&copy; <span id="current-year"></span> Rubia Magdalena Francesco <span>🌸</span> Madagascar <img src="madagascar.png" alt="Madagascar Flag" class="flag"></p>
         <p>Last Updated: <span id="last-modified"></span></p>
     </footer>
+
 </body>
 
 </html>
