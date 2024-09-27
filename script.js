@@ -26,7 +26,7 @@ const courses = [
         title: 'Programming with Functions',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'CSE 111 students become more organized, efficient, and powerful computer programmers by learning to research and call functions written by others; to write, call , debug, and test their own functions; and to handle errors within functions. CSE 111 students write programs with functions to solve problems in many disciplines, including business, physical science, human performance, and humanities.',
+        description: 'CSE 111 students become more organized, efficient, and powerful computer programmers by learning to research and call functions written by others; to write, call, debug, and test their own functions; and to handle errors within functions. CSE 111 students write programs with functions to solve problems in many disciplines, including business, physical science, human performance, and humanities.',
         technology: ['Python'],
         completed: true
     },
@@ -68,7 +68,7 @@ const courses = [
         certificate: 'Web and Computer Programming',
         description: 'This course will introduce students to the concepts and techniques used to store, retrieve and manipulate data in databases. Students will gain experience in using Structured Query Language (SQL) to access and manage databases.',
         technology: ['SQL'],
-        completed: false
+        completed: true
     },
     {
         subject: 'MAT',
@@ -78,15 +78,33 @@ const courses = [
         certificate: 'Web and Computer Programming',
         description: 'This course provides students with an understanding of math as it relates to real life. Topics include percentages, measurements, ratios, and statistics.',
         technology: ['Excel'],
-        completed: false
+        completed: true
     }
 ];
+
+// Function to calculate progress
+function calculateProgress() {
+    const totalCourses = courses.length;
+    const completedCourses = courses.filter(course => course.completed).length;
+    const progressPercentage = (completedCourses / totalCourses) * 100;
+
+    document.getElementById('progress-percentage').innerText = `Progress: ${progressPercentage.toFixed(2)}% (${completedCourses} out of ${totalCourses} courses completed)`;
+    updateProgressBar(progressPercentage);
+}
+
+// Function to update the progress bar
+function updateProgressBar(percentage) {
+    const progressBarFill = document.getElementById('progress-bar-fill');
+    progressBarFill.style.width = `${percentage}%`;
+}
 
 // Filter courses and update the UI
 function filterCourses(type) {
     let filteredCourses = courses;
     if (type !== 'all') {
-        filteredCourses = courses.filter(course => course.subject === type);
+        filteredCourses = courses.filter(course => {
+            return type === 'completed' ? course.completed : !course.completed;
+        });
     }
     displayCourses(filteredCourses);
 }
@@ -128,5 +146,6 @@ function updateFooter() {
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
     filterCourses('all'); // Display all courses on load
+    calculateProgress(); // Calculate and display progress
     updateFooter(); // Update footer with the current year and last modified date
 });
