@@ -8,7 +8,7 @@ body {
 }
 
 header {
-    background-color: #1c567c; /* Dark blue */
+    background-color: #1c567c;
     color: white;
     text-align: center;
     padding: 20px;
@@ -29,54 +29,56 @@ header h1 {
     font-size: 2rem;
 }
 
-nav {
-    background-color: #000;
-    text-align: center;
-    padding: 10px 0;
+button.nav-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 nav ul {
     list-style-type: none;
-    margin: 0;
     padding: 0;
-    display: inline-block;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
 }
 
 nav ul li {
-    display: inline-block;
-    margin-right: 20px;
+    display: inline;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    padding: 5px;
-}
-
-nav ul li a:hover {
-    color: #ffc107; /* Yellow */
 }
 
 /* Main Content */
 main {
-    padding: 20px;
     display: flex;
     justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap;
 }
 
 .coursework-section,
-.toloria-section {
-    width: 45%;
+.toloria-section,
+.certificate-section {
     background-color: white;
     padding: 20px;
+    margin-bottom: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .coursework-section h2,
-.toloria-section h2 {
-    margin-top: 0;
+.toloria-section h2,
+.certificate-section h2 {
     background-color: #1c567c;
     color: white;
     padding: 10px;
@@ -84,29 +86,11 @@ main {
     text-align: center;
 }
 
-/* Filter Buttons */
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+.toloria-section img {
+    width: 100%;
+    border-radius: 10px;
 }
 
-.filter-buttons button {
-    background-color: #1c567c;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-}
-
-.filter-buttons button:hover {
-    background-color: #174a6b; /* Slightly darker blue */
-}
-
-/* Course List */
 .course-list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -114,25 +98,12 @@ main {
 }
 
 .course-list div {
-    background-color: #d2691e; /* Brownish color */
+    background-color: #d2691e;
     color: white;
     padding: 10px;
     border-radius: 5px;
     text-align: center;
     font-weight: bold;
-}
-
-/* Image Section */
-.toloria-section img {
-    width: 100%;
-    border-radius: 10px;
-    margin-top: 10px;
-}
-
-.toloria-section p {
-    font-style: italic;
-    text-align: center;
-    color: #666;
 }
 
 /* Footer */
@@ -143,91 +114,32 @@ footer {
     padding: 10px;
 }
 
-footer p {
-    margin: 5px 0;
-}
-
-footer p:last-child {
-    font-size: 0.9rem;
-    color: #ffd700; /* Light yellow */
-}
-
-footer img {
-    width: 30px;
-    height: auto;
-    margin-left: 10px;
-}
-
-/* ================================= */
-/* Media Queries for Responsiveness */
-/* ================================= */
-
-/* Small screens (mobile) */
+/* Mobile Responsive Design */
 @media screen and (max-width: 768px) {
-    /* Header adjustments */
-    header {
-        padding: 10px;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    header img {
-        width: 60px;
-        height: 60px;
-        top: 10px;
-        left: 10px;
-    }
-
-    /* Navigation */
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    /* Main content layout */
     main {
         display: block;
         padding: 10px;
     }
 
     .coursework-section,
-    .toloria-section {
+    .toloria-section,
+    .certificate-section {
         width: 100%;
-        margin-bottom: 20px;
     }
 
-    /* Course List */
     .course-list {
         grid-template-columns: 1fr;
     }
-    
-    /* Filter buttons */
-    .filter-buttons {
-        flex-direction: column;
-    }
-
-    .filter-buttons button {
-        width: 100%;
-        margin: 5px 0;
-    }
-    
-    /* Footer */
-    footer p {
-        font-size: 0.8rem;
-    }
 }
 
-/* Medium screens (tablets) */
+/* Tablet (Medium Screens) */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    /* Adjust main sections for tablets */
     .coursework-section,
-    .toloria-section {
+    .toloria-section,
+    .certificate-section {
         width: 48%;
     }
 
-    /* Course List */
     .course-list {
         grid-template-columns: repeat(2, 1fr);
     }
