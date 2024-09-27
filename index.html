@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Rubia M. Francesco</title>
-    <script src="script.js" defer></script>
+    <script src="script.js" defer></script> <!-- External JavaScript file linked here -->
 </head>
 <body>
     <header>
@@ -14,6 +15,7 @@
             <h1>Rubia M. Francesco</h1>
         </div>
         <nav>
+            <button class="nav-toggle">Menu</button>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Chamber</a></li>
@@ -24,22 +26,6 @@
     </header>
 
     <main>
-        <section class="coursework">
-            <h2>Course Work</h2>
-            <ul>
-                <li>•</li>
-                <li>•</li>
-                <li>•</li>
-            </ul>
-        </section>
-
-        <section class="toloria">
-            <h2>Toloria, Madagascar</h2>
-            <img src="baobab.jpg" alt="Baobab Trees">
-            <p>Baobab Trees</p>
-        </section>
-
-        <!-- Web and Computer Programming Certificate Section -->
         <section class="certificate">
             <h2>Web and Computer Programming Certificate</h2>
             <div class="filter-buttons">
@@ -48,7 +34,7 @@
                 <button id="filter-wdd">WDD</button>
             </div>
             <div class="course-list">
-                <!-- Courses will be dynamically populated here by JavaScript -->
+                <!-- Courses will be dynamically populated here -->
             </div>
             <p id="credits-required"></p>
             <p id="credits-completed"></p>
@@ -56,7 +42,7 @@
     </main>
 
     <footer>
-        <p id="copyright">&copy; <span id="current-year"></span> 🌺 Rubia Magdalena Francesco 🌺 Madagascar</p>
+        <p>&copy; 2025 🌺 Rubia Magdalena Francesco 🌺 Madagascar</p>
         <p>Last Update: <span id="last-update"></span></p>
     </footer>
 </body>
