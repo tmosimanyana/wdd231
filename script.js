@@ -27,14 +27,14 @@
             number: 210,
             title: 'Programming with Classes',
             credits: 2,
-            completed: false
+            completed: true
         },
         {
             subject: 'WDD',
             number: 131,
             title: 'Dynamic Web Fundamentals',
             credits: 2,
-            completed: false
+            completed: true
         },
         {
             subject: 'WDD',
