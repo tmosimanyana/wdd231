@@ -14,6 +14,32 @@ header {
   text-align: center;
 }
 
+/* Profile picture styles */
+.profile-picture {
+  width: 100px;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* Location section styles */
+.location {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Course info styles */
+.course-info {
+  margin: 20px;
+}
+
+/* Filter buttons styles */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
 /* Button styles */
 button {
   background-color: #4CAF50;
@@ -24,7 +50,6 @@ button {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
-  margin: 5px;
 }
 
 /* Hover effects */
@@ -38,7 +63,7 @@ button:hover {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin: 20px 0;
+  margin: 20px;
 }
 
 /* Course card styles */
@@ -58,6 +83,24 @@ button:hover {
 /* Incomplete course styles */
 .course.incomplete {
   border-color: #f44336;
+}
+
+/* Image grid styles */
+.images {
+  text-align: center;
+  margin: 20px;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.course-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
 }
 
 /* Footer styles */
