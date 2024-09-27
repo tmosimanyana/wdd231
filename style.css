@@ -1,152 +1,112 @@
-:root {
-    --primary-color: #4CAF50;  /* Main color */
-    --completed-color: #c8e6c9; /* Light green for completed */
-    --incomplete-color: #f8bbd0; /* Light pink for incomplete */
-    --text-color: #333;
-    --background-color: #f9f9f9;
-    --font-family: 'Arial', sans-serif; /* Change to desired font */
-}
-
+/* General Reset */
 * {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font-family);
-    background-color: var(--background-color);
-    color: var(--text-color);
-    margin: 0;
-    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: var(--primary-color);
+    background-color: #2b3a50;
     color: white;
+    text-align: center;
+    padding: 1rem;
 }
 
-header img {
+.profile-img {
     border-radius: 50%;
-    height: 50px;
-    width: 50px;
+    width: 100px;
+    margin-bottom: 10px;
 }
 
-nav ul {
-    display: flex;
+.main-nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
-nav li {
-    margin: 0 15px;
+.main-nav ul li {
+    display: inline;
 }
 
-nav a {
+.main-nav ul li a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
 }
 
-nav a:hover {
-    color: #ffeb3b; /* Change hover color */
+.main-nav ul li a:hover {
+    background-color: #f0c419;
 }
 
-.nav-toggle {
-    display: none; /* Hidden on large screens */
+.content-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem 0;
+}
+
+.coursework, .location {
     background-color: white;
-    color: var(--primary-color);
-    border: none;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s; /* Transition for smoother visual feedback */
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 40%;
 }
 
-main {
-    padding: 20px;
+.location img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
 }
 
 .certificate {
-    margin-bottom: 20px;
-}
-
-.filter-buttons {
-    margin-bottom: 15px;
+    text-align: center;
+    margin: 2rem 0;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .filter-buttons button {
-    background-color: var(--primary-color);
+    background-color: black;
     color: white;
+    padding: 0.5rem 1rem;
     border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.filter-buttons button:hover {
-    background-color: #388E3C; /* Darker shade on hover */
-}
-
-.course {
-    margin: 5px;
-    padding: 10px;
     border-radius: 5px;
+    margin: 0.5rem;
+}
+
+.course-list {
     display: flex;
-    flex-direction: column;
-    transition: background 0.3s, transform 0.3s;
+    justify-content: space-around;
+    margin-top: 1rem;
 }
 
-.course.completed {
-    background-color: var(--completed-color);
-}
-
-.course.incomplete {
-    background-color: var(--incomplete-color);
-}
-
-.course:hover {
-    transform: scale(1.02);
+.course-btn {
+    background-color: #79443b;
+    color: white;
+    padding: 1rem;
+    border: none;
+    border-radius: 5px;
 }
 
 footer {
-    text-align: center;
-    margin-top: 20px;
-    padding: 10px;
-    background-color: var(--primary-color);
+    background-color: #2b3a50;
     color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
 }
 
-/* Responsive Styles */
-@media (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-        display: none; /* Hidden by default */
-        position: absolute;
-        top: 50px;
-        right: 0;
-        background-color: var(--primary-color);
-        width: 200px;
-        z-index: 1000; /* Ensure it appears on top */
-    }
-
-    nav ul.show {
-        display: flex; /* Show when toggled */
-    }
-
-    .nav-toggle {
-        display: block; /* Show on small screens */
-    }
-
-    .nav-toggle.active + ul {
-        display: flex; /* Show the menu when active */
-    }
-}
-
-@media (min-width: 601px) {
-    .course {
-        flex: 1 1 calc(30% - 10px); /* 3 columns for medium screens */
-    }
+footer p {
+    margin: 0.5rem 0;
 }
