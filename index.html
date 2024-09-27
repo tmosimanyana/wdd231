@@ -6,16 +6,19 @@
     <meta name="description" content="Tinny B. Mosimanyana's personal website, showcasing work and projects in web development.">
     <meta name="author" content="Tinny B. Mosimanyana">
     <title>Tinny B. Mosimanyana | WDD 130</title>
+    
+    <!-- Google Fonts Embed with Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css"> <!-- Ensured style.css is accessible -->
-    <script src="script.js" defer></script> <!-- Ensured script.js is accessible -->
+
+    <!-- Link to your external CSS file -->
+    <link rel="stylesheet" href="style.css"> <!-- Ensure this file exists in the same directory -->
 </head>
 <body>
     <header>
         <div class="profile">
-            <img src="images/profile  .jpg" alt="Tinny B. Mosimanyana's Profile Picture" width="150">
+            <img src="images/profile.jpg" alt="Tinny B. Mosimanyana's Profile Picture" width="150">
             <h1>Tinny B. Mosimanyana</h1>
         </div>
         <nav>
@@ -60,10 +63,7 @@
         <p>Last Update: <span id="last-update"></span></p>
     </footer>
     
-    <script>
-        // Update current year and last modified date
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        document.getElementById('last-update').textContent = document.lastModified;
-    </script>
+    <!-- Link to your external JavaScript file -->
+    <script src="script.js" defer></script>
 </body>
 </html>
