@@ -1,107 +1,136 @@
+/* General styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
-  margin: 0;
-  padding: 0;
+  margin: 20px;
+  line-height: 1.6;
+  background-color: #f4f4f4; /* Light background for better contrast */
 }
 
 header {
   text-align: center;
-  background-color: #27496d;
-  color: white;
-  padding: 20px 0;
+  padding: 10px;
+  background-color: #007BFF; /* Header background color */
+  color: white; /* Header text color */
 }
 
 .profile {
+  width: 120px; /* Smaller profile image for mobile */
   border-radius: 50%;
-  width: 100px;
 }
 
 nav ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 
 nav ul li {
-  display: inline;
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-h2 {
-  text-align: center;
-  background-color: #009688;
-  color: white;
-  padding: 10px 0;
-  margin: 0;
-}
-
-.course-work, .image-section, .certificate {
-  margin: 20px;
-}
-
-.image-section img {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
+  display: inline; /* Horizontal menu */
+  margin: 0 10px; /* Space between links */
 }
 
 .filter-buttons {
+  margin: 20px 0;
   display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
+  justify-content: center; /* Center buttons */
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
 }
 
 .filter-buttons button {
-  background-color: #000;
+  margin: 5px; /* Space between buttons */
+  padding: 12px 18px; /* Increased padding for touch targets */
+  background-color: #007BFF;
   color: white;
   border: none;
-  padding: 10px;
-  margin: 0 5px;
+  border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 1em; /* Larger text for buttons */
 }
 
 .filter-buttons button:hover {
-  background-color: #333;
-}
-
-.course-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  background-color: #0056b3;
 }
 
 .course-card {
-  background-color: #b5651d;
-  color: white;
-  width: 150px;
-  margin: 10px;
-  padding: 15px;
-  text-align: center;
+  border: 1px solid #ccc;
   border-radius: 5px;
+  padding: 15px;
+  margin: 10px 0;
+  background-color: #fff; /* White background for course cards */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .completed {
-  background-color: #555;
+  background-color: #d4edda; /* Light green background for completed courses */
+}
+
+.not-completed {
+  background-color: #f8d7da; /* Light red background for not completed courses */
+}
+
+.credits {
+  font-weight: bold;
+  margin: 20px 0;
+  text-align: center;
+}
+
+/* Image styles */
+.responsive-image {
+  max-width: 100%;
+  height: auto; /* Responsive image */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  nav ul li {
+      display: block; /* Stack links vertically on small screens */
+      margin: 10px 0; /* Space between links */
+  }
+
+  .filter-buttons {
+      display: flex;
+      flex-direction: column; /* Stack buttons vertically */
+      align-items: center; /* Center buttons */
+  }
+
+  .filter-buttons button {
+      margin: 10px 0; /* Space between buttons */
+      width: 90%; /* Full width for buttons */
+      max-width: 300px; /* Limit the button width */
+  }
+
+  .course-card {
+      font-size: 0.95em; /* Slightly smaller font on mobile */
+      padding: 10px; /* Smaller padding on mobile */
+  }
+
+  h1 {
+      font-size: 1.8em; /* Reduce heading size for better readability */
+  }
+
+  h2 {
+      font-size: 1.5em; /* Reduce heading size for better readability */
+  }
+
+  header,
+  footer {
+      padding: 15px; /* Add padding to header and footer */
+  }
+}
+
+@media (min-width: 769px) {
+  nav ul {
+      display: flex; /* Horizontal layout */
+      justify-content: center; /* Center links */
+  }
+
+  .filter-buttons button {
+      width: auto; /* Default button width */
+  }
 }
 
 footer {
-  background-color: #10344a;
-  color: white;
   text-align: center;
-  padding: 20px 0;
-}
-
-footer img.flag {
-  width: 25px;
-  margin-left: 5px;
-}
-
-footer p {
-  margin: 5px 0;
+  margin-top: 20px;
+  font-size: 0.9em; /* Slightly smaller footer text */
 }

@@ -7,54 +7,6 @@
     <title>Course Home Page</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
-    <style>
-        /* Internal CSS for Course Tracker */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-
-        .filter-buttons {
-            margin: 20px 0; /* Spacing around the filter buttons */
-            text-align: center; /* Center the filter buttons */
-        }
-
-        .filter-buttons button {
-            margin: 0 10px; /* Spacing between buttons */
-            padding: 10px 15px; /* Padding for button */
-            background-color: #007BFF; /* Button color */
-            color: white; /* Text color */
-            border: none; /* Remove border */
-            border-radius: 5px; /* Rounded corners */
-            cursor: pointer; /* Pointer cursor */
-        }
-
-        .filter-buttons button:hover {
-            background-color: #0056b3; /* Darker color on hover */
-        }
-
-        .course-card {
-            border: 1px solid #ccc; /* Border for course card */
-            border-radius: 5px; /* Rounded corners */
-            padding: 15px; /* Padding for card */
-            margin: 10px 0; /* Spacing between cards */
-            background-color: #f9f9f9; /* Background color for card */
-        }
-
-        .completed {
-            background-color: #d4edda; /* Light green for completed courses */
-        }
-
-        .not-completed {
-            background-color: #f8d7da; /* Light red for not completed courses */
-        }
-
-        .credits {
-            font-weight: bold; /* Bold for total credits */
-            margin: 20px 0; /* Margin for credits section */
-            text-align: center; /* Center the text */
-        }
-    </style>
 </head>
 
 <body>
@@ -75,17 +27,15 @@
         <section class="course-work">
             <h2>Course Work</h2>
             <ul>
-                <li>• Programming Fundamentals</li>
-                <li>• Web Development</li>
-                <li>• Database Management</li>
-                <li>• Advanced JavaScript</li>
-                <li>• Mobile Application Development</li>
+                <li>•</li>
+                <li>•</li>
+                <li>•</li>
             </ul>
         </section>
 
         <section class="image-section">
             <h2>Kasane, Botswana</h2>
-            <img src="images/zebra.jpg" alt="Zebra Animals" loading="lazy">
+            <img src="images/zebra.jpg" alt="Zebra Animals" class="responsive-image">
         </section>
 
         <section class="certificate">
@@ -95,9 +45,7 @@
                 <button onclick="filterCourses('CSE')">CSE</button>
                 <button onclick="filterCourses('WDD')">WDD</button>
             </div>
-            <div id="course-list" class="course-list">
-                <!-- Courses will be dynamically loaded here -->
-            </div>
+            <div id="course-list" class="course-list"></div>
             <div class="credits" id="total-credits">
                 Total Credits Required: <span id="credit-count">0</span>
             </div>
@@ -105,7 +53,7 @@
     </main>
 
     <footer>
-        <p>&copy; <span id="current-year"></span>Tinny Bothepha Mosimanyana <span>🌸</span> Botswana <img src="images/botswana.png" alt="Botswana Flag" class="flag"></p>
+        <p>&copy; <span id="current-year"></span> Tinny Bothepha Mosimanyana <span>🌸</span> Botswana <img src="images/botswana.png" alt="Botswana Flag" class="flag"></p>
         <p>Last Updated: <span id="last-modified"></span></p>
     </footer>
 </body>
