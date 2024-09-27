@@ -1,70 +1,102 @@
-body {
-  font-family: Arial, sans-serif;
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-header {
-  background-color: #4CAF50;
-  color: white;
-  padding: 1em;
-  text-align: center;
+body {
+  font-family: Arial, sans-serif;
 }
 
-nav {
+.header {
   display: flex;
-  justify-content: center;
-  margin-top: 1em;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004165; /* Dark blue color */
+  padding: 20px;
+  color: white;
 }
 
-nav ul {
-  list-style-type: none;
-  padding: 0;
+.profile-container {
+  display: flex;
+  align-items: center;
 }
 
-nav li {
-  margin: 0 15px;
+.profile-image {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;
 }
 
-nav a {
+.name {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav-menu ul li {
+  margin-left: 20px;
+}
+
+.nav-menu ul li a {
   color: white;
   text-decoration: none;
+  font-size: 18px;
   padding: 5px 10px;
-  transition: background-color 0.3s;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+.nav-menu ul li a.active {
+  color: #d4c400; /* Yellow color for active link */
 }
 
-main {
-  padding: 1em;
+.nav-menu ul li a:hover {
+  color: #d4c400; /* Hover effect */
 }
-
-h2 {
-  margin-top: 1.5em;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  border: 1px solid #ddd;
-  padding: 0.5em;
-  margin: 0.5em 0;
-}
-
-.completed {
-  background-color: #d4edda; /* Light green for completed courses */
-}
-
-footer {
-  background-color: #f1f1f1;
+.footer {
+  background-color: #004165; /* Dark blue background to match the header */
+  color: white;
+  padding: 20px 0;
   text-align: center;
-  padding: 1em;
   position: relative;
   bottom: 0;
   width: 100%;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer p {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+
+.footer-nav ul li {
+  margin: 0 15px;
+}
+
+.footer-nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer-nav ul li a:hover {
+  color: #d4c400; /* Yellow hover color */
 }
