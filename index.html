@@ -3,49 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Work</title>
+    <title>Course Home Page</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
 </head>
 <body>
+
     <header>
-        <img src="profile.jpg" alt="Rubia M. Francesco" class="profile-picture">
+        <img src="profile-pic.jpg" alt="Profile Picture" class="profile-pic">
         <h1>Rubia M. Francesco</h1>
-        <h2>Course Work</h2>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#chamber">Chamber</a></li>
+                <li><a href="#github">GitHub Profile</a></li>
+                <li><a href="#linkedin">LinkedIn</a></li>
+            </ul>
+            <button class="hamburger-menu">&#9776;</button>
+        </nav>
     </header>
-    
+
     <main>
-        <section class="location">
-            <h3>Location</h3>
-            <p>Toloria, Madagascar</p>
-        </section>
-        
-        <section class="course-info">
-            <h3>Web and Computer Programming Certificate</h3>
-            <div class="filter-buttons">
-                <button id="filter-all">All</button>
-                <button id="filter-cse">CSE</button>
-                <button id="filter-wdd">WDD</button>
-            </div>
-            <div class="course-list"></div>
-            <div id="credits-required"></div>
-            <div id="credits-completed"></div>
-            <div id="last-update"></div>
+        <section class="course-work">
+            <h2>Course Work</h2>
+            <ul>
+                <li>Course item 1</li>
+                <li>Course item 2</li>
+                <li>Course item 3</li>
+            </ul>
         </section>
 
-        <section class="images">
-            <h3>Course Related Images</h3>
-            <div class="image-grid">
-                <img src="baobab-trees.jpg" alt="Baobab Trees" class="course-image">
-                <img src="another-image.jpg" alt="Another Course Image" class="course-image">
-                <!-- Add more images as needed -->
+        <section class="location">
+            <h2>Toloria, Madagascar</h2>
+            <img src="baobab-trees.jpg" alt="Baobab Trees">
+            <p>Baobab Trees</p>
+        </section>
+
+        <section class="certificate">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter-buttons">
+                <button id="all">All</button>
+                <button id="cse">CSE</button>
+                <button id="wdd">WDD</button>
+            </div>
+            <div class="courses">
+                <button class="course-button">CSE 110</button>
+                <button class="course-button">WDD 130</button>
+                <button class="course-button">CSE 111</button>
+                <button class="course-button">CSE 210</button>
+                <button class="course-button">WDD 131</button>
+                <button class="course-button">WDD 231</button>
             </div>
         </section>
     </main>
-    
+
     <footer>
-        <p>&copy;<span id="current-year"></span> 🌺 Rubia Magdalena Francesco 🌺 Madagascar</p>
-        <p>Last Updated: <span id="last-modified"></span></p>
+        <p>©2025 Rubia Magdalena Francesco &#127802; Madagascar</p>
+        <p>Last Update: 01/01/1970 12:00:00</p>
     </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>
