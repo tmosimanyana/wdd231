@@ -1,41 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W01 Course Home Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script>
+    <meta name="description" content="Tinny Mosimanyana's personal website, showcasing work and projects in web development. Explore my skills and experience.">
+    <meta name="author" content="Tinny Mosimanyana">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Tinny Mosimanyana | Web Developer</title>
+    <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
     <header>
-        <h1>W01 Course Home Page</h1>
+        <h1>Tinny Mosimanyana | WDD 130</h1>
         <nav>
-            <ul id="navigation">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#courses">Courses</a></li>
-                <li><a href="#contact">Contact</a></li>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="chamber/">Chamber</a></li>
+                <li><a href="https://github.com/tmosimanyana">GitHub Profile</a></li> <!-- Replace 'yourusername' with your actual GitHub username -->
+                <li><a href="https://www.linkedin.com/in/tinny29/">LinkedIn</a></li> <!-- Replace 'yourprofile' with your LinkedIn profile link -->
             </ul>
         </nav>
     </header>
+
     <main>
-        <section id="courses">
-            <h2>Course List</h2>
-            <div>
-                <label for="filter">Filter Completed Courses:</label>
-                <select id="filter" onchange="filterCourses()">
-                    <option value="all">All Courses</option>
-                    <option value="completed">Completed Courses</option>
-                    <option value="incomplete">Incomplete Courses</option>
-                </select>
-            </div>
-            <ul id="courseList"></ul>
-            <p id="totalCredits"></p>
+        <section id="about">
+            <h2>About Me</h2>
+            <img src="images/profile.webp" alt="Tinny Mosimanyana" width="150">
+            <p>I am a web developer passionate about creating beautiful and functional websites. With several years of experience in front-end and back-end development, I enjoy turning ideas into digital solutions. My goal is to make the web a better place one website at a time.</p>
+        </section>
+
+        <section id="location">
+            <h2>Molepolole</h2>
+            <img src="images/molepolole.webp" alt="Molepolole landscape" width="200">
+            <p>Molepolole is a village near Gaborone city in the southern part of Botswana. It is a growing, developing village with many business opportunities.</p>
+        </section>
+
+        <section id="projects">
+            <h2>Projects</h2>
+            <p>Explore my recent projects that showcase my skills in web development, including responsive design and interactive applications.</p>
+            <ul>
+                <li><a href="wwr/">White Water Rafting Website</a></li>
+                <li><a href="chamber/">Chamber of Commerce Website</a></li>
+            </ul>
         </section>
     </main>
+
     <footer>
-        <p>&copy; <span id="currentYear"></span> Your Name</p>
-        <p>Last modified: <span id="lastModified"></span></p>
+        <p>&copy; <span id="currentyear"></span> | Tinny Mosimanyana | Botswana</p>
+        <p id="lastModified">Last modified: <span id="lastModifiedDate"></span></p>
     </footer>
+
+    <script>
+        // Set the current year in the footer
+        const currentYear = new Date().getFullYear();
+        document.getElementById('currentyear').textContent = currentYear;
+
+        // Set the last modified date in the footer
+        document.getElementById('lastModifiedDate').textContent = document.lastModified;
+    </script>
 </body>
+
 </html>
