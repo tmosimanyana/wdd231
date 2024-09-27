@@ -56,44 +56,77 @@ const courses = [
         title: 'Frontend Web Development I',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course builds on prior experience with Dynamic Web Fundamentals and programming. Students will focus on user experience, accessibility, compliance, performance optimization, and basic API usage.',
+        description: 'This course builds on prior experience with Dynamic Web Fundamentals and programming. Students will focus on user experience, accessibility, compliance, performance optimization, and basic client-side storage.',
         technology: ['HTML', 'CSS', 'JavaScript'],
+        completed: false
+    },
+    {
+        subject: 'DBA',
+        number: 212,
+        title: 'Introduction to Databases',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course will introduce students to the concepts and techniques used to store, retrieve and manipulate data in databases. Students will gain experience in using Structured Query Language (SQL) to access and manage databases.',
+        technology: ['SQL'],
+        completed: false
+    },
+    {
+        subject: 'MAT',
+        number: 100,
+        title: 'Math for Real Life',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course provides students with an understanding of math as it relates to real life. Topics include percentages, measurements, ratios, and statistics.',
+        technology: ['Excel'],
         completed: false
     }
 ];
 
-// Function to display courses
+// Filter courses and update the UI
+function filterCourses(type) {
+    let filteredCourses = courses;
+    if (type !== 'all') {
+        filteredCourses = courses.filter(course => course.subject === type);
+    }
+    displayCourses(filteredCourses);
+}
+
+// Display course cards dynamically
 function displayCourses(courseArray) {
     const courseList = document.getElementById('course-list');
-    courseList.innerHTML = ''; // Clear previous courses
+    courseList.innerHTML = ''; // Clear previous content
+
     let totalCredits = 0;
 
     courseArray.forEach(course => {
         const courseCard = document.createElement('div');
         courseCard.className = 'course-card ' + (course.completed ? 'completed' : 'not-completed');
+
         courseCard.innerHTML = `
-            <strong>${course.title} (${course.subject} ${course.number})</strong><br>
-            <em>${course.certificate}</em><br>
+            <h3>${course.title} (${course.subject} ${course.number})</h3>
             <p>${course.description}</p>
-            <strong>Credits:</strong> ${course.credits}<br>
-            <strong>Technology:</strong> ${course.technology.join(', ')}
+            <p><strong>Credits:</strong> ${course.credits}</p>
+            <p><strong>Technologies:</strong> ${course.technology.join(', ')}</p>
         `;
         courseList.appendChild(courseCard);
+
         totalCredits += course.credits;
     });
 
     document.getElementById('credit-count').innerText = totalCredits;
 }
 
-// Function to filter courses
-function filterCourses(category) {
-    const filteredCourses = category === 'all' ? courses : courses.filter(course => course.subject === category);
-    displayCourses(filteredCourses);
+// Update the current year and last modified date
+function updateFooter() {
+    const year = new Date().getFullYear();
+    document.getElementById('current-year').innerText = year;
+
+    const lastModified = new Date(document.lastModified);
+    document.getElementById('last-modified').innerText = lastModified.toLocaleString();
 }
 
-// Initialize course display
-displayCourses(courses);
-
-// Set dynamic content for footer
-document.getElementById('current-year').innerText = new Date().getFullYear();
-document.getElementById('last-modified').innerText = document.lastModified;
+// Initialize the page
+document.addEventListener('DOMContentLoaded', () => {
+    filterCourses('all'); // Display all courses on load
+    updateFooter(); // Update footer with the current year and last modified date
+});
