@@ -2,28 +2,77 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Official portfolio website of Rubia M. Francesco showcasing skills, projects, and professional achievements.">
-    <meta name="keywords" content="Rubia M. Francesco, portfolio, software development, chamber of commerce, LinkedIn, GitHub">
-    <meta name="author" content="Rubia M. Francesco">
-    
-    <!-- Title of the Web Page -->
-    <title>Rubia M. Francesco - Portfolio</title>
-    
-    <!-- Link to External CSS -->
-    <link rel="stylesheet" href="styles.css">
-    
-    <!-- Link to Google Fonts for Custom Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins:wght@600&display=swap" rel="stylesheet">
-    
-    <!-- Favicon (Optional) -->
-    <link rel="icon" type="image/png" href="favicon.png">
-    
-    <!-- External JavaScript (Optional) -->
-    <script defer src="scripts.js"></script>
+    <title>Rubia M. Francesco</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
 </head>
+<body>
+    <header>
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile Picture">
+            <h1>Rubia M. Francesco</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="#">LinkedIn</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main>
+        <section class="coursework">
+            <h2>Course Work</h2>
+            <ul>
+                <li>•</li>
+                <li>•</li>
+                <li>•</li>
+            </ul>
+        </section>
 
+        <section class="toloria">
+            <h2>Toloria, Madagascar</h2>
+            <img src="baobab.jpg" alt="Baobab Trees">
+            <p>Baobab Trees</p>
+        </section>
+        <section class="certificate">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter-buttons">
+                <button id="filter-all">All</button>
+                <button id="filter-cse">CSE</button>
+                <button id="filter-wdd">WDD</button>
+            </div>
+            <div class="course-list">
+                <!-- Courses will be dynamically populated here -->
+            </div>
+            <p id="credits-required"></p>
+            <p id="credits-completed"></p>
+        </section>
+        
+        <section class="certificate">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter-buttons">
+                <button id="filter-all">All</button>
+                <button id="filter-cse">CSE</button>
+                <button id="filter-wdd">WDD</button>
+            </div>
+            <div class="course-list">
+                <button class="course cse">CSE 110</button>
+                <button class="course wdd">WDD 130</button>
+                <button class="course cse">CSE 111</button>
+                <button class="course cse">CSE 210</button>
+                <button class="course wdd">WDD 131</button>
+                <button class="course wdd">WDD 231</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy;2025 🌺 Rubia Magdalena Francesco 🌺 Madagascar</p>
+        <p>Last Update: <span id="last-update"></span></p>
+    </footer>
+</body>
+</html>

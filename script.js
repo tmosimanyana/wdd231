@@ -1,4 +1,3 @@
-// Course data
 const courses = [
     {
         subject: 'CSE',
@@ -8,7 +7,7 @@ const courses = [
         certificate: 'Web and Computer Programming',
         description: 'This course will introduce students to programming.',
         technology: ['Python'],
-        completed: false
+        completed: true // Completed
     },
     {
         subject: 'WDD',
@@ -16,9 +15,9 @@ const courses = [
         title: 'Web Fundamentals',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course introduces students to web design and development.',
+        description: 'This course introduces students to the World Wide Web and careers in web design.',
         technology: ['HTML', 'CSS'],
-        completed: false
+        completed: true // Completed
     },
     {
         subject: 'CSE',
@@ -26,9 +25,9 @@ const courses = [
         title: 'Programming with Functions',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'Students will learn to write, call, debug, and test functions.',
+        description: 'This course teaches the use of functions in Python programming.',
         technology: ['Python'],
-        completed: false
+        completed: true // Completed
     },
     {
         subject: 'CSE',
@@ -36,9 +35,9 @@ const courses = [
         title: 'Programming with Classes',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course introduces classes and objects.',
+        description: 'This course introduces the concept of object-oriented programming with classes.',
         technology: ['C#'],
-        completed: false
+        completed: true // Completed
     },
     {
         subject: 'WDD',
@@ -46,9 +45,9 @@ const courses = [
         title: 'Dynamic Web Fundamentals',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'Students will learn to create dynamic websites using JavaScript.',
+        description: 'This course teaches dynamic web development with JavaScript.',
         technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: false
+        completed: true // Completed
     },
     {
         subject: 'WDD',
@@ -56,63 +55,57 @@ const courses = [
         title: 'Frontend Web Development I',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'Focus on user experience, accessibility, and performance.',
+        description: 'This course focuses on frontend web development, including user experience and API usage.',
         technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: false
+        completed: false // Not Completed
     }
 ];
 
-// Update course completion status
-function updateCourseCompletion(index) {
-    courses[index].completed = true;
-    displayCourses();
-}
+// Function to dynamically render the course cards
+function renderCourses(filter) {
+    const courseList = document.querySelector('.course-list');
+    courseList.innerHTML = ''; // Clear previous courses
 
-// Filter courses based on completion status
-function filterCourses() {
-    const filterValue = document.getElementById('filter').value;
-    displayCourses(filterValue);
-}
+    const filteredCourses = filter === 'all' ? courses : courses.filter(course => course.subject === filter.toUpperCase());
 
-// Display courses dynamically
-function displayCourses(filter = 'all') {
-    const courseList = document.getElementById('courseList');
-    courseList.innerHTML = '';
+    filteredCourses.forEach(course => {
+        const courseCard = document.createElement('button');
+        courseCard.classList.add('course');
+        courseCard.classList.add(course.subject.toLowerCase());
 
-    let filteredCourses = courses;
+        if (course.completed) {
+            courseCard.classList.add('completed');
+        }
 
-    if (filter === 'completed') {
-        filteredCourses = courses.filter(course => course.completed);
-    } else if (filter === 'incomplete') {
-        filteredCourses = courses.filter(course => !course.completed);
-    }
-
-    filteredCourses.forEach((course, index) => {
-        const li = document.createElement('li');
-        li.classList.add(course.completed ? 'completed' : '');
-        li.innerHTML = `
-            <h3>${course.title} (${course.subject} ${course.number})</h3>
-            <p>Credits: ${course.credits}</p>
-            <p>${course.description}</p>
-            <button onclick="updateCourseCompletion(${index})" ${course.completed ? 'disabled' : ''}>
-                ${course.completed ? 'Completed' : 'Mark as Completed'}
-            </button>
-        `;
-        courseList.appendChild(li);
+        courseCard.innerHTML = `${course.subject} ${course.number}: ${course.title}`;
+        courseList.appendChild(courseCard);
     });
-
-    displayTotalCredits();
 }
 
-// Display total credits
-function displayTotalCredits() {
-    const totalCredits = courses.reduce((acc, course) => acc + (course.completed ? course.credits : 0), 0);
-    document.getElementById('totalCredits').textContent = `Total Completed Credits: ${totalCredits}`;
+// Function to calculate and display total credits
+function calculateCredits() {
+    const totalCredits = courses.reduce((total, course) => total + course.credits, 0);
+    const completedCredits = courses.filter(course => course.completed).reduce((total, course) => total + course.credits, 0);
+
+    document.getElementById('credits-required').textContent = `Total Credits Required: ${totalCredits}`;
+    document.getElementById('credits-completed').textContent = `Total Credits Earned: ${completedCredits}`;
 }
 
-// Display current year and last modified date in footer
-document.getElementById('currentYear').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = document.lastModified;
+// Event listeners for filtering courses
+document.getElementById('filter-all').addEventListener('click', () => {
+    renderCourses('all');
+});
 
-// Initial display of courses
-displayCourses();
+document.getElementById('filter-cse').addEventListener('click', () => {
+    renderCourses('cse');
+});
+
+document.getElementById('filter-wdd').addEventListener('click', () => {
+    renderCourses('wdd');
+});
+
+// Initial render
+window.onload = () => {
+    renderCourses('all');
+    calculateCredits();
+};
