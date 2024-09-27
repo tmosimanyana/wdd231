@@ -6,7 +6,7 @@ const courses = [
         title: 'Introduction to Programming',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course will introduce students to programming. It will introduce the building blocks of programming languages (variables, decisions, calculations, loops, array, and input/output) and use them to solve problems.',
+        description: 'This course will introduce students to programming...',
         technology: ['Python'],
         completed: true
     },
@@ -16,69 +16,29 @@ const courses = [
         title: 'Web Fundamentals',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course introduces students to the World Wide Web and to careers in web site design and development. The course is hands on with students actually participating in simple web designs and programming.',
+        description: 'This course introduces students to the World Wide Web...',
         technology: ['HTML', 'CSS'],
         completed: true
     },
     {
-        subject: 'CSE',
-        number: 111,
-        title: 'Programming with Functions',
+        subject: 'WDD',
+        number: 140,
+        title: 'Dynamic Web Fundamentals',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'Students become more organized, efficient, and powerful computer programmers by learning to research and call functions written by others.',
-        technology: ['Python'],
+        description: 'This course covers dynamic content creation for websites...',
+        technology: ['JavaScript'],
         completed: true
     },
     {
         subject: 'CSE',
         number: 210,
-        title: 'Programming with Classes',
-        credits: 2,
+        title: 'Advanced Programming',
+        credits: 3,
         certificate: 'Web and Computer Programming',
-        description: 'This course introduces the notion of classes and objects. It will present encapsulation at a conceptual level, working with inheritance and polymorphism.',
-        technology: ['C#'],
-        completed: true
-    },
-    {
-        subject: 'WDD',
-        number: 131,
-        title: 'Dynamic Web Fundamentals',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course builds on prior experience in Web Fundamentals and programming. Students will learn to create dynamic websites that use JavaScript to respond to events.',
-        technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: true
-    },
-    {
-        subject: 'WDD',
-        number: 231,
-        title: 'Frontend Web Development I',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course focuses on user experience, accessibility, compliance, performance optimization, and basic client-side storage.',
-        technology: ['HTML', 'CSS', 'JavaScript'],
+        description: 'Advanced programming techniques and algorithms...',
+        technology: ['Python', 'C++'],
         completed: false
-    },
-    {
-        subject: 'DBA',
-        number: 212,
-        title: 'Introduction to Databases',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'Students will gain experience in using SQL to access and manage databases.',
-        technology: ['SQL'],
-        completed: true
-    },
-    {
-        subject: 'MAT',
-        number: 100,
-        title: 'Math for Real Life',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course provides students with an understanding of math as it relates to real life. Topics include percentages, measurements, ratios, and statistics.',
-        technology: ['Excel'],
-        completed: true
     }
 ];
 
@@ -89,6 +49,7 @@ function filterCourses(type) {
         filteredCourses = courses.filter(course => course.subject === type);
     }
     displayCourses(filteredCourses);
+    updateProgressBar(filteredCourses);
 }
 
 // Display course cards dynamically
@@ -114,19 +75,16 @@ function displayCourses(courseArray) {
     });
 
     document.getElementById('credit-count').innerText = totalCredits;
-
-    // Update progress bar
-    updateProgressBar();
 }
 
 // Update the progress bar based on completed courses
-function updateProgressBar() {
-    const completedCourses = courses.filter(course => course.completed).length;
-    const totalCourses = courses.length;
-    const progress = (completedCourses / totalCourses) * 100;
+function updateProgressBar(courseArray) {
+    const totalCourses = courseArray.length;
+    const completedCourses = courseArray.filter(course => course.completed).length;
+    const progressPercent = (completedCourses / totalCourses) * 100;
 
-    document.getElementById('progress').style.width = `${progress}%`;
-    document.getElementById('progress-text').innerText = `${Math.round(progress)}%`;
+    document.getElementById('progress-bar-fill').style.width = progressPercent + '%';
+    document.getElementById('progress-percent').innerText = progressPercent.toFixed(0) + '%';
 }
 
 // Update the current year and last modified date
