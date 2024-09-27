@@ -1,91 +1,78 @@
-/* General styles */
 body {
   font-family: Arial, sans-serif;
-  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
 
 header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1em;
   text-align: center;
-  margin-bottom: 20px;
 }
 
 .profile {
-  width: 150px;
   border-radius: 50%;
+  width: 100px;
+  height: 100px;
 }
 
 nav ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 
 nav ul li {
   display: inline;
-  margin: 0 15px;
+  margin-right: 15px;
 }
 
-h1, h2, h3 {
-  color: #333;
-}
-
-/* Course tracker styles */
-.course-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.course-card {
-  background-color: #f4f4f4;
+.course-work, .certificate {
+  margin: 20px;
   padding: 15px;
+  border: 1px solid #ddd;
   border-radius: 5px;
-  width: 250px;
-}
-
-.completed {
-  border-left: 5px solid green;
-}
-
-.not-completed {
-  border-left: 5px solid red;
-}
-
-.credits {
-  margin-top: 20px;
-}
-
-.progress-section {
-  margin-top: 20px;
 }
 
 .progress-bar {
-  width: 100%;
-  height: 30px;
-  background-color: #ddd;
+  background-color: #f3f3f3;
   border-radius: 5px;
-  overflow: hidden;
+  height: 20px;
+  width: 100%;
+  margin: 10px 0;
 }
 
 .progress-bar-fill {
+  background-color: #4CAF50;
   height: 100%;
-  width: 0;
-  background-color: green;
-  transition: width 0.5s;
+  width: 0; /* Start at 0% */
+  border-radius: 5px;
 }
 
-/* Footer styles */
 footer {
   text-align: center;
-  padding: 20px;
-  background-color: #f4f4f4;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
 }
 
 .responsive-image {
   width: 100%;
   height: auto;
-  border-radius: 5px;
 }
 
-.flag {
-  width: 30px;
+.course-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5px 0;
+}
+
+.completed {
+  background-color: #e7ffe7;
+}
+
+.not-completed {
+  background-color: #ffe7e7;
 }

@@ -5,40 +5,56 @@ const courses = [
         number: 110,
         title: 'Introduction to Programming',
         credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course will introduce students to programming...',
-        technology: ['Python'],
-        completed: true
+        completed: true // Completed
     },
     {
         subject: 'WDD',
         number: 130,
         title: 'Web Fundamentals',
         credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course introduces students to the World Wide Web...',
-        technology: ['HTML', 'CSS'],
-        completed: true
+        completed: true // Completed
     },
     {
-        subject: 'WDD',
-        number: 140,
-        title: 'Dynamic Web Fundamentals',
+        subject: 'CSE',
+        number: 111,
+        title: 'Programming with Functions',
         credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course covers dynamic content creation for websites...',
-        technology: ['JavaScript'],
-        completed: true
+        completed: true // Completed
     },
     {
         subject: 'CSE',
         number: 210,
-        title: 'Advanced Programming',
-        credits: 3,
-        certificate: 'Web and Computer Programming',
-        description: 'Advanced programming techniques and algorithms...',
-        technology: ['Python', 'C++'],
-        completed: false
+        title: 'Programming with Classes',
+        credits: 2,
+        completed: true // Completed
+    },
+    {
+        subject: 'WDD',
+        number: 131,
+        title: 'Dynamic Web Fundamentals',
+        credits: 2,
+        completed: true // Completed
+    },
+    {
+        subject: 'WDD',
+        number: 231,
+        title: 'Frontend Web Development I',
+        credits: 2,
+        completed: false // Not completed
+    },
+    {
+        subject: 'DBA',
+        number: 212,
+        title: 'Introduction to Databases',
+        credits: 2,
+        completed: false // Not completed
+    },
+    {
+        subject: 'MAT',
+        number: 100,
+        title: 'Math for Real Life',
+        credits: 2,
+        completed: false // Not completed
     }
 ];
 
@@ -49,7 +65,6 @@ function filterCourses(type) {
         filteredCourses = courses.filter(course => course.subject === type);
     }
     displayCourses(filteredCourses);
-    updateProgressBar(filteredCourses);
 }
 
 // Display course cards dynamically
@@ -65,9 +80,7 @@ function displayCourses(courseArray) {
 
         courseCard.innerHTML = `
             <h3>${course.title} (${course.subject} ${course.number})</h3>
-            <p>${course.description}</p>
             <p><strong>Credits:</strong> ${course.credits}</p>
-            <p><strong>Technologies:</strong> ${course.technology.join(', ')}</p>
         `;
         courseList.appendChild(courseCard);
 
@@ -75,16 +88,20 @@ function displayCourses(courseArray) {
     });
 
     document.getElementById('credit-count').innerText = totalCredits;
+
+    // Update the progress bar after displaying courses
+    updateProgressBar();
 }
 
 // Update the progress bar based on completed courses
-function updateProgressBar(courseArray) {
-    const totalCourses = courseArray.length;
-    const completedCourses = courseArray.filter(course => course.completed).length;
-    const progressPercent = (completedCourses / totalCourses) * 100;
+function updateProgressBar() {
+    const completedCourses = courses.filter(course => course.completed).length; // Count completed courses
+    const totalCourses = courses.length; // Total number of courses
+    const progressPercent = (completedCourses / totalCourses) * 100; // Calculate percentage
 
+    // Update the progress bar width and text display
     document.getElementById('progress-bar-fill').style.width = progressPercent + '%';
-    document.getElementById('progress-percent').innerText = progressPercent.toFixed(0) + '%';
+    document.getElementById('progress-percent').innerText = progressPercent.toFixed(0) + '%'; // Display percentage
 }
 
 // Update the current year and last modified date
