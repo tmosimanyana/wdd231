@@ -4,3 +4,66 @@
   font-weight: 600; /* Bold style */
   color: white;
 }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  /* This ensures vertical alignment is centered */
+  background-color: #004165; /* Dark blue color */
+  padding: 20px;
+  color: white;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;  /* Aligns image and text vertically */
+}
+
+.profile-image {
+  width: 60px;  /* Adjust size of profile image */
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 15px;  /* Space between the image and the name */
+  object-fit: cover;   /* Ensures the image doesn't stretch */
+}
+
+.name {
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: white;
+}
+
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+}
+
+.nav-menu ul li {
+  margin-left: 20px;
+}
+
+.nav-menu ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px 10px;
+  transition: color 0.3s ease;
+}
+
+.nav-menu ul li a.active {
+  color: #d4c400; /* Yellow color for active link */
+}
+
+.nav-menu ul li a:hover {
+  color: #d4c400; /* Hover effect */
+}
