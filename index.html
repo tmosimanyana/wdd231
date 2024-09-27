@@ -5,26 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Work</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- External JavaScript file reference with defer attribute -->
     <script src="script.js" defer></script>
 </head>
 <body>
     <header>
+        <img src="profile.jpg" alt="Rubia M. Francesco" class="profile-picture">
         <h1>Rubia M. Francesco</h1>
-        <nav>
-            <button id="filter-all">All</button>
-            <button id="filter-cse">CSE</button>
-            <button id="filter-wdd">WDD</button>
-        </nav>
+        <h2>Course Work</h2>
     </header>
     
     <main>
+        <section class="location">
+            <h3>Location</h3>
+            <p>Toloria, Madagascar</p>
+        </section>
+        
         <section class="course-info">
-            <h2>Course Work</h2>
+            <h3>Web and Computer Programming Certificate</h3>
+            <div class="filter-buttons">
+                <button id="filter-all">All</button>
+                <button id="filter-cse">CSE</button>
+                <button id="filter-wdd">WDD</button>
+            </div>
             <div class="course-list"></div>
             <div id="credits-required"></div>
             <div id="credits-completed"></div>
             <div id="last-update"></div>
+        </section>
+
+        <section class="images">
+            <h3>Course Related Images</h3>
+            <div class="image-grid">
+                <img src="baobab-trees.jpg" alt="Baobab Trees" class="course-image">
+                <img src="another-image.jpg" alt="Another Course Image" class="course-image">
+                <!-- Add more images as needed -->
+            </div>
         </section>
     </main>
     
