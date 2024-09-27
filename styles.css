@@ -1,136 +1,91 @@
 /* General styles */
 body {
   font-family: Arial, sans-serif;
-  margin: 20px;
   line-height: 1.6;
-  background-color: #f4f4f4; /* Light background for better contrast */
 }
 
 header {
   text-align: center;
-  padding: 10px;
-  background-color: #007BFF; /* Header background color */
-  color: white; /* Header text color */
+  margin-bottom: 20px;
 }
 
 .profile {
-  width: 120px; /* Smaller profile image for mobile */
+  width: 150px;
   border-radius: 50%;
 }
 
 nav ul {
-  list-style-type: none;
+  list-style: none;
   padding: 0;
 }
 
 nav ul li {
-  display: inline; /* Horizontal menu */
-  margin: 0 10px; /* Space between links */
+  display: inline;
+  margin: 0 15px;
 }
 
-.filter-buttons {
-  margin: 20px 0;
+h1, h2, h3 {
+  color: #333;
+}
+
+/* Course tracker styles */
+.course-list {
   display: flex;
-  justify-content: center; /* Center buttons */
-  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
-}
-
-.filter-buttons button {
-  margin: 5px; /* Space between buttons */
-  padding: 12px 18px; /* Increased padding for touch targets */
-  background-color: #007BFF;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  font-size: 1em; /* Larger text for buttons */
-}
-
-.filter-buttons button:hover {
-  background-color: #0056b3;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .course-card {
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  background-color: #f4f4f4;
   padding: 15px;
-  margin: 10px 0;
-  background-color: #fff; /* White background for course cards */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  border-radius: 5px;
+  width: 250px;
 }
 
 .completed {
-  background-color: #d4edda; /* Light green background for completed courses */
+  border-left: 5px solid green;
 }
 
 .not-completed {
-  background-color: #f8d7da; /* Light red background for not completed courses */
+  border-left: 5px solid red;
 }
 
 .credits {
-  font-weight: bold;
-  margin: 20px 0;
-  text-align: center;
+  margin-top: 20px;
 }
 
-/* Image styles */
-.responsive-image {
-  max-width: 100%;
-  height: auto; /* Responsive image */
+.progress-section {
+  margin-top: 20px;
 }
 
-/* Responsive design */
-@media (max-width: 768px) {
-  nav ul li {
-      display: block; /* Stack links vertically on small screens */
-      margin: 10px 0; /* Space between links */
-  }
-
-  .filter-buttons {
-      display: flex;
-      flex-direction: column; /* Stack buttons vertically */
-      align-items: center; /* Center buttons */
-  }
-
-  .filter-buttons button {
-      margin: 10px 0; /* Space between buttons */
-      width: 90%; /* Full width for buttons */
-      max-width: 300px; /* Limit the button width */
-  }
-
-  .course-card {
-      font-size: 0.95em; /* Slightly smaller font on mobile */
-      padding: 10px; /* Smaller padding on mobile */
-  }
-
-  h1 {
-      font-size: 1.8em; /* Reduce heading size for better readability */
-  }
-
-  h2 {
-      font-size: 1.5em; /* Reduce heading size for better readability */
-  }
-
-  header,
-  footer {
-      padding: 15px; /* Add padding to header and footer */
-  }
+.progress-bar {
+  width: 100%;
+  height: 30px;
+  background-color: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-@media (min-width: 769px) {
-  nav ul {
-      display: flex; /* Horizontal layout */
-      justify-content: center; /* Center links */
-  }
-
-  .filter-buttons button {
-      width: auto; /* Default button width */
-  }
+.progress-bar-fill {
+  height: 100%;
+  width: 0;
+  background-color: green;
+  transition: width 0.5s;
 }
 
+/* Footer styles */
 footer {
   text-align: center;
-  margin-top: 20px;
-  font-size: 0.9em; /* Slightly smaller footer text */
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+.responsive-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.flag {
+  width: 30px;
 }
