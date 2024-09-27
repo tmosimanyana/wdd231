@@ -1,112 +1,234 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* General Styles */
 body {
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f4f4f4;
     color: #333;
 }
 
 header {
-    background-color: #2b3a50;
+    background-color: #1c567c; /* Dark blue */
     color: white;
     text-align: center;
-    padding: 1rem;
-}
-
-.profile-img {
-    border-radius: 50%;
-    width: 100px;
-    margin-bottom: 10px;
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
-.main-nav ul li {
-    display: inline;
-}
-
-.main-nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-}
-
-.main-nav ul li a:hover {
-    background-color: #f0c419;
-}
-
-.content-container {
-    display: flex;
-    justify-content: space-around;
-    margin: 2rem 0;
-}
-
-.coursework, .location {
-    background-color: white;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 40%;
-}
-
-.location img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.certificate {
-    text-align: center;
-    margin: 2rem 0;
-    background-color: white;
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.filter-buttons button {
-    background-color: black;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 5px;
-    margin: 0.5rem;
-}
-
-.course-list {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1rem;
-}
-
-.course-btn {
-    background-color: #79443b;
-    color: white;
-    padding: 1rem;
-    border: none;
-    border-radius: 5px;
-}
-
-footer {
-    background-color: #2b3a50;
-    color: white;
-    text-align: center;
-    padding: 1rem;
+    padding: 20px;
     position: relative;
 }
 
+header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+nav {
+    background-color: #000;
+    text-align: center;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+}
+
+nav ul li a:hover {
+    color: #ffc107; /* Yellow */
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.coursework-section,
+.toloria-section {
+    width: 45%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.coursework-section h2,
+.toloria-section h2 {
+    margin-top: 0;
+    background-color: #1c567c;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.filter-buttons button {
+    background-color: #1c567c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.filter-buttons button:hover {
+    background-color: #174a6b; /* Slightly darker blue */
+}
+
+/* Course List */
+.course-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.course-list div {
+    background-color: #d2691e; /* Brownish color */
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Image Section */
+.toloria-section img {
+    width: 100%;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.toloria-section p {
+    font-style: italic;
+    text-align: center;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background-color: #1c567c;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
 footer p {
-    margin: 0.5rem 0;
+    margin: 5px 0;
+}
+
+footer p:last-child {
+    font-size: 0.9rem;
+    color: #ffd700; /* Light yellow */
+}
+
+footer img {
+    width: 30px;
+    height: auto;
+    margin-left: 10px;
+}
+
+/* ================================= */
+/* Media Queries for Responsiveness */
+/* ================================= */
+
+/* Small screens (mobile) */
+@media screen and (max-width: 768px) {
+    /* Header adjustments */
+    header {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header img {
+        width: 60px;
+        height: 60px;
+        top: 10px;
+        left: 10px;
+    }
+
+    /* Navigation */
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    /* Main content layout */
+    main {
+        display: block;
+        padding: 10px;
+    }
+
+    .coursework-section,
+    .toloria-section {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    /* Course List */
+    .course-list {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Filter buttons */
+    .filter-buttons {
+        flex-direction: column;
+    }
+
+    .filter-buttons button {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    /* Footer */
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Medium screens (tablets) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Adjust main sections for tablets */
+    .coursework-section,
+    .toloria-section {
+        width: 48%;
+    }
+
+    /* Course List */
+    .course-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

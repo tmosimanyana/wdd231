@@ -93,8 +93,7 @@
         const currentYear = new Date().getFullYear();
         const lastModifiedDate = document.lastModified;
 
-        document.querySelector('footer p').textContent = `©${currentYear} 🌺 Tinny Bothepha Mosimanyana
-         🌺 Botswana`;
+        document.querySelector('footer p').textContent = `©${currentYear} 🌺 Tinny Bothepha Mosimanyana 🌺 Botswana`;
         lastUpdate.textContent = lastModifiedDate;
 
         setupEventListeners();
