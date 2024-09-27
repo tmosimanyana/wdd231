@@ -1,115 +1,104 @@
-// Course data array
-const courses = [
-    {
-        subject: 'CSE',
-        number: 110,
-        title: 'Introduction to Programming',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        completed: true
-    },
-    {
-        subject: 'WDD',
-        number: 130,
-        title: 'Web Fundamentals',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        completed: true
-    },
-    {
-        subject: 'CSE',
-        number: 111,
-        title: 'Programming with Functions',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        completed: true
-    },
-    {
-        subject: 'CSE',
-        number: 210,
-        title: 'Programming with Classes',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        completed: true
-    },
-    {
-        subject: 'WDD',
-        number: 131,
-        title: 'Dynamic Web Fundamentals',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        completed: true
-    },
-    {
-        subject: 'WDD',
-        number: 231,
-        title: 'Frontend Web Development I',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        completed: false
-    }
-];
+(() => {
+    // Course List Array
+    const courses = [
+        {
+            subject: 'CSE',
+            number: 110,
+            title: 'Introduction to Programming',
+            credits: 2,
+            completed: true
+        },
+        {
+            subject: 'WDD',
+            number: 130,
+            title: 'Web Fundamentals',
+            credits: 2,
+            completed: true
+        },
+        {
+            subject: 'CSE',
+            number: 111,
+            title: 'Programming with Functions',
+            credits: 2,
+            completed: true
+        },
+        {
+            subject: 'CSE',
+            number: 210,
+            title: 'Programming with Classes',
+            credits: 2,
+            completed: false
+        },
+        {
+            subject: 'WDD',
+            number: 131,
+            title: 'Dynamic Web Fundamentals',
+            credits: 2,
+            completed: false
+        },
+        {
+            subject: 'WDD',
+            number: 231,
+            title: 'Frontend Web Development I',
+            credits: 2,
+            completed: false
+        }
+    ];
 
-// DOM Elements
-const courseListContainer = document.querySelector('.course-list');
-const creditsRequiredElement = document.getElementById('credits-required');
-const creditsCompletedElement = document.getElementById('credits-completed');
-const filterButtons = document.querySelectorAll('.filter-buttons button');
+    // Cache DOM elements
+    const courseList = document.querySelector('.course-list');
+    const creditsRequired = document.getElementById('credits-required');
+    const creditsCompleted = document.getElementById('credits-completed');
+    const lastUpdate = document.getElementById('last-update');
 
-// Dynamically display the course list and credits
-function displayCourses(filter) {
-    // Clear the course list container
-    courseListContainer.innerHTML = '';
+    // Calculate total credits
+    const calculateCredits = () => {
+        const totalCredits = courses.reduce((total, { credits }) => total + credits, 0);
+        const completedCredits = courses.filter(({ completed }) => completed).reduce((total, { credits }) => total + credits, 0);
+        
+        creditsRequired.textContent = `Total Credits Required: ${totalCredits}`;
+        creditsCompleted.textContent = `Total Credits Completed: ${completedCredits}`;
+    };
 
-    // Filter courses based on the subject (CSE, WDD, or all)
-    const filteredCourses = filter === 'All' ? courses : courses.filter(course => course.subject === filter);
+    // Create a course card HTML
+    const createCourseCard = ({ subject, number, title, credits, completed }) => `
+        <div class="course ${completed ? 'completed' : 'incomplete'}">
+            <h3>${subject} ${number}: ${title}</h3>
+            <p>Credits: ${credits}</p>
+            <p>Status: ${completed ? 'Completed' : 'Incomplete'}</p>
+        </div>
+    `;
 
-    // Display each course as a card
-    filteredCourses.forEach(course => {
-        const courseDiv = document.createElement('div');
-        courseDiv.classList.add('course');
-        courseDiv.classList.add(course.completed ? 'completed' : 'incomplete');  // Apply completed/incomplete class
+    // Render courses based on filter
+    const renderCourses = (filter = 'all') => {
+        const filteredCourses = courses.filter(course => filter === 'all' || course.subject === filter);
+        courseList.innerHTML = filteredCourses.map(createCourseCard).join('');
+    };
 
-        // Course content
-        courseDiv.innerHTML = `
-            <h3>${course.subject} ${course.number}: ${course.title}</h3>
-            <p>${course.credits} credits</p>
-            <p>${course.completed ? 'Completed' : 'Incomplete'}</p>
-        `;
-        courseListContainer.appendChild(courseDiv);
-    });
+    // Event delegation for filtering
+    const setupEventListeners = () => {
+        document.querySelector('.filter-buttons').addEventListener('click', ({ target }) => {
+            if (target.tagName === 'BUTTON') {
+                const filterType = target.id === 'filter-cse' ? 'CSE' : (target.id === 'filter-wdd' ? 'WDD' : 'all');
+                renderCourses(filterType);
+            }
+        });
+    };
 
-    // Calculate and display total credits
-    const totalCredits = courses.reduce((sum, course) => sum + course.credits, 0);
-    creditsRequiredElement.textContent = `Total Credits Required: ${totalCredits}`;
+    // Initialize application
+    const init = () => {
+        renderCourses();
+        calculateCredits();
+        
+        const currentYear = new Date().getFullYear();
+        const lastModifiedDate = document.lastModified;
 
-    // Calculate and display completed credits
-    const completedCredits = courses.filter(course => course.completed).reduce((sum, course) => sum + course.credits, 0);
-    creditsCompletedElement.textContent = `Credits Completed: ${completedCredits}`;
-}
+        document.querySelector('footer p').textContent = `©${currentYear} 🌺 Tinny Bothepha Mosimanyana
+         🌺 Botswana`;
+        lastUpdate.textContent = lastModifiedDate;
 
-// Filter functionality for buttons (All, CSE, WDD)
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        const filter = button.textContent;
-        displayCourses(filter);
-    });
-});
+        setupEventListeners();
+    };
 
-// Responsive navigation toggle
-const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('nav ul');
-
-navToggle.addEventListener('click', () => {
-    navMenu.classList.toggle('showing');
-});
-
-// Dynamically set the current year in the footer
-const currentYear = new Date().getFullYear();
-document.querySelector('footer p').textContent = `© ${currentYear} 🌺 Rubia Magdalena Francesco 🌺 Madagascar`;
-
-// Dynamically set the last modified date
-document.getElementById('last-update').textContent = document.lastModified;
-
-// Display all courses on initial load
-displayCourses('All');
+    init(); // Run the init function
+})();
