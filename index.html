@@ -3,97 +3,54 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Welcome to my Course Home Page, where I showcase my skills and completed coursework in Web and Computer Programming. Explore my courses, their descriptions, and the technologies I've learned.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Home Page</title>
+    <meta name="description" content="A personal portfolio website showcasing web development skills and links to Chamber of Commerce, GitHub, and LinkedIn profiles.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <title>Course Work</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Preconnect to fonts.gstatic.com -->
-    <style>
-        /* Example focus outline for accessibility */
-        :focus {
-            outline: 2px solid #005fcc; /* Change to your preferred color */
-        }
-
-        .skip-link {
-            position: absolute;
-            left: -9999px; /* Hide off-screen */
-            top: 0;
-        }
-
-        .skip-link:focus {
-            left: 0; /* Show when focused */
-            top: 0; 
-            z-index: 100; /* Ensure it is above other elements */
-        }
-    </style>
+    <script src="scripts/menu.js" defer></script>
+    <script src="scripts/dynamicContent.js" defer></script>
 </head>
 
 <body>
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
     <header>
-        <img src="images/profile.jpg" alt="Profile Picture of Tinny Bothepha Mosimanyana, a Web and Computer Programming student" class="profile">
-        <h1>Tinny B. Mosimanyana</h1>
-        <nav role="navigation">
+        <nav class="nav-menu">
+            <button class="menu-toggle">☰</button>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#chamber">Chamber</a></li>
+                <li><a href="#github">GitHub Profile</a></li>
+                <li><a href="#linkedin">LinkedIn</a></li>
             </ul>
         </nav>
     </header>
 
-    <main id="main-content">
-        <section class="course-work">
-            <h2>Course Work</h2>
-            <div class="filter-buttons">
-                <button onclick="filterCourses('all')">All Courses</button>
-                <button onclick="filterCourses('CSE')">CSE Courses</button>
-                <button onclick="filterCourses('WDD')">WDD Courses</button>
-            </div>
-            <div id="course-list" class="course-list" role="list" aria-labelledby="course-work">
-                <!-- Course items will be dynamically added here -->
-            </div>
-            <div class="credits" aria-live="polite">
-                Total Credits Required: <span id="required-credits">0</span>
-            </div>
-            <div class="credits" aria-live="polite">
-                Total Credits Earned: <span id="earned-credits">0</span>
-            </div>
-            <div class="progress-container">
-                <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-                    <span class="tooltip">Your Progress</span>
-                </div>
-            </div>
+    <main>
+        <section id="home">
+            <h2>Welcome to My Portfolio</h2>
+            <p>Explore my projects, skills, and professional profiles.</p>
         </section>
 
-        <section class="image-section">
-            <h2>Kasane, Botswana</h2>
-            <img class="responsive-image" src="images/zebra.jpg" alt="A herd of zebras in the wild" width="600" height="400">
+        <section id="chamber">
+            <h2>Chamber of Commerce Project</h2>
+            <p>This section will contain details of the Chamber of Commerce website project (coming soon).</p>
         </section>
 
-        <section class="certificate">
-            <h2>Web and Computer Programming Certificate</h2>
+        <section id="profiles">
+            <h2>Professional Profiles</h2>
+            <p>
+                <a id="github" href="https://github.com/yourprofile" target="_blank">GitHub</a> |
+                <a id="linkedin" href="https://www.linkedin.com/in/yourprofile/" target="_blank">LinkedIn</a>
+            </p>
         </section>
-
-        <div>
-            <p>Current Year: <span id="current-year"></span></p>
-            <p>Last Modified: <span id="last-modified"></span></p>
-        </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana</p>
-        <p aria-live="polite">Last Update: 01/01/1970 12:00:00</p>
-        <img src="images/botswana.png" alt="Botswana Flag">
+        <p>Copyright &copy; <span id="currentyear"></span> Tinny Bothepha Mosimanyana, Botswana.</p>
+        <p id="lastModified"></p>
     </footer>
-
-    <!-- Reference to external JavaScript file -->
-    <script src="scripts.js" defer></script>
 </body>
 
 </html>
+

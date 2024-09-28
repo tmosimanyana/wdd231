@@ -1,123 +1,80 @@
 body {
-  font-family: 'Roboto', sans-serif; /* Google Font */
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #333;
+  padding: 1rem;
+  color: white;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu ul {
+  display: none;
+  list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
-header {
-  background-color: #76c7c0;
-  padding: 20px;
+.nav-menu ul.active {
+  display: block;
+}
+
+.nav-menu ul li {
+  padding: 0.5rem;
+}
+
+.nav-menu ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.menu-toggle {
+  font-size: 1.5rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+@media(min-width: 768px) {
+  .nav-menu ul {
+      display: flex;
+  }
+
+  .menu-toggle {
+      display: none;
+  }
+
+  .nav-menu ul li {
+      margin-right: 1.5rem;
+  }
+}
+
+main {
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+main section {
+  margin-bottom: 2rem;
+}
+
+footer {
+  background-color: #333;
+  color: white;
   text-align: center;
+  padding: 1rem;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-}
-
-nav li {
-  display: inline;
-  margin: 0 15px;
-}
-
-.course-work {
-  padding: 20px;
-}
-
-.filter-buttons {
-  margin: 20px 0;
-}
-
-/* Button Styles */
-.filter-buttons button {
-  padding: 10px 15px; /* Add padding for buttons */
-  border: none; /* Remove default border */
-  border-radius: 5px; /* Rounded corners */
-  background-color: #76c7c0; /* Base background color */
-  color: #fff; /* White text */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth transition */
-}
-
-.filter-buttons button:hover {
-  background-color: #64b3ab; /* Darker shade on hover */
-}
-
-/* Updated Course Card Styles */
-.course-list {
-  display: grid; /* Responsive grid layout */
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Flexible columns */
-  gap: 15px; /* Space between cards */
-}
-
-.course-card {
-  background-color: #ffffff; /* Card background color */
-  border: 1px solid #76c7c0; /* Border for course cards */
-  border-radius: 8px; /* Rounded corners */
-  padding: 20px; /* More padding inside the card */
-  margin: 10px 0; /* Space between course cards */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  transition: transform 0.2s; /* Animation for hover effect */
-}
-
-/* Hover effect */
-.course-card:hover {
-  transform: translateY(-5px); /* Slight lift effect */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
-}
-
-.completed {
-  background-color: #c8e6c9; /* Different background for completed courses */
-  border-color: #4caf50; /* Green border for completed courses */
-}
-
-.course-header {
-  display: flex; /* Flexbox for header layout */
-  justify-content: space-between; /* Space between title and credits */
-  align-items: center; /* Align items vertically */
-}
-
-.course-credits {
-  font-weight: bold; /* Make credits bold */
-  color: #333; /* Slightly darker color */
-}
-
-.progress-container {
-  background-color: #e0e0e0; /* Background for the progress bar container */
-  border-radius: 5px; /* Rounded corners */
-  height: 30px; /* Height of the progress bar */
-  width: 100%; /* Full width */
-  margin: 20px 0; /* Space around the progress bar */
-  position: relative; /* Positioning for tooltip */
-}
-
-.progress-bar {
-  height: 100%; /* Full height */
-  background-color: #76c7c0; /* Progress bar color */
-  width: 0%; /* Start with 0 width */
-  transition: width 0.5s ease; /* Animation for the width change */
-  border-radius: 5px; /* Rounded corners */
-}
-
-.tooltip {
-  position: absolute; /* Positioning for tooltip */
-  top: 50%; /* Center vertically */
-  left: 50%; /* Center horizontally */
-  transform: translate(-50%, -50%); /* Centering trick */
-  color: white; /* Tooltip text color */
-  font-weight: bold; /* Bold text */
-}
-
-.image-section {
-  text-align: center;
-}
-
-.responsive-image {
-  max-width: 100%;
-  height: auto;
-}
-
-.flag {
-  width: 20px;
-  height: auto;
+footer p {
+  margin: 0.5rem 0;
 }
