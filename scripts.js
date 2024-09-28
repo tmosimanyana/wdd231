@@ -1,124 +1,59 @@
-// scripts.js
-
-// Course data array
+// Sample array of course objects
 const courses = [
-    {
-        subject: 'CSE',
-        number: 110,
-        title: 'Introduction to Programming',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course will introduce students to programming...',
-        technology: ['Python'],
-        completed: true // Change to true if completed
-    },
-    {
-        subject: 'WDD',
-        number: 130,
-        title: 'Web Fundamentals',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course introduces students to the World Wide Web...',
-        technology: ['HTML', 'CSS'],
-        completed: true
-    },
-    {
-        subject: 'CSE',
-        number: 111,
-        title: 'Programming with Functions',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'CSE 111 students become more organized...',
-        technology: ['Python'],
-        completed: true // Change to true if completed
-    },
-    {
-        subject: 'CSE',
-        number: 210,
-        title: 'Programming with Classes',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course will introduce the notion of classes...',
-        technology: ['C#'],
-        completed: true
-    },
-    {
-        subject: 'WDD',
-        number: 131,
-        title: 'Dynamic Web Fundamentals',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course builds on prior experience in Web Fundamentals...',
-        technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: true
-    },
-    {
-        subject: 'WDD',
-        number: 231,
-        title: 'Frontend Web Development I',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course builds on prior experience with Dynamic Web Fundamentals...',
-        technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: false // Change to true if completed
-    }
+    { title: "Introduction to Programming", category: "CSE", credits: 3, completed: true },
+    { title: "Web Development Fundamentals", category: "WDD", credits: 4, completed: false },
+    { title: "Dynamic Web Development", category: "WDD", credits: 4, completed: false },
+    // Add more courses as needed
 ];
 
-// Wait for the DOM to fully load
-document.addEventListener("DOMContentLoaded", function () {
-    // Update the current year
-    const currentYearElement = document.getElementById("current-year");
-    const currentYear = new Date().getFullYear();
-    currentYearElement.textContent = currentYear;
+// Function to display courses
+function displayCourses(courseArray) {
+    const courseList = document.getElementById("course-list");
+    courseList.innerHTML = ''; // Clear existing courses
+    courseArray.forEach(course => {
+        const courseCard = document.createElement("div");
+        courseCard.classList.add("course-card");
+        if (course.completed) {
+            courseCard.classList.add("completed");
+        }
+        courseCard.innerHTML = `
+            <div class="course-header">
+                <h3>${course.title}</h3>
+                <span class="course-credits">${course.credits} credits</span>
+            </div>
+        `;
+        courseList.appendChild(courseCard);
+    });
+    updateTotalCredits();
+}
 
-    // Update the last modified date
-    const lastModifiedElement = document.getElementById("last-modified");
-    lastModifiedElement.textContent = document.lastModified;
+// Function to filter courses
+function filterCourses(category) {
+    const filteredCourses = category === 'all' ? courses : courses.filter(course => course.category === category);
+    displayCourses(filteredCourses);
+}
 
-    // Function to filter courses
-    window.filterCourses = function (category) {
-        // Clear the current course list
-        const courseList = document.getElementById("course-list");
-        courseList.innerHTML = "";
+// Function to update total credits
+function updateTotalCredits() {
+    const totalCredits = courses.reduce((acc, course) => acc + course.credits, 0);
+    const earnedCredits = courses.filter(course => course.completed).reduce((acc, course) => acc + course.credits, 0);
+    document.getElementById("required-credits").textContent = totalCredits;
+    document.getElementById("earned-credits").textContent = earnedCredits;
+    updateProgressBar(earnedCredits, totalCredits);
+}
 
-        // Filter courses based on category
-        const filteredCourses = courses.filter(course => 
-            category === 'all' || course.subject === category
-        );
+// Function to update progress bar
+function updateProgressBar(earned, total) {
+    const progressBar = document.getElementById("progress-bar");
+    const percentage = (earned / total) * 100;
+    progressBar.style.width = `${percentage}%`;
+    progressBar.setAttribute('aria-valuenow', percentage);
+}
 
-        // Display filtered courses
-        filteredCourses.forEach(course => {
-            const courseItem = document.createElement("div");
-            courseItem.className = course.completed ? "course completed" : "course"; // Differentiate completed courses
-            courseItem.innerHTML = `
-                <h3>${course.title} (${course.subject} ${course.number})</h3>
-                <p><strong>Credits:</strong> ${course.credits}</p>
-                <p><strong>Certificate:</strong> ${course.certificate}</p>
-                <p><strong>Description:</strong> ${course.description}</p>
-                <p><strong>Technology:</strong> ${course.technology.join(', ')}</p>
-                <p><strong>Completed:</strong> ${course.completed ? 'Yes' : 'No'}</p>
-            `;
-            courseList.appendChild(courseItem);
-        });
+// Display the current year and last modified date
+document.getElementById("current-year").textContent = new Date().getFullYear();
+document.getElementById("last-modified").textContent = document.lastModified;
 
-        // Update total credits dynamically
-        const totalCreditsRequired = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
-        document.getElementById("required-credits").textContent = totalCreditsRequired;
+// Initial display of courses
+displayCourses(courses);
 
-        // Calculate total credits earned
-        const totalCreditsEarned = filteredCourses.filter(course => course.completed).reduce((sum, course) => sum + course.credits, 0);
-        document.getElementById("earned-credits").textContent = totalCreditsEarned;
-
-        // Update the progress bar
-        const progressBar = document.getElementById("progress-bar");
-        const totalCourses = filteredCourses.length;
-        const completedCourses = filteredCourses.filter(course => course.completed).length;
-        const progressPercentage = totalCourses > 0 ? (completedCourses / totalCourses) * 100 : 0;
-        progressBar.style.width = `${progressPercentage}%`;
-        progressBar.setAttribute("aria-valuenow", progressPercentage);
-        progressBar.querySelector(".tooltip").textContent = `${Math.round(progressPercentage)}% Completed`;
-    };
-
-    // Initialize with all courses
-    filterCourses('all');
-});
