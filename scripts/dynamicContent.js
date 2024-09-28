@@ -1,9 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Dynamically insert the current year in the footer
+    // Set the current year dynamically
     const currentYear = new Date().getFullYear();
     document.getElementById('currentyear').textContent = currentYear;
 
-    // Dynamically insert the last modified date in the footer
+    // Set the last modified date dynamically
     const lastModified = document.lastModified;
-    document.getElementById('lastModified').textContent = `Last modified: ${lastModified}`;
+    document.getElementById('lastModified').textContent = `Last Modified: ${lastModified}`;
+
+    // Highlight the active link based on the section being viewed
+    const currentLocation = window.location.hash;
+    const navLinks = document.querySelectorAll('.nav-menu a');
+
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentLocation) {
+            link.classList.add('active');
+        }
+    });
 });
