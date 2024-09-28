@@ -1,179 +1,94 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Global Styles */
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f4f4f4;
-  padding: 20px;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4; /* Light background */
 }
 
-/* Header */
 header {
-  background-color: #003366;
-  color: white;
-  padding: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 8px;
+  background: #0059b3; /* Header color */
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
 
 .profile-section {
-  display: flex;
-  align-items: center;
+  margin-bottom: 20px;
 }
 
 .profile-img {
-  border-radius: 50%;
-  width: 50px;
-  margin-right: 15px;
-}
-
-h1 {
-  font-size: 1.5rem;
-  margin: 0;
+  width: 120px;
+  border-radius: 50%; /* Circular profile image */
 }
 
 .nav-menu {
-  position: relative;
-}
-
-.menu-toggle {
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: white;
-}
-
-/* Main Section */
-main {
-  margin-top: 20px;
-}
-
-/* Coursework Section */
-#coursework {
-  background-color: #003366;
-  color: white;
-  padding: 10px;
-  border-radius: 8px;
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.dot-list {
-  font-size: 2rem;
-  letter-spacing: 5px;
-}
-
-/* Project Section */
-#project {
-  background-color: #004080;
-  color: white;
-  padding: 15px;
-  text-align: center;
-  border-radius: 8px;
-  margin-bottom: 20px;
-}
-
-#project img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
   margin-top: 10px;
 }
 
-figcaption {
-  font-size: 1rem;
-  margin-top: 10px;
-}
-
-/* Certificate Section */
-#certificate {
-  background-color: #336699;
-  color: white;
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-}
-
-.filters {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-
+/* Button Styles with Animation */
 .filters button {
-  background-color: #0059b3;
+  background-color: #0073e6; /* Initial button color */
   color: white;
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease; /* Transition for hover effect */
+  position: relative; /* Positioning context for the animations */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Combined transition */
 }
 
 .filters button:hover {
-  background-color: #0073e6; /* Lighter shade for hover */
+  background-color: #0059b3; /* Darker shade on hover */
+  transform: scale(1.1); /* Slightly enlarge on hover */
 }
 
-.course-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
-  gap: 10px;
+/* Main Section Styles */
+main {
+  padding: 20px;
 }
 
-.course-card {
-  padding: 15px;
-  color: white;
-  font-weight: bold;
-  border-radius: 8px;
-  transition: transform 0.3s; /* Transition for scaling effect */
+h2 {
+  color: #0059b3; /* Section title color */
 }
 
-.course-card:hover {
-  transform: scale(1.05); /* Scale effect on hover */
+/* Image styles */
+figure {
+  margin: 20px 0;
 }
 
-.cse {
-  background-color: #663300; /* CSE Course Card Color */
+img {
+  max-width: 100%; /* Responsive images */
+  height: auto;
 }
 
-.wdd {
-  background-color: #cccccc; /* WDD Course Card Color */
-  color: black;
-}
-
-.completed {
-  background-color: #2ecc71; /* Different color for completed courses */
-  color: white;
-}
-
-/* Footer */
+/* Footer Styles */
 footer {
-  background-color: #003366;
-  color: white;
-  padding: 15px;
-  border-radius: 8px;
+  background: #333;
+  color: #fff;
   text-align: center;
+  padding: 10px 0;
 }
 
-.last-updated {
-  font-size: 0.9rem;
-  margin-top: 5px;
+footer nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
 }
 
-/* Media Queries */
-@media (max-width: 768px) {
-  .filters {
-    flex-direction: column; /* Stack filters on small screens */
+footer nav a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+/* Responsive Media Queries */
+@media (max-width: 600px) {
+  .profile-section {
+      margin: 10px 0;
   }
-  
-  .course-list {
-    grid-template-columns: 1fr; /* Single column layout for small screens */
+
+  .filters button {
+      width: 100%; /* Full width buttons on smaller screens */
+      margin: 5px 0; /* Margin for buttons */
   }
 }
