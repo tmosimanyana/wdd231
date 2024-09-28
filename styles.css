@@ -33,66 +33,51 @@ nav li {
   border-radius: 5px;
 }
 
-.responsive-image {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
+.course-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center the cards */
+  gap: 20px; /* Spacing between cards */
 }
 
-.incomplete {
-  color: red;
+.course-card {
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 200px; /* Fixed width for uniformity */
+  text-align: center;
+}
+
+.completed {
+  background-color: #d4edda; /* Light green for completed */
+  border-color: #c3e6cb;
+}
+
+.description {
+  font-weight: bold;
+}
+
+.credits {
+  margin-top: 20px;
+}
+
+.progress-container {
+  width: 100%;
+  background: #e0e0e0;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+
+.progress-bar {
+  height: 20px;
+  background: #76c7c0; /* Color of the progress bar */
+  width: 0%; /* Initial width */
+  border-radius: 5px;
 }
 
 footer {
   text-align: center;
   background-color: #f4f4f4;
   padding: 10px;
-}
-
-/* Progress Bar Styles */
-.progress-container {
-  width: 100%;
-  background-color: #f3f3f3;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-top: 20px;
-}
-
-.progress-bar {
-  height: 20px; /* Height of the progress bar */
-  background-color: #4caf50; /* Green color */
-  width: 0%; /* Initial width set to 0 */
-  transition: width 0.5s ease; /* Smooth transition with ease effect */
-}
-
-/* Course Card Styles */
-.course-card {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  margin: 10px 0;
-  position: relative;
-}
-
-.completed {
-  background-color: #d4edda; /* Light green background for completed courses */
-}
-
-/* Filter Button Styles */
-.filter-buttons {
-  margin-top: 10px;
-}
-
-.filter-buttons button {
-  margin-right: 5px;
-  padding: 10px 15px;
-  border: none;
-  border-radius: 5px;
-  background-color: #4caf50;
-  color: white;
-  cursor: pointer;
-}
-
-.filter-buttons button:hover {
-  background-color: #45a049; /* Darker green on hover */
 }
