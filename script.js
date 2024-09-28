@@ -113,6 +113,7 @@ document.getElementById("wdd-btn").addEventListener("click", function() {
     showCourses('wdd');
 });
 
+// Function to show all courses
 function showAllCourses() {
     let courses = document.querySelectorAll('.course-box');
     courses.forEach(course => {
@@ -120,6 +121,7 @@ function showAllCourses() {
     });
 }
 
+// Function to show specific courses
 function showCourses(courseType) {
     let courses = document.querySelectorAll('.course-box');
     courses.forEach(course => {
@@ -130,6 +132,19 @@ function showCourses(courseType) {
         }
     });
 }
+
+// Animate the image on button click
+document.getElementById("animate-btn").addEventListener("click", function() {
+    const img = document.getElementById("profile-image");
+    
+    // Add the animate class to trigger the scale effect
+    img.style.transform = 'scale(1.1)';
+
+    // Return to original size after 0.5 seconds
+    setTimeout(() => {
+        img.style.transform = 'scale(1)';
+    }, 500); // Matches the CSS transition duration
+});
 
 // Initial display of courses
 displayCourses();

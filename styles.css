@@ -24,10 +24,16 @@ header {
   align-items: center;
 }
 
-.profile-container img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+.image-container {
+  overflow: hidden; /* Prevent overflow during scaling */
+  width: 100px; /* Set a fixed width */
+  height: 100px; /* Set a fixed height */
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.5s ease, opacity 0.5s ease; /* Multiple transitions */
 }
 
 /* Navigation Bar */
@@ -116,14 +122,6 @@ h1 {
   padding: 20px;
 }
 
-.course-work,
-.image-section {
-  background-color: white;
-  border-radius: 8px;
-  padding: 15px;
-  width: 45%;
-}
-
 .course-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -138,6 +136,11 @@ h1 {
   border-radius: 8px;
   text-align: center;
   cursor: pointer;
+  transition: transform 0.3s ease; /* Add transition for hover */
+}
+
+.course-box:hover {
+  transform: scale(1.05); /* Scale up on hover */
 }
 
 .completed {
@@ -150,56 +153,6 @@ h1 {
   font-size: 20px;
   color: #2c3e50;
   font-weight: bold;
-}
-
-/* Progress Bar Styling */
-.progress-section {
-  margin: 20px;
-  text-align: center;
-}
-
-.progress-bar-container {
-  background-color: #e0e0e0;
-  border-radius: 25px;
-  height: 20px;
-  width: 100%;
-  margin: 10px 0;
-}
-
-.progress-bar {
-  background-color: #27ae60;
-  height: 100%;
-  width: 0%; /* Default width for progress */
-  border-radius: 25px;
-  transition: width 0.5s ease;
-  /* Progress Bar Styling */
-.progress-section {
-  margin: 20px;
-  text-align: center;
-}
-
-.progress-bar-container {
-  background-color: #e0e0e0;
-  border-radius: 25px;
-  height: 20px;
-  width: 100%;
-  margin: 10px 0;
-}
-
-.progress-bar {
-  background-color: #27ae60;
-  height: 100%;
-  width: 0%; /* Default width for progress */
-  border-radius: 25px;
-  transition: width 0.5s ease;
-}
-#total-credits {
-  font-size: 20px;
-  color: #2c3e50;
-  font-weight: bold;
-  margin: 20px 0;
-}
-
 }
 
 /* Footer */

@@ -7,15 +7,33 @@
   
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-
+  
   <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Simple CSS for the transitions */
+    img {
+      transition: transform 0.3s ease-in-out;
+      max-width: 100%;
+      height: auto;
+    }
+
+    img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Additional styles for course boxes and other elements can be added here */
+  </style>
 </head>
 <body>
 
   <!-- Header Section -->
   <header>
     <div class="profile-container">
-      <img src="images/profile.jpg" alt="Profile Picture">
+      <img src="images/profile.jpg" 
+           srcset="images/profile-small.jpg 600w, images/profile-large.jpg 1200w" 
+           sizes="(max-width: 600px) 100vw, 600px" 
+           loading="lazy" 
+           alt="Profile Picture">
       <h1>Tinny B. Mosimanyana</h1>
     </div>
 
@@ -38,49 +56,44 @@
   <!-- Main Content Section -->
   <main>
       <!-- Course Work Section -->
-        <h2>Course Work</h2>
-        <ul>
-          <li>Course 1</li>
-          <li>Course 2</li>
-          <li>Course 3</li>
-        </ul>
-      </div>
+      <h2>Course Work</h2>
+      <ul>
+        <li>Course 1</li>
+        <li>Course 2</li>
+        <li>Course 3</li>
+      </ul>
 
       <!-- Image Section -->
       <div class="image-section">
         <h2>Kasane, Botswana</h2>
-        <img src="images/zebra.jpg" alt="Zebras">
+        <img src="images/zebra.jpg"
+             srcset="images/zebra-small.jpg 600w, images/zebra-large.jpg 1200w" 
+             sizes="(max-width: 600px) 100vw, 600px" 
+             loading="lazy" 
+             alt="Zebras">
         <p>Zebras</p>
       </div>
-      <div id="total-credits">Total Credits: 0</div>
-      <div id="total-credits" style="text-align: center; margin: 20px;"></div>
-    <!-- Courses Section -->
-<section class="courses">
-    <h2>Web and Computer Programming Certificate</h2>
-    <div class="tab-menu">
-      <button id="all-btn">All</button>
-      <button id="cse-btn">CSE</button>
-      <button id="wdd-btn">WDD</button>
-    </div>
-    <div class="course-grid">
-      <div class="course-box cse" data-credits="3">CSE 110 <span class="status">In Progress</span></div>
-      <div class="course-box wdd" data-credits="3">WDD 130 <span class="status">In Progress</span></div>
-      <div class="course-box cse" data-credits="3">CSE 111 <span class="status">In Progress</span></div>
-      <div class="course-box cse" data-credits="4">CSE 210 <span class="status">In Progress</span></div>
-      <div class="course-box wdd" data-credits="3">WDD 131 <span class="status">In Progress</span></div>
-      <div class="course-box wdd" data-credits="4">WDD 231 <span class="status">In Progress</span></div>
-    </div>
-  </section>
-  <!-- Progress Bar Section -->
-<section class="progress-section">
-    <h2>Progress</h2>
-    <div class="progress-bar-container">
-        <div class="progress-bar" id="progress-bar"></div>
-    </div>
-    <div id="progress-percentage">0%</div>
-</section>
 
-    </section>
+      <div id="total-credits" style="text-align: center; margin: 20px;"></div>
+
+      <!-- Courses Section -->
+      <section class="courses">
+        <h2>Web and Computer Programming Certificate</h2>
+        <div class="tab-menu">
+          <button id="all-btn">All</button>
+          <button id="cse-btn">CSE</button>
+          <button id="wdd-btn">WDD</button>
+        </div>
+        <div class="course-grid">
+          <div class="course-box cse" data-credits="3">CSE 110 <span class="status">In Progress</span></div>
+          <div class="course-box wdd" data-credits="3">WDD 130 <span class="status">In Progress</span></div>
+          <div class="course-box cse" data-credits="3">CSE 111 <span class="status">In Progress</span></div>
+          <div class="course-box cse" data-credits="4">CSE 210 <span class="status">In Progress</span></div>
+          <div class="course-box wdd" data-credits="3">WDD 131 <span class="status">In Progress</span></div>
+          <div class="course-box wdd" data-credits="4">WDD 231 <span class="status">In Progress</span></div>
+        </div>
+      </section>
+      </section>
   </main>
 
   <!-- Footer Section -->
