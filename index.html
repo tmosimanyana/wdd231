@@ -11,14 +11,33 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> <!-- Preconnect to fonts.gstatic.com -->
-    <script src="script.js" defer></script> <!-- External JavaScript -->
+    <style>
+        /* Example focus outline for accessibility */
+        :focus {
+            outline: 2px solid #005fcc; /* Change to your preferred color */
+        }
+
+        .skip-link {
+            position: absolute;
+            left: -9999px; /* Hide off-screen */
+            top: 0;
+        }
+
+        .skip-link:focus {
+            left: 0; /* Show when focused */
+            top: 0; 
+            z-index: 100; /* Ensure it is above other elements */
+        }
+    </style>
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header>
-        <img src="images/profile.jpg" alt="Profile Picture" class="profile">
+        <img src="images/profile.jpg" alt="Profile Picture of Tinny Bothepha Mosimanyana, a Web and Computer Programming student" class="profile">
         <h1>Tinny B. Mosimanyana</h1>
-        <nav>
+        <nav role="navigation">
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Chamber</a></li>
@@ -28,7 +47,7 @@
         </nav>
     </header>
 
-    <main>
+    <main id="main-content">
         <section class="course-work">
             <h2>Course Work</h2>
             <div class="filter-buttons">
@@ -36,15 +55,17 @@
                 <button onclick="filterCourses('CSE')">CSE Courses</button>
                 <button onclick="filterCourses('WDD')">WDD Courses</button>
             </div>
-            <div id="course-list" class="course-list"></div>
-            <div class="credits">
+            <div id="course-list" class="course-list" role="list" aria-labelledby="course-work">
+                <!-- Course items will be dynamically added here -->
+            </div>
+            <div class="credits" aria-live="polite">
                 Total Credits Required: <span id="required-credits">0</span>
             </div>
-            <div class="credits">
+            <div class="credits" aria-live="polite">
                 Total Credits Earned: <span id="earned-credits">0</span>
             </div>
             <div class="progress-container">
-                <div class="progress-bar" id="progress-bar">
+                <div class="progress-bar" id="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
                     <span class="tooltip">Your Progress</span>
                 </div>
             </div>
@@ -52,7 +73,7 @@
 
         <section class="image-section">
             <h2>Kasane, Botswana</h2>
-            <img class="responsive-image" src="images/zebra.jpg" alt="Zebra Animals" width="600" height="400">
+            <img class="responsive-image" src="images/zebra.jpg" alt="A herd of zebras in the wild" width="600" height="400">
         </section>
 
         <section class="certificate">
@@ -67,9 +88,12 @@
 
     <footer>
         <p>&copy; 2024 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana</p>
-        <p>Last Update: 01/01/1970 12:00:00</p>
+        <p aria-live="polite">Last Update: 01/01/1970 12:00:00</p>
         <img src="images/botswana.png" alt="Botswana Flag">
     </footer>
+
+    <!-- Reference to external JavaScript file -->
+    <script src="scripts.js" defer></script>
 </body>
 
 </html>
