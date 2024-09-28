@@ -99,11 +99,15 @@ function updateProgressBar() {
 function displayTotalCredits() {
     const totalCreditsRequired = courses.reduce((acc, course) => acc + course.credits, 0);
     const totalCreditsEarned = courses.filter(course => course.completed).reduce((acc, course) => acc + course.credits, 0);
+    const totalCourses = courses.length;
+    const completedCourses = courses.filter(course => course.completed).length;
+    const progressPercentage = ((completedCourses / totalCourses) * 100).toFixed(2); // Calculate progress percentage
 
     const totalCreditsDisplay = document.getElementById('total-credits');
     totalCreditsDisplay.innerHTML = `
         <p><strong>Total Credits Required:</strong> ${totalCreditsRequired}</p>
         <p><strong>Total Credits Earned:</strong> ${totalCreditsEarned}</p>
+        <p><strong>Progress Percentage:</strong> ${progressPercentage}%</p>
     `;
 }
 
