@@ -1,118 +1,133 @@
-/* General Styles */
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f4f4f4;
+/* Basic Reset */
+* {
   margin: 0;
-  padding: 20px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
 }
 
 /* Header */
 header {
-  background-color: #003366;
+  background-color: #2c3e50;
   color: white;
-  padding: 15px;
-  display: flex;
-  flex-direction: column; /* Change to column for smaller screens */
-  align-items: center;
-  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
 }
 
-.profile-section {
+.profile-container {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-bottom: 10px; /* Space between profile and menu */
 }
 
-.profile-img {
+.profile-container img {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  width: 50px;
-  height: 50px; /* Ensure consistent sizing */
-  margin-right: 15px;
 }
 
-/* Navigation Menu */
-.nav-menu {
+.navbar {
+  margin-top: 15px;
+}
+
+.navbar ul {
+  list-style: none;
   display: flex;
-  justify-content: center; /* Center navigation on smaller screens */
-  gap: 10px; /* Space between buttons */
+  justify-content: center;
 }
 
-button {
-  padding: 10px;
-  background-color: #0059b3;
+.navbar li {
+  margin: 0 15px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.navbar a.active {
+  border-bottom: 2px solid yellow;
+}
+
+/* Main Content */
+.content-container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.course-work,
+.image-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 15px;
+  width: 40%;
+}
+
+.course-work h2,
+.image-section h2 {
+  text-align: center;
+}
+
+.image-section img {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* Courses Section */
+.courses {
+  margin: 20px;
+  text-align: center;
+}
+
+.tab-menu {
+  margin-bottom: 10px;
+}
+
+.tab-menu button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  background-color: #3498db;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-button:hover {
-  background-color: #0073e6; /* Lighter shade for hover */
+.tab-menu button:hover {
+  background-color: #2980b9;
 }
 
-/* Coursework Section */
-#coursework {
-  background-color: #003366;
+.course-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.course-box {
+  background-color: #8e44ad;
   color: white;
-  padding: 20px; /* More padding for content */
+  padding: 20px;
   border-radius: 8px;
-}
-
-.course-card {
-  background-color: #ffffff;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  padding: 15px;
-  margin: 10px 0; /* Adjusted margin for vertical spacing */
-  transition: transform 0.3s; /* Scaling effect on hover */
-}
-
-.course-card.completed {
-  background-color: #d4edda; /* Light green for completed courses */
-}
-
-.course-card:hover {
-  transform: scale(1.05); /* Scale effect on hover */
+  text-align: center;
+  font-size: 18px;
 }
 
 /* Footer */
 footer {
-  background-color: #003366;
+  background-color: #2c3e50;
   color: white;
-  padding: 15px;
-  border-radius: 8px;
   text-align: center;
+  padding: 20px;
+  margin-top: 20px;
 }
 
-/* Media Queries */
-@media (min-width: 768px) {
-  header {
-      flex-direction: row; /* Horizontal layout for larger screens */
-      justify-content: space-between; /* Space between items */
-  }
-
-  .profile-section {
-      margin-bottom: 0; /* Remove margin on larger screens */
-  }
-
-  .nav-menu {
-      flex-grow: 1; /* Allow nav menu to grow */
-      justify-content: flex-end; /* Align buttons to the right */
-  }
-
-  #course-container {
-      display: grid; /* Use grid layout for courses */
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
-      gap: 15px; /* Space between cards */
-  }
-}
-
-@media (max-width: 768px) {
-  /* Adjust styles for small screens */
-  #course-container {
-      display: flex;
-      flex-direction: column; /* Stack cards vertically */
-  }
+footer .flag img {
+  width: 40px;
 }

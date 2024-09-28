@@ -5,8 +5,10 @@ const courses = [
         title: 'Introduction to Programming',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course will introduce students to programming...',
-        technology: ['Python'],
+        description: 'This course will introduce students to programming. It will introduce the building blocks of programming languages (variables, decisions, calculations, loops, array, and input/output) and use them to solve problems.',
+        technology: [
+            'Python'
+        ],
         completed: false
     },
     {
@@ -15,8 +17,11 @@ const courses = [
         title: 'Web Fundamentals',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course introduces students to the World Wide Web...',
-        technology: ['HTML', 'CSS'],
+        description: 'This course introduces students to the World Wide Web and to careers in web site design and development. The course is hands on with students actually participating in simple web designs and programming. It is anticipated that students who complete this course will understand the fields of web design and development and will have a good idea if they want to pursue this degree as a major.',
+        technology: [
+            'HTML',
+            'CSS'
+        ],
         completed: false
     },
     {
@@ -25,8 +30,10 @@ const courses = [
         title: 'Programming with Functions',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'CSE 111 students become more organized...',
-        technology: ['Python'],
+        description: 'CSE 111 students become more organized, efficient, and powerful computer programmers by learning to research and call functions written by others; to write, call , debug, and test their own functions; and to handle errors within functions. CSE 111 students write programs with functions to solve problems in many disciplines, including business, physical science, human performance, and humanities.',
+        technology: [
+            'Python'
+        ],
         completed: false
     },
     {
@@ -35,8 +42,10 @@ const courses = [
         title: 'Programming with Classes',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course will introduce the notion of classes...',
-        technology: ['C#'],
+        description: 'This course will introduce the notion of classes and objects. It will present encapsulation at a conceptual level. It will also work with inheritance and polymorphism.',
+        technology: [
+            'C#'
+        ],
         completed: false
     },
     {
@@ -45,8 +54,12 @@ const courses = [
         title: 'Dynamic Web Fundamentals',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course builds on prior experience in Web Fundamentals...',
-        technology: ['HTML', 'CSS', 'JavaScript'],
+        description: 'This course builds on prior experience in Web Fundamentals and programming. Students will learn to create dynamic websites that use JavaScript to respond to events, update content, and create responsive user experiences.',
+        technology: [
+            'HTML',
+            'CSS',
+            'JavaScript'
+        ],
         completed: false
     },
     {
@@ -55,73 +68,43 @@ const courses = [
         title: 'Frontend Web Development I',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course builds on prior experience with Dynamic Web Fundamentals...',
-        technology: ['HTML', 'CSS', 'JavaScript'],
+        description: 'This course builds on prior experience with Dynamic Web Fundamentals and programming. Students will focus on user experience, accessibility, compliance, performance optimization, and basic API usage.',
+        technology: [
+            'HTML',
+            'CSS',
+            'JavaScript'
+        ],
         completed: false
     }
-];
-
-// Function to display courses
-function displayCourses(courseArray) {
-    const courseList = document.getElementById('course-list');
-    courseList.innerHTML = '';
-    courseArray.forEach((course, index) => {
-        const courseDiv = document.createElement('div');
-        courseDiv.classList.add('course-card');
-        courseDiv.innerHTML = `
-            <h3>${course.title} (${course.subject} ${course.number})</h3>
-            <p><strong>Credits:</strong> ${course.credits}</p>
-            <p><strong>Description:</strong> ${course.description}</p>
-            <p><strong>Technologies:</strong> ${course.technology.join(', ')}</p>
-            <label>
-                <input type="checkbox" ${course.completed ? 'checked' : ''} onchange="toggleCompletion(${index})">
-                Mark as Completed
-            </label>
-        `;
-        if (course.completed) {
-            courseDiv.classList.add('completed');
-        }
-        courseList.appendChild(courseDiv);
+]
+// JavaScript for filtering courses
+document.getElementById("all-btn").addEventListener("click", function() {
+    showAllCourses();
+  });
+  
+  document.getElementById("cse-btn").addEventListener("click", function() {
+    showCourses('cse');
+  });
+  
+  document.getElementById("wdd-btn").addEventListener("click", function() {
+    showCourses('wdd');
+  });
+  
+  function showAllCourses() {
+    let courses = document.querySelectorAll('.course-box');
+    courses.forEach(course => {
+      course.style.display = 'block';
     });
-}
-
-// Function to toggle completion status
-function toggleCompletion(index) {
-    courses[index].completed = !courses[index].completed; // Toggle the completed status
-    displayCourses(courses); // Refresh the course display
-    updateCredits(); // Update total credits earned
-}
-
-// Function to filter courses
-function filterCourses(subject) {
-    const filteredCourses = subject === 'all' ? courses : courses.filter(course => course.subject === subject);
-    displayCourses(filteredCourses);
-    updateCredits(); // Update credits after filtering
-}
-
-// Function to calculate and display total credits
-function updateCredits() {
-    const totalCredits = courses.reduce((total, course) => total + course.credits, 0);
-    document.getElementById('required-credits').innerText = totalCredits;
-    
-    const earnedCredits = courses.filter(course => course.completed).reduce((total, course) => total + course.credits, 0);
-    document.getElementById('earned-credits').innerText = earnedCredits;
-
-    const progress = (earnedCredits / totalCredits) * 100;
-    const progressBar = document.getElementById('progress-bar');
-    progressBar.style.width = `${progress}%`;
-    progressBar.setAttribute('aria-valuenow', progress); // For accessibility
-}
-
-// Function to set footer dates
-function setFooterDates() {
-    document.getElementById('current-year').innerText = new Date().getFullYear();
-    document.getElementById('last-modified').innerText = document.lastModified;
-}
-
-// Initialize the page
-window.onload = function() {
-    displayCourses(courses);
-    updateCredits();
-    setFooterDates();
-};
+  }
+  
+  function showCourses(courseType) {
+    let courses = document.querySelectorAll('.course-box');
+    courses.forEach(course => {
+      if (course.classList.contains(courseType)) {
+        course.style.display = 'block';
+      } else {
+        course.style.display = 'none';
+      }
+    });
+  }
+  

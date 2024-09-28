@@ -1,81 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Portfolio</title>
-    <meta name="description" content="A portfolio showcasing my coursework and projects in software development.">
-    <meta name="author" content="Tinny Mosimanyana">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Home Page</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <div class="profile-section">
-            <img src="images/profile.png" alt="Profile Image" class="profile-img"> <!-- my profile image -->
-            <h1>My Course Portfolio</h1>
-        </div>
-        <nav class="nav-menu">
-            <button class="menu-toggle">&#9776;</button>
-            <button onclick="window.location.href='index.html'">Home</button>
-            <button onclick="window.location.href='chamber.html'">Chamber</button>
-            <button onclick="window.location.href='https://github.com/your-github-profile'">GitHub Profile</button>
-            <button onclick="window.location.href='https://www.linkedin.com/in/your-linkedin-profile'">LinkedIn</button>
-        </nav>
-    </header>
 
-    <main>
-        <section id="coursework">
-            <h2>Coursework</h2>
-            <div class="filters">
-                <button onclick="filterCourses('all')">Show All</button>
-                <button onclick="filterCourses('completed')">Show Completed</button>
-                <button onclick="filterCourses('incomplete')">Show Incomplete</button>
-                <button onclick="filterCourses('CSE')">Show CSE Courses</button>
-                <button onclick="filterCourses('WDD')">Show WDD Courses</button>
-                <select id="technology-filter" onchange="filterByTechnology()">
-                    <option value="all">All Technologies</option>
-                    <option value="Python">Python</option>
-                    <option value="HTML">HTML</option>
-                    <option value="CSS">CSS</option>
-                    <option value="JavaScript">JavaScript</option>
-                    <option value="C#">C#</option>
-                </select>
-            </div>
-            <ul class="dot-list" id="course-list">
-                <!-- Course cards will be injected here -->
-            </ul>
-            <div class="credit-summary">
-                <p>Total Credits Required: <span id="required-credits">0</span></p>
-                <p>Total Credits Earned: <span id="earned-credits">0</span></p>
-                <div id="progress-bar" style="width: 0%;"></div>
-            </div>
-        </section>
+  <!-- Header Section -->
+  <header>
+    <div class="profile-container">
+      <img src="profile-picture.jpg" alt="Profile Picture">
+      <h1>Rubia M. Francesco</h1>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Chamber</a></li>
+        <li><a href="#">GitHub Profile</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <section id="project">
-            <h2>Project</h2>
-            <img src="project-image.jpg" alt="Project Image"> <!-- my project -->
-            <figcaption>Project Description</figcaption>
-        </section>
+  <!-- Main Content Section -->
+  <main>
+    <div class="content-container">
+      <!-- Course Work Section -->
+      <div class="course-work">
+        <h2>Course Work</h2>
+        <ul>
+          <li>Course 1</li>
+          <li>Course 2</li>
+          <li>Course 3</li>
+        </ul>
+      </div>
 
-        <section id="certificate">
-            <h2>Certificates</h2>
-            <div class="course-list">
-                <div class="course-card cse">CSE Course</div>
-                <div class="course-card wdd">WDD Course</div>
-                <div class="course-card completed">Completed Course</div>
-            </div>
-        </section>
-    </main>
+      <!-- Image Section -->
+      <div class="image-section">
+        <h2>Toloria, Madagascar</h2>
+        <img src="baobab-trees.jpg" alt="Baobab Trees">
+        <p>Baobab Trees</p>
+      </div>
+    </div>
 
-    <footer>
-        <p>&copy; 2024 🌸 Rubia Magdelena Francesco 🌸 Madagascar</p>
-        <p>Last Update: 01/01/1970 12:00:00</p>
-        <img src="images/botswana.png" alt="Botswana Flag">
-    </footer>
+    <!-- Courses Section -->
+    <section class="courses">
+      <h2>Web and Computer Programming Certificate</h2>
+      <div class="tab-menu">
+        <button id="all-btn">All</button>
+        <button id="cse-btn">CSE</button>
+        <button id="wdd-btn">WDD</button>
+      </div>
+      <div class="course-grid">
+        <div class="course-box cse">CSE 110</div>
+        <div class="course-box wdd">WDD 130</div>
+        <div class="course-box cse">CSE 111</div>
+        <div class="course-box cse">CSE 210</div>
+        <div class="course-box wdd">WDD 131</div>
+        <div class="course-box wdd">WDD 231</div>
+      </div>
+    </section>
+  </main>
 
-    <script src="scripts.js" defer></script> <!-- Link to external JavaScript file -->
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 Rubia Magdalena Francesco &bull; Madagascar</p>
+    <p>Last Update: 01/01/1970 12:00:00</p>
+    <div class="flag"><img src="madagascar-flag.png" alt="Madagascar Flag"></div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
 </body>
 </html>
