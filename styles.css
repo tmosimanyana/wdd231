@@ -48,3 +48,30 @@ footer {
   background-color: #f4f4f4;
   padding: 10px;
 }
+
+/* Progress Bar Styles */
+.progress-container {
+  width: 100%;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.progress-bar {
+  height: 20px; /* Height of the progress bar */
+  background-color: #4caf50; /* Green color */
+  width: 0%; /* Initial width set to 0 */
+  transition: width 0.5s ease; /* Smooth transition with ease effect */
+}
+
+.course-card {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.completed {
+  background-color: #d4edda; /* Light green background for completed courses */
+}
