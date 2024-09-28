@@ -80,6 +80,31 @@ function displayCourses() {
         `;
         courseGrid.appendChild(courseBox);
     });
+
+    updateProgressBar(); // Call to update progress bar after displaying courses
+    displayTotalCredits(); // Call to update total credits display
+}
+
+// Function to update the progress bar
+function updateProgressBar() {
+    const totalCourses = courses.length;
+    const completedCourses = courses.filter(course => course.completed).length;
+    const progressPercentage = (completedCourses / totalCourses) * 100;
+
+    const progressBar = document.querySelector('.progress-bar');
+    progressBar.style.width = `${progressPercentage}%`; // Set the width of the progress bar
+}
+
+// Function to display total credits earned and required
+function displayTotalCredits() {
+    const totalCreditsRequired = courses.reduce((acc, course) => acc + course.credits, 0);
+    const totalCreditsEarned = courses.filter(course => course.completed).reduce((acc, course) => acc + course.credits, 0);
+
+    const totalCreditsDisplay = document.getElementById('total-credits');
+    totalCreditsDisplay.innerHTML = `
+        <p><strong>Total Credits Required:</strong> ${totalCreditsRequired}</p>
+        <p><strong>Total Credits Earned:</strong> ${totalCreditsEarned}</p>
+    `;
 }
 
 // Filter Courses
