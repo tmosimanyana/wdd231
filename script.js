@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
     const courses = [
         { subject: 'CSE', title: 'Introduction to Programming', credits: 2, completed: true },
-        { subject: 'WDD', title: 'Web Fundamentals', credits: 2, completed: false },
+        { subject: 'WDD', title: 'Web Fundamentals', credits: 2, completed: true },
         { subject: 'CSE', title: 'Programming with Functions', credits: 2, completed: true },
         { subject: 'WDD', title: 'Dynamic Web Fundamentals', credits: 2, completed: true },
         { subject: 'CSE', title: 'Web Development I', credits: 3, completed: false },
