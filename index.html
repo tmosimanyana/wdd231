@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Course Portfolio</title>
+    <meta name="description" content="A portfolio showcasing my coursework and projects in software development.">
+    <meta name="author" content="Tinny Mosimanyana">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
@@ -12,7 +14,7 @@
 <body>
     <header>
         <div class="profile-section">
-            <img src="profile.jpg" alt="Profile Image" class="profile-img"> <!-- Replace with your image -->
+            <img src="profile.jpg" alt="Profile Image" class="profile-img"> <!-- my profile image -->
             <h1>My Course Portfolio</h1>
         </div>
         <nav class="nav-menu">
@@ -27,6 +29,21 @@
     <main>
         <section id="coursework">
             <h2>Coursework</h2>
+            <div class="filters">
+                <button onclick="filterCourses('all')">Show All</button>
+                <button onclick="filterCourses('completed')">Show Completed</button>
+                <button onclick="filterCourses('incomplete')">Show Incomplete</button>
+                <button onclick="filterCourses('CSE')">Show CSE Courses</button>
+                <button onclick="filterCourses('WDD')">Show WDD Courses</button>
+                <select id="technology-filter" onchange="filterByTechnology()">
+                    <option value="all">All Technologies</option>
+                    <option value="Python">Python</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="C#">C#</option>
+                </select>
+            </div>
             <ul class="dot-list" id="course-list">
                 <!-- Course cards will be injected here -->
             </ul>
@@ -35,16 +52,11 @@
                 <p>Total Credits Earned: <span id="earned-credits">0</span></p>
                 <div id="progress-bar" style="width: 0%;"></div>
             </div>
-            <div class="filters">
-                <button onclick="filterCourses('all')">All</button>
-                <button onclick="filterCourses('CSE')">CSE</button>
-                <button onclick="filterCourses('WDD')">WDD</button>
-            </div>
         </section>
 
         <section id="project">
             <h2>Project</h2>
-            <img src="project-image.jpg" alt="Project Image"> <!-- Replace with your image -->
+            <img src="project-image.jpg" alt="Project Image"> <!-- my project -->
             <figcaption>Project Description</figcaption>
         </section>
 
