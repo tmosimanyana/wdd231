@@ -114,11 +114,16 @@ figcaption {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease; /* Transition for hover effect */
+}
+
+.filters button:hover {
+  background-color: #0073e6; /* Lighter shade for hover */
 }
 
 .course-list {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
   gap: 10px;
 }
 
@@ -126,17 +131,26 @@ figcaption {
   padding: 15px;
   color: white;
   font-weight: bold;
-  background-color: #663300;
   border-radius: 8px;
+  transition: transform 0.3s; /* Transition for scaling effect */
+}
+
+.course-card:hover {
+  transform: scale(1.05); /* Scale effect on hover */
 }
 
 .cse {
-  background-color: #663300;
+  background-color: #663300; /* CSE Course Card Color */
 }
 
 .wdd {
-  background-color: #cccccc;
+  background-color: #cccccc; /* WDD Course Card Color */
   color: black;
+}
+
+.completed {
+  background-color: #2ecc71; /* Different color for completed courses */
+  color: white;
 }
 
 /* Footer */
@@ -151,4 +165,15 @@ footer {
 .last-updated {
   font-size: 0.9rem;
   margin-top: 5px;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column; /* Stack filters on small screens */
+  }
+  
+  .course-list {
+    grid-template-columns: 1fr; /* Single column layout for small screens */
+  }
 }
