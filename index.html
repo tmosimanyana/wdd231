@@ -18,40 +18,54 @@
 
 <body>
     <header>
+        <div class="profile-section">
+            <img src="profile.jpg" alt="Profile Image" class="profile-img">
+            <h1>Rubia M. Francesco</h1>
+        </div>
         <nav class="nav-menu">
             <button class="menu-toggle">☰</button>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#chamber">Chamber</a></li>
-                <li><a href="#github">GitHub Profile</a></li>
-                <li><a href="#linkedin">LinkedIn</a></li>
-            </ul>
         </nav>
     </header>
 
     <main>
-        <section id="home">
-            <h2>Welcome to My Portfolio</h2>
-            <p>Explore my projects, skills, and professional profiles.</p>
+        <section id="coursework">
+            <h2>Course Work</h2>
+            <div class="dot-list">
+                <span>•</span>
+                <span>•</span>
+                <span>•</span>
+            </div>
         </section>
 
-        <section id="chamber">
-            <h2>Chamber of Commerce Project</h2>
-            <p>This section will contain details of the Chamber of Commerce website project (coming soon).</p>
+        <section id="project">
+            <h2>Toloria, Madagascar</h2>
+            <figure>
+                <img src="baobab.jpg" alt="Baobab Trees">
+                <figcaption>Baobab Trees</figcaption>
+            </figure>
         </section>
 
-        <section id="profiles">
-            <h2>Professional Profiles</h2>
-            <p>
-                <a id="github" href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">GitHub</a> |
-                <a id="linkedin" href="https://www.linkedin.com/in/yourprofile/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            </p>
+        <section id="certificate">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filters">
+                <button id="filter-all">All</button>
+                <button id="filter-cse">CSE</button>
+                <button id="filter-wdd">WDD</button>
+            </div>
+            <div class="course-list">
+                <div class="course-card cse">CSE 110</div>
+                <div class="course-card wdd">WDD 130</div>
+                <div class="course-card cse">CSE 111</div>
+                <div class="course-card cse">CSE 210</div>
+                <div class="course-card wdd">WDD 131</div>
+                <div class="course-card wdd">WDD 231</div>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>Copyright &copy; <span id="currentyear"></span> Tinny Bothepha Mosimanyana, Botswana.</p>
-        <p id="lastModified"></p>
+        <p>&copy;<span id="currentyear"></span> Rubia Magdalena Francesco, Madagascar</p>
+        <p class="last-updated">Last Update: <span id="lastModified"></span></p>
     </footer>
 </body>
 
