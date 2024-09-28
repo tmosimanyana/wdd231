@@ -28,6 +28,21 @@ nav li {
   margin: 20px 0;
 }
 
+/* Button Styles */
+.filter-buttons button {
+  padding: 10px 15px; /* Add padding for buttons */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #76c7c0; /* Base background color */
+  color: #fff; /* White text */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.filter-buttons button:hover {
+  background-color: #64b3ab; /* Darker shade on hover */
+}
+
 /* Updated Course Card Styles */
 .course-list {
   display: grid; /* Responsive grid layout */
