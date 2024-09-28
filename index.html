@@ -1,79 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A personal portfolio website showcasing web development skills and links to Chamber of Commerce, GitHub, and LinkedIn profiles.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <title>Course Work - Tinny Bothepha Mosimanyana</title>
-
-    <!-- Preconnect to Google Fonts for performance improvement -->
+    <title>Course Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans&display=swap" rel="stylesheet">
-
-    <!-- Stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- JavaScript Files -->
-    <script src="scripts/menu.js" defer></script>
-    <script src="scripts/dynamicContent.js" defer></script>
 </head>
-
 <body>
     <header>
         <div class="profile-section">
-            <img src="images/profile.jpg" alt="Profile Image" class="profile-img">
-            <h1>Tinny B. Mosimanyana</h1>
+            <img src="profile.jpg" alt="Profile Image" class="profile-img"> <!-- Replace with your image -->
+            <h1>My Course Portfolio</h1>
         </div>
         <nav class="nav-menu">
-            <button class="menu-toggle">☰</button>
+            <button class="menu-toggle">&#9776;</button>
         </nav>
     </header>
 
     <main>
         <section id="coursework">
-            <h2>Course Work</h2>
-            <div class="dot-list">
-                <span>•</span>
-                <span>•</span>
-                <span>•</span>
-            </div>
+            <h2>Coursework</h2>
+            <ul class="dot-list">
+                <li>Course 1</li>
+                <li>Course 2</li>
+                <li>Course 3</li>
+            </ul>
         </section>
 
         <section id="project">
-            <h2>Gaborone, Botswana</h2>
-            <figure>
-                <img src="images/zebra.jpg" alt="Zebra Animals">
-                <figcaption>Zebra Animals</figcaption>
-            </figure>
+            <h2>Project</h2>
+            <img src="project-image.jpg" alt="Project Image"> <!-- Replace with your image -->
+            <figcaption>Project Description</figcaption>
         </section>
 
         <section id="certificate">
-            <h2>Web and Computer Programming Certificate</h2>
+            <h2>Certificates</h2>
             <div class="filters">
-                <button id="filter-all">All</button>
-                <button id="filter-cse">CSE</button>
-                <button id="filter-wdd">WDD</button>
+                <button>All</button>
+                <button>Completed</button>
+                <button>In Progress</button>
             </div>
             <div class="course-list">
-                <!-- Course cards will be dynamically rendered here -->
+                <div class="course-card cse">CSE Course</div>
+                <div class="course-card wdd">WDD Course</div>
+                <div class="course-card completed">Completed Course</div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy;<span id="currentyear"></span> Tinny Bothepha Mosimanyana, Botswana</p>
+        <p>© 2024 My Course Portfolio</p>
         <nav>
-            <a href="#coursework">Course Work</a>
-            <a href="#project">Project</a>
-            <a href="#certificate">Certificate</a>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
         </nav>
-        <p class="last-updated">Last Update: <span id="lastModified"></span></p>
+        <p class="last-updated">Last updated: September 2024</p>
     </footer>
-</body>
 
+    <script src="scripts.js" defer></script> <!-- Link to external JavaScript file -->
+</body>
 </html>
