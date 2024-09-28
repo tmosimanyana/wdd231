@@ -1,71 +1,106 @@
+// Course List Array
 const courses = [
-    { name: 'Web Development I', credits: 3, category: 'WDD', completed: false },
-    { name: 'Introduction to Programming', credits: 4, category: 'CSE', completed: false },
-    { name: 'Database Systems', credits: 3, category: 'CSE', completed: false },
-    { name: 'User Interface Design', credits: 2, category: 'WDD', completed: false },
+    {
+        subject: 'CSE',
+        number: 110,
+        title: 'Introduction to Programming',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course will introduce students to programming. It will introduce the building blocks of programming languages (variables, decisions, calculations, loops, array, and input/output) and use them to solve problems.',
+        technology: ['Python'],
+        completed: true // Change to true if completed
+    },
+    {
+        subject: 'WDD',
+        number: 130,
+        title: 'Web Fundamentals',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course introduces students to the World Wide Web and to careers in web site design and development. The course is hands on with students actually participating in simple web designs and programming. It is anticipated that students who complete this course will understand the fields of web design and development and will have a good idea if they want to pursue this degree as a major.',
+        technology: ['HTML', 'CSS'],
+        completed: false
+    },
+    {
+        subject: 'CSE',
+        number: 111,
+        title: 'Programming with Functions',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'CSE 111 students become more organized, efficient, and powerful computer programmers by learning to research and call functions written by others; to write, call, debug, and test their own functions; and to handle errors within functions. CSE 111 students write programs with functions to solve problems in many disciplines, including business, physical science, human performance, and humanities.',
+        technology: ['Python'],
+        completed: false
+    },
+    {
+        subject: 'CSE',
+        number: 210,
+        title: 'Programming with Classes',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course will introduce the notion of classes and objects. It will present encapsulation at a conceptual level. It will also work with inheritance and polymorphism.',
+        technology: ['C#'],
+        completed: false
+    },
+    {
+        subject: 'WDD',
+        number: 131,
+        title: 'Dynamic Web Fundamentals',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course builds on prior experience in Web Fundamentals and programming. Students will learn to create dynamic websites that use JavaScript to respond to events, update content, and create responsive user experiences.',
+        technology: ['HTML', 'CSS', 'JavaScript'],
+        completed: false
+    },
+    {
+        subject: 'WDD',
+        number: 231,
+        title: 'Frontend Web Development I',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course builds on prior experience with Dynamic Web Fundamentals and programming. Students will focus on user experience, accessibility, compliance, performance optimization, and basic API usage.',
+        technology: ['HTML', 'CSS', 'JavaScript'],
+        completed: false
+    }
 ];
 
-function sortCourses() {
-    const sortCriteria = document.getElementById('sort').value;
-    let sortedCourses;
-
-    if (sortCriteria === 'name') {
-        sortedCourses = courses.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (sortCriteria === 'credits') {
-        sortedCourses = courses.sort((a, b) => a.credits - b.credits);
-    }
-
-    displayCourses(sortedCourses);
-}
-
+// Function to display courses dynamically
 function displayCourses(courseArray) {
     const courseList = document.getElementById('course-list');
     courseList.innerHTML = ''; // Clear existing courses
 
     courseArray.forEach(course => {
         const courseDiv = document.createElement('div');
-        courseDiv.classList.add('course');
-        courseDiv.innerHTML = `${course.name} - ${course.credits} Credits `;
-        
-        // Add button to mark course as completed
-        const completeButton = document.createElement('button');
-        completeButton.innerText = 'Complete Course';
-        completeButton.onclick = () => markCourseCompleted(course.name);
-        
-        courseDiv.appendChild(completeButton);
+        courseDiv.classList.add('course-card');
+        courseDiv.innerHTML = `
+            <h3>${course.title} (${course.subject} ${course.number})</h3>
+            <p>${course.description}</p>
+            <p>Credits: ${course.credits}</p>
+            <p>Technology: ${course.technology.join(', ')}</p>
+        `;
+        if (course.completed) {
+            courseDiv.classList.add('completed'); // Mark completed courses with a different style
+        }
         courseList.appendChild(courseDiv);
     });
+
+    // Update total credits required dynamically
+    const totalCredits = courseArray.reduce((sum, course) => sum + course.credits, 0);
+    document.getElementById('required-credits').innerText = totalCredits;
 }
 
-// Function to update the earned credits and progress
-function updateProgress() {
-    const requiredCredits = courses.reduce((sum, course) => sum + course.credits, 0);
-    const earnedCredits = courses.filter(course => course.completed).reduce((sum, course) => sum + course.credits, 0);
-    
-    document.getElementById('required-credits').innerText = requiredCredits;
-    document.getElementById('earned-credits').innerText = earnedCredits;
-
-    // Calculate progress percentage
-    const progressPercentage = (earnedCredits / requiredCredits) * 100;
-
-    // Update the progress bar width with animation
-    const progressBar = document.getElementById('progress-bar');
-    progressBar.style.width = progressPercentage + '%';
-    progressBar.querySelector('.tooltip').innerText = `${Math.round(progressPercentage)}% Completed`;
-}
-
-// Example function to mark a course as completed
-function markCourseCompleted(courseName) {
-    const course = courses.find(c => c.name === courseName);
-    if (course) {
-        course.completed = true;
-        updateProgress(); // Update progress after marking a course completed
+// Filter courses by subject
+function filterCourses(subject) {
+    let filteredCourses = [];
+    if (subject === 'all') {
+        filteredCourses = courses;
+    } else {
+        filteredCourses = courses.filter(course => course.subject === subject);
     }
+    displayCourses(filteredCourses);
 }
-
-// Initialize the progress display
-updateProgress(); // Initialize the progress display
 
 // Set current year and last modified date
 document.getElementById('current-year').innerText = new Date().getFullYear();
 document.getElementById('last-modified').innerText = document.lastModified;
+
+// Initial display of all courses
+displayCourses(courses);

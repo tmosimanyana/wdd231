@@ -24,6 +24,22 @@ nav li {
   padding: 20px;
 }
 
+.filter-buttons {
+  margin: 20px 0;
+}
+
+.course-card {
+  border: 1px solid #76c7c0; /* Border for course cards */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px;
+  margin: 10px 0; /* Space between course cards */
+}
+
+.completed {
+  background-color: #c8e6c9; /* Different background for completed courses */
+  border-color: #4caf50; /* Green border for completed courses */
+}
+
 .progress-container {
   background-color: #e0e0e0; /* Background for the progress bar container */
   border-radius: 5px; /* Rounded corners */
