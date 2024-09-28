@@ -1,68 +1,71 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const courses = [
-        { subject: 'CSE', title: 'Introduction to Programming', credits: 2, completed: true },
-        { subject: 'WDD', title: 'Web Fundamentals', credits: 2, completed: true },
-        { subject: 'CSE', title: 'Programming with Functions', credits: 2, completed: true },
-        { subject: 'WDD', title: 'Dynamic Web Fundamentals', credits: 2, completed: true },
-        { subject: 'CSE', title: 'Web Development I', credits: 3, completed: false },
-    ];
+const courses = [
+    { name: 'Web Development I', credits: 3, category: 'WDD', completed: false },
+    { name: 'Introduction to Programming', credits: 4, category: 'CSE', completed: false },
+    { name: 'Database Systems', credits: 3, category: 'CSE', completed: false },
+    { name: 'User Interface Design', credits: 2, category: 'WDD', completed: false },
+];
 
-    const totalRequiredCredits = courses.reduce((acc, course) => acc + course.credits, 0);
-    document.getElementById('required-credits').innerText = totalRequiredCredits;
+function sortCourses() {
+    const sortCriteria = document.getElementById('sort').value;
+    let sortedCourses;
 
-    // Function to display courses
-    function displayCourses(filteredCourses) {
-        const courseList = document.getElementById('course-list');
-        courseList.innerHTML = ''; // Clear previous content
-
-        let earnedCredits = 0; // Track earned credits
-
-        filteredCourses.forEach(course => {
-            const courseCard = document.createElement('div');
-            courseCard.className = 'course-card';
-            courseCard.setAttribute('data-subject', course.subject);
-            courseCard.innerHTML = `
-                <h3>${course.title}</h3>
-                <p>Credits: ${course.credits}</p>
-                <p class="description">${course.completed ? "Completed" : "Incomplete"}</p>
-            `;
-
-            // Apply completed class
-            if (course.completed) {
-                courseCard.classList.add('completed');
-                earnedCredits += course.credits; // Count earned credits
-            }
-
-            courseList.appendChild(courseCard);
-        });
-
-        // Update the total credits and progress bar
-        updateCredits(earnedCredits);
+    if (sortCriteria === 'name') {
+        sortedCourses = courses.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sortCriteria === 'credits') {
+        sortedCourses = courses.sort((a, b) => a.credits - b.credits);
     }
 
-    // Function to filter courses based on the subject
-    window.filterCourses = function(subject) {
-        let filteredCourses;
-        if (subject === 'all') {
-            filteredCourses = courses; // Display all courses
-        } else {
-            filteredCourses = courses.filter(course => course.subject === subject);
-        }
-        displayCourses(filteredCourses);
+    displayCourses(sortedCourses);
+}
+
+function displayCourses(courseArray) {
+    const courseList = document.getElementById('course-list');
+    courseList.innerHTML = ''; // Clear existing courses
+
+    courseArray.forEach(course => {
+        const courseDiv = document.createElement('div');
+        courseDiv.classList.add('course');
+        courseDiv.innerHTML = `${course.name} - ${course.credits} Credits `;
+        
+        // Add button to mark course as completed
+        const completeButton = document.createElement('button');
+        completeButton.innerText = 'Complete Course';
+        completeButton.onclick = () => markCourseCompleted(course.name);
+        
+        courseDiv.appendChild(completeButton);
+        courseList.appendChild(courseDiv);
+    });
+}
+
+// Function to update the earned credits and progress
+function updateProgress() {
+    const requiredCredits = courses.reduce((sum, course) => sum + course.credits, 0);
+    const earnedCredits = courses.filter(course => course.completed).reduce((sum, course) => sum + course.credits, 0);
+    
+    document.getElementById('required-credits').innerText = requiredCredits;
+    document.getElementById('earned-credits').innerText = earnedCredits;
+
+    // Calculate progress percentage
+    const progressPercentage = (earnedCredits / requiredCredits) * 100;
+
+    // Update the progress bar width with animation
+    const progressBar = document.getElementById('progress-bar');
+    progressBar.style.width = progressPercentage + '%';
+    progressBar.querySelector('.tooltip').innerText = `${Math.round(progressPercentage)}% Completed`;
+}
+
+// Example function to mark a course as completed
+function markCourseCompleted(courseName) {
+    const course = courses.find(c => c.name === courseName);
+    if (course) {
+        course.completed = true;
+        updateProgress(); // Update progress after marking a course completed
     }
+}
 
-    // Function to update credits and progress bar
-    function updateCredits(earnedCredits) {
-        document.getElementById('earned-credits').innerText = earnedCredits;
-        const progress = (earnedCredits / totalRequiredCredits) * 100;
-        document.getElementById('progress-bar').style.width = `${progress}%`;
-    }
+// Initialize the progress display
+updateProgress(); // Initialize the progress display
 
-    // Initial display of all courses
-    displayCourses(courses);
-
-    // Set the current year and last modified date
-    const currentYear = new Date().getFullYear();
-    document.getElementById('current-year').innerText = currentYear;
-    document.getElementById('last-modified').innerText = document.lastModified;
-});
+// Set current year and last modified date
+document.getElementById('current-year').innerText = new Date().getFullYear();
+document.getElementById('last-modified').innerText = document.lastModified;

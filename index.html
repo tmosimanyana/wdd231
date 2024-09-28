@@ -2,23 +2,17 @@
 <html lang="en">
 
 <head>
-    <head>
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta name="description" content="This is the course home page for Tinny B. Mosimanyana, showcasing completed and ongoing courses, progress tracking, and a personal profile.">
-            <meta name="author" content="Tinny Bothepha Mosimanyana">
-            <title>Course Home Page</title>
-            <link rel="stylesheet" href="styles.css">
-            <script src="script.js" defer></script>
-        </head>
-        
-    </head>    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
+    <script src="script.js" defer></script>
 </head>
 
 <body>
     <header>
-        <img src="images/profile.jpg" alt="Profile Picture" class="profile"> <!-- Corrected line -->
+        <img src="images/profile.jpg" alt="Profile Picture" class="profile">
         <h1>Tinny B. Mosimanyana</h1>
         <nav>
             <ul>
@@ -33,13 +27,23 @@
     <main>
         <section class="course-work">
             <h2>Course Work</h2>
+            <div class="sort-options">
+                <label for="sort">Sort by:</label>
+                <select id="sort" onchange="sortCourses()">
+                    <option value="name">Course Name</option>
+                    <option value="credits">Credits</option>
+                </select>
+            </div>
             <div id="course-list" class="course-list"></div>
             <div class="credits">
-                Total Credits Required: <span id="required-credits">0</span><br>
+                Total Credits Required: <span id="required-credits">0</span>
+                <br>
                 Earned Credits: <span id="earned-credits">0</span>
             </div>
             <div class="progress-container">
-                <div class="progress-bar" id="progress-bar"></div>
+                <div class="progress-bar" id="progress-bar">
+                    <span class="tooltip">Your Progress</span>
+                </div>
             </div>
         </section>
 

@@ -1,19 +1,13 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif; /* Google Font */
   margin: 0;
   padding: 0;
 }
 
 header {
-  text-align: center;
-  background-color: #f4f4f4;
+  background-color: #76c7c0;
   padding: 20px;
-}
-
-.profile {
-  width: 100px;
-  height: auto;
-  border-radius: 50%;
+  text-align: center;
 }
 
 nav ul {
@@ -26,58 +20,46 @@ nav li {
   margin: 0 15px;
 }
 
-.course-work, .image-section, .certificate {
+.course-work {
   padding: 20px;
-  margin: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.course-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center; /* Center the cards */
-  gap: 20px; /* Spacing between cards */
-}
-
-.course-card {
-  background-color: #f4f4f4;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 20px;
-  width: 200px; /* Fixed width for uniformity */
-  text-align: center;
-}
-
-.completed {
-  background-color: #d4edda; /* Light green for completed */
-  border-color: #c3e6cb;
-}
-
-.description {
-  font-weight: bold;
-}
-
-.credits {
-  margin-top: 20px;
 }
 
 .progress-container {
-  width: 100%;
-  background: #e0e0e0;
-  border-radius: 5px;
-  margin-top: 10px;
+  background-color: #e0e0e0; /* Background for the progress bar container */
+  border-radius: 5px; /* Rounded corners */
+  height: 30px; /* Height of the progress bar */
+  width: 100%; /* Full width */
+  margin: 20px 0; /* Space around the progress bar */
+  position: relative; /* Positioning for tooltip */
 }
 
 .progress-bar {
-  height: 20px;
-  background: #76c7c0; /* Color of the progress bar */
-  width: 0%; /* Initial width */
-  border-radius: 5px;
+  height: 100%; /* Full height */
+  background-color: #76c7c0; /* Progress bar color */
+  width: 0%; /* Start with 0 width */
+  transition: width 0.5s ease; /* Animation for the width change */
+  border-radius: 5px; /* Rounded corners */
 }
 
-footer {
+.tooltip {
+  position: absolute; /* Positioning for tooltip */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Centering trick */
+  color: white; /* Tooltip text color */
+  font-weight: bold; /* Bold text */
+}
+
+.image-section {
   text-align: center;
-  background-color: #f4f4f4;
-  padding: 10px;
+}
+
+.responsive-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.flag {
+  width: 20px;
+  height: auto;
 }
