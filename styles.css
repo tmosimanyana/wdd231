@@ -172,6 +172,28 @@ h1 {
   width: 0%; /* Default width for progress */
   border-radius: 25px;
   transition: width 0.5s ease;
+  /* Progress Bar Styling */
+.progress-section {
+  margin: 20px;
+  text-align: center;
+}
+
+.progress-bar-container {
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  height: 20px;
+  width: 100%;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  background-color: #27ae60;
+  height: 100%;
+  width: 0%; /* Default width for progress */
+  border-radius: 25px;
+  transition: width 0.5s ease;
+}
+
 }
 
 /* Footer */
