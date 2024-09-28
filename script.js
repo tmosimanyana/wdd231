@@ -18,7 +18,7 @@ const courses = [
         certificate: 'Web and Computer Programming',
         description: 'This course introduces students to the World Wide Web and to careers in web site design and development. The course is hands on with students actually participating in simple web designs and programming. It is anticipated that students who complete this course will understand the fields of web design and development and will have a good idea if they want to pursue this degree as a major.',
         technology: ['HTML', 'CSS'],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -28,7 +28,7 @@ const courses = [
         certificate: 'Web and Computer Programming',
         description: 'CSE 111 students become more organized, efficient, and powerful computer programmers by learning to research and call functions written by others; to write, call, debug, and test their own functions; and to handle errors within functions. CSE 111 students write programs with functions to solve problems in many disciplines, including business, physical science, human performance, and humanities.',
         technology: ['Python'],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -38,7 +38,7 @@ const courses = [
         certificate: 'Web and Computer Programming',
         description: 'This course will introduce the notion of classes and objects. It will present encapsulation at a conceptual level. It will also work with inheritance and polymorphism.',
         technology: ['C#'],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -48,7 +48,7 @@ const courses = [
         certificate: 'Web and Computer Programming',
         description: 'This course builds on prior experience in Web Fundamentals and programming. Students will learn to create dynamic websites that use JavaScript to respond to events, update content, and create responsive user experiences.',
         technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -67,6 +67,9 @@ function displayCourses(courseArray) {
     const courseList = document.getElementById('course-list');
     courseList.innerHTML = ''; // Clear existing courses
 
+    let totalCreditsRequired = 0;
+    let totalCreditsEarned = 0;
+
     courseArray.forEach(course => {
         const courseDiv = document.createElement('div');
         courseDiv.classList.add('course-card');
@@ -78,16 +81,23 @@ function displayCourses(courseArray) {
         `;
         if (course.completed) {
             courseDiv.classList.add('completed'); // Mark completed courses with a different style
+            totalCreditsEarned += course.credits; // Increment earned credits
         }
+        totalCreditsRequired += course.credits; // Increment required credits
         courseList.appendChild(courseDiv);
     });
 
-    // Update total credits required dynamically
-    const totalCredits = courseArray.reduce((sum, course) => sum + course.credits, 0);
-    document.getElementById('required-credits').innerText = totalCredits;
+    // Update total credits required and earned dynamically
+    document.getElementById('required-credits').innerText = totalCreditsRequired;
+    document.getElementById('earned-credits').innerText = totalCreditsEarned;
+
+    // Calculate progress percentage and update the progress bar
+    const progressPercentage = (totalCreditsEarned / totalCreditsRequired) * 100;
+    document.getElementById('progress-bar').style.width = progressPercentage + '%';
+    document.getElementById('progress-bar').querySelector('.tooltip').innerText = `${progressPercentage.toFixed(2)}% Completed`;
 }
 
-// Filter courses by subject
+// Function to filter courses
 function filterCourses(subject) {
     let filteredCourses = [];
     if (subject === 'all') {
