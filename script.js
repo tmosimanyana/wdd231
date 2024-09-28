@@ -9,7 +9,7 @@ const courses = [
         subject: 'WDD',
         title: 'Web Fundamentals',
         credits: 2,
-        completed: true,
+        completed: false,
     },
     {
         subject: 'CSE',
