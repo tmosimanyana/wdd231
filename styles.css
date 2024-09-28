@@ -28,16 +28,43 @@ nav li {
   margin: 20px 0;
 }
 
+/* Updated Course Card Styles */
+.course-list {
+  display: grid; /* Responsive grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Flexible columns */
+  gap: 15px; /* Space between cards */
+}
+
 .course-card {
+  background-color: #ffffff; /* Card background color */
   border: 1px solid #76c7c0; /* Border for course cards */
-  border-radius: 5px; /* Rounded corners */
-  padding: 10px;
+  border-radius: 8px; /* Rounded corners */
+  padding: 20px; /* More padding inside the card */
   margin: 10px 0; /* Space between course cards */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.2s; /* Animation for hover effect */
+}
+
+/* Hover effect */
+.course-card:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
 }
 
 .completed {
   background-color: #c8e6c9; /* Different background for completed courses */
   border-color: #4caf50; /* Green border for completed courses */
+}
+
+.course-header {
+  display: flex; /* Flexbox for header layout */
+  justify-content: space-between; /* Space between title and credits */
+  align-items: center; /* Align items vertically */
+}
+
+.course-credits {
+  font-weight: bold; /* Make credits bold */
+  color: #333; /* Slightly darker color */
 }
 
 .progress-container {
