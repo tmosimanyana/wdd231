@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif; /* Use Google Font */
   line-height: 1.6;
   padding: 20px;
 }
@@ -51,8 +51,16 @@ nav {
   text-decoration: none;
 }
 
+/* Hamburger Menu */
 .hamburger {
   display: none;
+}
+
+.hamburger div {
+  background: white;
+  height: 3px;
+  margin: 5px;
+  transition: all 0.3s;
 }
 
 /* Main Section Styles */
@@ -62,7 +70,8 @@ nav {
   margin: 20px 0;
 }
 
-.course-work, .location {
+.course-work,
+.location {
   background-color: #f4f4f4;
   padding: 20px;
   border-radius: 5px;
@@ -137,32 +146,38 @@ footer {
 .progress {
   background-color: #4caf50;
   height: 20px;
-  width: 0;
+  width: 0; /* Dynamically set this in JavaScript */
 }
 
 /* Media Queries for responsiveness */
 @media (max-width: 768px) {
   .course-location {
-      flex-direction: column;
+    flex-direction: column;
   }
 
-  .course-work, .location {
-      width: 100%;
-      margin-bottom: 20px;
+  .course-work,
+  .location {
+    width: 100%;
+    margin-bottom: 20px;
   }
 
   .hamburger {
-      display: block;
-      cursor: pointer;
+    display: block;
+    cursor: pointer;
   }
 
   nav ul {
-      display: none;
+    display: none; /* Hide by default */
   }
 
   .nav-links.active {
-      display: flex;
-      flex-direction: column;
-      text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%; /* Ensure full width */
+  }
+
+  .nav-links.active li {
+    margin: 10px 0; /* Add space between items */
   }
 }
