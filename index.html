@@ -3,35 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tinny B. Mosimanyana's Course Homepage - Web and Computer Programming Certificate">
-    <meta name="keywords" content="Tinny B. Mosimanyana, Web Development, Programming, Certificate">
-    <meta name="author" content="Tinny B. Mosimanyana">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <title>Course Management</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <title>Tinny B. Mosimanyana - Course Home Page</title>
-    <link rel="stylesheet" href="styles.css"> <!-- CSS File -->
-        <!-- Other head elements -->
-        <script src="script.js" defer></script> <!-- External Script File -->
-    </head>
-    
-    <script src="script.js" defer></script> <!-- External Script File -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script> <!-- External JS file linked -->
 </head>
 <body>
     <header>
         <div class="profile-container">
-            <img src="images/profile.jpg" alt="Profile picture of Tinny B. Mosimanyana" class="profile-img">
-            <h1>Tinny B. Mosimanyana</h1>
+            <img src="profile-pic.jpg" alt="Profile Image" class="profile-img">
+            <h1>Tinny Bothepha Mosimanyana's Course Management</h1>
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#" aria-label="Home">Home</a></li>
-                <li><a href="#" aria-label="Chamber">Chamber</a></li>
-                <li><a href="#" aria-label="GitHub Profile">GitHub Profile</a></li>
-                <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">Certificates</a></li>
+                <li><a href="#">Contact</a></li>
             </ul>
-            <div class="hamburger" role="button" aria-label="Navigation Menu" aria-expanded="false" tabindex="0">
+            <div class="hamburger">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -39,47 +29,28 @@
         </nav>
     </header>
 
-    <main>
-        <section class="course-location">
-            <div class="course-work">
-                <h2>Course Work</h2>
-                <ul id="course-list">
-                    <!-- Dynamically filled by JavaScript -->
-                </ul>
-            </div>
-            <div class="location">
-                <h2>Gaborone, Botswana</h2>
-                <img src="images/zebra.jpg" alt="Zebra Animals in Botswana" class="location-img">
-                <p>Zebra Animals</p>
-            </div>
-        </section>
+    <section class="certificate-section">
+        <h2>Certificate: Web and Computer Programming</h2>
+        <div class="filter-buttons">
+            <button id="all">All Courses</button>
+            <button id="cse">CSE Courses</button>
+            <button id="wdd">WDD Courses</button>
+        </div>
+    </section>
 
-        <section class="certificate-section">
-            <h2>Web and Computer Programming Certificate</h2>
-            <div class="filter-buttons">
-                <button id="all">All</button>
-                <button id="cse">CSE</button>
-                <button id="wdd">WDD</button>
-            </div>
-            <div class="courses" id="courses">
-                <!-- Courses dynamically filled by JavaScript -->
-            </div>
-        </section>
-
-        <section class="progress-section">
-            <h2>Progress</h2>
-            <p>Total Credits Required: <span id="totalCreditsRequired">21</span></p>
-            <p>Credits Earned: <span id="creditsEarned">6</span></p>
-            <div class="progress-bar">
-                <div class="progress" id="progress"></div>
-            </div>
-        </section>
-    </main>
+    <div id="courses" class="courses"></div>
+    <div class="progress-section">
+        <h3>Progress</h3>
+        <div class="progress-bar">
+            <div id="progress" class="progress"></div>
+        </div>
+        <p>Total Credits Required: <span id="totalCreditsRequired">0</span></p>
+        <p>Credits Earned: <span id="creditsEarned">0</span></p>
+    </div>
 
     <footer>
-        <p>&copy;2024 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana</p>
-        <p>Last Update: <span id="lastModified"></span></p>
-        <img src="images/botswana.png" alt="Botswana Flag" class="flag">
+        <p>&copy; 2024 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana</p>
+        <p>Last Updated: <span id="lastModified"></span></p>
     </footer>
 </body>
 </html>

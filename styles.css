@@ -6,7 +6,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif; /* Use Google Font */
+  font-family: 'Roboto', sans-serif;
   line-height: 1.6;
   padding: 20px;
 }
@@ -52,7 +52,7 @@ nav {
 }
 
 .nav-links.active {
-  display: flex; /* Show links when active */
+  display: flex;
 }
 
 /* Hamburger Menu */
@@ -106,21 +106,40 @@ nav {
   margin: 5px;
   padding: 10px;
   border: none;
-  background-color: #2196f3;
+  background-color: #1976d2;
   color: white;
   border-radius: 5px;
   cursor: pointer;
 }
 
 .filter-buttons button:hover {
-  background-color: #1976d2;
+  background-color: #0d47a1;
 }
 
 .courses {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
-  gap: 20px; /* Added gap for spacing between course cards */
+  gap: 20px;
+}
+
+/* Course Card Styles */
+.course-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.completed {
+  border: 2px solid #4caf50;
 }
 
 /* Footer Styles */
@@ -151,7 +170,8 @@ footer {
 .progress {
   background-color: #4caf50;
   height: 20px;
-  width: 0; /* Dynamically set this in JavaScript */
+  width: 0;
+  transition: width 0.5s ease-in-out; /* Smooth transition */
   min-width: 5%; /* Minimum width for better visibility */
 }
 
@@ -173,19 +193,19 @@ footer {
   }
 
   nav ul {
-    display: none; /* Hide by default */
+    display: none;
   }
 
   .nav-links.active {
     display: flex;
     flex-direction: column;
     text-align: center;
-    width: 100%; /* Ensure full width */
-    background-color: #2a5d84; /* Background for mobile menu */
-    padding: 10px; /* Padding for better touch targets */
+    width: 100%;
+    background-color: #2a5d84;
+    padding: 10px;
   }
 
   .nav-links.active li {
-    margin: 10px 0; /* Add space between items */
+    margin: 10px 0;
   }
 }
