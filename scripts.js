@@ -1,42 +1,50 @@
-// Get reference to the credits display (add a new HTML element to show this in the certificate section)
-const creditsDisplay = document.createElement('p');
-creditsDisplay.classList.add('credits-total');
-document.querySelector('.certificate').appendChild(creditsDisplay);
+// Mock data for the courses
+const courses = [
+    { code: 'CSE 110', credits: 3, type: 'CSE', completed: true },
+    { code: 'CSE 111', credits: 3, type: 'CSE', completed: false },
+    { code: 'WDD 130', credits: 4, type: 'WDD', completed: true },
+    { code: 'WDD 131', credits: 4, type: 'WDD', completed: false },
+    { code: 'CSE 210', credits: 3, type: 'CSE', completed: true },
+    { code: 'WDD 231', credits: 4, type: 'WDD', completed: false }
+];
 
-// Function to render courses dynamically and calculate total credits
+// DOM Elements
+const coursesContainer = document.querySelector('.courses');
+const creditsTotal = document.querySelector('.credits-total');
+const allButton = document.getElementById('all');
+const cseButton = document.getElementById('cse');
+const wddButton = document.getElementById('wdd');
+
+// Function to render course cards
 function renderCourses(filter = 'All') {
-    // Filter the courses based on the selected filter
-    let filteredCourses = courses.filter(course => {
-        return filter === 'All' || course.subject === filter;
-    });
+    // Clear the current courses
+    coursesContainer.innerHTML = '';
 
-    // Calculate the total credits using reduce
-    let totalCredits = filteredCourses.reduce((sum, course) => sum + course.credits, 0);
+    // Filter and render courses
+    const filteredCourses = courses.filter(course => filter === 'All' || course.type === filter);
+    let totalCredits = filteredCourses.reduce((acc, course) => acc + course.credits, 0);
 
-    // Update the UI to display total credits
-    creditsDisplay.textContent = `Total Credits: ${totalCredits}`;
-
-    // Clear the previous course cards
-    courseContainer.innerHTML = '';
-
-    // Render each course card
     filteredCourses.forEach(course => {
         const courseCard = document.createElement('div');
-        courseCard.className = 'course-card';
-        courseCard.classList.add(course.completed ? 'completed' : 'uncompleted'); // Apply appropriate class based on completion status
-        courseCard.innerHTML = `
-            <h3>${course.subject} ${course.number}</h3>
-            <p>${course.title}</p>
-            <p>Credits: ${course.credits}</p>
-        `;
-        courseContainer.appendChild(courseCard);
+        courseCard.classList.add('course-card');
+        if (course.completed) courseCard.classList.add('completed');
+        courseCard.innerHTML = `<h3>${course.code}</h3><p>${course.credits} credits</p>`;
+        coursesContainer.appendChild(courseCard);
     });
+
+    creditsTotal.innerHTML = `Total Credits: ${totalCredits}`;
 }
 
-// Initial render with all courses
-renderCourses();
+// Event listeners for filter buttons
+allButton.addEventListener('click', () => renderCourses('All'));
+cseButton.addEventListener('click', () => renderCourses('CSE'));
+wddButton.addEventListener('click', () => renderCourses('WDD'));
 
-// Event listeners for the filter buttons
-document.getElementById('all').addEventListener('click', () => renderCourses('All'));
-document.getElementById('cse').addEventListener('click', () => renderCourses('CSE'));
-document.getElementById('wdd').addEventListener('click', () => renderCourses('WDD'));
+// Display current year in footer
+document.getElementById('currentyear').textContent = new Date().getFullYear();
+
+// Display last modified date in footer
+document.getElementById('lastModified').textContent = `Last Update: ${document.lastModified}`;
+
+// Initial render of all courses
+renderCourses();
