@@ -58,6 +58,11 @@ const cseButton = document.getElementById('cse');
 const wddButton = document.getElementById('wdd');
 const hamburger = document.querySelector('.hamburger');
 const navLinks = document.querySelector('.nav-links');
+const creditSummaryButton = document.getElementById('creditSummaryButton'); // Button to show modal
+const creditModal = document.getElementById('creditModal');
+const modalTotalCredits = document.getElementById('modalTotalCredits');
+const modalCreditsEarned = document.getElementById('modalCreditsEarned');
+const closeButton = document.getElementById('closeButton');
 
 // Function to render course cards
 function renderCourses(filter = 'All') {
@@ -91,14 +96,24 @@ allButton.addEventListener('click', () => renderCourses('All'));
 cseButton.addEventListener('click', () => renderCourses('CSE'));
 wddButton.addEventListener('click', () => renderCourses('WDD'));
 
-// Hamburger menu toggle
-hamburger.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
+// Show credit summary in modal
+creditSummaryButton.addEventListener('click', () => {
+    modalTotalCredits.textContent = totalCreditsRequiredElem.textContent;
+    modalCreditsEarned.textContent = creditsEarnedElem.textContent;
+    creditModal.classList.add('show'); // Use class for animation
 });
 
-// Display current year and last modified date
-document.getElementById('currentyear').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = `Last Update: ${document.lastModified}`;
+// Close modal
+closeButton.addEventListener('click', () => {
+    creditModal.classList.remove('show');
+});
 
-// Initial render
+// Close modal when clicking outside
+window.addEventListener('click', (event) => {
+    if (event.target === creditModal) {
+        creditModal.classList.remove('show');
+    }
+});
+
+// Initial render of courses
 renderCourses();
