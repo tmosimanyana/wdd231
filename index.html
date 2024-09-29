@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rubia M. Francesco</title>
+    <meta name="description" content="Rubia M. Francesco's Course Homepage - Web and Computer Programming Certificate">
+    <meta name="keywords" content="Rubia M. Francesco, Web Development, Programming, Certificate">
+    <title>Rubia M. Francesco - Course Home Page</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <div class="profile-container">
-            <img src="profile.jpg" alt="Rubia M. Francesco" class="profile-img">
+            <img src="profile.jpg" alt="Profile picture of Rubia M. Francesco" class="profile-img">
             <h1>Rubia M. Francesco</h1>
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#" aria-label="Home">Home</a></li>
+                <li><a href="#" aria-label="Chamber">Chamber</a></li>
+                <li><a href="#" aria-label="GitHub Profile">GitHub Profile</a></li>
+                <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
             </ul>
-            <div class="hamburger">
+            <div class="hamburger" aria-label="Navigation Menu" aria-expanded="false">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -30,23 +32,24 @@
 
     <!-- Main Content Section -->
     <main>
-        <div class="container">
+        <section class="course-location">
             <div class="course-work">
                 <h2>Course Work</h2>
                 <ul>
                     <!-- Dynamically filled by JavaScript -->
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>Completed Course 1</li>
+                    <li>Completed Course 2</li>
+                    <li>Completed Course 3</li>
                 </ul>
             </div>
             <div class="location">
                 <h2>Toloria, Madagascar</h2>
-                <img src="baobab-trees.jpg" alt="Baobab Trees" class="location-img">
+                <img src="baobab-trees.jpg" alt="Baobab Trees in Madagascar" class="location-img">
                 <p>Baobab Trees</p>
             </div>
-        </div>
+        </section>
 
+        <!-- Certificate Section -->
         <section class="certificate-section">
             <h2>Web and Computer Programming Certificate</h2>
             <div class="filter-buttons">
@@ -58,12 +61,22 @@
                 <!-- Courses dynamically filled by JavaScript -->
             </div>
         </section>
+
+        <!-- Progress Section -->
+        <section class="progress-section">
+            <h2>Progress</h2>
+            <p>Total Credits Required: <span id="totalCreditsRequired"></span></p>
+            <p>Credits Earned: <span id="creditsEarned"></span></p>
+            <div class="progress-bar">
+                <div class="progress" id="progress"></div>
+            </div>
+        </section>
     </main>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy;2025 🌸 Rubia Magdelena Francesco 🌸 Madagascar</p>
-        <p>Last Update: <span id="lastModified">01/01/1970 12:00:00</span></p>
+        <p>Last Update: <span id="lastModified"></span></p>
         <img src="madagascar-flag.png" alt="Madagascar Flag" class="flag">
     </footer>
 
