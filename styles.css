@@ -51,6 +51,10 @@ nav {
   text-decoration: none;
 }
 
+.nav-links.active {
+  display: flex; /* Show links when active */
+}
+
 /* Hamburger Menu */
 .hamburger {
   display: none;
@@ -116,6 +120,7 @@ nav {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
+  gap: 20px; /* Added gap for spacing between course cards */
 }
 
 /* Footer Styles */
@@ -147,6 +152,7 @@ footer {
   background-color: #4caf50;
   height: 20px;
   width: 0; /* Dynamically set this in JavaScript */
+  min-width: 5%; /* Minimum width for better visibility */
 }
 
 /* Media Queries for responsiveness */
@@ -175,6 +181,8 @@ footer {
     flex-direction: column;
     text-align: center;
     width: 100%; /* Ensure full width */
+    background-color: #2a5d84; /* Background for mobile menu */
+    padding: 10px; /* Padding for better touch targets */
   }
 
   .nav-links.active li {
