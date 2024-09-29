@@ -117,3 +117,18 @@ window.addEventListener('click', (event) => {
 
 // Initial render of courses
 renderCourses();
+
+// Animate the location using Lottie
+const locationAnimation = lottie.loadAnimation({
+    container: document.getElementById('location-animation'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'path_to_your_location_animation.json' // Replace with the path to your Lottie JSON file
+});
+
+// Display current year
+document.getElementById('currentyear').textContent = new Date().getFullYear();
+
+// Display last modified date
+document.getElementById('lastModified').textContent = `Last modified: ${document.lastModified}`;
