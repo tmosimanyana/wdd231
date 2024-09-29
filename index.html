@@ -22,7 +22,7 @@
                 <li><a href="#" aria-label="GitHub Profile">GitHub Profile</a></li>
                 <li><a href="#" aria-label="LinkedIn">LinkedIn</a></li>
             </ul>
-            <div class="hamburger" aria-label="Navigation Menu" aria-expanded="false">
+            <div class="hamburger" role="button" aria-label="Navigation Menu" aria-expanded="false" tabindex="0">
                 <div></div>
                 <div></div>
                 <div></div>
@@ -35,11 +35,12 @@
         <section class="course-location">
             <div class="course-work">
                 <h2>Course Work</h2>
-                <ul>
+                <ul id="course-list">
                     <!-- Dynamically filled by JavaScript -->
-                    <li>Completed Course 1</li>
-                    <li>Completed Course 2</li>
-                    <li>Completed Course 3</li>
+                    <!-- Example Completed Courses -->
+                    <li>Completed: CSE 110</li>
+                    <li>Completed: WDD 130</li>
+                    <li>In Progress: CSE 210</li>
                 </ul>
             </div>
             <div class="location">
@@ -57,18 +58,19 @@
                 <button id="cse">CSE</button>
                 <button id="wdd">WDD</button>
             </div>
-            <div class="courses">
+            <div class="courses" id="courses">
                 <!-- Courses dynamically filled by JavaScript -->
+                <!-- Placeholder for JavaScript-generated courses -->
             </div>
         </section>
 
         <!-- Progress Section -->
         <section class="progress-section">
             <h2>Progress</h2>
-            <p>Total Credits Required: <span id="totalCreditsRequired"></span></p>
-            <p>Credits Earned: <span id="creditsEarned"></span></p>
+            <p>Total Credits Required: <span id="totalCreditsRequired">21</span></p>
+            <p>Credits Earned: <span id="creditsEarned">6</span></p>
             <div class="progress-bar">
-                <div class="progress" id="progress"></div>
+                <div class="progress" id="progress" style="width: 28%;"></div>
             </div>
         </section>
     </main>
@@ -77,7 +79,7 @@
     <footer>
         <p>&copy;2024 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana</p>
         <p>Last Update: <span id="lastModified"></span></p>
-        <img src="images/botswana.png" alt="botswana Flag" class="flag">
+        <img src="images/botswana.png" alt="Botswana Flag" class="flag">
     </footer>
 
     <script src="script.js"></script>
