@@ -6,7 +6,7 @@
     <title>Rubia M. Francesco</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script> <!-- External JS file -->
+    <script src="dynamicContent.js" defer></script> <!-- Updated JS file reference -->
 </head>
 <body>
     <header>
@@ -44,18 +44,11 @@
         <section class="certificate-section">
             <h2>Web and Computer Programming Certificate</h2>
             <div class="filter-buttons">
-                <button id="all">All</button>
-                <button id="cse">CSE</button>
-                <button id="wdd">WDD</button>
+                <button id="filter-all">All</button>
+                <button id="filter-cse">CSE</button>
+                <button id="filter-wdd">WDD</button>
             </div>
-            <div class="course-cards">
-                <div class="course-card">CSE 110</div>
-                <div class="course-card">WDD 130</div>
-                <div class="course-card">CSE 111</div>
-                <div class="course-card">CSE 210</div>
-                <div class="course-card">WDD 131</div>
-                <div class="course-card">WDD 231</div>
-            </div>
+            <div class="course-list"></div> <!-- Updated container for dynamic course list -->
         </section>
     </main>
 
@@ -66,3 +59,4 @@
     </footer>
 </body>
 </html>
+
