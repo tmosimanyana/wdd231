@@ -3,54 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course Management</title>
+    <title>Rubia M. Francesco</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script> <!-- External JS file linked -->
+    <script src="script.js" defer></script> <!-- External JS file -->
 </head>
 <body>
     <header>
         <div class="profile-container">
             <img src="profile-pic.jpg" alt="Profile Image" class="profile-img">
-            <h1>Tinny Bothepha Mosimanyana's Course Management</h1>
+            <h1>Rubia M. Francesco</h1>
         </div>
         <nav>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Courses</a></li>
-                <li><a href="#">Certificates</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="#">LinkedIn</a></li>
             </ul>
-            <div class="hamburger">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
         </nav>
     </header>
 
-    <section class="certificate-section">
-        <h2>Certificate: Web and Computer Programming</h2>
-        <div class="filter-buttons">
-            <button id="all">All Courses</button>
-            <button id="cse">CSE Courses</button>
-            <button id="wdd">WDD Courses</button>
-        </div>
-    </section>
+    <main>
+        <section class="course-section">
+            <div class="course-work">
+                <h2>Course Work</h2>
+                <ul>
+                    <li>•</li>
+                    <li>•</li>
+                    <li>•</li>
+                </ul>
+            </div>
+            <div class="location-section">
+                <h2>Toloria, Madagascar</h2>
+                <img src="baobab-trees.jpg" alt="Baobab Trees">
+                <p>Baobab Trees</p>
+            </div>
+        </section>
 
-    <div id="courses" class="courses"></div>
-    <div class="progress-section">
-        <h3>Progress</h3>
-        <div class="progress-bar">
-            <div id="progress" class="progress"></div>
-        </div>
-        <p>Total Credits Required: <span id="totalCreditsRequired">0</span></p>
-        <p>Credits Earned: <span id="creditsEarned">0</span></p>
-    </div>
+        <section class="certificate-section">
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="filter-buttons">
+                <button id="all">All</button>
+                <button id="cse">CSE</button>
+                <button id="wdd">WDD</button>
+            </div>
+            <div class="course-cards">
+                <div class="course-card">CSE 110</div>
+                <div class="course-card">WDD 130</div>
+                <div class="course-card">CSE 111</div>
+                <div class="course-card">CSE 210</div>
+                <div class="course-card">WDD 131</div>
+                <div class="course-card">WDD 231</div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2024 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana</p>
+        <p>&copy; 2025 🌸 Rubia Magdalena Francesco 🌸 Madagascar</p>
         <p>Last Updated: <span id="lastModified"></span></p>
+        <img src="flag-madagascar.png" alt="Madagascar Flag">
     </footer>
 </body>
 </html>
