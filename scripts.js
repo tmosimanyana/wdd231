@@ -115,6 +115,12 @@ window.addEventListener('click', (event) => {
     }
 });
 
+// Toggle navigation menu
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active'); // Toggle active class for hamburger
+    navLinks.classList.toggle('show'); // Show or hide navigation links
+});
+
 // Initial render of courses
 renderCourses();
 
