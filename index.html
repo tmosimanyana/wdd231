@@ -12,12 +12,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script> <!-- Lottie Library -->
 </head>
 
 <body>
     <header>
         <div class="profile">
-            <img src="profile.jpg" alt="Rubia M. Francesco" class="profile-img">
+            <img src="profile.jpg" alt="Rubia M. Francesco" class="profile-img animate" id="profileImage">
             <h1>Rubia M. Francesco</h1>
         </div>
         <nav>
@@ -46,7 +47,7 @@
         </section>
         <section class="location">
             <h2>Toloria, Madagascar</h2>
-            <img src="madagascar.jpg" alt="Baobab Trees" class="location-img">
+            <div id="location-animation" class="location-img"></div>
             <p>Baobab Trees</p>
         </section>
 
@@ -65,21 +66,17 @@
             <div class="progress">
                 <div class="progress-bar" id="progressBar"></div>
             </div>
+            <button id="creditSummaryButton">Show Credit Summary</button>
+            <div id="creditModal" class="modal">
+                <div class="modal-content">
+                    <span id="closeButton" class="close">&times;</span>
+                    <h2>Credit Summary</h2>
+                    <p>Total Credits Required: <span id="modalTotalCredits">0</span></p>
+                    <p>Credits Earned: <span id="modalCreditsEarned">0</span></p>
+                </div>
+            </div>
         </section>
     </main>
-
-    <!-- Credit Summary Modal -->
-    <div id="creditModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeButton">&times;</span>
-            <h2>Credit Summary</h2>
-            <p>Total Credits Required: <span id="modalTotalCredits"></span></p>
-            <p>Credits Earned: <span id="modalCreditsEarned"></span></p>
-        </div>
-    </div>
-
-    <!-- Button to Show Credit Summary -->
-    <button id="creditSummaryButton">Show Credit Summary</button>
 
     <footer>
         <p>© <span id="currentyear"></span> Rubia Magdalena Francesco 🌸 Madagascar</p>
