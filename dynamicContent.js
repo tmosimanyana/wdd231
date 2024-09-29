@@ -1,3 +1,4 @@
+// Array to hold course data
 const courses = [
     { subject: 'CSE', number: 110, title: 'Introduction to Programming', credits: 2, completed: true },
     { subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 2, completed: true },
@@ -7,6 +8,7 @@ const courses = [
     { subject: 'WDD', number: 231, title: 'Frontend Web Development I', credits: 2, completed: false }
 ];
 
+// Function to render the courses based on selected filter
 function renderCourses(filter = 'all') {
     const courseListContainer = document.querySelector('.course-list');
     courseListContainer.innerHTML = ''; // Clear existing content
@@ -57,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial render
     renderCourses();
 
-    // Set the current year and last modified date dynamically
+    // Set the last modified date dynamically
     const lastModified = document.lastModified;
     document.getElementById('lastModified').textContent = lastModified;
 });
