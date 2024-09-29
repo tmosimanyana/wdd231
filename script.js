@@ -71,17 +71,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         const filteredCourses = courses.filter(course => filter === 'All' || course.subject === filter);
 
+        if (filteredCourses.length === 0) {
+            coursesContainer.innerHTML = '<p>No courses found for this filter.</p>';
+            updateProgress(totalCreditsRequired, creditsEarned);
+            return;
+        }
+
         filteredCourses.forEach(course => {
-            const courseCard = document.createElement('div');
-            courseCard.classList.add('course-card');
-            if (course.completed) courseCard.classList.add('completed');
-            
-            courseCard.innerHTML = `
-                <h3>${course.title} (${course.subject} ${course.number})</h3>
-                <p>${course.credits} credits</p>
-                <p>${course.description}</p>
-                <p>Technologies: ${course.technology.join(', ')}</p>
-            `;
+            const courseCard = createCourseCard(course);
             coursesContainer.appendChild(courseCard);
 
             totalCreditsRequired += course.credits;
@@ -91,6 +88,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         updateProgress(totalCreditsRequired, creditsEarned);
+    }
+
+    function createCourseCard(course) {
+        const courseCard = document.createElement('div');
+        courseCard.classList.add('course-card');
+        if (course.completed) courseCard.classList.add('completed');
+        
+        courseCard.innerHTML = `
+            <h3>${course.title} (${course.subject} ${course.number})</h3>
+            <p>${course.credits} credits</p>
+            <p>${course.description}</p>
+            <p>Technologies: ${course.technology.join(', ')}</p>
+        `;
+        return courseCard;
     }
 
     function updateProgress(totalCreditsRequired, creditsEarned) {
