@@ -86,7 +86,30 @@ main {
 }
 
 .completed {
-  background-color: #58D68D; /* Change color for completed courses */
+  background-color: #58D68D; /* Completed course color */
+}
+
+/* Progress Bar */
+.progress {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.progress-bar {
+  background-color: #EAECEE;
+  border-radius: 10px;
+  height: 20px;
+  width: 100%;
+  margin: 10px auto;
+  max-width: 400px;
+  overflow: hidden;
+}
+
+.progress-bar-filled {
+  height: 100%;
+  background-color: #58D68D;
+  width: 0%;
+  transition: width 0.5s ease;
 }
 
 footer {
