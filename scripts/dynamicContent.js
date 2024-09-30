@@ -41,7 +41,7 @@ const courses = [
         number: 231,
         title: 'Frontend Web Development I',
         credits: 2,
-        completed: false
+        completed: false // Not completed yet
     }
 ];
 
@@ -64,11 +64,17 @@ function renderCourses(filter = 'all') {
             courseCard.classList.add('completed');
             courseCard.style.backgroundColor = '#d4edda'; // Light green for completed courses
             courseCard.style.borderColor = '#c3e6cb'; // Border color for completed courses
+        } else {
+            courseCard.classList.add('incomplete');
+            courseCard.style.backgroundColor = '#f8d7da'; // Light red for incomplete courses
+            courseCard.style.borderColor = '#f5c6cb'; // Border color for incomplete courses
         }
 
+        // Course content
         courseCard.innerHTML = `
             <h3>${course.subject} ${course.number}</h3>
             <p>${course.title}</p>
+            <p><strong>Credits:</strong> ${course.credits}</p>
         `;
         courseListContainer.appendChild(courseCard);
         totalCredits += course.credits;
