@@ -1,66 +1,105 @@
-// Course data
 const courses = [
-    { subject: 'CSE', number: 110, title: 'Introduction to Programming', credits: 2, completed: true },
-    { subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 2, completed: true },
-    { subject: 'CSE', number: 111, title: 'Programming with Functions', credits: 2, completed: true },
-    { subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 2, completed: true },
-    { subject: 'WDD', number: 131, title: 'Dynamic Web Fundamentals', credits: 2, completed: true },
-    { subject: 'WDD', number: 231, title: 'Frontend Web Development I', credits: 2, completed: false }
+    {
+        subject: 'CSE',
+        number: 110,
+        title: 'Introduction to Programming',
+        credits: 2,
+        completed: true // Mark as completed
+    },
+    {
+        subject: 'WDD',
+        number: 130,
+        title: 'Web Fundamentals',
+        credits: 2,
+        completed: true // Mark as completed
+    },
+    {
+        subject: 'CSE',
+        number: 111,
+        title: 'Programming with Functions',
+        credits: 2,
+        completed: true // Mark as completed
+    },
+    {
+        subject: 'CSE',
+        number: 210,
+        title: 'Programming with Classes',
+        credits: 2,
+        completed: true // Mark as completed
+    },
+    {
+        subject: 'WDD',
+        number: 131,
+        title: 'Dynamic Web Fundamentals',
+        credits: 2,
+        completed: true // Mark as completed
+    },
+    {
+        subject: 'WDD',
+        number: 231,
+        title: 'Frontend Web Development I',
+        credits: 2,
+        completed: false
+    }
 ];
 
-// Render courses based on filter
+// Function to render courses in both sections
 function renderCourses(filter = 'all') {
     const courseListContainer = document.querySelector('.course-list');
-    courseListContainer.innerHTML = ''; // Clear previous content
+    
+    courseListContainer.innerHTML = ''; // Clear existing content in the course work section
 
-    const filteredCourses = courses.filter(course => filter === 'all' || course.subject === filter);
-    let totalCreditsRequired = 0;
-    let totalCreditsEarned = 0;
+    const filteredCourses = courses.filter(course =>
+        filter === 'all' || course.subject === filter
+    );
+
+    let totalCredits = 0;
 
     filteredCourses.forEach(course => {
         const courseCard = document.createElement('div');
         courseCard.classList.add('course-card');
-        
+
+        // Add class for completed courses
         if (course.completed) {
             courseCard.classList.add('completed');
-            totalCreditsEarned += course.credits;
+        } else {
+            courseCard.classList.add('incomplete');
         }
-        totalCreditsRequired += course.credits;
 
         courseCard.innerHTML = `
-            <h3>${course.subject} ${course.number}: ${course.title}</h3>
-            <p>Status: ${course.completed ? 'Completed' : 'In Progress'}</p>
+            <h3>${course.subject} ${course.number}</h3>
+            <p>${course.title}</p>
         `;
         courseListContainer.appendChild(courseCard);
+        totalCredits += course.credits;
     });
 
-    // Display total credits
-    const creditsInfo = document.createElement('div');
-    creditsInfo.innerHTML = `<strong>Total Credits Required:</strong> ${totalCreditsRequired} | <strong>Total Credits Earned:</strong> ${totalCreditsEarned}`;
-    courseListContainer.appendChild(creditsInfo);
-
-    // Display progress bar
-    const progressBarContainer = document.createElement('div');
-    const progressPercentage = (totalCreditsEarned / totalCreditsRequired) * 100 || 0;
-    progressBarContainer.innerHTML = `
-        <div class="progress-bar" style="width: ${progressPercentage}%"></div>
-    `;
-    courseListContainer.appendChild(progressBarContainer);
+    // Display total credits in the course work section
+    const totalCreditsElement = document.getElementById('totalCredits');
+    totalCreditsElement.innerHTML = `<strong>Total Credits:</strong> ${totalCredits}`;
 }
 
-// Filter buttons functionality
-document.addEventListener('DOMContentLoaded', () => {
-    document.getElementById('filter-all').addEventListener('click', () => renderCourses('all'));
-    document.getElementById('filter-cse').addEventListener('click', () => renderCourses('CSE'));
-    document.getElementById('filter-wdd').addEventListener('click', () => renderCourses('WDD'));
-
-    // Initial render
-    renderCourses();
-
-    // Set current year and last modified
-    const currentYear = new Date().getFullYear();
-    document.getElementById('currentyear').textContent = currentYear;
-
-    const lastModified = document.lastModified;
-    document.getElementById('lastModified').textContent = lastModified;
+// Filter functionality
+document.getElementById('filter-all').addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    renderCourses('all');
 });
+
+document.getElementById('filter-cse').addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    renderCourses('CSE');
+});
+
+document.getElementById('filter-wdd').addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    renderCourses('WDD');
+});
+
+// Initial render for all courses
+renderCourses();
+
+// Set the current year and last modified date dynamically
+const currentYear = new Date().getFullYear();
+document.getElementById('currentyear').textContent = `${currentYear}`;
+const lastModified = document.lastModified;
+document.getElementById('lastModified').textContent = `Last Modified: ${lastModified}`;

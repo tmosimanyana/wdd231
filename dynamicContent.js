@@ -69,6 +69,7 @@ function renderCourses(filter = 'all') {
         courseCard.innerHTML = `
             <h3>${course.subject} ${course.number}</h3>
             <p>${course.title}</p>
+            <p><strong>Credits:</strong> ${course.credits}</p>
         `;
         courseListContainer.appendChild(courseCard);
         totalCredits += course.credits;

@@ -94,47 +94,6 @@ main {
     margin-top: 10px;
 }
 
-/* Web and Computer Programming Certificate */
-.certificate-section {
-    background-color: white;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    margin-bottom: 20px;
-}
-
-.certificate-section h2 {
-    background-color: #003366;
-    color: white;
-    padding: 10px;
-    border-radius: 4px;
-    margin-top: 0;
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-/* Filter Buttons */
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    margin: 15px 0;
-}
-
-.filter-buttons button {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    margin: 0 10px;
-    font-size: 1rem;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.filter-buttons button:hover {
-    background-color: #003366;
-}
-
 /* Course List Styling */
 .course-list {
     display: flex;
@@ -179,7 +138,6 @@ footer {
     text-align: center;
     padding: 15px 0;
     font-size: 0.9rem;
-    position: relative;
 }
 
 footer img {
