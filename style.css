@@ -1,182 +1,72 @@
 /* Include Roboto Font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-/* Basic Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* General styles */
 body {
-  font-family: 'Roboto', sans-serif; /* Applying Roboto font */
-  line-height: 1.6;
-  padding: 20px;
-  background-color: #f9f9f9; /* Optional background color */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header Styles */
 header {
-  background-color: #2a5d84;
-  color: white;
-  padding: 10px 0;
-  text-align: center;
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-/* Profile Styles */
 .profile-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+    display: flex;
+    align-items: center;
 }
 
 .profile-img {
-  border-radius: 50%;
-  width: 100px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
 }
 
-/* Navigation Styles */
-nav {
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.nav-links {
-  list-style: none;
-}
-
-.nav-links li {
-  display: inline;
-  margin: 0 15px;
-}
-
-.nav-links a {
-  color: white;
-  text-decoration: none;
-}
-
-/* Hamburger Menu */
-.hamburger {
-  display: none;
-}
-
-.hamburger div {
-  background: white;
-  height: 3px;
-  margin: 5px;
-  transition: all 0.3s;
-}
-
-/* Main Section Styles */
-.course-location {
-  display: flex;
-  justify-content: space-around;
-  margin: 20px 0;
-}
-
-.course-work,
-.location {
-  background-color: #f4f4f4;
-  padding: 20px;
-  border-radius: 5px;
-  width: 45%;
-}
-
-/* Course List */
-.course-list {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-/* Course Card Styles */
-.course-card {
-  background-color: white;
-  border-radius: 10px;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.course-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-}
-
-/* Completed Course Style */
-.completed {
-  border: 2px solid #4caf50; /* Green border for completed courses */
-  background-color: #d4edda; /* Light green for completed courses */
-}
-
-/* Progress Section */
-.progress-section {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.progress-bar {
-  width: 100%;
-  background-color: #ccc;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.progress {
-  background-color: #4caf50;
-  height: 20px;
-  width: 0;
-  transition: width 0.5s ease-in-out; /* Smooth transition */
-  min-width: 5%; /* Minimum width for better visibility */
-}
-
-/* Footer Styles */
-footer {
-  text-align: center;
-  margin-top: 30px;
-}
-
-/* Flag Style */
-.flag {
-  width: 30px;
-  vertical-align: middle;
-}
-
-/* Media Queries for Mobile Responsiveness */
-@media (max-width: 768px) {
-  .course-location {
-    flex-direction: column;
-  }
-
-  .course-work,
-  .location {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  nav ul {
-    display: none; /* Hide nav links by default */
-  }
-
-  .hamburger {
-    display: block;
-    cursor: pointer;
-  }
-
-  .nav-links.active {
+nav ul {
+    list-style: none;
     display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    background-color: #2a5d84;
-    padding: 10px;
-  }
-
-  .nav-links.active li {
-    margin: 10px 0;
-  }
+    gap: 15px;
 }
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .location-section img {
+        width: 100%;
+        height: auto;
+    }
+}
+
