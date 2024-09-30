@@ -1,77 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta property="og:title" content="Course Home Page | Tinny B. Mosimanyana">
-    <meta property="og:description" content="Explore the course work and progress of Tinny B. Mosimanyana in Web and Computer Programming.">
-    <meta property="og:image" content="images/profile.jpg">
-    <meta property="og:url" content="https://yourdomain.com">    
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Link to external CSS file -->
-    <link rel="stylesheet" href="style.css">
-
-    <!-- External JavaScript file -->
-    <script src="scripts/dynamicContent.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Course Home Page showcasing completed and ongoing courses in web and computer programming.">
+    <meta name="author" content="Tinny Mosimanyana">
+    <title>Course Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- JavaScript for Dynamic Content -->
+    <script src="dynamicContent.js" defer></script>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <div class="profile-container">
-            <img src="images/profile.jpg" alt="Profile Image of Tinny B. Mosimanyana" class="profile-img">
-      
-            <img src="images/botswana.png" alt="Botswana national flag">
-            
-            <h1>Tinny B. Mosimanyana</h1>
+            <img src="profile-image.png" alt="Profile Image"> <!-- Profile image from earlier -->
+            <h1>Tinny Mosimanyana's Courses</h1>
         </div>
         <nav>
             <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#chamber">Chamber</a></li>
+                <li><a href="#github">GitHub</a></li>
+                <li><a href="#linkedin">LinkedIn</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Main Content Section -->
     <main>
+        <!-- Course Section -->
         <section class="course-section">
             <div class="course-work">
                 <h2>Course Work</h2>
-                <ul>
-                    <li>Course 1</li>
-                    <li>Course 2</li>
-                    <li>Course 3</li>
-                </ul>
+                <!-- Filter Buttons -->
+                <div class="filter-buttons">
+                    <button id="filter-all">All Courses</button>
+                    <button id="filter-cse">CSE Courses</button>
+                    <button id="filter-wdd">WDD Courses</button>
+                </div>
+                <!-- Course List Container -->
+                <div class="course-list"></div>
             </div>
+
+            <!-- Location Section with Image -->
             <div class="location-section">
-                <h2>Kasane, Botswana</h2>
-                <img src="images/zebra.jpg" alt="Zebra animals in Kasane, Botswana">
-                <p>Zebra Animals</p>
+                <h2>Location</h2>
+                <img src="kasane-location-image.png" alt="Kasane Location Image">
             </div>
         </section>
 
+        <!-- Web and Computer Programming Certificate Section -->
         <section class="certificate-section">
-            <h2>Web and Computer Programming Certificate</h2>
-            <div class="filter-buttons">
-                <button id="filter-all">All</button>
-                <button id="filter-cse">CSE</button>
-                <button id="filter-wdd">WDD</button>
-            </div>
-            <div class="course-list"></div> <!-- Dynamic course list here -->
-        </section>
-
-        <section class="projects-section">
-            <h2>Projects</h2>
-            <p>Details about relevant projects will go here.</p>
+            <h2>Web & Computer Programming Certificate</h2>
+            <div class="course-list"></div> <!-- Will display dynamically -->
         </section>
     </main>
 
+    <!-- Footer Section -->
     <footer>
-        <p>&copy; 2024 🌸 Tinny Bothepha Mosimanyana 🌸 Botswana</p>
-        <p>Last Updated: <span id="lastModified"></span></p>
-        <img src="images/botswana.png" alt="Botswana national flag">
+        <p>&copy; <span id="currentyear"></span> Tinny Mosimanyana</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
     </footer>
+
 </body>
 </html>
