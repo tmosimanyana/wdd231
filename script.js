@@ -1,5 +1,4 @@
-// dynamicContent.js
-
+// Course data
 const courses = [
     { subject: 'CSE', number: 110, title: 'Introduction to Programming', credits: 2, completed: true },
     { subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 2, completed: true },
@@ -9,9 +8,10 @@ const courses = [
     { subject: 'WDD', number: 231, title: 'Frontend Web Development I', credits: 2, completed: false }
 ];
 
+// Render courses based on filter
 function renderCourses(filter = 'all') {
     const courseListContainer = document.querySelector('.course-list');
-    courseListContainer.innerHTML = ''; // Clear existing content
+    courseListContainer.innerHTML = ''; // Clear previous content
 
     const filteredCourses = courses.filter(course => filter === 'all' || course.subject === filter);
     let totalCreditsRequired = 0;
@@ -20,16 +20,12 @@ function renderCourses(filter = 'all') {
     filteredCourses.forEach(course => {
         const courseCard = document.createElement('div');
         courseCard.classList.add('course-card');
-
-        // Add class for completed courses
+        
         if (course.completed) {
             courseCard.classList.add('completed');
-            courseCard.style.backgroundColor = '#d4edda'; // Light green for completed courses
-            courseCard.style.borderColor = '#c3e6cb'; // Border color for completed courses
-            totalCreditsEarned += course.credits; // Count earned credits
+            totalCreditsEarned += course.credits;
         }
-        
-        totalCreditsRequired += course.credits; // Count total required credits
+        totalCreditsRequired += course.credits;
 
         courseCard.innerHTML = `
             <h3>${course.subject} ${course.number}: ${course.title}</h3>
@@ -38,21 +34,21 @@ function renderCourses(filter = 'all') {
         courseListContainer.appendChild(courseCard);
     });
 
-    // Display total credits and progress
+    // Display total credits
     const creditsInfo = document.createElement('div');
     creditsInfo.innerHTML = `<strong>Total Credits Required:</strong> ${totalCreditsRequired} | <strong>Total Credits Earned:</strong> ${totalCreditsEarned}`;
     courseListContainer.appendChild(creditsInfo);
 
     // Display progress bar
     const progressBarContainer = document.createElement('div');
-    const progressPercentage = (totalCreditsEarned / totalCreditsRequired) * 100 || 0; // Avoid division by zero
+    const progressPercentage = (totalCreditsEarned / totalCreditsRequired) * 100 || 0;
     progressBarContainer.innerHTML = `
-        <div class="progress-bar" style="width: ${progressPercentage}%;"></div>
+        <div class="progress-bar" style="width: ${progressPercentage}%"></div>
     `;
     courseListContainer.appendChild(progressBarContainer);
 }
 
-// Filter functionality
+// Filter buttons functionality
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('filter-all').addEventListener('click', () => renderCourses('all'));
     document.getElementById('filter-cse').addEventListener('click', () => renderCourses('CSE'));
@@ -61,9 +57,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial render
     renderCourses();
 
-    // Set the current year and last modified date dynamically
+    // Set current year and last modified
     const currentYear = new Date().getFullYear();
     document.getElementById('currentyear').textContent = currentYear;
+
     const lastModified = document.lastModified;
     document.getElementById('lastModified').textContent = lastModified;
 });
