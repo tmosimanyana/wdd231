@@ -1,150 +1,182 @@
+/* Include Roboto Font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 /* Basic Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    padding: 20px;
-    background-color: #f9f9f9;
-  }
-  
-  /* Header Styles */
-  header {
-    background-color: #2a5d84;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-  }
-  
-  .profile-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif; /* Applying Roboto font */
+  line-height: 1.6;
+  padding: 20px;
+  background-color: #f9f9f9; /* Optional background color */
+}
+
+/* Header Styles */
+header {
+  background-color: #2a5d84;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+}
+
+/* Profile Styles */
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 100px;
+}
+
+/* Navigation Styles */
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.nav-links li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+}
+
+.hamburger div {
+  background: white;
+  height: 3px;
+  margin: 5px;
+  transition: all 0.3s;
+}
+
+/* Main Section Styles */
+.course-location {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+}
+
+.course-work,
+.location {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 5px;
+  width: 45%;
+}
+
+/* Course List */
+.course-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Course Card Styles */
+.course-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Completed Course Style */
+.completed {
+  border: 2px solid #4caf50; /* Green border for completed courses */
+  background-color: #d4edda; /* Light green for completed courses */
+}
+
+/* Progress Section */
+.progress-section {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #ccc;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress {
+  background-color: #4caf50;
+  height: 20px;
+  width: 0;
+  transition: width 0.5s ease-in-out; /* Smooth transition */
+  min-width: 5%; /* Minimum width for better visibility */
+}
+
+/* Footer Styles */
+footer {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Flag Style */
+.flag {
+  width: 30px;
+  vertical-align: middle;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (max-width: 768px) {
+  .course-location {
     flex-direction: column;
   }
-  
-  .profile-img {
-    border-radius: 50%;
-    width: 100px;
-    margin-bottom: 10px;
+
+  .course-work,
+  .location {
+    width: 100%;
+    margin-bottom: 20px;
   }
-  
-  nav {
-    display: flex;
-    justify-content: center;
-    margin-top: 10px;
+
+  nav ul {
+    display: none; /* Hide nav links by default */
   }
-  
-  .nav-links {
-    list-style: none;
-  }
-  
-  .nav-links li {
-    display: inline;
-    margin: 0 15px;
-  }
-  
-  .nav-links a {
-    color: white;
-    text-decoration: none;
-  }
-  
+
   .hamburger {
-    display: none;
-  }
-  
-  /* Filter Buttons */
-  .filter-buttons {
-    text-align: center;
-    margin: 20px 0;
-  }
-  
-  .filter-buttons button {
-    margin: 5px;
-    padding: 10px;
-    border: none;
-    background-color: #1976d2;
-    color: white;
-    border-radius: 5px;
+    display: block;
     cursor: pointer;
   }
-  
-  .filter-buttons button:hover {
-    background-color: #0d47a1;
-  }
-  
-  /* Course Card Styles */
-  .course-list {
+
+  .nav-links.active {
     display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-  }
-  
-  .course-card {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  
-  .course-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  }
-  
-  .completed {
-    border: 2px solid #4caf50;
-    background-color: #d4edda;
-    border-color: #c3e6cb;
-  }
-  
-  /* Progress Bar */
-  .progress-bar {
-    height: 20px;
-    background-color: #4caf50;
-    border-radius: 10px;
-    transition: width 0.5s ease;
-  }
-  
-  /* Footer */
-  footer {
+    flex-direction: column;
     text-align: center;
-    margin-top: 30px;
+    width: 100%;
+    background-color: #2a5d84;
+    padding: 10px;
   }
-  
-  .flag {
-    width: 30px;
-    vertical-align: middle;
+
+  .nav-links.active li {
+    margin: 10px 0;
   }
-  
-  /* Media Queries */
-  @media (max-width: 768px) {
-    .course-list {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .hamburger {
-      display: block;
-      cursor: pointer;
-    }
-  
-    nav ul {
-      display: none;
-    }
-  
-    .nav-links.active {
-      display: flex;
-      flex-direction: column;
-      background-color: #2a5d84;
-      text-align: center;
-    }
-  }
-  
+}
