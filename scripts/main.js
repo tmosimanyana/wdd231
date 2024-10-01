@@ -84,11 +84,15 @@ document.addEventListener('DOMContentLoaded', function() {
                 courseCard.classList.add('completed-course');
             }
 
+            // Add course status to the inner HTML
+            const status = course.completed ? 'Completed' : 'Not Completed';
+
             courseCard.innerHTML = `
                 <h3>${course.title} (${course.subject} ${course.number})</h3>
                 <p>${course.description}</p>
                 <p><strong>Credits:</strong> ${course.credits}</p>
                 <p><strong>Technology:</strong> ${course.technology.join(', ')}</p>
+                <p><strong>Status:</strong> ${status}</p> <!-- Display course status -->
             `;
 
             courseContainer.appendChild(courseCard);
