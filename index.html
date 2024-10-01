@@ -1,118 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Tinny Bothepha Mosimanyana's personal portfolio showcasing web development, branding, and printing projects.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <title>Tinny Bothepha Mosimanyana - Portfolio</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lobster&display=swap" rel="stylesheet">
-    <script src="scripts/main.js" defer></script>
-    
-    <style>
-        :root {
-            --primary-bg: #f5f5f5;
-            view-transition-name: fade;
-        }
-
-        html, body {
-            height: 100%;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
-        }
-
-        body {
-            background-color: var(--primary-bg);
-            transition: background-color 300ms ease;
-        }
-
-        main {
-            flex-grow: 1;
-            display: block;
-            padding: 20px;
-        }
-
-        .two-columns {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px; /* Space between columns */
-        }
-
-        .column {
-            flex: 1; /* Allow columns to grow */
-            min-width: 300px; /* Minimum width for columns */
-            box-sizing: border-box;
-        }
-
-        body[view-transition-fade] {
-            opacity: 0;
-            transition: opacity 300ms ease-in-out;
-        }
-    </style>
+    <meta name="description" content="Tinny B. Mosimanyana - Web and Computer Programming Certificate">
+    <title>Tinny B. Mosimanyana - Course Home</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
     <header>
-        <h1>Welcome to My Portfolio</h1>
+        <div class="profile">
+            <img src="profile.jpg" alt="Tinny B. Mosimanyana" class="profile-img">
+            <h1>Tinny B. Mosimanyana</h1>
+        </div>
         <nav>
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links" id="nav-links">
+            <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Chamber</a></li>
                 <li><a href="#">GitHub Profile</a></li>
-                <li><a href="https://linkedin.com/">LinkedIn</a></li>
+                <li><a href="#">LinkedIn</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="about" class="two-columns">
-            <div class="column">
-                <h2>About Me</h2>
-                <img src="images/profile.webp" alt="Tinny Bothepha Mosimanyana" width="150">
-                <p>I am a passionate web developer and entrepreneur with experience in front-end and back-end development. I also specialize in branding and printing services. My mission is to provide impactful digital and business solutions to clients globally.</p>
-            </div>
-            <div class="column">
-                <h2>Molepolole</h2>
-                <img src="images/molepolole.webp" alt="Molepolole landscape" width="200">
-                <p>Molepolole is a village near Gaborone, Botswana, known for its rich culture and growing business opportunities. It’s a place of inspiration for many of my projects and entrepreneurial ventures.</p>
-            </div>
+        <section class="course-work">
+            <h2>Course Work</h2>
         </section>
 
-        <section id="projects" class="two-columns">
-            <div class="column">
-                <h2>Projects</h2>
-                <ul>
-                    <li><a href="https://tmosimanyana.github.io/wdd231/">Project 1</a> - A showcase of my skills in front-end and back-end development.</li>
-                </ul>
-            </div>
-            <div class="column">
-                <h2>Courses</h2>
-                <div>
-                    <button id="show-all">Show All Courses</button>
-                    <button id="show-cse">Show CSE Courses</button>
-                    <button id="show-wdd">Show WDD Courses</button>
-                </div>
-                <div id="course-list"></div>
-                <p>Total Credits: <span id="total-credits">0</span></p>
-            </div>
+        <section class="location">
+            <h2>Kasane, Botswana</h2>
+            <img src="images/zebra.jpg" alt="Zebra Animals" class="location-img">
+            <p>Zebra Animals</p>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; <span id="currentyear"></span> Tinny Bothepha Mosimanyana | Botswana</p>
-        <p id="lastModified"></p>
-    </footer>
-</body>
+    <section class="certificate">
+        <h2>Web and Computer Programming Certificate</h2>
+        <div class="filter-buttons">
+            <button onclick="filterCourses('all')">All</button>
+            <button onclick="filterCourses('cse')">CSE</button>
+            <button onclick="filterCourses('wdd')">WDD</button>
+        </div>
 
+        <!-- New section to display total credits -->
+        <div id="total-credits" style="font-weight: bold; margin-top: 10px;">Total Credits: 0</div>
+
+        <div class="course-list"></div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> Tinny Bothepha Mosimanyana, Botswana</p>
+        <p>Last Update: <span id="last-update"></span></p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
 </html>
