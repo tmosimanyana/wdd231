@@ -1,107 +1,82 @@
-/* General styles */
 body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
 }
 
-h1, h2 {
-    font-family: 'Lobster', cursive;
-}
-
-/* Header styles */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-    text-align: center;
-}
-
-nav {
-    position: relative;
-}
-
-.hamburger {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 4px;
-}
-
-.nav-links {
+    background-color: #003366;
+    color: white;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile img {
+    border-radius: 50%;
+    margin-right: 10px;
+    width: 50px; /* Set a fixed width and height for consistency */
+    height: 50px;
+}
+
+nav ul {
     list-style: none;
+    display: flex;
+    gap: 15px;
 }
 
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
+nav a {
     color: white;
     text-decoration: none;
+    transition: color 0.3s; /* Smooth transition for hover effect */
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
+nav a:hover {
+    color: #ffcc00; /* Change color on hover for better interactivity */
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        padding: 0;
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-
-    .nav-links li {
-        text-align: center;
-        margin: 10px 0;
-    }
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
 }
 
-/* Footer styles */
+.course-work, .location {
+    width: 45%;
+}
+
+.course-card {
+    background-color: #f9f9f9; /* Light background for course cards */
+    border: 1px solid #ddd;
+    border-radius: 5px; /* Rounded corners for a softer look */
+    padding: 15px;
+    margin-bottom: 20px; /* Spacing between course cards */
+}
+
 footer {
-    background-color: #333;
+    background-color: #663300;
     color: white;
     text-align: center;
-    padding: 1rem;
+    padding: 10px;
 }
 
-footer p {
-    margin: 5px 0;
+footer .courses button {
+    background-color: #cc6600;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px; /* Rounded button corners */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
 }
 
-/* Course styles */
-.course-card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 1rem;
-    margin: 1rem 0;
-    background-color: #f9f9f9;
-}
-
-.completed-course {
-    background-color: #e0ffe0; /* Light green background for completed courses */
+footer .courses button:hover {
+    background-color: #e68a00; /* Darker shade on hover */
 }
