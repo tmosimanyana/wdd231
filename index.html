@@ -1,67 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Tinny B. Mosimanyana - Web and Computer Programming Certificate">
-        <meta name="author" content="Tinny Bothepha Mosimanyana">
-        <title>Tinny B. Mosimanyana - Course Home</title>
-        
-        <!-- Google Font Embed -->
-        <link href="https://fonts.googleapis.com/css2?family=YourChosenFontName:wght@400;700&display=swap" rel="stylesheet">
-        
-        <link rel="stylesheet" href="styles.css">
-        <script src="script.js" defer></script>
-    </head>
-     
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tinny B. Mosimanyana - Web and Computer Programming Certificate">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <title>Tinny B. Mosimanyana - Course Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
 <body>
     <header>
-        <div class="profile">
-            <img src="images/profile.webp" alt="Tinny Mosimanyana" width="150">
-            <h1>Tinny B. Mosimanyana</h1>
-        </div>
+        <h1>Tinny B. Mosimanyana</h1>
         <nav>
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
             <ul class="nav-list">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
+                <li><a href="#">Courses</a></li>
+                <li><a href="#">About</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="course-work">
-            <h2>Course Work</h2>
-            <ul id="courseList"></ul>
-        </section>
-
-        <section class="location">
-            <img src="images/molepolole.webp" alt="Molepolole landscape" width="200">
-            <h2>Molepolole, Botswana</h2>
-            <p>L.D.S Churches</p>
+            <div class="location">
+                <h2>Course List</h2>
+                <div id="course-list"></div> <!-- Course List Container -->
+                <h3>Total Credits Required: <span id="total-credits-required"></span></h3>
+                <h3>Total Credits Earned: <span id="total-credits-earned"></span></h3>
+            </div>
         </section>
     </main>
 
-    <section class="certificate">
-        <h2>Web and Computer Programming Certificate</h2>
-        <div class="filter-buttons">
-            <button onclick="filterCourses('all')">All</button>
-            <button onclick="filterCourses('cse')">CSE</button>
-            <button onclick="filterCourses('wdd')">WDD</button>
-        </div>
-        <div class="course-list" id="courseContainer"></div>
-        <p>Total Credits: <span id="totalCredits">0</span></p>
-    </section>
-
     <footer>
-        <p>&copy; <span id="year"></span> Tinny Bothepha Mosimanyana, Botswana</p>
-        <p id="lastModified"></p>
+        <p>&copy; 2024 Tinny B. Mosimanyana</p>
     </footer>
 </body>
-
 </html>

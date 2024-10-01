@@ -1,8 +1,5 @@
-/* Google Font Import */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 body {
-    font-family: 'Roboto', sans-serif; /* Changed to Roboto for better consistency */
+    font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     margin: 0;
 }
@@ -13,10 +10,6 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 10px;
-}
-
-.profile img {
-    border-radius: 50%;
 }
 
 .nav-list {
@@ -39,31 +32,6 @@ header {
     text-align: center;
 }
 
-.certificate {
-    background-color: #004B87;
-    color: #fff;
-    padding: 20px;
-    margin: 20px;
-}
-
-.filter-buttons button {
-    margin: 5px;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
-}
-
-.filter-buttons button:hover {
-    background-color: #0056b3; /* Example hover color */
-    color: #fff; /* Ensures text is readable */
-}
-
-.course-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
 .course {
     background-color: #B44A00;
     color: #fff;
@@ -81,25 +49,4 @@ header {
 footer {
     text-align: center;
     margin: 20px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .course {
-        width: 100%; /* Stacks courses on smaller screens */
-    }
-    
-    .course-work {
-        flex-direction: column; /* Stacks course work vertically */
-        align-items: center; /* Center-aligns course work */
-    }
-    
-    header {
-        flex-direction: column; /* Stacks header elements vertically */
-        align-items: center; /* Center-aligns header content */
-    }
-    
-    .nav-list li {
-        margin: 5px 0; /* Adds margin for vertical spacing */
-    }
 }
