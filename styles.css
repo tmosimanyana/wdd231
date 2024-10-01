@@ -1,127 +1,104 @@
-/* General Styles */
+/* General styles */
 body {
-    font-family: 'Arial', sans-serif; /* General font */
-    font-size: 16px; /* Base font size */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    font-family: 'Arial', sans-serif; /* Change to your preferred font */
+    margin: 0;
+    padding: 0;
+    color: #333; /* Default text color */
 }
 
-h1, h2 {
-    margin: 0; /* Remove default margin */
-}
-
-/* Header Styles */
 header {
-    background-color: #003366; /* Header background color */
-    color: white; /* Text color */
-    padding: 10px; /* Padding */
-    display: flex; /* Flexbox for layout */
-    justify-content: space-between; /* Space between items */
-    align-items: center; /* Center items vertically */
-}
-
-.profile {
-    display: flex; /* Flexbox for profile */
-    align-items: center; /* Center vertically */
-}
-
-.profile-img {
-    width: 50px; /* Profile image size */
-    height: 50px; /* Profile image size */
-    border-radius: 50%; /* Circular profile image */
-    margin-right: 10px; /* Space between image and name */
-}
-
-/* Navigation Styles */
-nav {
-    display: flex; /* Flexbox for navigation */
-    align-items: center; /* Center items vertically */
+    background-color: #007BFF; /* Header background color */
+    color: white; /* Header text color */
+    padding: 10px 20px; /* Header padding */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Aligns items to space them evenly */
 }
 
 .nav-list {
-    display: flex; /* Flexbox for list */
-    list-style: none; /* Remove default list style */
+    list-style: none; /* Removes bullets from list */
+    display: flex; /* Horizontally align navigation items */
+    padding: 0;
+    margin: 0;
 }
 
 .nav-list li {
-    margin: 0 15px; /* Horizontal spacing */
+    margin-left: 20px; /* Space between nav items */
 }
 
-/* Hide the navigation by default on small screens */
-.nav-list {
-    display: none; /* Initially hidden */
-    flex-direction: column; /* Stack items vertically */
-    width: 100%; /* Full width */
-    background-color: #003366; /* Consistent background */
-    position: absolute; /* Overlay on top */
-    top: 50px; /* Space from the top */
+.nav-list a {
+    color: white; /* Link color */
+    text-decoration: none; /* Removes underline */
 }
 
-/* Show the navigation when active */
-.nav-list.active {
-    display: flex; /* Show when active */
-}
-
-/* Hamburger icon */
 .hamburger {
-    cursor: pointer; /* Pointer for usability */
-    font-size: 24px; /* Icon size */
-    color: white; /* Icon color */
+    display: none; /* Hide hamburger by default */
+    cursor: pointer; /* Change cursor on hover */
 }
 
-/* Styles for mobile view */
-@media (max-width: 768px) {
-    .nav-list {
-        display: none; /* Hidden by default */
-    }
-
-    .nav-list.active {
-        display: flex; /* Display on click */
-    }
-
-    .hamburger {
-        display: block; /* Show hamburger on mobile */
-    }
-
-    main {
-        padding: 15px; /* Reduced padding for mobile */
-    }
-
-    .course-work ul {
-        padding-left: 20px; /* Padding for list */
-    }
-
-    h1 {
-        font-size: 20px; /* Smaller heading size */
-    }
-
-    h2 {
-        font-size: 18px; /* Smaller sub-heading size */
-    }
-}
-
-/* Main Content Styles */
+/* Main content styles */
 main {
-    padding: 20px; /* General padding */
+    padding: 20px; /* Main content padding */
+}
+
+.course-work, .location {
+    margin-bottom: 20px; /* Space between sections */
+}
+
+/* Certificate section styles */
+.certificate {
+    margin-top: 20px; /* Space above certificate section */
 }
 
 .course-list {
-    display: flex; /* Flexbox for courses */
-    flex-direction: column; /* Stack courses */
+    display: flex; /* Flexbox for course cards */
+    flex-wrap: wrap; /* Wrap items */
     gap: 15px; /* Space between course items */
 }
 
-/* Course card styles */
 .course {
-    background-color: #f9f9f9; /* Background color */
-    border: 1px solid #ccc; /* Border for visibility */
-    padding: 15px; /* Inner padding for content */
+    background-color: #f9f9f9; /* Background color for course cards */
+    border: 1px solid #ccc; /* Border for cards */
+    border-radius: 5px; /* Rounded corners */
+    padding: 15px; /* Inner padding */
+    width: calc(30% - 15px); /* Card width */
+    position: relative; /* For progress indicator */
+    transition: transform 0.3s; /* Animation for hover */
 }
 
-/* Footer Styles */
+.course:hover {
+    transform: scale(1.05); /* Scale effect on hover */
+}
+
+.completed {
+    background-color: #d4edda; /* Background for completed courses */
+}
+
+/* Progress section styles */
+.progress {
+    margin-top: 20px; /* Space above progress section */
+    font-weight: bold; /* Bold text */
+}
+
+/* Footer styles */
 footer {
-    background-color: #003366; /* Footer background color */
-    color: white; /* Text color */
-    padding: 10px; /* Padding */
-    text-align: center; /* Center text */
+    text-align: center; /* Center align footer text */
+    padding: 10px 0; /* Padding for footer */
+    background-color: #f1f1f1; /* Light background for footer */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .nav-list {
+        display: none; /* Hide nav list on small screens */
+        flex-direction: column; /* Vertical alignment */
+    }
+
+    .hamburger {
+        display: block; /* Show hamburger on small screens */
+    }
+
+    .course {
+        width: calc(100% - 15px); /* Full width for cards */
+    }
 }
