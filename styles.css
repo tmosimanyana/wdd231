@@ -1,104 +1,75 @@
-/* General styles */
 body {
-    font-family: 'Arial', sans-serif; /* Change to your preferred font */
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
-    padding: 0;
-    color: #333; /* Default text color */
 }
 
 header {
-    background-color: #007BFF; /* Header background color */
-    color: white; /* Header text color */
-    padding: 10px 20px; /* Header padding */
+    background-color: #002147;
+    color: #fff;
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* Aligns items to space them evenly */
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.profile img {
+    border-radius: 50%;
 }
 
 .nav-list {
-    list-style: none; /* Removes bullets from list */
-    display: flex; /* Horizontally align navigation items */
+    list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 .nav-list li {
-    margin-left: 20px; /* Space between nav items */
+    display: inline;
+    margin: 0 10px;
 }
 
-.nav-list a {
-    color: white; /* Link color */
-    text-decoration: none; /* Removes underline */
+.course-work {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
 }
 
-.hamburger {
-    display: none; /* Hide hamburger by default */
-    cursor: pointer; /* Change cursor on hover */
+.location {
+    text-align: center;
 }
 
-/* Main content styles */
-main {
-    padding: 20px; /* Main content padding */
-}
-
-.course-work, .location {
-    margin-bottom: 20px; /* Space between sections */
-}
-
-/* Certificate section styles */
 .certificate {
-    margin-top: 20px; /* Space above certificate section */
+    background-color: #004B87;
+    color: #fff;
+    padding: 20px;
+    margin: 20px;
+}
+
+.filter-buttons button {
+    margin: 5px;
+    padding: 10px;
+    cursor: pointer;
 }
 
 .course-list {
-    display: flex; /* Flexbox for course cards */
-    flex-wrap: wrap; /* Wrap items */
-    gap: 15px; /* Space between course items */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .course {
-    background-color: #f9f9f9; /* Background color for course cards */
-    border: 1px solid #ccc; /* Border for cards */
-    border-radius: 5px; /* Rounded corners */
-    padding: 15px; /* Inner padding */
-    width: calc(30% - 15px); /* Card width */
-    position: relative; /* For progress indicator */
-    transition: transform 0.3s; /* Animation for hover */
+    background-color: #B44A00;
+    color: #fff;
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+    width: calc(30% - 10px);
+    text-align: center;
 }
 
-.course:hover {
-    transform: scale(1.05); /* Scale effect on hover */
+.course.completed {
+    background-color: #008C45; /* Different color for completed courses */
 }
 
-.completed {
-    background-color: #d4edda; /* Background for completed courses */
-}
-
-/* Progress section styles */
-.progress {
-    margin-top: 20px; /* Space above progress section */
-    font-weight: bold; /* Bold text */
-}
-
-/* Footer styles */
 footer {
-    text-align: center; /* Center align footer text */
-    padding: 10px 0; /* Padding for footer */
-    background-color: #f1f1f1; /* Light background for footer */
-}
-
-/* Responsive styles */
-@media (max-width: 768px) {
-    .nav-list {
-        display: none; /* Hide nav list on small screens */
-        flex-direction: column; /* Vertical alignment */
-    }
-
-    .hamburger {
-        display: block; /* Show hamburger on small screens */
-    }
-
-    .course {
-        width: calc(100% - 15px); /* Full width for cards */
-    }
+    text-align: center;
+    margin: 20px;
 }

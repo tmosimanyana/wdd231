@@ -8,13 +8,13 @@
     <meta name="author" content="Tinny Bothepha Mosimanyana">
     <title>Tinny B. Mosimanyana - Course Home</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="scripts.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 
 <body>
     <header>
         <div class="profile">
-            <img src="images/profile.webp" alt="Tinny Mosimanyana" width="150">  
+            <img src="images/profile.webp" alt="Tinny Mosimanyana" width="150">
             <h1>Tinny B. Mosimanyana</h1>
         </div>
         <nav>
@@ -31,11 +31,7 @@
     <main>
         <section class="course-work">
             <h2>Course Work</h2>
-            <ul>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-            </ul>
+            <ul id="courseList"></ul>
         </section>
 
         <section class="location">
@@ -52,11 +48,8 @@
             <button onclick="filterCourses('cse')">CSE</button>
             <button onclick="filterCourses('wdd')">WDD</button>
         </div>
-        <div class="course-list"></div>
-        <div class="progress">
-            <p>Total Credits Required: <span id="totalCreditsRequired">0</span></p>
-            <p>Total Credits Earned: <span id="totalCreditsEarned">0</span></p>
-        </div>
+        <div class="course-list" id="courseContainer"></div>
+        <p>Total Credits: <span id="totalCredits">0</span></p>
     </section>
 
     <footer>
