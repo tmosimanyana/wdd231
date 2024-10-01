@@ -1,15 +1,19 @@
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Primary font */
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    background-color: #f4f4f4; /* Light background for contrast */
+    color: #333; /* Dark text for readability */
 }
 
 header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
+    background: #007BFF; /* Primary color */
+    color: #fff; /* White text */
+    padding: 10px 20px;
     text-align: center;
+    position: relative;
 }
 
 .profile-img {
@@ -18,24 +22,56 @@ header {
     height: 100px;
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
+    display: flex;
 }
 
 nav ul li {
-    display: inline;
     margin-right: 20px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    padding: 8px 16px;
+    transition: background 0.3s;
+}
+
+nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Light hover effect */
+}
+
+.menu-toggle {
+    display: none; /* Hidden on larger screens */
+    cursor: pointer;
+    font-size: 24px; /* Larger font for hamburger icon */
+}
+
+main {
+    display: flex;
+    justify-content: space-between; /* Space between sections */
+    padding: 20px;
+}
+
+.course-work, .location {
+    flex: 1; /* Each section takes equal space */
+    margin: 0 10px; /* Margin for spacing */
+    background: #fff; /* White background for sections */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding for inner spacing */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
 .certificate {
     padding: 20px;
-    background-color: #f9f9f9;
 }
 
 .course-list .course {
@@ -46,7 +82,7 @@ nav ul li a {
 }
 
 .completed {
-    background-color: #e6ffe6;
+    background-color: #e6ffe6; /* Light green for completed courses */
 }
 
 #total-credits {
@@ -60,4 +96,29 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide the menu on small screens */
+        flex-direction: column; /* Stack the menu items */
+        position: absolute; /* Position the menu absolutely */
+        top: 60px; /* Align below the header */
+        left: 0;
+        right: 0;
+        background: #007BFF; /* Same background as header */
+    }
+
+    nav ul.show {
+        display: flex; /* Show menu when class is added */
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+    }
+
+    main {
+        flex-direction: column; /* Stack sections on small screens */
+    }
 }
