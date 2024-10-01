@@ -38,6 +38,18 @@
             padding: 20px;
         }
 
+        .two-columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px; /* Space between columns */
+        }
+
+        .column {
+            flex: 1; /* Allow columns to grow */
+            min-width: 300px; /* Minimum width for columns */
+            box-sizing: border-box;
+        }
+
         body[view-transition-fade] {
             opacity: 0;
             transition: opacity 300ms ease-in-out;
@@ -64,34 +76,36 @@
     </header>
 
     <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <img src="images/profile.webp" alt="Tinny Bothepha Mosimanyana" width="150">
-            <p>I am a passionate web developer and entrepreneur with experience in front-end and back-end development. I also specialize in branding and printing services. My mission is to provide impactful digital and business solutions to clients globally.</p>
-        </section>
-
-        <section id="projects">
-            <h2>Projects</h2>
-            <ul>
-                <li><a href="https://tmosimanyana.github.io/wdd231/">Project 1</a> - A showcase of my skills in front-end and back-end development.</li>
-            </ul>
-        </section>
-
-        <section id="molepolole">
-            <h2>Molepolole</h2>
-            <img src="images/molepolole.webp" alt="Molepolole landscape" width="200">
-            <p>Molepolole is a village near Gaborone, Botswana, known for its rich culture and growing business opportunities. It’s a place of inspiration for many of my projects and entrepreneurial ventures.</p>
-        </section>
-
-        <section id="courses">
-            <h2>Courses</h2>
-            <div>
-                <button id="show-all">Show All Courses</button>
-                <button id="show-cse">Show CSE Courses</button>
-                <button id="show-wdd">Show WDD Courses</button>
+        <section id="about" class="two-columns">
+            <div class="column">
+                <h2>About Me</h2>
+                <img src="images/profile.webp" alt="Tinny Bothepha Mosimanyana" width="150">
+                <p>I am a passionate web developer and entrepreneur with experience in front-end and back-end development. I also specialize in branding and printing services. My mission is to provide impactful digital and business solutions to clients globally.</p>
             </div>
-            <div id="course-list"></div>
-            <p>Total Credits: <span id="total-credits">0</span></p>
+            <div class="column">
+                <h2>Molepolole</h2>
+                <img src="images/molepolole.webp" alt="Molepolole landscape" width="200">
+                <p>Molepolole is a village near Gaborone, Botswana, known for its rich culture and growing business opportunities. It’s a place of inspiration for many of my projects and entrepreneurial ventures.</p>
+            </div>
+        </section>
+
+        <section id="projects" class="two-columns">
+            <div class="column">
+                <h2>Projects</h2>
+                <ul>
+                    <li><a href="https://tmosimanyana.github.io/wdd231/">Project 1</a> - A showcase of my skills in front-end and back-end development.</li>
+                </ul>
+            </div>
+            <div class="column">
+                <h2>Courses</h2>
+                <div>
+                    <button id="show-all">Show All Courses</button>
+                    <button id="show-cse">Show CSE Courses</button>
+                    <button id="show-wdd">Show WDD Courses</button>
+                </div>
+                <div id="course-list"></div>
+                <p>Total Credits: <span id="total-credits">0</span></p>
+            </div>
         </section>
     </main>
 
