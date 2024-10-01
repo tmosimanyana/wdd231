@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Tinny B. Mosimanyana - Web and Computer Programming Certificate">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
     <title>Tinny B. Mosimanyana - Course Home</title>
     <link rel="stylesheet" href="styles.css">
-      <!-- Use defer to load the script -->
-      <script src="scripts.js" defer></script>
+    <script src="scripts.js" defer></script>
 </head>
+
 <body>
     <header>
         <div class="profile">
@@ -16,7 +18,8 @@
             <h1>Tinny B. Mosimanyana</h1>
         </div>
         <nav>
-            <ul>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul class="nav-list">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Chamber</a></li>
                 <li><a href="#">GitHub Profile</a></li>
@@ -28,6 +31,11 @@
     <main>
         <section class="course-work">
             <h2>Course Work</h2>
+            <ul>
+                <li>Item 1</li>
+                <li>Item 2</li>
+                <li>Item 3</li>
+            </ul>
         </section>
 
         <section class="location">
@@ -44,16 +52,20 @@
             <button onclick="filterCourses('cse')">CSE</button>
             <button onclick="filterCourses('wdd')">WDD</button>
         </div>
-
-        <!-- New section to display total credits -->
-        <div id="total-credits" style="font-weight: bold; margin-top: 10px;">Total Credits: 0</div>
-
-        <div class="course-list"></div>
+        <div class="course-list">
+            <div class="course cse">CSE 110</div>
+            <div class="course wdd">WDD 130</div>
+            <div class="course cse">CSE 111</div>
+            <div class="course cse">CSE 210</div>
+            <div class="course wdd">WDD 131</div>
+            <div class="course wdd">WDD 231</div>
+        </div>
     </section>
 
     <footer>
         <p>&copy; <span id="year"></span> Tinny Bothepha Mosimanyana, Botswana</p>
-        <p>Last Update: <span id="last-update"></span></p>
+        <p id="lastModified"></p>
     </footer>
 </body>
+
 </html>

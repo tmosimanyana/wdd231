@@ -1,124 +1,127 @@
 /* General Styles */
 body {
-    font-family: 'Roboto', sans-serif; /* Primary font */
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4; /* Light background for contrast */
-    color: #333; /* Dark text for readability */
+    font-family: 'Arial', sans-serif; /* General font */
+    font-size: 16px; /* Base font size */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
 }
 
+h1, h2 {
+    margin: 0; /* Remove default margin */
+}
+
+/* Header Styles */
 header {
-    background: #007BFF; /* Primary color */
-    color: #fff; /* White text */
-    padding: 10px 20px;
-    text-align: center;
-    position: relative;
+    background-color: #003366; /* Header background color */
+    color: white; /* Text color */
+    padding: 10px; /* Padding */
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+}
+
+.profile {
+    display: flex; /* Flexbox for profile */
+    align-items: center; /* Center vertically */
 }
 
 .profile-img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
+    width: 50px; /* Profile image size */
+    height: 50px; /* Profile image size */
+    border-radius: 50%; /* Circular profile image */
+    margin-right: 10px; /* Space between image and name */
 }
 
+/* Navigation Styles */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: flex; /* Flexbox for navigation */
+    align-items: center; /* Center items vertically */
 }
 
-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
+.nav-list {
+    display: flex; /* Flexbox for list */
+    list-style: none; /* Remove default list style */
 }
 
-nav ul li {
-    margin-right: 20px;
+.nav-list li {
+    margin: 0 15px; /* Horizontal spacing */
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 16px;
-    transition: background 0.3s;
+/* Hide the navigation by default on small screens */
+.nav-list {
+    display: none; /* Initially hidden */
+    flex-direction: column; /* Stack items vertically */
+    width: 100%; /* Full width */
+    background-color: #003366; /* Consistent background */
+    position: absolute; /* Overlay on top */
+    top: 50px; /* Space from the top */
 }
 
-nav ul li a:hover {
-    background: rgba(255, 255, 255, 0.2); /* Light hover effect */
+/* Show the navigation when active */
+.nav-list.active {
+    display: flex; /* Show when active */
 }
 
-.menu-toggle {
-    display: none; /* Hidden on larger screens */
-    cursor: pointer;
-    font-size: 24px; /* Larger font for hamburger icon */
+/* Hamburger icon */
+.hamburger {
+    cursor: pointer; /* Pointer for usability */
+    font-size: 24px; /* Icon size */
+    color: white; /* Icon color */
 }
 
-main {
-    display: flex;
-    justify-content: space-between; /* Space between sections */
-    padding: 20px;
-}
-
-.course-work, .location {
-    flex: 1; /* Each section takes equal space */
-    margin: 0 10px; /* Margin for spacing */
-    background: #fff; /* White background for sections */
-    border-radius: 8px; /* Rounded corners */
-    padding: 20px; /* Padding for inner spacing */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow */
-}
-
-.certificate {
-    padding: 20px;
-}
-
-.course-list .course {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #fff;
-}
-
-.completed {
-    background-color: #e6ffe6; /* Light green for completed courses */
-}
-
-#total-credits {
-    font-size: 16px;
-    color: #333;
-    padding: 10px 0;
-}
-
-footer {
-    background: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-}
-
-/* Responsive Styles */
+/* Styles for mobile view */
 @media (max-width: 768px) {
-    nav ul {
-        display: none; /* Hide the menu on small screens */
-        flex-direction: column; /* Stack the menu items */
-        position: absolute; /* Position the menu absolutely */
-        top: 60px; /* Align below the header */
-        left: 0;
-        right: 0;
-        background: #007BFF; /* Same background as header */
+    .nav-list {
+        display: none; /* Hidden by default */
     }
 
-    nav ul.show {
-        display: flex; /* Show menu when class is added */
+    .nav-list.active {
+        display: flex; /* Display on click */
     }
 
-    .menu-toggle {
-        display: block; /* Show hamburger icon */
+    .hamburger {
+        display: block; /* Show hamburger on mobile */
     }
 
     main {
-        flex-direction: column; /* Stack sections on small screens */
+        padding: 15px; /* Reduced padding for mobile */
     }
+
+    .course-work ul {
+        padding-left: 20px; /* Padding for list */
+    }
+
+    h1 {
+        font-size: 20px; /* Smaller heading size */
+    }
+
+    h2 {
+        font-size: 18px; /* Smaller sub-heading size */
+    }
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px; /* General padding */
+}
+
+.course-list {
+    display: flex; /* Flexbox for courses */
+    flex-direction: column; /* Stack courses */
+    gap: 15px; /* Space between course items */
+}
+
+/* Course card styles */
+.course {
+    background-color: #f9f9f9; /* Background color */
+    border: 1px solid #ccc; /* Border for visibility */
+    padding: 15px; /* Inner padding for content */
+}
+
+/* Footer Styles */
+footer {
+    background-color: #003366; /* Footer background color */
+    color: white; /* Text color */
+    padding: 10px; /* Padding */
+    text-align: center; /* Center text */
 }
