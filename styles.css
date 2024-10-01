@@ -10,6 +10,11 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    align-items: center;
+}
+
+.profile img {
+    border-radius: 50%;
 }
 
 .nav-list {
@@ -32,6 +37,16 @@ header {
     text-align: center;
 }
 
+.credit-info {
+    margin: 20px 0;
+}
+
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
 .course {
     background-color: #B44A00;
     color: #fff;
@@ -40,6 +55,7 @@ header {
     border-radius: 5px;
     width: calc(30% - 10px);
     text-align: center;
+    cursor: pointer;
 }
 
 .course.completed {
