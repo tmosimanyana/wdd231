@@ -92,3 +92,16 @@ footer {
 footer p {
     margin: 5px 0;
 }
+
+/* Course styles */
+.course-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #f9f9f9;
+}
+
+.completed-course {
+    background-color: #e0ffe0; /* Light green background for completed courses */
+}

@@ -59,7 +59,7 @@ const courses = [
         technology: ['HTML', 'CSS', 'JavaScript'],
         completed: false // This course is not completed yet
     }
-]; // <-- This was missing
+];
 
 // DOM Manipulation for displaying courses and filtering
 document.addEventListener('DOMContentLoaded', function() {
@@ -85,32 +85,36 @@ document.addEventListener('DOMContentLoaded', function() {
             }
 
             courseCard.innerHTML = `
-                <h3>${course.subject} ${course.number}: ${course.title}</h3>
+                <h3>${course.title} (${course.subject} ${course.number})</h3>
                 <p>${course.description}</p>
                 <p><strong>Credits:</strong> ${course.credits}</p>
-                <p><strong>Technologies:</strong> ${course.technology.join(', ')}</p>
+                <p><strong>Technology:</strong> ${course.technology.join(', ')}</p>
             `;
+
             courseContainer.appendChild(courseCard);
         });
     }
 
-    // Show all courses
-    allBtn.addEventListener('click', () => {
-        displayCourses(courses);
-    });
+    // Event listeners for course filtering
+    allBtn.addEventListener('click', () => displayCourses(courses));
+    cseBtn.addEventListener('click', () => displayCourses(courses.filter(course => course.subject === 'CSE')));
+    wddBtn.addEventListener('click', () => displayCourses(courses.filter(course => course.subject === 'WDD')));
 
-    // Filter only CSE courses
-    cseBtn.addEventListener('click', () => {
-        const filteredCSE = courses.filter(course => course.subject === 'CSE');
-        displayCourses(filteredCSE);
-    });
+    displayCourses(courses); // Initial display of all courses
 
-    // Filter only WDD courses
-    wddBtn.addEventListener('click', () => {
-        const filteredWDD = courses.filter(course => course.subject === 'WDD');
-        displayCourses(filteredWDD);
-    });
+    // Display current year in footer
+    const currentYearEl = document.querySelector('#currentyear');
+    currentYearEl.textContent = new Date().getFullYear();
 
-    // Display all courses on page load
-    displayCourses(courses);
+    // Display last modified date
+    const lastModifiedEl = document.querySelector('#lastModified');
+    lastModifiedEl.textContent = `Last Updated: ${document.lastModified}`;
+});
+
+// Hamburger menu functionality
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
 });
