@@ -25,10 +25,16 @@ header {
     height: 50px;
 }
 
+nav {
+    position: relative; /* Needed for absolute positioning of nav links */
+}
+
 nav ul {
     list-style: none;
     display: flex;
     gap: 15px;
+    padding: 0;
+    margin: 0;
 }
 
 nav a {
@@ -45,10 +51,12 @@ main {
     display: flex;
     justify-content: space-between;
     padding: 20px;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .course-work, .location {
     width: 45%;
+    min-width: 300px; /* Minimum width for responsiveness */
 }
 
 .course-card {
@@ -57,6 +65,11 @@ main {
     border-radius: 5px; /* Rounded corners for a softer look */
     padding: 15px;
     margin-bottom: 20px; /* Spacing between course cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.course-card h3 {
+    margin: 0 0 10px; /* Space below the heading */
 }
 
 footer {
@@ -70,7 +83,7 @@ footer .courses button {
     background-color: #cc6600;
     border: none;
     color: white;
-    padding: 10px;
+    padding: 10px 15px; /* More padding for better click area */
     margin: 5px;
     cursor: pointer;
     border-radius: 5px; /* Rounded button corners */
@@ -79,4 +92,47 @@ footer .courses button {
 
 footer .courses button:hover {
     background-color: #e68a00; /* Darker shade on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column; /* Stack elements vertically on small screens */
+        align-items: center; /* Center items */
+    }
+
+    .course-work, .location {
+        width: 90%; /* Make them wider on smaller screens */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav links */
+        display: none; /* Hide by default */
+        position: absolute; /* Allow dropdown effect */
+        background-color: #003366; /* Match header background */
+        width: 100%; /* Full width */
+        z-index: 10; /* Ensure it sits above other elements */
+    }
+
+    nav ul.show {
+        display: flex; /* Show when toggled */
+    }
+
+    nav .hamburger {
+        display: block; /* Show hamburger menu */
+        cursor: pointer; /* Pointer cursor */
+    }
+}
+
+.hamburger {
+    display: none; /* Hide by default */
+    flex-direction: column; /* Stack lines */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.hamburger span {
+    height: 3px; /* Line height */
+    width: 25px; /* Line width */
+    background-color: white; /* Line color */
+    margin: 3px 0; /* Space between lines */
 }
