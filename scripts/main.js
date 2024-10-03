@@ -71,15 +71,22 @@ function displayCourses() {
     });
 
     updateTotalCredits(); // Update total credits displayed
+    updateTotalCreditsRequired(); // Update total credits required
 }
 
-// Update total credits dynamically
+// Update total credits earned dynamically
 function updateTotalCredits() {
-    const totalCredits = courses.reduce((sum, course) => {
+    const totalCreditsEarned = courses.reduce((sum, course) => {
         return sum + (course.completed ? course.credits : 0);
     }, 0);
     
-    document.getElementById('total-credits').textContent = `Total Credits: ${totalCredits}`;
+    document.getElementById('total-credits-earned').textContent = `Total Credits Earned: ${totalCreditsEarned}`;
+}
+
+// Update total credits required dynamically
+function updateTotalCreditsRequired() {
+    const totalCreditsRequired = courses.reduce((sum, course) => sum + course.credits, 0);
+    document.getElementById('credits-required').textContent = totalCreditsRequired;
 }
 
 // Toggle course completion
@@ -112,27 +119,29 @@ function filterCourses(filter) {
         coursesContainer.appendChild(courseCard);
     });
 
-    updateTotalCredits(); // Update total credits displayed
+    updateTotalCredits(); // Update total credits earned dynamically
 }
 
-// Event listeners
+// Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
     loadCourses();
     displayCourses();
+
+    document.querySelector('.courses').addEventListener('click', (e) => {
+        if (e.target.classList.contains('toggle-complete')) {
+            const courseNumber = parseInt(e.target.dataset.number);
+            toggleCourseCompletion(courseNumber);
+        }
+    });
 
     document.getElementById('filter-all').addEventListener('click', () => filterCourses('all'));
     document.getElementById('filter-cse').addEventListener('click', () => filterCourses('CSE'));
     document.getElementById('filter-wdd').addEventListener('click', () => filterCourses('WDD'));
 
-    // Delegate event listener for toggle complete buttons
-    document.querySelector('.courses').addEventListener('click', (event) => {
-        if (event.target.classList.contains('toggle-complete')) {
-            const courseNumber = parseInt(event.target.dataset.number);
-            toggleCourseCompletion(courseNumber);
-        }
-    });
+    // Current Year and Last Modified Date
+    const currentYearElement = document.getElementById('current-year');
+    currentYearElement.textContent = new Date().getFullYear();
 
-    // Update current year and last modified date
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-    document.getElementById('last-modified').textContent = document.lastModified;
+    const lastModifiedElement = document.getElementById('last-modified');
+    lastModifiedElement.textContent = new Date(document.lastModified).toLocaleString();
 });

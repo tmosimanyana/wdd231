@@ -1,147 +1,74 @@
-/* Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-h1, h2 {
-  margin-bottom: 10px;
-}
-
-h1 {
-  font-size: 24px;
-  color: #fff;
-}
-
-h2 {
-  font-size: 18px;
-  color: #003366;
-}
-
-/* Header Section */
 header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #003366;
+  background: #333;
   color: white;
-  padding: 15px;
+  padding: 10px;
 }
 
 .profile-container {
-  display: flex;
-  align-items: center;
+  text-align: center;
 }
 
 .profile-img {
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  margin-right: 10px;
 }
 
 .nav-menu {
-  display: flex;
-  list-style: none;
+  list-style-type: none;
+  padding: 0;
 }
 
 .nav-menu li {
-  margin-right: 20px;
+  display: inline;
+  margin-right: 15px;
 }
 
-.nav-menu li a {
-  color: white;
-  text-decoration: none;
-}
-
-/* Main Content Section */
 .content-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 20px;
   padding: 20px;
 }
 
-.coursework-section {
-  background-color: #006699;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.image-section {
-  text-align: center;
-}
-
 .course-list-section {
-  background-color: #006699;
-  color: white;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.filter-buttons {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-
-.filter-buttons button {
-  background-color: #000;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.courses {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-}
-
-.course {
-  background-color: #8B4513;
-  color: white;
-  padding: 15px;
-  margin: 10px;
-  border-radius: 5px;
-  width: 30%;
-  text-align: center;
-}
-
-.course.completed {
-  background-color: #228B22; /* Different color for completed courses */
-}
-
-.course:hover {
-  background-color: #A0522D;
-}
-
-/* Footer Section */
-footer {
-  background-color: #003366;
-  color: white;
-  text-align: center;
-  padding: 10px;
   margin-top: 20px;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .course {
-      width: 100%;
-  }
+.course {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+}
 
-  .content-grid {
-      grid-template-columns: 1fr;
-  }
+.course.completed {
+  background-color: #d4edda; /* Light green for completed courses */
+  border-color: #c3e6cb; /* Darker green border */
+}
+
+.filter-buttons {
+  margin-bottom: 10px;
+}
+
+button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
