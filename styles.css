@@ -7,9 +7,8 @@
   
   body {
     font-family: Arial, sans-serif;
-    color: #333;
     background-color: #f0f0f0;
-    margin-bottom: 60px;
+    color: #333;
   }
   
   h1, h2 {
@@ -19,6 +18,11 @@
   h1 {
     font-size: 24px;
     color: #fff;
+  }
+  
+  h2 {
+    font-size: 18px;
+    color: #003366;
   }
   
   /* Header Section */
@@ -55,30 +59,17 @@
   .nav-menu li a {
     color: white;
     text-decoration: none;
-    font-size: 16px;
-  }
-  
-  .nav-menu li a:hover {
-    color: #FFFF00;
   }
   
   .hamburger {
     display: none;
-    flex-direction: column;
-    cursor: pointer;
-  }
-  
-  .hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 5px;
   }
   
   /* Main Content Section */
-  main {
-    display: flex;
-    justify-content: space-around;
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
     padding: 20px;
   }
   
@@ -86,7 +77,6 @@
     background-color: white;
     padding: 20px;
     border-radius: 10px;
-    width: 45%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
@@ -104,15 +94,12 @@
   
   /* Course List Section */
   .course-list-section {
+    grid-column: span 2;
     background-color: #006699;
     color: white;
     padding: 20px;
     border-radius: 10px;
     margin-top: 20px;
-    width: 90%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-left: auto;
-    margin-right: auto;
   }
   
   .filter-buttons {
@@ -130,10 +117,6 @@
     cursor: pointer;
   }
   
-  .filter-buttons button:hover {
-    background-color: #444;
-  }
-  
   .courses {
     display: flex;
     justify-content: space-around;
@@ -148,7 +131,6 @@
     border-radius: 5px;
     width: 30%;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
   .course:hover {
@@ -161,29 +143,13 @@
     color: white;
     text-align: center;
     padding: 10px;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-  }
-  
-  footer p {
-    margin: 5px;
+    margin-top: 20px;
   }
   
   /* Responsive Design */
   @media (max-width: 768px) {
-    main {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .coursework-section, .image-section {
-      width: 90%;
-    }
-  
-    .courses {
-      flex-direction: column;
+    .content-grid {
+      grid-template-columns: 1fr;
     }
   
     .course {
@@ -195,7 +161,7 @@
     }
   
     .hamburger {
-      display: flex;
+      display: block;
     }
   }
   
