@@ -61,45 +61,30 @@ header {
   text-decoration: none;
 }
 
-.hamburger {
-  display: none;
-}
-
 /* Main Content Section */
 .content-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  gap: 20px;
   padding: 20px;
 }
 
-.coursework-section, .image-section {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.coursework-section h2, .image-section h2 {
-  background-color: #003366;
-  color: white;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-.image-section img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-/* Course List Section */
-.course-list-section {
-  grid-column: span 2;
+.coursework-section {
   background-color: #006699;
   color: white;
   padding: 20px;
   border-radius: 10px;
-  margin-top: 20px;
+}
+
+.image-section {
+  text-align: center;
+}
+
+.course-list-section {
+  background-color: #006699;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
 }
 
 .filter-buttons {
@@ -133,15 +118,12 @@ header {
   text-align: center;
 }
 
-.course:hover {
-  background-color: #A0522D;
+.course.completed {
+  background-color: #228B22; /* Different color for completed courses */
 }
 
-/* CSS for Completed Courses */
-.completed {
-  background-color: #4CAF50; /* Green background for completed courses */
-  color: white; /* White text */
-  text-decoration: line-through; /* Strikethrough for completed course titles */
+.course:hover {
+  background-color: #A0522D;
 }
 
 /* Footer Section */
@@ -155,19 +137,11 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .content-grid {
-      grid-template-columns: 1fr;
-  }
-
   .course {
       width: 100%;
   }
 
-  .nav-menu {
-      display: none;
-  }
-
-  .hamburger {
-      display: block;
+  .content-grid {
+      grid-template-columns: 1fr;
   }
 }

@@ -1,11 +1,47 @@
 // Course List Array
 const courses = [
-  { subject: 'CSE', number: 110, title: 'Introduction to Programming', credits: 2, completed: false },
-  { subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 2, completed: false },
-  { subject: 'CSE', number: 111, title: 'Programming with Functions', credits: 2, completed: false },
-  { subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 2, completed: false },
-  { subject: 'WDD', number: 131, title: 'Dynamic Web Fundamentals', credits: 2, completed: false },
-  { subject: 'WDD', number: 231, title: 'Frontend Web Development I', credits: 2, completed: false }
+  {
+      subject: 'CSE',
+      number: 110,
+      title: 'Introduction to Programming',
+      credits: 2,
+      completed: false
+  },
+  {
+      subject: 'WDD',
+      number: 130,
+      title: 'Web Fundamentals',
+      credits: 2,
+      completed: false
+  },
+  {
+      subject: 'CSE',
+      number: 111,
+      title: 'Programming with Functions',
+      credits: 2,
+      completed: false
+  },
+  {
+      subject: 'CSE',
+      number: 210,
+      title: 'Programming with Classes',
+      credits: 2,
+      completed: false
+  },
+  {
+      subject: 'WDD',
+      number: 131,
+      title: 'Dynamic Web Fundamentals',
+      credits: 2,
+      completed: false
+  },
+  {
+      subject: 'WDD',
+      number: 231,
+      title: 'Frontend Web Development I',
+      credits: 2,
+      completed: false
+  }
 ];
 
 // Load courses from localStorage or initialize
@@ -53,19 +89,19 @@ function toggleCourseCompletion(courseNumber) {
       course.completed = !course.completed; // Toggle completion
       localStorage.setItem(`course_${course.number}`, JSON.stringify(course)); // Save updated course
       displayCourses(); // Update UI to reflect changes
+      console.log(`Course ${course.title} marked as ${course.completed ? 'completed' : 'incomplete'}.`); // Log update
   }
 }
 
 // Filter courses
 function filterCourses(filter) {
   const filteredCourses = courses.filter(course => {
-      if (filter === 'CSE') return course.subject === 'CSE';
-      if (filter === 'WDD') return course.subject === 'WDD';
-      return true; // Show all courses
+      return filter === 'all' || course.subject === filter;
   });
+  
   const coursesContainer = document.querySelector('.courses');
   coursesContainer.innerHTML = ''; // Clear existing content
-
+  
   filteredCourses.forEach(course => {
       const courseCard = document.createElement('div');
       courseCard.className = `course ${course.completed ? 'completed' : ''}`;
@@ -80,27 +116,22 @@ function filterCourses(filter) {
   updateTotalCredits(); // Update total credits displayed
 }
 
-// Event listeners for completion buttons
-document.addEventListener('click', function(e) {
-  if (e.target.classList.contains('toggle-complete')) {
-      const courseNumber = parseInt(e.target.dataset.number);
-      toggleCourseCompletion(courseNumber);
-  }
-
-  // Filter buttons
-  if (e.target.id === 'filter-cse') {
-      filterCourses('CSE');
-  } else if (e.target.id === 'filter-wdd') {
-      filterCourses('WDD');
-  } else if (e.target.id === 'filter-all') {
-      displayCourses(); // Display all courses
-  }
-});
-
-// Initialize
+// Event listeners
 document.addEventListener('DOMContentLoaded', () => {
   loadCourses();
   displayCourses();
+
+  document.getElementById('filter-all').addEventListener('click', () => filterCourses('all'));
+  document.getElementById('filter-cse').addEventListener('click', () => filterCourses('CSE'));
+  document.getElementById('filter-wdd').addEventListener('click', () => filterCourses('WDD'));
+
+  // Delegate event listener for toggle complete buttons
+  document.querySelector('.courses').addEventListener('click', (event) => {
+      if (event.target.classList.contains('toggle-complete')) {
+          const courseNumber = parseInt(event.target.dataset.number);
+          toggleCourseCompletion(courseNumber);
+      }
+  });
 
   // Update current year and last modified date
   document.getElementById('current-year').textContent = new Date().getFullYear();
