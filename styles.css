@@ -36,8 +36,8 @@ nav ul li a:hover {
 }
 
 nav ul li a.active {
-  font-weight: bold; /* Highlight active link */
-  text-decoration: underline; /* Underline active link */
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .hamburger-menu {
@@ -69,8 +69,9 @@ footer {
   padding: 10px;
 }
 
-/* Additional styles for completed courses */
+/* Improved color contrast */
 .course-item.completed {
-  text-decoration: line-through; /* Strikethrough for completed courses */
-  color: gray; /* Different color for completed courses */
+  text-decoration: line-through;
+  color: #333; /* Better contrast */
+  background-color: #e0e0e0; /* Accessible background */
 }

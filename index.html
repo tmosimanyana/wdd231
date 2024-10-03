@@ -11,7 +11,10 @@
 <body>
     <header>
         <div class="profile">
-            <img src="images/profile.jpg" alt="Tinny B. Mosimanyana">
+            <picture>
+                <source srcset="images/profile.webp" type="image/webp">
+                <img src="images/profile.jpg" alt="Tinny B. Mosimanyana" width="100" height="100">
+            </picture>
             <h1>Tinny B. Mosimanyana</h1>
         </div>
         <nav>
@@ -37,7 +40,10 @@
         
         <section class="location">
             <h2>Gaborone, Botswana</h2>
-            <img src="images/zebras.jpeg" alt="Zebra Animals" width="459" height="452">
+            <picture>
+                <source srcset="images/zebras.webp" type="image/webp">
+                <img src="images/zebras.jpeg" alt="Zebra Animals" width="459" height="452">
+            </picture>
         </section>
         
         <section class="certificate">
@@ -56,9 +62,9 @@
     <footer>
         <p>©<span id="current-year"></span> Tinny Bothepha Mosimanyana, Botswana</p>
         <p>Last Update: <span id="last-modified"></span></p>
-        <img src="images/botswana.png" alt="Botswana Flag">
+        <img src="images/botswana.png" alt="Botswana Flag" width="100" height="100">
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.min.js" defer></script>
 </body>
 </html>
