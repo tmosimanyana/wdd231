@@ -45,3 +45,11 @@ document.getElementById('last-modified').textContent = lastModified;
 
 const currentYear = new Date().getFullYear();
 document.getElementById('current-year').textContent = currentYear;
+
+// Hamburger menu functionality
+const hamburger = document.querySelector('.hamburger-menu');
+const navMenu = document.getElementById('nav-menu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});

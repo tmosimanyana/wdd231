@@ -2,6 +2,7 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
+  color: #222; /* Improved text color for contrast */
 }
 
 header {
@@ -28,11 +29,13 @@ nav ul li a {
   color: white;
   text-decoration: none;
   padding: 10px;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease; /* Added transition */
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a:focus {
   color: #ffcc00; /* Change color on hover */
+  outline: 2px dashed #ffcc00; /* Focus style for keyboard navigation */
 }
 
 nav ul li a.active {
@@ -57,6 +60,10 @@ main {
 }
 
 @media (min-width: 768px) {
+  .hamburger-menu {
+      display: none; /* Hide the hamburger menu on larger screens */
+  }
+  
   main {
       grid-template-columns: repeat(3, 1fr); /* Three columns for desktop */
   }
@@ -74,4 +81,10 @@ footer {
   text-decoration: line-through;
   color: #333; /* Better contrast */
   background-color: #e0e0e0; /* Accessible background */
+}
+
+/* Responsive images */
+.profile img, .location img {
+  max-width: 100%;
+  height: auto; /* Maintain aspect ratio */
 }
