@@ -11,6 +11,7 @@ body {
     background-color: #f4f4f4;
 }
 
+/* Header Styling */
 header {
     background-color: #1a5c77;
     color: white;
@@ -26,6 +27,7 @@ header h1 {
     font-size: 2rem;
 }
 
+/* Navigation Styling */
 .nav-list {
     display: flex;
     justify-content: center;
@@ -44,6 +46,11 @@ header h1 {
 }
 
 .nav-list a:hover {
+    background-color: #144d5a;
+    border-radius: 5px;
+}
+
+.nav-list .active {
     background-color: #144d5a;
     border-radius: 5px;
 }
@@ -75,13 +82,14 @@ header h1 {
     }
 }
 
-.course-work {
+/* Main Content Styling */
+.course-work, .course-list {
     padding: 20px;
     text-align: center;
 }
 
-.course-list {
-    padding: 20px;
+.course-list h2 {
+    margin-bottom: 20px;
 }
 
 .filter-buttons {
@@ -96,6 +104,7 @@ header h1 {
     background-color: #1a5c77;
     color: white;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .filter-buttons button:hover {
@@ -125,8 +134,8 @@ header h1 {
 }
 
 .card.completed {
-    background-color: #228B22;
-    color: white;
+    background-color: #006400; /* Darker green for contrast */
+    color: #f0f0f0; /* Off-white text */
 }
 
 .card img {
@@ -167,4 +176,16 @@ header h1 {
 
 .card-footer button:hover {
     background-color: #144d5a;
+}
+
+/* Footer Styling */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #1a5c77;
+    color: white;
+}
+
+footer p {
+    margin: 10px 0;
 }
