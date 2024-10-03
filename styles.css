@@ -7,8 +7,10 @@ body {
   color: #333;
 }
 
-h1, h2 {
-  color: #2c3e50; /* Dark color for headings */
+/* Main element */
+main {
+  max-width: 840px;
+  margin: 0 auto; /* Center the content horizontally */
 }
 
 /* Profile Section */
@@ -20,14 +22,51 @@ h1, h2 {
   color: white;
 }
 
+/* More exclusive profile image selector */
 .profile-img {
-  width: 100px;
-  height: 100px;
+  width: 150px; /* Adjusted size for the profile image */
+  height: auto;
   border-radius: 50%; /* Circular profile image */
   margin-right: 20px;
 }
 
-/* Navigation Styles */
+/* Heading 1 Styling */
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem 0;
+  color: #333;
+}
+
+/* Paragraph styling */
+p {
+  padding: 0;
+}
+
+/* Aside styling */
+aside {
+  width: 20rem;
+  margin: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.2); 
+  padding: 1rem;
+  background-color: #eee;
+  color: #333;
+  text-align: center;
+}
+
+/* Aside image */
+aside img {
+  width: 200px;
+  height: auto;
+}
+
+/* Navigation Styling */
+nav {
+  background-color: #333; /* Dark background */
+  padding: 1rem; /* Padding for spacing */
+  text-align: center;
+}
+
 .nav-menu {
   list-style: none;
   padding: 0;
@@ -39,29 +78,14 @@ h1, h2 {
 }
 
 .nav-menu a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
+  color: #fff; /* White text */
+  margin: 0 1rem; /* Space between links */
+  text-decoration: none; /* Remove underline */
+  font-weight: bold; /* Bold links */
 }
 
-/* Hamburger Menu */
-.hamburger {
-  display: none; /* Hidden by default */
-}
-
-/* Content Grid */
-.content-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 20px;
-}
-
-.coursework-section, .image-section, .course-list-section {
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.nav-menu a:hover {
+  color: #ddd; /* Light grey on hover */
 }
 
 /* Course List Section */
@@ -114,14 +138,17 @@ h1, h2 {
   font-weight: bold;
 }
 
-/* Footer Styles */
+/* Footer styling */
 footer {
+  margin-top: 15px;
+  border-top: 1px solid #000;
+  text-align: center;
   background-color: #2c3e50;
   color: white;
-  text-align: center;
   padding: 15px 0;
 }
 
+/* Dynamic Date */
 #current-year, #last-modified {
   font-weight: normal;
 }
@@ -129,6 +156,7 @@ footer {
 /* Responsive Design */
 @media (min-width: 600px) {
   .content-grid {
+      display: grid;
       grid-template-columns: repeat(2, 1fr);
   }
 
