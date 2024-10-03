@@ -3,63 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tinny Bothepha Mosimanyana's Portfolio showcasing web development skills and projects.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <title>Tinny Bothepha Mosimanyana's Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title>Tinny B. Mosimanyana's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
 </head>
 <body>
     <header>
         <div class="navigation">
-            <h1>Tinny Bothepha Mosimanyana</h1>
-            <div class="hamburger" id="hamburger">&#9776;</div>
-            <nav>
-                <ul id="nav-menu">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Chamber</a></li>
-                    <li><a href="https://github.com/TinnyBothepha" target="_blank">GitHub Profile</a></li>
-                    <li><a href="https://www.linkedin.com/in/tinny-bothepha" target="_blank">LinkedIn</a></li>
-                </ul>
-            </nav>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#chamber">Chamber</a></li>
+                <li><a href="#github">GitHub Profile</a></li>
+                <li><a href="#linkedin">LinkedIn</a></li>
+            </ul>
         </div>
+        <h1>Tinny B. Mosimanyana</h1>
     </header>
 
     <main>
         <section>
-            <h2>About Me</h2>
-            <p>Hello! I’m Tinny Bothepha Mosimanyana, a passionate web developer based in Botswana. I specialize in creating dynamic and responsive web applications using modern technologies.</p>
-        </section>
-        <section>
-            <h2>Projects</h2>
-            <p>Here are some of my notable projects:</p>
-            <ul>
-                <li><strong>Chamber of Commerce Website:</strong> A responsive website for the local Chamber of Commerce.</li>
-                <li><strong>Personal Portfolio:</strong> This portfolio showcases my skills and projects.</li>
-                <li><strong>Course Management System:</strong> An application to manage and filter courses.</li>
+            <h2>Course Work</h2>
+            <ul class="course-list">
+                <li>CSE 110</li>
+                <li>WDD 130</li>
+                <li>CSE 210</li>
+                <li>WDD 131</li>
+                <li>CSE 111</li>
+                <li>WDD 231</li>
             </ul>
         </section>
         <section>
-            <h2>Molepolole</h2>
-            <p>Molepolole is a vibrant town in Botswana known for its rich culture and history. It's an important center for trade and community activities.</p>
-            <p>It is located about 40 kilometers west of Gaborone, the capital city, and is famous for its beautiful landscapes and friendly communities.</p>
+            <h2>Gaborone, Botswana</h2>
+            <img src="images/zebra.webp" alt="Zebra animals in Gaborone" class="responsive-image">
         </section>
         <section>
-            <h2>Courses</h2>
-            <div class="course-list">
-                <div class="course-item completed">Introduction to Programming - 2 credits</div>
-                <div class="course-item">Web Fundamentals - 2 credits</div>
-                <div class="course-item">Programming with Functions - 2 credits</div>
-                <div class="course-item completed">Programming with Classes - 2 credits</div>
-            </div>
-            <div id="total-credits-earned">Total Credits: <span id="total-credits">0</span></div>
+            <h2>Web and Computer Programming Certificate</h2>
+            <div class="course-item">CSE 110</div>
+            <div class="course-item">WDD 130</div>
+            <div class="course-item">CSE 210</div>
+            <div class="course-item">WDD 231</div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; <span id="currentyear"></span> Tinny Bothepha Mosimanyana, Botswana.</p>
-        <p id="lastModified"></p>
+        <p>&copy; 2024 Tinny Bothepha Mosimanyana | Botswana</p>
+        <p>Last Update: 01/01/1970 12:00:00</p>
     </footer>
+
+    <script src="script.js"></script> <!-- Link to external JS -->
 </body>
 </html>
