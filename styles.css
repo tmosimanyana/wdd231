@@ -189,3 +189,26 @@ footer {
 footer p {
     margin: 10px 0;
 }
+
+/* Footer Icons Hover Effect */
+.footer-icons img {
+    width: 40px; /* Set a consistent size */
+    margin: 0 10px; /* Spacing between icons */
+    transition: transform 0.3s ease;
+}
+
+.footer-icons img:hover {
+    transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .course-list h2 {
+        font-size: 1.5rem; /* Adjust heading size */
+    }
+
+    .card {
+        max-width: 90%; /* Make cards more flexible on small screens */
+        margin: 10px; /* Reduce margin for smaller viewports */
+    }
+}
