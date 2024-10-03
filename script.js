@@ -65,7 +65,9 @@ function displayCourses() {
         courseCard.innerHTML = `
             <h3>${course.subject} ${course.number}: ${course.title}</h3>
             <p>Credits: ${course.credits}</p>
-            <button class="toggle-complete" data-number="${course.number}">${course.completed ? 'Mark as Incomplete' : 'Mark as Completed'}</button>
+            <button class="toggle-complete" data-number="${course.number}">
+                ${course.completed ? 'Mark as Incomplete' : 'Mark as Completed'}
+            </button>
         `;
         coursesContainer.appendChild(courseCard);
     });
@@ -114,7 +116,9 @@ function filterCourses(filter) {
         courseCard.innerHTML = `
             <h3>${course.subject} ${course.number}: ${course.title}</h3>
             <p>Credits: ${course.credits}</p>
-            <button class="toggle-complete" data-number="${course.number}">${course.completed ? 'Mark as Incomplete' : 'Mark as Completed'}</button>
+            <button class="toggle-complete" data-number="${course.number}">
+                ${course.completed ? 'Mark as Incomplete' : 'Mark as Completed'}
+            </button>
         `;
         coursesContainer.appendChild(courseCard);
     });
