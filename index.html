@@ -6,26 +6,31 @@
     <title>Tinny B. Mosimanyana Portfolio</title>
     <meta name="description" content="Portfolio of Tinny B. Mosimanyana, showcasing web development projects, coursework, and skills in JavaScript and responsive design.">
     <meta name="author" content="Tinny B. Mosimanyana">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.min.css">
+    <style>
+        /* Critical CSS */
+        body { margin: 0; }
+        header { background-color: #333; color: white; }
+    </style>
 </head>
 <body>
     <header>
         <div class="profile">
-            <img src="images/profile.jpg" alt="Tinny B. Mosimanyana" />
+            <img src="images/profile.webp" alt="Tinny B. Mosimanyana">
             <h1>Tinny B. Mosimanyana</h1>
         </div>
-        <button class="hamburger-menu" aria-label="Toggle navigation">&#9776;</button>
-        <nav role="navigation">
-            <ul id="nav-menu">
+        <nav>
+            <ul>
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#">Chamber</a></li>
                 <li><a href="#">GitHub Profile</a></li>
                 <li><a href="#">LinkedIn</a></li>
             </ul>
+            <button class="hamburger-menu">&#9776;</button>
         </nav>
     </header>
-
-    <main role="main">
+    
+    <main>
         <section class="course-work">
             <h2>Course Work</h2>
             <ul>
@@ -37,7 +42,10 @@
         
         <section class="location">
             <h2>Gaborone, Botswana</h2>
-            <img src="images/zebras.jpeg" alt="Zebras in Gaborone, Botswana" width="459" height="452" />
+            <picture>
+                <source srcset="images/zebras.webp" type="image/webp">
+                <img src="images/zebra.webp" alt="Zebra Animals" loading="lazy">
+            </picture>
         </section>
         
         <section class="certificate">
@@ -56,9 +64,10 @@
     <footer>
         <p>©<span id="current-year"></span> Tinny Bothepha Mosimanyana, Botswana</p>
         <p>Last Update: <span id="last-modified"></span></p>
-        <img src="images/botswana.png" alt="Botswana Flag" />
+        <img src="images/botswana.png" alt="Botswana Flag">
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="script.min.js" defer></script>
 </body>
 </html>
+
