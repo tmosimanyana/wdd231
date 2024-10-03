@@ -61,13 +61,11 @@ function displayCourses() {
 
     courses.forEach(course => {
         const courseCard = document.createElement('div');
-        courseCard.className = `course ${course.completed ? 'completed' : ''}`;
+        courseCard.className = `course-item ${course.completed ? 'completed' : ''}`;
         courseCard.innerHTML = `
             <h3>${course.subject} ${course.number}: ${course.title}</h3>
             <p>Credits: ${course.credits}</p>
-            <button class="toggle-complete" data-number="${course.number}">
-                ${course.completed ? 'Mark as Incomplete' : 'Mark as Completed'}
-            </button>
+            <button class="toggle-complete" data-number="${course.number}">${course.completed ? 'Mark as Incomplete' : 'Mark as Completed'}</button>
         `;
         coursesContainer.appendChild(courseCard);
     });
@@ -112,13 +110,11 @@ function filterCourses(filter) {
     
     filteredCourses.forEach(course => {
         const courseCard = document.createElement('div');
-        courseCard.className = `course ${course.completed ? 'completed' : ''}`;
+        courseCard.className = `course-item ${course.completed ? 'completed' : ''}`;
         courseCard.innerHTML = `
             <h3>${course.subject} ${course.number}: ${course.title}</h3>
             <p>Credits: ${course.credits}</p>
-            <button class="toggle-complete" data-number="${course.number}">
-                ${course.completed ? 'Mark as Incomplete' : 'Mark as Completed'}
-            </button>
+            <button class="toggle-complete" data-number="${course.number}">${course.completed ? 'Mark as Incomplete' : 'Mark as Completed'}</button>
         `;
         coursesContainer.appendChild(courseCard);
     });
@@ -138,14 +134,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    document.getElementById('filter-all').addEventListener('click', () => filterCourses('all'));
-    document.getElementById('filter-cse').addEventListener('click', () => filterCourses('CSE'));
-    document.getElementById('filter-wdd').addEventListener('click', () => filterCourses('WDD'));
+    document.getElementById('filter-all').addEventListener('click', () => {
+        filterCourses('all');
+    });
 
-    // Current Year and Last Modified Date
-    const currentYearElement = document.getElementById('current-year');
-    currentYearElement.textContent = new Date().getFullYear();
+    document.getElementById('filter-cse').addEventListener('click', () => {
+        filterCourses('CSE');
+    });
 
-    const lastModifiedElement = document.getElementById('last-modified');
-    lastModifiedElement.textContent = new Date(document.lastModified).toLocaleString();
+    document.getElementById('filter-wdd').addEventListener('click', () => {
+        filterCourses('WDD');
+    });
+
+    document.querySelector('.hamburger-menu').addEventListener('click', function() {
+        const nav = document.querySelector('nav');
+        nav.classList.toggle('active'); // Toggle the active class
+    });
 });
