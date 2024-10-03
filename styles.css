@@ -1,18 +1,13 @@
-* {
-  box-sizing: border-box;
-}
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
 }
 
 header {
-  background-color: #003366;
+  background-color: #333;
   color: white;
-  padding: 1rem;
+  padding: 10px;
   text-align: center;
 }
 
@@ -22,72 +17,60 @@ header {
   border-radius: 50%;
 }
 
-nav {
-  margin: 1rem 0;
-}
-
 nav ul {
+  display: flex;
+  justify-content: space-around;
   list-style-type: none;
   padding: 0;
 }
 
-nav ul li {
-  display: inline;
-  margin: 0 15px;
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #ffcc00; /* Change color on hover */
+}
+
+nav ul li a.active {
+  font-weight: bold; /* Highlight active link */
+  text-decoration: underline; /* Underline active link */
 }
 
 .hamburger-menu {
-  display: none; /* Hide hamburger menu on desktop */
+  display: none; /* Hide on larger screens */
 }
 
 main {
-  padding: 1rem;
-}
-
-.course-work,
-.location,
-.certificate {
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 1rem;
-  margin-bottom: 1rem;
-}
-
-.courses {
+  padding: 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Grid for courses */
   gap: 20px;
 }
 
-.course-item {
-  background: #e0e0e0;
-  padding: 10px;
-  border-radius: 3px;
+.course-work, .location, .certificate {
+  display: grid;
+  grid-template-columns: 1fr; /* One column for mobile */
+  gap: 20px;
+}
+
+@media (min-width: 768px) {
+  main {
+      grid-template-columns: repeat(3, 1fr); /* Three columns for desktop */
+  }
 }
 
 footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: #003366;
+  background-color: #333;
   color: white;
+  text-align: center;
+  padding: 10px;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  .hamburger-menu {
-      display: block; /* Show hamburger menu on mobile */
-  }
-
-  nav ul {
-      display: none; /* Hide the menu on smaller screens */
-  }
-
-  nav.active ul {
-      display: block; /* Show menu when active */
-  }
-
-  .courses {
-      grid-template-columns: 1fr; /* Stack courses in a single column on mobile */
-  }
+/* Additional styles for completed courses */
+.course-item.completed {
+  text-decoration: line-through; /* Strikethrough for completed courses */
+  color: gray; /* Different color for completed courses */
 }
