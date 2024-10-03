@@ -17,24 +17,32 @@ const courses = [
 
 function displayCourses(filter) {
     const courseContainer = document.querySelector('.courses');
-    courseContainer.innerHTML = ''; // Clear existing courses
+    const fragment = document.createDocumentFragment(); // Create a document fragment
+
     courses.forEach(course => {
         if (filter === 'all' || course.type === filter) {
             const courseItem = document.createElement('div');
             courseItem.classList.add('course-item', course.type);
-            courseItem.textContent = course.name + (course.completed ? ' (Completed)' : '');
+            courseItem.textContent = `${course.name}${course.completed ? ' (Completed)' : ''}`;
             if (course.completed) {
                 courseItem.classList.add('completed'); // Add completed class
             }
-            courseContainer.appendChild(courseItem);
+            fragment.appendChild(courseItem); // Append to the fragment
         }
     });
+
+    courseContainer.innerHTML = ''; // Clear existing courses
+    courseContainer.appendChild(fragment); // Append all at once
     calculateCredits(); // Update total credits after displaying courses
 }
 
-document.getElementById('filter-all').onclick = () => displayCourses('all');
-document.getElementById('filter-cse').onclick = () => displayCourses('CSE');
-document.getElementById('filter-wdd').onclick = () => displayCourses('WDD');
+// Delegated event listener for filter buttons
+document.querySelector('.filters').addEventListener('click', (event) => {
+    if (event.target.tagName === 'BUTTON') {
+        const filter = event.target.id === 'filter-all' ? 'all' : event.target.id === 'filter-cse' ? 'CSE' : 'WDD';
+        displayCourses(filter);
+    }
+});
 
 // Function to calculate total credits
 function calculateCredits() {
