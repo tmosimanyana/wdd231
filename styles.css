@@ -1,214 +1,148 @@
-/* General Reset */
+/* Base Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-body {
+  }
+  
+  body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    background-color: #f4f4f4;
-}
-
-/* Header Styling */
-header {
-    background-color: #1a5c77;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  /* Header and Profile Section */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #003366;
     color: white;
     padding: 10px;
-    text-align: center;
-}
-
-header .profile {
-    margin-bottom: 10px;
-}
-
-header h1 {
-    font-size: 2rem;
-}
-
-/* Navigation Styling */
-.nav-list {
+  }
+  
+  .profile {
     display: flex;
-    justify-content: center;
-    list-style-type: none;
-}
-
-.nav-list li {
-    margin: 0 15px;
-}
-
-.nav-list a {
+    align-items: center;
+  }
+  
+  .profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+  }
+  
+  nav ul li {
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
     color: white;
     text-decoration: none;
-    padding: 5px 10px;
-    transition: background-color 0.3s ease;
-}
-
-.nav-list a:hover {
-    background-color: #144d5a;
-    border-radius: 5px;
-}
-
-.nav-list .active {
-    background-color: #144d5a;
-    border-radius: 5px;
-}
-
-/* Hamburger menu for mobile */
-.hamburger {
-    display: none;
-    font-size: 2rem;
-    background: none;
-    border: none;
-    color: white;
+  }
+  
+  .hamburger {
+    display: none; /* Hidden by default (desktop only) */
+    flex-direction: column;
     cursor: pointer;
-}
-
-@media (max-width: 768px) {
-    .nav-list {
-        display: none;
-        flex-direction: column;
-        text-align: left;
-        background-color: #1a5c77;
-    }
-
-    .nav-list.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: block;
-    }
-}
-
-/* Main Content Styling */
-.course-work, .course-list {
+  }
+  
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+  }
+  
+  /* Coursework and Image Sections */
+  .coursework, .image-section {
+    background-color: #f4f4f4;
     padding: 20px;
-    text-align: center;
-}
-
-.course-list h2 {
-    margin-bottom: 20px;
-}
-
-.filter-buttons {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.filter-buttons button {
-    margin: 0 10px;
-    padding: 10px 15px;
-    border: none;
-    background-color: #1a5c77;
+    margin: 20px;
+    border-radius: 5px;
+  }
+  
+  .image-section img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  
+  /* Course List and Filter Buttons */
+  .course-list {
+    background-color: #006699;
     color: white;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+  }
+  
+  .filter-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .filter-buttons button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.filter-buttons button:hover {
-    background-color: #144d5a;
-}
-
-/* Course card styling */
-#courses-container {
+  }
+  
+  .filter-buttons button:hover {
+    background-color: #555;
+  }
+  
+  .courses {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-}
-
-.card {
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    max-width: 300px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.card.completed {
-    background-color: #006400; /* Darker green for contrast */
-    color: #f0f0f0; /* Off-white text */
-}
-
-.card img {
-    width: 100%;
-    height: auto;
-}
-
-.card-content {
-    padding: 15px;
-}
-
-.card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-    color: #1a5c77;
-}
-
-.card p {
-    font-size: 1rem;
-    color: #666;
-}
-
-.card-footer {
-    padding: 10px 15px;
-    background-color: #f9f9f9;
-    border-top: 1px solid #ddd;
-}
-
-.card-footer button {
-    padding: 10px 20px;
-    background-color: #1a5c77;
+  }
+  
+  .course {
+    background-color: #8B4513;
     color: white;
-    border: none;
+    padding: 10px;
+    margin: 5px;
     border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.card-footer button:hover {
-    background-color: #144d5a;
-}
-
-/* Footer Styling */
-footer {
-    padding: 20px;
+    width: 30%;
     text-align: center;
-    background-color: #1a5c77;
+  }
+  
+  footer {
+    background-color: #003366;
     color: white;
-}
-
-footer p {
-    margin: 10px 0;
-}
-
-/* Footer Icons Hover Effect */
-.footer-icons img {
-    width: 40px; /* Set a consistent size */
-    margin: 0 10px; /* Spacing between icons */
-    transition: transform 0.3s ease;
-}
-
-.footer-icons img:hover {
-    transform: scale(1.1); /* Slightly enlarge on hover */
-}
-
-/* Responsive Adjustments */
-@media (max-width: 480px) {
-    .course-list h2 {
-        font-size: 1.5rem; /* Adjust heading size */
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    nav ul {
+      display: none;
     }
-
-    .card {
-        max-width: 90%; /* Make cards more flexible on small screens */
-        margin: 10px; /* Reduce margin for smaller viewports */
+  
+    .hamburger {
+      display: flex;
     }
-}
+  
+    .courses {
+      flex-direction: column;
+      width: 100%;
+    }
+  
+    .course {
+      width: 100%;
+    }
+  }
+  

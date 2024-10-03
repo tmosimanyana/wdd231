@@ -1,74 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tinny B. Mosimanyana - Web and Computer Programming Certificate">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <title>Tinny B. Mosimanyana - Course Home</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="responsive.css"> <!-- Additional CSS file -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rubia M. Francesco | Web Development and Programming">
+  <meta name="author" content="Rubia M. Francesco">
+  <title>Rubia M. Francesco | Course Page</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <header>
-        <div class="profile">
-            <img src="images/profile.jpg" alt="Profile Picture" width="80">
-        </div>
-        <h1>Tinny Bothepha Mosimanyana</h1>
-        <nav>
-            <ul class="nav-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
-            </ul>
-            <button class="hamburger" onclick="toggleMenu()">☰</button>
-        </nav>
-    </header>
-    <main>
-        <section class="course-work">
-            <h2>Course Work</h2>
-            <div class="location">
-                <h3>Gaborone, Botswana</h3>
-                <img src="images/zebra_animals.jpeg" alt="Zebra Animals" width="300">
-            </div>
-            <div class="credit-info">
-                <p>Total Credits Required: <span id="total-credits-required"></span></p>
-                <p>Total Credits Earned: <span id="total-credits-earned"></span></p>
-            </div>
-        </section>
-        <section class="course-list">
-            <h2>Web and Computer Programming Certificate</h2>
-            <div class="filter-buttons">
-                <button onclick="filterCourses('all')">All</button>
-                <button onclick="filterCourses('CSE')">CSE</button>
-                <button onclick="filterCourses('WDD')">WDD</button>
-            </div>
-            <div id="courses-container"></div>
-        </section>
-        <section class="additional-info">
-            <h2>Additional Information</h2>
-            <p>This section can include other relevant details or resources related to the coursework.</p>
-        </section>
-    </main>
-    <footer>
-        <div class="footer-content">
-            <p>&copy;<span id="current-year"></span> Tinny Bothepha Mosimanyana | Botswana</p>
-            <p>Last Updated: <span id="last-updated"></span></p>
-        </div>
-        <div class="footer-icons">
-            <a href="https://github.com/" target="_blank">
-                <img src="images/github.jpeg" alt="GitHub" />
-            </a>
-            <a href="https://www.linkedin.com/" target="_blank">
-                <img src="images/linkedin.jpeg" alt="LinkedIn" />
-            </a>
-            <img src="images/botswana.png" alt="Botswana Flag" />
-        </div>
-    </footer>
+  <!-- Header with Profile and Navigation -->
+  <header>
+    <div class="profile">
+      <img src="profile.png" alt="Rubia M. Francesco" class="profile-img">
+      <h1>Rubia M. Francesco</h1>
+    </div>
+    <nav>
+      <ul class="nav-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Chamber</a></li>
+        <li><a href="#">GitHub Profile</a></li>
+        <li><a href="#">LinkedIn</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content Section -->
+  <main>
+    <!-- Coursework Section -->
+    <section class="coursework">
+      <h2>Course Work</h2>
+      <ul>
+        <li>•</li>
+        <li>•</li>
+        <li>•</li>
+      </ul>
+    </section>
+
+    <!-- Toloria, Madagascar Section -->
+    <section class="image-section">
+      <h2>Toloria, Madagascar</h2>
+      <img src="madagascar.png" alt="Baobab Trees">
+      <p>Baobab Trees</p>
+    </section>
+
+    <!-- Course List with Filter -->
+    <section class="course-list">
+      <h2>Web and Computer Programming Certificate</h2>
+      <div class="filter-buttons">
+        <button id="filter-all">All</button>
+        <button id="filter-cse">CSE</button>
+        <button id="filter-wdd">WDD</button>
+      </div>
+      <div class="courses">
+        <div class="course cse">CSE 110</div>
+        <div class="course wdd">WDD 130</div>
+        <div class="course cse">CSE 111</div>
+        <div class="course cse">CSE 210</div>
+        <div class="course wdd">WDD 131</div>
+        <div class="course wdd">WDD 231</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2025 Rubia Magdalena Francesco | Madagascar</p>
+    <p>Last Update: <span id="last-modified"></span></p>
+  </footer>
+
+  <!-- JavaScript for Dynamic Date -->
+  <script src="scripts.js"></script>
 </body>
+
 </html>
