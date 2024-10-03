@@ -7,21 +7,31 @@
   
   body {
     font-family: Arial, sans-serif;
-    line-height: 1.5;
     color: #333;
+    background-color: #f0f0f0;
+    margin-bottom: 60px;
   }
   
-  /* Header and Profile Section */
+  h1, h2 {
+    margin-bottom: 10px;
+  }
+  
+  h1 {
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  /* Header Section */
   header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #003366;
     color: white;
-    padding: 10px;
+    padding: 15px;
   }
   
-  .profile {
+  .profile-container {
     display: flex;
     align-items: center;
   }
@@ -33,22 +43,27 @@
     margin-right: 10px;
   }
   
-  nav ul {
+  .nav-menu {
     display: flex;
     list-style: none;
   }
   
-  nav ul li {
-    margin: 0 10px;
+  .nav-menu li {
+    margin-right: 20px;
   }
   
-  nav ul li a {
+  .nav-menu li a {
     color: white;
     text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .nav-menu li a:hover {
+    color: #FFFF00;
   }
   
   .hamburger {
-    display: none; /* Hidden by default (desktop only) */
+    display: none;
     flex-direction: column;
     cursor: pointer;
   }
@@ -60,89 +75,127 @@
     margin: 5px;
   }
   
-  /* Coursework and Image Sections */
-  .coursework, .image-section {
-    background-color: #f4f4f4;
+  /* Main Content Section */
+  main {
+    display: flex;
+    justify-content: space-around;
     padding: 20px;
-    margin: 20px;
-    border-radius: 5px;
+  }
+  
+  .coursework-section, .image-section {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 45%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .coursework-section h2, .image-section h2 {
+    background-color: #003366;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
   }
   
   .image-section img {
     width: 100%;
-    border-radius: 5px;
+    border-radius: 10px;
   }
   
-  /* Course List and Filter Buttons */
-  .course-list {
+  /* Course List Section */
+  .course-list-section {
     background-color: #006699;
     color: white;
     padding: 20px;
-    margin: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
+    margin-top: 20px;
+    width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .filter-buttons {
     display: flex;
-    justify-content: center;
-    margin-bottom: 15px;
+    justify-content: space-around;
+    margin-bottom: 20px;
   }
   
   .filter-buttons button {
-    background-color: #333;
+    background-color: #000;
     color: white;
     border: none;
-    padding: 10px 15px;
-    margin: 0 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
   }
   
   .filter-buttons button:hover {
-    background-color: #555;
+    background-color: #444;
   }
   
   .courses {
     display: flex;
+    justify-content: space-around;
     flex-wrap: wrap;
   }
   
   .course {
     background-color: #8B4513;
     color: white;
-    padding: 10px;
-    margin: 5px;
+    padding: 15px;
+    margin: 10px;
     border-radius: 5px;
     width: 30%;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
   
+  .course:hover {
+    background-color: #A0522D;
+  }
+  
+  /* Footer Section */
   footer {
     background-color: #003366;
     color: white;
     text-align: center;
     padding: 10px;
     position: fixed;
-    width: 100%;
     bottom: 0;
+    width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  footer p {
+    margin: 5px;
   }
   
   /* Responsive Design */
   @media (max-width: 768px) {
-    nav ul {
+    main {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .coursework-section, .image-section {
+      width: 90%;
+    }
+  
+    .courses {
+      flex-direction: column;
+    }
+  
+    .course {
+      width: 100%;
+    }
+  
+    .nav-menu {
       display: none;
     }
   
     .hamburger {
       display: flex;
-    }
-  
-    .courses {
-      flex-direction: column;
-      width: 100%;
-    }
-  
-    .course {
-      width: 100%;
     }
   }
   
