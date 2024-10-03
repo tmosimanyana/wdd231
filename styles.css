@@ -1,6 +1,6 @@
 /* General Styles */
 body {
-  font-family: 'Roboto', sans-serif; /* Use Google Font */
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f4f4f4;
@@ -24,9 +24,9 @@ main {
 
 /* More exclusive profile image selector */
 .profile-img {
-  width: 150px; /* Adjusted size for the profile image */
+  width: 150px;
   height: auto;
-  border-radius: 50%; /* Circular profile image */
+  border-radius: 50%;
   margin-right: 20px;
 }
 
@@ -47,7 +47,7 @@ p {
 aside {
   width: 20rem;
   margin: 1rem;
-  border: 1px solid rgba(0, 0, 0, 0.2); 
+  border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 1rem;
   background-color: #eee;
   color: #333;
@@ -62,8 +62,8 @@ aside img {
 
 /* Navigation Styling */
 nav {
-  background-color: #333; /* Dark background */
-  padding: 1rem; /* Padding for spacing */
+  background-color: #333;
+  padding: 1rem;
   text-align: center;
 }
 
@@ -78,14 +78,19 @@ nav {
 }
 
 .nav-menu a {
-  color: #fff; /* White text */
-  margin: 0 1rem; /* Space between links */
-  text-decoration: none; /* Remove underline */
-  font-weight: bold; /* Bold links */
+  color: #fff;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-weight: bold;
 }
 
-.nav-menu a:hover {
+.nav-menu a:hover,
+.nav-menu a:focus {
   color: #ddd; /* Light grey on hover */
+}
+
+.nav-menu a.active {
+  border-bottom: 2px solid #fff; /* Underline for active link */
 }
 
 /* Course List Section */
@@ -103,19 +108,21 @@ nav {
   padding: 10px 15px;
   border: none;
   border-radius: 5px;
-  background-color: #3498db; /* Button color */
+  background-color: #3498db;
   color: white;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .filter-buttons button:hover {
-  background-color: #2980b9; /* Darker button on hover */
+  background-color: #2980b9;
 }
 
 /* Course Cards */
 .courses {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive card layout */
+  gap: 15px; /* Space between cards */
 }
 
 .course-card {
@@ -124,11 +131,12 @@ nav {
   border: 1px solid #ddd;
   border-radius: 5px;
   background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 .completed {
-  background-color: #e0f7fa; /* Light blue background for completed courses */
-  border-left: 5px solid #0097a7; /* Blue left border */
+  background-color: #e0f7fa;
+  border-left: 5px solid #0097a7;
 }
 
 /* Credits Section */
