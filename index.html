@@ -3,71 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tinny B. Mosimanyana Portfolio</title>
-    <meta name="description" content="Portfolio of Tinny B. Mosimanyana, showcasing web development projects, coursework, and skills in JavaScript and responsive design.">
-    <meta name="author" content="Tinny B. Mosimanyana">
-    <link rel="stylesheet" href="styles.min.css">
-    <style>
-        /* Critical CSS */
-        body { margin: 0; }
-        header { background-color: #333; color: white; text-align: center; padding: 10px; }
-        .profile img { width: 100px; height: auto; border-radius: 50%; }
-    </style>
+    <meta name="description" content="Tinny Bothepha Mosimanyana's Portfolio showcasing web development skills and projects.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <title>Tinny Bothepha Mosimanyana's Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
-        <div class="profile">
-            <img src="images/profile.webp" alt="Tinny B. Mosimanyana">
-            <h1>Tinny B. Mosimanyana</h1>
+        <div class="navigation">
+            <h1>Tinny Bothepha Mosimanyana</h1>
+            <div class="hamburger" id="hamburger">&#9776;</div>
+            <nav>
+                <ul id="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Chamber</a></li>
+                    <li><a href="https://github.com/TinnyBothepha" target="_blank">GitHub Profile</a></li>
+                    <li><a href="https://www.linkedin.com/in/tinny-bothepha" target="_blank">LinkedIn</a></li>
+                </ul>
+            </nav>
         </div>
-        <nav>
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
-            </ul>
-            <button class="hamburger-menu">&#9776;</button>
-        </nav>
     </header>
-    
+
     <main>
-        <section class="course-work">
-            <h2>Course Work</h2>
+        <section>
+            <h2>About Me</h2>
+            <p>Hello! I’m Tinny Bothepha Mosimanyana, a passionate web developer based in Botswana. I specialize in creating dynamic and responsive web applications using modern technologies.</p>
+        </section>
+        <section>
+            <h2>Projects</h2>
+            <p>Here are some of my notable projects:</p>
             <ul>
-                <li>JavaScript Interactivity</li>
-                <li>Dynamic Content Loading</li>
-                <li>Responsive Design Principles</li>
+                <li><strong>Chamber of Commerce Website:</strong> A responsive website for the local Chamber of Commerce.</li>
+                <li><strong>Personal Portfolio:</strong> This portfolio showcases my skills and projects.</li>
+                <li><strong>Course Management System:</strong> An application to manage and filter courses.</li>
             </ul>
         </section>
-        
-        <section class="location">
-            <h2>Gaborone, Botswana</h2>
-            <picture>
-                <source srcset="images/zebras.webp" type="image/webp">
-                <img src="images/zebra.webp" alt="Zebra Animals" loading="lazy">
-            </picture>
+        <section>
+            <h2>Molepolole</h2>
+            <p>Molepolole is a vibrant town in Botswana known for its rich culture and history. It's an important center for trade and community activities.</p>
+            <p>It is located about 40 kilometers west of Gaborone, the capital city, and is famous for its beautiful landscapes and friendly communities.</p>
         </section>
-        
-        <section class="certificate">
-            <h2>Web and Computer Programming Certificate</h2>
-            <div class="filters">
-                <button id="filter-all">All</button>
-                <button id="filter-cse">CSE</button>
-                <button id="filter-wdd">WDD</button>
+        <section>
+            <h2>Courses</h2>
+            <div class="course-list">
+                <div class="course-item completed">Introduction to Programming - 2 credits</div>
+                <div class="course-item">Web Fundamentals - 2 credits</div>
+                <div class="course-item">Programming with Functions - 2 credits</div>
+                <div class="course-item completed">Programming with Classes - 2 credits</div>
             </div>
-            <div class="courses"></div>
-            <p id="total-credits-earned">Total Credits Earned: 0</p>
-            <p>Total Credits Required: <span id="credits-required">12</span></p>
+            <div id="total-credits-earned">Total Credits: <span id="total-credits">0</span></div>
         </section>
     </main>
 
     <footer>
-        <p>©<span id="current-year"></span> Tinny Bothepha Mosimanyana, Botswana</p>
-        <p>Last Update: <span id="last-modified"></span></p>
-        <img src="images/botswana.png" alt="Botswana Flag">
+        <p>&copy; <span id="currentyear"></span> Tinny Bothepha Mosimanyana, Botswana.</p>
+        <p id="lastModified"></p>
     </footer>
-
-    <script src="script.min.js" defer></script>
 </body>
 </html>

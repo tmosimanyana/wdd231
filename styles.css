@@ -1,90 +1,124 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  background-color: #fff;
   margin: 0;
   padding: 0;
-  color: #222; /* Improved text color for contrast */
 }
 
 header {
-  background-color: #333;
-  color: white;
-  padding: 10px;
-  text-align: center;
+  background-color: #4A90E2; /* Header background color */
+  color: #fff; /* Text color for header */
+  padding: 1rem; /* Padding for header */
 }
 
-.profile img {
-  width: 100px;
-  height: auto;
-  border-radius: 50%;
+.navigation {
+  display: flex; /* Flexbox for navigation */
+  justify-content: space-between; /* Space between items */
+  align-items: center; /* Center align items */
 }
 
-nav ul {
-  display: flex;
-  justify-content: space-around;
-  list-style-type: none;
-  padding: 0;
+.navigation ul {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  display: flex; /* Flex layout for menu items */
 }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  padding: 10px;
-  transition: color 0.3s ease, background-color 0.3s ease; /* Added transition */
+.navigation ul li {
+  margin-right: 20px; /* Spacing between menu items */
 }
 
-nav ul li a:hover,
-nav ul li a:focus {
-  color: #ffcc00; /* Change color on hover */
-  outline: 2px dashed #ffcc00; /* Focus style for keyboard navigation */
+.navigation ul li a {
+  text-decoration: none; /* Remove underline */
+  color: #fff; /* Link color */
+  transition: color 0.3s; /* Transition for hover effect */
 }
 
-nav ul li a.active {
-  font-weight: bold;
-  text-decoration: underline;
+.navigation ul li a:hover {
+  color: #F5A623; /* Change color on hover */
 }
 
-.hamburger-menu {
-  display: none; /* Hide on larger screens */
+/* Hamburger Menu */
+.hamburger {
+  display: none; /* Hidden by default */
+  cursor: pointer; /* Pointer cursor for hamburger */
+}
+
+@media (max-width: 768px) {
+  .navigation ul {
+      display: none; /* Hide menu by default on mobile */
+      flex-direction: column; /* Vertical layout */
+      position: absolute; /* Absolute positioning */
+      top: 60px; /* Position below the header */
+      left: 0; /* Align to left */
+      background-color: #4A90E2; /* Background color for dropdown */
+      width: 100%; /* Full width */
+  }
+
+  .navigation ul.show {
+      display: flex; /* Show menu when class added */
+  }
+
+  .hamburger {
+      display: block; /* Show hamburger icon on mobile */
+      color: #fff; /* Color for hamburger */
+      font-size: 24px; /* Size for hamburger */
+  }
+
+  .navigation ul li {
+      margin: 0; /* Remove margin for vertical layout */
+  }
+
+  .navigation ul li a {
+      padding: 10px; /* Padding for links */
+      display: block; /* Block links for easier clicking */
+  }
 }
 
 main {
-  padding: 20px;
   display: grid;
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Dynamic columns */
+  gap: 20px; /* Space between items */
+  padding: 20px; /* Padding around the grid */
 }
 
-.course-work, .location, .certificate {
-  display: grid;
-  grid-template-columns: 1fr; /* One column for mobile */
-  gap: 20px;
+section {
+  background-color: #fff; /* Background color for sections */
+  padding: 20px; /* Padding inside sections */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Shadow for depth */
 }
 
-@media (min-width: 768px) {
-  .hamburger-menu {
-      display: none; /* Hide the hamburger menu on larger screens */
-  }
-  
-  main {
-      grid-template-columns: repeat(3, 1fr); /* Three columns for desktop */
-  }
+.course-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive course cards */
+  gap: 15px; /* Space between cards */
+}
+
+.course-item {
+  background-color: #f0f0f0; /* Background color for course items */
+  margin: 10px 0; /* Margin between items */
+  padding: 10px; /* Padding for items */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Transition for background color */
+}
+
+.completed {
+  background-color: #A5D6A7; /* Light green for completed courses */
 }
 
 footer {
-  background-color: #333;
-  color: white;
-  text-align: center;
-  padding: 10px;
+  background-color: #f0f0f0; /* Footer background color */
+  padding: 1rem; /* Padding for footer */
+  text-align: center; /* Center text in footer */
 }
 
-/* Improved color contrast */
-.course-item.completed {
-  text-decoration: line-through;
-  color: #333; /* Better contrast */
-  background-color: #e0e0e0; /* Accessible background */
+footer p {
+  margin: 0; /* Remove default margin */
 }
 
-/* Responsive images */
-.profile img, .location img {
-  max-width: 100%;
-  height: auto; /* Maintain aspect ratio */
+#total-credits-earned {
+  font-weight: bold; /* Bold text for credits */
+  margin-top: 1rem; /* Margin above credits */
 }
