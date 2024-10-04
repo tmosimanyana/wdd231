@@ -1,0 +1,64 @@
+const courses = [
+    { id: 1, subject: 'CSE', number: 110, title: 'Introduction to Programming', credits: 2, completed: false },
+    { id: 2, subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 2, completed: false },
+    { id: 3, subject: 'CSE', number: 111, title: 'Programming with Functions', credits: 2, completed: false },
+    { id: 4, subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 2, completed: false },
+    { id: 5, subject: 'WDD', number: 131, title: 'Dynamic Web Fundamentals', credits: 2, completed: false },
+    { id: 6, subject: 'WDD', number: 231, title: 'Frontend Web Development I', credits: 2, completed: false }
+];
+
+function displayCourses(filter) {
+    const courseContainer = document.querySelector('#course-list');
+    const fragment = document.createDocumentFragment();
+
+    courses.forEach(course => {
+        if (filter === 'all' || course.subject === filter) {
+            const courseItem = document.createElement('div');
+            courseItem.classList.add('course-item');
+            if (course.completed) {
+                courseItem.classList.add('completed'); // Add a class for completed courses
+            }
+            courseItem.innerHTML = `
+                <h3>${course.title}</h3>
+                <p>Credits: ${course.credits}</p>
+                <button onclick="toggleCourseCompletion(${course.id})">
+                    ${course.completed ? 'Mark as Incomplete' : 'Mark as Completed'}
+                </button>
+                ${course.completed ? '<p>(Completed)</p>' : ''}
+            `;
+            fragment.appendChild(courseItem);
+        }
+    });
+
+    courseContainer.innerHTML = ''; // Clear previous courses
+    courseContainer.appendChild(fragment); // Add updated courses
+    calculateCredits(); // Update total credits displayed
+}
+
+function toggleCourseCompletion(courseId) {
+    const course = courses.find(c => c.id === courseId);
+    if (course) {
+        course.completed = !course.completed; // Toggle the completed status
+        displayCourses('all'); // Refresh the display
+    }
+}
+
+function calculateCredits() {
+    const totalCredits = courses.reduce((sum, course) => course.completed ? sum + course.credits : sum, 0);
+    document.getElementById('total-credits').textContent = totalCredits;
+}
+
+function updateFooter() {
+    const currentYear = new Date().getFullYear();
+    document.getElementById('currentyear').textContent = currentYear;
+    document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    displayCourses('all');
+    updateFooter();
+
+    document.getElementById('all-courses').addEventListener('click', () => displayCourses('all'));
+    document.getElementById('cse-courses').addEventListener('click', () => displayCourses('CSE'));
+    document.getElementById('wdd-courses').addEventListener('click', () => displayCourses('WDD'));
+});
