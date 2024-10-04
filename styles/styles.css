@@ -1,0 +1,102 @@
+/* Google Font */
+body {
+    font-family: 'Roboto', sans-serif; /* Use Google Font */
+}
+
+/* Main element */
+main {
+    max-width: 840px; /* Limit width for better readability */
+    margin: 0 auto; /* Center the content horizontally */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center content inside the main */
+}
+
+/* Navigation Styling */
+nav {
+    display: flex; /* Use Flexbox for nav */
+    justify-content: center; /* Center align navigation items */
+    background-color: #333; /* Dark background */
+    padding: 1rem; /* Padding for spacing */
+}
+
+nav a {
+    color: #fff; /* White text */
+    margin: 0 1rem; /* Space between links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold links */
+}
+
+nav a:hover {
+    color: #ddd; /* Light grey on hover */
+}
+
+/* Course filter buttons Flexbox */
+.flex-buttons {
+    display: flex; /* Use Flexbox for course filter buttons */
+    justify-content: center; /* Center align buttons */
+    margin: 1rem 0; /* Add some spacing */
+}
+
+.flex-buttons button {
+    margin: 0 10px; /* Space between buttons */
+    padding: 10px 20px; /* Button padding */
+}
+
+/* Paragraph styling */
+p {
+    padding: 0;
+}
+
+/* Aside styling */
+aside {
+    width: 20rem; /* Fixed width for the aside */
+    margin: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2); 
+    padding: 1rem;
+    background-color: #eee;
+    color: #333;
+    text-align: center;
+}
+
+/* Aside image */
+aside img {
+    width: 200px;
+    height: auto;
+}
+
+/* Course Cards Styling */
+.course-list {
+    display: flex; /* Use Flexbox for course cards */
+    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    justify-content: center; /* Center align the cards */
+    gap: 20px; /* Space between the cards */
+}
+
+.course-card {
+    width: 300px; /* Set consistent width for course cards */
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #ffffff;
+    text-align: center; /* Center the card content */
+}
+
+.course-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Completed courses styling */
+.completed {
+    background-color: #e0f7fa; /* Light blue background for completed courses */
+    border-left: 5px solid #0097a7; /* Blue left border */
+}
+
+/* Footer styling */
+footer {
+    margin-top: 15px;
+    border-top: 1px solid #000;
+    text-align: center;
+}
