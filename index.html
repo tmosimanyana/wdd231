@@ -3,16 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Course Home Page showcasing Web and Computer Programming courses.">
-    <meta name="author" content="Tinny B. Mosimanyana">
     <title>Course Home Page</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script> <!-- JavaScript file with defer attribute -->
+    <link rel="stylesheet" href="styles.css"> <!-- Link to the external CSS file -->
+    <script src="script.js" defer></script> <!-- Link to the external JavaScript file with the defer attribute -->
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <div class="profile">
-            <img src="images/profile.jpg" alt="Profile Picture">
+            <img src="images/profile.webp" alt="Profile Picture">
         </div>
         <h1>Tinny B. Mosimanyana</h1>
         <button class="hamburger">☰</button> <!-- Responsive hamburger menu icon -->
@@ -26,17 +25,23 @@
         </nav>
     </header>
 
+    <!-- Main Content Section -->
     <main>
+        <!-- Course Filter Buttons -->
         <section class="course-filters">
             <button onclick="filterCourses('all')">Show All</button>
             <button onclick="filterCourses('CSE')">Show CSE Courses</button>
             <button onclick="filterCourses('WDD')">Show WDD Courses</button>
         </section>
 
+        <!-- Course Cards Container -->
         <section id="courses-container" class="courses-container"></section>
+
+        <!-- Total Credits Section -->
         <p id="total-credits">Total Credits: 0</p>
     </main>
 
+    <!-- Footer Section -->
     <footer>
         <p>© <span id="current-year"></span> Tinny B. Mosimanyana | Gaborone, Botswana</p>
         <p>Last updated: <span id="last-modified"></span></p>
