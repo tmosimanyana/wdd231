@@ -3,54 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tinny B. Mosimanyana's Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css"> <!-- Link to external CSS -->
+    <meta name="description" content="Tinny B. Mosimanyana - Web and Computer Programming Certificate">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <title>Tinny B. Mosimanyana - Course Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header>
-        <div class="navigation">
-            <div class="hamburger" onclick="toggleMenu()">☰</div>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#chamber">Chamber</a></li>
-                <li><a href="#github">GitHub Profile</a></li>
-                <li><a href="#linkedin">LinkedIn</a></li>
-            </ul>
+        <div class="profile">
+            <img src="profile.jpg" alt="Profile Picture" width="80">
         </div>
-        <h1>Tinny B. Mosimanyana</h1>
-    </header>
-
-    <main>
-        <section>
-            <h2>Course Work</h2>
-            <ul class="course-list">
-                <li>CSE 110</li>
-                <li>WDD 130</li>
-                <li>CSE 210</li>
-                <li>WDD 131</li>
-                <li>CSE 111</li>
-                <li>WDD 231</li>
+        <h1>Tinny M. Mosimanyana</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Chamber</a></li>
+                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="#">LinkedIn</a></li>
             </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="course-work">
+            <h2>Course Work</h2>
+            <div class="location">
+                <h3>Toloria, Madagascar</h3>
+                <img src="baobab_trees.jpg" alt="Baobab Trees" width="300">
+            </div>
+            <div class="credit-info">
+                <p>Total Credits Required: <span id="total-credits-required"></span></p>
+                <p>Total Credits Earned: <span id="total-credits-earned"></span></p>
+            </div>
         </section>
-        <section>
-            <h2>Gaborone, Botswana</h2>
-            <img src="images/zebra.webp" alt="Zebra animals in Gaborone" class="responsive-image">
-        </section>
-        <section>
+        <section class="course-list">
             <h2>Web and Computer Programming Certificate</h2>
-            <div class="course-item">CSE 110</div>
-            <div class="course-item">WDD 130</div>
-            <div class="course-item">CSE 210</div>
-            <div class="course-item">WDD 231</div>
+            <div class="filter-buttons">
+                <button onclick="filterCourses('all')">All</button>
+                <button onclick="filterCourses('CSE')">CSE</button>
+                <button onclick="filterCourses('WDD')">WDD</button>
+            </div>
+            <div id="courses-container"></div>
         </section>
     </main>
-
     <footer>
-        <p>&copy; 2024 Tinny Bothepha Mosimanyana | Botswana</p>
-        <p>Last Update: 01/01/1970 12:00:00</p>
+        <p>©2025 Tinny B. Mosimanyana | Botswana</p>
+        <p>Last Updated: <span id="last-updated"></span></p>
     </footer>
-
-    <script src="script.js"></script> <!-- Link to external JS -->
 </body>
 </html>
