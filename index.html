@@ -4,57 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A portfolio showcasing skills and courses in Web and Computer Programming.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <title>My Portfolio - Course Home Page</title>
-    <script src="scripts.js" defer></script>
+    <meta name="description" content="Tinny Mosimanyana's personal website, showcasing work and projects in web development.">
+    <meta name="author" content="Tinny Mosimanyana">
+    <title>Tinny Mosimanyana | WDD 231</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/courses.js" defer></script>
 </head>
 
 <body>
     <header>
-        <h1>My Course Home Page</h1>
-        <nav class="navbar" role="navigation" aria-label="Course Navigation">
-            <ul>
-                <li><a href="#" class="filter-btn" data-filter="all">All Courses</a></li>
-                <li><a href="#" class="filter-btn" data-filter="CSE">CSE Courses</a></li>
-                <li><a href="#" class="filter-btn" data-filter="WDD">WDD Courses</a></li>
-                <li><a href="#">Chamber</a></li>
-                <li><a href="#">GitHub Profile</a></li>
-                <li><a href="#">LinkedIn</a></li>
-            </ul>
+        <nav>
+            <a href="#">Home</a>
+            <a href="chamber/">Chamber of Commerce</a>
+            <a href="https://github.com/your-github-profile">GitHub Profile</a>
+            <a href="https://www.linkedin.com/in/your-linkedin-profile">LinkedIn</a>
         </nav>
     </header>
 
     <main>
-        <section class="profile">
-            <h2>Profile</h2>
-            <div class="profile-container">
-                <img src="images/profile.webp" alt="Profile Picture of Tinny Bothepha Mosimanyana" class="profile-img">
-                <div class="profile-text">
-                    <p>I am Tinny Bothepha Mosimanyana, a tech and business consultant passionate about web development and programming. Combining IT and business consultancy, I offer modern solutions to enterprises.</p>
-                </div>
-            </div>
+        <h1>Tinny Mosimanyana | WDD 231</h1>
+        <!-- Optimized profile image -->
+        <img src="images/profile.webp" alt="Tinny Mosimanyana" width="150">
+        <p>I am a web developer passionate about creating beautiful and functional websites. With few months of 
+            experience in front-end and back-end development, I enjoy turning ideas into digital solutions. My goal is to make
+            the web a better place one website at a time.</p>
+        
+        <section id="course-filter">
+            <button id="all-courses">All Courses</button>
+            <button id="cse-courses">CSE Courses</button>
+            <button id="wdd-courses">WDD Courses</button>
         </section>
-
-        <section class="location">
-            <h2>Location</h2>
-            <div class="location-container">
-                <img src="images/botswana.png" alt="Location of Tinny Bothepha Mosimanyana - Gaborone, Botswana" class="location-img">
-            </div>
-        </section>
-
-        <section class="courses">
-            <h2>Courses Completed</h2>
-            <div id="course-grid" class="course-grid"></div>
-            <p>Total Credits: <span id="total-credits">0</span></p>
+        
+        <section id="course-list" class="course-list"></section>
+        
+        <section id="credits-total">
+            <h2>Total Credits: <span id="total-credits">0</span></h2>
         </section>
     </main>
 
+    <aside>
+        <h2>Molepolole</h2>
+        <!-- Optimized Molepolole image -->
+        <img src="images/molepolole.webp" alt="Molepolole landscape" width="200">
+        <p>Molepolole is a village near Gaborone city in the southern part of Botswana. It is a growing, developing village
+            with many business opportunities.</p>
+    </aside>
+
     <footer>
-        <p>&copy; <span id="currentyear"></span> Tinny Bothepha Mosimanyana, Botswana.</p>
+        <p>&copy; <span id="currentyear"></span> | Tinny Mosimanyana | Botswana</p>
         <p id="lastModified"></p>
     </footer>
 </body>
