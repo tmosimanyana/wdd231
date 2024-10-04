@@ -1,68 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background-color: #f0f0f0;
-  margin: 0;
+  background-color: #f0f4f8;
+  color: #333;
 }
 
 header {
-  background-color: #002147;
-  color: #fff;
   display: flex;
   justify-content: space-between;
-  padding: 10px;
   align-items: center;
+  background-color: #1c3a57;
+  padding: 10px 20px;
+  color: white;
 }
 
 .profile img {
   border-radius: 50%;
 }
 
-.nav-list {
-  list-style: none;
-  padding: 0;
+h1 {
+  font-size: 24px;
+  margin-left: 10px;
 }
 
-.nav-list li {
-  display: inline;
-  margin: 0 10px;
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
 }
 
-.course-work {
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.main-container {
   display: flex;
   justify-content: space-between;
-  margin: 20px;
+  padding: 20px;
 }
 
+.course-work,
 .location {
+  background-color: #e6eaf0;
+  padding: 20px;
+  border-radius: 8px;
+  width: 45%;
+}
+
+.course-work h2, .location h2 {
+  margin-bottom: 15px;
+}
+
+#course-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.certificate-section {
   text-align: center;
+  background-color: #dfe7f1;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
 }
 
-.credit-info {
-  margin: 20px 0;
+.filter-buttons {
+  margin-bottom: 15px;
 }
 
-.course-list {
+.filter-buttons button {
+  padding: 10px 20px;
+  background-color: #1c3a57;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.filter-buttons button:hover {
+  background-color: #f29e4c;
+}
+
+#courses-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 10px;
 }
 
-.course {
-  background-color: #B44A00;
-  color: #fff;
-  padding: 10px;
-  margin: 5px;
-  border-radius: 5px;
-  width: calc(30% - 10px);
+.course-card {
+  background-color: #814c31;
+  color: white;
+  padding: 15px;
+  border-radius: 8px;
+  width: 100px;
   text-align: center;
   cursor: pointer;
 }
 
-.course.completed {
-  background-color: #008C45; /* Different color for completed courses */
+.course-card:hover {
+  background-color: #f29e4c;
 }
 
 footer {
   text-align: center;
-  margin: 20px;
+  padding: 20px;
+  background-color: #1c3a57;
+  color: white;
+}
+
+footer p {
+  margin: 5px;
 }
