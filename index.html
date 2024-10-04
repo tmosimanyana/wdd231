@@ -38,7 +38,7 @@
             <div class="location">
                 <h2>Gaborone, Botswana</h2>
                 <img src="images/zebra.webp" alt="Zebra Animals" width="300">
-                <p>Zebra Animals </p>
+                <p>Zebra Animals</p>
             </div>
         </section>
         
@@ -59,5 +59,40 @@
         <p>©2025 Tinny B. Mosimanyana | Botswana</p>
         <p>Last Updated: <span id="last-updated"></span></p>
     </footer>
+
+    <script>
+        // Update last updated date
+        document.getElementById("last-updated").textContent = document.lastModified;
+
+        // Sample course data for dynamic generation
+        const courses = [
+            { name: "WDD 130", credits: 3, category: "WDD" },
+            { name: "CSE 110", credits: 3, category: "CSE" },
+            { name: "WDD 230", credits: 3, category: "WDD" },
+            { name: "CSE 210", credits: 4, category: "CSE" },
+        ];
+
+        // Function to display courses based on category
+        function filterCourses(category) {
+            const coursesContainer = document.getElementById("courses-container");
+            coursesContainer.innerHTML = ""; // Clear previous courses
+            
+            let filteredCourses = courses;
+
+            if (category !== 'all') {
+                filteredCourses = courses.filter(course => course.category === category);
+            }
+
+            filteredCourses.forEach(course => {
+                const courseDiv = document.createElement("div");
+                courseDiv.classList.add("course");
+                courseDiv.innerText = `${course.name} - ${course.credits} Credits`;
+                coursesContainer.appendChild(courseDiv);
+            });
+        }
+
+        // Initial display of all courses
+        filterCourses('all');
+    </script>
 </body>
 </html>
