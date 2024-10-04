@@ -17,7 +17,7 @@ const courses = [
         certificate: 'Web and Computer Programming',
         description: 'This course introduces students to the World Wide Web and to careers in web site design and development. The course is hands on with students actually participating in simple web designs and programming.',
         technology: ['HTML', 'CSS'],
-        completed: true
+        completed: false
     },
     {
         subject: 'CSE',
@@ -37,7 +37,7 @@ const courses = [
         certificate: 'Web and Computer Programming',
         description: 'This course introduces the notion of classes and objects.',
         technology: ['C#'],
-        completed: true
+        completed: false
     },
     {
         subject: 'WDD',
