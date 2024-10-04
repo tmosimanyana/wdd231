@@ -11,19 +11,25 @@
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Tinny Mosimanyana | WDD 231">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/images/molepolole.webp"> <!--  github image URL -->
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/"> <!-- github URL -->
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/images/molepolole.webp">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/">
     <meta property="og:description" content="Tinny Mosimanyana's personal website, showcasing work and projects in web development.">
 
     <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <!-- Google Fonts Embed -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/courses.js" defer></script>
+    <!-- Preload important images -->
+    <link rel="preload" href="images/profile.webp" as="image">
+
+    <!-- Minified CSS -->
+    <link rel="stylesheet" href="styles/styles.min.css" media="all">
+
+    <!-- Defer JavaScript -->
+    <script src="scripts/courses.min.js" defer></script>
 </head>
 
 <body>
@@ -38,8 +44,8 @@
 
     <main>
         <h1>Tinny Mosimanyana | WDD 231</h1>
-        <!-- Optimized profile image -->
-        <img src="images/profile.webp" alt="Tinny Mosimanyana" width="150">
+        <!-- Optimized profile image with explicit dimensions -->
+        <img src="images/profile.webp" alt="Tinny Mosimanyana" width="150" height="150">
         <p>I am a web developer passionate about creating beautiful and functional websites. With a few months of 
             experience in front-end and back-end development, I enjoy turning ideas into digital solutions. My goal is to make
             the web a better place one website at a time.</p>
@@ -67,8 +73,8 @@
 
     <aside>
         <h2>Molepolole</h2>
-        <!-- Optimized Molepolole image -->
-        <img src="images/molepolole.webp" alt="Molepolole MainKgotla" width="200">
+        <!-- Optimized Molepolole image with explicit dimensions -->
+        <img src="images/molepolole.webp" alt="Molepolole MainKgotla" width="200" height="150">
         <p>Molepolole is a village near Gaborone city in the southern part of Botswana. It is a growing, developing village
             with many business opportunities.</p>
     </aside>
@@ -78,43 +84,10 @@
         <p id="lastModified"></p>
     </footer>
 
-    <!-- Code injected by live-server -->
     <script>
-        // <![CDATA[  <-- For SVG support
-        if ('WebSocket' in window) {
-            (function () {
-                function refreshCSS() {
-                    var sheets = [].slice.call(document.getElementsByTagName("link"));
-                    var head = document.getElementsByTagName("head")[0];
-                    for (var i = 0; i < sheets.length; ++i) {
-                        var elem = sheets[i];
-                        var parent = elem.parentElement || head;
-                        parent.removeChild(elem);
-                        var rel = elem.rel;
-                        if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-                            var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-                            elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-                        }
-                        parent.appendChild(elem);
-                    }
-                }
-                var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-                var address = protocol + window.location.host + window.location.pathname + '/ws';
-                var socket = new WebSocket(address);
-                socket.onmessage = function (msg) {
-                    if (msg.data == 'reload') window.location.reload();
-                    else if (msg.data == 'refreshcss') refreshCSS();
-                };
-                if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-                    console.log('Live reload enabled.');
-                    sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-                }
-            })();
-        }
-        else {
-            console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-        }
-        // ]]>
+        // Set current year and last modified date
+        document.getElementById('currentyear').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = 'Last modified: ' + document.lastModified;
     </script>
 </body>
 
