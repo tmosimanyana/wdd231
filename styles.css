@@ -1,196 +1,96 @@
-/* Reset some default styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
+/* Global Styles */
 body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f4; /* Light background color */
-  color: #333; /* Dark text color for good contrast */
-  line-height: 1.6; /* Improve readability */
-}
-
-/* Header styles */
-header {
-  background-color: #007acc; /* Primary color for the header */
-  color: white; /* Text color for header */
-  padding: 10px 20px; /* Padding around the header */
-  display: flex; /* Flexbox for header layout */
-  align-items: center; /* Center items vertically */
-  justify-content: space-between; /* Space between profile and nav */
-}
-
-.profile {
-  display: flex; /* Flex layout for profile */
-  align-items: center; /* Center items vertically */
-}
-
-.profile-img {
-  width: 50px; /* Fixed size for the profile picture */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 50%; /* Circular profile picture */
-  margin-right: 15px; /* Spacing between image and name */
-}
-
-/* Navigation styles */
-nav ul {
-  list-style: none; /* Remove default list style */
-  display: flex; /* Horizontal layout for larger screens */
-}
-
-nav ul li {
-  margin-left: 20px; /* Spacing between menu items */
-}
-
-nav ul li a {
-  color: white; /* Menu item text color */
-  text-decoration: none; /* Remove underline */
-  padding: 10px; /* Padding for clickability */
-  transition: background-color 0.3s ease; /* Smooth transition */
-}
-
-nav ul li a:hover {
-  background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
-}
-
-/* Main styles */
-main {
-  padding: 20px; /* Padding for main content */
-}
-
-/* Course work section */
-.course-work, .location {
-  background: white; /* White background for sections */
-  padding: 15px; /* Padding inside sections */
-  margin-bottom: 20px; /* Space between sections */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-/* Location image styles */
-.location-img {
-  max-width: 100%; /* Responsive image */
-  height: auto; /* Maintain aspect ratio */
-}
-
-/* Certificate section */
-.certificate {
-  background: white; /* White background for certificate section */
-  padding: 15px; /* Padding inside section */
-  margin-bottom: 20px; /* Space between sections */
-  border-radius: 5px; /* Rounded corners */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-/* Filter buttons */
-.filter-buttons {
-  margin-bottom: 15px; /* Space below filter buttons */
-}
-
-.filter-buttons button {
-  padding: 10px 15px; /* Padding for buttons */
-  margin-right: 5px; /* Space between buttons */
-  border: none; /* No border */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor */
-  background-color: #007acc; /* Button background */
-  color: white; /* Button text color */
-  transition: background-color 0.3s ease; /* Smooth transition */
-}
-
-.filter-buttons button:hover {
-  background-color: #005f99; /* Darker shade on hover */
-}
-
-/* Course list */
-.course-list {
-  display: flex; /* Flex layout for courses */
-  flex-wrap: wrap; /* Allow wrapping */
-}
-
-.course {
-  background: #e7f3ff; /* Light background for courses */
-  border: 1px solid #007acc; /* Border color */
-  border-radius: 5px; /* Rounded corners */
-  padding: 10px; /* Padding inside course cards */
-  margin-right: 10px; /* Space between cards */
-  margin-bottom: 10px; /* Space below cards */
-  flex: 1 1 150px; /* Flex properties for responsiveness */
-}
-
-/* Footer styles */
-footer {
-  text-align: center; /* Center text in footer */
-  padding: 10px 0; /* Padding for footer */
-  background-color: #007acc; /* Same primary color as header */
-  color: white; /* Text color for footer */
-}
-/* Basic styles */
-body {
-  font-family: 'Arial', sans-serif;
+  font-family: 'Roboto', sans-serif; /* Google Font */
+  background-color: #121212; /* Dark Background */
+  color: #FFFFFF; /* High contrast text color */
   margin: 0;
   padding: 0;
 }
 
-header {
-  background: #333;
-  color: white;
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+h1, h2 {
+  color: #FF9800; /* Orange color for headings for emphasis */
 }
 
-.nav-list {
-  list-style: none;
-  display: flex;
-  margin: 0;
-}
-
-.nav-list li {
-  margin: 0 10px;
-}
-
-.nav-list a {
-  color: white;
+a {
+  color: #00BCD4; /* Bright cyan for links */
   text-decoration: none;
 }
 
-.course {
+a:hover {
+  text-decoration: underline; /* Underline on hover for links */
+}
+
+/* Header Styles */
+header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #1E1E1E; /* Slightly lighter background for header */
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  margin-left: auto; /* Align navigation to the right */
+}
+
+.nav-list li {
+  margin: 0 15px;
+}
+
+button {
+  background-color: #FF9800; /* Button background */
+  color: #FFFFFF; /* Button text color */
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded corners for buttons */
+}
+
+button:hover {
+  background-color: #FF5722; /* Darker orange on hover */
+}
+
+/* Main Container Styles */
+.main-container {
+  display: flex;
+  justify-content: space-between; /* Space between elements */
+  padding: 20px;
+}
+
+/* Certificate Section Styles */
+.certificate-section {
+  padding: 20px;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #1E1E1E; /* Slightly lighter background for footer */
+  text-align: center;
   padding: 10px;
-  border: 1px solid #ccc;
+  position: relative; /* Ensure footer stays at the bottom */
+}
+
+footer p {
   margin: 5px 0;
 }
 
-.completed {
-  background-color: #d4edda; /* Light green background for completed courses */
-  border-color: #c3e6cb; /* Border color for completed courses */
-}
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .main-container {
+      flex-direction: column; /* Stack elements on small screens */
+  }
 
-.footer {
-  text-align: center;
-  padding: 1rem;
-  background: #f1f1f1;
-}
-
-.hamburger {
-  display: none; /* Initially hide the hamburger button */
-}
-
-/* Responsive design */
-@media (max-width: 600px) {
   .nav-list {
-      display: none; /* Hide the menu items initially */
-      flex-direction: column;
+      flex-direction: column; /* Vertical navigation on small screens */
+      display: none; /* Hide by default */
   }
 
   .nav-list.active {
-      display: flex; /* Show the menu items when the hamburger is clicked */
+      display: flex; /* Show when active */
   }
 
   .hamburger {
-      display: block; /* Show the hamburger button */
+      display: block; /* Show hamburger button */
   }
 }
