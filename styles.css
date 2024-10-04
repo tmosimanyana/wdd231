@@ -1,122 +1,80 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #f0f4f8;
-  color: #333;
-}
-
-header {
+/* Styles for the navigation */
+.nav-list {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1c3a57;
-  padding: 10px 20px;
-  color: white;
-}
-
-.profile img {
-  border-radius: 50%;
-}
-
-h1 {
-  font-size: 24px;
-  margin-left: 10px;
-}
-
-nav ul {
+  justify-content: space-around;
   list-style-type: none;
-  display: flex;
-  gap: 15px;
 }
 
-nav ul li a {
+.nav-list li a {
   text-decoration: none;
-  color: white;
+  color: black;
   font-weight: bold;
 }
 
-.main-container {
-  display: flex;
-  justify-content: space-between;
-  padding: 20px;
+/* Course list styling */
+.completed {
+  background-color: #d4edda; /* Light green for completed courses */
+  padding: 10px;
+  margin: 5px 0;
+  border-left: 5px solid #28a745;
 }
 
-.course-work,
-.location {
-  background-color: #e6eaf0;
-  padding: 20px;
-  border-radius: 8px;
-  width: 45%;
+.not-completed {
+  background-color: #f8d7da; /* Light red for incomplete courses */
+  padding: 10px;
+  margin: 5px 0;
+  border-left: 5px solid #dc3545;
 }
 
-.course-work h2, .location h2 {
-  margin-bottom: 15px;
-}
-
-#course-list {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.certificate-section {
-  text-align: center;
-  background-color: #dfe7f1;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 8px;
-}
-
-.filter-buttons {
-  margin-bottom: 15px;
-}
-
+/* Styling for the certificate section */
 .filter-buttons button {
-  padding: 10px 20px;
-  background-color: #1c3a57;
-  color: white;
-  border: none;
-  border-radius: 5px;
   margin: 5px;
+  padding: 10px;
   cursor: pointer;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
 }
 
 .filter-buttons button:hover {
-  background-color: #f29e4c;
+  background-color: #0056b3;
 }
 
-#courses-container {
+/* Styling for the profile and header */
+.profile {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.course-card {
-  background-color: #814c31;
-  color: white;
-  padding: 15px;
-  border-radius: 8px;
-  width: 100px;
+header h1 {
   text-align: center;
-  cursor: pointer;
+  margin-top: 0;
 }
 
-.course-card:hover {
-  background-color: #f29e4c;
-}
-
+/* Footer styling */
 footer {
   text-align: center;
-  padding: 20px;
-  background-color: #1c3a57;
-  color: white;
+  padding: 20px 0;
+  background-color: #f1f1f1;
+  margin-top: 20px;
 }
 
-footer p {
-  margin: 5px;
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .nav-list {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .profile img {
+      width: 60px;
+  }
+
+  .filter-buttons button {
+      width: 100%;
+      margin-bottom: 10px;
+  }
 }
