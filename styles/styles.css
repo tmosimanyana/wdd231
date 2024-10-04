@@ -1,9 +1,9 @@
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* Google Fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 /* Base Styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Use Roboto as the base font */
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -54,7 +54,7 @@ nav a {
     color: #fff; /* White text */
     margin: 0 1rem; /* Space between links */
     text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Bold links */
+    font-weight: 700; /* Bold links */
 }
 
 nav a:hover {
