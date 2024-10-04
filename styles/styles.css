@@ -25,19 +25,25 @@ main img {
 }
 
 /* Typography */
+html {
+    font-size: 16px; /* Base font size */
+}
+
 h1 {
-    font-size: 2rem;
+    font-size: 2.5rem; /* 40px */
     text-align: center;
     margin: 1rem 0;
     color: #333;
 }
 
 h2 {
+    font-size: 2rem; /* 32px */
     margin-top: 1.5rem;
 }
 
 /* Paragraph Styling */
 p {
+    font-size: 1rem; /* 16px */
     padding: 0;
     margin: 0.5rem 0;
 }
@@ -61,6 +67,21 @@ nav a:hover {
     color: #ddd; /* Light grey on hover */
 }
 
+/* Button Styling */
+.button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db; /* Primary color */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover */
+}
+
+.button:hover {
+    background-color: #2980b9; /* Darker shade on hover */
+}
+
 /* Course Filter Buttons */
 #course-filter {
     margin: 1rem 0;
@@ -68,16 +89,6 @@ nav a:hover {
 
 #course-filter button {
     margin: 0 0.5rem;
-    padding: 0.5rem 1rem;
-    border: none;
-    background-color: #3498db; /* Primary color */
-    color: white;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-#course-filter button:hover {
-    background-color: #2980b9; /* Darker shade on hover */
 }
 
 /* Course List */
@@ -97,6 +108,12 @@ nav a:hover {
     border-radius: 5px;
     background-color: #ffffff;
     text-align: center; /* Center the card content */
+    transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition */
+}
+
+.course-card:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add a shadow */
 }
 
 .course-card h3 {
@@ -108,6 +125,8 @@ nav a:hover {
 .completed {
     background-color: #e0f7fa; /* Light blue background for completed courses */
     border-left: 5px solid #0097a7; /* Blue left border */
+    color: #004d40; /* Darker text color for readability */
+    text-decoration: line-through; /* Strikethrough to indicate completion */
 }
 
 /* Credits Total */
