@@ -1,3 +1,14 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Base Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
 /* Main element */
 main {
     max-width: 840px;
@@ -7,44 +18,36 @@ main {
     align-items: center; /* Center content inside the main */
 }
 
-/* Body font */
-body {
-    font-family: 'Roboto', sans-serif; /* Apply Google Font */
-}
-
-/* Profile image */
+/* Profile Image */
 main img {
     width: 150px;
     height: auto;
 }
 
-/* Paragraph styling */
+/* Typography */
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem 0;
+    color: #333;
+}
+
+h2 {
+    margin-top: 1.5rem;
+}
+
+/* Paragraph Styling */
 p {
     padding: 0;
-}
-
-/* Aside styling */
-aside {
-    width: 20rem;
-    margin: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.2); 
-    padding: 1rem;
-    background-color: #eee;
-    color: #333;
-    text-align: center;
-}
-
-/* Aside image */
-aside img {
-    width: 200px;
-    height: auto;
+    margin: 0.5rem 0;
 }
 
 /* Navigation Styling */
 nav {
+    display: flex; /* Flex layout for navigation */
+    justify-content: center;
     background-color: #333; /* Dark background */
     padding: 1rem; /* Padding for spacing */
-    text-align: center;
 }
 
 nav a {
@@ -58,15 +61,26 @@ nav a:hover {
     color: #ddd; /* Light grey on hover */
 }
 
-/* Heading 1 Styling */
-h1 {
-    font-size: 2rem;
-    text-align: center;
+/* Course Filter Buttons */
+#course-filter {
     margin: 1rem 0;
-    color: #333;
 }
 
-/* Course Cards Styling */
+#course-filter button {
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: #3498db; /* Primary color */
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#course-filter button:hover {
+    background-color: #2980b9; /* Darker shade on hover */
+}
+
+/* Course List */
 .course-list {
     display: flex;
     flex-wrap: wrap; /* Flex layout to wrap course cards */
@@ -74,6 +88,7 @@ h1 {
     gap: 20px; /* Space between the cards */
 }
 
+/* Course Card Styling */
 .course-card {
     width: 300px; /* Set consistent width for course cards */
     padding: 15px;
@@ -89,9 +104,32 @@ h1 {
     margin-bottom: 10px;
 }
 
+/* Highlight Completed Courses */
 .completed {
     background-color: #e0f7fa; /* Light blue background for completed courses */
     border-left: 5px solid #0097a7; /* Blue left border */
+}
+
+/* Credits Total */
+#credits-total {
+    margin: 1.5rem 0;
+}
+
+/* Aside Styling */
+aside {
+    width: 20rem;
+    margin: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    background-color: #eee;
+    color: #333;
+    text-align: center;
+}
+
+/* Aside Image */
+aside img {
+    width: 200px;
+    height: auto;
 }
 
 /* Footer styling */
@@ -99,4 +137,19 @@ footer {
     margin-top: 15px;
     border-top: 1px solid #000;
     text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack links on smaller screens */
+    }
+
+    .course-list {
+        flex-direction: column; /* Stack course cards vertically on smaller screens */
+    }
+
+    .course-card {
+        width: 100%; /* Full width on smaller screens */
+    }
 }
