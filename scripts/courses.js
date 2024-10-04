@@ -1,9 +1,9 @@
 const courses = [
-    { id: 1, subject: 'CSE', number: 110, title: 'Introduction to Programming', credits: 2, completed: false },
-    { id: 2, subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 2, completed: false },
-    { id: 3, subject: 'CSE', number: 111, title: 'Programming with Functions', credits: 2, completed: false },
-    { id: 4, subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 2, completed: false },
-    { id: 5, subject: 'WDD', number: 131, title: 'Dynamic Web Fundamentals', credits: 2, completed: false },
+    { id: 1, subject: 'CSE', number: 110, title: 'Introduction to Programming', credits: 2, completed: true },
+    { id: 2, subject: 'WDD', number: 130, title: 'Web Fundamentals', credits: 2, completed: true },
+    { id: 3, subject: 'CSE', number: 111, title: 'Programming with Functions', credits: 2, completed: true },
+    { id: 4, subject: 'CSE', number: 210, title: 'Programming with Classes', credits: 2, completed: true },
+    { id: 5, subject: 'WDD', number: 131, title: 'Dynamic Web Fundamentals', credits: 2, completed: true },
     { id: 6, subject: 'WDD', number: 231, title: 'Frontend Web Development I', credits: 2, completed: false }
 ];
 
@@ -15,8 +15,9 @@ function displayCourses(filter) {
         if (filter === 'all' || course.subject === filter) {
             const courseItem = document.createElement('div');
             courseItem.classList.add('course-item');
+            // Add a class for completed courses
             if (course.completed) {
-                courseItem.classList.add('completed'); // Add a class for completed courses
+                courseItem.classList.add('completed'); // New class for completed courses
             }
             courseItem.innerHTML = `
                 <h3>${course.title}</h3>
@@ -45,20 +46,17 @@ function toggleCourseCompletion(courseId) {
 
 function calculateCredits() {
     const totalCredits = courses.reduce((sum, course) => course.completed ? sum + course.credits : sum, 0);
-    document.getElementById('total-credits').textContent = totalCredits;
+    document.getElementById('total-credits').textContent = totalCredits; // Update total credits displayed
 }
 
-function updateFooter() {
-    const currentYear = new Date().getFullYear();
-    document.getElementById('currentyear').textContent = currentYear;
-    document.getElementById('lastModified').textContent = `Last Modified: ${document.lastModified}`;
-}
+// Add event listeners for course filtering buttons
+document.getElementById('all-courses').addEventListener('click', () => displayCourses('all'));
+document.getElementById('cse-courses').addEventListener('click', () => displayCourses('CSE'));
+document.getElementById('wdd-courses').addEventListener('click', () => displayCourses('WDD'));
 
+// Function to display current year and last modified date
 document.addEventListener('DOMContentLoaded', () => {
     displayCourses('all');
-    updateFooter();
-
-    document.getElementById('all-courses').addEventListener('click', () => displayCourses('all'));
-    document.getElementById('cse-courses').addEventListener('click', () => displayCourses('CSE'));
-    document.getElementById('wdd-courses').addEventListener('click', () => displayCourses('WDD'));
+    document.getElementById('currentyear').textContent = new Date().getFullYear();
+    document.getElementById('lastModified').textContent = `Last modified: ${document.lastModified}`;
 });
