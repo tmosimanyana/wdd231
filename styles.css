@@ -1,99 +1,142 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: 'Roboto', sans-serif; /* Change this to your selected font */
+  background-color: #f4f4f4; /* Light background color */
+  color: #333; /* Dark text color for good contrast */
+  line-height: 1.6; /* Improve readability */
 }
 
+/* Header styles */
 header {
-  background-color: #003366;
-  color: white;
-  text-align: center;
-  padding: 10px;
+  background-color: #007acc; /* Primary color for the header */
+  color: white; /* Text color for header */
+  padding: 10px 20px; /* Padding around the header */
+  display: flex; /* Flexbox for header layout */
+  align-items: center; /* Center items vertically */
+  justify-content: space-between; /* Space between profile and nav */
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  justify-content: center;
+/* Profile styles */
+.profile img {
+  width: 50px; /* Fixed size for the profile picture */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 50%; /* Circular profile picture */
 }
 
-nav ul li {
-  margin: 0 15px;
+/* Navigation styles */
+nav {
+  flex-grow: 1; /* Allow nav to grow */
 }
 
-nav ul li a {
-  color: white;
-  text-decoration: none;
+.nav-list {
+  list-style: none; /* Remove default list style */
+  display: flex; /* Horizontal layout for larger screens */
+  justify-content: flex-end; /* Align items to the right */
 }
 
-button.hamburger {
-  display: none;
-  font-size: 24px;
-  background-color: #003366;
-  color: white;
-  border: none;
-  cursor: pointer;
+.nav-list li {
+  margin-left: 20px; /* Spacing between menu items */
 }
 
+.nav-list a {
+  color: white; /* Menu item text color */
+  text-decoration: none; /* Remove underline */
+  padding: 10px; /* Padding for clickability */
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.nav-list a:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Hover effect */
+  border-radius: 5px; /* Rounded corners on hover */
+}
+
+.hamburger {
+  display: none; /* Hide hamburger by default */
+  font-size: 30px; /* Larger size for visibility */
+  background: none; /* Remove background */
+  color: white; /* Hamburger icon color */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor */
+}
+
+/* Main styles */
+main {
+  display: flex; /* Flexbox for main content */
+  flex-direction: column; /* Default to column layout */
+  padding: 20px; /* Padding for main content */
+  gap: 20px; /* Space between sections */
+}
+
+/* Course filters */
 .course-filters {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
+  display: flex; /* Flex layout for filters */
+  justify-content: space-between; /* Space between buttons */
 }
 
-.course-filters button {
-  margin: 0 10px;
-  padding: 10px 20px;
-  background-color: #003366;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
+/* Courses container */
 .courses-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid; /* Use grid for courses layout */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Spacing between cards */
 }
 
-.course-box {
-  background-color: #f44336;
-  color: white;
-  margin: 10px;
-  padding: 20px;
-  border-radius: 5px;
-  width: 300px;
+.course-card {
+  background-color: white; /* Background color for cards */
+  border: 1px solid #ccc; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  padding: 15px; /* Padding inside cards */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s; /* Animation for hover effect */
 }
 
-.course-box h3 {
-  margin-top: 0;
+.course-card.completed {
+  background-color: #e0ffe0; /* Light green background for completed courses */
 }
 
+/* Hover effect on course cards */
+.course-card:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* Footer styles */
 footer {
-  background-color: #003366;
-  color: white;
-  text-align: center;
-  padding: 10px;
+  text-align: center; /* Center text in footer */
+  padding: 10px 0; /* Padding for footer */
+  background-color: #007acc; /* Same primary color as header */
+  color: white; /* Text color for footer */
 }
 
+/* Responsive styles */
 @media (max-width: 768px) {
+  .nav-list {
+      display: none; /* Hide nav list on small screens */
+      flex-direction: column; /* Vertical layout for hamburger menu */
+      position: absolute; /* Position it absolutely */
+      top: 60px; /* Position below header */
+      right: 0; /* Align to the right */
+      background-color: #007acc; /* Background color for dropdown */
+      width: 100%; /* Full width */
+  }
+
+  .nav-list.show {
+      display: flex; /* Show nav when hamburger is clicked */
+  }
+
   .hamburger {
-      display: block;
+      display: block; /* Show hamburger on small screens */
   }
 
-  nav ul {
-      display: none;
-      flex-direction: column;
-      background-color: #003366;
+  main {
+      flex-direction: column; /* Stack elements in a column for small screens */
   }
 
-  nav ul.show {
-      display: flex;
-  }
-
-  nav ul li {
-      margin: 10px 0;
+  .course-filters {
+      flex-direction: column; /* Stack filters vertically */
   }
 }

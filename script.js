@@ -5,9 +5,9 @@ const courses = [
         title: 'Introduction to Programming',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course will introduce students to programming. It will introduce the building blocks of programming languages.',
+        description: 'This course will introduce students to programming.',
         technology: ['Python'],
-        completed: true  // Completed course
+        completed: true // Change to true if completed
     },
     {
         subject: 'WDD',
@@ -15,9 +15,9 @@ const courses = [
         title: 'Web Fundamentals',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'This course introduces students to the World Wide Web and to careers in web design and development.',
+        description: 'This course introduces students to the World Wide Web.',
         technology: ['HTML', 'CSS'],
-        completed: true  // Completed course
+        completed: false // Change to true if completed
     },
     {
         subject: 'CSE',
@@ -25,9 +25,9 @@ const courses = [
         title: 'Programming with Functions',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'Learn to write, debug, and test functions.',
+        description: 'CSE 111 students become more organized, efficient, and powerful programmers.',
         technology: ['Python'],
-        completed: false
+        completed: true // Change to true if completed
     },
     {
         subject: 'CSE',
@@ -35,9 +35,9 @@ const courses = [
         title: 'Programming with Classes',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'Introduction to classes, objects, inheritance, and polymorphism.',
+        description: 'This course will introduce the notion of classes and objects.',
         technology: ['C#'],
-        completed: false
+        completed: false // Change to true if completed
     },
     {
         subject: 'WDD',
@@ -45,9 +45,9 @@ const courses = [
         title: 'Dynamic Web Fundamentals',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'Create dynamic websites using JavaScript.',
+        description: 'This course builds on prior experience in Web Fundamentals and programming.',
         technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: false
+        completed: true // Change to true if completed
     },
     {
         subject: 'WDD',
@@ -55,62 +55,47 @@ const courses = [
         title: 'Frontend Web Development I',
         credits: 2,
         certificate: 'Web and Computer Programming',
-        description: 'Focus on user experience, accessibility, and performance optimization.',
+        description: 'This course focuses on user experience and performance optimization.',
         technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: false
+        completed: false // Change to true if completed
     }
 ];
 
-// Function to display courses dynamically
-function displayCourses(filteredCourses) {
-    const courseList = document.getElementById('courses-container');
-    courseList.innerHTML = ''; // Clear previous courses
-
-    let totalCredits = 0;
-
-    filteredCourses.forEach(course => {
-        const courseDiv = document.createElement('div');
-        courseDiv.classList.add('course-box');
-
-        courseDiv.style.backgroundColor = course.completed ? '#4CAF50' : '#f44336'; // Change color if completed
-
-        courseDiv.innerHTML = `
-            <h3>${course.subject} ${course.number}: ${course.title}</h3>
-            <p>${course.description}</p>
-            <p><strong>Credits:</strong> ${course.credits}</p>
-        `;
-
-        courseList.appendChild(courseDiv);
-        totalCredits += course.credits;
-    });
-
-    // Update total credits
-    const totalCreditsElement = document.getElementById('total-credits');
-    totalCreditsElement.textContent = `Total Credits: ${totalCredits}`;
-}
-
-// Filter courses by subject or show all
-function filterCourses(category) {
-    let filteredCourses = category === 'all' ? courses : courses.filter(course => course.subject === category);
-    displayCourses(filteredCourses);
-}
-
-// Display all courses on page load
-document.addEventListener('DOMContentLoaded', () => {
-    filterCourses('all');
+// Display courses on page load
+document.addEventListener("DOMContentLoaded", () => {
+    displayCourses(courses);
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+    document.getElementById("last-modified").textContent = document.lastModified;
 });
 
-// Dynamic copyright year and last modified date
-const currentYear = new Date().getFullYear();
-document.getElementById('current-year').textContent = currentYear;
+// Function to display courses
+function displayCourses(courseList) {
+    const coursesContainer = document.getElementById('courses-container');
+    coursesContainer.innerHTML = ''; // Clear existing courses
+    let totalCredits = 0;
 
-const lastModified = document.lastModified;
-document.getElementById('last-modified').textContent = lastModified;
+    courseList.forEach(course => {
+        const courseCard = document.createElement('div');
+        courseCard.className = 'course-card' + (course.completed ? ' completed' : '');
+        courseCard.innerHTML = `
+            <h2>${course.title} (${course.subject} ${course.number})</h2>
+            <p>${course.description}</p>
+            <p>Credits: ${course.credits}</p>
+        `;
+        coursesContainer.appendChild(courseCard);
+        if (course.completed) totalCredits += course.credits;
+    });
 
-// Responsive Menu
-function toggleMenu() {
-    const nav = document.querySelector('nav ul');
-    nav.classList.toggle('show');
+    document.getElementById('total-credits').textContent = `Total Credits: ${totalCredits}`;
 }
 
-document.querySelector('.hamburger').addEventListener('click', toggleMenu);
+// Function to filter courses
+function filterCourses(filter) {
+    let filteredCourses;
+    if (filter === 'all') {
+        filteredCourses = courses;
+    } else {
+        filteredCourses = courses.filter(course => course.subject === filter);
+    }
+    displayCourses(filteredCourses);
+}
