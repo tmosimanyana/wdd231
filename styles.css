@@ -1,80 +1,99 @@
-/* Styles for the navigation */
-.nav-list {
-  display: flex;
-  justify-content: space-around;
-  list-style-type: none;
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-.nav-list li a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
-
-/* Course list styling */
-.completed {
-  background-color: #d4edda; /* Light green for completed courses */
-  padding: 10px;
-  margin: 5px 0;
-  border-left: 5px solid #28a745;
-}
-
-.not-completed {
-  background-color: #f8d7da; /* Light red for incomplete courses */
-  padding: 10px;
-  margin: 5px 0;
-  border-left: 5px solid #dc3545;
-}
-
-/* Styling for the certificate section */
-.filter-buttons button {
-  margin: 5px;
-  padding: 10px;
-  cursor: pointer;
-  border: none;
-  background-color: #007bff;
+header {
+  background-color: #003366;
   color: white;
-  border-radius: 5px;
+  text-align: center;
+  padding: 10px;
 }
 
-.filter-buttons button:hover {
-  background-color: #0056b3;
-}
-
-/* Styling for the profile and header */
-.profile {
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-bottom: 20px;
 }
 
-header h1 {
-  text-align: center;
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+button.hamburger {
+  display: none;
+  font-size: 24px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.course-filters {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.course-filters button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #003366;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.courses-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.course-box {
+  background-color: #f44336;
+  color: white;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.course-box h3 {
   margin-top: 0;
 }
 
-/* Footer styling */
 footer {
+  background-color: #003366;
+  color: white;
   text-align: center;
-  padding: 20px 0;
-  background-color: #f1f1f1;
-  margin-top: 20px;
+  padding: 10px;
 }
 
-/* Responsive Layout */
 @media (max-width: 768px) {
-  .nav-list {
+  .hamburger {
+      display: block;
+  }
+
+  nav ul {
+      display: none;
       flex-direction: column;
-      align-items: center;
+      background-color: #003366;
   }
 
-  .profile img {
-      width: 60px;
+  nav ul.show {
+      display: flex;
   }
 
-  .filter-buttons button {
-      width: 100%;
-      margin-bottom: 10px;
+  nav ul li {
+      margin: 10px 0;
   }
 }

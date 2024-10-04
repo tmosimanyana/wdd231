@@ -1,75 +1,116 @@
-// Array of course objects
 const courses = [
     {
         subject: 'CSE',
         number: 110,
         title: 'Introduction to Programming',
         credits: 2,
-        description: 'Learn the basics of programming using Python.',
-        completed: true
+        certificate: 'Web and Computer Programming',
+        description: 'This course will introduce students to programming. It will introduce the building blocks of programming languages.',
+        technology: ['Python'],
+        completed: true  // Completed course
     },
     {
         subject: 'WDD',
         number: 130,
         title: 'Web Fundamentals',
         credits: 2,
-        description: 'Learn HTML and CSS for building basic websites.',
+        certificate: 'Web and Computer Programming',
+        description: 'This course introduces students to the World Wide Web and to careers in web design and development.',
+        technology: ['HTML', 'CSS'],
+        completed: true  // Completed course
+    },
+    {
+        subject: 'CSE',
+        number: 111,
+        title: 'Programming with Functions',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'Learn to write, debug, and test functions.',
+        technology: ['Python'],
         completed: false
     },
     {
         subject: 'CSE',
-        number: 220,
-        title: 'Advanced Programming',
-        credits: 3,
-        description: 'Advanced concepts in object-oriented programming.',
+        number: 210,
+        title: 'Programming with Classes',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'Introduction to classes, objects, inheritance, and polymorphism.',
+        technology: ['C#'],
         completed: false
     },
     {
         subject: 'WDD',
-        number: 230,
-        title: 'JavaScript for Web Development',
-        credits: 3,
-        description: 'Learn JavaScript to create dynamic and interactive web pages.',
-        completed: true
+        number: 131,
+        title: 'Dynamic Web Fundamentals',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'Create dynamic websites using JavaScript.',
+        technology: ['HTML', 'CSS', 'JavaScript'],
+        completed: false
+    },
+    {
+        subject: 'WDD',
+        number: 231,
+        title: 'Frontend Web Development I',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'Focus on user experience, accessibility, and performance optimization.',
+        technology: ['HTML', 'CSS', 'JavaScript'],
+        completed: false
     }
 ];
 
 // Function to display courses dynamically
 function displayCourses(filteredCourses) {
-    const courseList = document.getElementById('course-list');
-    courseList.innerHTML = '';  // Clear any previous content
+    const courseList = document.getElementById('courses-container');
+    courseList.innerHTML = ''; // Clear previous courses
 
-    // Create list items for each course
+    let totalCredits = 0;
+
     filteredCourses.forEach(course => {
-        const li = document.createElement('li');
-        li.innerHTML = `${course.subject} ${course.number}: ${course.title} - ${course.credits} Credits <br>${course.description}`;
-        
-        // Add CSS class based on completion status
-        li.classList.add(course.completed ? 'completed' : 'not-completed');
-        
-        courseList.appendChild(li);
+        const courseDiv = document.createElement('div');
+        courseDiv.classList.add('course-box');
+
+        courseDiv.style.backgroundColor = course.completed ? '#4CAF50' : '#f44336'; // Change color if completed
+
+        courseDiv.innerHTML = `
+            <h3>${course.subject} ${course.number}: ${course.title}</h3>
+            <p>${course.description}</p>
+            <p><strong>Credits:</strong> ${course.credits}</p>
+        `;
+
+        courseList.appendChild(courseDiv);
+        totalCredits += course.credits;
     });
+
+    // Update total credits
+    const totalCreditsElement = document.getElementById('total-credits');
+    totalCreditsElement.textContent = `Total Credits: ${totalCredits}`;
 }
 
-// Function to filter courses by subject
-function filterCourses(subject) {
-    let filteredCourses;
-
-    // Filter courses based on subject
-    if (subject === 'all') {
-        filteredCourses = courses;  // Show all courses
-    } else {
-        filteredCourses = courses.filter(course => course.subject === subject);
-    }
-
-    // Display filtered courses
+// Filter courses by subject or show all
+function filterCourses(category) {
+    let filteredCourses = category === 'all' ? courses : courses.filter(course => course.subject === category);
     displayCourses(filteredCourses);
 }
 
-// Display all courses when the page loads
-document.addEventListener('DOMContentLoaded', function() {
-    displayCourses(courses);
+// Display all courses on page load
+document.addEventListener('DOMContentLoaded', () => {
+    filterCourses('all');
 });
 
-// Dynamically update the footer with the current date
-document.getElementById('last-updated').textContent = document.lastModified;
+// Dynamic copyright year and last modified date
+const currentYear = new Date().getFullYear();
+document.getElementById('current-year').textContent = currentYear;
+
+const lastModified = document.lastModified;
+document.getElementById('last-modified').textContent = lastModified;
+
+// Responsive Menu
+function toggleMenu() {
+    const nav = document.querySelector('nav ul');
+    nav.classList.toggle('show');
+}
+
+document.querySelector('.hamburger').addEventListener('click', toggleMenu);
