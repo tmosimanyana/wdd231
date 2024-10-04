@@ -36,7 +36,7 @@
             <div class="location">
                 <h2>Gaborone, Botswana</h2>
                 <img src="images/zebra.webp" alt="Zebra Animals" width="300">
-                <p>Zebra Animals </p>
+                <p>Zebra Animals</p>
             </div>
         </section>
         
@@ -47,7 +47,6 @@
                 <button onclick="filterCourses('CSE')">CSE</button>
                 <button onclick="filterCourses('WDD')">WDD</button>
             </div>
-            <div id="courses-container"></div>
         </section>
     </main>
 
@@ -55,5 +54,25 @@
         <p>© <span id="current-year"></span> Tinny B. Mosimanyana | Botswana</p>
         <p>Last Updated: <span id="last-modified"></span></p>
     </footer>
+
+    <script>
+        // Set the current year in the footer
+        const currentYear = new Date().getFullYear();
+        document.getElementById('current-year').innerText = currentYear;
+
+        // Set the last modified date in the footer
+        const lastModified = document.lastModified;
+        document.getElementById('last-modified').innerText = lastModified;
+
+        // Hamburger menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navList = document.querySelector('.nav-list');
+
+        hamburger.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        // Your existing JavaScript functions like filterCourses() can go here.
+    </script>
 </body>
 </html>
