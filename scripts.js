@@ -1,102 +1,73 @@
-// Course List Array
-const courses = [
-    {
-        subject: 'CSE',
-        number: 110,
-        title: 'Introduction to Programming',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course will introduce students to programming. It will introduce the building blocks of programming languages (variables, decisions, calculations, loops, array, and input/output) and use them to solve problems.',
-        technology: ['Python'],
-        completed: false
-    },
-    {
-        subject: 'WDD',
-        number: 130,
-        title: 'Web Fundamentals',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course introduces students to the World Wide Web and to careers in web site design and development. The course is hands on with students actually participating in simple web designs and programming. It is anticipated that students who complete this course will understand the fields of web design and development and will have a good idea if they want to pursue this degree as a major.',
-        technology: ['HTML', 'CSS'],
-        completed: false
-    },
-    {
-        subject: 'CSE',
-        number: 111,
-        title: 'Programming with Functions',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'CSE 111 students become more organized, efficient, and powerful computer programmers by learning to research and call functions written by others; to write, call , debug, and test their own functions; and to handle errors within functions. CSE 111 students write programs with functions to solve problems in many disciplines, including business, physical science, human performance, and humanities.',
-        technology: ['Python'],
-        completed: false
-    },
-    {
-        subject: 'CSE',
-        number: 210,
-        title: 'Programming with Classes',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course will introduce the notion of classes and objects. It will present encapsulation at a conceptual level. It will also work with inheritance and polymorphism.',
-        technology: ['C#'],
-        completed: false
-    },
-    {
-        subject: 'WDD',
-        number: 131,
-        title: 'Dynamic Web Fundamentals',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course builds on prior experience in Web Fundamentals and programming. Students will learn to create dynamic websites that use JavaScript to respond to events, update content, and create responsive user experiences.',
-        technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: false
-    },
-    {
-        subject: 'WDD',
-        number: 231,
-        title: 'Frontend Web Development I',
-        credits: 2,
-        certificate: 'Web and Computer Programming',
-        description: 'This course builds on prior experience with Dynamic Web Fundamentals and programming. Students will focus on user experience, accessibility, compliance, performance optimization, and basic API usage.',
-        technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: false
+// Typing Effect
+document.addEventListener('DOMContentLoaded', () => {
+    const text = "My Course Home Page";
+    let index = 0;
+    const typingSpeed = 100; // Speed in milliseconds
+
+    function typeText() {
+        if (index < text.length) {
+            document.getElementById('typing-effect').textContent += text.charAt(index);
+            index++;
+            setTimeout(typeText, typingSpeed);
+        }
     }
-];
+    typeText();
+});
 
-// Function to display courses
-function displayCourses(filter) {
-    const courseList = document.getElementById('course-list');
-    courseList.innerHTML = '';
-    
-    const filteredCourses = courses.filter(course => filter === 'all' || course.subject === filter);
+// Fade-in effect on scroll
+function handleScroll() {
+    const elements = document.querySelectorAll('.fade-in');
+    const windowHeight = window.innerHeight;
 
-    const totalCredits = filteredCourses.reduce((acc, course) => acc + course.credits, 0);
-    document.getElementById('total-credits').innerText = totalCredits;
+    elements.forEach(el => {
+        const positionFromTop = el.getBoundingClientRect().top;
 
-    filteredCourses.forEach(course => {
-        const courseCard = document.createElement('div');
-        courseCard.className = `course-card ${course.completed ? 'completed' : ''}`;
-        
-        courseCard.innerHTML = `
-            <h3>${course.title}</h3>
-            <p><strong>Subject:</strong> ${course.subject} ${course.number}</p>
-            <p><strong>Credits:</strong> ${course.credits}</p>
-            <p><strong>Certificate:</strong> ${course.certificate}</p>
-            <p><strong>Description:</strong> ${course.description}</p>
-            <p><strong>Technology:</strong> ${course.technology.join(', ')}</p>
-        `;
-        
-        courseList.appendChild(courseCard);
+        if (positionFromTop - windowHeight <= 0) {
+            el.classList.add('visible');
+        }
     });
 }
 
-// Event listeners for filtering courses
-document.getElementById('show-cse').addEventListener('click', () => displayCourses('CSE'));
-document.getElementById('show-wdd').addEventListener('click', () => displayCourses('WDD'));
-document.getElementById('show-all').addEventListener('click', () => displayCourses('all'));
+window.addEventListener('scroll', handleScroll);
 
-// Set current year and last modified date
-document.getElementById('currentyear').innerText = new Date().getFullYear();
-document.getElementById('lastModified').innerText = `Last modified: ${document.lastModified}`;
+// Lightbox functionality
+document.querySelectorAll('.lightbox-img').forEach(img => {
+    img.addEventListener('click', function() {
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        lightbox.style.display = 'block';
+        lightboxImg.src = this.src;
+    });
+});
 
-// Initial display of all courses
-displayCourses('all');
+document.querySelector('.close').addEventListener('click', function() {
+    document.getElementById('lightbox').style.display = 'none';
+});
+
+// Back-to-Top Button
+const topButton = document.getElementById("back-to-top");
+
+window.onscroll = function() {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+        topButton.style.display = "block";
+    } else {
+        topButton.style.display = "none";
+    }
+};
+
+topButton.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+
+// Slideshow functionality (Optional, if you want to add a slideshow)
+let slideIndex = 0;
+function showSlides() {
+    const slides = document.querySelectorAll(".mySlides");
+    slides.forEach((slide) => slide.style.display = "none");
+    slideIndex++;
+    if (slideIndex > slides.length) slideIndex = 1;
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 5000); // Change slide every 5 seconds
+}
+
+showSlides();
