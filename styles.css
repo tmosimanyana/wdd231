@@ -71,11 +71,12 @@ header {
   width: 200px;
   text-align: center;
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .course-card:hover {
   transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .course-card h3 {
@@ -105,10 +106,23 @@ header {
 footer {
   text-align: center;
   margin-top: 40px;
+  background-color: #f1f1f1;
+  padding: 20px 0;
   color: #333;
   font-size: 0.9rem;
 }
 
 footer p {
   margin: 5px 0;
+}
+
+/* Responsive Typography */
+@media (max-width: 600px) {
+  .introduction h1, .courses h2, .about h2 {
+    font-size: 2rem;
+  }
+
+  .course-card {
+    width: 100%;
+  }
 }
