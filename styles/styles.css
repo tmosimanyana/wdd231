@@ -1,46 +1,21 @@
-/* Google Font */
-body {
-    font-family: 'Roboto', sans-serif; /* Use Google Font */
-}
-
 /* Main element */
 main {
-    max-width: 840px; /* Limit width for better readability */
+    max-width: 840px;
     margin: 0 auto; /* Center the content horizontally */
     display: flex;
-    flex-direction: column; /* Stack children vertically */
+    flex-direction: column;
     align-items: center; /* Center content inside the main */
 }
 
-/* Navigation Styling */
-nav {
-    display: flex; /* Use Flexbox for nav */
-    justify-content: center; /* Center align navigation items */
-    background-color: #333; /* Dark background */
-    padding: 1rem; /* Padding for spacing */
+/* Body font */
+body {
+    font-family: 'Roboto', sans-serif; /* Apply Google Font */
 }
 
-nav a {
-    color: #fff; /* White text */
-    margin: 0 1rem; /* Space between links */
-    text-decoration: none; /* Remove underline */
-    font-weight: bold; /* Bold links */
-}
-
-nav a:hover {
-    color: #ddd; /* Light grey on hover */
-}
-
-/* Course filter buttons Flexbox */
-.flex-buttons {
-    display: flex; /* Use Flexbox for course filter buttons */
-    justify-content: center; /* Center align buttons */
-    margin: 1rem 0; /* Add some spacing */
-}
-
-.flex-buttons button {
-    margin: 0 10px; /* Space between buttons */
-    padding: 10px 20px; /* Button padding */
+/* Profile image */
+main img {
+    width: 150px;
+    height: auto;
 }
 
 /* Paragraph styling */
@@ -50,7 +25,7 @@ p {
 
 /* Aside styling */
 aside {
-    width: 20rem; /* Fixed width for the aside */
+    width: 20rem;
     margin: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.2); 
     padding: 1rem;
@@ -65,10 +40,36 @@ aside img {
     height: auto;
 }
 
+/* Navigation Styling */
+nav {
+    background-color: #333; /* Dark background */
+    padding: 1rem; /* Padding for spacing */
+    text-align: center;
+}
+
+nav a {
+    color: #fff; /* White text */
+    margin: 0 1rem; /* Space between links */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Bold links */
+}
+
+nav a:hover {
+    color: #ddd; /* Light grey on hover */
+}
+
+/* Heading 1 Styling */
+h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin: 1rem 0;
+    color: #333;
+}
+
 /* Course Cards Styling */
 .course-list {
-    display: flex; /* Use Flexbox for course cards */
-    flex-wrap: wrap; /* Allow cards to wrap to the next line */
+    display: flex;
+    flex-wrap: wrap; /* Flex layout to wrap course cards */
     justify-content: center; /* Center align the cards */
     gap: 20px; /* Space between the cards */
 }
@@ -88,7 +89,6 @@ aside img {
     margin-bottom: 10px;
 }
 
-/* Completed courses styling */
 .completed {
     background-color: #e0f7fa; /* Light blue background for completed courses */
     border-left: 5px solid #0097a7; /* Blue left border */
