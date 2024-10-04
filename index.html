@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <h1 id="typing-effect"></h1> <!-- Typing effect will apply here -->
+        <h1>My Course Home Page</h1>
         <nav class="navbar">
             <ul>
                 <li><a href="#">Home</a></li>
@@ -27,80 +27,39 @@
     </header>
 
     <main>
-        <section class="profile fade-in"> <!-- Fade-in effect -->
+        <section class="profile">
             <h2>Profile</h2>
             <div class="profile-container">
                 <img src="images/profile.webp" alt="Profile Picture of Tinny Bothepha Mosimanyana" class="profile-img">
                 <div class="profile-text">
-                    <p>I am Tinny Bothepha Mosimanyana, a tech and business consultant passionate about web development and programming.</p>
+                    <p>I am Tinny Bothepha Mosimanyana, a tech and business consultant passionate about web development and programming. Combining IT and business consultancy, I offer modern solutions to enterprises.</p>
                 </div>
             </div>
         </section>
 
-        <section class="location fade-in"> <!-- Fade-in effect -->
+        <section class="location">
             <h2>Location</h2>
             <div class="location-container">
                 <img src="images/botswana.png" alt="Location of Tinny Bothepha Mosimanyana - Gaborone, Botswana" class="location-img">
             </div>
         </section>
 
-        <section class="courses fade-in"> <!-- Fade-in effect -->
+        <section class="courses">
             <h2>Courses Completed</h2>
-            <div class="course-grid">
-                <!-- Course card with flip effect -->
-                <div class="course-card flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <h3>Introduction to Programming</h3>
-                            <p>Credits: 2</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <p>Learn the basics of programming with Python.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Repeat for other courses with flip effect -->
-                <div class="course-card flip-card">
-                    <div class="flip-card-inner">
-                        <div class="flip-card-front">
-                            <h3>Web Fundamentals</h3>
-                            <p>Credits: 2</p>
-                        </div>
-                        <div class="flip-card-back">
-                            <p>Learn HTML, CSS for web fundamentals.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Add more flip cards as necessary -->
+            <div class="filter-buttons">
+                <button onclick="displayCourses('all')">All Courses</button>
+                <button onclick="displayCourses('CSE')">CSE Courses</button>
+                <button onclick="displayCourses('WDD')">WDD Courses</button>
             </div>
-            <p>Total Credits: <span id="total-credits">10</span></p>
+            <div id="course-container" class="course-grid"></div>
+            <p>Total Credits: <span id="total-credits">0</span></p>
         </section>
-
-        <section class="parallax"></section> <!-- Parallax section -->
-        <section class="content">
-            <h2>Welcome to My Portfolio</h2>
-            <p>Check out my work and courses.</p>
-        </section>
-        <section class="parallax"></section>
-
-        <div class="gallery">
-            <img src="images/thumbnail.jpg" alt="Portfolio Image" class="lightbox-img"> <!-- Image Lightbox -->
-        </div>
     </main>
-
-    <!-- Back-to-Top button -->
-    <button id="back-to-top" title="Go to top">Top</button>
 
     <footer>
         <p>&copy; <span id="currentyear"></span> Tinny Bothepha Mosimanyana, Botswana.</p>
         <p id="lastModified"></p>
     </footer>
-
-    <!-- Lightbox for the image -->
-    <div id="lightbox" class="lightbox">
-        <span class="close">&times;</span>
-        <img class="lightbox-content" id="lightbox-img">
-    </div>
 </body>
 
 </html>

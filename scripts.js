@@ -1,73 +1,76 @@
-// Typing Effect
-document.addEventListener('DOMContentLoaded', () => {
-    const text = "My Course Home Page";
-    let index = 0;
-    const typingSpeed = 100; // Speed in milliseconds
+const courses = [
+    {
+        subject: 'CSE',
+        number: 110,
+        title: 'Introduction to Programming',
+        credits: 2,
+        completed: true,
+        description: 'This course will introduce students to programming...'
+    },
+    {
+        subject: 'WDD',
+        number: 130,
+        title: 'Web Fundamentals',
+        credits: 2,
+        completed: true,
+        description: 'This course introduces students to the World Wide Web...'
+    },
+    {
+        subject: 'CSE',
+        number: 111,
+        title: 'Programming with Functions',
+        credits: 2,
+        completed: true,
+        description: 'CSE 111 students become more organized...'
+    },
+    {
+        subject: 'WDD',
+        number: 231,
+        title: 'Frontend Web Development I',
+        credits: 2,
+        completed: false,
+        description: 'This course builds on prior experience with Dynamic Web Fundamentals...'
+    },
+    // Add more courses as needed
+];
 
-    function typeText() {
-        if (index < text.length) {
-            document.getElementById('typing-effect').textContent += text.charAt(index);
-            index++;
-            setTimeout(typeText, typingSpeed);
-        }
-    }
-    typeText();
-});
+function displayCourses(filter = 'all') {
+    const courseContainer = document.getElementById('course-container');
+    courseContainer.innerHTML = ''; // Clear existing courses
 
-// Fade-in effect on scroll
-function handleScroll() {
-    const elements = document.querySelectorAll('.fade-in');
-    const windowHeight = window.innerHeight;
+    // Filter courses based on selection
+    const filteredCourses = courses.filter(course => {
+        if (filter === 'all') return true; // Show all courses
+        return course.subject === filter; // Filter by subject
+    });
 
-    elements.forEach(el => {
-        const positionFromTop = el.getBoundingClientRect().top;
+    // Total credits counter
+    let totalCredits = 0;
 
-        if (positionFromTop - windowHeight <= 0) {
-            el.classList.add('visible');
+    filteredCourses.forEach(course => {
+        const card = document.createElement('div');
+        // Add 'completed' class if the course is completed
+        card.className = `course-card ${course.completed ? 'completed' : ''}`;
+        card.innerHTML = `
+            <h3>${course.title} (${course.subject} ${course.number})</h3>
+            <p><strong>Credits:</strong> ${course.credits}</p>
+            <p>${course.description}</p>
+        `;
+        courseContainer.appendChild(card);
+
+        // Add to total credits if course is completed
+        if (course.completed) {
+            totalCredits += course.credits;  // Add the course credits if completed
         }
     });
+
+    // Display total credits
+    document.getElementById('total-credits').textContent = totalCredits;
 }
 
-window.addEventListener('scroll', handleScroll);
+// Display current year and last modified date
+document.getElementById('currentyear').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = `Last modified: ${document.lastModified}`;
 
-// Lightbox functionality
-document.querySelectorAll('.lightbox-img').forEach(img => {
-    img.addEventListener('click', function() {
-        const lightbox = document.getElementById('lightbox');
-        const lightboxImg = document.getElementById('lightbox-img');
-        lightbox.style.display = 'block';
-        lightboxImg.src = this.src;
-    });
-});
-
-document.querySelector('.close').addEventListener('click', function() {
-    document.getElementById('lightbox').style.display = 'none';
-});
-
-// Back-to-Top Button
-const topButton = document.getElementById("back-to-top");
-
-window.onscroll = function() {
-    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-        topButton.style.display = "block";
-    } else {
-        topButton.style.display = "none";
-    }
-};
-
-topButton.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-
-// Slideshow functionality (Optional, if you want to add a slideshow)
-let slideIndex = 0;
-function showSlides() {
-    const slides = document.querySelectorAll(".mySlides");
-    slides.forEach((slide) => slide.style.display = "none");
-    slideIndex++;
-    if (slideIndex > slides.length) slideIndex = 1;
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 5000); // Change slide every 5 seconds
-}
-
-showSlides();
+// Initial call to display all courses
+displayCourses('all');

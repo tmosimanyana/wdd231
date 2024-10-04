@@ -1,116 +1,75 @@
-/* Typing effect */
-#typing-effect {
-  font-size: 2em;
-  font-weight: 700;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid;
-  width: 100%;
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-/* Fade-in effect */
-.fade-in {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-}
-
-.fade-in.visible {
-  opacity: 1;
-}
-
-/* Flip card */
-.flip-card {
-  perspective: 1000px;
-}
-
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-}
-
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-card-front, .flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.flip-card-front {
-  background-color: #fff;
-}
-
-.flip-card-back {
-  background-color: #333;
+header {
+  background-color: #282c34;
   color: white;
-  transform: rotateY(180deg);
-}
-
-/* Parallax scrolling */
-.parallax {
-  background-image: url('images/your-background-image.jpg');
-  height: 500px;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-/* Lightbox styles */
-.lightbox {
-  display: none;
-  position: fixed;
-  z-index: 10;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  padding: 10px 20px;
   text-align: center;
-  padding-top: 50px;
 }
 
-.lightbox-content {
-  max-width: 90%;
-  max-height: 80%;
+.navbar ul {
+  list-style: none;
+  padding: 0;
 }
 
-.close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 40px;
+.navbar ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+.navbar a {
   color: white;
-  cursor: pointer;
+  text-decoration: none;
 }
 
-/* Back-to-top button */
-#back-to-top {
-  display: none;
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 99;
-  border: none;
-  outline: none;
-  background-color: #333;
-  color: white;
-  cursor: pointer;
-  padding: 10px;
+.profile, .location, .courses {
+  margin: 20px;
+}
+
+.profile-container {
+  display: flex;
+  align-items: center;
+}
+
+.profile-img {
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.location-container {
+  text-align: center;
+}
+
+.course-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.course-card {
+  border: 1px solid #ccc;
   border-radius: 5px;
+  padding: 15px;
+  width: calc(30% - 20px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-#back-to-top:hover {
-  background-color: #555;
+.course-card.completed {
+  background-color: #e0ffe0; /* Light green for completed courses */
+  border-color: #4caf50; /* Darker green border */
+}
+
+.filter-buttons {
+  margin-bottom: 15px;
+}
+
+footer {
+  background-color: #282c34;
+  color: white;
+  padding: 10px;
+  text-align: center;
 }
