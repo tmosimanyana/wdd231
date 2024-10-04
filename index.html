@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <title>My Portfolio</title>
+    <title>My Portfolio - Course Home Page</title>
     <script src="scripts.js" defer></script>
 </head>
 
@@ -27,31 +27,46 @@
 
     <main>
         <section class="introduction">
-            <h2>Welcome to My Portfolio</h2>
-            <p>This is a showcase of my skills and courses completed in Web and Computer Programming.</p>
-            <!-- Profile Image -->
-            <img src="images/profile.webp" alt="Profile Image" class="profile-image">
-        </section>
-
-        <section class="location">
-            <h2>Location</h2>
-            <p>This is a morula tree, which represents my roots and connection to Botswana.</p>
-            <!-- Location Image -->
-            <img src="images/morula.jpg" alt="Morula Tree" class="location-image">
+            <h1>Welcome to My Course Home Page</h1>
+            <p>This portfolio showcases the skills and courses I have completed in Web and Computer Programming.</p>
         </section>
 
         <section class="courses">
             <h2>Courses Completed</h2>
-            <div id="course-list" class="course-list"></div>
-            <button id="show-cse">Show CSE Courses</button>
-            <button id="show-wdd">Show WDD Courses</button>
-            <button id="show-all">Show All Courses</button>
-            <p>Total Credits: <span id="total-credits">0</span></p>
+            <div class="course-grid">
+                <!-- Each course will be placed in its own div -->
+                <div class="course-card">
+                    <h3>Introduction to Programming</h3>
+                    <p>Credits: 2</p>
+                    <p>Technology: Python</p>
+                </div>
+                <div class="course-card">
+                    <h3>Web Fundamentals</h3>
+                    <p>Credits: 2</p>
+                    <p>Technology: HTML, CSS</p>
+                </div>
+                <div class="course-card">
+                    <h3>Programming with Functions</h3>
+                    <p>Credits: 2</p>
+                    <p>Technology: Python</p>
+                </div>
+                <div class="course-card">
+                    <h3>Dynamic Web Fundamentals</h3>
+                    <p>Credits: 2</p>
+                    <p>Technology: HTML, CSS, JavaScript</p>
+                </div>
+                <div class="course-card">
+                    <h3>Frontend Web Development I</h3>
+                    <p>Credits: 2</p>
+                    <p>Technology: HTML, CSS, JavaScript</p>
+                </div>
+            </div>
+            <p>Total Credits: <span id="total-credits">10</span></p>
         </section>
 
         <section class="about">
             <h2>About Me</h2>
-            <p>My journey as a web developer.</p>
+            <p>I am Tinny Bothepha Mosimanyana, a tech and business consultant with a passion for web development and programming. My journey in tech has helped me combine IT and business consultancy to offer solutions that meet the needs of modern enterprises.</p>
         </section>
     </main>
 
