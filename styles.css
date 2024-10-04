@@ -1,96 +1,78 @@
-/* Global Styles */
+/* Base Styles */
 body {
-  font-family: 'Roboto', sans-serif; /* Google Font */
-  background-color: #121212; /* Dark Background */
-  color: #FFFFFF; /* High contrast text color */
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
   margin: 0;
   padding: 0;
 }
 
-h1, h2 {
-  color: #FF9800; /* Orange color for headings for emphasis */
-}
-
-a {
-  color: #00BCD4; /* Bright cyan for links */
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline; /* Underline on hover for links */
-}
-
-/* Header Styles */
-header {
+/* Navbar Styles */
+.navbar {
   display: flex;
-  align-items: center;
-  padding: 20px;
-  background-color: #1E1E1E; /* Slightly lighter background for header */
+  justify-content: center;
+  background-color: #1e1e1e;
 }
 
-.nav-list {
-  display: flex;
-  list-style: none;
-  margin-left: auto; /* Align navigation to the right */
+.navbar ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.nav-list li {
+.navbar li {
   margin: 0 15px;
 }
 
-button {
-  background-color: #FF9800; /* Button background */
-  color: #FFFFFF; /* Button text color */
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  border-radius: 5px; /* Rounded corners for buttons */
+.navbar a {
+  color: #bb86fc;
+  text-decoration: none;
+  padding: 10px;
+  transition: color 0.3s;
 }
 
-button:hover {
-  background-color: #FF5722; /* Darker orange on hover */
+.navbar a:hover {
+  color: #3700b3;
 }
 
-/* Main Container Styles */
-.main-container {
+/* Main Styles */
+main {
+  padding: 20px;
+}
+
+.introduction, .courses, .about {
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #1e1e1e;
+  border-radius: 5px;
+}
+
+/* Course List Styles */
+.course-list {
   display: flex;
-  justify-content: space-between; /* Space between elements */
-  padding: 20px;
+  flex-wrap: wrap;
 }
 
-/* Certificate Section Styles */
-.certificate-section {
-  padding: 20px;
+.course-card {
+  background-color: #292929;
+  border: 1px solid #bb86fc;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  flex: 1 1 calc(30% - 20px); /* Responsive card width */
+  transition: transform 0.2s;
+}
+
+.course-card.completed {
+  border-color: #03dac6;
+}
+
+.course-card:hover {
+  transform: scale(1.05);
 }
 
 /* Footer Styles */
 footer {
-  background-color: #1E1E1E; /* Slightly lighter background for footer */
-  text-align: center;
+  background-color: #1e1e1e;
   padding: 10px;
-  position: relative; /* Ensure footer stays at the bottom */
-}
-
-footer p {
-  margin: 5px 0;
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
-  .main-container {
-      flex-direction: column; /* Stack elements on small screens */
-  }
-
-  .nav-list {
-      flex-direction: column; /* Vertical navigation on small screens */
-      display: none; /* Hide by default */
-  }
-
-  .nav-list.active {
-      display: flex; /* Show when active */
-  }
-
-  .hamburger {
-      display: block; /* Show hamburger button */
-  }
+  text-align: center;
 }
