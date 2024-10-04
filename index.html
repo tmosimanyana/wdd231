@@ -3,65 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rubia M. Francesco - Web and Computer Programming Certificate">
-    <title>Rubia M. Francesco - Course Home</title>
+    <meta name="description" content="Course Home Page showcasing Web and Computer Programming courses.">
+    <meta name="author" content="Tinny B. Mosimanyana">
+    <title>Course Home Page</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script> <!-- JavaScript file with defer attribute -->
 </head>
 <body>
     <header>
         <div class="profile">
-            <img src="profile.jpg" alt="Rubia M. Francesco" class="profile-img">
-            <h1>Rubia M. Francesco</h1>
+            <img src="images/profile.jpg" alt="Profile Picture">
         </div>
+        <h1>Tinny B. Mosimanyana</h1>
+        <button class="hamburger">☰</button> <!-- Responsive hamburger menu icon -->
         <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
+            <ul class="nav-list">
+                <li><a href="#" class="active">Home</a></li>
                 <li><a href="#">Chamber</a></li>
-                <li><a href="#">GitHub Profile</a></li>
+                <li><a href="#">GitHub</a></li>
                 <li><a href="#">LinkedIn</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section class="course-work">
-            <h2>Course Work</h2>
-            <ul>
-                <li>Item 1</li>
-                <li>Item 2</li>
-                <li>Item 3</li>
-            </ul>
+        <section class="course-filters">
+            <button onclick="filterCourses('all')">Show All</button>
+            <button onclick="filterCourses('CSE')">Show CSE Courses</button>
+            <button onclick="filterCourses('WDD')">Show WDD Courses</button>
         </section>
 
-        <section class="location">
-            <h2>Toloria, Madagascar</h2>
-            <img src="baobab-trees.jpg" alt="Baobab Trees" class="location-img">
-            <p>Baobab Trees</p>
-        </section>
+        <section id="courses-container" class="courses-container"></section>
+        <p id="total-credits">Total Credits: 0</p>
     </main>
 
-    <section class="certificate">
-        <h2>Web and Computer Programming Certificate</h2>
-        <div class="filter-buttons">
-            <button onclick="filterCourses('all')">All</button>
-            <button onclick="filterCourses('cse')">CSE</button>
-            <button onclick="filterCourses('wdd')">WDD</button>
-        </div>
-        <div class="course-list" id="course-list">
-            <div class="course cse">CSE 110</div>
-            <div class="course wdd">WDD 130</div>
-            <div class="course cse">CSE 111</div>
-            <div class="course cse">CSE 210</div>
-            <div class="course wdd">WDD 131</div>
-            <div class="course wdd">WDD 231</div>
-        </div>
-    </section>
-
     <footer>
-        <p>&copy; <span id="year"></span> Rubia Magdalena Francesco, Madagascar</p>
-        <p>Last Update: <span id="last-update"></span></p>
+        <p>© <span id="current-year"></span> Tinny B. Mosimanyana | Gaborone, Botswana</p>
+        <p>Last updated: <span id="last-modified"></span></p>
     </footer>
-
-    <script src="scripts.js"></script>
 </body>
 </html>
