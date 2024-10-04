@@ -46,12 +46,37 @@ header {
   margin-bottom: 10px;
 }
 
+/* Profile Section */
+.profile-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
 .profile-img {
-  width: 150px; /* Fixed width */
-  height: 150px; /* Fixed height */
-  border-radius: 50%; /* Circular profile image */
-  object-fit: cover; /* Ensures the image fits within the circle */
-  margin-top: 10px;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.profile-text {
+  max-width: 500px;
+}
+
+/* Location Section */
+.location-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.location-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
 }
 
 /* Courses Section */
@@ -107,14 +132,6 @@ header {
   color: #555;
   max-width: 600px;
   margin: 0 auto;
-}
-
-/* Location Image */
-.location-img {
-  width: 100%; /* Scales the image to fit the container */
-  max-width: 500px; /* Limits maximum width */
-  height: auto; /* Maintains the aspect ratio */
-  margin-top: 20px;
 }
 
 /* Footer */
