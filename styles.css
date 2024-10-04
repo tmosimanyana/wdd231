@@ -2,23 +2,23 @@ body {
   font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+  color: #333;
 }
 
 header {
-  background-color: #282c34;
+  background: #4CAF50;
   color: white;
   padding: 10px 20px;
-  text-align: center;
 }
 
 .navbar ul {
-  list-style: none;
+  list-style-type: none;
   padding: 0;
 }
 
 .navbar ul li {
   display: inline;
-  margin: 0 10px;
+  margin-right: 15px;
 }
 
 .navbar a {
@@ -27,7 +27,7 @@ header {
 }
 
 .profile, .location, .courses {
-  margin: 20px;
+  padding: 20px;
 }
 
 .profile-container {
@@ -37,39 +37,30 @@ header {
 
 .profile-img {
   border-radius: 50%;
+  width: 100px;
+  height: 100px;
   margin-right: 20px;
-}
-
-.location-container {
-  text-align: center;
 }
 
 .course-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 10px;
 }
 
 .course-card {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 15px;
-  width: calc(30% - 20px);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: calc(33% - 10px); /* Adjusts width based on the number of columns */
 }
 
-.course-card.completed {
-  background-color: #e0ffe0; /* Light green for completed courses */
-  border-color: #4caf50; /* Darker green border */
-}
-
-.filter-buttons {
-  margin-bottom: 15px;
+.completed {
+  background-color: #D4EDDA; /* Light green for completed courses */
 }
 
 footer {
-  background-color: #282c34;
-  color: white;
-  padding: 10px;
+  background: #f1f1f1;
   text-align: center;
+  padding: 10px 0;
 }

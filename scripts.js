@@ -4,73 +4,117 @@ const courses = [
         number: 110,
         title: 'Introduction to Programming',
         credits: 2,
-        completed: true,
-        description: 'This course will introduce students to programming...'
+        certificate: 'Web and Computer Programming',
+        description: 'This course will introduce students to programming. It will introduce the building blocks of programming languages (variables, decisions, calculations, loops, array, and input/output) and use them to solve problems.',
+        technology: ['Python'],
+        completed: true // Change to true if completed
     },
     {
         subject: 'WDD',
         number: 130,
         title: 'Web Fundamentals',
         credits: 2,
-        completed: true,
-        description: 'This course introduces students to the World Wide Web...'
+        certificate: 'Web and Computer Programming',
+        description: 'This course introduces students to the World Wide Web and to careers in web site design and development. The course is hands on with students actually participating in simple web designs and programming.',
+        technology: ['HTML', 'CSS'],
+        completed: true
     },
     {
         subject: 'CSE',
         number: 111,
         title: 'Programming with Functions',
         credits: 2,
-        completed: true,
-        description: 'CSE 111 students become more organized...'
+        certificate: 'Web and Computer Programming',
+        description: 'Students learn to research and call functions, write, call, debug, and test their own functions.',
+        technology: ['Python'],
+        completed: true
+    },
+    {
+        subject: 'CSE',
+        number: 210,
+        title: 'Programming with Classes',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course introduces the notion of classes and objects.',
+        technology: ['C#'],
+        completed: true
+    },
+    {
+        subject: 'WDD',
+        number: 131,
+        title: 'Dynamic Web Fundamentals',
+        credits: 2,
+        certificate: 'Web and Computer Programming',
+        description: 'This course builds on prior experience in Web Fundamentals and programming.',
+        technology: ['HTML', 'CSS', 'JavaScript'],
+        completed: true
     },
     {
         subject: 'WDD',
         number: 231,
         title: 'Frontend Web Development I',
         credits: 2,
-        completed: false,
-        description: 'This course builds on prior experience with Dynamic Web Fundamentals...'
-    },
-    // Add more courses as needed
+        certificate: 'Web and Computer Programming',
+        description: 'This course builds on prior experience with Dynamic Web Fundamentals and programming.',
+        technology: ['HTML', 'CSS', 'JavaScript'],
+        completed: false
+    }
 ];
 
+// Function to dynamically display courses
 function displayCourses(filter = 'all') {
-    const courseContainer = document.getElementById('course-container');
-    courseContainer.innerHTML = ''; // Clear existing courses
+    const courseGrid = document.getElementById('course-grid');
+    courseGrid.innerHTML = '';
 
-    // Filter courses based on selection
-    const filteredCourses = courses.filter(course => {
-        if (filter === 'all') return true; // Show all courses
-        return course.subject === filter; // Filter by subject
-    });
+    const filteredCourses = courses.filter(course =>
+        filter === 'all' || course.subject === filter
+    );
 
-    // Total credits counter
     let totalCredits = 0;
 
     filteredCourses.forEach(course => {
-        const card = document.createElement('div');
-        // Add 'completed' class if the course is completed
-        card.className = `course-card ${course.completed ? 'completed' : ''}`;
-        card.innerHTML = `
-            <h3>${course.title} (${course.subject} ${course.number})</h3>
-            <p><strong>Credits:</strong> ${course.credits}</p>
-            <p>${course.description}</p>
-        `;
-        courseContainer.appendChild(card);
-
-        // Add to total credits if course is completed
+        const courseCard = document.createElement('div');
+        courseCard.classList.add('course-card');
         if (course.completed) {
-            totalCredits += course.credits;  // Add the course credits if completed
+            courseCard.classList.add('completed');
         }
+
+        courseCard.innerHTML = `
+            <h3>${course.title}</h3>
+            <p>Credits: ${course.credits}</p>
+            <p>Technology: ${course.technology.join(', ')}</p>
+        `;
+        courseGrid.appendChild(courseCard);
+        totalCredits += course.completed ? course.credits : 0; // Only count credits for completed courses
     });
 
-    // Display total credits
-    document.getElementById('total-credits').textContent = totalCredits;
+    document.getElementById('total-credits').innerText = totalCredits;
 }
 
-// Display current year and last modified date
-document.getElementById('currentyear').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = `Last modified: ${document.lastModified}`;
+// Debounce function to limit the rate at which a function can fire
+function debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+        const context = this;
+        clearTimeout(timeout);
+        timeout = setTimeout(() => func.apply(context, args), wait);
+    };
+}
 
-// Initial call to display all courses
-displayCourses('all');
+// Initialize the page
+document.addEventListener('DOMContentLoaded', () => {
+    const currentYear = new Date().getFullYear();
+    document.getElementById('currentyear').innerText = currentYear;
+    document.getElementById('lastModified').innerText = `Last Modified: ${document.lastModified}`;
+
+    displayCourses(); // Display all courses by default
+
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', debounce((event) => {
+            event.preventDefault();
+            const filter = event.target.getAttribute('data-filter');
+            displayCourses(filter);
+        }, 300)); // Adjust the wait time as necessary
+    });
+});

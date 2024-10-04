@@ -16,9 +16,11 @@
 <body>
     <header>
         <h1>My Course Home Page</h1>
-        <nav class="navbar">
+        <nav class="navbar" role="navigation" aria-label="Course Navigation">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="#" class="filter-btn" data-filter="all">All Courses</a></li>
+                <li><a href="#" class="filter-btn" data-filter="CSE">CSE Courses</a></li>
+                <li><a href="#" class="filter-btn" data-filter="WDD">WDD Courses</a></li>
                 <li><a href="#">Chamber</a></li>
                 <li><a href="#">GitHub Profile</a></li>
                 <li><a href="#">LinkedIn</a></li>
@@ -46,12 +48,7 @@
 
         <section class="courses">
             <h2>Courses Completed</h2>
-            <div class="filter-buttons">
-                <button onclick="displayCourses('all')">All Courses</button>
-                <button onclick="displayCourses('CSE')">CSE Courses</button>
-                <button onclick="displayCourses('WDD')">WDD Courses</button>
-            </div>
-            <div id="course-container" class="course-grid"></div>
+            <div id="course-grid" class="course-grid"></div>
             <p>Total Credits: <span id="total-credits">0</span></p>
         </section>
     </main>
