@@ -1,44 +1,61 @@
+// Function to fetch member data from members.json
 async function fetchMembers() {
-    const response = await fetch('data/members.json');
-    const members = await response.json();
-    return members;
+    try {
+        const response = await fetch('data/members.json');
+        if (!response.ok) throw new Error('Network response was not ok');
+        const members = await response.json();
+        return members;
+    } catch (error) {
+        console.error('There was a problem with the fetch operation:', error);
+    }
 }
 
-function displayMembers(members, view = 'grid') {
+// Function to display members in the specified view
+function displayMembers(members, view) {
     const container = document.getElementById('members-container');
-    container.innerHTML = ''; // Clear previous content
+    container.innerHTML = ''; // Clear existing members
 
     members.forEach(member => {
-        const card = document.createElement('div');
-        card.className = 'card';
-        card.innerHTML = `
+        const memberCard = document.createElement('div');
+        memberCard.className = 'card';
+        memberCard.innerHTML = `
             <img src="images/${member.image}" alt="${member.name}" class="member-image">
-            <div class="member-info">
-                <h3>${member.name}</h3>
-                <p>${member.address}</p>
-                <p>Phone: ${member.phone}</p>
-                <a href="${member.url}" target="_blank" class="member-link">Visit Website</a>
-            </div>
+            <h3>${member.name}</h3>
+            <p>${member.address}</p>
+            <p>Phone: ${member.phone}</p>
+            <a href="${member.website}" target="_blank">Visit Website</a>
+            <p>Membership Level: ${getMembershipLevel(member.level)}</p>
         `;
-        container.appendChild(card);
+        container.appendChild(memberCard);
     });
 
-    container.classList.toggle('grid', view === 'grid');
-    container.classList.toggle('list', view === 'list');
+    // Set class for grid or list view
+    container.className = view; 
 }
 
+// Function to get the membership level as text
+function getMembershipLevel(level) {
+    switch (level) {
+        case 1: return 'Member';
+        case 2: return 'Silver';
+        case 3: return 'Gold';
+        default: return 'Unknown';
+    }
+}
+
+// Toggle view between grid and list
 document.getElementById('toggle-view').addEventListener('click', () => {
-    const currentView = document.getElementById('members-container').classList.contains('grid') ? 'grid' : 'list';
-    displayMembers(membersData, currentView === 'grid' ? 'list' : 'grid');
+    const container = document.getElementById('members-container');
+    const currentView = container.classList.contains('grid') ? 'grid' : 'list';
+    displayMembers(membersData, currentView === 'grid' ? 'list' : 'grid'); // Toggle view
 });
 
+// On window load, fetch and display members
 window.onload = async function() {
-    membersData = await fetchMembers();
-    displayMembers(membersData);
+    const membersData = await fetchMembers();
+    displayMembers(membersData, 'grid'); // Default to grid view
 
-    const yearSpan = document.getElementById('footer-year');
-    yearSpan.innerHTML = new Date().getFullYear();
-
-    const modifiedSpan = document.getElementById('footer-modified');
-    modifiedSpan.innerHTML = document.lastModified;
+    // Set footer year and last modified date
+    document.getElementById('footer-year').textContent = new Date().getFullYear();
+    document.getElementById('footer-modified').textContent = 'Last modified: ' + document.lastModified;
 };
