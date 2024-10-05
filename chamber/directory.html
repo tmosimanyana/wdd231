@@ -3,40 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Molepolole Chamber of Commerce Directory</title>
-    <meta name="description" content="Directory of local businesses in Molepolole.">
+    <meta name="description" content="Molepolole Chamber of Commerce Directory">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="styles.css">
-    <meta property="og:title" content="Molepolole Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="thumbnail.jpg">
-    <meta property="og:url" content="http://yourwebsite.com">
+    <title>Member Directory - Molepolole Chamber of Commerce</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="images/favicon.ico">
 </head>
 <body>
     <header>
         <h1>Molepolole Chamber of Commerce</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="events.html">Events</a></li>
-            </ul>
+            <!-- Site navigation -->
         </nav>
     </header>
-    
+
     <main>
-        <h2>Business Directory</h2>
-        <div id="members-container"></div>
-        <button id="toggle-view">Toggle View</button>
+        <section>
+            <h2>Member Directory</h2>
+            <button id="toggle-view">Toggle View</button>
+            <div id="members-container" class="grid">
+                <!-- Members will be loaded here -->
+            </div>
+        </section>
     </main>
 
     <footer>
-        <p>© <span id="footer-year"></span> Molepolole Chamber of Commerce. Last modified: <span id="footer-modified"></span>.</p>
-        <p>Contact: Tinny Bothepha Mosimanyana | WDD 231</p>
+        <p>Contact: +267 592 1603 | chamber@example.com</p>
+        <p>Tinny Bothepha Mosimanyana | WDD 231 | &copy; <span id="footer-year"></span></p>
+        <p>Last Modified: <span id="footer-modified"></span></p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
