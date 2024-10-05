@@ -1,65 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Molepolole Chamber of Commerce Member Directory showcasing local businesses.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <title>Molepolole Chamber of Commerce Directory</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Business Directory</title>
 
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Molepolole Chamber of Commerce Directory">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/molepolole.webp"> <!-- Updated -->
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/directory.html"> <!-- Updated-->
-    <meta property="og:description" content="A directory showcasing members of the Molepolole Chamber of Commerce.">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="normalize.css">
 
-    <!-- Preconnect to Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Google Fonts Embed -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-
-    <!-- Minified CSS -->
-    <link rel="stylesheet" href="css/style.min.css" media="all">
-
-    <!-- Defer JavaScript -->
-    <script src="js/script.js" defer></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <header>
-        <nav>
-            <a href="#">Home</a>
-            <a href="chamber/">Chamber</a>
-            <a href="https://github.com/your-github-profile">GitHub Profile</a>
-            <a href="https://www.linkedin.com/in/your-linkedin-profile">LinkedIn</a>
-        </nav>
-    </header>
 
+    <!-- Navigation Menu -->
+    <nav>
+        <ul class="navbar">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Members</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <!-- Toggle Button -->
+        <button id="viewToggle">Toggle View</button>
+    </nav>
+
+    <!-- Directory Container -->
     <main>
-        <h1>Molepolole Chamber of Commerce Directory</h1>
-
-        <section>
-            <button id="toggle-view">Toggle View</button>
-            <div id="members-container" class="grid">
-                <!-- Member cards will be dynamically inserted here -->
-            </div>
+        <section class="directory-container" id="directory">
+            <!-- Member Cards will be dynamically added here -->
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; <span id="footer-year"></span> | Tinny Bothepha Mosimanyana | Botswana</p>
-        <p id="footer-modified"></p>
+        <p>&copy; <span id="currentYear"></span> | Developed by Tinny Bothepha Mosimanyana for WDD 231</p>
+        <p>Last modified: <span id="lastModified"></span></p>
     </footer>
 
-    <script>
-        // Set current year and last modified date
-        document.getElementById('footer-year').textContent = new Date().getFullYear();
-        document.getElementById('footer-modified').textContent = 'Last modified: ' + document.lastModified;
-    </script>
+    <!-- External JavaScript -->
+    <script src="scripts.js" defer></script>
 </body>
-
 </html>
