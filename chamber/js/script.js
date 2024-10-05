@@ -1,4 +1,3 @@
-// Fetch members data from JSON and display them
 async function fetchMembers() {
     const response = await fetch('data/members.json');
     const members = await response.json();
@@ -24,18 +23,15 @@ function displayMembers(members, view = 'grid') {
         container.appendChild(card);
     });
 
-    // Toggle view based on the selected layout (grid or list)
     container.classList.toggle('grid', view === 'grid');
     container.classList.toggle('list', view === 'list');
 }
 
-// Toggle view when button is clicked
 document.getElementById('toggle-view').addEventListener('click', () => {
     const currentView = document.getElementById('members-container').classList.contains('grid') ? 'grid' : 'list';
     displayMembers(membersData, currentView === 'grid' ? 'list' : 'grid');
 });
 
-// Dynamically set the current year and last modified date in footer
 window.onload = async function() {
     membersData = await fetchMembers();
     displayMembers(membersData);
