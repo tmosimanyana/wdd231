@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Tinny Mosimanyana's personal website, showcasing work and projects in web development.">
-    <meta name="author" content="Tinny Mosimanyana">
-    <title>Tinny Mosimanyana | WDD 231</title>
-    
+    <meta name="description" content="Molepolole Chamber of Commerce Member Directory showcasing local businesses.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <title>Molepolole Chamber of Commerce Directory</title>
+
     <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Tinny Mosimanyana | WDD 231">
+    <meta property="og:title" content="Molepolole Chamber of Commerce Directory">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/images/molepolole.webp">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/">
-    <meta property="og:description" content="Tinny Mosimanyana's personal website, showcasing work and projects in web development.">
+    <meta property="og:image" content="images/molepolole.webp"> <!-- Update this with an appropriate image -->
+    <meta property="og:url" content="https://your-website-url.com"> <!-- Update this with your website URL -->
+    <meta property="og:description" content="A directory showcasing members of the Molepolole Chamber of Commerce.">
 
     <!-- Preconnect to Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,15 +21,12 @@
 
     <!-- Google Fonts Embed -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
-    
-    <!-- Preload important images -->
-    <link rel="preload" href="images/profile.webp" as="image">
 
     <!-- Minified CSS -->
-    <link rel="stylesheet" href="styles/styles.min.css" media="all">
+    <link rel="stylesheet" href="css/style.min.css" media="all">
 
     <!-- Defer JavaScript -->
-    <script src="scripts/courses.min.js" defer></script>
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -43,51 +40,25 @@
     </header>
 
     <main>
-        <h1>Tinny Mosimanyana | WDD 231</h1>
-        <!-- Optimized profile image with explicit dimensions -->
-        <img src="images/profile.webp" alt="Tinny Mosimanyana" width="150" height="150">
-        <p>I am a web developer passionate about creating beautiful and functional websites. With a few months of 
-            experience in front-end and back-end development, I enjoy turning ideas into digital solutions. My goal is to make
-            the web a better place one website at a time.</p>
-        
-        <!-- Title for the certificate -->
-        <h2>Computer Programming and Web Development Certificate</h2>
+        <h1>Molepolole Chamber of Commerce Directory</h1>
 
-        <section id="course-filter">
-            <h2>Course Filter</h2>
-            <button id="all-courses">All Courses</button>
-            <button id="cse-courses">CSE Courses</button>
-            <button id="wdd-courses">WDD Courses</button>
-        </section>
-        
-        <section id="course-list" class="course-list">
-            <h2>Course List</h2>
-            <!-- Course cards will be dynamically inserted here -->
-        </section>
-        
-        <section id="credits-total">
-            <h2>Total Credits</h2>
-            <h3>Total Credits: <span id="total-credits">0</span></h3>
+        <section>
+            <button id="toggle-view">Toggle View</button>
+            <div id="members-container" class="grid">
+                <!-- Member cards will be dynamically inserted here -->
+            </div>
         </section>
     </main>
 
-    <aside>
-        <h2>Molepolole</h2>
-        <!-- Optimized Molepolole image with explicit dimensions -->
-        <img src="images/molepolole.webp" alt="Molepolole MainKgotla" width="200" height="150">
-        <p>Molepolole is a village near Gaborone city in the southern part of Botswana. It is a growing, developing village
-            with many business opportunities.</p>
-    </aside>
-
     <footer>
-        <p>&copy; <span id="currentyear"></span> | Tinny Mosimanyana | Botswana</p>
-        <p id="lastModified"></p>
+        <p>&copy; <span id="footer-year"></span> | Tinny Bothepha Mosimanyana | Botswana</p>
+        <p id="footer-modified"></p>
     </footer>
 
     <script>
         // Set current year and last modified date
-        document.getElementById('currentyear').textContent = new Date().getFullYear();
-        document.getElementById('lastModified').textContent = 'Last modified: ' + document.lastModified;
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+        document.getElementById('footer-modified').textContent = 'Last modified: ' + document.lastModified;
     </script>
 </body>
 
