@@ -1,210 +1,103 @@
-/* Variables for color scheme */
-:root {
-    --primary-color: #333;
-    --secondary-color: #f0a500;
-    --background-color: #f9f9f9;
-    --text-color: #333;
-    --accent-color: #f0f0f0;
-    --footer-background: #444;
-    --white: #fff;
-    --dark-gray: #222;
-    --light-gray: #ccc;
-}
-
-/* General Styles */
-* {
-    box-sizing: border-box;
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
-    margin: 0;
-}
-
-/* Responsive Navigation */
 header {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    height: 50px;
-    margin-left: 20px;
+    padding: 20px;
+    background-color: #f4f4f4;
 }
 
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 20px;
 }
 
 .nav-links li {
-    display: inline;
+    margin-right: 20px;
 }
 
 .nav-links a {
     text-decoration: none;
-    color: var(--white);
-    font-size: 18px;
-    padding: 5px;
-    transition: color 0.3s;
+    color: #333;
 }
 
-.nav-links a:hover {
-    color: var(--secondary-color);
-}
-
-.toggle-theme {
-    background: none;
-    border: none;
-    color: var(--white);
-    font-size: 1.5em;
-    margin-right: 20px;
-}
-
-/* Hero Section */
-.hero {
-    text-align: center;
-    padding: 50px 20px;
-    background-color: var(--accent-color);
-    color: var(--primary-color);
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-}
-
-/* Directory Section */
 .directory {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 40px 20px;
+    padding: 20px;
+}
+
+#toggle-view {
+    margin-bottom: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Grid view styles */
+.business-list.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* List view styles */
+.business-list.list-view {
+    display: block;
 }
 
 .business-card {
-    background-color: var(--white);
-    border: 1px solid var(--light-gray);
-    padding: 20px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #fff;
     text-align: center;
-    width: 300px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-}
-
-.business-card:hover {
-    transform: translateY(-5px);
-}
-
-.business-card img {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
     margin-bottom: 15px;
 }
 
-.business-card h2 {
+.business-card img {
+    max-width: 100%;
+    height: 100px;
+    object-fit: contain;
     margin-bottom: 10px;
+}
+
+.business-card h2 {
     font-size: 1.5rem;
+    color: #2c3e50;
 }
 
-.contact-info {
+.business-card .contact-info {
     list-style: none;
-    padding: 0;
-    font-size: 0.9rem;
+    margin-top: 10px;
 }
 
-.contact-info li {
-    margin-bottom: 5px;
+.business-card .contact-info li {
+    margin: 5px 0;
 }
 
-.contact-info a {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-}
-
-/* Footer */
 footer {
-    background-color: var(--footer-background);
-    color: var(--white);
-    padding: 20px;
     text-align: center;
+    padding: 10px;
+    background-color: #f4f4f4;
 }
 
-.footer-contact p, .footer-contact address {
-    margin: 10px 0;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px;
-}
-
-.social-icons img {
-    width: 30px;
-    height: 30px;
-}
-
-/* Responsive Layouts */
 @media (max-width: 600px) {
     header {
         flex-direction: column;
-        align-items: center;
     }
 
     .nav-links {
         flex-direction: column;
-        gap: 10px;
-    }
-
-    .hero h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    .directory {
-        flex-direction: column;
         align-items: center;
     }
 
-    .business-card {
-        width: 90%;
-    }
-
-    .business-card img {
-        width: 80px;
-        height: 80px;
-    }
-
-    footer {
-        padding: 10px;
-        font-size: 0.9rem;
+    .business-list.grid-view {
+        grid-template-columns: 1fr;
     }
 }

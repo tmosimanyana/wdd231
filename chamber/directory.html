@@ -3,15 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" content="Business directory for local businesses">
+    <meta name="description" content="Business directory for local businesses in Molepolole, Botswana">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
     <title>Business Directory</title>
-    
-    <!-- Normalize CSS -->
     <link rel="stylesheet" href="normalize.css">
-    
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -20,45 +15,26 @@
         <nav>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
                 <li><a href="#">Directory</a></li>
+                <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
-        <button class="toggle-theme">☀️</button>
     </header>
-    
+
     <main>
-        <section class="hero">
-            <h1>Welcome to the Business Directory</h1>
-            <p>Find trusted local businesses at your fingertips</p>
-        </section>
-
         <section class="directory">
-            <div class="business-card">
-                <img src="business1.jpg" alt="Business 1">
-                <h2>Business Name 1</h2>
-                <ul class="contact-info">
-                    <li>Email: <a href="mailto:business1@example.com">business1@example.com</a></li>
-                    <li>Phone: 123-456-7890</li>
-                    <li>Website: <a href="#">www.business1.com</a></li>
-                </ul>
-            </div>
-
-            <!-- Additional business cards here -->
+            <h1>Business Directory</h1>
+            <button id="toggle-view">Switch to List View</button>
+            <div id="business-list" class="business-list grid-view"></div>
         </section>
     </main>
 
     <footer>
-        <div class="footer-contact">
-            <p>Contact Us</p>
-            <address>Email: <a href="mailto:info@directory.com">info@directory.com</a></address>
-        </div>
-        <div class="social-icons">
-            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
-            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
-        </div>
+        <p>&copy; <span id="year"></span> Timbuktu Chamber of Commerce</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
     </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
