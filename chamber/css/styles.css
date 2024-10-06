@@ -56,6 +56,29 @@ nav ul li a {
 main {
     padding: 20px;
 }
+/* Style for grid view */
+.member-card {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Style for list view */
+.list-view .member-card {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.member-card img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+
 
 /* Footer Styles */
 footer {
