@@ -3,37 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Molepolole Chamber of Commerce Directory">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="description" content="Business directory for local businesses">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <title>Member Directory - Molepolole Chamber of Commerce</title>
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="images/favicon.ico">
+    <title>Business Directory</title>
+    
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="normalize.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Molepolole Chamber of Commerce</h1>
+        <img src="logo.png" alt="Logo" class="logo">
         <nav>
-            <!-- Add your navigation links here -->
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Directory</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
         </nav>
+        <button class="toggle-theme">☀️</button>
     </header>
-
+    
     <main>
-        <section>
-            <h2>Member Directory</h2>
-            <button id="toggle-view">Toggle View</button>
-            <div id="members-container" class="grid">
-                <!-- Members will be loaded here -->
+        <section class="hero">
+            <h1>Welcome to the Business Directory</h1>
+            <p>Find trusted local businesses at your fingertips</p>
+        </section>
+
+        <section class="directory">
+            <div class="business-card">
+                <img src="business1.jpg" alt="Business 1">
+                <h2>Business Name 1</h2>
+                <ul class="contact-info">
+                    <li>Email: <a href="mailto:business1@example.com">business1@example.com</a></li>
+                    <li>Phone: 123-456-7890</li>
+                    <li>Website: <a href="#">www.business1.com</a></li>
+                </ul>
             </div>
+
+            <!-- Additional business cards here -->
         </section>
     </main>
 
     <footer>
-        <p>Contact: +267 592 1603 | chamber@example.com</p>
-        <p>Tinny Bothepha Mosimanyana | WDD 231 | &copy; <span id="footer-year"></span></p>
-        <p>Last Modified: <span id="footer-modified"></span></p>
+        <div class="footer-contact">
+            <p>Contact Us</p>
+            <address>Email: <a href="mailto:info@directory.com">info@directory.com</a></address>
+        </div>
+        <div class="social-icons">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+        </div>
     </footer>
-
-    <script src="js/script.js"></script>
 </body>
 </html>
