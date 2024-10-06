@@ -1,5 +1,5 @@
 // Select the div where we will display the business cards and the toggle button
-const businessList = document.getElementById('business-list');
+const members.json = document.getElementById('business-list');
 const toggleViewButton = document.getElementById('toggle-view');
 
 // Function to fetch and display businesses using async/await
