@@ -17,7 +17,7 @@
     },
     {
         "name": "Prestige Bakery (PTY) LTD",
-        "address": " P.O. Box: 1170, Molepolole, Botswana",
+        "address": "P.O. Box: 1170, Molepolole, Botswana",
         "phone": "+267 5920426",
         "url": "https://www.localbotswana.com/company/11747/PRESTIGE_BAKERY_PTY_LTD",
         "image": "molepolole_bakery.png",
@@ -26,7 +26,7 @@
     {
         "name": "Clicks Pharmacy Molepolole",
         "address": "Mafenyatlala Mall, Molepolole",
-        "phone": "590 6015.",
+        "phone": "590 6015",
         "url": "https://clicks.co.za/",
         "image": "Clicks-logo.svg",
         "membership_level": 1
@@ -48,10 +48,10 @@
         "membership_level": 3
     },
     {
-        "name": "Ledu farms",
-        "address": "P.O.Box 894 Molepolole, Botswana",
-        "phone": "+267 76376661",
-        "url": "https://www.cybo.com/BW-biz/ledu-farms",
+        "name": "Ledu Farms",
+        "address": "P.O.Box 142, Molepolole, Botswana",
+        "phone": "+267 397 5246",
+        "url": "https://www.localbotswana.com/company/15236/Ledu_Farms",
         "image": "ledu_farms.jpeg",
         "membership_level": 1
     }
