@@ -1,5 +1,5 @@
 async function fetchMemberData() {
-    const url = 'chamber/data/members.json'; // Updated with forward slashes
+    const url = 'data/members.json'; // Correct path to your JSON file
 
     try {
         const response = await fetch(url);
@@ -35,13 +35,11 @@ function displayMembers(memberData) {
 
 // Call the function to fetch data when the script loads
 fetchMemberData();
-
 // Toggle between grid and list views
 document.getElementById('toggleView').addEventListener('click', function() {
     const container = document.getElementById('membersContainer');
     container.classList.toggle('list-view'); // Toggle the class on click
 });
-
 // Dynamic footer information
 document.getElementById('currentYear').textContent = new Date().getFullYear();
 document.getElementById('lastModified').textContent = document.lastModified;
