@@ -3,38 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Business directory for local businesses in Molepolole, Botswana">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <meta name="description" content="Timbuktu Chamber of Commerce - Business Directory">
     <title>Business Directory</title>
-    <link rel="stylesheet" href="normalize.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+    <!-- Header and Navigation -->
     <header>
-        <img src="logo.png" alt="Logo" class="logo">
+        <h1>Business Directory</h1>
+        <button id="menuToggle">Menu</button>
         <nav>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Directory</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="podcast.html">Podcast</a></li>
+                <li><a href="events.html">Events</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Main Content -->
     <main>
-        <section class="directory">
-            <h1>Business Directory</h1>
-            <button id="toggle-view">Switch to List View</button>
-            <div id="business-list" class="business-list grid-view"></div>
+        <button id="toggleView">Toggle View</button>
+        <section id="membersContainer" class="grid-view">
+            <!-- Member information will be dynamically inserted here -->
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; <span id="year"></span> Gaborone Chamber of Commerce</p>
-        <p>Last Modified: <span id="last-modified"></span></p>
+        <div>
+            <h4>Contact Us</h4>
+            <p>Timbuktu Chamber of Commerce</p>
+            <p>10 Rue De La Paix</p>
+            <p>Timbuktu, Mali 999</p>
+            <p>Email: info@timbuktuchamber.org</p>
+            <p>Phone: (223) 555-2100</p>
+        </div>
+        <div>
+            <p>WDD231 Class Project</p>
+            <p>Developed by: Tinny Bothepha Mosimanyana</p>
+            <p>Last Modified: <span id="lastModified"></span></p>
+        </div>
     </footer>
 
-    <script src="script.js" defer></script>
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
 </body>
 </html>
