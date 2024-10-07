@@ -9,14 +9,14 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/chamber.jpg">
     <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/directory.html">
-    <link rel="icon" href="favicon.ico">
-    <title>Gaborone Chamber of Commerce - Business Directory</title>
     
-    <!-- Normalize CSS -->
+    <!-- Normalize CSS for consistent rendering -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     
     <!-- Custom Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
+    
+    <title>Gaborone Chamber of Commerce - Business Directory</title>
 </head>
 
 <body>
@@ -41,9 +41,8 @@
     <main>
         <button id="toggleView">Toggle View</button> <!-- Button to toggle between views -->
         <section id="membersContainer" class="grid-view"> <!-- Added class for default grid view -->
-            <h2>Members</h2> <!-- Added heading for the section -->
-            <!-- Content for members will be dynamically inserted here -->
-        </section> <!-- Container for members -->
+            <h2>Members</h2>
+        </section>
     </main>
 
     <!-- Footer -->
@@ -62,8 +61,8 @@
         </div>
         <p>&copy; <span id="currentYear"></span> Gaborone Chamber of Commerce</p>
     </footer>
-    
-    <!-- Link external JavaScript file -->
+
+    <!-- External JavaScript file -->
     <script src="js/script.js"></script>
 </body>
 </html>
