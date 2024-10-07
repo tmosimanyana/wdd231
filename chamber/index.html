@@ -3,9 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to the Kasane Chamber of Commerce. Discover local businesses, upcoming events, and membership opportunities.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Kasane Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/og-image.jpg"> <!-- Update the image path -->
+    <meta property="og:url" content="https://yourwebsite.com"> <!-- Update with your site URL -->
     <title>Kasane Chamber of Commerce - Home</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
-    <script src="script.js" defer></script> <!-- Link to your JavaScript file -->
+    <link rel="stylesheet" href="styles/styles.css"> <!-- Link to your CSS file -->
+    <script src="scripts/script.js" defer></script> <!-- Link to your JavaScript file -->
 </head>
 <body>
     <header>
@@ -19,39 +26,47 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="podcast.html">Podcast</a></li>
                 <li><a href="events.html">Events</a></li>
+                <li><a href="https://www.linkedin.com/company/kasanechamber" target="_blank">LinkedIn</a></li>
+                <li><a href="https://www.facebook.com/kasanechamber" target="_blank">Facebook</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section class="hero">
-            <img src="images/chamber.jpg" alt="Kasane Chamber of Commerce Hero Image">
-            <a href="join.html" class="cta-button">Join the Chamber of Commerce</a>
-        </section>
+    <div class="grid">
+        <aside>
+            <!-- Sidebar content such as quick links, advertisements, etc. -->
+        </aside>
 
-        <section class="events">
-            <h2>Current Events</h2>
-            <!-- Event content goes here -->
-        </section>
+        <main>
+            <section class="hero">
+                <img src="images/chamber.jpg" alt="Kasane Chamber of Commerce Hero Image">
+                <a href="join.html" class="cta-button">Join the Chamber of Commerce</a>
+            </section>
 
-        <section class="weather">
-            <h2>Current Weather</h2>
-            <div id="currentWeather">
-                <!-- Weather data will be populated here -->
-            </div>
-            <h3>Weather Forecast</h3>
-            <div id="forecast">
-                <!-- Forecast data will be populated here -->
-            </div>
-        </section>
+            <section class="events">
+                <h2>Current Events</h2>
+                <!-- Event content goes here -->
+            </section>
 
-        <section class="spotlights">
-            <h2>Company Spotlights</h2>
-            <div id="spotlightMembers">
-                <!-- Company spotlight data will be populated here -->
-            </div>
-        </section>
-    </main>
+            <section class="weather">
+                <h2>Current Weather</h2>
+                <div id="currentWeather">
+                    <!-- Weather data will be populated here -->
+                </div>
+                <h3>Weather Forecast</h3>
+                <div id="forecast">
+                    <!-- Forecast data will be populated here -->
+                </div>
+            </section>
+
+            <section class="spotlights">
+                <h2>Company Spotlights</h2>
+                <div id="spotlightMembers">
+                    <!-- Company spotlight data will be populated here -->
+                </div>
+            </section>
+        </main>
+    </div>
 
     <footer>
         <p>© 2024 Kasane Chamber of Commerce | P.O. Box 2 Kazungula, Kasane, Botswana | +267 76376661</p>
