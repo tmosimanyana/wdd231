@@ -1,58 +1,60 @@
 [
     {
-        "name": "Moleps Poultry",
-        "address": "P.O.Box 404326, Gaborone, Botswana",
-        "phone": "+267 397 5246",
-        "url": "https://www.localbotswana.com/company/3043/Moleps_Poultry",
-        "image": "moleps-poultry.png",
-        "membership_level": 1
+        "name": "Pond Unlimited (Pty) Ltd",
+        "address": "P.O. Box 20 Kazungula, Kasane",
+        "phone": "800-555-0001",
+        "website": "http://www.pondunlimited.com",
+        "image": "pond_unlimited.jpg",
+        "membershipLevel": 3
     },
     {
-        "name": "Builders Mart T/A Choppies Hardware",
-        "address": "Plot 146, Molepolole, Botswana",
-        "phone": "+267 592 1603",
-        "url": "https://www.brabys.com/bw/molepolole/hardware-retailers/builders-mart-ta-choppies-hardware",
-        "image": "molepolole_hardware.webp",
-        "membership_level": 2
+        "name": "The African Safari Guru Travel Company",
+        "address": "Kasane Town, Chobe, Kasane",
+        "phone": "800-555-0002",
+        "website": "http://www.africansafariguru.com",
+        "image": "african_safari_guru.jpg",
+        "membershipLevel": 2
     },
     {
-        "name": "Prestige Bakery (PTY) LTD",
-        "address": "P.O. Box: 1170, Molepolole, Botswana",
-        "phone": "+267 5920426",
-        "url": "https://www.localbotswana.com/company/11747/PRESTIGE_BAKERY_PTY_LTD",
-        "image": "prestige_bakery.jpeg",
-        "membership_level": 3
+        "name": "Fresh Corner",
+        "address": "Plot 848 Kasane (Chilwero RD), Kasane",
+        "phone": "800-555-0003",
+        "website": "http://www.freshcorner.com",
+        "image": "fresh_corner.jpg",
+        "membershipLevel": 1
     },
     {
-        "name": "Clicks Pharmacy Molepolole",
-        "address": "Mafenyatlala Mall, Molepolole",
-        "phone": "590 6015",
-        "url": "https://clicks.co.za/",
-        "image": "Clicks-logo.svg",
-        "membership_level": 1
+        "name": "Nsundano Travel And Tours",
+        "address": "Behind Spar, P.O. Box 243, Kasane",
+        "phone": "800-555-0004",
+        "website": "http://www.nsundanotravel.com",
+        "image": "nsundano_travel.jpg",
+        "membershipLevel": 1
     },
     {
-        "name": "Choppies Supermarket",
-        "address": "123 Grocery Rd, Molepolole",
-        "phone": "+267 592 0059",
-        "url": "http://choppies.co.bw",
-        "image": "choppies_supermarket.png",
-        "membership_level": 2
+        "name": "Sefalana Cash & Carry Ltd",
+        "address": "Kazungula Main Rd, Kasane",
+        "phone": "800-555-0005",
+        "website": "http://www.sefalana.com",
+        "image": "sefalana.jpg",
+        "membershipLevel": 2
     },
     {
-        "name": "Hair Affair",
-        "address": "P.O.Box 142, Molepolole, Botswana",
-        "phone": "+267 592 0022",
-        "url": "https://www.localbotswana.com/company/8604/Hair_Affair",
-        "image": "hair-affair.png",
-        "membership_level": 3
+        "name": "WebIT Data Solutions",
+        "address": "P.O. Box 470, Kasane",
+        "phone": "800-555-0006",
+        "website": "http://www.webitdatasolutions.com",
+        "image": "webit.jpg",
+        "membershipLevel": 2
     },
     {
-        "name": "Ledu Farms",
-        "address": "P.O.Box 142, Molepolole, Botswana",
-        "phone": "+267 76376661 ",
-        "url": "https://www.localbotswana.com/company/15236/Ledu_Farms",
-        "image": "ledu_farms.jpeg",
-        "membership_level": 1
+        "name": "Builders World - Kasane",
+        "address": "Next to Telecomms, P.O. Box 290, Kasane",
+        "phone": "800-555-0007",
+        "website": "http://www.buildersworld.com",
+        "image": "builders_world.jpg",
+        "membershipLevel": 1
     }
 ]
+
+
