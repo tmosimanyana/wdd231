@@ -45,18 +45,7 @@
         <main>
             <section class="directory">
                 <h2>Business Directory</h2>
-                <div class="business-list">
-                    <div class="business">
-                        <h3>Business Name 1</h3>
-                        <p>Tagline or brief description of the business.</p>
-                        <p>Email: <a href="mailto:info1@example.com">info1@example.com</a></p>
-                        <p>Phone: 800-555-1234</p>
-                        <p><a href="http://mybusiness1.com">Visit Website</a></p>
-                    </div>
-                        <div class="business-list"></div>
-                    </div>
-                    <!-- Add more businesses as needed -->
-                </div>
+                <div class="business-list" id="business-list"></div>
             </section>
         </main>
     </div>
@@ -68,5 +57,26 @@
             <a href="https://www.linkedin.com/company/kasanechamber" target="_blank">LinkedIn</a>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async function() {
+            const response = await fetch('path/to/your/businesses.json');
+            const businesses = await response.json();
+            const businessListElement = document.getElementById('business-list');
+
+            businesses.forEach(business => {
+                const businessDiv = document.createElement('div');
+                businessDiv.classList.add('business');
+                businessDiv.innerHTML = `
+                    <h3>${business.name}</h3>
+                    <p>${business.description}</p>
+                    <p>Email: <a href="mailto:${business.email}">${business.email}</a></p>
+                    <p>Phone: ${business.phone}</p>
+                    <p><a href="${business.website}" target="_blank">Visit Website</a></p>
+                `;
+                businessListElement.appendChild(businessDiv);
+            });
+        });
+    </script>
 </body>
 </html>
