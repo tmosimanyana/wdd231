@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Fetch Weather Data
     const fetchWeather = async () => {
-        const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Kasane,BW&appid=YOUR_API_KEY&units=metric');
+        const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=Kasane,BW&appid=35177d3eff6951544664f3746d418ea5&units=metric');
         const data = await response.json();
         displayWeather(data);
     };
@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     const fetchForecast = async () => {
-        const response = await fetch('https://api.openweathermap.org/data/2.5/forecast?q=Kasane,BW&appid=YOUR_API_KEY&units=metric');
+        const response = await fetch('https://api.openweathermap.org/data/2.5/forecast?q=Kasane,BW&appid=35177d3eff6951544664f3746d418ea5&units=metric');
         const data = await response.json();
         displayForecast(data);
     };
