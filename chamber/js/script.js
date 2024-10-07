@@ -1,30 +1,55 @@
+// Function to fetch member data from JSON file
+async function fetchMembers() {
+    try {
+        const response = await fetch('data/members.json');
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        const members = await response.json();
+        displayMembers(members);
+    } catch (error) {
+        console.error('Error fetching members:', error);
+    }
+}
+
+// Function to display members in the specified layout
 function displayMembers(members) {
-    const membersContainer = document.getElementById('membersContainer');
-    membersContainer.innerHTML = ''; // Clear previous content
+    const container = document.getElementById('membersContainer');
+    container.innerHTML = ''; // Clear existing content
 
     members.forEach(member => {
         const card = document.createElement('div');
-        card.className = 'card';
+        card.className = 'member-card';
         card.innerHTML = `
-            <img src="${member.image}" alt="${member.name}">
+            <img src="images/${member.image}" alt="${member.name}">
             <h3>${member.name}</h3>
             <p>${member.address}</p>
             <p>${member.phone}</p>
-            <p><a href="${member.url}" target="_blank">Website</a></p>
-            <p>Membership Level: ${member.membership_level}</p>
-            <p>${member.info ? member.info : ''}</p>
+            <a href="${member.url}" target="_blank">Visit Website</a>
         `;
-        membersContainer.appendChild(card);
+        container.appendChild(card);
     });
 }
-// Function to display the current year and last modified date
-function displayFooterInfo() {
-    const currentYear = new Date().getFullYear(); // Get the current year
-    const lastModified = new Date(document.lastModified).toLocaleDateString(); // Get the last modified date
 
-    document.getElementById('currentYear').textContent = currentYear; // Set current year in footer
-    document.getElementById('lastModified').textContent = lastModified; // Set last modified date in footer
+// Function to toggle between grid and list views
+function toggleView() {
+    const container = document.getElementById('membersContainer');
+    const isGridView = container.classList.toggle('grid-view');
+    container.classList.toggle('list-view', !isGridView);
 }
 
-// Call the function when the page loads
-window.onload = displayFooterInfo;
+// Display the current year and last modified date
+function displayFooterInfo() {
+    const currentYear = new Date().getFullYear();
+    document.getElementById('currentYear').textContent = currentYear;
+
+    const lastModified = new Date(document.lastModified);
+    document.getElementById('lastModified').textContent = lastModified.toLocaleDateString();
+}
+
+// Event listeners
+document.getElementById('toggleView').addEventListener('click', toggleView);
+
+// Initial fetch and setup
+fetchMembers();
+displayFooterInfo();

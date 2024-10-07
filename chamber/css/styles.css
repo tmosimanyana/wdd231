@@ -1,78 +1,82 @@
-/* CSS Reset / Normalize */
-* {
-    box-sizing: border-box;
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
     margin: 0;
     padding: 0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+h1, h2, h3, h4 {
+    margin: 0;
 }
 
-/* Header Styles */
+/* Header styles */
 header {
     background: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 10px 20px;
+    position: relative;
 }
 
 header h1 {
-    text-align: center;
-    margin-bottom: 10px;
+    margin: 0;
 }
 
-#menuToggle {
-    display: none; /* Initially hidden */
-    background: #444;
-    color: white;
-    border: none;
-    padding: 10px;
-    cursor: pointer;
+header nav {
+    display: flex;
+    justify-content: space-between;
 }
 
-/* Navigation Styles */
-nav {
-    text-align: center;
-}
-
-nav ul {
+header nav ul {
     list-style: none;
     padding: 0;
 }
 
-nav ul li {
-    display: inline; /* Default for wider views */
-    margin: 0 15px;
+header nav ul li {
+    display: inline;
+    margin-right: 20px;
 }
 
-nav ul li a {
+header nav a {
     color: #fff;
     text-decoration: none;
 }
 
-/* Main Content Styles */
+/* Main styles */
 main {
     padding: 20px;
-    max-width: 1200px;
-    margin: auto;
 }
 
+button {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Member Card styles */
 #membersContainer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 15px;
 }
 
-/* Card Styles */
 .member-card {
-    background: white;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 15px;
     text-align: center;
+    transition: transform 0.2s;
+}
+
+.member-card:hover {
+    transform: scale(1.05);
 }
 
 .member-card img {
@@ -81,7 +85,23 @@ main {
     border-radius: 5px;
 }
 
-/* Footer Styles */
+/* List View Styles */
+#membersContainer.list-view {
+    display: block;
+}
+
+#membersContainer.list-view .member-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+#membersContainer.list-view .member-card img {
+    max-width: 80px;
+    margin-right: 15px;
+}
+
+/* Footer styles */
 footer {
     background: #333;
     color: #fff;
@@ -89,33 +109,19 @@ footer {
     text-align: center;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    nav ul li {
-        display: block; /* Stack items for mobile */
-        margin: 10px 0;
-    }
-
-    #menuToggle {
-        display: inline; /* Show menu toggle button */
-    }
-
-    #membersContainer {
-        grid-template-columns: 1fr; /* Single column for mobile view */
-    }
+footer div {
+    margin-bottom: 10px;
 }
 
-/* General Button Styles */
-button {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    background-color: #5cb85c;
-    color: white;
-    transition: background 0.3s;
-}
+/* Responsive styles */
+@media (max-width: 600px) {
+    header nav {
+        flex-direction: column;
+        align-items: center;
+    }
 
-button:hover {
-    background-color: #4cae4c;
+    header nav ul li {
+        display: block;
+        margin-bottom: 10px;
+    }
 }
