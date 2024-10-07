@@ -1,52 +1,66 @@
 [
     {
-        "name": "Broadband Botswana Internet",
-        "industry": "Telecommunications",
-        "location": "Kasane, Botswana",
-        "revenue": "$19.6M",
-        "employees": 95
+      "name": "Broadband Botswana Internet",
+      "address": "Kasane, Botswana",
+      "phone": "+267-800-555-1234",
+      "website": "https://bbi.co.bw",
+      "image": "bbi-logo.png",
+      "membership_level": 3,
+      "info": "Leading provider of internet services in Botswana."
     },
     {
-        "name": "Thebe River Safaris",
-        "industry": "Hospitality",
-        "location": "Kasane, North-West, Botswana",
-        "revenue": "$6.3M",
-        "employees": 21
+      "name": "Thebe River Safaris",
+      "address": "Kasane, North-West, Botswana",
+      "phone": "+267-800-555-5678",
+      "website": "https://theberiversafaris.com",
+      "image": "thebe-safaris-logo.png",
+      "membership_level": 2,
+      "info": "Offers river safaris in the Chobe National Park."
     },
     {
-        "name": "Cresta Mowana Safari Resort and Spa",
-        "industry": "Hospitality",
-        "location": "Kasane, Botswana",
-        "revenue": "$6M",
-        "employees": 111
+      "name": "Cresta Mowana Safari Resort and Spa",
+      "address": "Kasane, Botswana",
+      "phone": "+267-800-555-2345",
+      "website": "https://crestamowana.com",
+      "image": "cresta-mowana-logo.png",
+      "membership_level": 3,
+      "info": "Luxury safari resort and spa offering premier lodging."
     },
     {
-        "name": "Chobe Marina Lodge",
-        "industry": "Hospitality",
-        "location": "Kasane, Botswana",
-        "revenue": "$4.1M",
-        "employees": 24
+      "name": "Chobe Marina Lodge",
+      "address": "Kasane, Botswana",
+      "phone": "+267-800-555-3456",
+      "website": "https://chobemarinalodge.com",
+      "image": "chobe-marina-logo.png",
+      "membership_level": 2,
+      "info": "Lodge with river views and wildlife safaris."
     },
     {
-        "name": "Sandpiper Villas Chobe",
-        "industry": "Hospitality",
-        "location": "Kasane, North-West, Botswana",
-        "revenue": "$4M",
-        "employees": 9
+      "name": "Sandpiper Villas Chobe",
+      "address": "Kasane, North-West, Botswana",
+      "phone": "+267-800-555-4567",
+      "website": "https://sandpipervillaschobe.com",
+      "image": "sandpiper-villas-logo.png",
+      "membership_level": 1,
+      "info": "Luxurious villas with views of the Chobe River."
     },
     {
-        "name": "Wild Africa Safaris",
-        "industry": "Hospitality",
-        "location": "Kasane, Botswana",
-        "revenue": "$4M",
-        "employees": 33
+      "name": "Wild Africa Safaris",
+      "address": "Kasane, Botswana",
+      "phone": "+267-800-555-5679",
+      "website": "https://wildafricasafaris.com",
+      "image": "wild-africa-logo.png",
+      "membership_level": 2,
+      "info": "Safari tour company specializing in personalized wildlife experiences."
     },
     {
-        "name": "The Big 5 Chobe Lodge",
-        "industry": "Hospitality",
-        "location": "Kasane, Botswana",
-        "revenue": "$2.6M",
-        "employees": 12
+      "name": "The Big 5 Chobe Lodge",
+      "address": "Kasane, Botswana",
+      "phone": "+267-800-555-6789",
+      "website": "https://big5chobelodge.com",
+      "image": "big5-lodge-logo.png",
+      "membership_level": 1,
+      "info": "Exclusive lodge with wildlife tours and eco-friendly services."
     }
-]
-
+  ]
+  
