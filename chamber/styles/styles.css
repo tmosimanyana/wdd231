@@ -1,190 +1,106 @@
-/* Remove max-width from header, main, and footer */
-header, .grid, footer {
-    margin: 0 auto;
-    padding: 1rem;
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
-/* Navigation styling using Flexbox */
-nav {
-    background-color: steelblue;
-    padding: 1rem;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-
-nav a {
-    display: block;
-    padding: 0.5rem;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #fff;
-}
-
-/* Adding bottom border to h1 element */
-h1 {
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 0.5rem;
-}
-
-/* Grid layout for main and aside elements */
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 3fr; /* Adjust proportions as needed */
-    gap: 1rem;
-    align-items: center;
-}
-
-/* Main content styling */
-main {
-    grid-column: 2/3;
-    margin: 1rem;
-}
-
-/* Aside (sidebar) styling */
-aside {
-    width: 20rem;
-    position: relative;
-    grid-column: 1/2;
-    grid-row: 1/2;
-}
-
-/* Footer styling */
-footer {
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-}
-
-footer a {
-    color: #fff;
-    margin: 0 0.5rem;
-}
-/* Base Styles - Mobile First */
-
-/* Remove max-width from header, main, and footer */
-header, .grid, footer {
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-/* Navigation styling using Flexbox */
-nav {
-    background-color: steelblue;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    justify-content: center;
-    align-items: center;
-}
-
-nav a {
-    display: block;
-    padding: 0.5rem;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #fff;
-    text-align: center; /* Center align text for mobile */
-}
-
-/* Adding bottom border to h1 element */
-h1 {
-    border-bottom: 2px solid #ccc;
-    padding-bottom: 0.5rem;
-    text-align: center; /* Center heading for mobile */
-}
-
-/* Grid layout for main and aside elements (initial mobile layout) */
-.grid {
-    display: block; /* Initially stack the elements */
+h1, h2, h3 {
     margin: 1rem 0;
 }
 
-/* Main content styling */
-main {
-    margin: 1rem 0;
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
-/* Aside (sidebar) styling */
-aside {
-    width: 100%; /* Full width on mobile */
-    margin-bottom: 1rem; /* Space between sections */
-}
-
-/* Footer styling */
-footer {
-    text-align: center;
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
-}
-
-footer a {
-    color: #fff;
-    margin: 0.5rem 1rem;
-}
-
-/* Hero Section */
-.hero img {
-    width: 100%; /* Ensure images are responsive */
-    height: auto;
-}
-
-.cta-button {
-    display: block;
-    background-color: #28a745;
+/* Header and Navigation Styles */
+header {
+    background-color: steelblue;
     color: white;
     padding: 1rem;
     text-align: center;
-    margin: 1rem auto;
+    border-bottom: 5px solid #000;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+
+nav a {
+    display: block;
+    padding: 0.5rem 1rem;
     text-decoration: none;
     font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
 }
 
-/* Media Queries for Larger Screens */
-@media (min-width: 768px) {
-    /* For tablet and above */
-    
-    nav {
-        flex-direction: row; /* Switch to horizontal layout */
-    }
+nav a:hover {
+    background-color: #333;
+    color: #fff;
+}
 
+/* Responsive Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+main {
+    grid-column: 2 / 3;
+}
+
+aside {
+    grid-column: 1 / 2;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #333;
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #ff6600;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Mobile View - Responsive */
+@media (max-width: 768px) {
     .grid {
-        display: grid;
-        grid-template-columns: 1fr 3fr; /* Create a 2-column grid */
-        gap: 1rem;
-        align-items: center;
+        grid-template-columns: 1fr;
     }
 
-    main {
-        grid-column: 2/3;
-        margin: 1rem;
-    }
-
-    aside {
-        grid-column: 1/2;
-        grid-row: 1/2;
-        width: auto; /* Reset to default width on larger screens */
+    nav ul {
+        flex-direction: column;
     }
 }
 
-@media (min-width: 1024px) {
-    /* For desktop and larger */
-    
-    nav {
-        justify-content: space-evenly;
-    }
-
-    header, .grid, footer {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    aside {
-        width: 20rem;
-        position: relative;
-    }
-}
