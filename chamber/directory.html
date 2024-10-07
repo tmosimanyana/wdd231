@@ -3,28 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the business directory of the Gaborone Chamber of Commerce. Find local businesses, services, and organizations in Gaborone.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <link rel="icon" href="favicon.ico">
-    <title>Gaborone Chamber of Commerce - Business Directory</title>
-    
-    <!-- Normalize CSS -->
-    <link rel="stylesheet" href="styles/normalize.css"> <!-- Link to your custom normalize.css -->
-    
-    <!-- Custom Stylesheet -->
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Kasane Chamber of Commerce - Home</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <script src="script.js" defer></script> <!-- Link to your JavaScript file -->
 </head>
-
 <body>
-    <!-- Header and Navigation -->
     <header>
-        <h1>Business Directory</h1>
-        <button id="menuToggle">Menu</button>
+        <h1>Kasane Chamber of Commerce</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Directory</a></li>
+                <li><a href="directory.html">Business Directory</a></li>
                 <li><a href="join.html">Join</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="podcast.html">Podcast</a></li>
@@ -33,33 +23,43 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <button id="toggleView">Toggle View</button> <!-- Button to toggle between views -->
-        <section id="membersContainer" class="grid-view"> <!-- Added class for default grid view -->
-            <h2>Members</h2>
-            <!-- Content for members will be dynamically inserted here -->
+        <section class="hero">
+            <img src="path/to/your/hero-image.jpg" alt="Kasane Chamber of Commerce Hero Image">
+            <a href="join.html" class="cta-button">Join the Chamber of Commerce</a>
+        </section>
+
+        <section class="events">
+            <h2>Current Events</h2>
+            <!-- Event content goes here -->
+        </section>
+
+        <section class="weather">
+            <h2>Current Weather</h2>
+            <div id="currentWeather">
+                <!-- Weather data will be populated here -->
+            </div>
+            <h3>Weather Forecast</h3>
+            <div id="forecast">
+                <!-- Forecast data will be populated here -->
+            </div>
+        </section>
+
+        <section class="spotlights">
+            <h2>Company Spotlights</h2>
+            <div id="spotlightMembers">
+                <!-- Company spotlight data will be populated here -->
+            </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
+        <p>© 2024 Kasane Chamber of Commerce | P.O. Box 20 Kazungula, Kasane, Botswana | (00267) 72375324</p>
         <div>
-            <h4>Contact Us</h4>
-            <p>Gaborone Chamber of Commerce</p>
-            <p>10 Business Park, Gaborone, Botswana</p>
-            <p>Email: info@gaboronechamber.org</p>
-            <p>Phone: (+267) 555-0101</p>
+            <a href="https://www.facebook.com/kasanechamber" target="_blank">Facebook</a>
+            <a href="https://twitter.com/kasanechamber" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com/company/kasanechamber" target="_blank">LinkedIn</a>
         </div>
-        <div>
-            <p>WDD231 Class Project</p>
-            <p>Developed by: Tinny Bothepha Mosimanyana</p>
-            <p>Last Modified: <span id="lastModified"></span></p>
-        </div>
-        <p>&copy; <span id="currentYear"></span> Gaborone Chamber of Commerce</p>
     </footer>
-
-    <!-- External JavaScript file -->
-    <script src="js/script.js"></script>
 </body>
 </html>
