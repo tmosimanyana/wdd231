@@ -1,60 +1,52 @@
 [
     {
-        "name": "Pond Unlimited (Pty) Ltd",
-        "address": "P.O. Box 20 Kazungula, Kasane",
-        "phone": "800-555-0001",
-        "website": "http://www.pondunlimited.com",
-        "image": "pond_unlimited.jpg",
-        "membershipLevel": 3
+        "name": "Broadband Botswana Internet",
+        "industry": "Telecommunications",
+        "location": "Kasane, Botswana",
+        "revenue": "$19.6M",
+        "employees": 95
     },
     {
-        "name": "The African Safari Guru Travel Company",
-        "address": "Kasane Town, Chobe, Kasane",
-        "phone": "800-555-0002",
-        "website": "http://www.africansafariguru.com",
-        "image": "african_safari_guru.jpg",
-        "membershipLevel": 2
+        "name": "Thebe River Safaris",
+        "industry": "Hospitality",
+        "location": "Kasane, North-West, Botswana",
+        "revenue": "$6.3M",
+        "employees": 21
     },
     {
-        "name": "Fresh Corner",
-        "address": "Plot 848 Kasane (Chilwero RD), Kasane",
-        "phone": "800-555-0003",
-        "website": "http://www.freshcorner.com",
-        "image": "fresh_corner.jpg",
-        "membershipLevel": 1
+        "name": "Cresta Mowana Safari Resort and Spa",
+        "industry": "Hospitality",
+        "location": "Kasane, Botswana",
+        "revenue": "$6M",
+        "employees": 111
     },
     {
-        "name": "Nsundano Travel And Tours",
-        "address": "Behind Spar, P.O. Box 243, Kasane",
-        "phone": "800-555-0004",
-        "website": "http://www.nsundanotravel.com",
-        "image": "nsundano_travel.jpg",
-        "membershipLevel": 1
+        "name": "Chobe Marina Lodge",
+        "industry": "Hospitality",
+        "location": "Kasane, Botswana",
+        "revenue": "$4.1M",
+        "employees": 24
     },
     {
-        "name": "Sefalana Cash & Carry Ltd",
-        "address": "Kazungula Main Rd, Kasane",
-        "phone": "800-555-0005",
-        "website": "http://www.sefalana.com",
-        "image": "sefalana.jpg",
-        "membershipLevel": 2
+        "name": "Sandpiper Villas Chobe",
+        "industry": "Hospitality",
+        "location": "Kasane, North-West, Botswana",
+        "revenue": "$4M",
+        "employees": 9
     },
     {
-        "name": "WebIT Data Solutions",
-        "address": "P.O. Box 470, Kasane",
-        "phone": "800-555-0006",
-        "website": "http://www.webitdatasolutions.com",
-        "image": "webit.jpg",
-        "membershipLevel": 2
+        "name": "Wild Africa Safaris",
+        "industry": "Hospitality",
+        "location": "Kasane, Botswana",
+        "revenue": "$4M",
+        "employees": 33
     },
     {
-        "name": "Builders World - Kasane",
-        "address": "Next to Telecomms, P.O. Box 290, Kasane",
-        "phone": "800-555-0007",
-        "website": "http://www.buildersworld.com",
-        "image": "builders_world.jpg",
-        "membershipLevel": 1
+        "name": "The Big 5 Chobe Lodge",
+        "industry": "Hospitality",
+        "location": "Kasane, Botswana",
+        "revenue": "$2.6M",
+        "employees": 12
     }
 ]
-
 
