@@ -6,6 +6,7 @@
     <meta name="description" content="Kasane Chamber of Commerce - Discover local businesses, events, and more.">
     <title>Kasane Chamber of Commerce</title>
     <link rel="stylesheet" href="styles/styles.css"> <!-- Link to your CSS file -->
+    <script src="scripts/weather.js" defer></script> <!-- Link to your external JavaScript file -->
 </head>
 <body>
     <header>
@@ -25,15 +26,16 @@
 
     <main>
         <section class="hero">
-            <img src="images/hero.jpg" alt="Kasane Chamber of Commerce" class="hero-image">
+            <img src="images/hero.jpg" alt="A scenic view of Kasane, showcasing local businesses and community" class="hero-image">
         </section>
 
-        <section class="current-weather">
+        <section class="current-weather" id="weather-section">
             <h2>Current Weather</h2>
-            <p>75°F | Partly Cloudy</p>
-            <p>High: 85°F | Low: 52°F</p>
-            <p>Humidity: 34%</p>
-            <p>Sunrise: 7:30 AM | Sunset: 9:59 PM</p>
+            <p id="temperature">Loading...</p>
+            <p id="weather-description">Loading...</p>
+            <p id="high-low">High: Loading... | Low: Loading...</p>
+            <p id="humidity">Humidity: Loading...</p>
+            <p id="sunrise-sunset">Sunrise: Loading... | Sunset: Loading...</p>
         </section>
 
         <section class="business-listings">
@@ -60,6 +62,11 @@
                 <p><a href="http://businessthree.com">Visit Website</a></p>
             </div>
             <!-- Repeat this block for additional businesses -->
+        </section>
+
+        <section class="spotlights">
+            <h2>Spotlight Members</h2>
+            <div id="spotlight-container"></div> <!-- Container for spotlight members -->
         </section>
     </main>
 
