@@ -1,0 +1,65 @@
+[
+    {
+        "name": "Timbuktu Travel Agency",
+        "address": "123 Main St, Timbuktu, Mail 999",
+        "phone": "800-555-1234",
+        "website": "https://timbuktutravel.com",
+        "image": "timbuktu-travel.png",
+        "membershipLevel": 3,
+        "info": "Specializing in travel packages and tours."
+    },
+    {
+        "name": "Timbuktu Restaurant",
+        "address": "456 Elm St, Timbuktu, Mail 999",
+        "phone": "800-555-5678",
+        "website": "https://timbukturestaurant.com",
+        "image": "timbuktu-restaurant.png",
+        "membershipLevel": 2,
+        "info": "Serving authentic local cuisine."
+    },
+    {
+        "name": "Timbuktu Tech Solutions",
+        "address": "789 Pine St, Timbuktu, Mail 999",
+        "phone": "800-555-9101",
+        "website": "https://timbuktutech.com",
+        "image": "timbuktu-tech.png",
+        "membershipLevel": 1,
+        "info": "Providing IT services and support."
+    },
+    {
+        "name": "Timbuktu Bookstore",
+        "address": "321 Oak St, Timbuktu, Mail 999",
+        "phone": "800-555-2345",
+        "website": "https://timbuktubookstore.com",
+        "image": "timbuktu-bookstore.png",
+        "membershipLevel": 3,
+        "info": "Your local source for books and stationery."
+    },
+    {
+        "name": "Timbuktu Fitness Center",
+        "address": "654 Maple St, Timbuktu, Mail 999",
+        "phone": "800-555-6789",
+        "website": "https://timbuktufitness.com",
+        "image": "timbuktu-fitness.png",
+        "membershipLevel": 2,
+        "info": "Promoting health and wellness."
+    },
+    {
+        "name": "Timbuktu Art Gallery",
+        "address": "987 Birch St, Timbuktu, Mail 999",
+        "phone": "800-555-3456",
+        "website": "https://timbuktuartgallery.com",
+        "image": "timbuktu-art-gallery.png",
+        "membershipLevel": 3,
+        "info": "Showcasing local artists."
+    },
+    {
+        "name": "Timbuktu Consulting",
+        "address": "159 Cedar St, Timbuktu, Mail 999",
+        "phone": "800-555-7890",
+        "website": "https://timbuktuconsulting.com",
+        "image": "timbuktu-consulting.png",
+        "membershipLevel": 1,
+        "info": "Business consulting and strategy."
+    }
+]
