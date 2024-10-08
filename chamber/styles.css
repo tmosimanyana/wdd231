@@ -1,113 +1,84 @@
-/* General Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
+/* Header Styles */
 header {
-    background-color: #f4f4f4;
-    padding: 1em;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav ul {
-    display: flex;
-    list-style: none;
-}
-
-nav ul li {
-    margin: 0 1em;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-}
-
-.hero {
+    background: #333;
+    color: white;
     text-align: center;
-    padding: 2em;
-    background-color: #e9e9e9;
+    padding: 1rem;
 }
 
-.hero img {
-    width: 100%;
-    max-width: 1000px;
-    height: auto;
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section Styles */
+.hero {
+    background: url('images/hero-placeholder.jpg') no-repeat center center;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Button Styles */
 .hero button {
-    margin-top: 1em;
-    padding: 0.5em 1em;
-    background-color: #333;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    background-color: #007BFF;
     color: white;
     border: none;
     cursor: pointer;
 }
 
-/* Main Sections */
+/* Main Content Styles */
 main {
+    padding: 20px;
+}
+
+/* Weather and Business Directory Styles */
+.weather, .business-directory {
+    margin: 20px 0;
+}
+
+/* Member Card Styles */
+.member-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Grid and List View Styles */
+.grid-view {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 2em;
 }
 
-section {
-    margin: 1em;
+.list-view {
+    display: block;
 }
 
-.events, .weather, .business-directory {
-    flex-basis: 30%;
-}
-
-.business-card {
-    background-color: #f9f9f9;
-    padding: 1em;
-    margin-bottom: 1em;
-    border: 1px solid #ddd;
-}
-
+/* Footer Styles */
 footer {
-    background-color: #f4f4f4;
     text-align: center;
-    padding: 2em;
-}
-
-.social-media img {
-    width: 40px;
-    margin: 0 10px;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-    header {
-        flex-direction: column;
-    }
-
-    main {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .events, .weather, .business-directory {
-        flex-basis: 100%;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 0.5em 0;
-    }
+    padding: 20px;
+    background: #333;
+    color: white;
 }
