@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to the Kasane Chamber of Commerce. Discover local businesses, upcoming events, and membership opportunities.">
+    <meta name="description" content="Discover local businesses in Kasane. Explore our directory to find member businesses and their services.">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <meta property="og:title" content="Kasane Chamber of Commerce">
+    <meta property="og:title" content="Kasane Chamber of Commerce - Directory">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/chamber.jpg"> 
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/"> 
-    <title>Kasane Chamber of Commerce - Home</title>
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/chamber.jpg">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/directory.html">
+    <title>Kasane Chamber of Commerce - Directory</title>
     <link rel="stylesheet" href="styles/styles.css">
     <script src="scripts/script.js" defer></script>
 </head>
@@ -35,7 +35,6 @@
     <div class="grid">
         <aside>
             <h2>Quick Links</h2>
-            <!-- Sidebar content such as quick links, advertisements, etc. -->
             <ul>
                 <li><a href="#">Link 1</a></li>
                 <li><a href="#">Link 2</a></li>
@@ -44,38 +43,9 @@
         </aside>
 
         <main>
-            <section class="hero">
-                <img src="images/chamber.jpg" alt="Kasane Chamber of Commerce Hero Image">
-                <a href="join.html" class="cta-button">Join the Chamber of Commerce</a>
-            </section>
-
-            <section class="events">
-                <h2>Current Events</h2>
-                <!-- Event content goes here -->
-                <p>Event details go here...</p>
-            </section>
-
-            <section class="weather">
-                <h2>Current Weather</h2>
-                <div id="currentWeather">
-                    <p>75° F</p>
-                    <p>Party Cloudy</p>
-                </div>
-                <h3>Weather Forecast</h3>
-                <div id="forecast">
-                    <p>Today: 90°F</p>
-                    <p>Wednesday: 89°F</p>
-                    <p>Thursday: 68°F</p>
-                </div>
-            </section>
-
-            <section class="spotlights">
-                <h2>Company Spotlights</h2>
-                <div id="spotlightMembers">
-                    
-                    </div>
-                    <!-- Add more businesses as needed -->
-                </div>
+            <section class="directory">
+                <h2>Business Directory</h2>
+                <div class="business-list" id="business-list"></div>
             </section>
         </main>
     </div>
@@ -87,5 +57,26 @@
             <a href="https://www.linkedin.com/company/kasanechamber" target="_blank">LinkedIn</a>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async function() {
+            const response = await fetch('path/to/your/businesses.json');
+            const businesses = await response.json();
+            const businessListElement = document.getElementById('business-list');
+
+            businesses.forEach(business => {
+                const businessDiv = document.createElement('div');
+                businessDiv.classList.add('business');
+                businessDiv.innerHTML = `
+                    <h3>${business.name}</h3>
+                    <p>${business.description}</p>
+                    <p>Email: <a href="mailto:${business.email}">${business.email}</a></p>
+                    <p>Phone: ${business.phone}</p>
+                    <p><a href="${business.website}" target="_blank">Visit Website</a></p>
+                `;
+                businessListElement.appendChild(businessDiv);
+            });
+        });
+    </script>
 </body>
 </html>
