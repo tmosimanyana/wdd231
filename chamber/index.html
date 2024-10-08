@@ -3,132 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kasane Chamber of Commerce - Discover local businesses, events, and more.">
-    <title>Kasane Chamber of Commerce</title>
-    <link rel="stylesheet" href="styles/styles.css"> <!-- Link to your CSS file -->
-    <script src="scripts/weather.js" defer></script> <!-- Link to your external JavaScript file -->
-    <script defer>
-        // Example data array for spotlight members
-        const spotlightMembers = [
-            {
-                name: "Business One",
-                tagline: "Your Trusted Partner",
-                email: "info@businessone.com",
-                phone: "800-555-1234",
-                website: "http://businessone.com",
-                logo: "images/member1-logo.jpg",
-            },
-            {
-                name: "Business Two",
-                tagline: "Quality Services",
-                email: "info@businesstwo.com",
-                phone: "800-555-5678",
-                website: "http://businesstwo.com",
-                logo: "images/member2-logo.jpg",
-            },
-            {
-                name: "Business Three",
-                tagline: "Experience You Can Trust",
-                email: "info@businessthree.com",
-                phone: "800-555-9012",
-                website: "http://businessthree.com",
-                logo: "images/member3-logo.jpg",
-            },
-        ];
-
-        // Function to display spotlight members
-        function displaySpotlightMembers() {
-            const spotlightContainer = document.getElementById("spotlight-container");
-            
-            spotlightMembers.forEach(member => {
-                const memberDiv = document.createElement("div");
-                memberDiv.className = "spotlight-member";
-                
-                memberDiv.innerHTML = `
-                    <img src="${member.logo}" alt="${member.name} Logo">
-                    <h3>${member.name}</h3>
-                    <p class="tagline">${member.tagline}</p>
-                    <p>Email: <a href="mailto:${member.email}">${member.email}</a></p>
-                    <p>Phone: ${member.phone}</p>
-                    <p><a href="${member.website}" target="_blank">Visit Website</a></p>
-                `;
-                
-                spotlightContainer.appendChild(memberDiv);
-            });
-        }
-
-        // Call the function to display spotlight members on page load
-        document.addEventListener("DOMContentLoaded", displaySpotlightMembers);
-    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Timbuktu Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- Header with Navigation -->
     <header>
-        <h1>Kasane Chamber of Commerce</h1>
+        <div class="logo">
+            <img src="logo-placeholder.png" alt="Timbuktu Chamber of Commerce">
+        </div>
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Business Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="podcast.html">Podcast</a></li>
-                <li><a href="events.html">Events</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Discover</a></li>
+                <li><a href="#">Business Directory</a></li>
+                <li><a href="#">Join</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Podcast</a></li>
+                <li><a href="#">Events</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="hero-placeholder.jpg" alt="Responsive Hero Image">
+        <button>Keynote Tickets</button>
+    </section>
+
+    <!-- Main Content -->
     <main>
-        <section class="hero">
-            <img src="images/hero.jpg" alt="A scenic view of Kasane, showcasing local businesses and community" class="hero-image">
+        <section class="events">
+            <h2>Events</h2>
+            <!-- Event details can go here -->
         </section>
 
-        <section class="current-weather" id="weather-section">
-            <h2>Current Weather</h2>
-            <p id="temperature">Loading...</p>
-            <p id="weather-description">Loading...</p>
-            <p id="high-low">High: Loading... | Low: Loading...</p>
-            <p id="humidity">Humidity: Loading...</p>
-            <p id="sunrise-sunset">Sunrise: Loading... | Sunset: Loading...</p>
+        <section class="weather">
+            <div class="current-weather">
+                <h3>Current Weather</h3>
+                <p>75°F, Partly Cloudy</p>
+                <p>High: 85°F, Low: 52°F</p>
+            </div>
+            <div class="weather-forecast">
+                <h3>Weather Forecast</h3>
+                <p>Today: 90°F</p>
+                <p>Wednesday: 89°F</p>
+                <p>Thursday: 68°F</p>
+            </div>
         </section>
 
-        <section class="business-listings">
-            <h2>Business Listings</h2>
-            <div class="business">
-                <h3>Business One</h3>
-                <p class="tagline">Your Trusted Partner</p>
-                <p>Email: <a href="mailto:info@businessone.com">info@businessone.com</a></p>
+        <section class="business-directory">
+            <div class="business-card">
+                <h3>Business Name</h3>
+                <p>Email: info@gmail.com</p>
                 <p>Phone: 800-555-1234</p>
-                <p><a href="http://businessone.com">Visit Website</a></p>
+                <p>URL: <a href="#">mybusiness.com</a></p>
             </div>
-            <div class="business">
-                <h3>Business Two</h3>
-                <p class="tagline">Quality Services</p>
-                <p>Email: <a href="mailto:info@businesstwo.com">info@businesstwo.com</a></p>
-                <p>Phone: 800-555-5678</p>
-                <p><a href="http://businesstwo.com">Visit Website</a></p>
+            <div class="business-card">
+                <h3>Business Name</h3>
+                <p>Email: info@gmail.com</p>
+                <p>Phone: 800-555-1234</p>
+                <p>URL: <a href="#">mybusiness.com</a></p>
             </div>
-            <div class="business">
-                <h3>Business Three</h3>
-                <p class="tagline">Experience You Can Trust</p>
-                <p>Email: <a href="mailto:info@businessthree.com">info@businessthree.com</a></p>
-                <p>Phone: 800-555-9012</p>
-                <p><a href="http://businessthree.com">Visit Website</a></p>
+            <div class="business-card">
+                <h3>Business Name</h3>
+                <p>Email: info@gmail.com</p>
+                <p>Phone: 800-555-1234</p>
+                <p>URL: <a href="#">mybusiness.com</a></p>
             </div>
-            <!-- Repeat this block for additional businesses -->
-        </section>
-
-        <section class="spotlights">
-            <h2>Spotlight Members</h2>
-            <div id="spotlight-container"></div> <!-- Container for spotlight members -->
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>© 2024 Kasane Chamber of Commerce | P.O. Box 02, Kasane Mali | (267) 76376661</p>
-        <div>
-            <a href="https://www.facebook.com/timbuktu" target="_blank">Facebook</a>
-            <a href="https://www.linkedin.com/company/timbuktu" target="_blank">LinkedIn</a>
+        <p>Timbuktu Chamber of Commerce | 10 Rue De La Paix, Timbuktu, Mail 999</p>
+        <p>Phone: (223) 555-2300 | Email: info@timbuktucc.org</p>
+        <div class="social-media">
+            <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
         </div>
+        <p>&copy; 20xx Timbuktu Chamber of Commerce. Last Modification: 10/21/20XX 22:12:35</p>
     </footer>
+
 </body>
 </html>
+
