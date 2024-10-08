@@ -45,13 +45,14 @@
         <main>
             <section class="directory">
                 <h2>Business Directory</h2>
-                <div class="business-list" id="business-list"></div>
+                <button id="toggle-view">Toggle View</button>
+                <div class="business-list" id="business-list" data-view="grid"></div>
             </section>
         </main>
     </div>
 
     <footer>
-        <p>© 2024 Kasane Chamber of Commerce | P.O. Box 2 Kazungula, Kasane, Botswana | +267 76376661</p>
+        <p>© <span id="current-year"></span> Kasane Chamber of Commerce | P.O. Box 2 Kazungula, Kasane, Botswana | +267 76376661</p>
         <div>
             <a href="https://www.facebook.com/kasanechamber" target="_blank">Facebook</a>
             <a href="https://www.linkedin.com/company/kasanechamber" target="_blank">LinkedIn</a>
@@ -59,23 +60,57 @@
     </footer>
 
     <script>
-        document.addEventListener("DOMContentLoaded", async function() {
-            const response = await fetch('path/to/your/businesses.json');
-            const businesses = await response.json();
+        document.addEventListener("DOMContentLoaded", async function () {
             const businessListElement = document.getElementById('business-list');
+            const toggleButton = document.getElementById('toggle-view');
+            const currentYear = document.getElementById('current-year');
+            currentYear.textContent = new Date().getFullYear();
 
-            businesses.forEach(business => {
-                const businessDiv = document.createElement('div');
-                businessDiv.classList.add('business');
-                businessDiv.innerHTML = `
-                    <h3>${business.name}</h3>
-                    <p>${business.description}</p>
-                    <p>Email: <a href="mailto:${business.email}">${business.email}</a></p>
-                    <p>Phone: ${business.phone}</p>
-                    <p><a href="${business.website}" target="_blank">Visit Website</a></p>
-                `;
-                businessListElement.appendChild(businessDiv);
+            // Check for cached data
+            let businesses = JSON.parse(localStorage.getItem('businesses'));
+
+            if (!businesses) {
+                // Fetch data from JSON file if not in cache
+                const response = await fetch('data/members.json');
+                if (!response.ok) {
+                    console.error('Failed to fetch data:', response.statusText);
+                    return;
+                }
+                businesses = await response.json();
+                
+                // Cache data in localStorage
+                localStorage.setItem('businesses', JSON.stringify(businesses));
+            }
+
+            displayBusinesses(businesses);
+
+            toggleButton.addEventListener('click', () => {
+                const currentView = businessListElement.dataset.view;
+                const newView = currentView === 'grid' ? 'list' : 'grid';
+                businessListElement.dataset.view = newView;
+                displayBusinesses(businesses);
             });
+
+            function displayBusinesses(businesses) {
+                businessListElement.innerHTML = '';
+                businesses.forEach(business => {
+                    const businessDiv = document.createElement('div');
+                    businessDiv.classList.add('business');
+                    businessDiv.innerHTML = `
+                        <h3>${business.name}</h3>
+                        <p>${business.description}</p>
+                        <p>Email: <a href="mailto:${business.email}">${business.email}</a></p>
+                        <p>Phone: ${business.phone}</p>
+                        <p><a href="${business.website}" target="_blank">Visit Website</a></p>
+                    `;
+                    if (businessListElement.dataset.view === 'grid') {
+                        businessDiv.classList.add('grid-item');
+                    } else {
+                        businessDiv.classList.add('list-item');
+                    }
+                    businessListElement.appendChild(businessDiv);
+                });
+            }
         });
     </script>
 </body>

@@ -1,224 +1,106 @@
-/* Base Styles */
+:root {
+    --primary-color: #2c3e50;
+    --secondary-color: #ecf0f1;
+    --accent-color: #3498db;
+    --text-color: #2c3e50;
+    --footer-background: #34495e;
+    --grid-gap: 16px;
+    --border-radius: 8px;
+}
+
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    color: var(--text-color);
 }
 
-h1, h2, h3 {
-    margin: 1rem 0;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Header and Navigation Styles */
 header {
-    background-color: steelblue;
+    background: var(--primary-color);
     color: white;
-    padding: 1rem;
+    padding: 10px;
     text-align: center;
-    border-bottom: 5px solid #000;
-    max-width: 840px;
-    margin: 0 auto;
-}
-
-.nav {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
 }
 
 nav ul {
-    padding: 0;
     list-style: none;
-    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
 }
 
 nav a {
-    padding: 0.5rem;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: #fff;
+    color: white;
+    text-decoration: none;
 }
 
-nav a:hover {
-    background-color: #333;
-    color: #fff;
-}
-
-/* Responsive Grid Layout */
 .grid {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    gap: 1rem;
-    max-width: 840px;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-main {
-    grid-column: 2 / 3;
+    padding: 20px;
 }
 
 aside {
-    grid-column: 1 / 2;
+    padding: 10px;
 }
 
-/* Hero Section */
-.hero {
-    background-color: #333;
-    color: white;
-    padding: 2rem;
-    text-align: center;
+aside h2 {
+    margin-top: 0;
 }
 
-.cta-button {
-    display: inline-block;
-    background-color: #ff6600;
-    color: white;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    border-radius: 5px;
+.directory {
+    margin: 0;
 }
 
-/* Footer Styles */
+.business-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--grid-gap);
+}
+
+.business {
+    background: var(--secondary-color);
+    border: 1px solid var(--accent-color);
+    border-radius: var(--border-radius);
+    padding: 10px;
+    flex: 1 1 calc(33.333% - 16px); /* Grid item style */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.business:hover {
+    transform: translateY(-5px);
+}
+
+.list-item {
+    flex: 1 1 100%; /* Full width for list view */
+}
+
 footer {
-    background-color: #333;
+    background: var(--footer-background);
     color: white;
-    padding: 1rem;
     text-align: center;
-    max-width: 840px;
-    margin: 0 auto;
-}
-
-/* Mobile View - Responsive */
-@media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-/* Base Styles */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
-
-header, .grid, footer {
-    max-width: 840px;
-    margin: 0 auto;
-}
-
-h1, h2, h3 {
-    margin: 1rem 0;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* Header and Navigation Styles */
-header {
-    background-color: steelblue;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    border-bottom: 5px solid #000;
-}
-
-nav ul {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 0;
-    list-style: none;
-    margin: 0;
-}
-
-nav a {
-    display: block;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: white;
-}
-
-nav a:hover {
-    background-color: #333;
-    color: #fff;
-}
-
-/* Responsive Grid Layout */
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 1rem;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 1rem;
-}
-
-main {
-    grid-column: 2 / 3;
-}
-
-aside {
-    width: 20rem;
+    padding: 10px;
     position: relative;
-    grid-column: 1 / 2;
 }
 
-/* Hero Section */
-.hero {
-    background-color: #333;
+footer a {
     color: white;
-    padding: 2rem;
-    text-align: center;
+    text-decoration: none;
+    margin: 0 10px;
 }
 
-.cta-button {
-    display: inline-block;
-    background-color: #ff6600;
-    color: white;
-    padding: 0.5rem 1rem;
-    margin-top: 1rem;
-    text-transform: uppercase;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-}
-
-/* Mobile View - Responsive */
+/* Responsive Styles */
 @media (max-width: 768px) {
     .grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Single column layout for smaller screens */
     }
-
-    nav ul {
-        flex-direction: column;
+    
+    .business {
+        flex: 1 1 100%; /* Full width for grid item */
     }
 }

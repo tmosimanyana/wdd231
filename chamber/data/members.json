@@ -1,5 +1,5 @@
 [
-    {
+  {
       "name": "Broadband Botswana Internet",
       "address": "Kasane, Botswana",
       "phone": "+267-800-555-1234",
@@ -7,8 +7,8 @@
       "image": "bbi-logo.png",
       "membership_level": 3,
       "info": "Leading provider of internet services in Botswana."
-    },
-    {
+  },
+  {
       "name": "Thebe River Safaris",
       "address": "Kasane, North-West, Botswana",
       "phone": "+267-800-555-5678",
@@ -16,8 +16,8 @@
       "image": "thebe-safaris-logo.png",
       "membership_level": 2,
       "info": "Offers river safaris in the Chobe National Park."
-    },
-    {
+  },
+  {
       "name": "Cresta Mowana Safari Resort and Spa",
       "address": "Kasane, Botswana",
       "phone": "+267-800-555-2345",
@@ -25,8 +25,8 @@
       "image": "cresta-mowana-logo.png",
       "membership_level": 3,
       "info": "Luxury safari resort and spa offering premier lodging."
-    },
-    {
+  },
+  {
       "name": "Chobe Marina Lodge",
       "address": "Kasane, Botswana",
       "phone": "+267-800-555-3456",
@@ -34,33 +34,10 @@
       "image": "chobe-marina-logo.png",
       "membership_level": 2,
       "info": "Lodge with river views and wildlife safaris."
-    },
-    {
+  },
+  {
       "name": "Sandpiper Villas Chobe",
       "address": "Kasane, North-West, Botswana",
       "phone": "+267-800-555-4567",
       "website": "https://sandpipervillaschobe.com",
-      "image": "sandpiper-villas-logo.png",
-      "membership_level": 1,
-      "info": "Luxurious villas with views of the Chobe River."
-    },
-    {
-      "name": "Wild Africa Safaris",
-      "address": "Kasane, Botswana",
-      "phone": "+267-800-555-5679",
-      "website": "https://wildafricasafaris.com",
-      "image": "wild-africa-logo.png",
-      "membership_level": 2,
-      "info": "Safari tour company specializing in personalized wildlife experiences."
-    },
-    {
-      "name": "The Big 5 Chobe Lodge",
-      "address": "Kasane, Botswana",
-      "phone": "+267-800-555-6789",
-      "website": "https://big5chobelodge.com",
-      "image": "big5-lodge-logo.png",
-      "membership_level": 1,
-      "info": "Exclusive lodge with wildlife tours and eco-friendly services."
-    }
-  ]
-  
+      

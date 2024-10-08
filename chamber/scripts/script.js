@@ -1,46 +1,50 @@
-document.addEventListener("DOMContentLoaded", async function() {
+document.addEventListener("DOMContentLoaded", async function () {
     const businessListElement = document.getElementById('business-list');
-    const toggleViewButton = document.getElementById('toggleView');
+    const toggleButton = document.getElementById('toggle-view');
     
-    // Fetch and display members data
-    try {
+    // Check for cached data
+    let businesses = JSON.parse(localStorage.getItem('businesses'));
+    
+    if (!businesses) {
+        // Fetch data from JSON file if not in cache
         const response = await fetch('data/members.json');
-        if (!response.ok) throw new Error("Failed to fetch members data.");
+        if (!response.ok) {
+            console.error('Failed to fetch data:', response.statusText);
+            return;
+        }
+        businesses = await response.json();
         
-        const members = await response.json();
-        displayMembers(members);
-    } catch (error) {
-        console.error('Error fetching or displaying members:', error);
+        // Cache data in localStorage
+        localStorage.setItem('businesses', JSON.stringify(businesses));
     }
 
-    // Function to display members
-    function displayMembers(members) {
-        businessListElement.innerHTML = '';  // Clear existing content
-        members.forEach(member => {
+    displayBusinesses(businesses);
+
+    toggleButton.addEventListener('click', () => {
+        const currentView = businessListElement.dataset.view;
+        const newView = currentView === 'grid' ? 'list' : 'grid';
+        businessListElement.dataset.view = newView;
+        displayBusinesses(businesses);
+    });
+
+    function displayBusinesses(businesses) {
+        businessListElement.innerHTML = '';
+        businesses.forEach(business => {
             const businessDiv = document.createElement('div');
             businessDiv.classList.add('business');
             businessDiv.innerHTML = `
-                <h3>${member.name}</h3>
-                <img src="images/${member.image}" alt="${member.name} Logo" class="business-logo">
-                <p>${member.info}</p>
-                <p>Address: ${member.address}</p>
-                <p>Phone: ${member.phone}</p>
-                <p><a href="${member.website}" target="_blank">Visit Website</a></p>
+                <h3>${business.name}</h3>
+                <p>${business.description}</p>
+                <p>Email: <a href="mailto:${business.email}">${business.email}</a></p>
+                <p>Phone: ${business.phone}</p>
+                <p><a href="${business.website}" target="_blank">Visit Website</a></p>
             `;
+            if (businessListElement.dataset.view === 'grid') {
+                businessDiv.classList.add('grid-item');
+            } else {
+                businessDiv.classList.add('list-item');
+            }
             businessListElement.appendChild(businessDiv);
         });
     }
-
-    // Toggle between grid and list views
-    toggleViewButton.addEventListener('click', () => {
-        businessListElement.classList.toggle('grid-view');
-        businessListElement.classList.toggle('list-view');
-    });
-
-    // Display copyright year and last modification date in footer
-    const currentYear = new Date().getFullYear();
-    const lastModified = document.lastModified;
-
-    document.getElementById('copyright-year').textContent = currentYear;
-    document.getElementById('last-modified').textContent = lastModified;
 });

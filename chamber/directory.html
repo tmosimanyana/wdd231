@@ -6,13 +6,8 @@
     <meta name="description" content="Discover local businesses in Kasane. Explore our directory to find member businesses and their services.">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <meta property="og:title" content="Kasane Chamber of Commerce - Directory">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/chamber.jpg">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/directory.html">
     <title>Kasane Chamber of Commerce - Directory</title>
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/script.js" defer></script>
 </head>
 <body>
     <header>
@@ -45,39 +40,20 @@
         <main>
             <section class="directory">
                 <h2>Business Directory</h2>
-                <div class="business-list" id="business-list"></div>
-
+                <button id="toggle-view">Toggle View</button>
+                <div class="business-list" id="business-list" data-view="grid"></div>
             </section>
         </main>
     </div>
 
     <footer>
-        <p>© 2024 Kasane Chamber of Commerce | P.O. Box 2 Kazungula, Kasane, Botswana | +267 76376661</p>
+        <p>© <span id="copyright-year"></span> Kasane Chamber of Commerce | P.O. Box 2 Kazungula, Kasane, Botswana | +267 76376661</p>
         <div>
             <a href="https://www.facebook.com/kasanechamber" target="_blank">Facebook</a>
             <a href="https://www.linkedin.com/company/kasanechamber" target="_blank">LinkedIn</a>
         </div>
     </footer>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", async function() {
-            const response = await fetch('path/to/your/businesses.json');
-            const businesses = await response.json();
-            const businessListElement = document.getElementById('business-list');
-
-            businesses.forEach(business => {
-                const businessDiv = document.createElement('div');
-                businessDiv.classList.add('business');
-                businessDiv.innerHTML = `
-                    <h3>${business.name}</h3>
-                    <p>${business.description}</p>
-                    <p>Email: <a href="mailto:${business.email}">${business.email}</a></p>
-                    <p>Phone: ${business.phone}</p>
-                    <p><a href="${business.website}" target="_blank">Visit Website</a></p>
-                `;
-                businessListElement.appendChild(businessDiv);
-            });
-        });
-    </script>
+    <script src="scripts/script.js" defer></script>
 </body>
 </html>
