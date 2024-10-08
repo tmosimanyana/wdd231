@@ -1,106 +1,143 @@
-:root {
-    --primary-color: #2c3e50;
-    --secondary-color: #ecf0f1;
-    --accent-color: #3498db;
-    --text-color: #2c3e50;
-    --footer-background: #34495e;
-    --grid-gap: 16px;
-    --border-radius: 8px;
+/* Normalize or Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    color: var(--text-color);
+    background-color: #f4f4f4;
 }
 
 header {
-    background: var(--primary-color);
-    color: white;
-    padding: 10px;
-    text-align: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+header h1 {
+    margin: 0;
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
     padding: 0;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin-right: 15px;
 }
 
-nav a {
-    color: white;
+nav ul li a {
+    color: #fff;
     text-decoration: none;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 3fr; /* 1:3 ratio for sidebar to main content */
+    gap: 20px;
     padding: 20px;
 }
 
 aside {
-    padding: 10px;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-aside h2 {
-    margin-top: 0;
+main {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .directory {
-    margin: 0;
-}
+    text-alignHere's the continuation and completion of your CSS code, along with the necessary enhancements to make your business directory page visually appealing and responsive:
 
-.business-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--grid-gap);
-}
+### **CSS: `styles/styles.css` (Continued)**
 
-.business {
-    background: var(--secondary-color);
-    border: 1px solid var(--accent-color);
-    border-radius: var(--border-radius);
-    padding: 10px;
-    flex: 1 1 calc(33.333% - 16px); /* Grid item style */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-}
-
-.business:hover {
-    transform: translateY(-5px);
-}
-
-.list-item {
-    flex: 1 1 100%; /* Full width for list view */
-}
-
-footer {
-    background: var(--footer-background);
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position: relative;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .grid {
-        grid-template-columns: 1fr; /* Single column layout for smaller screens */
+```css
     }
     
-    .business {
-        flex: 1 1 100%; /* Full width for grid item */
+    .directory h2 {
+        margin-bottom: 15px;
     }
-}
+
+    #toggle-view {
+        margin-bottom: 20px;
+        padding: 10px 15px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .business-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .business {
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        flex: 1 1 calc(33.333% - 20px); /* Responsive grid item size */
+        position: relative;
+    }
+
+    .business img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .business-list[data-view='list'] .business {
+        flex: 1 1 100%; /* Full width for list view */
+    }
+
+    footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+
+    footer p {
+        margin: 5px 0;
+    }
+
+    @media (max-width: 768px) {
+        .grid {
+            grid-template-columns: 1fr; /* Stack on smaller screens */
+        }
+
+        nav ul li {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .business {
+            flex: 1 1 calc(50% - 20px); /* Two items per row on medium screens */
+        }
+    }
+
+    @media (max-width: 480px) {
+        .business {
+            flex: 1 1 100%; /* One item per row on small screens */
+        }
+
+        #toggle-view {
+            width: 100%; /* Full width for button */
+        }
+    }
