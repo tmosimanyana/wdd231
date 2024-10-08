@@ -1,0 +1,66 @@
+[
+    {
+      "name": "Sunshine Enterprises",
+      "address": "123 Solar Street, Timbuktu, ML 999",
+      "phone": "223-555-1234",
+      "website": "https://sunshine.com",
+      "image": "sunshine-logo.png",
+      "membership_level": 3,
+      "additional_info": "Leading provider of solar panels in Timbuktu."
+    },
+    {
+      "name": "Timbuktu Textiles",
+      "address": "456 Cotton Avenue, Timbuktu, ML 999",
+      "phone": "223-555-2345",
+      "website": "https://timbuktutextiles.com",
+      "image": "textiles-logo.png",
+      "membership_level": 2,
+      "additional_info": "Specializes in handmade textiles."
+    },
+    {
+      "name": "Mali Marketing Group",
+      "address": "789 Trade Street, Timbuktu, ML 999",
+      "phone": "223-555-3456",
+      "website": "https://malimarketing.com",
+      "image": "marketing-logo.png",
+      "membership_level": 1,
+      "additional_info": "Marketing services for small businesses."
+    },
+    {
+      "name": "Desert Oasis Tours",
+      "address": "101 Adventure Road, Timbuktu, ML 999",
+      "phone": "223-555-4567",
+      "website": "https://desertoasis.com",
+      "image": "oasis-logo.png",
+      "membership_level": 3,
+      "additional_info": "Tours around the Sahara Desert."
+    },
+    {
+      "name": "Tech Innovators",
+      "address": "202 Silicon Avenue, Timbuktu, ML 999",
+      "phone": "223-555-5678",
+      "website": "https://techinnovators.com",
+      "image": "tech-logo.png",
+      "membership_level": 2,
+      "additional_info": "IT solutions for enterprises."
+    },
+    {
+      "name": "Health Plus",
+      "address": "303 Wellness Way, Timbuktu, ML 999",
+      "phone": "223-555-6789",
+      "website": "https://healthplus.com",
+      "image": "health-logo.png",
+      "membership_level": 1,
+      "additional_info": "Healthcare and wellness services."
+    },
+    {
+      "name": "Green Valley Farms",
+      "address": "404 Agriculture Lane, Timbuktu, ML 999",
+      "phone": "223-555-7890",
+      "website": "https://greenvalleyfarms.com",
+      "image": "greenvalley-logo.png",
+      "membership_level": 2,
+      "additional_info": "Organic farming and fresh produce."
+    }
+  ]
+  
