@@ -7,6 +7,59 @@
     <title>Kasane Chamber of Commerce</title>
     <link rel="stylesheet" href="styles/styles.css"> <!-- Link to your CSS file -->
     <script src="scripts/weather.js" defer></script> <!-- Link to your external JavaScript file -->
+    <script defer>
+        // Example data array for spotlight members
+        const spotlightMembers = [
+            {
+                name: "Business One",
+                tagline: "Your Trusted Partner",
+                email: "info@businessone.com",
+                phone: "800-555-1234",
+                website: "http://businessone.com",
+                logo: "images/member1-logo.jpg",
+            },
+            {
+                name: "Business Two",
+                tagline: "Quality Services",
+                email: "info@businesstwo.com",
+                phone: "800-555-5678",
+                website: "http://businesstwo.com",
+                logo: "images/member2-logo.jpg",
+            },
+            {
+                name: "Business Three",
+                tagline: "Experience You Can Trust",
+                email: "info@businessthree.com",
+                phone: "800-555-9012",
+                website: "http://businessthree.com",
+                logo: "images/member3-logo.jpg",
+            },
+        ];
+
+        // Function to display spotlight members
+        function displaySpotlightMembers() {
+            const spotlightContainer = document.getElementById("spotlight-container");
+            
+            spotlightMembers.forEach(member => {
+                const memberDiv = document.createElement("div");
+                memberDiv.className = "spotlight-member";
+                
+                memberDiv.innerHTML = `
+                    <img src="${member.logo}" alt="${member.name} Logo">
+                    <h3>${member.name}</h3>
+                    <p class="tagline">${member.tagline}</p>
+                    <p>Email: <a href="mailto:${member.email}">${member.email}</a></p>
+                    <p>Phone: ${member.phone}</p>
+                    <p><a href="${member.website}" target="_blank">Visit Website</a></p>
+                `;
+                
+                spotlightContainer.appendChild(memberDiv);
+            });
+        }
+
+        // Call the function to display spotlight members on page load
+        document.addEventListener("DOMContentLoaded", displaySpotlightMembers);
+    </script>
 </head>
 <body>
     <header>

@@ -1,142 +1,136 @@
-/* Global Styles */
+/* General Reset and Body Styles */
 body {
-    font-family: 'Lato', sans-serif;
-    color: #333; /* Text Color */
-    background-color: #f4f4f4; /* Neutral Background */
-    margin: 0;
-    padding: 0;
+    font-family: Arial, sans-serif; /* Use a clean font */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    line-height: 1.6; /* Improve line spacing */
+    color: #333; /* Default text color */
 }
 
-/* Header */
+/* Header Styles */
 header {
-    background-color: #005b96; /* Primary Blue */
-    padding: 20px;
-    text-align: center;
+    background: #007BFF; /* Primary color for the header */
+    color: #fff; /* White text color */
+    padding: 10px 20px; /* Padding around the header */
+    text-align: center; /* Center header text */
 }
 
-header h1 {
-    color: white;
-    font-size: 24px;
-}
-
-/* Navigation */
 nav ul {
-    list-style-type: none;
-    padding: 0;
+    list-style: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
 }
 
 nav ul li {
-    display: inline-block;
-    margin: 0 10px;
+    display: inline; /* Display menu items inline */
+    margin: 0 15px; /* Space between menu items */
 }
 
 nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 16px;
+    color: #fff; /* White text for links */
+    text-decoration: none; /* Remove underline */
 }
 
-nav ul li a:hover {
-    border-bottom: 2px solid white; /* Underline effect on hover */
+/* Hero Image Styles */
+.hero {
+    position: relative; /* Position for the hero section */
 }
 
-/* Business Listings */
+.hero-image {
+    width: 100%; /* Full-width image */
+    height: auto; /* Maintain aspect ratio */
+}
+
+/* Current Weather Section */
+.current-weather {
+    background-color: #f8f9fa; /* Light background for contrast */
+    padding: 15px; /* Padding around the section */
+    border-radius: 8px; /* Rounded corners */
+    margin: 20px 0; /* Space above and below the section */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Business Listings Section */
 .business-listings {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px;
+    margin: 20px 0; /* Space above and below the section */
 }
 
+/* Business Card Styles */
 .business {
-    background-color: white;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    background-color: #ffffff; /* White background for business cards */
+    border-radius: 8px; /* Rounded corners */
+    padding: 15px; /* Padding inside the card */
+    margin-bottom: 20px; /* Space below each card */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.business:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+/* Spotlight Members Section */
+.spotlights {
+    background-color: #f8f9fa; /* Light background for contrast */
+    padding: 20px; /* Padding around the section */
+    border-radius: 10px; /* Rounded corners */
+    margin: 20px 0; /* Space above and below the section */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-.business h3 {
-    font-size: 18px;
-    color: #005b96; /* Primary Blue */
-    margin-bottom: 10px;
+#spotlight-container {
+    display: grid; /* Use CSS Grid for layout */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Responsive columns */
+    gap: 20px; /* Space between grid items */
 }
 
-.business p {
-    margin: 5px 0;
-    font-size: 14px;
+.spotlight-member {
+    background-color: #ffffff; /* White background for member cards */
+    border-radius: 8px; /* Rounded corners for cards */
+    padding: 15px; /* Padding inside the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Card shadow for depth */
+    transition: transform 0.2s; /* Smooth transition effect */
 }
 
-.business a {
-    color: #ff6600; /* Accent Orange */
-    text-decoration: none;
+.spotlight-member:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
 }
 
-.business a:hover {
-    text-decoration: underline;
+/* Logo Styles */
+.spotlight-member img {
+    max-width: 100%; /* Responsive logo */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Space below the image */
 }
 
-/* Button */
-#toggle-view {
-    background-color: #ff6600; /* Accent Orange */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    transition: background-color 0.3s ease; /* Transition effect */
+/* Member Name Styles */
+.spotlight-member h3 {
+    color: #007BFF; /* Use primary color for names */
+    margin: 0; /* Remove default margin */
+    font-size: 1.5em; /* Increase font size for names */
 }
 
-#toggle-view:hover {
-    background-color: #e65c00;
+/* Tagline Styles */
+.spotlight-member .tagline {
+    font-style: italic; /* Italicize tagline */
+    color: #6c757d; /* Light gray color for taglines */
+    margin: 5px 0; /* Space around tagline */
 }
 
-/* Footer */
+/* Paragraph Styles for Contact Information */
+.spotlight-member p {
+    margin: 5px 0; /* Space between paragraphs */
+}
+
+/* Link Styles */
+.spotlight-member a {
+    color: #007BFF; /* Primary color for links */
+    text-decoration: none; /* No underline */
+}
+
+.spotlight-member a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+/* Footer Styles */
 footer {
-    background-color: #2f4f4f;
-    color: white;
-    text-align: center;
-    padding: 20px 0;
-}
-
-footer p {
-    margin: 0;
-    font-size: 14px;
-}
-
-footer a {
-    color: #ff6600; /* Accent Orange */
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-    color: #ffb300; /* Lighten color on hover */
-}
-
-/* Responsive Grid for larger screens */
-@media (min-width: 768px) {
-    .business-listings {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .business-listings {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-/* Mobile-first for very small screens */
-@media (max-width: 480px) {
-    .business-listings {
-        grid-template-columns: 1fr; /* Stack for very small screens */
-    }
+    background-color: #007BFF; /* Match footer with header */
+    color: #fff; /* White text color */
+    padding: 10px 20px; /* Padding around the footer */
+    text-align: center; /* Center footer text */
 }
