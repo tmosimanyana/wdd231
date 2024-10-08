@@ -83,57 +83,78 @@ function capitalizeDescription(weatherArray) {
 async function fetchMembers() {
     try {
         const response = await fetch('data/members.json');
-        const members = await response.json();
-        displayMembers(members, 'grid');
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        const membersData = await response.json();
+        return membersData;
     } catch (error) {
-        console.error('Error fetching members:', error);
+        console.error('There has been a problem with your fetch operation:', error);
     }
 }
 
-function displayMembers(members, viewType) {
-    const container = document.getElementById('membersContainer');
-    container.innerHTML = '';
+async function displayMembers() {
+    const container = document.getElementById('members-container');
+    container.innerHTML = ''; // Clear existing content
 
-    members.forEach(member => {
-        const memberCard = document.createElement('div');
-        memberCard.classList.add('member-card', viewType);
-
-        memberCard.innerHTML = `
-            <img src="images/${member.image}" alt="${member.name}">
-            <h3>${member.name}</h3>
-            <p>${member.address}</p>
-            <p>${member.phone}</p>
-            <p><a href="${member.website}" target="_blank">${member.website}</a></p>
-            <p>Membership Level: ${member.membership_level}</p>
-            <p>${member.additional_info}</p>
-        `;
-        container.appendChild(memberCard);
-    });
-}
-
-// Toggle view between grid and list
-document.getElementById('toggleView').addEventListener('click', () => {
-    const container = document.getElementById('membersContainer');
-    const isGridView = container.classList.contains('grid-view');
+    const membersData = await fetchMembers();
     
-    if (isGridView) {
-        container.classList.remove('grid-view');
-        displayMembers(members, 'list');
-    } else {
-        container.classList.add('grid-view');
-        displayMembers(members, 'grid');
+    if (membersData) {
+        membersData.forEach(member => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <img src="${member.image_icon}" alt="${member.name}" style="width: 100%;">
+                <h2>${member.name}</h2>
+                <p><strong>Address:</strong> ${member.address}</p>
+                <p><strong>Phone:</strong> ${member.phone_number}</p>
+                <p><strong>Website:</strong> <a href="${member.website_url}" target="_blank">${member.website_url}</a></p>
+                <p><strong>Membership Level:</strong> ${member.membership_level}</p>
+                <p>${member.other_info}</p>
+            `;
+            container.appendChild(card);
+        });
     }
+}
+
+function toggleView(view) {
+    const container = document.getElementById('members-container');
+    if (view === 'grid') {
+        container.className = 'grid-view';
+    } else {
+        container.className = 'list-view';
+        container.innerHTML = ''; // Clear existing content
+        fetchMembers().then(membersData => {
+            membersData.forEach(member => {
+                const listItem = document.createElement('li');
+                listItem.innerHTML = `
+                    <h2>${member.name}</h2>
+                    <p><strong>Address:</strong> ${member.address}</p>
+                    <p><strong>Phone:</strong> ${member.phone_number}</p>
+                    <p><strong>Website:</strong> <a href="${member.website_url}" target="_blank">${member.website_url}</a></p>
+                    <p><strong>Membership Level:</strong> ${member.membership_level}</p>
+                    <p>${member.other_info}</p>
+                `;
+                container.appendChild(listItem);
+            });
+        });
+    }
+}
+
+document.getElementById('grid-view-btn').addEventListener('click', () => {
+    toggleView('grid');
+    displayMembers();
 });
 
-// Footer dynamic content
+document.getElementById('list-view-btn').addEventListener('click', () => {
+    toggleView('list');
+    displayMembers();
+});
+
+// Display the current year and last modified date
 const currentYear = new Date().getFullYear();
-document.getElementById('footer-year').textContent = currentYear;
+document.getElementById('copyright-year').textContent = currentYear;
+document.getElementById('last-modified-date').textContent = document.lastModified;
 
-const lastModified = document.lastModified;
-document.getElementById('footer-modified').textContent = lastModified;
-
-// Call functions on page load
-window.onload = () => {
-    getWeather();
-    fetchMembers();
-};
+// Initial display
+displayMembers();
