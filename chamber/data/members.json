@@ -1,65 +1,65 @@
 [
     {
-        "name": "Timbuktu Travel Agency",
-        "address": "123 Main St, Timbuktu, Mail 999",
-        "phone": "800-555-1234",
-        "website": "https://timbuktutravel.com",
-        "image": "timbuktu-travel.png",
+        "name": "Tech Innovators",
+        "address": "123 Innovation Drive, Timbuktu, Mail 999",
+        "phone": "(223) 555-1234",
+        "website": "https://techinnovators.com",
+        "image": "tech-innovators.png",
         "membershipLevel": 3,
-        "info": "Specializing in travel packages and tours."
+        "description": "Leading provider of innovative technology solutions."
     },
     {
-        "name": "Timbuktu Restaurant",
-        "address": "456 Elm St, Timbuktu, Mail 999",
-        "phone": "800-555-5678",
-        "website": "https://timbukturestaurant.com",
-        "image": "timbuktu-restaurant.png",
+        "name": "Green Thumb Landscaping",
+        "address": "456 Greenway Ave, Timbuktu, Mail 999",
+        "phone": "(223) 555-5678",
+        "website": "https://greenthumb.com",
+        "image": "green-thumb.png",
         "membershipLevel": 2,
-        "info": "Serving authentic local cuisine."
+        "description": "Expert landscaping services for residential and commercial properties."
     },
     {
-        "name": "Timbuktu Tech Solutions",
-        "address": "789 Pine St, Timbuktu, Mail 999",
-        "phone": "800-555-9101",
-        "website": "https://timbuktutech.com",
-        "image": "timbuktu-tech.png",
+        "name": "Healthy Eats Cafe",
+        "address": "789 Wellness Rd, Timbuktu, Mail 999",
+        "phone": "(223) 555-9101",
+        "website": "https://healthyeats.com",
+        "image": "healthy-eats.png",
         "membershipLevel": 1,
-        "info": "Providing IT services and support."
+        "description": "Serving nutritious and delicious meals for a healthier lifestyle."
     },
     {
-        "name": "Timbuktu Bookstore",
-        "address": "321 Oak St, Timbuktu, Mail 999",
-        "phone": "800-555-2345",
-        "website": "https://timbuktubookstore.com",
-        "image": "timbuktu-bookstore.png",
-        "membershipLevel": 3,
-        "info": "Your local source for books and stationery."
-    },
-    {
-        "name": "Timbuktu Fitness Center",
-        "address": "654 Maple St, Timbuktu, Mail 999",
-        "phone": "800-555-6789",
-        "website": "https://timbuktufitness.com",
-        "image": "timbuktu-fitness.png",
+        "name": "Local Craftsmen",
+        "address": "321 Artisan Blvd, Timbuktu, Mail 999",
+        "phone": "(223) 555-1122",
+        "website": "https://localcraftsmen.com",
+        "image": "local-craftsmen.png",
         "membershipLevel": 2,
-        "info": "Promoting health and wellness."
+        "description": "Showcasing the best handmade crafts from local artisans."
     },
     {
-        "name": "Timbuktu Art Gallery",
-        "address": "987 Birch St, Timbuktu, Mail 999",
-        "phone": "800-555-3456",
-        "website": "https://timbuktuartgallery.com",
-        "image": "timbuktu-art-gallery.png",
+        "name": "Elite Fitness",
+        "address": "654 Health St, Timbuktu, Mail 999",
+        "phone": "(223) 555-3141",
+        "website": "https://elitefitness.com",
+        "image": "elite-fitness.png",
         "membershipLevel": 3,
-        "info": "Showcasing local artists."
+        "description": "Your partner in achieving fitness goals with personalized training."
     },
     {
-        "name": "Timbuktu Consulting",
-        "address": "159 Cedar St, Timbuktu, Mail 999",
-        "phone": "800-555-7890",
-        "website": "https://timbuktuconsulting.com",
-        "image": "timbuktu-consulting.png",
+        "name": "Tech Solutions Group",
+        "address": "987 Future Way, Timbuktu, Mail 999",
+        "phone": "(223) 555-1516",
+        "website": "https://techsolutions.com",
+        "image": "tech-solutions.png",
+        "membershipLevel": 2,
+        "description": "Comprehensive IT support and services for businesses."
+    },
+    {
+        "name": "Travel the World Agency",
+        "address": "159 Journey Lane, Timbuktu, Mail 999",
+        "phone": "(223) 555-2718",
+        "website": "https://traveltheworld.com",
+        "image": "travel-world.png",
         "membershipLevel": 1,
-        "info": "Business consulting and strategy."
+        "description": "Expert travel planning for your next adventure."
     }
 ]
