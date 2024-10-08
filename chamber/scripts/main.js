@@ -1,6 +1,56 @@
+async function fetchMembers() {
+    try {
+        const response = await fetch('scripts/data/members.json'); // Adjust the path if needed
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        const members = await response.json(); // Parse the JSON data
+        displayMembers(members); // Call a function to display the data
+    } catch (error) {
+        console.error('There has been a problem with your fetch operation:', error);
+    }
+}
+
+function displayMembers(members) {
+    const directoryElement = document.querySelector('.business-directory');
+    directoryElement.innerHTML = ''; // Clear any existing content
+
+    members.forEach(member => {
+        const memberCard = document.createElement('div');
+        memberCard.className = 'member-card';
+
+        memberCard.innerHTML = `
+            <h3>${member.name}</h3>
+            <p>Address: ${member.address}</p>
+            <p>Phone: ${member.phone}</p>
+            <p>Website: <a href="${member.website}" target="_blank">${member.website}</a></p>
+            <p>Membership Level: ${getMembershipLevel(member.membershipLevel)}</p>
+            <img src="images/${member.image}" alt="${member.name} Logo" />
+            <p>${member.info}</p>
+        `;
+
+        directoryElement.appendChild(memberCard); // Append the card to the directory
+    });
+}
+
+function getMembershipLevel(level) {
+    switch (level) {
+        case 1:
+            return 'Member';
+        case 2:
+            return 'Silver';
+        case 3:
+            return 'Gold';
+        default:
+            return 'Unknown';
+    }
+}
+
+// Fetch members when the page loads
+window.onload = fetchMembers;
 // Weather API
 async function getWeather() {
-    const apiKey = 'your-openweathermap-api-key'; // Replace with your OpenWeatherMap API key
+    const apiKey = '35177d3eff6951544664f3746d418ea5'; // Replaced with my OpenWeatherMap API key
     const city = 'Timbuktu';
     const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
 
