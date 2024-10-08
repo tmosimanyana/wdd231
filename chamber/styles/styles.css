@@ -1,75 +1,142 @@
-/* styles/styles.css */
-
+/* Global Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
+    color: #333; /* Text Color */
+    background-color: #f4f4f4; /* Neutral Background */
     margin: 0;
     padding: 0;
-    color: #333;
 }
 
+/* Header */
 header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 20px;
+    background-color: #005b96; /* Primary Blue */
+    padding: 20px;
     text-align: center;
 }
 
+header h1 {
+    color: white;
+    font-size: 24px;
+}
+
+/* Navigation */
 nav ul {
     list-style-type: none;
     padding: 0;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 15px;
+    display: inline-block;
+    margin: 0 10px;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 16px;
 }
 
-.hero {
-    text-align: center;
-    margin: 20px 0;
+nav ul li a:hover {
+    border-bottom: 2px solid white; /* Underline effect on hover */
 }
 
-.hero-image {
-    max-width: 100%;
-    height: auto;
-}
-
-.current-weather, .business-listings {
-    margin: 20px;
-}
-
-.current-weather h2, .business-listings h2 {
-    color: #4CAF50;
+/* Business Listings */
+.business-listings {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
 }
 
 .business {
-    border: 1px solid #ddd;
+    background-color: white;
+    padding: 15px;
     border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.business:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
 }
 
 .business h3 {
-    margin: 0;
+    font-size: 18px;
+    color: #005b96; /* Primary Blue */
+    margin-bottom: 10px;
 }
 
+.business p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.business a {
+    color: #ff6600; /* Accent Orange */
+    text-decoration: none;
+}
+
+.business a:hover {
+    text-decoration: underline;
+}
+
+/* Button */
+#toggle-view {
+    background-color: #ff6600; /* Accent Orange */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease; /* Transition effect */
+}
+
+#toggle-view:hover {
+    background-color: #e65c00;
+}
+
+/* Footer */
 footer {
-    background-color: #4CAF50;
+    background-color: #2f4f4f;
     color: white;
     text-align: center;
-    padding: 10px 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
+    padding: 20px 0;
 }
 
-footer div a {
-    color: white;
-    margin: 0 10px;
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+footer a {
+    color: #ff6600; /* Accent Orange */
     text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: #ffb300; /* Lighten color on hover */
+}
+
+/* Responsive Grid for larger screens */
+@media (min-width: 768px) {
+    .business-listings {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .business-listings {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile-first for very small screens */
+@media (max-width: 480px) {
+    .business-listings {
+        grid-template-columns: 1fr; /* Stack for very small screens */
+    }
 }
