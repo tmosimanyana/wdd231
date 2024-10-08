@@ -1,143 +1,101 @@
-/* Normalize or Reset CSS */
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-}
-
-header h1 {
-    margin: 0;
+    background: #007bff;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 15px;
+    margin: 0 15px;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
+main {
+    padding: 20px;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr 3fr; /* 1:3 ratio for sidebar to main content */
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
 }
 
-aside {
-    background-color: #fff;
-    padding: 15px;
+.business-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.business {
+    background: white;
+    border: 1px solid #ddd;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-main {
-    background-color: #fff;
     padding: 15px;
-    border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    max-width: 100%; /* Change max-width to 100% for mobile */
+    text-align: center;
 }
 
-.directory {
-    text-alignHere's the continuation and completion of your CSS code, along with the necessary enhancements to make your business directory page visually appealing and responsive:
+.business img {
+    width: 100%;
+    height: auto;
+    max-height: 100px; /* Limit the image height */
+}
 
-### **CSS: `styles/styles.css` (Continued)**
+button {
+    margin: 15px 0;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
-```css
-    }
-    
-    .directory h2 {
-        margin-bottom: 15px;
-    }
+button:hover {
+    background: #0056b3;
+}
 
-    #toggle-view {
-        margin-bottom: 20px;
-        padding: 10px 15px;
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
+footer {
+    text-align: center;
+    background: #f8f8f8;
+    padding: 15px 0;
+    margin-top: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    nav ul li {
+        display: block; /* Stack navigation items */
+        margin: 10px 0;
     }
 
     .business-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
+        width: 100%; /* Full width on mobile */
     }
 
     .business {
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        padding: 15px;
-        flex: 1 1 calc(33.333% - 20px); /* Responsive grid item size */
-        position: relative;
+        padding: 10px; /* Reduce padding on mobile */
     }
 
-    .business img {
-        max-width: 100%;
-        height: auto;
-        border-radius: 5px;
+    button {
+        width: 100%; /* Full-width buttons on mobile */
     }
-
-    .business-list[data-view='list'] .business {
-        flex: 1 1 100%; /* Full width for list view */
-    }
-
-    footer {
-        background-color: #333;
-        color: #fff;
-        text-align: center;
-        padding: 20px;
-        position: relative;
-        bottom: 0;
-        width: 100%;
-    }
-
-    footer p {
-        margin: 5px 0;
-    }
-
-    @media (max-width: 768px) {
-        .grid {
-            grid-template-columns: 1fr; /* Stack on smaller screens */
-        }
-
-        nav ul li {
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        .business {
-            flex: 1 1 calc(50% - 20px); /* Two items per row on medium screens */
-        }
-    }
-
-    @media (max-width: 480px) {
-        .business {
-            flex: 1 1 100%; /* One item per row on small screens */
-        }
-
-        #toggle-view {
-            width: 100%; /* Full width for button */
-        }
-    }
+}
