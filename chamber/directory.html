@@ -63,8 +63,8 @@
         document.addEventListener("DOMContentLoaded", async function () {
             const businessListElement = document.getElementById('business-list');
             const toggleButton = document.getElementById('toggle-view');
-            const currentYear = document.getElementById('current-year');
-            currentYear.textContent = new Date().getFullYear();
+            const currentYearElement = document.getElementById('current-year');
+            currentYearElement.textContent = new Date().getFullYear();
 
             // Check for cached data
             let businesses = JSON.parse(localStorage.getItem('businesses'));
@@ -98,7 +98,8 @@
                     businessDiv.classList.add('business');
                     businessDiv.innerHTML = `
                         <h3>${business.name}</h3>
-                        <p>${business.description}</p>
+                        <img src="images/${business.image}" alt="${business.name} logo" class="business-logo">
+                        <p>${business.info}</p>
                         <p>Email: <a href="mailto:${business.email}">${business.email}</a></p>
                         <p>Phone: ${business.phone}</p>
                         <p><a href="${business.website}" target="_blank">Visit Website</a></p>
