@@ -22,8 +22,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Normalize CSS for consistency across browsers -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/main.css"> <!-- Custom CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="stylesheet" href="styles/main.min.css"> <!-- Minified Custom CSS -->
 </head>
 <body>
     <header>
@@ -61,6 +61,7 @@
         </div>
     </footer>
 
+    <script src="scripts/members.min.js" defer></script> <!-- Minified JS with defer -->
     <script>
         // Automatically set the current year in the footer
         document.getElementById('year').textContent = new Date().getFullYear();
@@ -68,6 +69,5 @@
         // Set the last modified date of the document
         document.getElementById('last-modified').textContent = document.lastModified;
     </script>
-    <script src="scripts/members.js"></script>
 </body>
 </html>
