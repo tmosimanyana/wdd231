@@ -1,1 +1,25 @@
-:root{--primary-bg-color:#222;--secondary-bg-color:#f9f9f9;--text-color:white;--hover-bg-color:#333;--active-bg-color:#555;--border-color:#ddd}body{font-family:'Roboto',sans-serif;margin:0;padding:0;box-sizing:border-box;font-size:16px;line-height:1.5}.container{width:90%;max-width:1200px;margin:0 auto}header{background-color:var(--primary-bg-color);color:var(--text-color);padding:20px 0}header h1{margin:0}nav ul{list-style:none;display:flex;gap:20px;justify-content:flex-end;padding:0}nav ul li a{color:var(--text-color);text-decoration:none;padding:10px}nav ul li a:hover,nav ul li a:focus{text-decoration:underline;outline:2px dashed #fff}h1,h2{text-align:left;margin-bottom:10px}main{padding:20px 0}#view-toggle{margin-bottom:20px}#view-toggle button{padding:10px;margin-right:10px;cursor:pointer;background-color:var(--hover-bg-color);color:var(--text-color);border:none;transition:background-color 0.3s ease}#view-toggle button:hover{background-color:var(--active-bg-color)}.grid-view .member-card{display:flex;flex-wrap:wrap;justify-content:space-around;gap:20px}.member-card{background-color:var(--secondary-bg-color);padding:20px;border:1px solid var(--border-color);flex-basis:calc(33.333% - 40px);min-height:250px}.list-view .member-card{flex-basis:100%}footer{background-color:var(--primary-bg-color);color:var(--text-color);padding:20px 0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px}@media (max-width:768px){nav ul{flex-direction:column;text-align:center}.member-card{flex-basis:100%}main{padding:10px 0}}@media (max-width:480px){header{padding:10px 0}nav ul{flex-direction:column;gap:10px}main{padding:5px}#view-toggle button{width:100%;margin-bottom:5px}nav ul li a{padding:10px;display:block}}
+:root {
+    --primary-bg-color: #222;
+    --secondary-bg-color: #f9f9f9;
+    --text-color: white;
+    --hover-bg-color: #333;
+    --active-bg-color: #555;
+    --border-color: #ddd;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Other styles... */
