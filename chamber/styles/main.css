@@ -1,12 +1,19 @@
-/* Normalize.css will be included before the custom styles */
+:root {
+    --primary-bg-color: #222;
+    --secondary-bg-color: #f9f9f9;
+    --text-color: white;
+    --hover-bg-color: #333;
+    --active-bg-color: #555;
+    --border-color: #ddd;
+}
 
-/* General Styles */
 body {
-    font-family: 'Roboto', sans-serif; /* Changed to Roboto */
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+    font-size: 16px;
+    line-height: 1.5;
 }
 
 .container {
@@ -15,10 +22,9 @@ body {
     margin: 0 auto;
 }
 
-/* Header Styles */
 header {
-    background-color: #222; /* Darker for better contrast */
-    color: white;
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
     padding: 20px 0;
 }
 
@@ -35,24 +41,26 @@ nav ul {
 }
 
 nav ul li a {
-    color: white;
+    color: var(--text-color);
     text-decoration: none;
     padding: 10px;
 }
 
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li a:focus {
     text-decoration: underline;
+    outline: 2px dashed #fff; /* Add focus styles */
 }
 
 h1, h2 {
     text-align: left;
+    margin-bottom: 10px;
 }
 
 main {
     padding: 20px 0;
 }
 
-/* Toggle buttons */
 #view-toggle {
     margin-bottom: 20px;
 }
@@ -61,21 +69,16 @@ main {
     padding: 10px;
     margin-right: 10px;
     cursor: pointer;
-    background-color: #333;
-    color: white;
+    background-color: var(--hover-bg-color);
+    color: var(--text-color);
     border: none;
     transition: background-color 0.3s ease;
 }
 
 #view-toggle button:hover {
-    background-color: #555;
+    background-color: var(--active-bg-color);
 }
 
-#view-toggle button:focus {
-    outline: 2px solid #555;
-}
-
-/* Grid View */
 .grid-view .member-card {
     display: flex;
     flex-wrap: wrap;
@@ -84,22 +87,20 @@ main {
 }
 
 .member-card {
-    background-color: #f9f9f9;
+    background-color: var(--secondary-bg-color);
     padding: 20px;
-    border: 1px solid #ddd;
-    flex-basis: calc(33.333% - 40px); /* Adjust for grid view */
-    min-height: 250px; /* Reserved space to prevent layout shift */
+    border: 1px solid var(--border-color);
+    flex-basis: calc(33.333% - 40px);
+    min-height: 250px;
 }
 
-/* List View */
 .list-view .member-card {
     flex-basis: 100%;
 }
 
-/* Footer */
 footer {
-    background-color: #222;
-    color: white;
+    background-color: var(--primary-bg-color);
+    color: var(--text-color);
     padding: 20px 0;
     text-align: center;
     display: flex;
