@@ -6,7 +6,7 @@
         "fax": "+267 395 2926",
         "email": "info@bamb.co.bw",
         "website": "",
-        "image": "images/bamb.png",
+        "image": "images/bamb.webp",
         "membershipLevel": 3
     },
     {
@@ -14,7 +14,7 @@
         "address": "Plot 59 Unit 1B, GICP, Gaborone 9999",
         "phone": "+267 390 1851",
         "website": "http://agrifeed.co.bw",
-        "image": "images/agrifeed.png",
+        "image": "images/agrifeed.webp",
         "membershipLevel": 2
     },
     {
@@ -22,7 +22,7 @@
         "address": "Plot 20689 Sekotlo Rd, Gaborone 9999",
         "phone": "+267 75 480 600",
         "website": "http://ghtech.co.za",
-        "image": "images/greenhouse.png",
+        "image": "images/greenhouse.webp",
         "membershipLevel": 2
     },
     {
@@ -30,7 +30,7 @@
         "address": "Plot 43143 Maphapheng Rd, Gaborone 000",
         "phone": "+267 311 0876",
         "website": "http://afgriequipment.co.za",
-        "image": "images/afgri.png",
+        "image": "images/afgri.webp",
         "membershipLevel": 3
     },
     {
@@ -38,7 +38,7 @@
         "address": "Plot 20627 Block 3 Broadhurst, Gaborone 7441",
         "phone": "+267 319 0055",
         "website": "http://hydrocon.org",
-        "image": "images/hydrocon.png",
+        "image": "images/hydrocon.webp",
         "membershipLevel": 1
     },
     {
@@ -46,7 +46,7 @@
         "address": "Plot 28562, Fairgrounds Mall, Unit G26, Gaborone",
         "phone": "",
         "website": "http://sediba.co.bw",
-        "image": "images/sediba.png",
+        "image": "images/sediba.webp",
         "membershipLevel": 1
     },
     {
@@ -54,7 +54,7 @@
         "address": "Plot 92/98 Commerce Park, Gaborone",
         "phone": "+267 316 0500",
         "website": "",
-        "image": "images/notwane_poultry.webp",
+        "image": "images/notwane.webp",
         "membershipLevel": 2
     },
     {
@@ -62,7 +62,7 @@
         "address": "Plot 9 10 Tlokweng Main Rd, Gaborone B999",
         "phone": "",
         "website": "http://agrichem.com.au",
-        "image": "images/",
+        "image": "images/agrichem.webp",
         "membershipLevel": 2
     }
 ]
