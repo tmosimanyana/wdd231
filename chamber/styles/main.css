@@ -16,7 +16,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #333;
+    background-color: #222; /* Darker for better contrast */
     color: white;
     padding: 20px 0;
 }
@@ -36,6 +36,7 @@ nav ul {
 nav ul li a {
     color: white;
     text-decoration: none;
+    padding: 10px;
 }
 
 nav ul li a:hover {
@@ -69,6 +70,10 @@ main {
     background-color: #555;
 }
 
+#view-toggle button:focus {
+    outline: 2px solid #555;
+}
+
 /* Grid View */
 .grid-view .member-card {
     display: flex;
@@ -82,6 +87,7 @@ main {
     padding: 20px;
     border: 1px solid #ddd;
     flex-basis: calc(33.333% - 40px); /* Adjust for grid view */
+    min-height: 250px; /* Reserve space to prevent layout shift */
 }
 
 /* List View */
@@ -91,10 +97,14 @@ main {
 
 /* Footer */
 footer {
-    background-color: #333;
+    background-color: #222;
     color: white;
     padding: 20px 0;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 @media (max-width: 768px) {
@@ -109,5 +119,30 @@ footer {
 
     main {
         padding: 10px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 10px 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    main {
+        padding: 5px;
+    }
+
+    #view-toggle button {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    nav ul li a {
+        padding: 10px;
+        display: block;
     }
 }
