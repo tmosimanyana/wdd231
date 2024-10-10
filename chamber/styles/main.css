@@ -1,3 +1,5 @@
+/* Normalize.css will be included before the custom styles */
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
@@ -12,10 +14,15 @@ body {
     margin: 0 auto;
 }
 
+/* Header Styles */
 header {
     background-color: #333;
     color: white;
     padding: 20px 0;
+}
+
+header h1 {
+    margin: 0;
 }
 
 nav ul {
@@ -23,11 +30,16 @@ nav ul {
     display: flex;
     gap: 20px;
     justify-content: flex-end;
+    padding: 0;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+}
+
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
 h1, h2 {
@@ -47,6 +59,14 @@ main {
     padding: 10px;
     margin-right: 10px;
     cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+#view-toggle button:hover {
+    background-color: #555;
 }
 
 /* Grid View */
@@ -78,7 +98,16 @@ footer {
 }
 
 @media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
     .member-card {
         flex-basis: 100%;
+    }
+
+    main {
+        padding: 10px 0;
     }
 }

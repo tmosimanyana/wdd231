@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Directory of businesses and organizations that are members of the Kweneng Agriculture Chamber of Commerce.">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <title>Kweneng Agriculture Chamber of Commerce - Business Directory</title>
-    <link rel="icon" href="images/favicon.ico">
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce- Business Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/chamber.webp"> <!-- Updated with your image -->
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/directory.html">
+    <meta property="og:description" content="Explore the directory of businesses and organizations associated with the Kweneng Agriculture Chamber of Commerce.">
+    <meta property="fb:app_id" content="483268017447234">
+    
+    <title>Business Directory - Kweneng Agriculture Chamber of Commerce</title>
+    <link rel="icon" href="images/favicon.ico"> <!-- Website favicon -->
     <link rel="stylesheet" href="styles/normalize.css"> <!-- Normalize CSS -->
     <link rel="stylesheet" href="styles/main.css"> <!-- Custom CSS -->
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="logo">
-                <img src="images/logo.png" alt="Kweneng Agriculture Chamber of Commerce">
-                <h1>Kweneng Agriculture Chamber of Commerce</h1>
-            </div>
+            <h1>Kweneng Agriculture Chamber of Commerce</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
@@ -24,67 +28,38 @@
                     <li><a href="directory.html">Business Directory</a></li>
                     <li><a href="join.html">Join</a></li>
                     <li><a href="about.html">About</a></li>
+                    <li><a href="podcast.html">Podcast</a></li>
+                    <li><a href="events.html">Events</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <main>
-        <section class="hero">
-            <img src="images/hero-image.jpg" alt="Scalable, Responsive Hero Image">
-            <button class="cta-button">Keynote Tickets</button>
-        </section>
-
-        <section class="content">
-            <div class="events">
-                <h2>Events</h2>
-                <!-- Add events content here -->
+        <section class="directory">
+            <h2>Business Directory</h2>
+            <div id="view-toggle">
+                <button id="grid-view">Grid View</button>
+                <button id="list-view">List View</button>
             </div>
-            <div class="weather">
-                <h2>Current Weather</h2>
-                <p>75°F, Partly Cloudy</p>
-                <p>High: 85°F, Low: 52°F</p>
-                <p>Humidity: 34%, Sunrise: 7:30am, Sunset: 9:59pm</p>
-            </div>
-            <div class="forecast">
-                <h2>Weather Forecast</h2>
-                <p>Today: 90°F</p>
-                <p>Wednesday: 89°F</p>
-                <p>Thursday: 68°F</p>
-            </div>
-        </section>
-
-        <section class="business-directory">
-            <div class="business-card">
-                <h3>Business Name</h3>
-                <p>Business Tag Line</p>
-                <p>Email: info@gmail.com</p>
-                <p>Phone: 800-555-1234</p>
-                <p>Website: <a href="#">mybusiness.com</a></p>
-            </div>
-            <!-- Add more business cards as needed -->
+            <div id="members-container" class="grid-view"></div>
         </section>
     </main>
 
     <footer>
-        <div class="contact-info">
-            <p>Kweneng Agriculture Chamber of Commerce</p>
-            <p>10 Rue De La Paix, Timbuktu, Mali 999</p>
-            <p>Email: info@timbuktuchamber.org | Phone: (223) 555-2300</p>
-        </div>
-        <div class="social-media">
-            <a href="#"><img src="images/youtube-icon.png" alt="YouTube"></a>
-            <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
-            <a href="#"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
-        </div>
-        <div class="legal">
-            <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
-            <p>Last Modified: <span id="last-modified"></span></p>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
+            <p>Last modified: <span id="last-modified"></span></p>
         </div>
     </footer>
 
     <script>
+        // Automatically set the current year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Set the last modified date of the document
         document.getElementById('last-modified').textContent = document.lastModified;
     </script>
+    <script src="scripts/members.js"></script> <!-- JavaScript File -->
 </body>
 </html>
