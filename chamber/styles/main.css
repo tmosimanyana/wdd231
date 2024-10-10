@@ -2,7 +2,7 @@
 
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif; /* Changed to Roboto */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
