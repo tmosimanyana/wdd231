@@ -1,0 +1,84 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+h1, h2 {
+    text-align: left;
+}
+
+main {
+    padding: 20px 0;
+}
+
+/* Toggle buttons */
+#view-toggle {
+    margin-bottom: 20px;
+}
+
+#view-toggle button {
+    padding: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* Grid View */
+.grid-view .member-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.member-card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    flex-basis: calc(33.333% - 40px); /* Adjust for grid view */
+}
+
+/* List View */
+.list-view .member-card {
+    flex-basis: 100%;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .member-card {
+        flex-basis: 100%;
+    }
+}
