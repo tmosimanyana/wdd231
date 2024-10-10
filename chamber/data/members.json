@@ -1,65 +1,68 @@
 [
     {
-        "name": "Chobe Safari Lodge",
-        "address": "Chobe River, Kasane, Botswana",
-        "phone_number": "+267 625 0300",
-        "website_url": "https://www.chobesafarilodge.com",
-        "image_icon": "chobe_safari_lodge.png",
-        "membership_level": 3,
-        "other_info": "Luxury lodge with game drives and river safaris."
+        "name": "BAMB Headquarters",
+        "address": "Plot 130, Nkwe Square, G.I.F.P, Gaborone",
+        "phone": "+267 395 1341",
+        "fax": "+267 395 2926",
+        "email": "info@bamb.co.bw",
+        "website": "",
+        "image": "images/bamb.png",
+        "membershipLevel": 3
     },
     {
-        "name": "Thebe River Safaris",
-        "address": "Thebe River Camp, Kasane, Botswana",
-        "phone_number": "+267 625 1032",
-        "website_url": "https://www.theberiversafaris.com",
-        "image_icon": "thebe_river_safaris.png",
-        "membership_level": 2,
-        "other_info": "Offering river cruises and adventure activities."
+        "name": "AgriFeed GICP",
+        "address": "Plot 59 Unit 1B, GICP, Gaborone 9999",
+        "phone": "+267 390 1851",
+        "website": "http://agrifeed.co.bw",
+        "image": "images/agrifeed.png",
+        "membershipLevel": 2
     },
     {
-        "name": "Kasane Craft Market",
-        "address": "Kasane Main Street, Kasane, Botswana",
-        "phone_number": "+267 625 3344",
-        "website_url": "http://www.kasanecraftmarket.com",
-        "image_icon": "kasane_craft_market.png",
-        "membership_level": 1,
-        "other_info": "Showcasing local handmade crafts and souvenirs."
+        "name": "Greenhouse Technologies",
+        "address": "Plot 20689 Sekotlo Rd, Gaborone 9999",
+        "phone": "+267 75 480 600",
+        "website": "http://ghtech.co.za",
+        "image": "images/greenhouse.png",
+        "membershipLevel": 2
     },
     {
-        "name": "Chobe National Park Lodges",
-        "address": "Chobe National Park, Kasane, Botswana",
-        "phone_number": "+267 625 0911",
-        "website_url": "http://www.chobenationalparklodges.com",
-        "image_icon": "chobe_national_park_lodges.png",
-        "membership_level": 2,
-        "other_info": "Various lodges offering wildlife experiences."
+        "name": "AFGRI Equipment",
+        "address": "Plot 43143 Maphapheng Rd, Gaborone 000",
+        "phone": "+267 311 0876",
+        "website": "http://afgriequipment.co.za",
+        "image": "images/afgri.png",
+        "membershipLevel": 3
     },
     {
-        "name": "Chobe Adventures",
-        "address": "Kasane Waterfront, Kasane, Botswana",
-        "phone_number": "+267 625 0599",
-        "website_url": "https://www.chobeadventures.com",
-        "image_icon": "chobe_adventures.png",
-        "membership_level": 1,
-        "other_info": "Guided tours and fishing trips in the Chobe region."
+        "name": "Hydrocon Green",
+        "address": "Plot 20627 Block 3 Broadhurst, Gaborone 7441",
+        "phone": "+267 319 0055",
+        "website": "http://hydrocon.org",
+        "image": "images/hydrocon.png",
+        "membershipLevel": 1
     },
     {
-        "name": "Kasane B&B",
-        "address": "Kasane, Botswana",
-        "phone_number": "+267 625 1234",
-        "website_url": "http://www.kasanebandb.com",
-        "image_icon": "kasane_bb.png",
-        "membership_level": 1,
-        "other_info": "Cozy bed and breakfast for travelers."
+        "name": "Sediba - VFM",
+        "address": "Plot 28562, Fairgrounds Mall, Unit G26, Gaborone",
+        "phone": "",
+        "website": "http://sediba.co.bw",
+        "image": "images/sediba.png",
+        "membershipLevel": 1
     },
     {
-        "name": "Chobe Food Court",
-        "address": "Kasane Food Market, Kasane, Botswana",
-        "phone_number": "+267 625 4567",
-        "website_url": "http://www.chobefoodcourt.com",
-        "image_icon": "chobe_food_court.png",
-        "membership_level": 1,
-        "other_info": "Variety of dining options including local cuisine."
+        "name": "Notwane Poultry",
+        "address": "Plot 92/98 Commerce Park, Gaborone",
+        "phone": "+267 316 0500",
+        "website": "",
+        "image": "images/notwane.png",
+        "membershipLevel": 2
+    },
+    {
+        "name": "Agrichem",
+        "address": "Plot 9 10 Tlokweng Main Rd, Gaborone B999",
+        "phone": "",
+        "website": "http://agrichem.com.au",
+        "image": "images/agrichem.png",
+        "membershipLevel": 2
     }
 ]
