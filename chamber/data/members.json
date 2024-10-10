@@ -5,7 +5,7 @@
         "phone": "+267 395 1341",
         "fax": "+267 395 2926",
         "email": "info@bamb.co.bw",
-        "website": "",
+        "website": "https://bamb.co.bw/",
         "image": "images/bamb.webp",
         "membershipLevel": 3
     },
@@ -53,14 +53,14 @@
         "name": "Notwane Poultry",
         "address": "Plot 92/98 Commerce Park, Gaborone",
         "phone": "+267 316 0500",
-        "website": "",
+        "website": "https://notwanepoultry.co.bw/",
         "image": "images/notwane.webp",
         "membershipLevel": 2
     },
     {
         "name": "Agrichem",
         "address": "Plot 9 10 Tlokweng Main Rd, Gaborone B999",
-        "phone": "",
+        "phone": "https://web.facebook.com/AgrichemSR/?_rdc=1&_rdr",
         "website": "http://agrichem.com.au",
         "image": "images/agrichem.webp",
         "membershipLevel": 2
