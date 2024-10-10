@@ -1,84 +1,114 @@
-/* Global Styles */
+/* General styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-/* Header Styles */
 header {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
+    background-color: #eee;
+    padding: 10px;
 }
 
-header nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-header nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-header nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-/* Hero Section Styles */
-.hero {
-    background: url('images/hero-placeholder.jpg') no-repeat center center;
-    height: 300px;
+.header-container {
     display: flex;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
 }
 
-/* Button Styles */
-.hero button {
-    padding: 10px 20px;
-    font-size: 1.2em;
-    background-color: #007BFF;
-    color: white;
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.theme-toggle {
+    background: none;
     border: none;
+    font-size: 18px;
     cursor: pointer;
 }
 
-/* Main Content Styles */
+.hero {
+    background-color: #ccc;
+    padding: 20px;
+    text-align: center;
+}
+
+.keynote-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
 main {
     padding: 20px;
 }
 
-/* Weather and Business Directory Styles */
-.weather, .business-directory {
-    margin: 20px 0;
+.events-weather {
+    display: flex;
+    justify-content: space-between;
 }
 
-/* Member Card Styles */
-.member-card {
-    border: 1px solid #ccc;
-    padding: 10px;
+.events, .weather, .forecast {
+    background-color: #f9f9f9;
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    border: 1px solid #ddd;
+}
+
+.business-directory {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.business-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border: 1px solid #ddd;
+    flex: 1;
     margin: 10px;
 }
 
-/* Grid and List View Styles */
-.grid-view {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.list-view {
-    display: block;
-}
-
-/* Footer Styles */
 footer {
-    text-align: center;
+    background-color: #eee;
     padding: 20px;
-    background: #333;
-    color: white;
+    text-align: center;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: black;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .events-weather {
+        flex-direction: column;
+    }
+
+    .business-directory {
+        flex-direction: column;
+    }
 }
