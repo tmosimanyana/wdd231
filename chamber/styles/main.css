@@ -87,7 +87,7 @@ main {
     padding: 20px;
     border: 1px solid #ddd;
     flex-basis: calc(33.333% - 40px); /* Adjust for grid view */
-    min-height: 250px; /* Reserve space to prevent layout shift */
+    min-height: 250px; /* Reserved space to prevent layout shift */
 }
 
 /* List View */
