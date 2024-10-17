@@ -1,102 +1,66 @@
-// Array of member companies
-const members = [
-    {
-        "name": "BAMB Headquarters",
-        "address": "Plot 130, Nkwe Square, G.I.F.P, Gaborone",
-        "phone": "+267 395 1341",
-        "website": "https://bamb.co.bw/",
-        "image": "images/bamb.webp",
-        "membershipLevel": 3
-    },
-    {
-        "name": "AgriFeed GICP",
-        "address": "Plot 59 Unit 1B, GICP, Gaborone",
-        "phone": "+267 390 1851",
-        "website": "http://agrifeed.co.bw",
-        "image": "images/agrifeed.webp",
-        "membershipLevel": 2
-    },
-    {
-        "name": "Greenhouse Technologies",
-        "address": "Plot 20689 Sekotlo Rd, Gaborone",
-        "phone": "+267 75 480 600",
-        "website": "http://ghtech.co.za",
-        "image": "images/greenhouse.webp",
-        "membershipLevel": 2
-    },
-    {
-        "name": "AFGRI Equipment",
-        "address": "Plot 43143 Maphapheng Rd, Gaborone",
-        "phone": "+267 311 0876",
-        "website": "http://afgriequipment.co.za",
-        "image": "images/afgri.webp",
-        "membershipLevel": 3
-    },
-    {
-        "name": "Hydrocon Green",
-        "address": "Plot 20627 Block 3 Broadhurst, Gaborone",
-        "phone": "+267 319 0055",
-        "website": "http://hydrocon.org",
-        "image": "images/hydrocon.webp",
-        "membershipLevel": 1
-    },
-    {
-        "name": "Sediba - VFM",
-        "address": "Plot 28562, Fairgrounds Mall, Unit G26, Gaborone",
-        "phone": "",
-        "website": "http://sediba.co.bw",
-        "image": "images/sediba.webp",
-        "membershipLevel": 1
-    },
-    {
-        "name": "Notwane Poultry",
-        "address": "Plot 92/98 Commerce Park, Gaborone",
-        "phone": "+267 316 0500",
-        "website": "https://notwanepoultry.co.bw/",
-        "image": "images/notwane.webp",
-        "membershipLevel": 2
+// main.js
+
+// Function to fetch weather data from OpenWeatherMap API
+async function fetchWeather() {
+    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replaced with  actual OpenWeatherMap API key
+    const city = 'Gaborone,Botswana';
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        displayWeather(data);
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
     }
-];
+}
 
-// Function to display members as either a grid or list
-function displayMembers(viewType) {
-    const memberContainer = document.getElementById('member-container');
-    memberContainer.innerHTML = ''; // Clear existing content
+// Function to display weather data
+function displayWeather(data) {
+    const temp = Math.round(data.main.temp);
+    const weatherDesc = data.weather[0].description;
 
-    members.forEach(member => {
-        const memberCard = document.createElement('div');
-        memberCard.classList.add('member-card');
-        
-        memberCard.innerHTML = `
-            <img src="${member.image}" alt="${member.name} Logo">
-            <div class="member-info">
-                <h2>${member.name}</h2>
-                <p>${member.address}</p>
-                <p>Phone: ${member.phone || 'N/A'}</p>
-                <p><a href="${member.website}" target="_blank">Website</a></p>
-                <p>Membership Level: ${getMembershipLevel(member.membershipLevel)}</p>
-            </div>
+    document.getElementById('currentTemp').textContent = `Temperature: ${temp}°C`;
+    document.getElementById('weatherDesc').textContent = `Description: ${capitalizeWords(weatherDesc)}`;
+
+    // Forecast can be implemented with another API call if needed
+}
+
+// Helper function to capitalize each word in a string
+function capitalizeWords(str) {
+    return str.replace(/\b\w/g, char => char.toUpperCase());
+}
+
+// Function to fetch member data from JSON
+async function fetchMembers() {
+    try {
+        const response = await fetch('data/members.json'); // Path to your JSON file
+        const members = await response.json();
+        displaySpotlightMembers(members);
+    } catch (error) {
+        console.error('Error fetching members data:', error);
+    }
+}
+
+// Function to display spotlight members
+function displaySpotlightMembers(members) {
+    const spotlightMembers = members.filter(member => member.membership_level === 'Gold' || member.membership_level === 'Silver');
+    const selectedMembers = spotlightMembers.sort(() => 0.5 - Math.random()).slice(0, 3);
+
+    const membersContainer = document.getElementById('membersContainer');
+    selectedMembers.forEach(member => {
+        const memberDiv = document.createElement('div');
+        memberDiv.className = 'member-card';
+        memberDiv.innerHTML = `
+            <h3>${member.name}</h3>
+            <p>${member.tagline}</p>
+            <p>Contact: ${member.phone}</p>
+            <a href="${member.website}">Visit Website</a>
         `;
-        memberContainer.appendChild(memberCard);
+        membersContainer.appendChild(memberDiv);
     });
-
-    // Update container class based on the view type
-    memberContainer.className = viewType === 'list' ? 'list-view' : 'grid-view';
 }
 
-// Function to get membership level name
-function getMembershipLevel(level) {
-    switch(level) {
-        case 1: return 'Bronze';
-        case 2: return 'Silver';
-        case 3: return 'Gold';
-        default: return 'Unknown';
-    }
-}
-
-// Event listeners for the view toggle buttons
-document.getElementById('gridView').addEventListener('click', () => displayMembers('grid'));
-document.getElementById('listView').addEventListener('click', () => displayMembers('list'));
-
-// Initial load
-displayMembers('grid');
+// Initialize data fetching
+fetchWeather();
+fetchMembers();
