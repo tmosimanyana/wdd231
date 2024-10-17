@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to the Kweneng Agriculture Chamber of Commerce. Engage with our community!">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    
+    <!-- Open Graph for Facebook sharing -->
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/chamber-logo.png">
+    <meta property="og:url" content="http://kwenengchamber.com/index.html">
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css"> <!-- Normalize or reset CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <title>Home - Kweneng Agriculture Chamber of Commerce</title>
+</head>
+
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <h1>Kweneng Agriculture Chamber of Commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="images/hero-image.jpg" alt="Kweneng Agriculture" class="hero-image" />
+        <div class="hero-text">
+            <h2>Welcome to Kweneng Agriculture Chamber of Commerce</h2>
+            <p>Join us in fostering business growth and community engagement.</p>
+            <a href="join.html" class="cta-button">Join Us Today!</a>
+        </div>
+    </section>
+
+    <!-- Current Events Section -->
+    <section class="current-events">
+        <h2>Current Events</h2>
+        <ul id="eventsList">
+            <li>Event 1: Date, Time, Description</li>
+            <li>Event 2: Date, Time, Description</li>
+            <li>Event 3: Date, Time, Description</li>
+        </ul>
+    </section>
+
+    <!-- Weather Section -->
+    <section class="weather">
+        <h2>Current Weather</h2>
+        <div id="weatherInfo">
+            <p id="currentTemp">Temperature: Loading...</p>
+            <p id="weatherDesc">Description: Loading...</p>
+            <h3>3-Day Forecast</h3>
+            <ul id="forecastList">
+                <li>Day 1: Loading...</li>
+                <li>Day 2: Loading...</li>
+                <li>Day 3: Loading...</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Company Spotlight Section -->
+    <section class="spotlight">
+        <h2>Spotlight Members</h2>
+        <div id="membersContainer"></div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="currentYear"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Tinny Bothepha Mosimanyana, Molepolole, Botswana</p>
+        <p>Contact: +267 395 1341 | info@kwenengchamber.com</p>
+        <p>WDD 231 - Last Modified: <span id="last-modified"></span></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="main.js" defer></script>
+    <script>
+        // Update the last modified date dynamically
+        document.getElementById('last-modified').textContent = document.lastModified;
+        // Update current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
