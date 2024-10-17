@@ -1,0 +1,139 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+    padding: 20px;
+}
+
+header {
+    background-color: #3b7a57; /* Adjust to your primary color */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    background-color: #3b7a57;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+/* View Toggle */
+.view-toggle {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.view-toggle button {
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #3b7a57;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.view-toggle button:hover {
+    background-color: #2d5e43;
+}
+
+/* Directory Section */
+.directory {
+    display: grid;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+#member-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.member-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.member-card:hover {
+    transform: translateY(-5px);
+}
+
+.member-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.member-card h2 {
+    color: #3b7a57;
+    font-size: 1.5rem;
+}
+
+.member-card p {
+    margin: 10px 0;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+    }
+
+    footer {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .member-card h2 {
+        font-size: 1.2rem;
+    }
+
+    .view-toggle button {
+        width: 100%;
+    }
+}
+
+/* List View Styles */
+#member-container.list-view {
+    display: block;
+}
+
+#member-container.list-view .member-card {
+    display: flex;
+    flex-direction: column;
+}
+
+#member-container.list-view .member-card img {
+    width: 150px;
+    height: auto;
+}
