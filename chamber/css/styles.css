@@ -4,17 +4,24 @@
 /* Custom Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-/* Root variables for easy color scheme customization */
+/* Root variables for easy customization */
 :root {
-    --primary-color: #007BFF; /* Example: Change to your brand's primary color */
-    --secondary-color: #28A745; /* Example: Change to your brand's secondary color */
+    --primary-color: #007BFF;  /* Primary brand color */
+    --secondary-color: #28A745; /* Secondary brand color */
     --background-color: #f8f9fa;
     --text-color: #343a40;
     --footer-background: #343a40;
     --footer-text: #ffffff;
     --font-family: 'Roboto', sans-serif;
+
+    /* Typography and spacing variables */
+    --heading-margin-bottom: 15px;
+    --card-padding: 20px;
+    --footer-padding: 20px;
+    --border-radius: 5px;
 }
 
+/* Global Resets */
 * {
     margin: 0;
     padding: 0;
@@ -41,7 +48,7 @@ a:hover {
 /* Header */
 header {
     background-color: var(--primary-color);
-    padding: 20px;
+    padding: var(--card-padding);
 }
 
 .logo {
@@ -60,7 +67,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #ffffff;
+    color: var(--footer-text);
     font-weight: 700;
 }
 
@@ -74,24 +81,19 @@ nav ul li a {
 
 /* Main Content */
 main {
-    padding: 20px;
+    padding: var(--card-padding);
 }
 
-h1, h2, h3 {
-    color: var(--text-color);
-    margin-bottom: 15px;
+h1, h2, h3, p {
+    margin-bottom: var(--heading-margin-bottom);
 }
 
-p {
-    margin-bottom: 15px;
-}
-
+/* Directory Member Cards */
 .directory-header {
     text-align: center;
     margin-bottom: 30px;
 }
 
-/* Directory Member Cards */
 .directory-list {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -100,9 +102,9 @@ p {
 
 .member-card {
     background-color: #ffffff;
-    padding: 20px;
+    padding: var(--card-padding);
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
@@ -112,15 +114,11 @@ p {
     margin-bottom: 10px;
 }
 
-.member-card p {
-    color: var(--text-color);
-}
-
 /* Footer */
 footer {
     background-color: var(--footer-background);
     color: var(--footer-text);
-    padding: 20px;
+    padding: var(--footer-padding);
 }
 
 .footer-content {
