@@ -1,0 +1,85 @@
+/* Normalize CSS */
+@import url('path/to/normalize.css');
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    margin: 0;
+}
+
+header {
+    background: #007A33; /* Example header color */
+    color: white;
+    padding: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background: #FFC107; /* Example button color */
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.current-events, .weather, .spotlights {
+    margin: 2rem 0;
+}
+
+.member-spotlights {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.member-card {
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    width: calc(33.333% - 20px); /* Three members in a row */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+aside {
+    width: 20rem;
+    margin: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    background-color: #eee;
+    color: #333;
+    text-align: center;
+}
+
+aside img {
+    width: 200px;
+    height: auto;
+}
+
+main {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+footer {
+    margin-top: 15px;
+    border-top: 1px solid #000;
+    text-align: center;
+    padding: 1rem;
+}
