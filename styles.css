@@ -1,173 +1,92 @@
-/* Basic styling for body */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Using the imported Google Font */
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa; /* Light gray background */
 }
 
-/* Header and Navigation */
 header {
     background-color: #333;
-    color: white;
+    color: #fff;
     padding: 1rem;
-    text-align: center;
 }
 
-header nav {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
+nav {
+    display: flex; /* Using Flexbox for navigation */
+    justify-content: space-around;
 }
 
-header nav a {
-    color: white;
+nav a {
+    color: #fff;
+    padding: 10px;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
-header nav a:hover {
-    background-color: #575757;
+nav a:hover {
+    background-color: #575757; /* Hover effect for nav items */
 }
 
-/* Main content styles */
 main {
-    max-width: 1000px; /* Container width */
-    margin: 0 auto;
+    max-width: 800px; /* Limit the width of the main content */
+    margin: 0 auto; /* Center align the main content */
     padding: 1rem;
-    background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for the container */
 }
 
-main h1 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-/* Filter button styles */
-.filter-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-}
-
-.filter-buttons button {
-    padding: 0.7rem 1rem;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.filter-buttons button:hover {
-    background-color: #0056b3; /* Darker blue on hover */
-}
-
-/* Course card styles */
-.course-card {
-    background-color: #ffffff;
+section {
+    margin: 1.5rem 0; /* Space between sections */
     padding: 1rem;
-    margin-bottom: 1rem;
-    border-radius: 8px;
-    border-left: 5px solid #007BFF;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: box-shadow 0.3s ease;
+    border: 1px solid #ddd; /* Add a border to sections */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f9f9f9; /* Light background for sections */
 }
 
-.course-card:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
-}
-
-/* Completed course styling */
-.course-card.completed {
-    border-left-color: #28a745; /* Green border for completed courses */
-}
-
-.course-card h3 {
-    margin: 0 0 0.5rem;
-    font-size: 1.25rem;
-    color: #333;
-}
-
-.course-card p {
-    margin: 0.5rem 0;
-}
-
-/* Styling for aside section */
 aside {
     width: 20rem;
-    margin: 2rem auto;
-    padding: 1.5rem;
+    margin: 1rem;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    background-color: #f8f9fa;
+    padding: 1rem;
+    background-color: #eee;
     color: #333;
     text-align: center;
-    border-radius: 10px;
 }
 
 aside img {
     width: 200px;
-    height: auto;
-    margin-bottom: 1rem;
+    height: auto; /* Maintain aspect ratio */
 }
 
-aside h2 {
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
-    color: #333;
+main img {
+    width: 150px;
+    height: auto; /* Maintain aspect ratio */
 }
 
-/* Footer styling */
+p {
+    padding: 0; /* Remove padding from paragraphs */
+}
+
 footer {
-    background-color: #333;
-    color: white;
-    padding: 1rem;
-    text-align: center;
-    margin-top: 2rem;
-    border-top: 2px solid #007BFF;
+    margin-top: 15px; /* Add top margin */
+    border-top: 1px solid #000; /* Add top border */
+    text-align: center; /* Center align text */
 }
 
-footer p {
-    margin: 0.5rem 0;
+/* Course card styles */
+.course-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    header nav {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-
-    main {
-        padding: 1rem;
-    }
-
-    .filter-buttons {
-        flex-direction: column;
-    }
-
-    aside {
-        width: 100%; /* Full width on smaller screens */
-        padding: 1rem;
-    }
+.course-card.completed {
+    background-color: #a7ffeb; /* Light blue for completed courses */
+    border-left: 5px solid #007BFF; /* Blue left border */
 }
 
-@media (max-width: 480px) {
-    header nav a {
-        padding: 0.5rem;
-    }
-
-    .filter-buttons button {
-        width: 100%; /* Full width buttons on small screens */
-    }
-
-    aside img {
-        width: 100%; /* Responsive image */
-    }
+/* Flex styles for filter buttons */
+.filter-buttons {
+    display: flex;
+    justify-content: space-between;
 }
