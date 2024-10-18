@@ -1,6 +1,12 @@
 async function fetchMembers() {
     try {
         const response = await fetch('data/members.json');
+        
+        // Check if the response is ok (status in the range 200-299)
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         const members = await response.json();
         displayMembers(members);
     } catch (error) {
@@ -18,13 +24,22 @@ function displayMembers(members) {
         memberCard.innerHTML = `
             <img src="${member.image}" alt="${member.name}">
             <h3>${member.name}</h3>
-            <p>${member.phone}</p>
+            <p>${member.phone ? member.phone : 'N/A'}</p>
             <p>${member.address}</p>
-            <p>${member.membershipLevel}</p>
+            <p>${membershipLevelName(member.membershipLevel)}</p>
             <a href="${member.website}" target="_blank">Visit Website</a>
         `;
         memberContainer.appendChild(memberCard);
     });
+}
+
+function membershipLevelName(level) {
+    switch(level) {
+        case 1: return 'Basic';
+        case 2: return 'Silver';
+        case 3: return 'Gold';
+        default: return 'Unknown';
+    }
 }
 
 // Toggle between grid and list view

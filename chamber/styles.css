@@ -44,3 +44,35 @@
 .member-card a:hover {
     text-decoration: underline;
 }
+/* Styles for grid and list views */
+#memberContainer.grid-view .member-card {
+    display: inline-block;
+    width: 30%;
+    margin: 1%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+#memberContainer.list-view .member-card {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+}
+
+.member-card img {
+    width: 100%;
+    height: auto;
+}
+
+.member-card h3 {
+    margin-top: 10px;
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+    #memberContainer.grid-view .member-card {
+        width: 100%;
+    }
+}
