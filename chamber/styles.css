@@ -1,23 +1,29 @@
-/* Normalize CSS */
-@import url('path/to/normalize.css');
-
+/* Normalize and Custom Styles */
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
     margin: 0;
+    padding: 0;
+    color: #333; /* Default text color */
 }
 
 header {
-    background: #007A33; /* Example header color */
-    color: white;
-    padding: 1rem;
+    background-color: #007bff; /* Example header color */
+    padding: 1em;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
 }
 
 nav a {
     color: white;
     text-decoration: none;
-    margin: 0 15px;
+    padding: 10px;
+}
+
+nav a:hover {
+    background-color: #0056b3; /* Hover effect */
 }
 
 .hero {
@@ -32,54 +38,60 @@ nav a {
 
 .cta-button {
     display: inline-block;
-    margin-top: 1rem;
+    background-color: #28a745; /* Example color */
+    color: white;
     padding: 10px 20px;
-    background: #FFC107; /* Example button color */
-    color: black;
     text-decoration: none;
     border-radius: 5px;
+    margin-top: 20px;
 }
 
 .current-events, .weather, .spotlights {
-    margin: 2rem 0;
+    margin: 20px;
 }
 
 .member-spotlights {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
 }
 
 .member-card {
     border: 1px solid #ccc;
-    margin: 10px;
+    border-radius: 5px;
     padding: 10px;
-    width: calc(33.333% - 20px); /* Three members in a row */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: 10px;
+    width: 30%; /* Adjust for card size */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.member-card img {
+    width: 100%;
 }
 
 aside {
-    width: 20rem;
-    margin: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-    background-color: #eee;
-    color: #333;
-    text-align: center;
-}
-
-aside img {
-    width: 200px;
-    height: auto;
-}
-
-main {
-    max-width: 840px;
-    margin: 0 auto;
+    margin: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
 }
 
 footer {
-    margin-top: 15px;
-    border-top: 1px solid #000;
+    background-color: #f8f9fa;
+    padding: 20px;
     text-align: center;
-    padding: 1rem;
+}
+
+@media (max-width: 600px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .member-card {
+        width: 80%; /* Adjust for mobile view */
+    }
+
+    .hero-image {
+        height: 200px; /* Adjust for mobile */
+    }
 }
