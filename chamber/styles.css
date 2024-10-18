@@ -1,36 +1,46 @@
-/* Base Styles */
-body {
-    font-family: Arial, sans-serif;
+/* Directory Specific Styling */
+.grid-view .member-card {
+    display: inline-block;
+    width: 30%;  /* Adjust to show multiple members per row */
+    margin: 10px;
 }
 
-.hero {
-    position: relative;
-    text-align: center;
-    color: white;
+.list-view .member-card {
+    display: block;
+    width: 100%;  /* Full width for list view */
+    margin: 10px 0;
 }
 
-.hero img {
-    width: 100%;
+/* Common Member Card Styles */
+.member-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.member-card img {
+    width: 100px;
     height: auto;
+    float: left;
+    margin-right: 15px;
 }
 
-.hero .hero-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.member-card h3 {
+    font-size: 1.2em;
+    margin: 0;
 }
 
-/* Responsive Layout */
-@media (max-width: 600px) {
-    .spotlight-container {
-        display: block;
-    }
+.member-card p {
+    margin: 5px 0;
 }
 
-@media (min-width: 601px) {
-    .spotlight-container {
-        display: flex;
-        justify-content: space-between;
-    }
+.member-card a {
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.member-card a:hover {
+    text-decoration: underline;
 }
