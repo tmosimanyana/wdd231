@@ -56,13 +56,5 @@
         "website": "https://notwanepoultry.co.bw/",
         "image": "images/notwane.webp",
         "membershipLevel": 2
-    },
-    {
-        "name": "Agrichem",
-        "address": "Plot 9 10 Tlokweng Main Rd, Gaborone B999",
-        "phone": "+267 73 425 813",
-        "website": "http://agrichem.com.au",
-        "image": "images/agrichem.webp",
-        "membershipLevel": 2
     }
 ]

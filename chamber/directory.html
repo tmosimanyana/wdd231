@@ -3,83 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to the Kweneng Agriculture Chamber of Commerce. Engage with our community!">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-
-    <!-- Open Graph for Facebook sharing -->
-    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/chamber/images/chamber-logo.webp">
-    <meta property="og:url" content="https://tmosimanyana.github.io/chamber/index.html">
-
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <title>Home - Kweneng Agriculture Chamber of Commerce</title>
+    <title>Directory - Kweneng Agriculture Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/normalize.css"> <!-- Normalize CSS -->
+    <link rel="stylesheet" href="styles/main.css"> <!-- Custom CSS -->
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <img src="images/logo.png" alt="Chamber Logo" class="logo">
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="events.html">Events</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
-                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Image and Call to Action -->
-    <section class="hero">
-        <img src="images/hero.webp" alt="Chamber Community" class="hero-img">
-        <div class="hero-text">
-            <h1>Welcome to Kweneng Agriculture Chamber of Commerce</h1>
-            <a href="join.html" class="cta-btn">Join the Chamber</a>
-        </div>
-    </section>
+    <main>
+        <section id="directory">
+            <button id="gridView">Grid View</button>
+            <button id="listView">List View</button>
 
-    <!-- Current Events Section -->
-    <section class="current-events">
-        <h2>Current Events</h2>
-        <p>Stay up to date with the latest events in our community.</p>
-        <!-- List of events goes here -->
-    </section>
+            <div id="members" class="grid"></div>
+        </section>
+    </main>
 
-    <!-- Weather Section -->
-    <section class="weather">
-        <h2>Current Weather in Kweneng</h2>
-        <div id="weather-info">
-            <!-- Weather data from OpenWeatherMap API will be loaded here by JavaScript -->
-        </div>
-    </section>
-
-    <!-- Company Spotlights Section -->
-    <section class="company-spotlights">
-        <h2>Spotlight on Our Members</h2>
-        <div id="spotlights">
-            <!-- JSON data of members with gold/silver membership will be rendered here -->
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
-            <p>Contact us: info@kwenengchamber.com | +267 123 4567</p>
-            <div class="social-icons">
-                <a href="#"><img src="images/facebook-icon.png" alt="Facebook"></a>
-                <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
-            </div>
-        </div>
+        <p>&copy; <span id="currentYear"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Last modified: <span id="lastModified"></span></p>
     </footer>
 
-    <script src="js/weather.js"></script>
-    <script src="js/spotlights.js"></script>
+    <script src="scripts/main.js"></script> <!-- JavaScript file -->
 </body>
 </html>
