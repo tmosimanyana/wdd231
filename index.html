@@ -1,74 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Business Directory - Kweneng Agriculture Chamber of Commerce</title>
-    <meta name="description" content="Business Directory of Kweneng Agriculture Chamber of Commerce. Find our members' business information.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-
-    <!-- Facebook Social Media Meta Tags -->
-    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce Directory">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="images/logo.webp">
-    <meta property="og:url" content="https://tmosimanyana.github.io/chamber/directory.html">
-
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
-    <!-- Normalize CSS (add before custom styles) -->
-    <link rel="stylesheet" href="normalize.css">
-    <!-- Custom CSS -->
+    <title>Xavier Rodriquez | WDD 130</title>
+    <meta name="description" content="Xavier Rodriquez, a web development student, showcasing courses and projects in the Software Development program.">
+    <meta name="author" content="Xavier Rodriquez">
     <link rel="stylesheet" href="styles.css">
-
-    <!-- External JavaScript Files -->
-    <script src="script.js" defer></script> <!-- This will include member fetch, view toggle, footer updates -->
+    <script src="script.js" defer></script> <!-- Reference to your JavaScript file -->
 </head>
-
 <body>
-    <!-- Header and Navigation -->
     <header>
-        <div class="logo">
-            <img src="images/logo.webp" alt="Kweneng Agriculture Chamber of Commerce Logo">
-        </div>
         <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Business Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="podcast.html">Podcast</a></li>
-                <li><a href="events.html">Events</a></li>
-            </ul>
+            <a href="#">Home</a>
+            <a href="wwr/">Chamber</a>
+            <a href="https://github.com/tmosimanyana">GitHub Profile</a>
+            <a href="https://www.linkedin.com/in/your-linkedin-profile">LinkedIn</a>
         </nav>
     </header>
-
-    <!-- Main Directory Content -->
     <main>
-        <section class="directory">
-            <h1>Business Directory</h1>
-            <div class="view-toggle">
-                <button id="gridView">Grid View</button>
-                <button id="listView">List View</button>
-            </div>
-            <div id="memberContainer" class="grid-view"></div>
-        </section>
-    </main>
+        <h1>Xavier Rodriquez | WDD 130</h1>
+        <img src="images/profile.jpg" alt="Hello, my name is Xavier Rodriquez" width="200">
+        <p>Hello! My name is Xavier Rodriquez and I am from Botswana. I enjoy web development and am passionate about technology.</p>
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="contact-info">
-            <p>Kweneng Agriculture Chamber of Commerce</p>
-            <p>P O Box 894, Molepolole, Botswana</p>
-            <p>Email: mbothepha@gmail.com</p>
-            <p>Phone: (267) 76376661</p>
+        <!-- Course display logic will go here -->
+        <div>
+            <button id="show-all">Show All Courses</button>
+            <button id="show-wdd">Show WDD Courses</button>
+            <button id="show-cse">Show CSE Courses</button>
         </div>
-        <p>&copy; <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <div id="course-list"></div>
+        <p>Total Credits: <span id="total-credits">0</span></p>
+    </main>
+    
+    <aside>
+        <h2>Botswana</h2>
+        <img src="images/botswana.jpg" alt="A representation of Botswana" width="200">
+        <p>Botswana is known for its stunning wildlife and beautiful landscapes, including the Okavango Delta and the Kalahari Desert.</p>
+    </aside>
+
+    <footer>
+        <p>©️<span id="currentyear"></span> 🌴 Xavier Rodriquez 🌴 Botswana</p>
         <p id="lastModified"></p>
     </footer>
 </body>
-
 </html>

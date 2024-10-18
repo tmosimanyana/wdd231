@@ -1,0 +1,73 @@
+body {
+    font-family: 'Arial', sans-serif; /* Default font */
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav a {
+    color: #fff;
+    padding: 10px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #575757; /* Hover effect for nav items */
+}
+
+main {
+    max-width: 800px; /* Limit the width of the main content */
+    margin: 0 auto; /* Center align the main content */
+    padding: 1rem;
+}
+
+aside {
+    width: 20rem;
+    margin: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 1rem;
+    background-color: #eee;
+    color: #333;
+    text-align: center;
+}
+
+aside img {
+    width: 200px;
+    height: auto; /* Maintain aspect ratio */
+}
+
+main img {
+    width: 150px;
+    height: auto; /* Maintain aspect ratio */
+}
+
+p {
+    padding: 0; /* Remove padding from paragraphs */
+}
+
+footer {
+    margin-top: 15px; /* Add top margin */
+    border-top: 1px solid #000; /* Add top border */
+    text-align: center; /* Center align text */
+}
+
+/* Course card styles */
+.course-card {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.course-card.completed {
+    background-color: #a7ffeb; /* Light blue for completed courses */
+    border-left: 5px solid #007BFF; /* Blue left border */
+}
