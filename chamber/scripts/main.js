@@ -1,42 +1,42 @@
-document.addEventListener('DOMContentLoaded', () => {
+// Fetch and display member data
+async function fetchMembers() {
+    const response = await fetch('data/members.json');
+    const members = await response.json();
     const membersContainer = document.getElementById('members');
-    const gridViewBtn = document.getElementById('gridView');
-    const listViewBtn = document.getElementById('listView');
 
-    // Fetch members data
-    async function getMembers() {
-        const response = await fetch('data/members.json');
-        const members = await response.json();
-        displayMembers(members);
-    }
+    members.forEach(member => {
+        const memberCard = document.createElement('div');
+        memberCard.classList.add('member-card');
 
-    function displayMembers(members) {
-        membersContainer.innerHTML = members.map(member => `
-            <div>
-                <img src="${member.image}" alt="${member.name}">
-                <h3>${member.name}</h3>
-                <p>${member.address}</p>
-                <p>Phone: ${member.phone}</p>
-                <a href="${member.website}" target="_blank">Visit Website</a>
-            </div>
-        `).join('');
-    }
-
-    // Toggle view
-    gridViewBtn.addEventListener('click', () => {
-        membersContainer.className = 'grid';
+        memberCard.innerHTML = `
+            <img src="images/${member.image}" alt="${member.name}">
+            <h2>${member.name}</h2>
+            <p>Address: ${member.address}</p>
+            <p>Phone: ${member.phone}</p>
+            <a href="${member.website}" target="_blank">Visit Website</a>
+            <p>Membership Level: ${member.level}</p>
+        `;
+        membersContainer.appendChild(memberCard);
     });
+}
 
-    listViewBtn.addEventListener('click', () => {
-        membersContainer.className = 'list';
-    });
+fetchMembers();
 
-    // Display current year in footer
-    document.getElementById('currentYear').textContent = new Date().getFullYear();
+// Toggle between grid and list views
+const gridViewButton = document.getElementById('gridView');
+const listViewButton = document.getElementById('listView');
+const membersContainer = document.getElementById('members');
 
-    // Display last modified date
-    document.getElementById('lastModified').textContent = document.lastModified;
-
-    // Fetch and display members data
-    getMembers();
+gridViewButton.addEventListener('click', () => {
+    membersContainer.classList.add('grid');
+    membersContainer.classList.remove('list');
 });
+
+listViewButton.addEventListener('click', () => {
+    membersContainer.classList.add('list');
+    membersContainer.classList.remove('grid');
+});
+
+// Display current year and last modification date in footer
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = document.lastModified;
