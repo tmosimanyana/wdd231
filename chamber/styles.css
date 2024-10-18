@@ -1,97 +1,199 @@
-/* Normalize and Custom Styles */
-body {
-    font-family: Arial, sans-serif;
+/* General Styles */
+* {
     margin: 0;
     padding: 0;
-    color: #333; /* Default text color */
+    box-sizing: border-box;
 }
 
-header {
-    background-color: #007bff; /* Example header color */
-    padding: 1em;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
-nav {
-    display: flex;
-    justify-content: space-around;
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
 }
 
-nav a {
-    color: white;
+a {
     text-decoration: none;
-    padding: 10px;
+    color: #fff;
 }
 
-nav a:hover {
-    background-color: #0056b3; /* Hover effect */
+a:hover {
+    color: #ddd;
 }
 
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #000;
+}
+
+header .logo img {
+    max-width: 150px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    font-weight: bold;
+    color: #fff;
+}
+
+nav ul li a:hover {
+    color: #ccc;
+}
+
+/* Hero Section */
 .hero {
     position: relative;
-    text-align: center;
-}
-
-.hero-image {
     width: 100%;
-    height: auto;
+    height: 400px;
+    background-color: #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.cta-button {
-    display: inline-block;
-    background-color: #28a745; /* Example color */
-    color: white;
+.hero img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.hero .cta-button {
+    position: absolute;
+    bottom: 30px;
     padding: 10px 20px;
-    text-decoration: none;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.hero .cta-button:hover {
+    background-color: #333;
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+}
+
+.events-weather {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.events, .weather, .weather-forecast {
+    flex: 1;
+    margin-right: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.events h2, .weather h2, .weather-forecast h2 {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
     border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.events p, .weather p, .weather-forecast p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Business Directory */
+.business-directory {
     margin-top: 20px;
 }
 
-.current-events, .weather, .spotlights {
-    margin: 20px;
-}
-
-.member-spotlights {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.member-card {
-    border: 1px solid #ccc;
+.business-directory h2 {
+    background-color: #000;
+    color: #fff;
+    padding: 10px;
     border-radius: 5px;
-    padding: 10px;
-    margin: 10px;
-    width: 30%; /* Adjust for card size */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-.member-card img {
-    width: 100%;
-}
-
-aside {
-    margin: 20px;
-    padding: 10px;
-    border: 1px solid #ccc;
-}
-
-footer {
-    background-color: #f8f9fa;
+.business-card {
+    background-color: #fff;
     padding: 20px;
-    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
 
-@media (max-width: 600px) {
-    nav {
+.business-card p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #000;
+    color: #fff;
+}
+
+footer .contact-info {
+    font-size: 14px;
+}
+
+footer .social-media img {
+    max-width: 30px;
+    margin-right: 10px;
+}
+
+footer .social-media a:hover img {
+    opacity: 0.7;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    nav ul {
         flex-direction: column;
         align-items: center;
     }
 
-    .member-card {
-        width: 80%; /* Adjust for mobile view */
+    .hero {
+        height: 300px;
     }
 
-    .hero-image {
-        height: 200px; /* Adjust for mobile */
+    .events-weather {
+        flex-direction: column;
+    }
+
+    .events, .weather, .weather-forecast {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
     }
 }
