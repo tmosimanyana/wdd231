@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!DOCTYPE html>
-<html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -11,17 +8,18 @@
     <!-- Page Title -->
     <title>Kweneng Agriculture Chamber of Commerce</title>
 
-    <!-- Open Graph Meta Tags for Social Media -->
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero.webp"> 
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/">
-    
+    <meta property="og:image" content="images/logo.webp"> 
+    <meta property="og:url" content="https://tmosimanyana.github.io/chamber/">
+
     <!-- Link to Stylesheet -->
-    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header and Navigation -->
+
+    <!-- Header -->
     <header>
         <div class="logo">
             <img src="images/logo.webp" alt="Kweneng Agriculture Chamber of Commerce Logo">
@@ -32,14 +30,50 @@
                 <li><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Business Directory</a></li>
                 <li><a href="join.html">Join</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="podcast.html">Podcast</a></li>
-                <li><a href="events.html">Events</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Footer Section -->
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="images/hero.jpg" alt="Hero image for Kweneng Agriculture Chamber of Commerce">
+            <div class="hero-text">
+                <h1>Welcome to the Kweneng Agriculture Chamber of Commerce</h1>
+                <p>Building a prosperous agricultural community in Kweneng.</p>
+                <a href="join.html" class="cta-button">Join Us</a>
+            </div>
+        </section>
+
+        <!-- Current Events Section -->
+        <section class="current-events">
+            <h2>Current Events</h2>
+            <p>Stay updated with our latest events and activities in Kweneng.</p>
+            <!-- You can dynamically load event data here -->
+        </section>
+
+        <!-- Weather Section -->
+        <section class="weather">
+            <h2>Current Weather</h2>
+            <p>Weather in Kweneng:</p>
+            <div id="weather-details">
+                <!-- Weather data will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Company Spotlights Section -->
+        <section class="spotlights">
+            <h2>Our Members</h2>
+            <div class="spotlight-container">
+                <!-- Member spotlights will be dynamically added here using JS -->
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
     <footer>
         <div class="contact-info">
             <p>Kweneng Agriculture Chamber of Commerce</p>
@@ -47,13 +81,12 @@
             <p>Email: mbothepha@gmail.com</p>
             <p>Phone: (267) 76376661</p>
         </div>
-        <div class="social-media">
-            <a href="#"><img src="images/youtube-icon.png" alt="YouTube"></a>
-            <a href="#"><img src="images/twitter-icon.png" alt="Twitter"></a>
-            <a href="#"><img src="images/linkedin-icon.png" alt="LinkedIn"></a>
-        </div>
-        <p>© 2024 Kweneng Agriculture Chamber of Commerce</p>
-        <p>Last Modification: 18/10/2024 :17:05</p>
+        <p>© <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Last Modification: <span id="last-modified"></span></p>
     </footer>
+
+    <!-- Scripts -->
+    <script src="scripts.js"></script> <!-- Link to your JavaScript file -->
+    <script src="main.js"></script> <!-- Link to your JavaScript file -->
 </body>
 </html>
