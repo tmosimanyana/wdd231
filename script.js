@@ -17,7 +17,7 @@ const courses = [
         certificate: 'Web and Computer Programming',
         description: 'This course introduces students to the World Wide Web and to careers in web site design and development. The course is hands on with students actually participating in simple web designs and programming.',
         technology: ['HTML', 'CSS'],
-        completed: false
+        completed: true
     },
     {
         subject: 'CSE',
@@ -37,7 +37,7 @@ const courses = [
         certificate: 'Web and Computer Programming',
         description: 'This course will introduce the notion of classes and objects. It will present encapsulation at a conceptual level. It will also work with inheritance and polymorphism.',
         technology: ['C#'],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -47,7 +47,7 @@ const courses = [
         certificate: 'Web and Computer Programming',
         description: 'This course builds on prior experience in Web Fundamentals and programming. Students will learn to create dynamic websites that use JavaScript to respond to events, update content, and create responsive user experiences.',
         technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: false
+        completed: true
     },
     {
         subject: 'WDD',
@@ -57,7 +57,7 @@ const courses = [
         certificate: 'Web and Computer Programming',
         description: 'This course builds on prior experience with Dynamic Web Fundamentals and programming. Students will focus on user experience, accessibility, compliance, performance optimization, and basic API usage.',
         technology: ['HTML', 'CSS', 'JavaScript'],
-        completed: true // Change to true if completed
+        completed: false // Change to true if completed
     }
 ];
 
