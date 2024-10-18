@@ -1,184 +1,173 @@
-/* General page styles */
+/* Basic styling for body */
 body {
-    font-family: 'Arial', sans-serif; /* Default font */
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #f8f9fa; /* Light gray background */
 }
 
-/* Header and navigation styles */
+/* Header and Navigation */
 header {
     background-color: #333;
-    color: #fff;
+    color: white;
     padding: 1rem;
     text-align: center;
 }
 
-nav a {
-    color: #fff;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-weight: bold;
-    display: inline-block;
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
-nav a:hover {
-    background-color: #575757; /* Hover effect for nav items */
+header nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+header nav a:hover {
+    background-color: #575757;
 }
 
 /* Main content styles */
 main {
-    max-width: 800px; /* Limit the width of the main content */
-    margin: 0 auto; /* Center align the main content */
+    max-width: 1000px; /* Container width */
+    margin: 0 auto;
     padding: 1rem;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for the container */
 }
 
 main h1 {
-    font-size: 2rem;
-    color: #007BFF; /* Primary color */
-    margin-bottom: 1rem;
     text-align: center;
+    margin-bottom: 1.5rem;
 }
 
-main img {
-    display: block;
-    margin: 0 auto;
-    width: 150px;
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-main p {
-    text-align: center;
-    padding: 0; /* Remove padding from paragraphs */
-}
-
-/* Filter buttons styles */
+/* Filter button styles */
 .filter-buttons {
-    text-align: center;
-    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
 }
 
 .filter-buttons button {
+    padding: 0.7rem 1rem;
     background-color: #007BFF;
-    color: #fff;
+    color: white;
     border: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    cursor: pointer;
     border-radius: 5px;
-    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .filter-buttons button:hover {
-    background-color: #0056b3; /* Hover effect for buttons */
+    background-color: #0056b3; /* Darker blue on hover */
 }
 
-/* Course list styles */
-#course-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
-    margin: 1rem 0;
-}
-
+/* Course card styles */
 .course-card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    background-color: #ffffff;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border-left: 5px solid #007BFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
 
 .course-card:hover {
-    transform: translateY(-5px); /* Lift on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
 }
 
+/* Completed course styling */
 .course-card.completed {
-    background-color: #a7ffeb; /* Light green for completed courses */
-    border-left: 5px solid #007BFF; /* Blue left border */
+    border-left-color: #28a745; /* Green border for completed courses */
 }
 
 .course-card h3 {
-    font-size: 1.5rem;
+    margin: 0 0 0.5rem;
+    font-size: 1.25rem;
     color: #333;
 }
 
 .course-card p {
-    font-size: 0.9rem;
-    color: #666;
+    margin: 0.5rem 0;
 }
 
-#total-credits {
-    font-weight: bold;
-    color: #007BFF;
-}
-
-/* Aside styles */
+/* Styling for aside section */
 aside {
     width: 20rem;
-    margin: 1rem;
+    margin: 2rem auto;
+    padding: 1.5rem;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-    background-color: #eee;
+    background-color: #f8f9fa;
     color: #333;
     text-align: center;
+    border-radius: 10px;
 }
 
 aside img {
     width: 200px;
-    height: auto; /* Maintain aspect ratio */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    height: auto;
+    margin-bottom: 1rem;
 }
 
 aside h2 {
+    margin-bottom: 1rem;
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    color: #333;
 }
 
-aside p {
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
-
-/* Footer styles */
+/* Footer styling */
 footer {
-    margin-top: 15px; /* Add top margin */
-    border-top: 1px solid #000; /* Add top border */
-    text-align: center; /* Center align text */
-    padding: 1rem;
     background-color: #333;
-    color: #fff;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 2px solid #007BFF;
 }
 
 footer p {
     margin: 0.5rem 0;
 }
 
-/* Responsive styles */
+/* Responsive Design */
 @media (max-width: 768px) {
+    header nav {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
     main {
         padding: 1rem;
     }
 
+    .filter-buttons {
+        flex-direction: column;
+    }
+
     aside {
-        width: auto;
-        margin: 1rem;
+        width: 100%; /* Full width on smaller screens */
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav a {
+        padding: 0.5rem;
     }
 
     .filter-buttons button {
-        margin: 0.5rem 0;
-        width: 100%;
+        width: 100%; /* Full width buttons on small screens */
     }
 
-    #course-list {
-        grid-template-columns: 1fr;
+    aside img {
+        width: 100%; /* Responsive image */
     }
 }
