@@ -1,5 +1,5 @@
 async function fetchWeather() {
-    const apiKey = 'your_openweathermap_api_key'; // Replace with your actual API key
+    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replaced with your actual API key
     const url = `https://api.openweathermap.org/data/2.5/forecast?q=Molepolole,BW&units=metric&appid=${apiKey}`;
 
     const response = await fetch(url);
