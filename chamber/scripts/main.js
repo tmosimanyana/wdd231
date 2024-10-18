@@ -1,26 +1,34 @@
 // Fetch and display member data
 async function fetchMembers() {
-    const response = await fetch('data/members.json');
-    const members = await response.json();
-    const membersContainer = document.getElementById('members');
+    try {
+        const response = await fetch('data/members.json'); // Adjust the path if necessary
+        if (!response.ok) throw new Error('Network response was not ok');
+        const members = await response.json();
+        const membersContainer = document.getElementById('members');
 
-    members.forEach(member => {
-        const memberCard = document.createElement('div');
-        memberCard.classList.add('member-card');
+        // Clear previous content
+        membersContainer.innerHTML = '';
 
-        memberCard.innerHTML = `
-            <img src="images/${member.image}" alt="${member.name}">
-            <h2>${member.name}</h2>
-            <p>Address: ${member.address}</p>
-            <p>Phone: ${member.phone}</p>
-            <a href="${member.website}" target="_blank">Visit Website</a>
-            <p>Membership Level: ${member.level}</p>
-        `;
-        membersContainer.appendChild(memberCard);
-    });
+        members.forEach(member => {
+            const memberCard = document.createElement('div');
+            memberCard.classList.add('member-card');
+
+            memberCard.innerHTML = `
+                <img src="images/${member.image}" alt="${member.name}">
+                <h2>${member.name}</h2>
+                <p>Address: ${member.address}</p>
+                <p>Phone: ${member.phone}</p>
+                <a href="${member.website}" target="_blank">Visit Website</a>
+                <p>Membership Level: ${member.level}</p>
+            `;
+            membersContainer.appendChild(memberCard);
+        });
+    } catch (error) {
+        console.error('Error fetching member data:', error);
+        const membersContainer = document.getElementById('members');
+        membersContainer.innerHTML = '<p>Failed to load member data. Please try again later.</p>';
+    }
 }
-
-fetchMembers();
 
 // Toggle between grid and list views
 const gridViewButton = document.getElementById('gridView');
@@ -40,3 +48,6 @@ listViewButton.addEventListener('click', () => {
 // Display current year and last modification date in footer
 document.getElementById('currentYear').textContent = new Date().getFullYear();
 document.getElementById('lastModified').textContent = document.lastModified;
+
+// Initialize member data fetch on page load
+fetchMembers();
