@@ -1,76 +1,40 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const membersContainer = document.getElementById("members");
-    const gridViewButton = document.getElementById("gridView");
-    const listViewButton = document.getElementById("listView");
+async function fetchMembers() {
+    const response = await fetch('data/members.json');
+    const members = await response.json();
+    displayMembers(members);
+}
 
-    // Set the current year and last modified date
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
-    document.getElementById("lastModified").textContent = document.lastModified;
+function displayMembers(members) {
+    const container = document.getElementById('members');
+    container.innerHTML = '';
 
-    // Fetch members data from JSON
-    async function fetchMembers() {
-        try {
-            const response = await fetch('data/members.json');
-            const members = await response.json();
-            displayMembers(members);
-        } catch (error) {
-            console.error('Error fetching member data:', error);
-        }
-    }
-
-    // Function to display members
-    function displayMembers(members) {
-        membersContainer.innerHTML = ''; // Clear previous content
-
-        members.forEach(member => {
-            // Create a div for each member card
-            const memberCard = document.createElement('div');
-            memberCard.classList.add('member-card');
-            
-            // Create and append the image (company logo)
-            const img = document.createElement('img');
-            img.src = member.image;
-            img.alt = `${member.name} logo`;
-            memberCard.appendChild(img);
-
-            // Create and append the member details
-            const memberInfo = document.createElement('div');
-            memberInfo.classList.add('member-info');
-            
-            const name = document.createElement('h2');
-            name.textContent = member.name;
-            memberInfo.appendChild(name);
-
-            const address = document.createElement('p');
-            address.textContent = `Address: ${member.address}`;
-            memberInfo.appendChild(address);
-
-            const phone = document.createElement('p');
-            phone.textContent = `Phone: ${member.phone}`;
-            memberInfo.appendChild(phone);
-
-            const website = document.createElement('a');
-            website.href = member.website;
-            website.textContent = 'Visit Website';
-            website.target = '_blank';
-            memberInfo.appendChild(website);
-
-            memberCard.appendChild(memberInfo);
-            membersContainer.appendChild(memberCard);
-        });
-    }
-
-    // Toggle between Grid and List views
-    gridViewButton.addEventListener("click", () => {
-        membersContainer.classList.remove("list");
-        membersContainer.classList.add("grid");
+    members.forEach(member => {
+        const memberCard = `
+            <div class="member-card">
+                <img src="${member.image}" alt="${member.name} logo">
+                <h3>${member.name}</h3>
+                <p>${member.address}</p>
+                <p>Phone: ${member.phone}</p>
+                <a href="${member.website}" target="_blank">Website</a>
+            </div>
+        `;
+        container.innerHTML += memberCard;
     });
+}
 
-    listViewButton.addEventListener("click", () => {
-        membersContainer.classList.remove("grid");
-        membersContainer.classList.add("list");
-    });
+document.addEventListener("DOMContentLoaded", fetchMembers);
 
-    // Load members on page load
-    fetchMembers();
+// Toggle between grid and list views
+document.getElementById('gridView').addEventListener('click', () => {
+    document.getElementById('members').classList.add('grid');
+    document.getElementById('members').classList.remove('list');
 });
+
+document.getElementById('listView').addEventListener('click', () => {
+    document.getElementById('members').classList.add('list');
+    document.getElementById('members').classList.remove('grid');
+});
+
+// Update the footer year and last modified date
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = document.lastModified;
