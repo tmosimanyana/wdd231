@@ -6,7 +6,7 @@
         "fax": "+267 395 2926",
         "email": "info@bamb.co.bw",
         "website": "https://bamb.co.bw/",
-        "image": "images/bamb.webp", // Add a valid image path for this entry
+        "image": "images/logo.webp",  // Updated path for demonstration
         "membershipLevel": 3
     },
     {

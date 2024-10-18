@@ -1,7 +1,7 @@
 // Fetch and display member data
 async function fetchMembers() {
     try {
-        const response = await fetch('data/members.json');
+        const response = await fetch('data/members.json'); // Relative path to members.json
         const members = await response.json();
         const membersContainer = document.getElementById('members');
 
