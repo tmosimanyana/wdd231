@@ -90,3 +90,95 @@ footer {
     display: flex;
     justify-content: space-between;
 }
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-family: 'Roboto', Helvetica, sans-serif;
+}
+
+header {
+    background-color: #f4f4f4; /* Light background for header */
+    padding: 1rem;
+}
+
+.header-grid {
+    display: grid;
+    grid-template-columns: 100px 1fr auto; /* Adjust as needed */
+    align-items: center; /* Vertically center the items */
+}
+
+header img {
+    width: 80px; /* Logo size */
+}
+
+nav {
+    display: flex; /* Flex for navigation */
+    gap: 1rem; /* Space between nav items */
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 5px; /* Rounded corners for nav items */
+    transition: background-color 0.3s; /* Transition for hover effect */
+}
+
+nav a:hover {
+    background-color: #ddd; /* Hover effect */
+}
+
+main {
+    padding: 2rem;
+}
+
+#history {
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9; /* Light background for the History section */
+}
+
+#adventures {
+    margin: 2rem 0;
+}
+
+.adventure-images {
+    display: flex; /* Flex layout for adventure images */
+    gap: 1rem; /* Space between images */
+    justify-content: space-around; /* Distribute space around the images */
+    flex-wrap: wrap; /* Wrap images if necessary */
+}
+
+figure {
+    text-align: center; /* Center text below images */
+}
+
+figure img {
+    width: 150px; /* Set a uniform width for images */
+    border-radius: 10px; /* Rounded corners for images */
+}
+
+footer {
+    display: flex; /* Flexbox for footer */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    padding: 1rem;
+    background-color: #f4f4f4; /* Light background for footer */
+}
+
+.footer-social {
+    display: flex; /* Flex layout for social icons */
+    gap: 1rem; /* Space between social icons */
+}
+
+.footer-social img {
+    width: 30px; /* Size for social icons */
+}
