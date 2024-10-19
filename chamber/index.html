@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kweneng Agriculture Chamber of Commerce</title>
+    <link rel="stylesheet" href="normalize.css"> <!-- Include Normalize CSS -->
     <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script> <!-- External JavaScript file -->
 </head>
 
 <body>
@@ -25,7 +27,7 @@
                 <li><a href="events.html">Events</a></li>
             </ul>
             <div class="dark-mode-toggle">
-                <button>🌗</button>
+                <button id="darkModeToggle">🌗</button>
             </div>
         </nav>
     </header>
@@ -41,105 +43,38 @@
         <section class="content">
             <div class="events">
                 <h2>Events</h2>
-                <!-- Event content here -->
+                <p>Upcoming Events: Placeholder for current events. Details coming soon!</p>
             </div>
             <div class="current-weather">
                 <h2>Current Weather</h2>
-                <p>75°F, Partly Cloudy</p>
-                <p>High: 85°F, Low: 52°F</p>
-                <p>Humidity: 34%</p>
-                <p>Sunrise: 7:30 AM, Sunset: 9:59 PM</p>
+                <p id="weather-description">Loading...</p>
+                <p id="weather-temp">Loading...</p>
+                <p id="weather-humidity">Loading...</p>
             </div>
             <div class="weather-forecast">
                 <h2>Weather Forecast</h2>
-                <p>Today: 90°F</p>
-                <p>Wednesday: 89°F</p>
-                <p>Thursday: 68°F</p>
+                <ul id="forecast-list">
+                    <li>Loading...</li>
+                </ul>
             </div>
         </section>
 
         <!-- Business Directory -->
         <section class="business-directory">
             <h2>Business Directory</h2>
-            <div class="business-card">
-                <img src="images/logo.webp" alt="BAMB Headquarters Logo">
-                <p><strong>BAMB Headquarters</strong></p>
-                <p>Address: Plot 130, Nkwe Square, G.I.F.P, Gaborone</p>
-                <p>Email: <a href="mailto:info@bamb.co.bw">info@bamb.co.bw</a></p>
-                <p>Phone: +267 395 1341</p>
-                <p>Website: <a href="https://bamb.co.bw/">bamb.co.bw</a></p>
-                <p>Membership Level: 3</p>
-            </div>
-
-            <div class="business-card">
-                <img src="images/agrifeed.webp" alt="AgriFeed GICP Logo">
-                <p><strong>AgriFeed GICP</strong></p>
-                <p>Address: Plot 59 Unit 1B, GICP, Gaborone 9999</p>
-                <p>Email: <a href="mailto:info@agrifeed.co.bw">info@agrifeed.co.bw</a></p>
-                <p>Phone: +267 390 1851</p>
-                <p>Website: <a href="http://agrifeed.co.bw">agrifeed.co.bw</a></p>
-                <p>Membership Level: 2</p>
-            </div>
-
-            <div class="business-card">
-                <img src="images/greenhouse.webp" alt="Greenhouse Technologies Logo">
-                <p><strong>Greenhouse Technologies</strong></p>
-                <p>Address: Plot 20689 Sekotlo Rd, Gaborone 9999</p>
-                <p>Email: <a href="mailto:info@ghtech.co.za">info@ghtech.co.za</a></p>
-                <p>Phone: +267 75 480 600</p>
-                <p>Website: <a href="http://ghtech.co.za">ghtech.co.za</a></p>
-                <p>Membership Level: 2</p>
-            </div>
-
-            <div class="business-card">
-                <img src="images/afgri.webp" alt="AFGRI Equipment Logo">
-                <p><strong>AFGRI Equipment</strong></p>
-                <p>Address: Plot 43143 Maphapheng Rd, Gaborone 000</p>
-                <p>Email: <a href="mailto:info@afgriequipment.co.za">info@afgriequipment.co.za</a></p>
-                <p>Phone: +267 311 0876</p>
-                <p>Website: <a href="http://afgriequipment.co.za">afgriequipment.co.za</a></p>
-                <p>Membership Level: 3</p>
-            </div>
-
-            <div class="business-card">
-                <img src="images/hydrocon.webp" alt="Hydrocon Green Logo">
-                <p><strong>Hydrocon Green</strong></p>
-                <p>Address: Plot 20627 Block 3 Broadhurst, Gaborone 7441</p>
-                <p>Email: <a href="mailto:info@hydrocon.org">info@hydrocon.org</a></p>
-                <p>Phone: +267 319 0055</p>
-                <p>Website: <a href="http://hydrocon.org">hydrocon.org</a></p>
-                <p>Membership Level: 1</p>
-            </div>
-
-            <div class="business-card">
-                <img src="images/sediba.webp" alt="Sediba - VFM Logo">
-                <p><strong>Sediba - VFM</strong></p>
-                <p>Address: Plot 28562, Fairgrounds Mall, Unit G26, Gaborone</p>
-                <p>Email: <a href="mailto:info@sediba.co.bw">info@sediba.co.bw</a></p>
-                <p>Phone: N/A</p>
-                <p>Website: <a href="http://sediba.co.bw">sediba.co.bw</a></p>
-                <p>Membership Level: 1</p>
-            </div>
-
-            <div class="business-card">
-                <img src="images/notwane.webp" alt="Notwane Poultry Logo">
-                <p><strong>Notwane Poultry</strong></p>
-                <p>Address: Plot 92/98 Commerce Park, Gaborone</p>
-                <p>Email: <a href="mailto:info@notwanepoultry.co.bw">info@notwanepoultry.co.bw</a></p>
-                <p>Phone: +267 316 0500</p>
-                <p>Website: <a href="https://notwanepoultry.co.bw/">notwanepoultry.co.bw</a></p>
-                <p>Membership Level: 2</p>
+            <div id="business-spotlight">
+                <!-- Company spotlight will be injected here -->
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Kweneng Agriculture Chamber of Commerce, P O BOX 894 Molepolole,Gaborone,Botswana</p>
+        <p>Kweneng Agriculture Chamber of Commerce, P O BOX 894 Molepolole, Gaborone, Botswana</p>
         <p>Email: mbothepha@gmail.com | Phone: (267) 763-76661</p>
         <div class="social-links">
-            <a href="#"><img src="youtube.png" alt="YouTube"></a>
-            <a href="#"><img src="twitter.png" alt="Twitter"></a>
-            <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+            <a href="#"><img src="images/youtube.png" alt="YouTube"></a>
+            <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
         </div>
         <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce | Last Modified: 10/21/2024 22:12:35</p>
     </footer>

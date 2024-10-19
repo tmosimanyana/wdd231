@@ -1,3 +1,5 @@
+/* normalize.css (Copy content from the Normalize CSS file) */
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
@@ -42,6 +44,42 @@ main {
     padding: 20px;
 }
 
+/* Hero Section Styles */
+.hero {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+/* Business Directory Styles */
+#business-listings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.business-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 250px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.business-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.business-card h3 {
+    margin-top: 10px;
+}
+
 /* Footer Styles */
 footer {
     background: #333;
@@ -65,26 +103,25 @@ footer {
 .mb-20 {
     margin-bottom: 20px;
 }
-#business-listings {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+
+/* Dark Mode Styles */
+.dark-mode {
+    background-color: #333;
+    color: #f8f8f8;
 }
 
-.business-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 15px;
-    width: 250px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+.dark-mode header,
+.dark-mode footer {
+    background: #444;
 }
 
-.business-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+.dark-mode nav {
+    background: #555;
 }
 
-.business-card h3 {
-    margin-top: 10px;
+/* Add media queries for responsive design as necessary */
+@media (max-width: 768px) {
+    .business-card {
+        width: 100%; /* Make cards full width on smaller screens */
+    }
 }
