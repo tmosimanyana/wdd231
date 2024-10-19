@@ -65,3 +65,26 @@ footer {
 .mb-20 {
     margin-bottom: 20px;
 }
+#business-listings {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.business-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 15px;
+    width: 250px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.business-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.business-card h3 {
+    margin-top: 10px;
+}
