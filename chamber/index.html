@@ -4,13 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website</title>
+    <title>Kweneng Agriculture  Chamber of Commerce</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
     <header>
         <nav aria-label="Main Navigation">
+            <div class="logo">
+                <img src="logo.webp" alt="Kweneng Agriculture  Chamber of Commerce Logo">
+                <h1>Kweneg Agriculture  Chamber of Commerce</h1>
+            </div>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="discover.html">Discover</a></li>
@@ -20,15 +24,71 @@
                 <li><a href="podcast.html">Podcast</a></li>
                 <li><a href="events.html">Events</a></li>
             </ul>
+            <div class="dark-mode-toggle">
+                <button>🌗</button>
+            </div>
         </nav>
     </header>
 
     <main>
-        <section>
-            <h1>Welcome to Our Website</h1>
-            <p>This is the home page, where you can learn more about us and explore our various offerings.</p>
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="hero-image.jpg" alt="Scalable, responsive hero image">
+            <button class="keynote-tickets">Keynote Tickets</button>
+        </section>
+
+        <!-- Home Section -->
+        <section class="content">
+            <div class="events">
+                <h2>Events</h2>
+                <!-- Event content here -->
+            </div>
+            <div class="current-weather">
+                <h2>Current Weather</h2>
+                <p>75°F, Partly Cloudy</p>
+                <p>High: 85°F, Low: 52°F</p>
+                <p>Humidity: 34%</p>
+                <p>Sunrise: 7:30 AM, Sunset: 9:59 PM</p>
+            </div>
+            <div class="weather-forecast">
+                <h2>Weather Forecast</h2>
+                <p>Today: 90°F</p>
+                <p>Wednesday: 89°F</p>
+                <p>Thursday: 68°F</p>
+            </div>
+        </section>
+
+        <!-- Business Directory -->
+        <section class="business-directory">
+            <div class="business-card">
+                <img src="business1.jpg" alt="Business Image">
+                <p><strong>Business Name</strong></p>
+                <p>Tag Line</p>
+                <p>Email: info@gmail.com</p>
+                <p>Phone: 800-555-1234</p>
+                <p>URL: <a href="#">mybusiness.com</a></p>
+            </div>
+            <div class="business-card">
+                <img src="business2.jpg" alt="Business Image">
+                <p><strong>Business Name</strong></p>
+                <p>Tag Line</p>
+                <p>Email: info@gmail.com</p>
+                <p>Phone: 800-555-1234</p>
+                <p>URL: <a href="#">mybusiness.com</a></p>
+            </div>
         </section>
     </main>
+
+    <footer>
+        <p>Kweneng Agriculture  Chamber of Commerce, P O BOX 894, Molepolole, Botswana</p>
+        <p>Email: mbothepha@gmail.com | Phone: (267) 76376661</p>
+        <div class="social-links">
+            <a href="#"><img src="youtube.png" alt="YouTube"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            <a href="#"><img src="linkedin.png" alt="LinkedIn"></a>
+        </div>
+        <p>&copy; 2024 Kweneg Agriculture Chamber of Commerce | Last Modified: 19/10/2024 22:16:51</p>
+    </footer>
 </body>
 
 </html>
