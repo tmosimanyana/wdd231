@@ -1,78 +1,67 @@
-/* Directory Specific Styling */
-.grid-view .member-card {
-    display: inline-block;
-    width: 30%;  /* Adjust to show multiple members per row */
-    margin: 10px;
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-.list-view .member-card {
-    display: block;
-    width: 100%;  /* Full width for list view */
-    margin: 10px 0;
+/* Header Styles */
+header {
+    background: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
 }
 
-/* Common Member Card Styles */
-.member-card {
-    border: 1px solid #ccc;
-    padding: 15px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.member-card img {
-    width: 100px;
-    height: auto;
-    float: left;
-    margin-right: 15px;
-}
-
-.member-card h3 {
-    font-size: 1.2em;
+header h1 {
     margin: 0;
 }
 
-.member-card p {
-    margin: 5px 0;
+/* Navigation Styles */
+nav {
+    background: #444;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
 }
 
-.member-card a {
-    display: block;
-    margin-top: 10px;
-    color: #007bff;
+nav a {
+    color: #fff;
+    margin: 0 10px;
     text-decoration: none;
 }
 
-.member-card a:hover {
+nav a:hover {
     text-decoration: underline;
 }
-/* Styles for grid and list views */
-#memberContainer.grid-view .member-card {
-    display: inline-block;
-    width: 30%;
-    margin: 1%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+
+/* Main Content Styles */
+main {
+    padding: 20px;
 }
 
-#memberContainer.list-view .member-card {
-    display: block;
+/* Footer Styles */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
     width: 100%;
-    margin: 10px 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    padding: 15px;
+    bottom: 0;
 }
 
-.member-card img {
-    width: 100%;
-    height: auto;
+/* Utility Classes */
+.text-center {
+    text-align: center;
 }
 
-.member-card h3 {
-    margin-top: 10px;
+.mt-20 {
+    margin-top: 20px;
 }
 
-/* Responsive design for smaller screens */
-@media screen and (max-width: 768px) {
-    #memberContainer.grid-view .member-card {
-        width: 100%;
-    }
+.mb-20 {
+    margin-bottom: 20px;
 }
