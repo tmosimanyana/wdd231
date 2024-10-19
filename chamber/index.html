@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kweneng Agriculture Chamber of Commerce - Supporting agricultural businesses in Botswana.">
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
+    <meta property="og:description" content="Join us to connect with local businesses and find support for your agricultural ventures.">
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero.webp">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber">
     <title>Kweneng Agriculture Chamber of Commerce</title>
     <link rel="stylesheet" href="normalize.css"> <!-- Include Normalize CSS -->
     <link rel="stylesheet" href="styles.css">
@@ -47,14 +52,14 @@
             </div>
             <div class="current-weather">
                 <h2>Current Weather</h2>
-                <p id="weather-description">Loading...</p>
-                <p id="weather-temp">Loading...</p>
-                <p id="weather-humidity">Loading...</p>
+                <p id="weather-description">Loading weather description...</p>
+                <p id="weather-temp">Loading temperature...</p>
+                <p id="weather-humidity">Loading humidity...</p>
             </div>
             <div class="weather-forecast">
                 <h2>Weather Forecast</h2>
                 <ul id="forecast-list">
-                    <li>Loading...</li>
+                    <li>Loading forecast...</li>
                 </ul>
             </div>
         </section>
@@ -76,8 +81,13 @@
             <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
             <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
         </div>
-        <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce | Last Modified: 10/21/2024 22:12:35</p>
+        <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce | Last Modified: <span id="last-modified-date"></span></p>
     </footer>
+
+    <script>
+        // Display the last modified date dynamically
+        document.getElementById("last-modified-date").textContent = new Date(document.lastModified).toLocaleString();
+    </script>
 </body>
 
 </html>
