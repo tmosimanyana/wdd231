@@ -7,8 +7,12 @@ html {
 
 body {
     margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
+/* Block Elements */
 article,
 aside,
 details,
@@ -29,41 +33,48 @@ section {
     display: block;
 }
 
+/* Headings */
 h1 {
     font-size: 2em; /* 1 */
     margin: 0.67em 0; /* 2 */
 }
 
+/* Figures */
 figure {
     margin: 1em 0; /* 1 */
 }
 
+/* Horizontal Rule */
 hr {
     box-sizing: content-box; /* 1 */
     height: 0; /* 2 */
     overflow: visible; /* 3 */
 }
 
+/* Preformatted Text */
 pre {
     font-family: monospace, monospace; /* 1 */
     font-size: 1em; /* 2 */
 }
 
+/* Links */
 a {
     background-color: transparent; /* 1 */
 }
 
+/* Abbreviation */
 abbr[title] {
     border-bottom: none; /* 1 */
     text-decoration: underline; /* 2 */
-    text-decoration: underline dotted; /* 2 */
 }
 
+/* Strong and Bold Text */
 b,
 strong {
     font-weight: bolder; /* 1 */
 }
 
+/* Code Formatting */
 code,
 kbd,
 pre,
@@ -72,22 +83,19 @@ samp {
     font-size: 1em; /* 2 */
 }
 
+/* Marked Text */
 mark {
     background-color: #ff0; /* 1 */
     color: #000; /* 2 */
 }
 
+/* Small Text */
 small {
     font-size: 80%; /* 1 */
 }
 
-sub {
-    font-size: 75%; /* 1 */
-    line-height: 0; /* 2 */
-    position: relative; /* 3 */
-    vertical-align: baseline; /* 4 */
-}
-
+/* Subscript and Superscript */
+sub,
 sup {
     font-size: 75%; /* 1 */
     line-height: 0; /* 2 */
@@ -95,11 +103,13 @@ sup {
     vertical-align: baseline; /* 4 */
 }
 
+/* Tables */
 table {
     border-collapse: collapse; /* 1 */
     border-spacing: 0; /* 2 */
 }
 
+/* Form Elements */
 button,
 input,
 optgroup,
@@ -141,17 +151,9 @@ input {
     overflow: visible; /* 1 */
 }
 
+/* Hidden Elements */
 [hidden] {
     display: none; /* 1 */
-}
-
-/* General Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
 }
 
 /* Header Styles */
@@ -264,7 +266,7 @@ footer {
     background: #555;
 }
 
-/* Add media queries for responsive design as necessary */
+/* Responsive Styles */
 @media (max-width: 768px) {
     .business-card {
         width: 100%; /* Make cards full width on smaller screens */
