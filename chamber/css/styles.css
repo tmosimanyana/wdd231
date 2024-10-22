@@ -1,27 +1,45 @@
-/* Reset and normalize styles */
+/* Reset and normalize styles (you already included normalize.css) */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Basic layout styling */
+/* Root variables for color scheme */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #333;
+    --background-color: #f1f1f1;
+    --text-color: #333;
+    --highlight-color: #fff;
+}
+
+/* General styling */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
     line-height: 1.6;
+    margin: 0;
 }
 
+/* Header styles */
 header {
-    background: #4CAF50;
-    color: #fff;
-    padding: 1em;
+    background-color: var(--primary-color);
+    padding: 1em 0;
     text-align: center;
+    color: var(--highlight-color);
+}
+
+header h1 {
+    font-size: 2em;
 }
 
 nav ul {
     display: flex;
     justify-content: center;
-    list-style-type: none;
+    list-style: none;
+    padding: 0;
 }
 
 nav ul li {
@@ -29,16 +47,23 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
     text-decoration: none;
+    color: var(--highlight-color);
+    font-size: 1.2em;
 }
 
+nav ul li a:hover {
+    color: #ddd;
+}
+
+/* Main content styles */
 main {
     padding: 20px;
 }
 
 h2 {
     text-align: center;
+    color: var(--primary-color);
     margin-bottom: 20px;
 }
 
@@ -48,18 +73,20 @@ h2 {
 }
 
 .view-toggle button {
-    margin: 0 10px;
-    padding: 10px;
-    background-color: #4CAF50;
-    color: white;
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: var(--primary-color);
+    color: var(--highlight-color);
     border: none;
     cursor: pointer;
+    border-radius: 5px;
 }
 
 .view-toggle button:hover {
     background-color: #45a049;
 }
 
+/* Grid view for members */
 .grid-view {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -70,22 +97,76 @@ h2 {
     display: block;
 }
 
+/* Member card styles */
 .member-card {
-    border: 1px solid #ddd;
+    background-color: var(--highlight-color);
     padding: 15px;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .member-card img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     border-radius: 5px;
 }
 
+.member-card h3 {
+    margin-top: 10px;
+    color: var(--primary-color);
+}
+
+.member-card p {
+    margin: 5px 0;
+    color: var(--secondary-color);
+}
+
+.member-card a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.member-card a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles */
 footer {
-    background: #333;
-    color: white;
+    background-color: var(--secondary-color);
+    color: var(--highlight-color);
+    padding: 20px;
     text-align: center;
-    padding: 20px 0;
+}
+
+footer p {
+    margin: 10px 0;
+}
+
+footer span {
+    color: var(--primary-color);
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .view-toggle button {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .grid-view {
+        grid-template-columns: 1fr;
+    }
+
+    .member-card {
+        padding: 10px;
+    }
 }
