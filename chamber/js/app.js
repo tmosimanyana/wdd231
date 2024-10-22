@@ -1,31 +1,48 @@
-document.addEventListener("DOMContentLoaded", async () => {
+// Select DOM elements
+const membersContainer = document.getElementById('members');
+const gridViewButton = document.getElementById('gridView');
+const listViewButton = document.getElementById('listView');
+
+// Fetch member data
+async function fetchMembers() {
     try {
-        const response = await fetch('data/members.json'); // Adjust the path if necessary
-        if (!response.ok) throw new Error('Network response was not ok');
-        
+        const response = await fetch('data/members.json');
         const members = await response.json();
         displayMembers(members);
     } catch (error) {
-        console.error('Failed to fetch members:', error);
+        console.error('Error fetching members:', error);
     }
-});
+}
 
+// Display member data
 function displayMembers(members) {
-    const membersSection = document.getElementById('members');
+    membersContainer.innerHTML = ''; // Clear previous content
 
     members.forEach(member => {
-        const memberDiv = document.createElement('div');
-        memberDiv.className = 'member-item';
+        const memberCard = document.createElement('div');
+        memberCard.className = 'member-card';
 
-        memberDiv.innerHTML = `
-            <img src="${member.image}" alt="${member.name} logo" class="member-image">
+        memberCard.innerHTML = `
+            <img src="images/${member.image}" alt="${member.name} logo">
             <h3>${member.name}</h3>
             <p>${member.address}</p>
             <p>Phone: ${member.phone}</p>
-            <p>Email: <a href="mailto:${member.email}">${member.email}</a></p>
-            <p><a href="${member.website}" target="_blank">Visit Website</a></p>
+            <a href="${member.website}" target="_blank">Visit Website</a>
+            <p>Membership Level: ${member.membershipLevel}</p>
         `;
-        
-        membersSection.appendChild(memberDiv);
+
+        membersContainer.appendChild(memberCard);
     });
 }
+
+// Toggle between grid and list views
+gridViewButton.addEventListener('click', () => {
+    membersContainer.className = 'grid-view';
+});
+
+listViewButton.addEventListener('click', () => {
+    membersContainer.className = 'list-view';
+});
+
+// Initialize the page
+fetchMembers();
