@@ -88,7 +88,7 @@
 
       <!-- Business Description -->
       <label for="description">Business Description:
-        <textarea id="description" name="description" title="Business Description"></textarea>
+        <textarea id="description" name="description" title="Business Description" placeholder="Describe your business..."></textarea>
       </label>
 
       <!-- Hidden Timestamp Field -->
@@ -99,51 +99,52 @@
     </form>
 
     <!-- Membership Cards -->
-    <div class="membership-cards">
+    <section class="membership-cards">
+      <h3>Membership Levels</h3>
       <div class="card" id="np-card">
-        <h3>NP Membership</h3>
+        <h4>NP Membership</h4>
         <button onclick="showModal('np-modal')">Learn More</button>
       </div>
       <div class="card" id="bronze-card">
-        <h3>Bronze Membership</h3>
+        <h4>Bronze Membership</h4>
         <button onclick="showModal('bronze-modal')">Learn More</button>
       </div>
       <div class="card" id="silver-card">
-        <h3>Silver Membership</h3>
+        <h4>Silver Membership</h4>
         <button onclick="showModal('silver-modal')">Learn More</button>
       </div>
       <div class="card" id="gold-card">
-        <h3>Gold Membership</h3>
+        <h4>Gold Membership</h4>
         <button onclick="showModal('gold-modal')">Learn More</button>
       </div>
-    </div>
+    </section>
 
     <!-- Modals for Membership Levels -->
     <div id="np-modal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal('np-modal')">&times;</span>
-        <h3>NP Membership</h3>
+        <h4>NP Membership</h4>
         <p>No fees. Ideal for non-profits. Access to events, limited advertisement options.</p>
       </div>
     </div>
     <div id="bronze-modal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal('bronze-modal')">&times;</span>
-        <h3>Bronze Membership</h3>
+        <h4>Bronze Membership</h4>
         <p>Includes event discounts, business directory listing, and limited spotlight opportunities.</p>
       </div>
     </div>
     <div id="silver-modal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal('silver-modal')">&times;</span>
-        <h3>Silver Membership</h3>
+        <h4>Silver Membership</h4>
         <p>Includes all Bronze benefits, with added marketing and training opportunities.</p>
       </div>
     </div>
     <div id="gold-modal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeModal('gold-modal')">&times;</span>
-        <h3>Gold Membership</h3>
+        <h4>Gold Membership</h4>
         <p>Top-tier benefits, including advertising across events, premium spotlight placement, and more.</p>
       </div>
     </div>
