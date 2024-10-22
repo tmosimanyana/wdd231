@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Directory page for members of the Kweneng Agriculture Chamber of Commerce, listing businesses and agricultural service providers.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tmosimanyana/images/og-image.jpg">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/directory.html">
+    <title>Directory | Kweneng Agriculture Chamber of Commerce</title>
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html" class="active">Business Directory</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="directory">
+            <h1>Member Directory</h1>
+            <button id="toggle-view">Switch to List/Grid View</button>
+            <div id="members-grid" class="grid-view">
+                <!-- Member data loaded dynamically from JSON -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact Information: 123 Agriculture Rd, Molepolole, Botswana</p>
+        <p>&copy; <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Developed by Tinny Bothepha Mosimanyana for WDD 231</p>
+        <p>Last Modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
