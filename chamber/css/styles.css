@@ -21,6 +21,10 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     margin: 0;
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+    
 }
 
 /* Header styles */
