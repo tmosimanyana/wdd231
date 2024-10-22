@@ -5,24 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Directory page for members of the Kweneng Agriculture Chamber of Commerce, listing businesses and agricultural service providers.">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
+
+    <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce Directory">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero.webp">
     <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/directory.html">
     <meta property="og:description" content="Discover agricultural businesses and service providers through the Kweneng Agriculture Chamber of Commerce directory.">
+
     <title>Directory | Kweneng Agriculture Chamber of Commerce</title>
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-    <!-- Preconnect to Google Fonts -->
+    <!-- Google Fonts Preconnect -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
+    
     <!-- Import Roboto Font -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
     <!-- Normalize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
+    <!-- Custom Styles -->
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- External JavaScript with defer -->
@@ -52,8 +56,8 @@
         <main>
             <h2>Our Members</h2>
             <div class="view-toggle">
-                <button id="gridView" aria-label="Switch to Grid View">Grid View</button>
-                <button id="listView" aria-label="Switch to List View">List View</button>
+                <button id="gridView" aria-pressed="false" aria-label="Switch to Grid View">Grid View</button>
+                <button id="listView" aria-pressed="false" aria-label="Switch to List View">List View</button>
             </div>
             <section id="members" class="grid-view">
                 <!-- Member listings will be dynamically inserted here -->
@@ -66,8 +70,8 @@
         <p>&copy; <span id="year"></span> Tinny Bothepha Mosimanyana | WDD 231 | Last Modified: <span id="lastModified"></span></p>
     </footer>
 
+    <!-- External Script for Year and Last Modified Date -->
     <script>
-        // Display current year and last modified date
         document.getElementById("year").textContent = new Date().getFullYear();
         document.getElementById("lastModified").textContent = document.lastModified;
     </script>

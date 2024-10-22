@@ -1,48 +1,47 @@
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
-
-/* Import Roboto font from Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
 
 /* Base styles */
 body {
-    font-family: 'Roboto', sans-serif; /* Use Roboto font */
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 20px;
     background-color: #f4f4f4;
-    color: #333; /* Default text color */
+    color: #333;
 }
 
-header {
+header, footer {
     background: #333;
     color: #fff;
-    padding: 20px 0;
     text-align: center;
+    padding: 20px 0;
 }
 
 h1 {
-    font-weight: 700; /* Bold for header */
-    margin: 0; /* Remove default margin */
+    font-weight: 700;
+    margin: 0;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 nav ul li {
-    display: inline;
+    display: inline-block;
     margin: 0 15px;
 }
 
-nav ul li a {
+nav a {
     color: #fff;
     text-decoration: none;
-    font-weight: 500; /* Medium weight for navigation links */
-    transition: color 0.3s; /* Smooth transition for hover effect */
+    font-weight: 500;
+    transition: color 0.3s;
 }
 
-nav ul li a:hover {
-    color: #007bff; /* Change color on hover */
+nav a:hover {
+    color: #007bff;
 }
 
 .grid {
@@ -50,64 +49,59 @@ nav ul li a:hover {
     margin-top: 20px;
 }
 
-aside {
-    width: 25%; /* Sidebar width */
+aside, main {
     padding: 20px;
-    background-color: #fff;
+    background: #fff;
+    border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px; /* Rounded corners */
+}
+
+aside {
+    width: 25%;
 }
 
 main {
-    width: 75%; /* Main content width */
-    padding: 20px;
-    border-radius: 8px; /* Rounded corners */
+    width: 75%;
 }
 
 footer {
-    text-align: center;
-    padding: 20px 0;
-    background: #333;
-    color: #fff;
-    margin-top: 20px; /* Add some space above the footer */
+    margin-top: 20px;
 }
 
-/* View toggle styles */
+/* View toggle */
 .view-toggle {
     margin-bottom: 20px;
 }
 
-/* Grid view and list view styles */
+/* Member listing styles */
 .grid-view {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px; /* Increased gap between grid items */
+    gap: 15px;
 }
 
 .list-view {
     display: block;
 }
 
-/* CSS styles for member images */
-.member-image {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-/* Styles for member items */
 .member-item, .member-item-list {
     background: #fff;
     padding: 15px;
-    margin: 10px 0; /* Adjusted margin for vertical spacing */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
     border-radius: 8px;
-    transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effect */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .member-item:hover, .member-item-list:hover {
-    transform: translateY(-5px); /* Lift effect on hover */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+    transform: translateY(-5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.member-image, .member-item-list img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
 }
 
 .member-item-list {
@@ -116,48 +110,42 @@ footer {
 }
 
 .member-item-list img {
-    width: 80px; /* Set a fixed width for list view images */
-    height: auto;
+    width: 80px;
     margin-right: 10px;
-    border-radius: 50%; /* Circular images */
+    border-radius: 50%;
 }
 
 /* Button styles */
 button {
-    cursor: pointer; /* Pointer cursor on hover */
-    padding: 10px 15px; /* Added padding for better button size */
+    cursor: pointer;
+    padding: 10px 15px;
     background: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
-    transition: background 0.3s; /* Smooth transition */
+    transition: background 0.3s;
 }
 
 button:hover {
-    background: #0056b3; /* Darker blue on hover */
+    background: #0056b3;
 }
 
-/* Responsive Styles */
+/* Responsive styles */
 @media (max-width: 768px) {
     .grid {
-        flex-direction: column; /* Stack sidebar and main content */
+        flex-direction: column;
     }
 
-    aside {
-        width: 100%; /* Full width on mobile */
-    }
-
-    main {
-        width: 100%; /* Full width on mobile */
+    aside, main {
+        width: 100%;
     }
 
     nav ul li {
-        display: block; /* Stack navigation items vertically */
-        margin: 10px 0; /* Space between navigation items */
+        display: block;
+        margin: 10px 0;
     }
-    
+
     .member-item {
-        display: flex;
-        flex-direction: column; /* Stack items in mobile view */
+        flex-direction: column;
     }
 }
