@@ -64,5 +64,11 @@
         <p>Contact us: 10 Agricultural Rd, Molepolole, Botswana | Phone: +267 123 4567</p>
         <p>&copy; <span id="year"></span> Tinny Bothepha Mosimanyana | WDD 231 | Last Modified: <span id="lastModified"></span></p>
     </footer>
+
+    <script>
+        // Display current year and last modified date
+        document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById("lastModified").textContent = document.lastModified;
+    </script>
 </body>
 </html>

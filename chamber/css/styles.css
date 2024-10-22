@@ -10,6 +10,7 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #f4f4f4;
+    color: #333; /* Default text color */
 }
 
 header {
@@ -21,6 +22,7 @@ header {
 
 h1 {
     font-weight: 700; /* Bold for header */
+    margin: 0; /* Remove default margin */
 }
 
 nav ul {
@@ -37,6 +39,11 @@ nav ul li a {
     color: #fff;
     text-decoration: none;
     font-weight: 500; /* Medium weight for navigation links */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+nav ul li a:hover {
+    color: #007bff; /* Change color on hover */
 }
 
 .grid {
@@ -49,11 +56,13 @@ aside {
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px; /* Rounded corners */
 }
 
 main {
     width: 75%; /* Main content width */
     padding: 20px;
+    border-radius: 8px; /* Rounded corners */
 }
 
 footer {
@@ -61,17 +70,19 @@ footer {
     padding: 20px 0;
     background: #333;
     color: #fff;
+    margin-top: 20px; /* Add some space above the footer */
 }
 
+/* View toggle styles */
 .view-toggle {
     margin-bottom: 20px;
 }
 
-/* Grid view and list view styles (add your own styling as needed) */
+/* Grid view and list view styles */
 .grid-view {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
+    gap: 15px; /* Increased gap between grid items */
 }
 
 .list-view {
@@ -89,9 +100,15 @@ footer {
 .member-item, .member-item-list {
     background: #fff;
     padding: 15px;
-    margin: 10px;
+    margin: 10px 0; /* Adjusted margin for vertical spacing */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s; /* Transition for hover effect */
+}
+
+.member-item:hover, .member-item-list:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
 }
 
 .member-item-list {
@@ -103,18 +120,45 @@ footer {
     width: 80px; /* Set a fixed width for list view images */
     height: auto;
     margin-right: 10px;
+    border-radius: 50%; /* Circular images */
 }
 
-/* Add hover effect for buttons */
+/* Button styles */
 button {
     cursor: pointer; /* Pointer cursor on hover */
-    padding: 10px;
+    padding: 10px 15px; /* Added padding for better button size */
     background: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
+    transition: background 0.3s; /* Smooth transition */
 }
 
 button:hover {
-    background: #0056b3;
+    background: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .grid {
+        flex-direction: column; /* Stack sidebar and main content */
+    }
+
+    aside {
+        width: 100%; /* Full width on mobile */
+    }
+
+    main {
+        width: 100%; /* Full width on mobile */
+    }
+
+    nav ul li {
+        display: block; /* Stack navigation items vertically */
+        margin: 10px 0; /* Space between navigation items */
+    }
+    
+    .member-item {
+        display: flex;
+        flex-direction: column; /* Stack items in mobile view */
+    }
 }
