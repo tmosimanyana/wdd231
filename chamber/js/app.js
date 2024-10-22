@@ -1,32 +1,31 @@
-document.addEventListener('DOMContentLoaded', () => {
-    fetch('data/members.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Network response was not ok');
-            }
-            return response.json();
-        })
-        .then(data => {
-            displayMembers(data.members);
-        })
-        .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-        });
+document.addEventListener("DOMContentLoaded", async () => {
+    try {
+        const response = await fetch('data/members.json'); // Adjust the path if necessary
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const members = await response.json();
+        displayMembers(members);
+    } catch (error) {
+        console.error('Failed to fetch members:', error);
+    }
 });
 
 function displayMembers(members) {
     const membersSection = document.getElementById('members');
-    membersSection.innerHTML = ''; // Clear any previous content
+
     members.forEach(member => {
-        const memberCard = `
-            <div class="member-item">
-                <img src="${member.image}" alt="${member.name}" class="member-image">
-                <h3>${member.name}</h3>
-                <p>${member.address}</p>
-                <p>${member.phone}</p>
-                <a href="${member.website}" target="_blank">Visit Website</a>
-            </div>
+        const memberDiv = document.createElement('div');
+        memberDiv.className = 'member-item';
+
+        memberDiv.innerHTML = `
+            <img src="${member.image}" alt="${member.name} logo" class="member-image">
+            <h3>${member.name}</h3>
+            <p>${member.address}</p>
+            <p>Phone: ${member.phone}</p>
+            <p>Email: <a href="mailto:${member.email}">${member.email}</a></p>
+            <p><a href="${member.website}" target="_blank">Visit Website</a></p>
         `;
-        membersSection.innerHTML += memberCard;
+        
+        membersSection.appendChild(memberDiv);
     });
 }
