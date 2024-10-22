@@ -1,15 +1,22 @@
-/* Base styles */
-body {
-    font-family: 'Roboto', sans-serif;
+/* Reset default browser styles */
+* {
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Header styles */
 header {
-    background-color: #4CAF50; /* Adjust as needed */
+    background-color: #4CAF50; /* Example Header Color */
     color: white;
-    padding: 10px 0;
+    padding: 20px;
     text-align: center;
 }
 
@@ -20,65 +27,112 @@ nav ul {
 
 nav ul li {
     display: inline;
-    margin-right: 10px;
+    margin: 0 15px;
 }
 
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Grid layout styles */
 .grid {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin: 20px;
 }
 
 aside {
-    background: #f4f4f4;
-    padding: 10px;
-    margin-bottom: 20px;
+    flex: 1 1 20%; /* 20% width for aside */
+    margin-right: 20px;
 }
 
 main {
-    flex: 1;
+    flex: 3 1 75%; /* 75% width for main content */
 }
 
+h2 {
+    margin-bottom: 20px;
+}
+
+/* Member card styles */
+.member-card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 15px;
+    text-align: center;
+    transition: box-shadow 0.3s ease;
+}
+
+.member-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.member-card h3 {
+    margin: 10px 0;
+    font-size: 1.5em;
+}
+
+/* View toggle button styles */
 .view-toggle {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
-#members {
+.view-toggle button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    border: none;
+    background-color: #4CAF50; /* Same as header */
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-toggle button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Grid view styles */
+.grid-view {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 15px;
 }
 
-footer {
-    text-align: center;
-    padding: 10px 0;
-    background-color: #eee;
-}
-
-/* Media queries for responsive design */
-@media (max-width: 768px) {
-    nav ul {
-        display: flex;
-        flex-direction: column;
-    }
-    
-    nav ul li {
-        margin: 5px 0;
-    }
-
-    #members {
-        grid-template-columns: 1fr; /* Single column on mobile */
-    }
-}
-
-/* Add additional styles for list view */
+/* List view styles */
 .list-view {
     display: block;
 }
 
-.list-view .member {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    border-bottom: 1px solid #ddd;
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    aside {
+        flex: 1 1 100%; /* Full width for aside on smaller screens */
+        margin-right: 0;
+    }
+
+    main {
+        flex: 1 1 100%; /* Full width for main content on smaller screens */
+    }
+
+    .view-toggle {
+        flex-direction: column;
+        align-items: center;
+    }
 }
