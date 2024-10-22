@@ -75,6 +75,33 @@ footer {
     display: block;
 }
 
+/* CSS styles for member images */
+.member-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Styles for list view */
+.member-item, .member-item-list {
+    background: #fff;
+    padding: 15px;
+    margin: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.member-item-list {
+    display: flex;
+    align-items: center;
+}
+
+.member-item-list img {
+    width: 80px; /* Set a fixed width for list view images */
+    height: auto;
+    margin-right: 10px;
+}
+
 /* Add hover effect for buttons */
 button {
     cursor: pointer; /* Pointer cursor on hover */
