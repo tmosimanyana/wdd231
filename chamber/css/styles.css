@@ -1,106 +1,91 @@
-/* General Reset */
+/* Reset and normalize styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Basic layout styling */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
 
 header {
-    background: #333;
+    background: #4CAF50;
     color: #fff;
-    padding: 10px 0;
+    padding: 1em;
+    text-align: center;
 }
 
-header nav ul {
+nav ul {
     display: flex;
     justify-content: center;
+    list-style-type: none;
 }
 
-header nav ul li {
-    list-style: none;
+nav ul li {
+    margin: 0 15px;
 }
 
-header nav ul li a {
-    color: white;
-    padding: 10px 20px;
+nav ul li a {
+    color: #fff;
     text-decoration: none;
-    text-transform: uppercase;
-}
-
-header nav ul li a.active {
-    background: #0f9d58;
 }
 
 main {
     padding: 20px;
 }
 
-h1 {
+h2 {
     text-align: center;
+    margin-bottom: 20px;
 }
 
-.directory #toggle-view {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: #0f9d58;
+.view-toggle {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.view-toggle button {
+    margin: 0 10px;
+    padding: 10px;
+    background-color: #4CAF50;
     color: white;
     border: none;
     cursor: pointer;
 }
 
-#members-grid {
+.view-toggle button:hover {
+    background-color: #45a049;
+}
+
+.grid-view {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+}
+
+.list-view {
+    display: block;
 }
 
 .member-card {
     border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
+    padding: 15px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
 }
 
 .member-card img {
-    width: 100px;
+    width: 100%;
     height: auto;
-    margin-bottom: 10px;
-}
-
-.member-card h2 {
-    margin: 10px 0;
-    font-size: 1.2em;
-}
-
-.list-view #members-grid {
-    display: block;
-}
-
-.list-view .member-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 0;
-}
-
-.list-view .member-card img {
-    margin-right: 20px;
-    width: 80px;
-    height: auto;
+    border-radius: 5px;
 }
 
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
+    background: #333;
     color: white;
-}
-
-footer p {
-    margin-bottom: 5px;
+    text-align: center;
+    padding: 20px 0;
 }
