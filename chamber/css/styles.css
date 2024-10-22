@@ -1,3 +1,11 @@
+/* Root variables for colors */
+:root {
+    --primary-color: steelblue;
+    --text-color: #fff;
+    --border-color: #ccc;
+    --footer-bg: #f1f1f1;
+}
+
 /* General styles for the body */
 body {
     font-family: 'Roboto', sans-serif; /* Use Roboto font */
@@ -19,7 +27,7 @@ header {
 
 /* Navigation bar styles */
 nav {
-    background-color: steelblue; /* Background color for the nav */
+    background-color: var(--primary-color); /* Background color for the nav */
     padding: 1rem; /* Padding for the nav */
     display: flex; /* Use flexbox for navigation links */
     justify-content: space-evenly; /* Evenly space the items */
@@ -33,12 +41,12 @@ nav a {
     text-decoration: none; /* Remove underline */
     font-size: 1.2rem; /* Font size */
     font-weight: 700; /* Font weight */
-    color: #fff; /* Color for the text */
+    color: var(--text-color); /* Color for the text */
 }
 
 /* Styles for the header's h1 element */
 h1 {
-    border-bottom: 2px solid #ccc; /* Add a bottom border */
+    border-bottom: 2px solid var(--border-color); /* Add a bottom border */
     padding-bottom: 0.5rem; /* Space between text and border */
 }
 
@@ -67,7 +75,7 @@ aside {
 footer {
     text-align: center; /* Center text in the footer */
     padding: 1rem 0; /* Padding for the footer */
-    background-color: #f1f1f1; /* Light background color */
+    background-color: var(--footer-bg); /* Light background color */
 }
 
 /* Footer paragraph styles */
