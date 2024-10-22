@@ -1,21 +1,16 @@
-/* Reset default browser styles */
-* {
+/* styles.css */
+
+/* General Reset and Normalization */
+body {
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9;
-}
-
-/* Header styles */
 header {
-    background-color: #4CAF50; /* Example Header Color */
-    color: white;
+    background: #232323;
+    color: #fff;
     padding: 20px;
     text-align: center;
 }
@@ -35,104 +30,45 @@ nav ul li a {
     text-decoration: none;
 }
 
-/* Grid layout styles */
 .grid {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px;
 }
 
 aside {
-    flex: 1 1 20%; /* 20% width for aside */
-    margin-right: 20px;
+    width: 25%;
+    padding: 20px;
 }
 
 main {
-    flex: 3 1 75%; /* 75% width for main content */
+    width: 75%;
+    padding: 20px;
 }
 
-h2 {
-    margin-bottom: 20px;
+.grid-view {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-/* Member card styles */
 .member-card {
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 10px 0;
-    padding: 15px;
-    text-align: center;
-    transition: box-shadow 0.3s ease;
+    margin: 16px 12px;
+    background-color: rgba(255, 255, 128, 0.5); /* Example color */
+    opacity: 0.9;
+    padding: 10px;
+    cursor: pointer; /* Change cursor to pointer on hover */
 }
 
-.member-card img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.member-card h3 {
-    margin: 10px 0;
-    font-size: 1.5em;
-}
-
-/* View toggle button styles */
 .view-toggle {
     margin-bottom: 20px;
 }
 
 .view-toggle button {
-    padding: 10px 15px;
     margin-right: 10px;
-    border: none;
-    background-color: #4CAF50; /* Same as header */
-    color: white;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-.view-toggle button:hover {
-    background-color: #45a049; /* Darker green on hover */
-}
-
-/* Grid view styles */
-.grid-view {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 15px;
-}
-
-/* List view styles */
-.list-view {
-    display: block;
-}
-
-/* Footer styles */
 footer {
-    background-color: #333;
-    color: white;
     text-align: center;
     padding: 20px;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Media Queries for Responsive Design */
-@media (max-width: 768px) {
-    aside {
-        flex: 1 1 100%; /* Full width for aside on smaller screens */
-        margin-right: 0;
-    }
-
-    main {
-        flex: 1 1 100%; /* Full width for main content on smaller screens */
-    }
-
-    .view-toggle {
-        flex-direction: column;
-        align-items: center;
-    }
+    background: #232323;
+    color: #fff;
 }
