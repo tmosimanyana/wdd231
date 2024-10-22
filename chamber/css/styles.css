@@ -1,99 +1,84 @@
-/* Root variables for colors */
-:root {
-    --primary-color: steelblue;
-    --text-color: #fff;
-    --border-color: #ccc;
-    --footer-bg: #f1f1f1;
-}
-
-/* General styles for the body */
+/* Base styles */
 body {
-    font-family: 'Roboto', sans-serif; /* Use Roboto font */
-    line-height: 1.6; /* Set line height for readability */
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
-/* General styling for header and footer */
-header, .grid, footer {
-    max-width: 840px; /* Set max-width for header, grid container, and footer */
-    margin: 0 auto; /* Center the content */
-}
-
-/* Header styles */
 header {
-    padding: 1rem 0; /* Add padding to the header */
+    background-color: #4CAF50; /* Adjust as needed */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
 }
 
-/* Navigation bar styles */
-nav {
-    background-color: var(--primary-color); /* Background color for the nav */
-    padding: 1rem; /* Padding for the nav */
-    display: flex; /* Use flexbox for navigation links */
-    justify-content: space-evenly; /* Evenly space the items */
-    align-items: center; /* Center items vertically */
+nav ul {
+    list-style: none;
+    padding: 0;
 }
 
-/* Navigation link styles */
-nav a {
-    display: block; /* Make anchor tags block elements */
-    padding: 0.5rem; /* Add padding */
-    text-decoration: none; /* Remove underline */
-    font-size: 1.2rem; /* Font size */
-    font-weight: 700; /* Font weight */
-    color: var(--text-color); /* Color for the text */
+nav ul li {
+    display: inline;
+    margin-right: 10px;
 }
 
-/* Styles for the header's h1 element */
-h1 {
-    border-bottom: 2px solid var(--border-color); /* Add a bottom border */
-    padding-bottom: 0.5rem; /* Space between text and border */
-}
-
-/* Grid layout for main and aside sections */
 .grid {
-    display: grid; /* Set the display to grid */
-    grid-template-columns: 20rem 1fr; /* Define columns: aside is 20rem, main takes remaining space */
-    align-items: start; /* Align items to the start */
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
 }
 
-/* Main content styles */
-main {
-    grid-column: 2; /* Position in the second column */
-    margin: 1rem; /* Margin for spacing */
-}
-
-/* Aside styles */
 aside {
-    grid-column: 1; /* Position in the first column */
-    grid-row: 1; /* Position in the first row */
-    width: 20rem; /* Fixed width for aside */
-    position: relative; /* Maintain relative positioning */
+    background: #f4f4f4;
+    padding: 10px;
+    margin-bottom: 20px;
 }
 
-/* Footer styles */
+main {
+    flex: 1;
+}
+
+.view-toggle {
+    margin-bottom: 10px;
+}
+
+#members {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
 footer {
-    text-align: center; /* Center text in the footer */
-    padding: 1rem 0; /* Padding for the footer */
-    background-color: var(--footer-bg); /* Light background color */
+    text-align: center;
+    padding: 10px 0;
+    background-color: #eee;
 }
 
-/* Footer paragraph styles */
-footer p {
-    margin: 0; /* Remove default margin */
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    #members {
+        grid-template-columns: 1fr; /* Single column on mobile */
+    }
 }
 
-/* Responsive Design */
-@media (max-width: 840px) {
-    .grid {
-        grid-template-columns: 1fr; /* Stack columns on smaller screens */
-    }
+/* Add additional styles for list view */
+.list-view {
+    display: block;
+}
 
-    aside {
-        width: 100%; /* Make aside full width on small screens */
-    }
-
-    main {
-        grid-column: 1; /* Main takes the full width */
-    }
+.list-view .member {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
