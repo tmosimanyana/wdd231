@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Kweneng Agriculture Chamber of Commerce</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Include your site's styles -->
+</head>
+<body>
+  <header>
+    <!-- Common header across all pages -->
+    <h1>Kweneng Agriculture Chamber of Commerce</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Membership Application</h2>
+    <form method="get" action="thankyou.html">
+      <!-- First Name -->
+      <label for="first-name">First Name:
+        <input type="text" id="first-name" name="first-name" title="First Name" autocomplete="given-name" required>
+      </label>
+
+      <!-- Last Name -->
+      <label for="last-name">Last Name:
+        <input type="text" id="last-name" name="last-name" title="Last Name" autocomplete="family-name" required>
+      </label>
+
+      <!-- Organizational Title -->
+      <label for="title">Organizational Title:
+        <input type="text" id="title" name="organization-title" title="Organization Title" autocomplete="organization-title"
+               pattern="[A-Za-z\s\-]{7,}" required>
+      </label>
+
+      <!-- Email Address -->
+      <label for="email">Email:
+        <input type="email" id="email" name="email" title="Email Address" autocomplete="email" placeholder="example@mail.com" required>
+      </label>
+
+      <!-- Mobile Phone -->
+      <label for="phone">Mobile Phone:
+        <input type="tel" id="phone" name="phone" title="Mobile Phone" autocomplete="tel" required>
+      </label>
+
+      <!-- Organization Name -->
+      <label for="organization">Organization Name:
+        <input type="text" id="organization" name="organization" title="Organization Name" autocomplete="organization" required>
+      </label>
+
+      <!-- Membership Level -->
+      <label for="membership-level">Membership Level:
+        <select id="membership-level" name="membership-level" required>
+          <option value="np">NP Membership</option>
+          <option value="bronze">Bronze Membership</option>
+          <option value="silver">Silver Membership</option>
+          <option value="gold">Gold Membership</option>
+        </select>
+      </label>
+
+      <!-- Business Description -->
+      <label for="description">Business Description:
+        <textarea id="description" name="description" title="Business Description"></textarea>
+      </label>
+
+      <!-- Hidden Timestamp Field -->
+      <input type="hidden" id="timestamp" name="timestamp" value="">
+
+      <!-- Submit Button -->
+      <input type="submit" value="Submit Application">
+    </form>
+
+    <!-- Membership Cards -->
+    <div class="membership-cards">
+      <div class="card" id="np-card">
+        <h3>NP Membership</h3>
+        <button onclick="showModal('np-modal')">Learn More</button>
+      </div>
+      <div class="card" id="bronze-card">
+        <h3>Bronze Membership</h3>
+        <button onclick="showModal('bronze-modal')">Learn More</button>
+      </div>
+      <div class="card" id="silver-card">
+        <h3>Silver Membership</h3>
+        <button onclick="showModal('silver-modal')">Learn More</button>
+      </div>
+      <div class="card" id="gold-card">
+        <h3>Gold Membership</h3>
+        <button onclick="showModal('gold-modal')">Learn More</button>
+      </div>
+    </div>
+
+    <!-- Modals for Membership Levels -->
+    <div id="np-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('np-modal')">&times;</span>
+        <h3>NP Membership</h3>
+        <p>No fees. Ideal for non-profits. Access to events, limited advertisement options.</p>
+      </div>
+    </div>
+    <div id="bronze-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('bronze-modal')">&times;</span>
+        <h3>Bronze Membership</h3>
+        <p>Includes event discounts, business directory listing, and limited spotlight opportunities.</p>
+      </div>
+    </div>
+    <div id="silver-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('silver-modal')">&times;</span>
+        <h3>Silver Membership</h3>
+        <p>Includes all Bronze benefits, with added marketing and training opportunities.</p>
+      </div>
+    </div>
+    <div id="gold-modal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('gold-modal')">&times;</span>
+        <h3>Gold Membership</h3>
+        <p>Top-tier benefits, including advertising across events, premium spotlight placement, and more.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <!-- Common footer with copyright and contact -->
+    <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
+  </footer>
+
+  <script>
+    // JS for setting timestamp and modal functionality
+    document.getElementById('timestamp').value = new Date().toISOString();
+
+    function showModal(modalId) {
+      document.getElementById(modalId).style.display = "block";
+    }
+
+    function closeModal(modalId) {
+      document.getElementById(modalId).style.display = "none";
+    }
+  </script>
+</body>
+</html>

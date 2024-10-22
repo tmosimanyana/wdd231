@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You - Kweneng Agriculture Chamber of Commerce</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <!-- Common header -->
+    <h1>Kweneng Agriculture Chamber of Commerce</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="discover.html">Discover</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Thank You for Your Application!</h2>
+    <p>Your membership application has been successfully submitted. Below is a summary of the information you provided:</p>
+
+    <!-- Display the submitted form data here -->
+    <div class="confirmation-details">
+      <p><strong>First Name:</strong> <span id="first-name"></span></p>
+      <p><strong>Last Name:</strong> <span id="last-name"></span></p>
+      <p><strong>Email:</strong> <span id="email"></span></p>
+      <p><strong>Mobile Phone:</strong> <span id="phone"></span></p>
+      <p><strong>Organization:</strong> <span id="organization"></span></p>
+      <p><strong>Timestamp:</strong> <span id="timestamp"></span></p>
+    </div>
+
+    <a href="index.html" class="button">Return to Home</a>
+  </main>
+
+  <footer>
+    <!-- Common footer -->
+    <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
+  </footer>
+
+  <script>
+    // Function to retrieve the URL query parameters and display them
+    function getQueryParams() {
+      const params = new URLSearchParams(window.location.search);
+      return {
+        firstName: params.get('first-name'),
+        lastName: params.get('last-name'),
+        email: params.get('email'),
+        phone: params.get('phone'),
+        organization: params.get('organization'),
+        timestamp: params.get('timestamp')
+      };
+    }
+
+    // Function to populate the fields with form data
+    function displayFormData() {
+      const formData = getQueryParams();
+      document.getElementById('first-name').textContent = formData.firstName;
+      document.getElementById('last-name').textContent = formData.lastName;
+      document.getElementById('email').textContent = formData.email;
+      document.getElementById('phone').textContent = formData.phone;
+      document.getElementById('organization').textContent = formData.organization;
+      document.getElementById('timestamp').textContent = new Date(formData.timestamp).toLocaleString();
+    }
+
+    // Call the function when the page loads
+    window.onload = displayFormData;
+  </script>
+</body>
+</html>
