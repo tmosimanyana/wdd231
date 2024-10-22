@@ -18,7 +18,7 @@ async function fetchWeather() {
 
 // Fetch Weather Forecast
 async function fetchForecast() {
-    const apiKey = 'YOUR_API_KEY'; // Replace with your weather API key
+    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replace with your weather API key
     const apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=Gaborone&units=metric&appid=${apiKey}`;
 
     try {
