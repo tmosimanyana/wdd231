@@ -3,10 +3,8 @@
         "name": "BAMB Headquarters",
         "address": "Plot 130, Nkwe Square, G.I.F.P, Gaborone",
         "phone": "+267 395 1341",
-        "fax": "+267 395 2926",
-        "email": "info@bamb.co.bw",
         "website": "https://bamb.co.bw/",
-        "image": "images/logo.webp",  // Updated path for demonstration
+        "image": "images/bamb.webp",
         "membershipLevel": 3
     },
     {
@@ -27,7 +25,7 @@
     },
     {
         "name": "AFGRI Equipment",
-        "address": "Plot 43143 Maphapheng Rd, Gaborone 000",
+        "address": "Plot 43143 Maphapheng Rd, Gaborone",
         "phone": "+267 311 0876",
         "website": "http://afgriequipment.co.za",
         "image": "images/afgri.webp",
