@@ -1,18 +1,23 @@
-/* styles.css */
+/* Normalize CSS */
+@import url('normalize.css');
 
-/* General Reset and Normalization */
+/* Base styles */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Use Roboto font */
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    padding: 20px;
+    background-color: #f4f4f4;
 }
 
 header {
-    background: #232323;
+    background: #333;
     color: #fff;
-    padding: 20px;
+    padding: 20px 0;
     text-align: center;
+}
+
+h1 {
+    font-weight: 700; /* Bold for header */
 }
 
 nav ul {
@@ -26,49 +31,60 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: #fff;
     text-decoration: none;
+    font-weight: 500; /* Medium weight for navigation links */
 }
 
 .grid {
     display: flex;
+    margin-top: 20px;
 }
 
 aside {
-    width: 25%;
+    width: 25%; /* Sidebar width */
     padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 main {
-    width: 75%;
+    width: 75%; /* Main content width */
     padding: 20px;
 }
 
-.grid-view {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.member-card {
-    margin: 16px 12px;
-    background-color: rgba(255, 255, 128, 0.5); /* Example color */
-    opacity: 0.9;
-    padding: 10px;
-    cursor: pointer; /* Change cursor to pointer on hover */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #333;
+    color: #fff;
 }
 
 .view-toggle {
     margin-bottom: 20px;
 }
 
-.view-toggle button {
-    margin-right: 10px;
-    cursor: pointer;
+/* Grid view and list view styles (add your own styling as needed) */
+.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #232323;
-    color: #fff;
+.list-view {
+    display: block;
+}
+
+/* Add hover effect for buttons */
+button {
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 10px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: #0056b3;
 }
