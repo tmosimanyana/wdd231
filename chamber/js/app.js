@@ -1,9 +1,12 @@
 // app.js
 
-// Fetching member data from members.json
+// Function to fetch member data from JSON
 async function fetchMembers() {
     try {
         const response = await fetch('data/members.json');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
         const members = await response.json();
         displayMembers(members);
     } catch (error) {
@@ -11,40 +14,41 @@ async function fetchMembers() {
     }
 }
 
-// Display members in grid or list view
+// Function to display members in grid or list view
 function displayMembers(members) {
     const membersSection = document.getElementById('members');
     membersSection.innerHTML = ''; // Clear previous content
 
     members.forEach(member => {
         const memberCard = document.createElement('div');
-        memberCard.classList.add('member-card');
+        memberCard.className = 'member-card';
 
         memberCard.innerHTML = `
-            <img src="${member.image}" alt="${member.name}" />
+            <img src="${member.image}" alt="${member.name}">
             <h3>${member.name}</h3>
             <p>${member.address}</p>
-            <p>${member.phone}</p>
-            <a href="${member.website}" target="_blank">Visit Website</a>
+            <p>Phone: ${member.phone}</p>
+            <p><a href="${member.website}" target="_blank">Visit Website</a></p>
         `;
+
         membersSection.appendChild(memberCard);
     });
 }
 
-// Toggle between grid and list view
+// Event listeners for view toggle buttons
 document.getElementById('gridView').addEventListener('click', () => {
-    document.getElementById('members').classList.add('grid-view');
     document.getElementById('members').classList.remove('list-view');
+    document.getElementById('members').classList.add('grid-view');
 });
 
 document.getElementById('listView').addEventListener('click', () => {
-    document.getElementById('members').classList.add('list-view');
     document.getElementById('members').classList.remove('grid-view');
+    document.getElementById('members').classList.add('list-view');
 });
 
-// Display current year and last modified date
+// Update footer information
 document.getElementById("year").textContent = new Date().getFullYear();
 document.getElementById("lastModified").textContent = document.lastModified;
 
-// Fetch members on page load
+// Fetch and display members on page load
 fetchMembers();
