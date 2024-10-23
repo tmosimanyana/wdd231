@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Fetch members data and display it
     async function loadMembers() {
         try {
-            const response = await fetch('data/members.json'); // Fetch the JSON file
+            const response = await fetch('chamber/data/members.json'); // Adjusted file path
             membersData = await response.json(); // Convert the response to JSON
             displayMembers(membersData); // Display members in the default view (grid-view)
         } catch (error) {
@@ -49,11 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Event listeners for grid and list view buttons
-    document.getElementById('gridView').addEventListener('click', () => {
+    const gridButton = document.getElementById('gridView');
+    const listButton = document.getElementById('listView');
+
+    gridButton.addEventListener('click', (e) => {
+        e.target.setAttribute('aria-pressed', 'true');
+        listButton.setAttribute('aria-pressed', 'false');
         displayMembers(membersData, 'grid-view'); // Display members in grid view
     });
 
-    document.getElementById('listView').addEventListener('click', () => {
+    listButton.addEventListener('click', (e) => {
+        e.target.setAttribute('aria-pressed', 'true');
+        gridButton.setAttribute('aria-pressed', 'false');
         displayMembers(membersData, 'list-view'); // Display members in list view
     });
 
