@@ -102,9 +102,22 @@
         </section>
 
         <section class="images">
-            <h3>Images</h3>
-            <p>Images will be optimized in WebP format to ensure fast loading and high quality. All images will have defined width and height to prevent layout shifts.</p>
-            <img src="image.webp" alt="Sample Image" width="600" height="400" loading="lazy">
+            <h3>Wireframes</h3>
+            <p>Below are the wireframes for both mobile and desktop views of the home page.</p>
+            <div class="wireframe-images">
+                <figure>
+                    <img src="images/chamber-mobile-wireframe.webp" 
+                         alt="Mobile wireframe layout for the Kweneng Agriculture Chamber of Commerce home page..." 
+                         width="400" height="800" loading="lazy">
+                    <figcaption>Mobile View</figcaption>
+                </figure>
+                <figure>
+                    <img src="images/chamber-desktop-wireframe.webp" 
+                         alt="Desktop wireframe layout for the Kweneng Agriculture Chamber of Commerce home page..." 
+                         width="800" height="400" loading="lazy">
+                    <figcaption>Desktop View</figcaption>
+                </figure>
+            </div>
         </section>
     </main>
 
@@ -117,5 +130,36 @@
             document.getElementById('current-year').textContent = new Date().getFullYear();
         </script>
     </footer>
+<!-- Code injected by live-server -->
+<script>
+    // <![CDATA[  <-- For SVG support
+    if ('WebSocket' in window) {
+        (function () {
+            function refreshCSS() {
+                var sheets = [].slice.call(document.getElementsByTagName("link"));
+                var head = document.getElementsByTagName("head")[0];
+                for (var i = 0; i < sheets.length; ++i) {
+                    var elem = sheets[i];
+                    var parent = elem.parentElement || head;
+                    parent.removeChild(elem);
+                    var newElem = document.createElement("link");
+                    newElem.rel = "stylesheet";
+                    newElem.href = elem.href.split("?")[0] + "?now=" + new Date().getTime();
+                    newElem.onload = function () {
+                        this.removeEventListener('load', arguments.callee);
+                    };
+                    parent.appendChild(newElem);
+                }
+            }
+            var protocol = window.location.protocol === "https:" ? "wss://" : "ws://";
+            var socket = new WebSocket(protocol + window.location.host);
+            socket.onmessage = function (msg) {
+                if (msg.data === 'reload') window.location.reload();
+                if (msg.data === 'refreshcss') refreshCSS();
+            };
+        })();
+    }
+    // ]]>
+</script>
 </body>
 </html>
