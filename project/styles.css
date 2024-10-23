@@ -1,132 +1,217 @@
-body {
-    font-family: 'Montserrat', sans-serif;
-    color: #000000;
-    background-color: #FFFFFF;
+/* Root variables */
+:root {
+    --alink: #0000ee;
+    --avisited: #551a8b;
+  
+    --lightgray: rgb(240, 240, 240);
+    --gray: rgb(150, 150, 150);
+    --darkgray: rgb(50, 50, 50);
+    --byuiblue: rgb(0, 110, 182);
+    --navy: rgb(0, 0, 128);
+    --red: rgb(182, 0, 19);
+    --purple: rgba(103, 48, 155, .2);
+    --ccl: rgba(125, 90, 160, 0.45);
+    --disciples: rgba(158,116,171,.4);
+    --mustard: rgb(182, 163, 0);
+    --callout: rgb(230, 243, 254);
+    --error: rgb(255, 215, 225);
+    --warning: rgb(255, 255, 225);
+    --details: rgba(238, 254, 238, 1);
+  
+    --padd: 0.5rem;
+    --bord: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  
+  /* General styling */
+  body {
+    font: 400 16px / 1.5 Montserrat, Helvetica, sans-serif;
     margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #028A0F;
-    padding: 20px;
-    color: white;
-    text-align: center;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.logo {
-    max-width: 100px;
-    margin-bottom: 15px;
-}
-
-main {
-    padding: 20px;
-}
-
-section {
-    margin-bottom: 30px;
-}
-
-h1, h2, h3 {
-    color: #028A0F;
-}
-
-h1 {
-    font-size: 2.5rem; /* Consider using rem for responsiveness */
-}
-
-h2 {
-    font-size: 1.8rem; /* Consider using rem for responsiveness */
-}
-
-h3 {
-    font-size: 1.5rem; /* Consider using rem for responsiveness */
-}
-
-ul {
-    list-style: none;
-    padding-left: 0;
-}
-
-ul li::before {
-    content: '•';
-    color: #028A0F;
-    padding-right: 10px;
-}
-
-footer {
-    background-color: #028A0F;
-    color: white;
-    padding: 10px;
-    text-align: center;
-}
-
-.wireframe-images {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.wireframe {
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: var(--padd);
+  }
+  
+  h1, h2, h3, h4, h5 {
+    margin: 0;
+  }
+  
+  h1 {
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: normal;
+    margin-left: 1rem;
+  }
+  
+  h2 {
+    font-size: 1.6rem;
+    margin: 1.2rem 0.25rem;
+  }
+  
+  h3 {
+    font-size: 1.4rem;
+    margin: 1.5rem 0.5rem 0.5rem;
+    border-top: 1px solid #ddd;
+  }
+  
+  h4 {
+    font-size: 1.2rem;
+    margin: 0.75rem;
+    color: #555;
+  }
+  
+  h5 {
+    font-size: 1rem;
+    color: var(--navy);
+    margin: 0.75rem 1.2rem;
+  }
+  
+  /* Link styles */
+  a {
+    color: var(--navy);
+  }
+  
+  a:link {
+    color: var(--alink);
+  }
+  
+  a:visited {
+    color: var(--avisited);
+  }
+  
+  a:focus, a:active {
+    color: var(--red);
+  }
+  
+  a:hover {
+    background-color: var(--byuiblue);
+    color: #fff;
+  }
+  
+  /* Image styles */
+  img {
     max-width: 100%;
-    margin: 10px 0;
-}
-
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
-    left: 0;
+    height: auto;
+  }
+  
+  /* Header styling */
+  header {
+    background-color: var(--byuiblue);
+    padding: 0.5rem;
+  }
+  
+  .logo {
+    width: 50px;
+    height: auto;
+    position: absolute;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-}
-
-.modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
+    right: 0;
+  }
+  
+  /* Main content styling */
+  main {
+    margin: 1.5rem 1rem;
+  }
+  
+  /* Navigation styles */
+  nav {
+    display: flex;
+    width: fit-content;
+    flex-wrap: wrap;
+  }
+  
+  nav span {
+    font-size: 0.8rem;
+    font-weight: 700;
+    background-color: var(--lightgray);
+    margin: 0 0.25rem 0.25rem;
+    text-align: center;
+  }
+  
+  nav span a {
+    color: #000;
     text-decoration: none;
-    cursor: pointer;
-}
-
-.focus-highlight {
-    outline: 2px solid #028A0F; /* Primary color for focus indication */
-}
-
-/* Media Queries for Responsiveness */
-@media (max-width: 768px) {
+    padding: 0.5rem 1rem;
+    border: var(--bord);
+  }
+  
+  nav span a:hover {
+    background-color: var(--byuiblue);
+    color: #fff;
+  }
+  
+  /* Footer styles */
+  footer {
+    border-top: var(--bord);
+    font-size: smaller;
+    background-color: var(--lightgray);
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+  
+  /* Table styles */
+  table {
+    border-collapse: collapse;
+    margin: 1rem auto;
+    width: 80%;
+    border: var(--bord);
+    background-color: var(--lightgray);
+  }
+  
+  table caption {
+    color: var(--navy);
+    font-weight: 700;
+  }
+  
+  th {
+    background-color: var(--darkgray);
+    color: #fff;
+  }
+  
+  th, td {
+    border: var(--bord);
+    padding: 0.5rem;
+    text-align: center;
+  }
+  
+  td.detailed-text-cell {
+    text-align: left;
+    font-size: 90%;
+  }
+  
+  /* Media queries for responsive design */
+  @media screen and (min-width: 600px) {
+    .page {
+      position: relative;
+    }
+  
+    .logo {
+      width: 75px;
+      top: -0.5rem;
+      right: 1rem;
+    }
+  
     h1 {
-        font-size: 2rem; /* Adjust heading size for mobile */
+      font-size: 1.3rem;
     }
-    h2 {
-        font-size: 1.5rem; /* Adjust heading size for mobile */
+  }
+  
+  @media screen and (min-width: 800px) {
+    .logo {
+      width: 100px;
+      padding: 22px 20px;
     }
-    h3 {
-        font-size: 1.25rem; /* Adjust heading size for mobile */
+  
+    h1 {
+      font-size: 1.75rem;
+      margin-left: 0;
     }
-    .wireframe {
-        max-width: 90%; /* Adjust wireframe image size for mobile */
-    }
-}
+  }
+  
