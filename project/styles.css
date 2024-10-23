@@ -37,15 +37,15 @@ h1, h2, h3 {
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Consider using rem for responsiveness */
 }
 
 h2 {
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Consider using rem for responsiveness */
 }
 
 h3 {
-    font-size: 1.5rem;
+    font-size: 1.5rem; /* Consider using rem for responsiveness */
 }
 
 ul {
@@ -75,4 +75,58 @@ footer {
 .wireframe {
     max-width: 100%;
     margin: 10px 0;
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.focus-highlight {
+    outline: 2px solid #028A0F; /* Primary color for focus indication */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem; /* Adjust heading size for mobile */
+    }
+    h2 {
+        font-size: 1.5rem; /* Adjust heading size for mobile */
+    }
+    h3 {
+        font-size: 1.25rem; /* Adjust heading size for mobile */
+    }
+    .wireframe {
+        max-width: 90%; /* Adjust wireframe image size for mobile */
+    }
 }
