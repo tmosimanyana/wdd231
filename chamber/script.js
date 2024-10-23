@@ -60,3 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load members data on page load
     loadMembers();
 });
+
+// Update the year and last modified date in the footer
+document.getElementById("year").textContent = new Date().getFullYear();
+document.getElementById("lastModified").textContent = document.lastModified;
