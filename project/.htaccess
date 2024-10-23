@@ -1,0 +1,22 @@
+# Set Content-Type Header
+Header set Content-Type "text/html; charset=utf-8"
+
+# Set Cache-Control Header
+Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+Header set Pragma "no-cache"
+Header set Expires "Wed, 11 Jan 1984 05:00:00 GMT" # Use a past date for cache busting
+
+# Set X-Content-Type-Options Header
+Header set X-Content-Type-Options "nosniff"
+
+# Remove unnecessary headers
+Header unset X-XSS-Protection
+Header unset X-Frame-Options
+
+# Implement Content-Security-Policy
+Header set Content-Security-Policy "default-src 'self';"
+
+# Ensure all headers are properly configured
+<IfModule mod_headers.c>
+    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains" # HSTS
+</IfModule>
