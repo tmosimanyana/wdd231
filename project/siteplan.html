@@ -20,7 +20,7 @@
     <meta name="twitter:image" content="https://tmosimanyana.github.io/wdd231/project/images/logo.webp">
     
     <!-- Font Preload -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'" crossorigin="anonymous">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"></noscript>
     
     <!-- Main CSS with Cache Busting -->
@@ -133,14 +133,21 @@
             <p>Contact: <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
             <p>Last modified: <span id="last-modified"></span></p>
             <p>Developed by Tinny Bothepha Mosimanyana for WDD 231</p>
+            <p>
+                Follow us: 
+                <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener">Twitter</a> | 
+                <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener">Facebook</a>
+            </p>
         </div>
     </footer>
 
     <script>
-        // Update copyright year
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        // Update last modified date
-        document.getElementById('last-modified').textContent = document.lastModified;
+        document.addEventListener("DOMContentLoaded", function() {
+            // Update copyright year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            // Update last modified date
+            document.getElementById('last-modified').textContent = document.lastModified;
+        });
     </script>
 </body>
 
