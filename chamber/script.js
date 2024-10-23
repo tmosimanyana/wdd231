@@ -1,49 +1,62 @@
-// Fetch data from members.json
-async function fetchMembers() {
-    try {
-        const response = await fetch('data/members.json');
-        const members = await response.json();
-        displayMembers(members, 'grid-view');
-    } catch (error) {
-        console.error('Error fetching members:', error);
+document.addEventListener('DOMContentLoaded', () => {
+    let membersData = []; // Will store the fetched members data
+
+    // Fetch members data and display it
+    async function loadMembers() {
+        try {
+            const response = await fetch('data/members.json'); // Fetch the JSON file
+            membersData = await response.json(); // Convert the response to JSON
+            displayMembers(membersData); // Display members in the default view (grid-view)
+        } catch (error) {
+            console.error("Error fetching members:", error);
+        }
     }
-}
 
-// Function to display members
-function displayMembers(members, viewType) {
-    const membersSection = document.getElementById('members');
-    membersSection.innerHTML = ''; // Clear any previous content
-    membersSection.classList = viewType; // Set view type
+    // Function to display members in the specified view (grid or list)
+    function displayMembers(members, view = 'grid-view') {
+        const membersSection = document.getElementById('members');
+        membersSection.className = view; // Update class based on view
 
-    members.forEach(member => {
-        const memberCard = document.createElement('div');
-        memberCard.classList.add('member');
+        // Clear previous content
+        membersSection.innerHTML = '';
 
-        memberCard.innerHTML = `
-            <img src="${member.image}" alt="${member.name} logo">
-            <h3>${member.name}</h3>
-            <p>Address: ${member.address}</p>
-            <p>Phone: ${member.phone}</p>
-            <p>Website: <a href="${member.website}" target="_blank">${member.website}</a></p>
-            <p>Membership Level: ${member.membershipLevel === 3 ? 'Gold' : member.membershipLevel === 2 ? 'Silver' : 'Member'}</p>
-        `;
+        // Loop through members and create cards for each member
+        members.forEach(member => {
+            const memberDiv = document.createElement('div');
+            memberDiv.classList.add('member');
 
-        membersSection.appendChild(memberCard);
+            memberDiv.innerHTML = `
+                <img src="${member.image}" alt="${member.name} logo">
+                <h3>${member.name}</h3>
+                <p><strong>Address:</strong> ${member.address}</p>
+                <p><strong>Phone:</strong> ${member.phone || 'N/A'}</p>
+                <p><strong>Website:</strong> <a href="${member.website}" target="_blank">${member.website}</a></p>
+                <p><strong>Membership Level:</strong> ${getMembershipLevel(member.membershipLevel)}</p>
+            `;
+
+            membersSection.appendChild(memberDiv); // Append the member card to the section
+        });
+    }
+
+    // Function to get membership level as a string
+    function getMembershipLevel(level) {
+        switch (level) {
+            case 1: return 'Member';
+            case 2: return 'Silver';
+            case 3: return 'Gold';
+            default: return 'Unknown';
+        }
+    }
+
+    // Event listeners for grid and list view buttons
+    document.getElementById('gridView').addEventListener('click', () => {
+        displayMembers(membersData, 'grid-view'); // Display members in grid view
     });
-}
 
-// Toggle view between Grid and List
-document.getElementById('gridView').addEventListener('click', () => {
-    fetchMembers().then(() => displayMembers(members, 'grid-view'));
+    document.getElementById('listView').addEventListener('click', () => {
+        displayMembers(membersData, 'list-view'); // Display members in list view
+    });
+
+    // Load members data on page load
+    loadMembers();
 });
-
-document.getElementById('listView').addEventListener('click', () => {
-    fetchMembers().then(() => displayMembers(members, 'list-view'));
-});
-
-// Display the year and last modified date in the footer
-document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = document.lastModified;
-
-// Call fetchMembers initially to load the data
-fetchMembers();
