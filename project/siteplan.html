@@ -10,23 +10,24 @@
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/project/images/logo.webp">
     <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/project/siteplan.html">
-    <link rel="stylesheet" href="styles.css"> <!-- Ensure this path is correct -->
+    <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.css"></noscript>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <title>Kweneng Agriculture Chamber of Commerce Site Plan</title>
+    <script src="script.js" defer></script> <!-- Load JavaScript with defer -->
 </head>
 
 <body>
-    <header>
+    <header role="banner">
         <div class="container">
-            <!-- Lazy loading the logo image -->
             <img src="https://tmosimanyana.github.io/wdd231/project/images/logo.webp" alt="Kweneng Agriculture Chamber of Commerce Logo" class="logo" loading="lazy" width="200" height="100">
             <h1>Kweneng Agriculture Chamber of Commerce</h1>
             <h2>Site Plan</h2>
         </div>
     </header>
 
-    <main>
+    <main role="main">
         <section class="site-info">
             <h3>Site Name</h3>
             <p><strong>Kweneng Agriculture Chamber of Commerce</strong></p>
@@ -75,21 +76,32 @@
             <p>Below are the wireframes for both mobile and desktop views of the home page.</p>
             <div class="wireframe-images">
                 <figure>
-                    <!-- Lazy loading wireframe images -->
-                    <img src="https://tmosimanyana.github.io/wdd231/project/images/chamber-mobile-wireframe.webp" alt="Mobile Wireframe" class="wireframe" loading="lazy" width="360" height="640">
-                    <figcaption>Mobile View Wireframe</figcaption>
+                    <img src="https://tmosimanyana.github.io/wdd231/project/images/mobile-wireframe.png" alt="Mobile Wireframe" width="400" height="800">
+                    <figcaption>Mobile View</figcaption>
                 </figure>
                 <figure>
-                    <img src="https://tmosimanyana.github.io/wdd231/project/images/chamber-desktop-wireframe.webp" alt="Desktop Wireframe" class="wireframe" loading="lazy" width="800" height="600">
-                    <figcaption>Desktop View Wireframe</figcaption>
+                    <img src="https://tmosimanyana.github.io/wdd231/project/images/desktop-wireframe.png" alt="Desktop Wireframe" width="800" height="400">
+                    <figcaption>Desktop View</figcaption>
                 </figure>
             </div>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce. All rights reserved. Created by Tinny Bothepha Mosimanyana.</p>
+    <footer role="contentinfo">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce</p>
+            <p>Contact: <a href="mailto:info@kwenengchamber.org">info@kwenengchamber.org</a></p>
+            <p>Last modified: <span id="last-modified"></span></p>
+            <p>Developed by Tinny Bothepha Mosimanyana for WDD 231</p>
+        </div>
     </footer>
+
+    <script>
+        // Update copyright year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        // Update last modified date
+        document.getElementById('last-modified').textContent = document.lastModified;
+    </script>
 </body>
 
 </html>
