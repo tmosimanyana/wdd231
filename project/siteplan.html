@@ -1,32 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Site Plan for Kweneng Agriculture Chamber of Commerce">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Site Plan for Kweneng Agriculture Chamber of Commerce - Serving agricultural businesses in Botswana.">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/project/images/logo.webp">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/project/siteplan.html">
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kweneng Agriculture Chamber of Commerce">
+    <meta name="twitter:description" content="Supporting agricultural businesses in the Kweneng region, Botswana.">
+    <meta name="twitter:image" content="https://tmosimanyana.github.io/wdd231/project/images/logo.webp">
+
+    <!-- Font Preload -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"></noscript>
+
+    <!-- Main CSS with Cache Busting -->
+    <link rel="stylesheet" href="style.css?v=1.0.1" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css?v=1.0.1"></noscript>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
     <title>Kweneng Agriculture Chamber of Commerce Site Plan</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Main JavaScript with Cache Busting -->
+    <script src="script.js?v=1.0.1" defer></script>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Kweneng Agriculture Chamber of Commerce",
+      "url": "https://tmosimanyana.github.io/wdd231/project/siteplan.html",
+      "logo": "https://tmosimanyana.github.io/wdd231/project/images/logo.webp",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "info@kwenengchamber.org",
+        "contactType": "Customer Service"
+      }
+    }
+    </script>
 </head>
+
 <body>
-    <header>
-        <h1>Kweneng Agriculture Chamber of Commerce Site Plan</h1>
+    <header role="banner">
+        <div class="container">
+            <img src="https://tmosimanyana.github.io/wdd231/project/images/logo.webp" 
+                 alt="Kweneng Agriculture Chamber of Commerce Logo - Supporting Agricultural Businesses in Botswana" 
+                 class="logo" loading="lazy" width="200" height="100">
+            <h1>Kweneng Agriculture Chamber of Commerce</h1>
+            <h2>Site Plan</h2>
+        </div>
     </header>
 
-    <main class="container">
+    <main role="main" class="container">
         <section>
             <h2>1. Site Name</h2>
             <p><strong>Site Name:</strong> Kweneng Agriculture Chamber of Commerce</p>
-            <p><strong>Reason:</strong> Reflects the agricultural focus and the purpose of the chamber within the Kweneng region.</p>
+            <p><strong>Reason:</strong> Reflects the agricultural focus and purpose of the chamber within the Kweneng region.</p>
         </section>
 
         <section>
             <h2>2. Site Purpose</h2>
             <p>The website will serve as a resource hub for agriculture-related businesses in the Kweneng region, offering:</p>
             <ul>
-                <li>A business directory.</li>
-                <li>Networking and collaboration opportunities.</li>
-                <li>Information on upcoming events and resources for members.</li>
+                <li>A business directory</li>
+                <li>Networking and collaboration opportunities</li>
+                <li>Information on upcoming events and resources for members</li>
             </ul>
         </section>
 
@@ -57,20 +106,23 @@
             <h2>6. Wireframe</h2>
             <h3>Mobile View</h3>
             <figure>
-                <img src="images/mobile-wireframe.webp" alt="Mobile Wireframe">
+                <img src="images/mobile-wireframe.webp" alt="Mobile Wireframe" width="600" height="400" loading="lazy">
             </figure>
 
             <h3>Desktop View</h3>
             <figure>
-                <img src="images/desktop-wireframe.webp" alt="Desktop Wireframe">
+                <img src="images/desktop-wireframe.webp" alt="Desktop Wireframe" width="600" height="400" loading="lazy">
             </figure>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
+    <footer role="contentinfo">
+        <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
+        <p>Developed by Tinny Bothepha Mosimanyana for WDD 231.</p>
+        <script>
+            // Update copyright year dynamically
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        </script>
     </footer>
-
-    <script src="script.js"></script>
 </body>
 </html>
