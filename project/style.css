@@ -1,14 +1,11 @@
-
 /* Normalize CSS */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
 
 /* Custom CSS for the Kweneng Agriculture Chamber of Commerce */
-
-/* Body Styling */
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #F5F5F5;
-    color: #333333;
+    background-color: #F5F5F5; /* Light Gray */
+    color: #333333; /* Dark text for readability */
     margin: 0;
     padding: 0;
     line-height: 1.6;
@@ -16,91 +13,129 @@ body {
 
 /* Header Styling */
 header {
-    background-color: #006400;
-    color: #FFFFFF;
+    background-color: #006400; /* Dark Green */
+    color: #FFFFFF; /* White text */
     padding: 10px 0;
     text-align: center;
 }
 
+#site-logo {
+    width: 150px; /* Adjust as needed */
+    height: auto;
+}
+
 h1, h2, h3, h4, h5 {
-    color: #006400;
+    color: #006400; /* Dark Green for headings */
 }
 
 /* Navigation */
 nav {
-    background-color: #333333;
+    background-color: #333333; /* Dark background for nav */
     overflow: hidden;
 }
 
 nav a {
     float: left;
     display: block;
-    color: #FFFFFF;
+    color: #FFFFFF; /* White text */
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
 }
 
 nav a:hover {
-    background-color: #FFD700;
-    color: #000;
+    background-color: #FFD700; /* Gold on hover */
+    color: #000; /* Black text on hover */
+}
+
+/* Main Container */
+.container {
+    max-width: 1200px; /* Max width for main content */
+    margin: 20px auto; /* Centered with top and bottom margin */
+    padding: 0 20px; /* Padding for inner content */
+}
+
+/* Section Styling */
+section {
+    margin-bottom: 20px; /* Space between sections */
+}
+
+/* Weather Section */
+#weather {
+    background-color: #FFFFFF; /* White background for weather */
+    padding: 20px;
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    margin-top: 20px; /* Margin above the weather card */
 }
 
 /* Spotlight Section */
 .spotlight {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 20px 0;
+    display: flex; /* Flex layout for spotlight cards */
+    flex-wrap: wrap; /* Wrap cards to next line if needed */
+    justify-content: space-around; /* Space around cards */
+    margin: 20px 0; /* Margin above and below spotlight */
 }
 
 .spotlight-card {
-    background-color: #FFFFFF;
-    border: 1px solid #CCCCCC;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    padding: 15px;
-    margin: 10px;
+    background-color: #FFFFFF; /* White background for cards */
+    border: 1px solid #CCCCCC; /* Light gray border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 300px; /* Fixed width for cards */
+    padding: 15px; /* Inner padding */
+    margin: 10px; /* Margin around cards */
 }
 
 .spotlight-card img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .spotlight-card h4 {
-    margin-top: 10px;
+    margin-top: 10px; /* Margin above card titles */
 }
 
 /* Membership Form */
 form {
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #FFFFFF; /* White background for form */
+    padding: 20px; /* Inner padding */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
 form label {
-    display: block;
-    margin-bottom: 5px;
+    display: block; /* Block display for labels */
+    margin-bottom: 5px; /* Space below labels */
 }
 
 form input, form select {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    border: 1px solid #CCCCCC;
+    width: 100%; /* Full width inputs */
+    padding: 8px; /* Inner padding */
+    margin-bottom: 10px; /* Space below inputs */
+    border-radius: 4px; /* Rounded corners */
+    border: 1px solid #CCCCCC; /* Light gray border */
 }
 
 /* Footer Styling */
 footer {
-    background-color: #333333;
-    color: #FFFFFF;
-    text-align: center;
-    padding: 10px 0;
+    background-color: #333333; /* Dark background for footer */
+    color: #FFFFFF; /* White text */
+    text-align: center; /* Centered text */
+    padding: 10px 0; /* Padding for footer */
     position: relative;
     bottom: 0;
-    width: 100%;
+    width: 100%; /* Full width footer */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .spotlight-card {
+        width: 100%; /* Make cards full width on smaller screens */
+    }
+
+    nav a {
+        float: none; /* Stack navigation links */
+        text-align: left; /* Align text to the left */
+    }
 }

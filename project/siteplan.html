@@ -1,117 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Site Plan for Kweneng Agriculture Chamber of Commerce">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Kweneng Agriculture Chamber of Commerce - Supporting local agricultural businesses in Botswana.">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
+
     <title>Kweneng Agriculture Chamber of Commerce Site Plan</title>
-    <link rel="stylesheet" href="style.css">
+
+    <!-- Open Graph Meta Tags for Social Sharing -->
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/project/images/logo.webp">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/project/siteplan.html">
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Kweneng Agriculture Chamber of Commerce">
+    <meta name="twitter:description" content="Supporting local agricultural businesses in Botswana.">
+    <meta name="twitter:image" content="https://tmosimanyana.github.io/wdd231/project/images/logo.webp">
+
+    <!-- Font Preload -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"></noscript>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="styles.css?v=1.0.1" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="styles.css?v=1.0.1"></noscript>
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
+
 <body>
-    <header>
-        <h1>Kweneng Agriculture Chamber of Commerce Site Plan</h1>
+    <header role="banner">
+        <div class="container">
+            <img src="https://tmosimanyana.github.io/wdd231/project/images/logo.webp" 
+                 alt="Kweneng Agriculture Chamber of Commerce Logo - Supporting Agricultural Businesses in Botswana" 
+                 class="logo" loading="lazy" width="200" height="100">
+            <h1>Kweneng Agriculture Chamber of Commerce</h1>
+            <h2>Site Plan</h2>
+        </div>
     </header>
 
-    <main class="container">
-        <section>
-            <h2>1. Site Name</h2>
-            <p><strong>Site Name:</strong> Kweneng Agriculture Chamber of Commerce</p>
-            <p><strong>Reason:</strong> Reflects the agricultural focus and the purpose of the chamber within the Kweneng region.</p>
+    <main role="main">
+        <section class="site-info">
+            <h3>Site Name</h3>
+            <p><strong>Kweneng Agriculture Chamber of Commerce</strong></p>
+            <p>The Kweneng Agriculture Chamber of Commerce website serves agricultural businesses by providing access to resources, membership directories, and networking opportunities within Botswana.</p>
         </section>
 
-        <section>
-            <h2>2. Site Purpose</h2>
-            <p>The website will serve as a resource hub for agriculture-related businesses in the Kweneng region, offering:</p>
+        <section class="site-purpose">
+            <h3>Site Purpose</h3>
+            <p>The purpose of the Kweneng Agriculture Chamber of Commerce website is to:</p>
             <ul>
-                <li>A business directory.</li>
-                <li>Networking and collaboration opportunities.</li>
-                <li>Information on upcoming events and resources for members.</li>
+                <li>Provide a directory of agricultural businesses in the Kweneng region.</li>
+                <li>Share current market trends, events, and workshops relevant to the agriculture industry.</li>
+                <li>Promote membership benefits and facilitate applications to the Chamber.</li>
+                <li>Provide up-to-date weather forecasts relevant to local agriculture.</li>
             </ul>
         </section>
 
-        <section>
-            <h2>3. Scenarios</h2>
-            <p>Here are two scenarios that reflect typical users:</p>
-            <ul>
-                <li><strong>Scenario 1:</strong> A business owner looking to join the chamber for networking and marketing support.</li>
-                <li><strong>Scenario 2:</strong> A community member searching for upcoming agriculture events and workshops.</li>
-            </ul>
+        <section class="scenarios">
+            <h3>Scenarios</h3>
+            <ol>
+                <li><strong>A business owner wanting to join the Chamber:</strong> They can navigate to the "Join" page to review membership levels, apply, and learn about the benefits.</li>
+                <li><strong>A resident looking for agricultural events:</strong> They can access the "Discover" section to check for upcoming workshops, market days, and community agriculture events.</li>
+            </ol>
         </section>
 
-        <section>
-            <h2>4. Color Schema</h2>
-            <ul>
-                <li><strong>Primary Color:</strong> Dark Green (#006400) for the header and navigation.</li>
-                <li><strong>Secondary Color:</strong> Gold (#FFD700) for buttons and links.</li>
-                <li><strong>Background Color:</strong> Light Gray (#F5F5F5) for the main content background.</li>
-            </ul>
+        <section class="color-schema">
+            <h3>Color Schema</h3>
+            <p><strong>Primary Color (Green #028A0F):</strong> This will be used for headings, buttons, and the navigation bar to emphasize the site’s agricultural focus.</p>
+            <p><strong>Secondary Color (Golden Yellow #F4A300):</strong> Used for highlights, call-to-action buttons, and backgrounds for promotional content.</p>
+            <p><strong>Background Color (White #FFFFFF):</strong> Used for the body background to maintain clarity and professionalism.</p>
+            <p><strong>Text Color (Black #000000):</strong> Standard text color to ensure readability.</p>
         </section>
 
-        <section>
-            <h2>5. Typography</h2>
-            <p><strong>Font Family:</strong> Montserrat, sans-serif for all headings and body text.</p>
+        <section class="typography">
+            <h3>Typography</h3>
+            <p>The site uses the <strong>Montserrat</strong> font for a modern and clean appearance, enhancing readability across devices.</p>
         </section>
 
-        <section>
-            <h2>6. Wireframe</h2>
-            <h3>Mobile View</h3>
-            <figure>
-                <img src="images/chamber-mobile-wireframe.webp" alt="Mobile Wireframe">
-            </figure>
-
-            <h3>Desktop View</h3>
-            <figure>
-                <img src="images/chamber-desktop-wireframe.webp" alt="Desktop Wireframe">
-            </figure>
+        <section class="images">
+            <h3>Images</h3>
+            <p>Images will be optimized in WebP format to ensure fast loading and high quality. All images will have defined width and height to prevent layout shifts.</p>
+            <img src="image.webp" alt="Sample Image" width="600" height="400" loading="lazy">
         </section>
 
-        <section>
-            <h2>7. Weather</h2>
-            <div id="weather">
-                <p><strong>Current Weather in Kweneng:</strong></p>
-                <p id="weather-data">Loading weather data...</p>
-            </div>
+        <section class="wireframe">
+            <h3>Wireframe</h3>
+            <p><strong>Mobile View Wireframe:</strong></p>
+            <img src="images/chamber-mobile-wireframe.webp" alt="Mobile View Wireframe" width="400">
+            <p><strong>Wider View Wireframe:</strong></p>
+            <img src="images/chamber-desktop-wireframe.webp" alt="Wider View Wireframe" width="600">
         </section>
     </main>
 
-    <footer>
-        <p>&copy; <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
+    <footer role="contentinfo">
+        <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
+        <p>Contact: <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
+        <p>Developed by Tinny Bothepha Mosimanyana for WDD 231.</p>
+        <script>
+            // Update copyright year dynamically
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        </script>
     </footer>
-
-    <script src="script.js"></script>
-    <script>
-        // Update year dynamically
-        document.getElementById('year').textContent = new Date().getFullYear();
-
-        // Fetch weather data
-        async function fetchWeather() {
-            const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replaced with your OpenWeatherMap API key
-            const url = `https://api.openweathermap.org/data/2.5/weather?q=Molepolole,BW&units=metric&appid=${apiKey}`;
-
-            try {
-                const response = await fetch(url);
-                const data = await response.json();
-                const temperature = Math.round(data.main.temp);
-                const description = data.weather[0].description;
-
-                // Capitalize weather description
-                const formattedDescription = description
-                    .split(' ')
-                    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-                    .join(' ');
-
-                document.getElementById('weather-data').innerHTML = `
-                    ${temperature}&deg;C, ${formattedDescription}
-                `;
-            } catch (error) {
-                console.error('Error fetching weather data:', error);
-                document.getElementById('weather-data').textContent = 'Unable to load weather data.';
-            }
-        }
-
-        // Call weather function on page load
-        fetchWeather();
-    </script>
 </body>
 </html>
