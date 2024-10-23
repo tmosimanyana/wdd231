@@ -1,0 +1,106 @@
+
+/* Normalize CSS */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+/* Custom CSS for the Kweneng Agriculture Chamber of Commerce */
+
+/* Body Styling */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F5F5F5;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* Header Styling */
+header {
+    background-color: #006400;
+    color: #FFFFFF;
+    padding: 10px 0;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5 {
+    color: #006400;
+}
+
+/* Navigation */
+nav {
+    background-color: #333333;
+    overflow: hidden;
+}
+
+nav a {
+    float: left;
+    display: block;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background-color: #FFD700;
+    color: #000;
+}
+
+/* Spotlight Section */
+.spotlight {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.spotlight-card {
+    background-color: #FFFFFF;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 15px;
+    margin: 10px;
+}
+
+.spotlight-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.spotlight-card h4 {
+    margin-top: 10px;
+}
+
+/* Membership Form */
+form {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #CCCCCC;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #333333;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
