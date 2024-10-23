@@ -62,38 +62,41 @@ const courses = [
     }
 ];
 
-// Display the courses in the course list
-const courseList = document.getElementById('course-list');
-const totalCredits = document.getElementById('total-credits');
+// Function to display courses
+function displayCourses(filter) {
+    const courseList = document.getElementById('course-list');
+    courseList.innerHTML = ''; // Clear existing content
+    let totalCredits = 0;
 
-// Function to render course list
-function renderCourses(filter = null) {
-    courseList.innerHTML = ''; // Clear the current list
-    let total = 0; // Initialize total credits
-    const filteredCourses = filter
-        ? courses.filter(course => course.subject === filter)
-        : courses;
+    const filteredCourses = courses.filter(course => 
+        filter === 'all' || 
+        (filter === 'wdd' && course.subject === 'WDD') || 
+        (filter === 'cse' && course.subject === 'CSE')
+    );
 
     filteredCourses.forEach(course => {
-        const courseItem = document.createElement('div');
-        courseItem.innerHTML = `<h3>${course.title} (${course.subject} ${course.number})</h3>
-                                <p><strong>Credits:</strong> ${course.credits}</p>
-                                <p>${course.description}</p>`;
-        courseList.appendChild(courseItem);
-        total += course.credits; // Accumulate total credits
+        const courseCard = document.createElement('div');
+        courseCard.className = 'course-card' + (course.completed ? ' completed' : '');
+        courseCard.innerHTML = `
+            <h3>${course.title}</h3>
+            <p><strong>Subject:</strong> ${course.subject} ${course.number}</p>
+            <p><strong>Credits:</strong> ${course.credits}</p>
+            <p><strong>Certificate:</strong> ${course.certificate}</p>
+            <p><strong>Description:</strong> ${course.description}</p>
+            <p><strong>Technologies:</strong> ${course.technology.join(', ')}</p>
+        `;
+        courseList.appendChild(courseCard);
+        totalCredits += course.credits;
     });
 
-    totalCredits.textContent = total; // Update total credits display
+    document.getElementById('total-credits').textContent = totalCredits;
 }
 
-// Initial render of all courses
-renderCourses();
+// Event listeners for buttons
+document.getElementById('show-all').addEventListener('click', () => displayCourses('all'));
+document.getElementById('show-wdd').addEventListener('click', () => displayCourses('wdd'));
+document.getElementById('show-cse').addEventListener('click', () => displayCourses('cse'));
 
-// Event listeners for filter buttons
-document.getElementById('show-all').addEventListener('click', () => renderCourses());
-document.getElementById('show-wdd').addEventListener('click', () => renderCourses('WDD'));
-document.getElementById('show-cse').addEventListener('click', () => renderCourses('CSE'));
-
-// Set current year in footer
+// Update footer with current year
 document.getElementById('currentyear').textContent = new Date().getFullYear();
 document.getElementById('lastModified').textContent = `Last modified: ${document.lastModified}`;
