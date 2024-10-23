@@ -1,48 +1,49 @@
-// Select DOM elements
-const membersContainer = document.getElementById('members');
-const gridViewButton = document.getElementById('gridView');
-const listViewButton = document.getElementById('listView');
-
-// Fetch member data
+// Fetch data from members.json
 async function fetchMembers() {
     try {
         const response = await fetch('data/members.json');
         const members = await response.json();
-        displayMembers(members);
+        displayMembers(members, 'grid-view');
     } catch (error) {
         console.error('Error fetching members:', error);
     }
 }
 
-// Display member data
-function displayMembers(members) {
-    membersContainer.innerHTML = ''; // Clear previous content
+// Function to display members
+function displayMembers(members, viewType) {
+    const membersSection = document.getElementById('members');
+    membersSection.innerHTML = ''; // Clear any previous content
+    membersSection.classList = viewType; // Set view type
 
     members.forEach(member => {
         const memberCard = document.createElement('div');
-        memberCard.className = 'member-card';
+        memberCard.classList.add('member');
 
         memberCard.innerHTML = `
-            <img src="images/${member.image}" alt="${member.name} logo">
+            <img src="${member.image}" alt="${member.name} logo">
             <h3>${member.name}</h3>
-            <p>${member.address}</p>
+            <p>Address: ${member.address}</p>
             <p>Phone: ${member.phone}</p>
-            <a href="${member.website}" target="_blank">Visit Website</a>
-            <p>Membership Level: ${member.membershipLevel}</p>
+            <p>Website: <a href="${member.website}" target="_blank">${member.website}</a></p>
+            <p>Membership Level: ${member.membershipLevel === 3 ? 'Gold' : member.membershipLevel === 2 ? 'Silver' : 'Member'}</p>
         `;
 
-        membersContainer.appendChild(memberCard);
+        membersSection.appendChild(memberCard);
     });
 }
 
-// Toggle between grid and list views
-gridViewButton.addEventListener('click', () => {
-    membersContainer.className = 'grid-view';
+// Toggle view between Grid and List
+document.getElementById('gridView').addEventListener('click', () => {
+    fetchMembers().then(() => displayMembers(members, 'grid-view'));
 });
 
-listViewButton.addEventListener('click', () => {
-    membersContainer.className = 'list-view';
+document.getElementById('listView').addEventListener('click', () => {
+    fetchMembers().then(() => displayMembers(members, 'list-view'));
 });
 
-// Initialize the page
+// Display the year and last modified date in the footer
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = document.lastModified;
+
+// Call fetchMembers initially to load the data
 fetchMembers();
