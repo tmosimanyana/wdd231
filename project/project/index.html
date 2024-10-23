@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="Kweneng Agriculture Chamber of Commerce - Supporting local agricultural businesses in Botswana.">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
-    
+
     <!-- Open Graph Meta Tags for Social Sharing -->
     <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/project/images/logo.webp">
     <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/project/siteplan.html">
-    
+
     <!-- Twitter Card Meta -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Kweneng Agriculture Chamber of Commerce">
     <meta name="twitter:description" content="Supporting local agricultural businesses in Botswana.">
     <meta name="twitter:image" content="https://tmosimanyana.github.io/wdd231/project/images/logo.webp">
-    
+
     <!-- Font Preload -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'" crossorigin="anonymous">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"></noscript>
-    
+
     <!-- Main CSS with Cache Busting -->
     <link rel="stylesheet" href="styles.css?v=1.0.1" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="styles.css?v=1.0.1"></noscript>
-    
+
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    
+
     <title>Kweneng Agriculture Chamber of Commerce Site Plan</title>
-    
+
     <!-- Main JavaScript with Cache Busting -->
     <script src="script.js?v=1.0.1" defer></script>
 
@@ -99,56 +98,24 @@
 
         <section class="typography">
             <h3>Typography</h3>
-            <p>The site uses the <strong>Montserrat</strong> font family from Google Fonts. It will be applied as follows:</p>
-            <ul>
-                <li><strong>Headings:</strong> Montserrat Bold (700)</li>
-                <li><strong>Body Text:</strong> Montserrat Regular (400)</li>
-            </ul>
-            <p>This font was chosen for its modern and clean appearance, suitable for a professional and easy-to-navigate site.</p>
+            <p>The site uses the <strong>Montserrat</strong> font for a modern and clean appearance, enhancing readability across devices.</p>
         </section>
 
-        <section class="wireframes">
-            <h3>Wireframes</h3>
-            <p>Below are the wireframes for both mobile and desktop views of the home page.</p>
-            <div class="wireframe-images">
-                <figure>
-                    <img src="https://tmosimanyana.github.io/wdd231/project/images/chamber-mobile-wireframe.webp" 
-                         alt="Mobile wireframe layout for the Kweneng Agriculture Chamber of Commerce home page, showing sections for services, events, and member information." 
-                         width="400" height="800" loading="lazy">
-                    <figcaption>Mobile View</figcaption>
-                </figure>
-                <figure>
-                    <img src="https://tmosimanyana.github.io/wdd231/project/images/chamber-desktop-wireframe.webp" 
-                         alt="Desktop wireframe layout for the Kweneng Agriculture Chamber of Commerce home page, displaying sections for navigation, featured services, and contact information." 
-                         width="800" height="400" loading="lazy">
-                    <figcaption>Desktop View</figcaption>
-                </figure>
-            </div>
+        <section class="images">
+            <h3>Images</h3>
+            <p>Images will be optimized in WebP format to ensure fast loading and high quality. All images will have defined width and height to prevent layout shifts.</p>
+            <img src="image.webp" alt="Sample Image" width="600" height="400" loading="lazy">
         </section>
     </main>
 
     <footer role="contentinfo">
-        <div class="container">
-            <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce</p>
-            <p>Contact: <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
-            <p>Last modified: <span id="last-modified"></span></p>
-            <p>Developed by Tinny Bothepha Mosimanyana for WDD 231</p>
-            <p>
-                Follow us: 
-                <a href="https://twitter.com/yourprofile" target="_blank" rel="noopener">Twitter</a> | 
-                <a href="https://facebook.com/yourprofile" target="_blank" rel="noopener">Facebook</a>
-            </p>
-        </div>
-    </footer>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            // Update copyright year
+        <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
+        <p>Contact: <a href="mailto:info@kwenengchamber.org">info@kwenengchamber.org</a></p>
+        <p>Developed by Tinny Bothepha Mosimanyana for WDD 231.</p>
+        <script>
+            // Update copyright year dynamically
             document.getElementById('current-year').textContent = new Date().getFullYear();
-            // Update last modified date
-            document.getElementById('last-modified').textContent = document.lastModified;
-        });
-    </script>
+        </script>
+    </footer>
 </body>
-
 </html>
