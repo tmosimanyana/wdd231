@@ -1,0 +1,33 @@
+/* Global CSS Variables */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #f2f2f2;
+}
+
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Hero Section */
+.hero {
+    background-color: var(--primary-color);
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+/* Weather Section */
+.weather {
+    padding: 20px;
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    /* Styles for small screens */
+}

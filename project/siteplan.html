@@ -1,110 +1,36 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-    <meta name="description" content="Kweneng Agriculture Chamber of Commerce - Supporting local agricultural businesses in Botswana.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-
-    <title>Kweneng Agriculture Chamber of Commerce Site Plan</title>
-
-    <!-- Open Graph Meta Tags for Social Sharing -->
-    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/project/images/logo.webp">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/project/siteplan.html">
-
-    <!-- Twitter Card Meta -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Kweneng Agriculture Chamber of Commerce">
-    <meta name="twitter:description" content="Supporting local agricultural businesses in Botswana.">
-    <meta name="twitter:image" content="https://tmosimanyana.github.io/wdd231/project/images/logo.webp">
-
-    <!-- Font Preload -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" as="style" onload="this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"></noscript>
-
-    <!-- Main CSS -->
-    <link rel="stylesheet" href="styles.css?v=1.0.1" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="styles.css?v=1.0.1"></noscript>
-
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kweneng Agriculture Chamber of Commerce - Site Plan</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/media.css">
+    <script src="js/script.js" defer></script>
 </head>
-
 <body>
-    <header role="banner">
-        <div class="container">
-            <img src="https://tmosimanyana.github.io/wdd231/project/images/logo.webp" 
-                 alt="Kweneng Agriculture Chamber of Commerce Logo - Supporting Agricultural Businesses in Botswana" 
-                 class="logo" loading="lazy" width="200" height="100">
-            <h1>Kweneng Agriculture Chamber of Commerce</h1>
-            <h2>Site Plan</h2>
-        </div>
+    <header>
+        <h1>Kweneng Agriculture Chamber of Commerce</h1>
     </header>
 
-    <main role="main">
-        <section class="site-info">
-            <h3>Site Name</h3>
-            <p><strong>Kweneng Agriculture Chamber of Commerce</strong></p>
-            <p>The Kweneng Agriculture Chamber of Commerce website serves agricultural businesses by providing access to resources, membership directories, and networking opportunities within Botswana.</p>
-        </section>
+    <section class="hero">
+        <picture>
+            <source media="(max-width: 600px)" srcset="images/hero-small.webp">
+            <source media="(min-width: 601px)" srcset="images/hero-large.webp">
+            <img src="images/hero-large.webp" alt="Hero Image" class="hero-image">
+        </picture>
+    </section>
 
-        <section class="site-purpose">
-            <h3>Site Purpose</h3>
-            <p>The purpose of the Kweneng Agriculture Chamber of Commerce website is to:</p>
-            <ul>
-                <li>Provide a directory of agricultural businesses in the Kweneng region.</li>
-                <li>Share current market trends, events, and workshops relevant to the agriculture industry.</li>
-                <li>Promote membership benefits and facilitate applications to the Chamber.</li>
-                <li>Provide up-to-date weather forecasts relevant to local agriculture.</li>
-            </ul>
-        </section>
+    <section class="weather">
+        <h2>Weather ⛅</h2>
+        <div id="weather-info">
+            <p id="temperature">Temperature: 25°C</p>
+            <p id="windchill">Wind Chill: <span id="windchill-value">N/A</span></p>
+        </div>
+    </section>
 
-        <section class="scenarios">
-            <h3>Scenarios</h3>
-            <ol>
-                <li><strong>A business owner wanting to join the Chamber:</strong> They can navigate to the "Join" page to review membership levels, apply, and learn about the benefits.</li>
-                <li><strong>A resident looking for agricultural events:</strong> They can access the "Discover" section to check for upcoming workshops, market days, and community agriculture events.</li>
-            </ol>
-        </section>
-
-        <section class="color-schema">
-            <h3>Color Schema</h3>
-            <p><strong>Primary Color (Green #028A0F):</strong> This will be used for headings, buttons, and the navigation bar to emphasize the site’s agricultural focus.</p>
-            <p><strong>Secondary Color (Golden Yellow #F4A300):</strong> Used for highlights, call-to-action buttons, and backgrounds for promotional content.</p>
-            <p><strong>Background Color (White #FFFFFF):</strong> Used for the body background to maintain clarity and professionalism.</p>
-            <p><strong>Text Color (Black #000000):</strong> Standard text color to ensure readability.</p>
-        </section>
-
-        <section class="typography">
-            <h3>Typography</h3>
-            <p>The site uses the <strong>Montserrat</strong> font for a modern and clean appearance, enhancing readability across devices.</p>
-        </section>
-
-        <section class="images">
-            <h3>Images</h3>
-            <p>Images will be optimized in WebP format to ensure fast loading and high quality. All images will have defined width and height to prevent layout shifts.</p>
-            <img src="image.webp" alt="Sample Image" width="600" height="400" loading="lazy">
-        </section>
-
-        <section class="wireframe">
-            <h3>Wireframe</h3>
-            <p><strong>Mobile View Wireframe:</strong></p>
-            <img src="images/chamber-mobile-wireframe.webp" alt="Mobile View Wireframe" width="400">
-            <p><strong>Wider View Wireframe:</strong></p>
-            <img src="images/chamber-desktop-wireframe.webp" alt="Wider View Wireframe" width="600">
-        </section>
-    </main>
-
-    <footer role="contentinfo">
-        <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
-        <p>Contact: <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
-        <p>Developed by Tinny Bothepha Mosimanyana for WDD 231.</p>
-        <script>
-            // Update copyright year dynamically
-            document.getElementById('current-year').textContent = new Date().getFullYear();
-        </script>
+    <footer>
+        <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce. Last modified: <span id="last-modified"></span></p>
     </footer>
 </body>
 </html>
