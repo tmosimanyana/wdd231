@@ -9,6 +9,10 @@
         margin: 10px 0;
     }
 
+    header nav ul li:focus {
+        outline: 2px solid #007BFF; /* Focus style */
+    }
+
     .view-toggle {
         display: flex;
         justify-content: center;
@@ -16,7 +20,20 @@
     }
 
     .view-btn {
+        min-width: 44px;
+        min-height: 44px;
+        padding: 10px; /* Ensure touch target size */
         margin: 0 5px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s ease, transform 0.2s ease; /* Transitions */
+    }
+
+    .view-btn:hover,
+    .view-btn:focus {
+        background-color: #0056b3; /* Hover/focus color */
+        transform: scale(1.05); /* Enlarge on hover/focus */
     }
 
     #directory-container {
