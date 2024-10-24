@@ -28,28 +28,90 @@
     <main>
         <section>
             <h1>Join Us</h1>
-            <form id="membership-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" required>
-                
-                <label for="business-name">Business Name:</label>
-                <input type="text" id="business-name" required>
-                
+            <form id="membership-form" method="get" action="thankyou.html">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" title="Enter your first name" required autocomplete="given-name">
+
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" title="Enter your last name" required autocomplete="family-name">
+
+                <label for="org-title">Organizational Title:</label>
+                <input type="text" id="org-title" name="org-title" title="Your title in the organization" pattern="[A-Za-z\s-]{7,}" autocomplete="organization-title">
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" title="Your email address" required placeholder="example@example.com" autocomplete="email">
+
+                <label for="phone">Mobile Phone Number:</label>
+                <input type="tel" id="phone" name="phone" title="Your mobile phone number" required autocomplete="tel">
+
+                <label for="business-name">Business/Organization Name:</label>
+                <input type="text" id="business-name" name="business-name" title="Your business or organization name" required autocomplete="organization">
+
                 <label for="membership-level">Membership Level:</label>
-                <select id="membership-level" required>
-                    <option value="NP">NP</option>
-                    <option value="Bronze">Bronze</option>
-                    <option value="Silver">Silver</option>
-                    <option value="Gold">Gold</option>
+                <select id="membership-level" name="membership-level" required>
+                    <option value="NP">NP Membership (No Fee)</option>
+                    <option value="Bronze">Bronze Membership</option>
+                    <option value="Silver">Silver Membership</option>
+                    <option value="Gold">Gold Membership</option>
                 </select>
+
+                <label for="description">Business/Organization Description:</label>
+                <textarea id="description" name="description" title="Describe your business or organization"></textarea>
+
+                <input type="hidden" id="timestamp" name="timestamp" value="" />
 
                 <button type="submit">Submit Application</button>
             </form>
+
+            <div class="membership-cards">
+                <div class="card" id="np-card">
+                    <h2>NP Membership</h2>
+                    <p>No Fee</p>
+                    <a href="#np-benefits" class="modal-link">Learn More</a>
+                </div>
+                <div class="card" id="bronze-card">
+                    <h2>Bronze Membership</h2>
+                    <p>Basic Benefits</p>
+                    <a href="#bronze-benefits" class="modal-link">Learn More</a>
+                </div>
+                <div class="card" id="silver-card">
+                    <h2>Silver Membership</h2>
+                    <p>Intermediate Benefits</p>
+                    <a href="#silver-benefits" class="modal-link">Learn More</a>
+                </div>
+                <div class="card" id="gold-card">
+                    <h2>Gold Membership</h2>
+                    <p>Premium Benefits</p>
+                    <a href="#gold-benefits" class="modal-link">Learn More</a>
+                </div>
+            </div>
+
+            <!-- Modals -->
+            <div id="np-benefits" class="modal">
+                <h2>NP Membership Benefits</h2>
+                <p>Details about NP Membership benefits...</p>
+                <button class="close-modal">Close</button>
+            </div>
+            <div id="bronze-benefits" class="modal">
+                <h2>Bronze Membership Benefits</h2>
+                <p>Details about Bronze Membership benefits...</p>
+                <button class="close-modal">Close</button>
+            </div>
+            <div id="silver-benefits" class="modal">
+                <h2>Silver Membership Benefits</h2>
+                <p>Details about Silver Membership benefits...</p>
+                <button class="close-modal">Close</button>
+            </div>
+            <div id="gold-benefits" class="modal">
+                <h2>Gold Membership Benefits</h2>
+                <p>Details about Gold Membership benefits...</p>
+                <button class="close-modal">Close</button>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>Contact us: info@kwenengagriculture.org | +267 123 4567</p>
+        <p>Contact us: mbothepha@gmail.com | +267 76376661</p>
         <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce</p>
         <p>Developed by Tinny Bothepha Mosimanyana for WDD 231 | Last Modified: <span id="last-modified"></span></p>
         <p><a href="attributions.html">Attributions</a></p>
@@ -59,6 +121,38 @@
     <script>
         document.getElementById("current-year").textContent = new Date().getFullYear();
         document.getElementById("last-modified").textContent = document.lastModified;
+
+        // Set timestamp on form load
+        document.getElementById("timestamp").value = new Date().toISOString();
+
+        // Modal functionality
+        const modalLinks = document.querySelectorAll('.modal-link');
+        const modals = document.querySelectorAll('.modal');
+        const closeButtons = document.querySelectorAll('.close-modal');
+
+        modalLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                const modalId = this.getAttribute('href');
+                document.querySelector(modalId).style.display = 'block';
+            });
+        });
+
+        closeButtons.forEach(button => {
+            button.addEventListener('click', function () {
+                this.closest('.modal').style.display = 'none';
+            });
+        });
+
+        // Initial card animations
+        document.querySelectorAll('.card').forEach((card, index) => {
+            card.style.opacity = 0;
+            setTimeout(() => {
+                card.style.transition = 'opacity 0.5s ease';
+                card.style.opacity = 1;
+            }, index * 300);
+        });
     </script>
 </body>
 </html>
+
