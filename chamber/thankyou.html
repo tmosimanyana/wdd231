@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Thank you for joining the Kweneng Agriculture Chamber of Commerce">
+    <meta name="description" content="Thank you for joining Kweneng Agriculture Chamber of Commerce">
     <title>Thank You | Kweneng Agriculture Chamber of Commerce</title>
     <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
@@ -13,14 +13,21 @@
 
     <!-- Header -->
     <header>
-        <h1>Thank You!</h1>
+        <h1>Thank You for Joining Us!</h1>
     </header>
 
     <!-- Main Content -->
     <main>
         <section id="thankyou">
-            <p>Thank you for submitting your membership application! We will review it and get back to you shortly.</p>
-            <p>If you have any questions, feel free to <a href="contact.html">contact us</a>.</p>
+            <h2>Your Details</h2>
+            <p><strong>First Name:</strong> <span id="firstName"></span></p>
+            <p><strong>Last Name:</strong> <span id="lastName"></span></p>
+            <p><strong>Email:</strong> <span id="email"></span></p>
+            <p><strong>Phone:</strong> <span id="phone"></span></p>
+            <p><strong>Organization:</strong> <span id="organization"></span></p>
+            <p><strong>Timestamp:</strong> <span id="timestamp"></span></p>
+
+            <p>If any of the above information is incorrect, please <a href="membership.html">go back</a> and fill out the form again.</p>
         </section>
     </main>
 
@@ -32,6 +39,16 @@
     </footer>
 
     <script>
+        // Retrieve form data from URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        document.getElementById('firstName').textContent = urlParams.get('firstName');
+        document.getElementById('lastName').textContent = urlParams.get('lastName');
+        document.getElementById('email').textContent = urlParams.get('email');
+        document.getElementById('phone').textContent = urlParams.get('phone');
+        document.getElementById('organization').textContent = urlParams.get('organization');
+        document.getElementById('timestamp').textContent = urlParams.get('timestamp');
+
+        // Set current year and last modified date
         document.getElementById('year').textContent = new Date().getFullYear();
         document.getElementById('lastModified').textContent = document.lastModified;
     </script>
