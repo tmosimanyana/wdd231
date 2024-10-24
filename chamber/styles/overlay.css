@@ -1,0 +1,148 @@
+/* Reset margins and paddings for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Added for better layout control */
+}
+
+/* Main content styling */
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    font-family: Roboto, Arial, sans-serif;
+}
+
+/* Hero section heading styling */
+h2 {
+    text-align: center;
+    font-size: 1.5rem;
+    text-shadow: 3px 3px 5px #777;
+}
+
+/* Hero div styling */
+.herodiv {
+    margin: 10px auto;
+    position: relative; /* Keeps child elements positioned relative to this */
+}
+
+/* Hero image styling */
+.herodiv img {
+    width: 100%;
+    height: auto; /* Changed to auto for better aspect ratio */
+    object-fit: cover;
+}
+
+/* Stats overlay styling */
+.stats {
+    position: absolute;
+    top: 25px;
+    right: 15px;
+    background: radial-gradient(#eee, #4567aa);
+    border: 1px solid #000;
+    padding: 0.65rem;
+    box-shadow: 0 0 30px #111;
+    opacity: 0.9;
+    color: #333; /* Improved text color for readability */
+    border-radius: 8px; /* Rounded corners for a softer look */
+}
+
+/* Subheading styling */
+h3 {
+    text-shadow: 0 0 15px #333;
+    border-bottom: 1px solid #999;
+    margin-bottom: 0.3rem;
+}
+
+/* Footer styling */
+footer {
+    position: relative; /* Changed to relative for better visibility */
+    margin: 1rem;
+    border-top: 1px solid #000;
+    padding: 0.5rem;
+    color: navy;
+    font-weight: 700;
+    font-style: italic;
+    text-align: center; /* Centered footer text */
+}
+
+/* Form styles */
+input, textarea, select, button {
+    width: 100%; /* Full width for form elements */
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Rounded corners */
+    font-size: 1rem; /* Consistent font size */
+}
+
+/* Button styling */
+button {
+    background-color: #007BFF; /* Button color */
+    color: white; /* Text color for button */
+    border: none; /* No border for button */
+    cursor: pointer; /* Pointer cursor for better UX */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Button hover effect */
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+}
+
+/* Membership cards */
+.membership-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2rem; /* Space above cards */
+}
+
+.card {
+    flex: 0 0 48%; /* Two cards per row with space */
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1rem; /* Space between rows */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease; /* Smooth scaling on hover */
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: scale(1.02); /* Slightly enlarge card on hover */
+}
+
+/* Modal styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.8); /* Black with opacity */
+    color: white; /* White text */
+    padding: 20px; /* Space inside modal */
+}
+
+/* Modal content styling */
+.modal h2 {
+    margin-bottom: 1rem;
+}
+
+.close-modal {
+    background-color: #ff5c5c; /* Close button color */
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+}
+
+/* Close button hover effect */
+.close-modal:hover {
+    background-color: #e04848; /* Darker shade on hover */
+}
