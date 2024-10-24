@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover Kweneng's Agriculture Chamber with insights into the area, its demographics, and local businesses.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <title>Discover | Kweneng Agriculture Chamber of Commerce</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Discover Agricultural Opportunities in Kweneng" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/discover.html" />
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/discover-hero.webp" />
+    <meta property="og:description" content="Explore Kweneng through demographic content, statistics, and area imagery." />
+    <meta property="og:site_name" content="Kweneng Agriculture Chamber of Commerce" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+
+    <!-- Inline CSS to avoid new files -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Grid layout for the page */
+        .discover-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        @media (min-width: 768px) {
+            .discover-container {
+                grid-template-columns: 1fr 2fr;
+            }
+        }
+
+        /* Sidebar styling */
+        .sidebar {
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-right: 1px solid #ccc;
+        }
+
+        /* Main content area */
+        .main-content {
+            padding: 20px;
+        }
+
+        .main-content img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+        }
+
+        /* Hover effect for desktop only */
+        @media (min-width: 768px) {
+            .main-content img:hover {
+                transform: scale(1.05);
+                filter: grayscale(50%);
+            }
+        }
+
+        /* Lazy load image class */
+        img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity 1s ease-in;
+        }
+
+        img[data-loaded="true"] {
+            opacity: 1;
+        }
+
+        /* Visitor message */
+        .visitor-message {
+            background-color: #e0f7fa;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Kweneng Agriculture Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="membership.html">Join</a></li>
+                <li><a href="discover.html" class="active">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Discover Page Content -->
+    <main class="discover-container">
+
+        <!-- Sidebar with visitor message, demographics, and statistics -->
+        <aside class="sidebar">
+            <div id="visitorMessage" class="visitor-message"></div>
+
+            <h2>Demographics</h2>
+            <p>Population: 120,000</p>
+            <p>Main Industries: Agriculture, Tourism</p>
+
+            <h2>Statistics</h2>
+            <p>Yearly Rainfall: 500mm</p>
+            <p>Average Farm Size: 50 hectares</p>
+
+            <h2>Upcoming Events</h2>
+            <p>Harvest Festival: June 24, 2024</p>
+
+            <!-- Optionally, add a calendar widget -->
+        </aside>
+
+        <!-- Main Content with Images -->
+        <section class="main-content">
+            <h2>Explore Kweneng</h2>
+
+            <figure>
+                <img src="images/photo1.webp" alt="Local farmland" loading="lazy">
+                <figcaption>Beautiful farmlands of Kweneng.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/photo2.webp" alt="Agricultural equipment" loading="lazy">
+                <figcaption>Agricultural equipment used in the region.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/photo3.webp" alt="Farmers market" loading="lazy">
+                <figcaption>Fresh produce at the farmers' market.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/photo4.webp" alt="Cattle farm" loading="lazy">
+                <figcaption>Cattle farming in Kweneng.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/photo5.webp" alt="Irrigation system" loading="lazy">
+                <figcaption>Irrigation systems supporting local farms.</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/photo6.webp" alt="Tractor in action" loading="lazy">
+                <figcaption>Modern tractors enhancing farm efficiency.</figcaption>
+            </figure>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Website developed by Tinny Bothepha Mosimanyana, WDD 231 Class Project</p>
+        <p>Last modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <!-- JavaScript for Visitor Message and Lazy Load Images -->
+    <script>
+        // Update footer with year and last modified date
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = document.lastModified;
+
+        // Visitor message logic
+        const lastVisit = localStorage.getItem('lastVisit');
+        const now = Date.now();
+        let message = "Welcome! Let us know if you have any questions.";
+
+        if (lastVisit) {
+            const daysSinceLastVisit = Math.floor((now - lastVisit) / (1000 * 60 * 60 * 24));
+            if (daysSinceLastVisit === 0) {
+                message = "Back so soon! Awesome!";
+            } else if (daysSinceLastVisit === 1) {
+                message = "You last visited 1 day ago.";
+            } else {
+                message = `You last visited ${daysSinceLastVisit} days ago.`;
+            }
+        }
+
+        document.getElementById('visitorMessage').textContent = message;
+        localStorage.setItem('lastVisit', now);
+
+        // Lazy loading effect
+        document.addEventListener("DOMContentLoaded", function() {
+            const lazyImages = document.querySelectorAll('img[loading="lazy"]');
+            lazyImages.forEach((img) => {
+                img.addEventListener('load', () => {
+                    img.dataset.loaded = "true";
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
