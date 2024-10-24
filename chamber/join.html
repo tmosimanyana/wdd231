@@ -3,12 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/overlay.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Join the Kweneng Agriculture Chamber of Commerce to access exclusive resources, networking opportunities, and support for your agricultural endeavors.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <meta property="og:title" content="Join Kweneng Agriculture Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="images/hero.webp">
+    <meta property="og:url" content="https://tmosimanyana.github.io/chamber/join.html">
     <title>Kweneng Agriculture Chamber of Commerce - Join Us</title>
+    <link rel="stylesheet" href="styles/overlay.css">
 </head>
 <body>
+    <header>
+        <h1>Join the Kweneng Agriculture Chamber of Commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    
     <main>
-        <h2>Join the Kweneng Agriculture Chamber of Commerce</h2>
         <div class="herodiv">
             <img src="images/hero.webp" alt="Kweneng Agriculture" width="850" height="300">
             <section class="stats">
@@ -21,8 +39,7 @@
         
         <h3>Why Join Us?</h3>
         <p>As a member of the Kweneng Agriculture Chamber of Commerce, you'll gain access to exclusive resources, networking opportunities, and ongoing support for your agricultural endeavors.</p>
-        <p>Explore our programs and become part of a thriving community dedicated to growth and sustainability.</p>
-
+        
         <h3>Membership Levels</h3>
         <div class="membership-cards">
             <div class="card">
@@ -46,6 +63,28 @@
                 <button onclick="showModal('Gold Membership Details', 'All benefits plus exclusive invites to special events and premium resources.')">Details</button>
             </div>
         </div>
+
+        <h3>Application Form</h3>
+        <form action="thankyou.html" method="POST">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="business">Business Name:</label>
+            <input type="text" id="business" name="business" required>
+
+            <label for="message">Additional Message:</label>
+            <textarea id="message" name="message"></textarea>
+
+            <input type="hidden" name="membershipLevel" value="NP">
+
+            <input type="submit" value="Submit Application">
+        </form>
 
         <!-- Modal Structure -->
         <div id="membershipModal" class="modal">
