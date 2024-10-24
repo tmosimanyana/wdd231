@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to the Kweneng Agriculture Chamber of Commerce">
+    <meta name="author" content="Tinn Bothepha Mosimanyana">
+    <title>Kweneng Agriculture Chamber of Commerce - Home</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <!-- Social Media Meta -->
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce - Home">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero.webp">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Kweneng Agriculture Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="membership.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <img src="images/hero.webp" alt="Agriculture in Kweneng" class="hero-image">
+            <div class="hero-text">
+                <h2>Join Us in Growing Kweneng's Agriculture Industry</h2>
+                <p>Be part of a vibrant network that supports local agriculture businesses.</p>
+                <a href="membership.html" class="btn">Join the Chamber</a>
+            </div>
+        </section>
+
+        <!-- Current Events Section -->
+        <section id="events">
+            <h2>Upcoming Events</h2>
+            <ul>
+                <li><strong>Agri-Fair 2024</strong> - May 15, 2024</li>
+                <li><strong>Farmers' Workshop</strong> - July 22, 2024</li>
+                <li><strong>Agriculture Business Expo</strong> - September 10, 2024</li>
+            </ul>
+            <a href="events.html" class="btn">View All Events</a>
+        </section>
+
+        <!-- Weather Section -->
+        <section id="weather">
+            <h2>Current Weather in Kweneng</h2>
+            <div id="currentWeather">
+                <!-- Weather Data will be populated by JavaScript -->
+            </div>
+            <div id="forecast">
+                <!-- 3-day forecast will be populated here -->
+            </div>
+        </section>
+
+        <!-- Company Spotlights Section -->
+        <section id="spotlights">
+            <h2>Featured Businesses</h2>
+            <div class="spotlight-grid">
+                <!-- Spotlights will be populated here using JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Website developed by Tinny Bothepha Mosimanyana, WDD 231 Class Project</p>
+        <p>Last modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/weather.js"></script>
+    <script src="scripts/spotlights.js"></script>
+    <script>
+        // Automatically update the year and last modified date
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = document.lastModified;
+    </script>
+</body>
+</html>
