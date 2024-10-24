@@ -1,75 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Directory page for members of the Kweneng Agriculture Chamber of Commerce, listing businesses and agricultural service providers.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce Directory">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/chamber/images/hero.webp">
-    <meta property="og:url" content="https://tmosimanyana.github.io/chamber/directory.html">
-    <meta property="og:description" content="Discover agricultural businesses and service providers through the Kweneng Agriculture Chamber of Commerce directory.">
-
-    <title>Directory | Kweneng Agriculture Chamber of Commerce</title>
-    <link rel="icon" href="chamber/images/favicon.ico" type="image/x-icon">
-
-    <!-- Google Fonts Preconnect -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Import Roboto Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Normalize CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-
-    <!-- Custom Styles -->
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- External JavaScript with defer -->
-    <script src="script.js" defer></script>
+    <title>Directory - Kweneng Agriculture Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/media.css">
+    <script defer src="scripts/directory.js"></script>
 </head>
 
 <body>
     <header>
-        <h1>Kweneng Agriculture Chamber of Commerce</h1>
         <nav>
             <ul>
-                <li><a href="chamber/index.html" aria-label="Go to Home Page">Home</a></li>
-                <li><a href="chamber/directory.html" aria-label="View Member Directory">Directory</a></li>
-                <li><a href="chamber/about.html" aria-label="Learn More About Us">About</a></li>
-                <li><a href="chamber/contact.html" aria-label="Get in Touch">Contact</a></li>
-                <li><a href="https://www.linkedin.com" target="_blank" aria-label="LinkedIn Profile">LinkedIn</a></li>
-                <li><a href="https://www.facebook.com" target="_blank" aria-label="Facebook Profile">Facebook</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html" class="active">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
             </ul>
         </nav>
     </header>
 
-    <div class="grid">
-        <aside>
-            <h3>About Us</h3>
-            <p>Learn about the Kweneng Agriculture Chamber of Commerce, its mission, and the services we offer to our members.</p>
-        </aside>
+    <main>
+        <section id="directory">
+            <h1>Business Directory</h1>
 
-        <main>
-            <h2>Our Members</h2>
+            <!-- View toggle buttons -->
             <div class="view-toggle">
-                <button id="gridView" aria-pressed="false" aria-label="Switch to Grid View">Grid View</button>
-                <button id="listView" aria-pressed="false" aria-label="Switch to List View">List View</button>
+                <button id="grid-view" class="view-btn active">Grid View</button>
+                <button id="list-view" class="view-btn">List View</button>
             </div>
 
-            <section id="members" class="grid-view">
-                <!-- Member listings will be dynamically inserted here -->
-            </section>
-        </main>
-    </div>
+            <!-- Directory Container -->
+            <div id="directory-container" class="grid-view">
+                <!-- Member cards will be dynamically inserted here -->
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>Contact us: 10 Agricultural Rd, Molepolole, Botswana | Phone: +267 123 4567</p>
-        <p>&copy; <span id="year"></span> Tinny Bothepha Mosimanyana | WDD 231 | Last Modified: <span id="lastModified"></span></p>
+        <p>&copy; <span id="year"></span> Kweneng Agriculture Chamber of Commerce. All Rights Reserved.</p>
+        <p>Last modified: <span id="mod-date"></span></p>
     </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+        document.getElementById("mod-date").textContent = document.lastModified;
+    </script>
 </body>
+
 </html>
