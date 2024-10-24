@@ -27,12 +27,15 @@ function displayMembers(members, viewType) {
             <p>Membership Level: ${member.membershipLevel}</p>
         `;
 
+        // Apply class based on view type
+        if (viewType === 'list') {
+            memberCard.classList.add('list-item');
+        } else {
+            memberCard.classList.add('grid-item');
+        }
+
         directoryContainer.appendChild(memberCard);
     });
-
-    // Apply the view type class to the container
-    directoryContainer.classList.remove('grid-view', 'list-view');
-    directoryContainer.classList.add(viewType + '-view');
 }
 
 // Event listeners for toggling between grid and list views
@@ -46,7 +49,9 @@ document.getElementById('list-view-btn').addEventListener('click', () => {
 
 // Function to toggle the view and set active button
 function toggleView(viewType) {
-    fetchMembers().then(members => displayMembers(members, viewType));
+    const directoryContainer = document.getElementById('directory-container');
+    directoryContainer.className = viewType === 'list' ? 'list-view' : 'grid-view';
+    fetchMembers(viewType);
 
     // Toggle active button
     document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));

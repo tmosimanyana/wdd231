@@ -186,3 +186,35 @@ footer p {
         font-size: 1.1rem;
     }
 }
+/* Grid View */
+.grid-view .member-card {
+    display: inline-block;
+    width: 30%;
+    margin: 10px;
+    border: 1px solid #ddd;
+    padding: 15px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+/* List View */
+.list-view .member-card {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    background-color: #fff;
+}
+
+.member-logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* Active button styling */
+.view-btn.active {
+    background-color: #6c757d;
+    color: white;
+}
