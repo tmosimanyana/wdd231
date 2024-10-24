@@ -1,6 +1,6 @@
 // Fetch weather data using the OpenWeatherMap API
 const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // replaced with my actual API key
-const city = 'Kweneng';
+const city = 'molepolole';
 const country = 'BW'; // Country code for Botswana
 const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&units=metric&appid=${apiKey}`;
 
