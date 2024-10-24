@@ -44,3 +44,14 @@ footer {
     position: absolute;
     bottom: 0;
 }
+.org-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    width: 400px; /* Maintain consistent width */
+}
+
+.org-info {
+    text-align: center;
+}
