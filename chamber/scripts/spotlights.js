@@ -1,49 +1,60 @@
-// JSON data for chamber members (example)
-const members = [
+// Example data for featured businesses on the home page
+const featuredBusinesses = [
     {
-        name: "Agrichem",
-        logo: "images/agrichem.webp",
-        phone: "123-456-7890",
-        address: "123 Green Street, Kweneng",
-        website: "http://agrichem.com",
-        membership: "Gold"
+        "name": "BAMB Headquarters",
+        "description": "The leading supplier of agricultural products and services in Kweneng.",
+        "image": "images/bamb.webp"
     },
     {
-        name: "Notwane Farming Co.",
-        logo: "images/notwane.webp",
-        phone: "098-765-4321",
-        address: "456 Farm Road, Kweneng",
-        website: "http://notwane.com",
-        membership: "Silver"
+        "name": "AgriFeed GICP",
+        "description": "Supplying high-quality animal feed for farmers.",
+        "image": "images/agrifeed.webp"
     },
     {
-        name: "HydroCon Agriculture",
-        logo: "images/hydrocon.webp",
-        phone: "555-555-5555",
-        address: "789 Hydro Lane, Kweneng",
-        website: "http://hydrocon.com",
-        membership: "Gold"
+        "name": "Greenhouse Technologies",
+        "description": "Innovative greenhouse solutions for modern farmers.",
+        "image": "images/greenhouse.webp"
+    },
+    {
+        "name": "AFGRI Equipment",
+        "description": "Your reliable partner for agricultural equipment.",
+        "image": "images/afgri.webp"
     }
 ];
 
-// Filter and randomly select members who are Gold or Silver
-const spotlightMembers = members.filter(member => ['Gold', 'Silver'].includes(member.membership));
+// Function to create the featured businesses section
+function createFeaturedBusinesses() {
+    const featuredSection = document.getElementById('featured-businesses');
+    featuredSection.innerHTML = ''; // Clear the section
 
-// Shuffle and pick 2-3 random members for spotlight
-const selectedSpotlights = spotlightMembers.sort(() => 0.5 - Math.random()).slice(0, 3);
+    featuredBusinesses.forEach(business => {
+        // Create a container div for the featured business
+        const businessCard = document.createElement('div');
+        businessCard.className = 'business-card';
 
-// Display the selected members in the spotlight section
-const spotlightGrid = document.querySelector('.spotlight-grid');
-selectedSpotlights.forEach(member => {
-    const memberHTML = `
-        <div class="spotlight-item">
-            <img src="${member.logo}" alt="${member.name}">
-            <h3>${member.name}</h3>
-            <p>${member.phone}</p>
-            <p>${member.address}</p>
-            <a href="${member.website}" target="_blank">Visit Website</a>
-            <p>Membership Level: ${member.membership}</p>
-        </div>
-    `;
-    spotlightGrid.innerHTML += memberHTML;
-});
+        // Create the image element with lazy loading
+        const businessImage = document.createElement('img');
+        businessImage.src = business.image;
+        businessImage.alt = business.name;
+        businessImage.loading = 'lazy';  // Lazy load the image
+
+        // Create a heading for the business name
+        const businessName = document.createElement('h3');
+        businessName.textContent = business.name;
+
+        // Create a paragraph for the business description
+        const businessDescription = document.createElement('p');
+        businessDescription.textContent = business.description;
+
+        // Append the image, name, and description to the business card
+        businessCard.appendChild(businessImage);
+        businessCard.appendChild(businessName);
+        businessCard.appendChild(businessDescription);
+
+        // Append the business card to the featured businesses section
+        featuredSection.appendChild(businessCard);
+    });
+}
+
+// Call the function to populate the featured businesses when the page loads
+window.onload = createFeaturedBusinesses;
