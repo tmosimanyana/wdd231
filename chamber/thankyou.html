@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Thank you for joining the Kweneng Agriculture Chamber of Commerce">
+    <title>Thank You | Kweneng Agriculture Chamber of Commerce</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Thank You!</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="thankyou">
+            <p>Thank you for submitting your membership application! We will review it and get back to you shortly.</p>
+            <p>If you have any questions, feel free to <a href="contact.html">contact us</a>.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Website developed by Tinny Bothepha Mosimanyana, WDD 231 Class Project</p>
+        <p>Last modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = document.lastModified;
+    </script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join Kweneng Agriculture Chamber of Commerce">
+    <meta name="author" content="Tinn Bothepha Mosimanyana">
+    <title>Join Us | Kweneng Agriculture Chamber of Commerce</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Kweneng Agriculture Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="join">
+            <h2>Join the Kweneng Agriculture Chamber of Commerce</h2>
+            <p>Fill out the form below to apply for membership.</p>
+
+            <!-- Membership Form -->
+            <form action="thankyou.html" method="get">
+                <!-- First Name -->
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required title="Please enter your first name" autocomplete="given-name">
+
+                <!-- Last Name -->
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required title="Please enter your last name" autocomplete="family-name">
+
+                <!-- Organizational Title -->
+                <label for="orgTitle">Organizational Title:</label>
+                <input type="text" id="orgTitle" name="orgTitle" title="Enter your title within the organization (only letters, hyphens, and spaces are allowed)" pattern="[A-Za-z\s\-]{7,}" autocomplete="organization-title">
+
+                <!-- Email Address -->
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required title="Please enter a valid email address" placeholder="example@example.com" autocomplete="email">
+
+                <!-- Mobile Phone Number -->
+                <label for="phone">Mobile Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required title="Please enter a valid phone number" autocomplete="tel">
+
+                <!-- Business/Organization's Name -->
+                <label for="orgName">Organization Name:</label>
+                <input type="text" id="orgName" name="orgName" required title="Please enter your organization's name" autocomplete="organization">
+
+                <!-- Membership Level -->
+                <label for="membershipLevel">Membership Level:</label>
+                <select id="membershipLevel" name="membershipLevel" required>
+                    <option value="NP">NP Membership (No fee)</option>
+                    <option value="Bronze">Bronze Membership</option>
+                    <option value="Silver">Silver Membership</option>
+                    <option value="Gold">Gold Membership</option>
+                </select>
+
+                <!-- Business/Organization's Description -->
+                <label for="orgDescription">Organization Description:</label>
+                <textarea id="orgDescription" name="orgDescription" title="Describe your business or organization"></textarea>
+
+                <!-- Timestamp (Hidden) -->
+                <input type="hidden" id="timestamp" name="timestamp">
+
+                <!-- Submit Button -->
+                <input type="submit" value="Submit Application">
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Website developed by Tinny Bothepha Mosimanyana, WDD 231 Class Project</p>
+        <p>Last modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/join.js"></script>
+</body>
+</html>
