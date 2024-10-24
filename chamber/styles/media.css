@@ -1,41 +1,137 @@
 /* Mobile View */
 @media (max-width: 768px) {
 
+    /* Adjust grid layout for mobile */
     #directory-container {
         grid-template-columns: 1fr;
     }
 
+    /* Stack the navigation items for better mobile accessibility */
     header nav ul li {
         display: block;
         text-align: center;
         margin: 10px 0;
     }
 
+    /* Ensure proximity and accessibility for mobile */
     .view-toggle {
         justify-content: center;
+    }
+
+    /* Enlarge clickable area for mobile */
+    .view-btn {
+        padding: 15px 25px;
+    }
+
+    /* Adjust the footer text for readability */
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    /* Adjust member card styling for mobile */
+    .member-card {
+        padding: 15px;
+    }
+
+    .member-card h2 {
+        font-size: 1rem;
+    }
+
+    .member-card p {
+        font-size: 0.85rem;
+    }
+
+    .member-logo {
+        width: 80px;
+        height: 80px;
     }
 }
 
 /* Tablet View */
 @media (min-width: 768px) and (max-width: 1024px) {
 
+    /* Adjust grid layout for tablet */
     #directory-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    /* Distribute the view toggle buttons on the screen */
     .view-toggle {
         justify-content: space-between;
+    }
+
+    /* Resize buttons for tablets */
+    .view-btn {
+        padding: 12px 20px;
+    }
+
+    /* Tablet-specific member card styling */
+    .member-card {
+        padding: 25px;
+    }
+
+    .member-logo {
+        width: 100px;
+        height: 100px;
+    }
+
+    .member-card h2 {
+        font-size: 1.2rem;
+    }
+
+    .member-card p {
+        font-size: 0.95rem;
+    }
+
+    /* Footer adjustments for tablet */
+    footer p {
+        font-size: 1rem;
     }
 }
 
 /* Large Desktop View */
 @media (min-width: 1025px) {
 
+    /* Layout for large desktop: 3 columns */
     #directory-container {
         grid-template-columns: repeat(3, 1fr);
     }
 
+    /* Return to inline-block for nav items */
     header nav ul li {
         display: inline-block;
+    }
+
+    /* Keep view buttons inline with larger padding for desktop */
+    .view-toggle {
+        justify-content: flex-end;
+    }
+
+    /* Resize buttons for larger screens */
+    .view-btn {
+        padding: 10px 18px;
+    }
+
+    /* Larger member cards for desktop */
+    .member-card {
+        padding: 40px;
+    }
+
+    .member-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .member-card h2 {
+        font-size: 1.4rem;
+    }
+
+    .member-card p {
+        font-size: 1rem;
+    }
+
+    /* Footer text size for desktop */
+    footer p {
+        font-size: 1.1rem;
     }
 }

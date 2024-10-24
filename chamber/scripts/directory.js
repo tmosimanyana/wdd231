@@ -1,65 +1,57 @@
-document.addEventListener("DOMContentLoaded", async () => {
+// Fetch member data and display in the directory
+async function fetchMembers() {
+    try {
+        const response = await fetch('data/members.json');
+        const members = await response.json();
+        displayMembers(members, 'grid'); // Default to grid view on load
+    } catch (error) {
+        console.error('Error fetching member data:', error);
+    }
+}
+
+// Function to display members either in grid or list view
+function displayMembers(members, viewType) {
     const directoryContainer = document.getElementById('directory-container');
-    const gridViewBtn = document.getElementById('grid-view');
-    const listViewBtn = document.getElementById('list-view');
+    directoryContainer.innerHTML = ''; // Clear existing content
 
-    // Function to fetch member data from JSON
-    async function fetchMembers() {
-        try {
-            const response = await fetch('data/members.json');
-            const members = await response.json();
-            displayMembers(members);
-        } catch (error) {
-            console.error('Error fetching member data:', error);
-        }
-    }
+    members.forEach(member => {
+        const memberCard = document.createElement('div');
+        memberCard.classList.add('member-card');
 
-    // Function to display members
-    function displayMembers(members) {
-        directoryContainer.innerHTML = ''; // Clear container
-        members.forEach(member => {
-            const memberCard = document.createElement('div');
-            memberCard.classList.add('member-card');
+        // Member card content
+        memberCard.innerHTML = `
+            <img src="${member.image}" alt="${member.name} Logo" class="member-logo">
+            <h2>${member.name}</h2>
+            <p>${member.address}</p>
+            <p>${member.phone}</p>
+            <p>Membership Level: ${member.membershipLevel}</p>
+        `;
 
-            memberCard.innerHTML = `
-                <div class="member-card-content">
-                    <img src="${member.image}" alt="${member.name}" class="member-logo">
-                    <h2>${member.name}</h2>
-                    <p><strong>Address:</strong> ${member.address}</p>
-                    <p><strong>Phone:</strong> ${member.phone}</p>
-                    <p><strong>Membership Level:</strong> ${getMembershipLevel(member.membershipLevel)}</p>
-                    <a href="${member.website}" target="_blank">Visit Website</a>
-                </div>
-            `;
-            directoryContainer.appendChild(memberCard);
-        });
-    }
-
-    // Convert membership level number to text
-    function getMembershipLevel(level) {
-        switch (level) {
-            case 1: return 'Bronze';
-            case 2: return 'Silver';
-            case 3: return 'Gold';
-            default: return 'Non-Profit';
-        }
-    }
-
-    // Toggle between grid and list views
-    gridViewBtn.addEventListener('click', () => {
-        directoryContainer.classList.remove('list-view');
-        directoryContainer.classList.add('grid-view');
-        gridViewBtn.classList.add('active');
-        listViewBtn.classList.remove('active');
+        directoryContainer.appendChild(memberCard);
     });
 
-    listViewBtn.addEventListener('click', () => {
-        directoryContainer.classList.remove('grid-view');
-        directoryContainer.classList.add('list-view');
-        listViewBtn.classList.add('active');
-        gridViewBtn.classList.remove('active');
-    });
+    // Apply the view type class to the container
+    directoryContainer.classList.remove('grid-view', 'list-view');
+    directoryContainer.classList.add(viewType + '-view');
+}
 
-    // Fetch and display the members
-    fetchMembers();
+// Event listeners for toggling between grid and list views
+document.getElementById('grid-view-btn').addEventListener('click', () => {
+    toggleView('grid');
 });
+
+document.getElementById('list-view-btn').addEventListener('click', () => {
+    toggleView('list');
+});
+
+// Function to toggle the view and set active button
+function toggleView(viewType) {
+    fetchMembers().then(members => displayMembers(members, viewType));
+
+    // Toggle active button
+    document.querySelectorAll('.view-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById(viewType + '-view-btn').classList.add('active');
+}
+
+// Fetch members on page load
+fetchMembers();

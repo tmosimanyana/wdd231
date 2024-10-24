@@ -1,17 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Directory - Kweneng Agriculture Chamber of Commerce</title>
+    <meta name="description" content="Kweneng Agriculture Chamber of Commerce member directory. Explore local agricultural businesses and services in Kweneng.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tmosimanyana.github.io/chamber/images/logo.webp">
+    <meta property="og:url" content="https://tmosimanyana.github.io/chamber/directory.html">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/media.css">
-    <script defer src="scripts/directory.js"></script>
+    <title>Kweneng Agriculture Chamber - Directory</title>
 </head>
-
 <body>
+
+    <!-- Header with Navigation -->
     <header>
+        <div class="logo">
+            <img src="images/logo.webp" alt="Kweneng Agriculture Chamber of Commerce Logo">
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -22,32 +31,37 @@
         </nav>
     </header>
 
+    <!-- Main Directory Section -->
     <main>
         <section id="directory">
-            <h1>Business Directory</h1>
+            <h1>Member Directory</h1>
 
-            <!-- View toggle buttons -->
+            <!-- View Toggle -->
             <div class="view-toggle">
-                <button id="grid-view" class="view-btn active">Grid View</button>
-                <button id="list-view" class="view-btn">List View</button>
+                <button class="view-btn" id="grid-view-btn" aria-label="Switch to Grid View">Grid View</button>
+                <button class="view-btn" id="list-view-btn" aria-label="Switch to List View">List View</button>
             </div>
 
             <!-- Directory Container -->
             <div id="directory-container" class="grid-view">
-                <!-- Member cards will be dynamically inserted here -->
+                <!-- Member Cards will be loaded dynamically -->
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; <span id="year"></span> Kweneng Agriculture Chamber of Commerce. All Rights Reserved.</p>
-        <p>Last modified: <span id="mod-date"></span></p>
+        <p>Contact us: info@kwenengagriculture.org | +267 123 4567</p>
+        <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Developed by Tinny Bothepha Mosimanyana for WDD 231 | Last Modified: <span id="last-modified"></span></p>
     </footer>
 
+    <!-- External JavaScript -->
+    <script src="scripts/directory.js"></script>
     <script>
-        document.getElementById("year").textContent = new Date().getFullYear();
-        document.getElementById("mod-date").textContent = document.lastModified;
+        // Dynamically update year and last modified date
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+        document.getElementById("last-modified").textContent = document.lastModified;
     </script>
 </body>
-
 </html>
