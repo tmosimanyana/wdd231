@@ -4,15 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kweneng Agriculture Chamber of Commerce - Site Plan</title>
-    <link rel="stylesheet" href="styles/css">
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/media.css">
+
+    <!-- JavaScript -->
     <script src="js/script.js" defer></script>
+
+    <!-- Embedded Styles for the color schema and typography (you can move this to style.css) -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #00582D;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .hero {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .hero img {
+            width: 100%;
+            max-width: 1200px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        .weather {
+            text-align: center;
+            padding: 20px;
+            background-color: #e5e4e2;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 600px;
+        }
+
+        .weather h2 {
+            font-family: 'Roboto', sans-serif;
+            color: #00582D;
+        }
+
+        .weather-icon {
+            font-size: 1.5em;
+        }
+
+        .mobile-weather-icon {
+            width: 50px;
+            height: auto;
+        }
+
+        footer {
+            background-color: #00582D;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 5px 0;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Header -->
     <header>
         <h1>Kweneng Agriculture Chamber of Commerce</h1>
     </header>
 
+    <!-- Hero Section with Responsive Image -->
     <section class="hero">
         <picture>
             <source media="(max-width: 600px)" srcset="images/hero-small.webp">
@@ -21,17 +97,30 @@
         </picture>
     </section>
     
+    <!-- Weather Section -->
     <section class="weather">
         <h2>Weather <span class="weather-icon" role="img" aria-label="Weather icon">⛅</span></h2>
         <div id="weather-info">
-            <img src="images/weather-icon.svg" alt="" class="mobile-weather-icon">
+            <img src="images/weather-icon.svg" alt="Weather Icon" class="mobile-weather-icon">
             <p id="temperature">Temperature: 25°C</p>
             <p id="windchill">Wind Chill: <span id="windchill-value">N/A</span></p>
         </div>
     </section>
     
+    <!-- Footer -->
     <footer>
-        <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce. Last modified: <span id="last-modified"></span></p>
+        <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce.</p>
+        <p>Last modified: <span id="last-modified"></span></p>
     </footer>
+
+    <!-- JavaScript for dynamic footer content -->
+    <script>
+        // Update current year dynamically
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Update last modified date dynamically
+        document.getElementById('last-modified').textContent = document.lastModified;
+    </script>
+
 </body>
 </html>
