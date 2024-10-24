@@ -18,7 +18,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="images/logo.webp" alt="Kweneng Agriculture Chamber of Commerce Logo">
+            <img src="images/logo.webp" alt="Kweneng Agriculture Chamber of Commerce Logo" loading="lazy">
         </div>
         <nav>
             <ul>
@@ -35,35 +35,37 @@
             <h1>Join Us</h1>
             <form id="membership-form" method="get" action="thankyou.html">
                 <label for="first-name">First Name:</label>
-                <input type="text" id="first-name" name="first-name" title="Your first name" required autocomplete="given-name">
-            
+                <input type="text" id="first-name" name="first-name" title="Your first name" required autocomplete="given-name" aria-required="true">
+                
                 <label for="last-name">Last Name:</label>
-                <input type="text" id="last-name" name="last-name" title="Your last name" required autocomplete="family-name">
-            
+                <input type="text" id="last-name" name="last-name" title="Your last name" required autocomplete="family-name" aria-required="true">
+                
                 <label for="org-title">Organizational Title:</label>
-                <input type="text" id="org-title" name="org-title" title="Your title in the organization" pattern="[A-Za-z\- ]{7,}" autocomplete="organization-title">
-            
+                <input type="text" id="org-title" name="org-title" title="Your title in the organization" pattern="[A-Za-z\- ]{7,}" autocomplete="organization-title" aria-describedby="org-title-help">
+                <small id="org-title-help" class="form-help">Please enter at least 7 characters.</small>
+                
                 <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" title="Your email address" required autocomplete="email" placeholder="example@example.com">
-            
+                <input type="email" id="email" name="email" title="Your email address" required autocomplete="email" placeholder="example@example.com" aria-required="true">
+                
                 <label for="mobile">Mobile Phone Number:</label>
-                <input type="tel" id="mobile" name="mobile" title="Your mobile phone number" required autocomplete="tel">
-            
+                <input type="tel" id="mobile" name="mobile" title="Your mobile phone number" required autocomplete="tel" pattern="^\+?[0-9]{7,15}$" aria-required="true">
+                
                 <label for="business-name">Business Name:</label>
-                <input type="text" id="business-name" name="business-name" title="Your business name" required autocomplete="organization">
-            
+                <input type="text" id="business-name" name="business-name" title="Your business name" required autocomplete="organization" aria-required="true">
+                
                 <label for="membership-level">Membership Level:</label>
-                <select id="membership-level" name="membership-level" required>
+                <select id="membership-level" name="membership-level" required aria-required="true">
                     <option value="" disabled selected>Select Membership Level</option>
                     <option value="NP">NP Membership (Non-Profit, No Fee)</option>
                     <option value="Bronze">Bronze Membership</option>
                     <option value="Silver">Silver Membership</option>
                     <option value="Gold">Gold Membership</option>
                 </select>
-            
+                
                 <label for="description">Business/Organization's Description:</label>
-                <textarea id="description" name="description" title="Describe your business/organization"></textarea>
-            
+                <textarea id="description" name="description" title="Describe your business/organization" aria-describedby="description-help"></textarea>
+                <small id="description-help" class="form-help">Optional: Provide a brief description of your organization.</small>
+                
                 <input type="hidden" id="timestamp" name="timestamp" value="">
                 
                 <button type="submit">Submit Application</button>
@@ -73,51 +75,51 @@
                 <div class="card" id="np-card">
                     <h2>NP Membership</h2>
                     <p>No Fee</p>
-                    <a href="#np-benefits" class="modal-link">Learn More</a>
+                    <a href="#np-benefits" class="modal-link" aria-label="Learn more about NP Membership benefits">Learn More</a>
                 </div>
                 <div class="card" id="bronze-card">
                     <h2>Bronze Membership</h2>
                     <p>Basic Benefits</p>
-                    <a href="#bronze-benefits" class="modal-link">Learn More</a>
+                    <a href="#bronze-benefits" class="modal-link" aria-label="Learn more about Bronze Membership benefits">Learn More</a>
                 </div>
                 <div class="card" id="silver-card">
                     <h2>Silver Membership</h2>
                     <p>Intermediate Benefits</p>
-                    <a href="#silver-benefits" class="modal-link">Learn More</a>
+                    <a href="#silver-benefits" class="modal-link" aria-label="Learn more about Silver Membership benefits">Learn More</a>
                 </div>
                 <div class="card" id="gold-card">
                     <h2>Gold Membership</h2>
                     <p>Premium Benefits</p>
-                    <a href="#gold-benefits" class="modal-link">Learn More</a>
+                    <a href="#gold-benefits" class="modal-link" aria-label="Learn more about Gold Membership benefits">Learn More</a>
                 </div>
             </div>
 
             <!-- Modals -->
-            <div id="np-benefits" class="modal">
+            <div id="np-benefits" class="modal" aria-hidden="true">
                 <h2>NP Membership Benefits</h2>
                 <p>Details about NP Membership benefits...</p>
-                <button class="close-modal">Close</button>
+                <button class="close-modal" aria-label="Close modal">Close</button>
             </div>
-            <div id="bronze-benefits" class="modal">
+            <div id="bronze-benefits" class="modal" aria-hidden="true">
                 <h2>Bronze Membership Benefits</h2>
                 <p>Details about Bronze Membership benefits...</p>
-                <button class="close-modal">Close</button>
+                <button class="close-modal" aria-label="Close modal">Close</button>
             </div>
-            <div id="silver-benefits" class="modal">
+            <div id="silver-benefits" class="modal" aria-hidden="true">
                 <h2>Silver Membership Benefits</h2>
                 <p>Details about Silver Membership benefits...</p>
-                <button class="close-modal">Close</button>
+                <button class="close-modal" aria-label="Close modal">Close</button>
             </div>
-            <div id="gold-benefits" class="modal">
+            <div id="gold-benefits" class="modal" aria-hidden="true">
                 <h2>Gold Membership Benefits</h2>
                 <p>Details about Gold Membership benefits...</p>
-                <button class="close-modal">Close</button>
+                <button class="close-modal" aria-label="Close modal">Close</button>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>Contact us: mbothepha@gmail.com | +267 76376661</p>
+        <p>Contact us: <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a> | +267 76376661</p>
         <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce</p>
         <p>Developed by Tinny Bothepha Mosimanyana for WDD 231 | Last Modified: <span id="last-modified"></span></p>
         <p><a href="attributions.html">Attributions</a></p>
@@ -141,12 +143,14 @@
                 e.preventDefault();
                 const modalId = this.getAttribute('href');
                 document.querySelector(modalId).style.display = 'block';
+                document.querySelector(modalId).setAttribute('aria-hidden', 'false'); // Update ARIA attribute
             });
         });
 
         closeButtons.forEach(button => {
             button.addEventListener('click', function () {
                 this.closest('.modal').style.display = 'none';
+                this.closest('.modal').setAttribute('aria-hidden', 'true'); // Update ARIA attribute
             });
         });
 
