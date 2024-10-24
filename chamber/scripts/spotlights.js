@@ -1,4 +1,4 @@
-// Example data for featured businesses on the home page
+// data for featured businesses on the home page
 const featuredBusinesses = [
     {
         "name": "BAMB Headquarters",
