@@ -3,124 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kweneng Agriculture Chamber of Commerce - Site Plan</title>
-    
-    <!-- External CSS -->
+    <title>Website Plan - Kweneng Agriculture Chamber of Commerce</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/media.css">
-
-    <!-- JavaScript -->
-    <script src="script/weather.js" defer></script>
-
-    <!-- Embedded Styles for the color schema and typography (you can move this to style.css) -->
     <style>
+        /* Basic styling for the site plan */
         body {
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            line-height: 1.6;
             background-color: #f4f4f4;
             color: #333;
-        }
-
-        header {
-            background-color: #00582D;
-            color: #ffffff;
-            padding: 20px;
-            text-align: center;
-        }
-
-        h1 {
             margin: 0;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .hero {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .hero img {
-            width: 100%;
-            max-width: 1200px;
-            height: auto;
-            border-radius: 8px;
-        }
-
-        .weather {
-            text-align: center;
             padding: 20px;
-            background-color: #e5e4e2;
-            border-radius: 8px;
-            margin: 20px auto;
-            max-width: 600px;
         }
 
-        .weather h2 {
-            font-family: 'Roboto', sans-serif;
+        h1, h2 {
             color: #00582D;
         }
 
-        .weather-icon {
-            font-size: 1.5em;
-        }
-
-        .mobile-weather-icon {
-            width: 50px;
-            height: auto;
-        }
-
-        footer {
-            background-color: #00582D;
-            color: white;
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: #fff;
             padding: 20px;
-            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        footer p {
-            margin: 5px 0;
+        section {
+            margin-bottom: 20px;
+        }
+
+        .wireframe img {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .color-box {
+            width: 100px;
+            height: 100px;
+            display: inline-block;
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>Kweneng Agriculture Chamber of Commerce</h1>
-    </header>
+    <div class="container">
+        <header>
+            <h1>Kweneng Agriculture Chamber of Commerce - Website Plan</h1>
+        </header>
 
-    <!-- Hero Section with Responsive Image -->
-    <section class="hero">
-        <picture>
-            <source media="(max-width: 600px)" srcset="images/hero-small.webp">
-            <source media="(min-width: 601px)" srcset="images/hero-large.webp">
-            <img src="images/hero-large.webp" alt="Hero Image" class="hero-image">
-        </picture>
-    </section>
-    
-    <!-- Weather Section -->
-    <section class="weather">
-        <h2>Weather <span class="weather-icon" role="img" aria-label="Weather icon">⛅</span></h2>
-        <div id="weather-info">
-            <img src="images/weather-icon.svg" alt="Weather Icon" class="mobile-weather-icon">
-            <p id="temperature">Temperature: 25°C</p>
-            <p id="windchill">Wind Chill: <span id="windchill-value">N/A</span></p>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce.</p>
-        <p>Last modified: <span id="last-modified"></span></p>
-    </footer>
+        <!-- Site Name Section -->
+        <section id="site-name">
+            <h2>Site Name</h2>
+            <p><strong>Site Name:</strong> Kweneng Agriculture Chamber of Commerce</p>
+            <p><strong>Reason for Name:</strong> This site is for an agriculture chamber of commerce that promotes agricultural development and business growth in Kweneng, Botswana. The name reflects the geographical area and purpose of the chamber.</p>
+            <!-- Optional Domain -->
+            <p><strong>Domain Suggestion:</strong> kwenengagriculture.org</p>
+        </section>
 
-    <!-- JavaScript for dynamic footer content -->
-    <script>
-        // Update current year dynamically
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        <!-- Site Purpose Section -->
+        <section id="site-purpose">
+            <h2>Site Purpose</h2>
+            <p>The purpose of this website is to act as an information hub for the Kweneng Agriculture Chamber of Commerce. The website will offer resources for farmers, businesses, and the general public. It will include a business directory, chamber membership options, and educational materials on agricultural development.</p>
+        </section>
 
-        // Update last modified date dynamically
-        document.getElementById('last-modified').textContent = document.lastModified;
-    </script>
+        <!-- Scenarios Section -->
+        <section id="scenarios">
+            <h2>Scenarios</h2>
+            <ul>
+                <li><strong>Scenario 1:</strong> What are the benefits of becoming a member of the Kweneng Agriculture Chamber of Commerce?</li>
+                <li><strong>Scenario 2:</strong> How can I find local businesses and agricultural services in Kweneng?</li>
+            </ul>
+        </section>
+
+        <!-- Color Schema Section -->
+        <section id="color-schema">
+            <h2>Color Schema</h2>
+            <p>The following colors have been selected to align with the agricultural theme and nature:</p>
+            <div class="color-box" style="background-color: #00582D;"></div>
+            <span><strong>Dark Green (#00582D):</strong> This color will be used for headings and buttons to symbolize growth and nature.</span><br>
+            <div class="color-box" style="background-color: #E5E4E2;"></div>
+            <span><strong>Light Gray (#E5E4E2):</strong> This color will be used for background and body text to ensure readability and a clean look.</span>
+        </section>
+
+        <!-- Typography Section -->
+        <section id="typography">
+            <h2>Typography</h2>
+            <p>The following fonts have been selected to complement the website’s professional and clean design:</p>
+            <ul>
+                <li><strong>Heading Font:</strong> Roboto (Sans-serif) - used for main headings and subheadings to provide a modern and clean appearance.</li>
+                <li><strong>Body Font:</strong> Arial (Sans-serif) - used for the main body text for easy readability.</li>
+            </ul>
+        </section>
+
+        <!-- Wireframe Section -->
+        <section id="wireframe">
+            <h2>Wireframe</h2>
+            <p>Below is a sketch of the home page layout, both for mobile and desktop views:</p>
+
+            <!-- Placeholder for wireframe -->
+            <div>
+                <h3>Mobile Wireframe</h3>
+                <img src="images/mobile-wireframe-placeholder.png" alt="Mobile Wireframe">
+            </div>
+            <div>
+                <h3>Desktop Wireframe</h3>
+                <img src="images/desktop-wireframe-placeholder.png" alt="Desktop Wireframe">
+            </div>
+        </section>
+    </div>
 
 </body>
 </html>
