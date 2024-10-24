@@ -1,148 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <meta name="description" content="Join the Kweneng Agriculture Chamber of Commerce to access exclusive resources, networking opportunities, and support for your agricultural endeavors.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <meta property="og:title" content="Join Kweneng Agriculture Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero.webp">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/join.html">
-    
-    <!-- Normalize.css -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles/overlay.css">
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/media.css">
-    
-    <title>Kweneng Agriculture Chamber of Commerce - Join Us</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join Kweneng Agriculture Chamber of Commerce</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <header>
-        <h1>Join the Kweneng Agriculture Chamber of Commerce</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join Us</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <div class="herodiv">
-            <img src="images/hero.webp" alt="Kweneng Agriculture" width="850" height="300">
-            <section class="stats">
-                <h3>Membership Benefits</h3>
-                <p>Language: <span id="lan">English</span></p>
-                <p>Size: <span id="size">Vast opportunities for growth</span></p>
-                <p>Visited?: <span id="visit">Join us to find out!</span></p>
-            </section>
-        </div>
-        
-        <h3>Why Join Us?</h3>
-        <p>As a member of the Kweneng Agriculture Chamber of Commerce, you'll gain access to exclusive resources, networking opportunities, and ongoing support for your agricultural endeavors.</p>
-        
-        <h3>Membership Levels</h3>
-        <div class="membership-cards">
-            <div class="card">
-                <h4>NP Membership</h4>
-                <p>Basic access to resources.</p>
-                <button onclick="showModal('NP Membership Details', 'Basic access to resources, newsletters, and updates.')">Details</button>
-            </div>
-            <div class="card">
-                <h4>Bronze Membership</h4>
-                <p>Access to events and resources.</p>
-                <button onclick="showModal('Bronze Membership Details', 'Access to events, newsletters, and resource libraries.')">Details</button>
-            </div>
-            <div class="card">
-                <h4>Silver Membership</h4>
-                <p>Networking opportunities and support.</p>
-                <button onclick="showModal('Silver Membership Details', 'Includes everything in Bronze plus networking events and webinars.')">Details</button>
-            </div>
-            <div class="card">
-                <h4>Gold Membership</h4>
-                <p>Premium access and exclusive events.</p>
-                <button onclick="showModal('Gold Membership Details', 'All benefits plus exclusive invites to special events and premium resources.')">Details</button>
-            </div>
-        </div>
+  <h1>Join Kweneng Agriculture Chamber of Commerce</h1>
+  
+  <form action="thankyou.html" method="GET" id="membershipForm">
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" title="Enter your first name" autocomplete="given-name" required>
 
-        <h3>Application Form</h3>
-        <form action="thankyou.html" method="POST">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" placeholder="Your Full Name" title="Enter your full name" pattern="[A-Za-z\s]+" required>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" title="Enter your last name" autocomplete="family-name" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="example@email.com" required>
+    <label for="orgTitle">Organizational Title:</label>
+    <input type="text" id="orgTitle" name="orgTitle" title="Enter your position" autocomplete="organization-title" pattern="[a-zA-Z\s\-]{7,}" required>
 
-            <label for="phone">Phone Number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Phone number should be in the format 123-456-7890" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" title="Enter your email" autocomplete="email" placeholder="example@mail.com" required>
 
-            <label for="business">Business Name:</label>
-            <input type="text" id="business" name="business" placeholder="Your Business Name" required>
+    <label for="phone">Mobile Phone:</label>
+    <input type="tel" id="phone" name="phone" title="Enter your mobile phone number" autocomplete="tel" required>
 
-            <label for="address">Business Address:</label>
-            <input type="text" id="address" name="address" placeholder="Business Address">
+    <label for="business">Business/Organization Name:</label>
+    <input type="text" id="business" name="business" title="Enter the business name" autocomplete="organization" required>
 
-            <label for="website">Website (optional):</label>
-            <input type="url" id="website" name="website" placeholder="https://yourbusiness.com">
+    <label for="membershipLevel">Membership Level:</label>
+    <select id="membershipLevel" name="membershipLevel" title="Select a membership level" required>
+      <option value="NP">NP Membership</option>
+      <option value="Bronze">Bronze Membership</option>
+      <option value="Silver">Silver Membership</option>
+      <option value="Gold">Gold Membership</option>
+    </select>
 
-            <label for="message">Additional Message:</label>
-            <textarea id="message" name="message" placeholder="Add any additional information"></textarea>
+    <label for="description">Business/Organization Description:</label>
+    <textarea id="description" name="description" title="Enter a description" required></textarea>
 
-            <!-- Hidden Timestamp Field -->
-            <input type="hidden" id="timestamp" name="timestamp">
+    <input type="hidden" id="timestamp" name="timestamp">
 
-            <input type="submit" value="Submit Application">
-        </form>
+    <input type="submit" value="Submit Application">
+  </form>
 
-        <!-- Modal Structure -->
-        <div id="membershipModal" class="modal">
-            <div class="modal-content">
-                <span class="close-button" onclick="closeModal()">&times;</span>
-                <h2 id="modal-title"></h2>
-                <p id="modal-description"></p>
-            </div>
-        </div>
-        
-    </main>
-    
-    <footer>
-        <p>© <span id="currentYear"></span> Kweneng Agriculture Chamber of Commerce | Tinny Bothepha Mosimanyana</p>
-    </footer>
+  <!-- Membership Cards Section -->
+  <div class="membership-cards">
+    <div class="card" id="card-np">
+      <h3>NP Membership</h3>
+      <button onclick="openModal('modal-np')">More Info</button>
+    </div>
+    <div class="card" id="card-bronze">
+      <h3>Bronze Membership</h3>
+      <button onclick="openModal('modal-bronze')">More Info</button>
+    </div>
+    <div class="card" id="card-silver">
+      <h3>Silver Membership</h3>
+      <button onclick="openModal('modal-silver')">More Info</button>
+    </div>
+    <div class="card" id="card-gold">
+      <h3>Gold Membership</h3>
+      <button onclick="openModal('modal-gold')">More Info</button>
+    </div>
+  </div>
 
-    <script>
-        // Function to show modal
-        function showModal(title, description) {
-            document.getElementById('modal-title').innerText = title;
-            document.getElementById('modal-description').innerText = description;
-            document.getElementById('membershipModal').style.display = 'block';
-        }
+  <!-- Modals -->
+  <div class="modal" id="modal-np">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-np')">&times;</span>
+      <h3>NP Membership Benefits</h3>
+      <p>Details about NP Membership.</p>
+    </div>
+  </div>
 
-        // Function to close modal
-        function closeModal() {
-            document.getElementById('membershipModal').style.display = 'none';
-        }
+  <div class="modal" id="modal-bronze">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-bronze')">&times;</span>
+      <h3>Bronze Membership Benefits</h3>
+      <p>Details about Bronze Membership.</p>
+    </div>
+  </div>
 
-        // Close the modal when clicking outside of it
-        window.onclick = function(event) {
-            const modal = document.getElementById('membershipModal');
-            if (event.target === modal) {
-                modal.style.display = 'none';
-            }
-        }
+  <div class="modal" id="modal-silver">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-silver')">&times;</span>
+      <h3>Silver Membership Benefits</h3>
+      <p>Details about Silver Membership.</p>
+    </div>
+  </div>
 
-        // Set current year in footer
-        document.getElementById('currentYear').innerText = new Date().getFullYear();
+  <div class="modal" id="modal-gold">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-gold')">&times;</span>
+      <h3>Gold Membership Benefits</h3>
+      <p>Details about Gold Membership.</p>
+    </div>
+  </div>
 
-        // Set the timestamp hidden field with current date and time
-        document.getElementById('timestamp').value = new Date().toISOString();
-    </script>
+  <script src="script.js"></script>
 </body>
 </html>
