@@ -43,3 +43,6 @@ footer {
     height: 400px; /* Adjust height as necessary */
     overflow: hidden; /* Ensures content does not overflow */
 }
+.stats a {
+    font-weight: bold; /* Make the link bold */
+}
