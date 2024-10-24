@@ -7,3 +7,4 @@ document.getElementById('membership-form').addEventListener('submit', function(e
     // Submit the application (this can be expanded for actual submission logic)
     alert(`Thank you ${name}, your application for ${businessName} at ${membershipLevel} level has been received!`);
 });
+document.getElementById('timestamp').value = new Date().toISOString();
