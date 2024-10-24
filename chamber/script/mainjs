@@ -1,5 +1,0 @@
-// Update current year dynamically in the footer
-document.getElementById('current-year').textContent = new Date().getFullYear();
-
-// Update last modified date dynamically
-document.getElementById('last-modified').textContent = document.lastModified;
