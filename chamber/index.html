@@ -1,97 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kweneng Agriculture Chamber of Commerce - Supporting agricultural businesses in Botswana.">
-    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
-    <meta property="og:description" content="Join us to connect with local businesses and find support for your agricultural ventures.">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero.webp">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber">
-    <title>Kweneng Agriculture Chamber of Commerce</title>
-    <link rel="stylesheet" href="normalize.css"> <!-- Include Normalize CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script> <!-- External JavaScript file -->
-</head>
+    <title>Kweneng Agriculture Chamber of Commerce - Site Plan</title>
 
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/media.css">
+
+    <!-- JavaScript -->
+    <script src="script/main.js" defer></script>
+</head>
 <body>
+
+    <!-- Header -->
     <header>
-        <nav aria-label="Main Navigation">
-            <div class="logo">
-                <picture>
-                    <source srcset="images/logo-large.webp" media="(min-width: 800px)">
-                    <source srcset="images/logo-medium.webp" media="(min-width: 400px)">
-                    <img src="images/logo-small.webp" alt="Kweneng Agriculture Chamber of Commerce Logo" width="80" height="80">
-                </picture>
-                <h1>Kweneng Agriculture Chamber of Commerce</h1>
-            </div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="discover.html">Discover</a></li>
-                <li><a href="business-directory.html">Business Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="podcast.html">Podcast</a></li>
-                <li><a href="events.html">Events</a></li>
-            </ul>
-            <div class="dark-mode-toggle">
-                <button id="darkModeToggle" aria-label="Toggle dark mode">🌗</button>
-            </div>
-        </nav>
+        <h1>Kweneng Agriculture Chamber of Commerce</h1>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <img src="images/hero.webp" alt="Scalable, responsive hero image" loading="lazy">
-            <button class="keynote-tickets">Keynote Tickets</button>
-        </section>
-
-        <!-- Home Section -->
-        <section class="content">
-            <div class="events">
-                <h2>Events</h2>
-                <p>Upcoming Events: Placeholder for current events. Details coming soon!</p>
-            </div>
-            <div class="current-weather">
-                <h2>Current Weather</h2>
-                <p id="weather-description">Loading weather description...</p>
-                <p id="weather-temp">Loading temperature...</p>
-                <p id="weather-humidity">Loading humidity...</p>
-            </div>
-            <div class="weather-forecast">
-                <h2>Weather Forecast</h2>
-                <ul id="forecast-list">
-                    <li>Loading forecast...</li>
-                </ul>
-            </div>
-        </section>
-
-        <!-- Business Directory -->
-        <section class="business-directory">
-            <h2>Business Directory</h2>
-            <div id="business-spotlight">
-                <!-- Company spotlight will be injected here -->
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>Kweneng Agriculture Chamber of Commerce, P O BOX 894 Molepolole, Gaborone, Botswana</p>
-        <p>Email: mbothepha@gmail.com | Phone: (267) 763-76661</p>
-        <div class="social-links">
-            <a href="#" aria-label="YouTube" title="Follow us on YouTube"><img src="images/youtube.png" alt="YouTube"></a>
-            <a href="#" aria-label="Twitter" title="Follow us on Twitter"><img src="images/twitter.png" alt="Twitter"></a>
-            <a href="#" aria-label="LinkedIn" title="Follow us on LinkedIn"><img src="images/linkedin.png" alt="LinkedIn"></a>
+    <!-- Hero Section with Responsive Image -->
+    <section class="hero">
+        <picture>
+            <source media="(max-width: 600px)" srcset="images/hero-small.webp">
+            <source media="(min-width: 601px)" srcset="images/hero-large.webp">
+            <img src="images/hero-large.webp" alt="Hero Image" class="hero-image">
+        </picture>
+    </section>
+    
+    <!-- Weather Section -->
+    <section class="weather">
+        <h2>Weather <span class="weather-icon" role="img" aria-label="Weather icon">⛅</span></h2>
+        <div id="weather-info">
+            <img src="images/weather-icon.svg" alt="Weather Icon" class="mobile-weather-icon">
+            <p id="temperature">Temperature: Fetching...</p>
+            <p id="windchill">Wind Chill: <span id="windchill-value">Fetching...</span></p>
         </div>
-        <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce | Last Modified: <span id="last-modified-date"></span></p>
+    </section>
+    
+    <!-- Footer -->
+    <footer>
+        <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce.</p>
+        <p>Last modified: <span id="last-modified"></span></p>
     </footer>
 
-    <script>
-        // Display the last modified date dynamically
-        document.getElementById("last-modified-date").textContent = new Date(document.lastModified).toLocaleString();
-    </script>
+    <!-- JavaScript for dynamic footer and weather fetching -->
+    <script src="script/weather.js"></script>
 </body>
-
 </html>
