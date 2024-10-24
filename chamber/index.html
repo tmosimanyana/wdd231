@@ -3,48 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kweneng Agriculture Chamber of Commerce - Site Plan</title>
-
-    <!-- External CSS -->
+    <meta name="description" content="Kweneng Agriculture Chamber of Commerce - Connecting local agricultural businesses.">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/media.css">
-
-    <!-- JavaScript -->
-    <script src="script/main.js" defer></script>
+    <title>Kweneng Agriculture Chamber - Home</title>
 </head>
 <body>
-
-    <!-- Header -->
     <header>
-        <h1>Kweneng Agriculture Chamber of Commerce</h1>
+        <div class="logo">
+            <img src="images/logo.webp" alt="Kweneng Agriculture Chamber of Commerce Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Hero Section with Responsive Image -->
-    <section class="hero">
-        <picture>
-            <source media="(max-width: 600px)" srcset="images/hero-small.webp">
-            <source media="(min-width: 601px)" srcset="images/hero-large.webp">
-            <img src="images/hero-large.webp" alt="Hero Image" class="hero-image">
-        </picture>
-    </section>
-    
-    <!-- Weather Section -->
-    <section class="weather">
-        <h2>Weather <span class="weather-icon" role="img" aria-label="Weather icon">⛅</span></h2>
-        <div id="weather-info">
-            <img src="images/weather-icon.svg" alt="Weather Icon" class="mobile-weather-icon">
-            <p id="temperature">Temperature: Fetching...</p>
-            <p id="windchill">Wind Chill: <span id="windchill-value">Fetching...</span></p>
-        </div>
-    </section>
-    
-    <!-- Footer -->
+    <main>
+        <section class="hero">
+            <h1>Welcome to Kweneng Agriculture Chamber</h1>
+            <p>Join us in promoting local agriculture!</p>
+            <a href="join.html" class="btn">Join Us</a>
+        </section>
+        <section id="spotlight">
+            <h2>Spotlight Members</h2>
+            <div id="spotlight-container"></div>
+        </section>
+        <section id="weather">
+            <h2>Current Weather</h2>
+            <div id="weather-info"></div>
+        </section>
+    </main>
+
     <footer>
-        <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce.</p>
-        <p>Last modified: <span id="last-modified"></span></p>
+        <p>Contact us: info@kwenengagriculture.org | +267 123 4567</p>
+        <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Developed by Tinny Bothepha Mosimanyana for WDD 231 | Last Modified: <span id="last-modified"></span></p>
+        <p><a href="attributions.html">Attributions</a></p>
     </footer>
 
-    <!-- JavaScript for dynamic footer and weather fetching -->
-    <script src="script/weather.js"></script>
+    <script src="scripts/directory.js" type="module"></script>
+    <script>
+        document.getElementById("current-year").textContent = new Date().getFullYear();
+        document.getElementById("last-modified").textContent = document.lastModified;
+    </script>
 </body>
 </html>
