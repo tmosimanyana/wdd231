@@ -1,19 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Join the Kweneng Agriculture Chamber of Commerce to support local agriculture. Sign up today!">
-        <meta name="author" content="Tinny Bothepha Mosimanyana">
-        <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-        <meta property="og:title" content="Join the Kweneng Agriculture Chamber of Commerce">
-        <meta property="og:type" content="website">
-        <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/logo.webp">
-        <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/join.html">
-        <link rel="stylesheet" href="styles/normalize.css">
-        <link rel="stylesheet" href="styles/style.css">
-        <link rel="stylesheet" href="styles/media.css">
-        <title>Kweneng Agriculture Chamber - Join</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Kweneng Agriculture Chamber of Commerce to support local agriculture. Sign up today!">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <meta property="og:title" content="Join the Kweneng Agriculture Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/logo.webp">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/join.html">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/media.css">
+    <title>Kweneng Agriculture Chamber - Join</title>
 </head>
 <body>
     <header>
@@ -33,42 +33,40 @@
     <main>
         <section>
             <h1>Join Us</h1>
-                <form id="membership-form" method="get" action="thankyou.html">
-                    <label for="first-name">First Name:</label>
-                    <input type="text" id="first-name" name="first-name" title="Your first name" required autocomplete="given-name">
+            <form id="membership-form" method="get" action="thankyou.html">
+                <label for="first-name">First Name:</label>
+                <input type="text" id="first-name" name="first-name" title="Your first name" required autocomplete="given-name">
+            
+                <label for="last-name">Last Name:</label>
+                <input type="text" id="last-name" name="last-name" title="Your last name" required autocomplete="family-name">
+            
+                <label for="org-title">Organizational Title:</label>
+                <input type="text" id="org-title" name="org-title" title="Your title in the organization" pattern="[A-Za-z\- ]{7,}" autocomplete="organization-title">
+            
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" title="Your email address" required autocomplete="email" placeholder="example@example.com">
+            
+                <label for="mobile">Mobile Phone Number:</label>
+                <input type="tel" id="mobile" name="mobile" title="Your mobile phone number" required autocomplete="tel">
+            
+                <label for="business-name">Business Name:</label>
+                <input type="text" id="business-name" name="business-name" title="Your business name" required autocomplete="organization">
+            
+                <label for="membership-level">Membership Level:</label>
+                <select id="membership-level" name="membership-level" required>
+                    <option value="" disabled selected>Select Membership Level</option>
+                    <option value="NP">NP Membership (Non-Profit, No Fee)</option>
+                    <option value="Bronze">Bronze Membership</option>
+                    <option value="Silver">Silver Membership</option>
+                    <option value="Gold">Gold Membership</option>
+                </select>
+            
+                <label for="description">Business/Organization's Description:</label>
+                <textarea id="description" name="description" title="Describe your business/organization"></textarea>
+            
+                <input type="hidden" id="timestamp" name="timestamp" value="">
                 
-                    <label for="last-name">Last Name:</label>
-                    <input type="text" id="last-name" name="last-name" title="Your last name" required autocomplete="family-name">
-                
-                    <label for="org-title">Organizational Title:</label>
-                    <input type="text" id="org-title" name="org-title" title="Your title in the organization" pattern="[A-Za-z\- ]{7,}" autocomplete="organization-title">
-                
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" title="Your email address" required autocomplete="email" placeholder="example@example.com">
-                
-                    <label for="mobile">Mobile Phone Number:</label>
-                    <input type="tel" id="mobile" name="mobile" title="Your mobile phone number" required autocomplete="tel">
-                
-                    <label for="business-name">Business Name:</label>
-                    <input type="text" id="business-name" name="business-name" title="Your business name" required autocomplete="organization">
-                
-                    <label for="membership-level">Membership Level:</label>
-                    <select id="membership-level" name="membership-level" required>
-                        <option value="" disabled selected>Select Membership Level</option> <!-- Placeholder option -->
-                        <option value="NP">NP Membership (Non-Profit, No Fee)</option>
-                        <option value="Bronze">Bronze Membership</option>
-                        <option value="Silver">Silver Membership</option>
-                        <option value="Gold">Gold Membership</option>
-                    </select>
-                
-                    <label for="description">Business/Organization's Description:</label>
-                    <textarea id="description" name="description" title="Describe your business/organization"></textarea>
-                
-                    <input type="hidden" id="timestamp" name="timestamp" value=""> <!-- Removed trailing slash -->
-                    
-                    <button type="submit">Submit Application</button>
-                </form>
-                
+                <button type="submit">Submit Application</button>
             </form>
 
             <div class="membership-cards">
@@ -163,4 +161,3 @@
     </script>
 </body>
 </html>
-
