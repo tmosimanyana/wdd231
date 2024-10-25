@@ -78,14 +78,38 @@ main.discover-container {
     width: 100%; /* Responsive image width */
     height: auto; /* Maintain aspect ratio */
     border-radius: 5px; /* Rounded corners for images */
+    margin: 15px 0; /* Adjusted vertical margin for spacing */
+    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
 }
 
-/* Image hover effect for desktop views */
-@media (min-width: 769px) {
-    figure img:hover {
-        transform: scale(1.05); /* Slight zoom on hover */
-        transition: transform 0.3s ease; /* Smooth transition */
-    }
+.main-content img:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
+}
+
+/* Default grid styles */
+#memberList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 15px; /* Space between grid items */
+}
+
+/* Styles for list view */
+#memberList.list {
+    display: block; /* Change display to block for list view */
+}
+
+.member-card {
+    background-color: #f4f4f4; /* Card background color */
+    padding: 15px; /* Card padding */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 15px; /* Space between cards in list view */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+.member-card img {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Space below image in card */
 }
 
 /* Responsive adjustments for smaller screens */
@@ -134,28 +158,4 @@ footer {
 h2 {
     margin-top: 1rem; /* Space above section headings */
     color: #283E4A; /* Consistent heading color */
-}
-/* Default grid styles */
-#memberList {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
-    gap: 15px; /* Space between grid items */
-}
-
-/* Styles for list view */
-#memberList.list {
-    display: block; /* Change display to block for list view */
-}
-
-.member-card {
-    background-color: #f4f4f4; /* Card background color */
-    padding: 15px; /* Card padding */
-    border-radius: 5px; /* Rounded corners */
-    margin-bottom: 10px; /* Space between cards in list view */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
-}
-
-.member-card img {
-    width: 100%; /* Responsive image */
-    height: auto; /* Maintain aspect ratio */
 }
