@@ -1,7 +1,7 @@
 // Fetch the member data from the JSON file
 async function fetchMemberData() {
     try {
-        const response = await fetch('data/members.json'); // Updated path
+        const response = await fetch('data/members.json'); // Ensure this path is correct
         if (!response.ok) throw new Error('Network response was not ok');
         const members = await response.json();
         displayMembers(members);

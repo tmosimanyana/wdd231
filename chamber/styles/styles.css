@@ -135,3 +135,27 @@ h2 {
     margin-top: 1rem; /* Space above section headings */
     color: #283E4A; /* Consistent heading color */
 }
+/* Default grid styles */
+#memberList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
+    gap: 15px; /* Space between grid items */
+}
+
+/* Styles for list view */
+#memberList.list {
+    display: block; /* Change display to block for list view */
+}
+
+.member-card {
+    background-color: #f4f4f4; /* Card background color */
+    padding: 15px; /* Card padding */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 10px; /* Space between cards in list view */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+}
+
+.member-card img {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+}
