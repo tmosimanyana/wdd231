@@ -9,8 +9,8 @@
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- CSS -->
-    <link rel="stylesheet" href="styles/normalize.css" media="all">
-    <link rel="stylesheet" href="styles/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.min.css">
     <!-- Social Media Meta -->
     <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce Directory">
     <meta property="og:type" content="website">
@@ -27,7 +27,7 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
+                <li><a href="directory.html" class="active">Directory</a></li>
                 <li><a href="membership.html">Join</a></li>
                 <li><a href="discover.html">Discover</a></li>
             </ul>
@@ -44,14 +44,6 @@
             </div>
             <div id="memberList" class="grid">
                 <!-- Cards or List items will be populated here using JavaScript -->
-                <!-- Example item with explicit dimensions and lazy loading -->
-                <div class="member-card">
-                    <img src="images/bamb.webp" width="200" height="150" loading="lazy" alt="Example Business">
-                    <h3>Example Business</h3>
-                    <p>123 Example Rd, Kweneng</p>
-                    <p>Phone: +267 123 4567</p>
-                </div>
-                <!-- Add more cards here -->
             </div>
         </section>
     </main>

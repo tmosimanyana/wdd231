@@ -1,53 +1,47 @@
-// Fetch the member data from the JSON file
-async function fetchMemberData() {
-    try {
-        const response = await fetch('data/members.json'); // Ensure this path is correct
-        if (!response.ok) throw new Error('Network response was not ok');
-        const members = await response.json();
-        displayMembers(members);
-    } catch (error) {
-        console.error('Error fetching member data:', error);
-    }
-}
+document.addEventListener("DOMContentLoaded", () => {
+    const gridViewButton = document.getElementById("gridView");
+    const listViewButton = document.getElementById("listView");
+    const memberList = document.getElementById("memberList");
 
-// Function to display members
-function displayMembers(members) {
-    const memberList = document.getElementById('memberList');
-    memberList.innerHTML = ''; // Clear any existing content
-
-    members.forEach(member => {
-        const memberCard = document.createElement('div');
-        memberCard.classList.add('member-card');
-        
-        memberCard.innerHTML = `
-            <img src="${member.image}" alt="${member.name} logo">
-            <h3>${member.name}</h3>
-            <p>${member.address}</p>
-            <p>Phone: ${member.phone}</p>
-            <p>Membership Level: ${member.membershipLevel}</p>
-        `;
-        memberList.appendChild(memberCard);
+    // Toggle to grid view
+    gridViewButton.addEventListener("click", () => {
+        memberList.classList.remove("list");
+        memberList.classList.add("grid");
     });
-}
 
-// Toggle between grid and list view
-function toggleView(view) {
-    const memberList = document.getElementById('memberList');
-    memberList.className = view; // Set the class to 'grid' or 'list'
-}
+    // Toggle to list view
+    listViewButton.addEventListener("click", () => {
+        memberList.classList.remove("grid");
+        memberList.classList.add("list");
+    });
 
-// Event listeners for view toggle buttons
-document.getElementById('gridView').addEventListener('click', () => toggleView('grid'));
-document.getElementById('listView').addEventListener('click', () => toggleView('list'));
+    // Fetch and display members
+    fetch("data/members.json")
+        .then(response => response.json())
+        .then(data => {
+            displayMembers(data);
+            updateLastModified(); // Call to update last modified date
+        })
+        .catch(error => console.error("Error fetching member data:", error));
 
-// Initialize the directory
-fetchMemberData();
-document.getElementById('year').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = document.lastModified;
-document.getElementById("listView").addEventListener("click", () => {
-    document.getElementById("memberList").classList.add("list");
-});
+    // Function to display members
+    function displayMembers(members) {
+        memberList.innerHTML = members.map(member => `
+            <div class="member-card">
+                <img src="${member.image}" alt="${member.name} logo">
+                <div>
+                    <h3>${member.name}</h3>
+                    <p>${member.address}</p>
+                    <p>${member.phone}</p>
+                    <p>Level: ${member.membershipLevel}</p>
+                </div>
+            </div>
+        `).join("");
+    }
 
-document.getElementById("gridView").addEventListener("click", () => {
-    document.getElementById("memberList").classList.remove("list");
+    // Function to update the last modified date in the footer
+    function updateLastModified() {
+        const lastModifiedElement = document.getElementById("lastModified");
+        lastModifiedElement.textContent = document.lastModified; // Set last modified date
+    }
 });
