@@ -60,9 +60,11 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="orgTitle">Organization Title:
-                        <input type="text" id="orgTitle" name="orgTitle" title="Please enter your title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" required>
-                    </label>
+                    <div class="form-group">
+                        <label for="orgTitle">Organization Title:</label>
+                        <input type="text" id="orgTitle" name="orgTitle" required title="Please enter your title (at least 7 characters, using only letters, hyphens, and spaces)" pattern="^[A-Za-z\s\-]{7,}$" autocomplete="organization-title">
+                    </div>
+                    
                 </div>
 
                 <div class="form-group">
