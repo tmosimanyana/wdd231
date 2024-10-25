@@ -31,7 +31,6 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgb(0,0,0);
             background-color: rgba(0,0,0,0.4);
             transition: opacity 0.3s ease;
         }
@@ -46,11 +45,28 @@
         }
 
         .card {
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 10px;
+            text-align: center;
+            border-radius: 8px;
         }
 
         .card:hover {
             transform: scale(1.05);
+            background-color: #f0f8ff; /* Light color change on hover */
+        }
+
+        .membership-card {
+            animation: fadeIn 0.5s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
@@ -135,19 +151,19 @@
 
         <!-- Membership Cards Section -->
         <section id="membership-cards">
-            <div class="card np-card">
+            <div class="card membership-card np-card">
                 <h3>NP Membership</h3>
                 <p>For non-profit organizations. <a href="#" class="info-link" data-modal="npModal">More info</a></p>
             </div>
-            <div class="card bronze-card">
+            <div class="card membership-card bronze-card">
                 <h3>Bronze Membership</h3>
                 <p>Basic membership level. <a href="#" class="info-link" data-modal="bronzeModal">More info</a></p>
             </div>
-            <div class="card silver-card">
+            <div class="card membership-card silver-card">
                 <h3>Silver Membership</h3>
                 <p>Intermediate level. <a href="#" class="info-link" data-modal="silverModal">More info</a></p>
             </div>
-            <div class="card gold-card">
+            <div class="card membership-card gold-card">
                 <h3>Gold Membership</h3>
                 <p>Highest level membership. <a href="#" class="info-link" data-modal="goldModal">More info</a></p>
             </div>
