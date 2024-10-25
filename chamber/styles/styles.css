@@ -1,15 +1,22 @@
+:root {
+    --primary-color: #00582D;
+    --secondary-color: #E5E4E2;
+    --text-color: #333;
+    --white: #fff;
+}
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: #E5E4E2;
-    color: #333;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #00582D;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white);
     padding: 10px 0;
     text-align: center;
 }
@@ -26,17 +33,26 @@ nav ul li {
 }
 
 nav ul li a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     font-size: 1.1em;
 }
 
-nav ul li a:hover {
-    text-decoration: underline; /* Add hover effect for links */
+nav ul li a:hover,
+nav ul li a:focus {
+    text-decoration: underline; /* Add hover and focus effect for links */
 }
 
 h1, h2 {
     font-family: 'Roboto', sans-serif; /* Consider adding font-weight variations */
+}
+
+h1 {
+    font-weight: bold;
+}
+
+h2 {
+    font-weight: 600; /* Or whatever weight you prefer */
 }
 
 main {
@@ -72,13 +88,13 @@ main {
 }
 
 .member-card img {
-    max-width: 100%;
-    height: auto;
+    width: 100%; /* Forces images to fill the card width */
+    height: auto; /* Maintains aspect ratio */
 }
 
 footer {
-    background-color: #00582D;
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--white);
     padding: 10px 0;
     text-align: center;
 }
