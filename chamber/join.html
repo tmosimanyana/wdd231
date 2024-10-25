@@ -34,7 +34,7 @@
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="membership.html" class="active">Join</a></li>
                 <li><a href="discover.html">Discover</a></li>
-                <li><a href="join.html">Contact Us</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
@@ -174,6 +174,26 @@
         // Set the current year in the footer
         document.getElementById('year').textContent = new Date().getFullYear();
         document.getElementById('lastModified').textContent = document.lastModified;
+
+        // Animate cards on load
+        window.onload = function() {
+            const cards = document.querySelectorAll('.membership-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = 1;
+                    card.style.transform = 'translateY(0)';
+                }, index * 200); // staggered animation
+            });
+        };
     </script>
+
+    <!-- Styles for Animation -->
+    <style>
+        .membership-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+    </style>
 </body>
 </html>
