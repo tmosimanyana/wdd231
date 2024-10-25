@@ -3,7 +3,7 @@ const companyList = document.getElementById('companyList');
 // Function to fetch company spotlight data
 async function fetchCompanySpotlights() {
     try {
-        const response = await fetch('chamber/data/members.json');
+        const response = await fetch('members.json');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
