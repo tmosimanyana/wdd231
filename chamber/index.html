@@ -37,11 +37,20 @@
 
     <!-- Hero Image -->
     <section class="hero">
-        <img src="images/hero.webp" alt="Kweneng Agriculture" class="responsive">
-        <div class="hero-content">
-            <h2>Welcome to the Kweneng Agriculture Chamber</h2>
-            <p>Your gateway to agricultural opportunities and resources.</p>
-            <a href="#current-events" class="cta">Explore Current Events</a>
+        <!-- Hero Image -->
+<section class="hero">
+    <picture>
+        <source srcset="images/hero-large.webp" media="(min-width: 800px)">
+        <source srcset="images/hero-medium.webp" media="(min-width: 400px)">
+        <img src="images/hero-small.webp" alt="Kweneng Agriculture" class="responsive" loading="lazy">
+    </picture>
+    <div class="hero-content">
+        <h2>Welcome to the Kweneng Agriculture Chamber</h2>
+        <p>Your gateway to agricultural opportunities and resources.</p>
+        <a href="#current-events" class="cta">Explore Current Events</a>
+    </div>
+</section>
+
         </div>
     </section>
 
