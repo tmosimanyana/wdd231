@@ -9,8 +9,8 @@
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- CSS -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/normalize.css" media="all">
+    <link rel="stylesheet" href="styles/styles.css" media="print" onload="this.media='all'">
     <!-- Social Media Meta -->
     <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce Directory">
     <meta property="og:type" content="website">
@@ -44,6 +44,14 @@
             </div>
             <div id="memberList" class="grid">
                 <!-- Cards or List items will be populated here using JavaScript -->
+                <!-- Example item with explicit dimensions and lazy loading -->
+                <div class="member-card">
+                    <img src="images/example.webp" width="200" height="150" loading="lazy" alt="Example Business">
+                    <h3>Example Business</h3>
+                    <p>123 Example Rd, Kweneng</p>
+                    <p>Phone: +267 123 4567</p>
+                </div>
+                <!-- Add more cards here -->
             </div>
         </section>
     </main>
@@ -56,6 +64,6 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="scripts/directory.js"></script>
+    <script src="scripts/directory.js" defer></script>
 </body>
 </html>
