@@ -86,6 +86,7 @@
                 <div class="form-group">
                     <label for="membershipLevel">Membership Level:
                         <select id="membershipLevel" name="membershipLevel" required>
+                            <option value="" disabled selected>Please select a membership level...</option> <!-- Placeholder -->
                             <option value="NP">NP Membership (Non-profit)</option>
                             <option value="Bronze">Bronze Membership</option>
                             <option value="Silver">Silver Membership</option>
@@ -192,5 +193,18 @@
             });
         };
     </script>
+
+    <!-- Styles for Animation -->
+    <style>
+        .membership-card {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .membership-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </body>
 </html>
