@@ -23,10 +23,12 @@
     <!-- Header -->
     <header>
         <div class="logo">
-            <h1>Kweneng Agriculture Chamber of Commerce</h1>
+            <img src="images/logo.png" alt="Kweneng Agriculture Chamber Logo" aria-label="Kweneng Agriculture Chamber Logo">
         </div>
+        <h1 class="keynote">Kweneng Agriculture Chamber of Commerce</h1>
         <nav>
-            <ul>
+            <button class="mobile-menu" aria-label="Toggle Navigation" aria-expanded="false" id="menuToggle">☰</button>
+            <ul id="navList" aria-hidden="true">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="membership.html">Join</a></li>
@@ -81,5 +83,6 @@
     </footer>
 
     <script src="scripts/home.js" defer></script>
+    <script src="scripts/mobile-menu.js" defer></script>
 </body>
 </html>

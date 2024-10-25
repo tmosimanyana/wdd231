@@ -17,6 +17,7 @@ a {
 
 a:hover, a:focus {
     text-decoration: underline; /* Underline on hover and focus */
+    outline: 2px solid #0056b3; /* Focus outline for accessibility */
 }
 
 /* Header styles */
@@ -91,6 +92,17 @@ footer {
     font-size: 0.9rem; /* Smaller font size for footer */
 }
 
+/* Mobile menu styles */
+nav ul {
+    display: none; /* Hide by default on mobile */
+}
+
+nav ul.show {
+    display: flex; /* Show when toggled */
+    flex-direction: column; /* Stack navigation links */
+    align-items: center; /* Center links on small screens */
+}
+
 /* Responsive styles */
 @media (max-width: 768px) {
     .hero-content {
@@ -104,5 +116,16 @@ footer {
 
     nav ul li {
         margin: 10px 0; /* Margin for stacked links */
+    }
+}
+
+/* Additional mobile styles */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem; /* Smaller header on very small screens */
+    }
+
+    .hero-content {
+        padding: 10px; /* Reduced padding on mobile */
     }
 }
