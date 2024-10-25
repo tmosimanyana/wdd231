@@ -15,14 +15,16 @@ a {
     color: #007BFF; /* Link color */
 }
 
-a:hover {
-    text-decoration: underline; /* Underline on hover */
+a:hover, a:focus {
+    text-decoration: underline; /* Underline on hover and focus */
 }
 
+/* Header styles */
 header {
     background-color: #283E4A; /* Dark header background */
     padding: 15px;
     color: white;
+    position: relative; /* For positioning nav menu in mobile */
 }
 
 header h1 {
@@ -51,7 +53,7 @@ nav ul li a.active {
 /* Layout using CSS Grid */
 main.discover-container {
     display: grid;
-    grid-template-columns: 1fr 3fr; /* Sidebar:Main content ratio */
+    grid-template-columns: 1fr 3fr; /* Sidebar: Main content ratio */
     gap: 20px;
     padding: 20px;
 }
@@ -95,6 +97,11 @@ main.discover-container {
     nav ul {
         flex-direction: column; /* Stack navigation links */
         align-items: center; /* Center links on small screens */
+        display: none; /* Initially hidden for mobile */
+    }
+
+    nav.active ul {
+        display: flex; /* Show menu when active */
     }
 
     nav ul li {
@@ -103,6 +110,14 @@ main.discover-container {
 
     header {
         padding: 10px; /* Reduced padding for mobile */
+    }
+
+    /* Add styles for hamburger menu */
+    .hamburger {
+        display: block; /* Show hamburger icon */
+        cursor: pointer;
+        font-size: 1.5rem; /* Size of hamburger icon */
+        color: white;
     }
 }
 
