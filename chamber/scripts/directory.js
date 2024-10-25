@@ -42,3 +42,5 @@ document.getElementById('listView').addEventListener('click', () => toggleView('
 
 // Initialize the directory
 fetchMemberData();
+document.getElementById('year').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = document.lastModified;
