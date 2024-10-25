@@ -20,7 +20,7 @@ events.forEach(event => {
 
 // Placeholder data for weather (static example, replace with API call as needed)
 const weatherData = {
-    location: 'Kweneng',
+    location: 'Kwenengmolepolole',
     temperature: '28°C',
     description: 'Sunny',
     forecast: [
@@ -32,10 +32,12 @@ const weatherData = {
 
 // Populate weather information
 const weatherInfo = document.getElementById('weatherInfo');
-weatherInfo.innerHTML = `<h3>Current Weather in ${weatherData.location}</h3>
-                         <p>${weatherData.temperature} - ${weatherData.description}</p>
-                         <h4>3-Day Forecast</h4>
-                         <ul>${weatherData.forecast.map(day => `<li>${day.day}: ${day.temp}</li>`).join('')}</ul>`;
+weatherInfo.innerHTML = `
+    <h3>Current Weather in ${weatherData.location}</h3>
+    <p>${weatherData.temperature} - ${weatherData.description}</p>
+    <h4>3-Day Forecast</h4>
+    <ul>${weatherData.forecast.map(day => `<li>${day.day}: ${day.temp}</li>`).join('')}</ul>
+`;
 
 // Placeholder data for company spotlight
 const members = [
@@ -50,8 +52,9 @@ members.filter(member => member.membershipLevel === "Gold" || member.membershipL
        .forEach(member => {
            const div = document.createElement('div');
            div.className = 'company';
-           div.innerHTML = `<img src="${member.image}" alt="${member.name}" class="responsive">
-                           <h3>${member.name}</h3>
-                           <p>Membership Level: ${member.membershipLevel}</p>`;
+           div.innerHTML = `
+               <img src="${member.image}" alt="${member.name}" class="responsive">
+               <h3>${member.name}</h3>
+               <p>Membership Level: ${member.membershipLevel}</p>`;
            companySpotlight.appendChild(div);
        });

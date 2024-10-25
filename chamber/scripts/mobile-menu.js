@@ -1,12 +1,13 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.getElementById("menuToggle");
-    const navList = document.getElementById("navList");
+// Function to close the mobile menu
+function closeMobileMenu(event) {
+    const navList = document.getElementById('navList');
+    const menuToggle = document.getElementById('menuToggle');
 
-    menuToggle.addEventListener("click", () => {
-        const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+    if (navList.classList.contains('show') && !navList.contains(event.target) && event.target !== menuToggle) {
+        navList.classList.remove('show');
+        menuToggle.setAttribute('aria-expanded', 'false');
+    }
+}
 
-        menuToggle.setAttribute("aria-expanded", String(!isExpanded));
-        navList.setAttribute("aria-hidden", String(isExpanded));
-        navList.classList.toggle("show");
-    });
-});
+// Add event listener for clicks on the document
+document.addEventListener('click', closeMobileMenu);

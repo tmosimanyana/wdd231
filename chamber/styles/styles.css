@@ -1,3 +1,6 @@
+/* Normalize styles */
+@import url('normalize.css');
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -13,9 +16,14 @@ header {
     width: 100px;
 }
 
+nav {
+    position: relative;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
@@ -23,6 +31,21 @@ nav ul li {
     margin-right: 20px;
 }
 
+nav ul.show {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+}
+
+.mobile-menu {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Hidden by default, will show on mobile */
+}
+
+/* Hero Section */
 .hero {
     position: relative;
     width: 100%;
@@ -51,10 +74,73 @@ nav ul li {
     text-decoration: underline;
 }
 
+.cta:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Light background on hover */
+    border-radius: 5px; /* Keep rounded corners on hover */
+}
+
+/* Current Events Section */
+#current-events {
+    padding: 20px;
+}
+
+#weather {
+    padding: 20px;
+}
+
+#spotlight {
+    padding: 20px;
+}
+
+/* Footer */
 footer {
     background: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
     position: relative;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide nav links on small screens */
+    }
+
+    .mobile-menu {
+        display: inline; /* Show mobile menu button */
+    }
+
+    nav ul.show {
+        display: flex; /* Show nav when the class is added */
+    }
+
+    nav ul li {
+        margin-right: 0; /* Remove right margin for vertical stacking */
+        padding: 10px 0; /* Add padding for clickable area */
+    }
+
+    nav ul li a {
+        color: #fff; /* Default link color */
+    }
+
+    nav ul li a:hover {
+        color: #007BFF; /* Change color on hover */
+    }
+}
+
+/* General Link Hover Effects */
+nav ul li a {
+    color: #fff; /* Default link color */
+    transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+/* Placeholder styles for sections */
+#eventList, #weatherInfo, #companyList {
+    margin-top: 20px;
+}
+
+/* Adjust footer styles */
+footer p {
+    margin: 5px 0; /* Adjust margin for footer paragraphs */
 }
