@@ -1,187 +1,178 @@
-/* Reset & Normalize */
-*,
-*::before,
-*::after {
+/* Normalize CSS to ensure consistent rendering across browsers */
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
 
+/* Body styles */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
-    color: #333;
     background-color: #f4f4f4;
+    color: #333;
 }
 
-/* Header Styles */
+/* Header styles */
 header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem;
+    background: #007BFF; /* Primary color */
+    color: white;
+    padding: 10px 0;
     text-align: center;
 }
 
-header h1 {
-    font-size: 1.8rem;
+header .logo h1 {
     margin: 0;
+    font-size: 2em;
 }
 
 nav ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 1.5rem;
-    padding: 0.5rem 0;
+    padding: 0;
 }
 
-nav a {
-    color: #fff;
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
     text-decoration: none;
     font-weight: bold;
 }
 
-nav a:hover,
-nav a.active {
-    color: #ffd700;
+nav ul li a:hover {
+    text-decoration: underline;
 }
 
-/* Main Layout Styles */
-.container {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 1rem;
-    padding: 1rem;
-}
-
-.sidebar {
-    background-color: #f9f9f9;
-    padding: 1rem;
-    border: 1px solid #ddd;
+/* Main content styles */
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
 }
 
-.sidebar h2 {
-    font-size: 1.2rem;
-    margin-top: 1rem;
-    color: #333;
+h2 {
+    margin-bottom: 10px;
 }
 
-.main-content {
-    padding: 1rem;
-    background-color: #fff;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-}
-
-.main-content h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-/* Image and Figure Styling */
-figure {
-    margin: 1rem 0;
-    text-align: center;
-}
-
-img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
-    transition: transform 0.3s ease, filter 0.3s ease;
-}
-
-img:hover {
-    transform: scale(1.05);
-    filter: brightness(0.9);
-}
-
-figcaption {
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 0.5rem;
-}
-
-/* Table Styling (Optional) */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-}
-
-th, td {
-    padding: 0.8rem;
-    text-align: left;
-    border: 1px solid #ddd;
-}
-
-th {
-    background-color: #333;
-    color: #fff;
-}
-
-td {
-    background-color: #f9f9f9;
-}
-
-/* Button Styling */
-.button {
-    display: inline-block;
-    padding: 0.6rem 1.2rem;
-    color: #fff;
-    background-color: #333;
-    border-radius: 5px;
-    text-align: center;
-    text-decoration: none;
+/* Form styles */
+label {
+    display: block;
+    margin-bottom: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
 }
 
-.button:hover {
-    background-color: #444;
-}
-
-/* Footer Styles */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-}
-
-footer p {
-    margin: 0.3rem 0;
-    font-size: 0.9rem;
-}
-
-/* Utility Classes */
-.text-center {
-    text-align: center;
-}
-
-.mt-1 { margin-top: 1rem; }
-.mb-1 { margin-bottom: 1rem; }
-.mt-2 { margin-top: 2rem; }
-.mb-2 { margin-bottom: 2rem; }
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-    }
-
-    nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-    }
-}
-
-/* Calendar Embed Styling */
-.calendar-embed {
+input, select, textarea {
     width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: #007BFF; /* Highlight border on focus */
+}
+
+textarea {
+    resize: vertical; /* Allow vertical resizing only */
+}
+
+/* Button styles */
+input[type="submit"] {
+    background: #007BFF; /* Primary color */
+    color: white;
     border: none;
-    height: 300px;
-    margin-top: 1rem;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 4px;
+    transition: background-color 0.3s;
 }
 
+input[type="submit"]:hover {
+    background: #0056b3; /* Darker shade on hover */
+}
+
+/* Card styles */
+.card {
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 20px 0;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.5); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #007BFF; /* Primary color */
+    color: white;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 5px 0;
+    }
+
+    main {
+        width: 90%;
+    }
+
+    .card {
+        margin: 10px 0;
+        width: 100%;
+    }
+}
