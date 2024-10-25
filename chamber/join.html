@@ -34,7 +34,6 @@
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html" class="active">Join</a></li>
                 <li><a href="discover.html">Discover</a></li>
-              
             </ul>
         </nav>
     </header>
@@ -48,50 +47,58 @@
 
             <!-- Join Form -->
             <form action="thankyou.html" method="get" onsubmit="setTimestamp()">
-                <!-- First Name -->
-                <label for="firstName">First Name:
-                    <input type="text" id="firstName" name="firstName" required title="Please enter your first name" autocomplete="given-name">
-                </label>
+                <div class="form-group">
+                    <label for="firstName">First Name:
+                        <input type="text" id="firstName" name="firstName" required title="Please enter your first name" autocomplete="given-name">
+                    </label>
+                </div>
 
-                <!-- Last Name -->
-                <label for="lastName">Last Name:
-                    <input type="text" id="lastName" name="lastName" required title="Please enter your last name" autocomplete="family-name">
-                </label>
+                <div class="form-group">
+                    <label for="lastName">Last Name:
+                        <input type="text" id="lastName" name="lastName" required title="Please enter your last name" autocomplete="family-name">
+                    </label>
+                </div>
 
-                <!-- Organizational Title -->
-                <label for="orgTitle">Organization Title:
-                    <input type="text" id="orgTitle" name="orgTitle" title="Please enter your title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" required>
-                </label>
+                <div class="form-group">
+                    <label for="orgTitle">Organization Title:
+                        <input type="text" id="orgTitle" name="orgTitle" title="Please enter your title" autocomplete="organization-title" pattern="[A-Za-z\s\-]{7,}" required>
+                    </label>
+                </div>
 
-                <!-- Email -->
-                <label for="email">Email Address:
-                    <input type="email" id="email" name="email" required title="Please enter a valid email address" placeholder="example@example.com" autocomplete="email">
-                </label>
+                <div class="form-group">
+                    <label for="email">Email Address:
+                        <input type="email" id="email" name="email" required title="Please enter a valid email address" placeholder="example@example.com" autocomplete="email">
+                    </label>
+                </div>
 
-                <!-- Phone Number -->
-                <label for="phone">Phone Number:
-                    <input type="tel" id="phone" name="phone" required title="Please enter a valid phone number" autocomplete="tel">
-                </label>
+                <div class="form-group">
+                    <label for="phone">Phone Number:
+                        <input type="tel" id="phone" name="phone" required title="Please enter a valid phone number" autocomplete="tel">
+                    </label>
+                </div>
 
-                <!-- Organization Name -->
-                <label for="organization">Organization Name:
-                    <input type="text" id="organization" name="organization" required title="Please enter your organization's name" autocomplete="organization">
-                </label>
+                <div class="form-group">
+                    <label for="organization">Organization Name:
+                        <input type="text" id="organization" name="organization" required title="Please enter your organization's name" autocomplete="organization">
+                    </label>
+                </div>
 
-                <!-- Membership Level -->
-                <label for="membershipLevel">Membership Level:
-                    <select id="membershipLevel" name="membershipLevel" required>
-                        <option value="NP">NP Membership (Non-profit)</option>
-                        <option value="Bronze">Bronze Membership</option>
-                        <option value="Silver">Silver Membership</option>
-                        <option value="Gold">Gold Membership</option>
-                    </select>
-                </label>
+                <div class="form-group">
+                    <label for="membershipLevel">Membership Level:
+                        <select id="membershipLevel" name="membershipLevel" required>
+                            <option value="NP">NP Membership (Non-profit)</option>
+                            <option value="Bronze">Bronze Membership</option>
+                            <option value="Silver">Silver Membership</option>
+                            <option value="Gold">Gold Membership</option>
+                        </select>
+                    </label>
+                </div>
 
-                <!-- Organization Description -->
-                <label for="description">Organization Description:
-                    <textarea id="description" name="description" title="Please provide a description of your business"></textarea>
-                </label>
+                <div class="form-group">
+                    <label for="description">Organization Description:
+                        <textarea id="description" name="description" title="Please provide a description of your business"></textarea>
+                    </label>
+                </div>
 
                 <!-- Hidden Timestamp -->
                 <input type="hidden" id="timestamp" name="timestamp">
@@ -180,20 +187,10 @@
             const cards = document.querySelectorAll('.membership-card');
             cards.forEach((card, index) => {
                 setTimeout(() => {
-                    card.style.opacity = 1;
-                    card.style.transform = 'translateY(0)';
+                    card.classList.add('visible');
                 }, index * 200); // staggered animation
             });
         };
     </script>
-
-    <!-- Styles for Animation -->
-    <style>
-        .membership-card {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-    </style>
 </body>
 </html>
