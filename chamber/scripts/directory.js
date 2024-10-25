@@ -44,3 +44,10 @@ document.getElementById('listView').addEventListener('click', () => toggleView('
 fetchMemberData();
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('lastModified').textContent = document.lastModified;
+document.getElementById("listView").addEventListener("click", () => {
+    document.getElementById("memberList").classList.add("list");
+});
+
+document.getElementById("gridView").addEventListener("click", () => {
+    document.getElementById("memberList").classList.remove("list");
+});

@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6; /* Improved readability */
+    line-height: 1.6;
 }
 
 h1, h2 {
@@ -12,24 +12,23 @@ h1, h2 {
 
 a {
     text-decoration: none;
-    color: #007BFF; /* Link color */
+    color: #007BFF;
 }
 
 a:hover, a:focus {
-    text-decoration: underline; /* Underline on hover and focus */
+    text-decoration: underline;
 }
 
-/* Header styles */
 header {
-    background-color: #283E4A; /* Dark header background */
+    background-color: #283E4A;
     padding: 15px;
     color: white;
-    position: relative; /* For positioning nav menu in mobile */
+    position: relative;
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.8rem; /* Header title size */
+    font-size: 1.8rem;
 }
 
 nav ul {
@@ -39,109 +38,73 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 20px; /* Space between menu items */
+    margin-right: 20px;
 }
 
 nav ul li a {
-    color: white; /* Link color in navigation */
+    color: white;
 }
 
 nav ul li a.active {
-    font-weight: bold; /* Active link styling */
+    font-weight: bold;
 }
 
 /* Layout using CSS Grid */
 main.discover-container {
     display: grid;
-    grid-template-columns: 1fr 3fr; /* Sidebar: Main content ratio */
+    grid-template-columns: 1fr 3fr;
     gap: 20px;
     padding: 20px;
 }
 
-/* Sidebar styling */
 .sidebar {
-    background-color: #f4f4f4; /* Light background for sidebar */
+    background-color: #f4f4f4;
     padding: 15px;
-    border-radius: 10px; /* Rounded corners */
+    border-radius: 10px;
 }
 
-/* Calendar iframe styling */
-.calendar-embed {
-    width: 100%;
-    height: 400px; /* Fixed height for the calendar */
-    border: none;
-    margin-top: 20px;
-}
-
-/* Main content images */
-.main-content img {
-    width: 100%; /* Responsive image width */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 5px; /* Rounded corners for images */
-    margin: 15px 0; /* Adjusted vertical margin for spacing */
-    transition: box-shadow 0.3s ease; /* Smooth shadow transition */
-}
-
-.main-content img:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Shadow effect on hover */
-}
-
-/* Default grid styles */
-#memberList {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Responsive grid */
-    gap: 15px; /* Space between grid items */
-}
-
-/* Styles for list view */
-#memberList.list {
-    display: block; /* Change display to block for list view */
+/* Reduced size for images in list view */
+#memberList.list .member-card img {
+    width: 80px;
+    height: 60px;
 }
 
 .member-card {
-    background-color: #f4f4f4; /* Card background color */
-    padding: 15px; /* Card padding */
-    border-radius: 5px; /* Rounded corners */
-    margin-bottom: 15px; /* Space between cards in list view */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+    background-color: #f4f4f4;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .member-card img {
-    width: 100%; /* Responsive image */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 10px; /* Space below image in card */
+    width: 100%;
+    height: auto;
 }
 
-/* Responsive adjustments for smaller screens */
+@media (min-width: 769px) {
+    figure img:hover {
+        transform: scale(1.05);
+        transition: transform 0.3s ease;
+    }
+}
+
 @media (max-width: 768px) {
     main.discover-container {
-        grid-template-columns: 1fr; /* Stack sidebar and main content */
+        grid-template-columns: 1fr;
     }
     
     nav ul {
-        flex-direction: column; /* Stack navigation links */
-        align-items: center; /* Center links on small screens */
-        display: none; /* Initially hidden for mobile */
-    }
-
-    nav.active ul {
-        display: flex; /* Show menu when active */
+        flex-direction: column;
+        align-items: center;
     }
 
     nav ul li {
-        margin: 10px 0; /* Margin for stacked links */
+        margin: 10px 0;
     }
 
     header {
-        padding: 10px; /* Reduced padding for mobile */
-    }
-
-    /* Add styles for hamburger menu */
-    .hamburger {
-        display: block; /* Show hamburger icon */
-        cursor: pointer;
-        font-size: 1.5rem; /* Size of hamburger icon */
-        color: white;
+        padding: 10px;
     }
 }
 
@@ -149,32 +112,12 @@ main.discover-container {
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #283E4A; /* Same as header for consistency */
+    background-color: #283E4A;
     color: white;
-    font-size: 0.9rem; /* Smaller font size for footer */
+    font-size: 0.9rem;
 }
 
-/* Additional styles for overall aesthetics */
 h2 {
-    margin-top: 1rem; /* Space above section headings */
-    color: #283E4A; /* Consistent heading color */
-}
-/* List view specific styles */
-#memberList.list .member-card img {
-    width: 60px; /* Smaller width for list view */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 10px; /* Space between image and text */
-    float: left; /* Align image to the left of the text */
-    border-radius: 3px; /* Slight rounding for consistency */
-}
-
-/* Additional styling for text alignment in list view */
-#memberList.list .member-card {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-}
-
-#memberList.list .member-card div {
-    margin-left: 15px; /* Space between image and card content */
+    margin-top: 1rem;
+    color: #283E4A;
 }
