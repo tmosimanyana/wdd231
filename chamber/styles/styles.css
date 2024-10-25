@@ -23,16 +23,19 @@ a:hover, a:focus {
 /* Header styles */
 header {
     background-color: #283E4A; /* Dark header background */
-    padding: 15px;
+    padding: 10px 20px; /* Adjust padding for better spacing */
     color: white;
-    position: relative;
+    display: flex; /* Align logo and nav in a row */
+    justify-content: space-between; /* Space between logo and nav */
+    align-items: center; /* Center items vertically */
 }
 
-header h1 {
-    margin: 0;
-    font-size: 1.8rem; /* Header title size */
+.logo h1 {
+    font-size: 1.5rem; /* Reduce logo size */
+    margin: 0; /* Remove default margin */
 }
 
+/* Navigation styles */
 nav ul {
     display: flex;
     list-style-type: none;
@@ -55,12 +58,13 @@ nav ul li a.active {
 .hero {
     position: relative;
     overflow: hidden;
+    height: 400px; /* Set a fixed height for better control */
 }
 
 .hero img {
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%; /* Make image cover the hero section */
+    object-fit: cover; /* Ensure the image covers the area without stretching */
 }
 
 .hero-content {
@@ -70,6 +74,17 @@ nav ul li a.active {
     color: white;
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
     padding: 15px;
+    border-radius: 8px; /* Add rounded corners */
+}
+
+/* Adjust heading and paragraph in hero */
+.hero-content h2 {
+    font-size: 2rem; /* Increase font size for better visibility */
+    margin: 0 0 10px; /* Margin for spacing */
+}
+
+.hero-content p {
+    font-size: 1.2rem; /* Slightly larger for better readability */
 }
 
 /* Section styles */
@@ -116,6 +131,14 @@ nav ul.show {
 
     nav ul li {
         margin: 10px 0; /* Margin for stacked links */
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem; /* Adjust heading size for mobile */
+    }
+
+    .hero-content p {
+        font-size: 1rem; /* Adjust paragraph size for mobile */
     }
 }
 
