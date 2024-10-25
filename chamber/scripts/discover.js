@@ -1,4 +1,6 @@
-// Update footer with year and last modified date
+// discover.js
+
+// Update footer with the current year and last modified date
 document.getElementById('year').textContent = new Date().getFullYear();
 document.getElementById('lastModified').textContent = document.lastModified;
 
@@ -19,6 +21,8 @@ if (lastVisit) {
 }
 
 document.getElementById('visitorMessage').textContent = message;
+
+// Update last visit in local storage
 localStorage.setItem('lastVisit', now);
 
 // Lazy loading effect
