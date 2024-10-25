@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about the membership options for Kweneng Agriculture Chamber of Commerce.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <title>Membership | Kweneng Agriculture Chamber of Commerce</title>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce - Membership">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/membership.html">
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/membership-hero.webp">
+
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="styles/membership.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Kweneng Agriculture Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="membership.html" class="active">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="join.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Membership Overview Section -->
+        <section id="membership-overview">
+            <h2>Membership Levels</h2>
+            <p>Discover the various membership levels available and the benefits associated with each.</p>
+
+            <div class="card membership-card np-card">
+                <h3>NP Membership</h3>
+                <p>Designed for non-profit organizations. <a href="#" class="info-link" data-modal="npModal">More info</a></p>
+            </div>
+            <div class="card membership-card bronze-card">
+                <h3>Bronze Membership</h3>
+                <p>Basic membership with essential benefits. <a href="#" class="info-link" data-modal="bronzeModal">More info</a></p>
+            </div>
+            <div class="card membership-card silver-card">
+                <h3>Silver Membership</h3>
+                <p>Enhanced membership with additional perks. <a href="#" class="info-link" data-modal="silverModal">More info</a></p>
+            </div>
+            <div class="card membership-card gold-card">
+                <h3>Gold Membership</h3>
+                <p>Premium membership with exclusive benefits. <a href="#" class="info-link" data-modal="goldModal">More info</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals for Membership Levels -->
+    <div id="npModal" class="modal" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close" aria-label="Close" data-close="npModal">&times;</button>
+            <h3>NP Membership Benefits</h3>
+            <p>Free membership for non-profit organizations, providing access to chamber events and resources.</p>
+        </div>
+    </div>
+
+    <div id="bronzeModal" class="modal" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close" aria-label="Close" data-close="bronzeModal">&times;</button>
+            <h3>Bronze Membership Benefits</h3>
+            <p>Basic membership includes access to chamber events, networking opportunities, and essential training resources.</p>
+        </div>
+    </div>
+
+    <div id="silverModal" class="modal" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close" aria-label="Close" data-close="silverModal">&times;</button>
+            <h3>Silver Membership Benefits</h3>
+            <p>All bronze benefits plus advertising options, event discounts, and priority access to select chamber programs.</p>
+        </div>
+    </div>
+
+    <div id="goldModal" class="modal" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close" aria-label="Close" data-close="goldModal">&times;</button>
+            <h3>Gold Membership Benefits</h3>
+            <p>Premium membership with all silver benefits, VIP access to events, customized advertising packages, and special privileges.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Website developed by Tinny Bothepha Mosimanyana, WDD 231 Class Project</p>
+        <p>Last modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/membership.js"></script>
+    <script>
+        // Set the current year in the footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+        document.getElementById('lastModified').textContent = document.lastModified;
+    </script>
+</body>
+</html>
