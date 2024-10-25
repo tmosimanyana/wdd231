@@ -3,6 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    line-height: 1.6; /* Improved readability */
 }
 
 h1, h2 {
@@ -11,22 +12,22 @@ h1, h2 {
 
 a {
     text-decoration: none;
-    color: #007BFF;
+    color: #007BFF; /* Link color */
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover */
 }
 
 header {
-    background-color: #283E4A;
+    background-color: #283E4A; /* Dark header background */
     padding: 15px;
     color: white;
 }
 
 header h1 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Header title size */
 }
 
 nav ul {
@@ -36,66 +37,86 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin-right: 20px; /* Space between menu items */
 }
 
 nav ul li a {
-    color: white;
+    color: white; /* Link color in navigation */
 }
 
 nav ul li a.active {
-    font-weight: bold;
+    font-weight: bold; /* Active link styling */
 }
 
 /* Layout using CSS Grid */
 main.discover-container {
     display: grid;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 3fr; /* Sidebar:Main content ratio */
     gap: 20px;
     padding: 20px;
 }
 
 /* Sidebar styling */
 .sidebar {
-    background-color: #f4f4f4;
+    background-color: #f4f4f4; /* Light background for sidebar */
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 10px; /* Rounded corners */
 }
 
 /* Calendar iframe styling */
 .calendar-embed {
     width: 100%;
-    height: 400px;
+    height: 400px; /* Fixed height for the calendar */
     border: none;
     margin-top: 20px;
 }
 
 /* Main content images */
 .main-content img {
-    width: 100%;
-    height: auto;
-    border-radius: 5px;
+    width: 100%; /* Responsive image width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Rounded corners for images */
 }
 
 /* Image hover effect for desktop views */
 @media (min-width: 769px) {
     figure img:hover {
-        transform: scale(1.05);
-        transition: transform 0.3s ease;
+        transform: scale(1.05); /* Slight zoom on hover */
+        transition: transform 0.3s ease; /* Smooth transition */
     }
 }
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
     main.discover-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Stack sidebar and main content */
+    }
+    
+    nav ul {
+        flex-direction: column; /* Stack navigation links */
+        align-items: center; /* Center links on small screens */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Margin for stacked links */
+    }
+
+    header {
+        padding: 10px; /* Reduced padding for mobile */
     }
 }
 
+/* Footer styles */
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #283E4A;
+    background-color: #283E4A; /* Same as header for consistency */
     color: white;
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Smaller font size for footer */
+}
+
+/* Additional styles for overall aesthetics */
+h2 {
+    margin-top: 1rem; /* Space above section headings */
+    color: #283E4A; /* Consistent heading color */
 }
