@@ -171,27 +171,7 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="scripts/membership.js"></script>
-    <script>
-        // Set the current timestamp when the form is submitted
-        function setTimestamp() {
-            const now = new Date();
-            document.getElementById('timestamp').value = now.toISOString();
-        }
-
-        // Set the current year in the footer
-        document.getElementById('year').textContent = new Date().getFullYear();
-        document.getElementById('lastModified').textContent = document.lastModified;
-
-        // Animate cards on load
-        window.onload = function() {
-            const cards = document.querySelectorAll('.membership-card');
-            cards.forEach((card, index) => {
-                setTimeout(() => {
-                    card.classList.add('visible');
-                }, index * 200); // staggered animation
-            });
-        };
-    </script>
+    <script src="scripts/membership.js" defer></script>
 </body>
 </html>
+
