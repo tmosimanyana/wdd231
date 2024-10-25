@@ -159,3 +159,22 @@ h2 {
     margin-top: 1rem; /* Space above section headings */
     color: #283E4A; /* Consistent heading color */
 }
+/* List view specific styles */
+#memberList.list .member-card img {
+    width: 60px; /* Smaller width for list view */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Space between image and text */
+    float: left; /* Align image to the left of the text */
+    border-radius: 3px; /* Slight rounding for consistency */
+}
+
+/* Additional styling for text alignment in list view */
+#memberList.list .member-card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
+
+#memberList.list .member-card div {
+    margin-left: 15px; /* Space between image and card content */
+}
