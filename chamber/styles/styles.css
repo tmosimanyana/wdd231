@@ -31,7 +31,7 @@ header {
 }
 
 .logo h1 {
-    font-size: 1.5rem; /* Reduce logo size */
+    font-size: 1.2rem; /* Further reduce logo size */
     margin: 0; /* Remove default margin */
 }
 
@@ -58,7 +58,7 @@ nav ul li a.active {
 .hero {
     position: relative;
     overflow: hidden;
-    height: 400px; /* Set a fixed height for better control */
+    height: 300px; /* Set a smaller fixed height */
 }
 
 .hero img {
@@ -69,22 +69,22 @@ nav ul li a.active {
 
 .hero-content {
     position: absolute;
-    bottom: 20px;
+    bottom: 20px; /* Position from bottom */
     left: 20px;
     color: white;
     background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-    padding: 15px;
+    padding: 10px; /* Reduced padding for better balance */
     border-radius: 8px; /* Add rounded corners */
 }
 
 /* Adjust heading and paragraph in hero */
 .hero-content h2 {
-    font-size: 2rem; /* Increase font size for better visibility */
-    margin: 0 0 10px; /* Margin for spacing */
+    font-size: 1.8rem; /* Slightly smaller for better proportion */
+    margin: 0 0 5px; /* Margin for spacing */
 }
 
 .hero-content p {
-    font-size: 1.2rem; /* Slightly larger for better readability */
+    font-size: 1rem; /* Adjust paragraph size */
 }
 
 /* Section styles */
@@ -120,17 +120,12 @@ nav ul.show {
 
 /* Responsive styles */
 @media (max-width: 768px) {
+    .hero {
+        height: 250px; /* Smaller height for tablets */
+    }
+
     .hero-content {
-        font-size: 0.9rem; /* Smaller text on mobile */
-    }
-
-    nav ul {
-        flex-direction: column; /* Stack navigation links */
-        align-items: center; /* Center links on small screens */
-    }
-
-    nav ul li {
-        margin: 10px 0; /* Margin for stacked links */
+        padding: 10px; /* Adjust padding for smaller screens */
     }
 
     .hero-content h2 {
@@ -138,17 +133,28 @@ nav ul.show {
     }
 
     .hero-content p {
-        font-size: 1rem; /* Adjust paragraph size for mobile */
+        font-size: 0.9rem; /* Adjust paragraph size for mobile */
     }
 }
 
-/* Additional mobile styles */
 @media (max-width: 480px) {
     header h1 {
-        font-size: 1.5rem; /* Smaller header on very small screens */
+        font-size: 1.2rem; /* Smaller header on very small screens */
+    }
+
+    .hero {
+        height: 200px; /* Even smaller height for mobile phones */
     }
 
     .hero-content {
-        padding: 10px; /* Reduced padding on mobile */
+        padding: 5px; /* Further reduce padding */
+    }
+
+    .hero-content h2 {
+        font-size: 1.2rem; /* Further adjust heading size */
+    }
+
+    .hero-content p {
+        font-size: 0.8rem; /* Further adjust paragraph size */
     }
 }
