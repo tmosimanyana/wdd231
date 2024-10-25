@@ -2,17 +2,15 @@ const companyList = document.getElementById('companyList');
 
 async function fetchCompanySpotlights() {
     try {
-        const response = await fetch('data/members.json'); // Adjusted path for GitHub Pages
+        const response = await fetch('chamber/data/members.json');
+        
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const members = await response.json();
         const qualifiedMembers = members.filter(member => member.level === 'Gold' || member.level === 'Silver');
         const randomMembers = getRandomMembers(qualifiedMembers, 3); // Get 2-3 random members
-
-        // Clear previous content before populating new data
-        companyList.innerHTML = '';
 
         randomMembers.forEach(member => {
             companyList.innerHTML += `
@@ -27,8 +25,8 @@ async function fetchCompanySpotlights() {
             `;
         });
     } catch (error) {
-        console.error('Error fetching company spotlight data:', error);
-        companyList.innerHTML = '<p>Error fetching data. Please try again later.</p>'; // Display user-friendly error message
+        companyList.innerHTML = `<p class="error">Error fetching data. Please try again later.</p>`;
+        console.error('Fetch error:', error);
     }
 }
 
@@ -37,5 +35,4 @@ function getRandomMembers(members, count) {
     return shuffled.slice(0, count);
 }
 
-// Call the fetch function to populate the company spotlight
 fetchCompanySpotlights();
