@@ -3,7 +3,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.6; /* Improved readability */
 }
 
 h1, h2 {
@@ -12,15 +12,16 @@ h1, h2 {
 
 a {
     text-decoration: none;
-    color: #007BFF;
+    color: #007BFF; /* Link color */
 }
 
 a:hover, a:focus {
-    text-decoration: underline;
+    text-decoration: underline; /* Underline on hover and focus */
 }
 
+/* Header styles */
 header {
-    background-color: #283E4A;
+    background-color: #283E4A; /* Dark header background */
     padding: 15px;
     color: white;
     position: relative;
@@ -28,7 +29,7 @@ header {
 
 header h1 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 1.8rem; /* Header title size */
 }
 
 nav ul {
@@ -38,86 +39,70 @@ nav ul {
 }
 
 nav ul li {
-    margin-right: 20px;
+    margin-right: 20px; /* Space between menu items */
 }
 
 nav ul li a {
-    color: white;
+    color: white; /* Link color in navigation */
 }
 
 nav ul li a.active {
-    font-weight: bold;
+    font-weight: bold; /* Active link styling */
 }
 
-/* Layout using CSS Grid */
-main.discover-container {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    gap: 20px;
+/* Hero section */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    padding: 15px;
+}
+
+/* Section styles */
+section {
     padding: 20px;
 }
 
-.sidebar {
-    background-color: #f4f4f4;
-    padding: 15px;
-    border-radius: 10px;
-}
-
-/* Reduced size for images in list view */
-#memberList.list .member-card img {
-    width: 80px;
-    height: 60px;
-}
-
-.member-card {
-    background-color: #f4f4f4;
-    padding: 15px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.member-card img {
-    width: 100%;
-    height: auto;
-}
-
-@media (min-width: 769px) {
-    figure img:hover {
-        transform: scale(1.05);
-        transition: transform 0.3s ease;
-    }
-}
-
-@media (max-width: 768px) {
-    main.discover-container {
-        grid-template-columns: 1fr;
-    }
-    
-    nav ul {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    nav ul li {
-        margin: 10px 0;
-    }
-
-    header {
-        padding: 10px;
-    }
+#eventList, #companyList {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px; /* Space between items */
 }
 
 /* Footer styles */
 footer {
     text-align: center;
     padding: 10px;
-    background-color: #283E4A;
+    background-color: #283E4A; /* Same as header for consistency */
     color: white;
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Smaller font size for footer */
 }
 
-h2 {
-    margin-top: 1rem;
-    color: #283E4A;
+/* Responsive styles */
+@media (max-width: 768px) {
+    .hero-content {
+        font-size: 0.9rem; /* Smaller text on mobile */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack navigation links */
+        align-items: center; /* Center links on small screens */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Margin for stacked links */
+    }
 }
