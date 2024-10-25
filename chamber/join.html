@@ -16,59 +16,10 @@
     <!-- Favicon -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     
-    <!-- CSS -->
+    <!-- CSS Files -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="styles/membership.css">
-    <style>
-        /* Basic CSS for modal transition */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4);
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-content {
-            background-color: #fefefe;
-            margin: 15% auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
-        }
-
-        .card {
-            transition: transform 0.3s ease, background-color 0.3s ease;
-            border: 1px solid #ccc;
-            padding: 15px;
-            margin: 10px;
-            text-align: center;
-            border-radius: 8px;
-        }
-
-        .card:hover {
-            transform: scale(1.05);
-            background-color: #f0f8ff; /* Light color change on hover */
-        }
-
-        .membership-card {
-            animation: fadeIn 0.5s forwards;
-            opacity: 0;
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-            }
-        }
-    </style>
 </head>
 <body>
 
@@ -83,13 +34,14 @@
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="membership.html" class="active">Join</a></li>
                 <li><a href="discover.html">Discover</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="join.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Main Content -->
     <main>
+        <!-- Join Form Section -->
         <section id="membership-form">
             <h2>Become a Member</h2>
             <p>Fill out the form below to join our chamber of commerce.</p>
@@ -171,33 +123,33 @@
     </main>
 
     <!-- Modals for Membership Levels -->
-    <div id="npModal" class="modal">
+    <div id="npModal" class="modal" role="dialog" aria-hidden="true">
         <div class="modal-content">
-            <span class="close" data-close="npModal">&times;</span>
+            <button class="close" aria-label="Close" data-close="npModal">&times;</button>
             <h3>NP Membership Benefits</h3>
             <p>No fee for non-profit organizations. Access to basic chamber events and resources.</p>
         </div>
     </div>
 
-    <div id="bronzeModal" class="modal">
+    <div id="bronzeModal" class="modal" role="dialog" aria-hidden="true">
         <div class="modal-content">
-            <span class="close" data-close="bronzeModal">&times;</span>
+            <button class="close" aria-label="Close" data-close="bronzeModal">&times;</button>
             <h3>Bronze Membership Benefits</h3>
             <p>Basic membership with access to all events, training, and networking.</p>
         </div>
     </div>
 
-    <div id="silverModal" class="modal">
+    <div id="silverModal" class="modal" role="dialog" aria-hidden="true">
         <div class="modal-content">
-            <span class="close" data-close="silverModal">&times;</span>
+            <button class="close" aria-label="Close" data-close="silverModal">&times;</button>
             <h3>Silver Membership Benefits</h3>
             <p>Includes all bronze benefits plus advertising options and discounts on events.</p>
         </div>
     </div>
 
-    <div id="goldModal" class="modal">
+    <div id="goldModal" class="modal" role="dialog" aria-hidden="true">
         <div class="modal-content">
-            <span class="close" data-close="goldModal">&times;</span>
+            <button class="close" aria-label="Close" data-close="goldModal">&times;</button>
             <h3>Gold Membership Benefits</h3>
             <p>Premium membership with VIP access to all events, personalized advertising, and special privileges.</p>
         </div>
@@ -218,34 +170,6 @@
             const now = new Date();
             document.getElementById('timestamp').value = now.toISOString();
         }
-
-        // Modal functionality
-        const modals = document.querySelectorAll('.modal');
-        const infoLinks = document.querySelectorAll('.info-link');
-        const closeButtons = document.querySelectorAll('.close');
-
-        infoLinks.forEach(link => {
-            link.onclick = function() {
-                const modalId = link.getAttribute('data-modal');
-                document.getElementById(modalId).style.display = "block";
-            };
-        });
-
-        closeButtons.forEach(button => {
-            button.onclick = function() {
-                const modalId = button.getAttribute('data-close');
-                document.getElementById(modalId).style.display = "none";
-            };
-        });
-
-        // Close modal if the user clicks outside of it
-        window.onclick = function(event) {
-            modals.forEach(modal => {
-                if (event.target === modal) {
-                    modal.style.display = "none";
-                }
-            });
-        };
 
         // Set the current year in the footer
         document.getElementById('year').textContent = new Date().getFullYear();
