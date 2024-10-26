@@ -1,178 +1,67 @@
-/* Normalize and default styles */
+/* General styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
     line-height: 1.6;
 }
 
-h1, h2 {
-    font-family: 'Georgia', serif;
-}
-
-a {
-    text-decoration: none;
-    color: #007BFF;
-}
-
-a:hover, a:focus {
-    text-decoration: underline;
-}
-
-/* Header styles */
+/* Header and navigation styles */
 header {
     background-color: #283E4A;
-    padding: 15px;
     color: white;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 1.8rem;
+    padding: 15px;
 }
 
 nav ul {
     display: flex;
     list-style: none;
+    gap: 20px;
     padding: 0;
+    justify-content: flex-end;
 }
 
-nav ul li {
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: white;
-}
-
-nav ul li a.active {
-    font-weight: bold;
-}
-
-/* Main directory styling */
-#directory h2 {
-    color: #283E4A;
+.hero {
+    position: relative;
     text-align: center;
-    margin: 1rem 0;
 }
 
-/* View toggle buttons */
-#viewToggle {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-#viewToggle button {
-    padding: 10px 20px;
-    margin: 5px;
-    cursor: pointer;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-}
-
-#viewToggle button:hover {
-    background-color: #0056b3;
-}
-
-/* Grid view layout */
-#memberList.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 15px;
-    padding: 20px;
-}
-
-#memberList.grid .member-card img {
+.hero img {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
+    max-height: 500px;
+    object-fit: cover;
 }
 
-#memberList.grid .member-card {
-    background-color: #f4f4f4;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
 }
 
-/* List view layout */
-#memberList.list {
-    display: block;
+/* Main content */
+.events, .weather, .spotlight {
+    margin: 20px;
     padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
 }
 
-#memberList.list .member-card {
+.spotlight-grid {
     display: flex;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-    background-color: #f9f9f9;
-    border-radius: 5px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-}
-
-/* Smaller image size for list view */
-#memberList.list .member-card img {
-    width: 60px;
-    height: auto;
-    margin-right: 15px;
-    border-radius: 5px;
-}
-
-/* Text alignment within list view */
-#memberList.list .member-card div {
-    display: flex;
-    flex-direction: column;
+    gap: 15px;
+    flex-wrap: wrap;
     justify-content: center;
 }
 
-#memberList.list .member-card h3 {
-    margin: 0;
-    font-size: 1rem;
-    color: #283E4A;
-}
-
-#memberList.list .member-card p {
-    margin: 5px 0;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* Footer styles */
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #283E4A;
-    color: white;
-    font-size: 0.9rem;
-}
-
-/* Accessibility: Focused links */
-a:focus, button:focus {
-    outline: 2px solid #0056b3;
-    outline-offset: 2px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    header h1 {
-        font-size: 1.5rem;
-    }
-
+/* Responsive design */
+@media (max-width: 768px) {
     nav ul {
         flex-direction: column;
-        text-align: center;
+        align-items: center;
     }
-
-    #viewToggle button {
-        padding: 8px 16px;
-    }
-
-    #memberList.grid {
-        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-        gap: 10px;
+    .spotlight-grid {
+        flex-direction: column;
     }
 }

@@ -3,107 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kweneng Agriculture Chamber of Commerce Home">
+    <title>Kweneng Agriculture Chamber of Commerce</title>
+    <meta name="description" content="Home page of the Kweneng Agriculture Chamber of Commerce, featuring events, weather, and business spotlights.">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <title>Chamber of Commerce - Home</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico">
-    
-    <!-- CSS -->
- <!-- CSS -->
- <link rel="stylesheet" href="styles/normalize.css">
- <link rel="stylesheet" href="styles/styles.min.css">
- 
- <!-- Social Media Meta -->
- <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce Directory">
- <meta property="og:type" content="website">
- <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
- <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-small.webp">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.min.css">
 </head>
 <body>
 
-    <!-- Header -->
-    <header role="banner">
-        <div class="logo">
-            <h1>Kweneng Agriculture Chamber of Commerce</h1>
-        </div>
-        <nav aria-label="Primary">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="membership.html">Join</a></li>
-                <li><a href="discover.html">Discover</a></li>
-            </ul>
-        </nav>
-    </header>
+<!-- Header -->
+<header>
+    <div class="logo">
+        <h1>Kweneng Agriculture Chamber of Commerce</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="membership.html">Join</a></li>
+            <li><a href="discover.html">Discover</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <!-- Hero Section -->
+<!-- Main Content -->
+<main>
+    <!-- Hero Image -->
     <section class="hero">
-        <h2>Empowering Local Businesses and Our Community</h2>
-        <p>Join us in building a thriving economy for the Kweneng region through resources, connections, and support.</p>
-        <a href="membership.html" class="cta-button">Become a Member</a>
+        <img src="images/hero.webp" alt="Kweneng Agriculture Chamber Hero">
+        <div class="hero-text">
+            <h2>Empowering Agriculture in Kweneng</h2>
+            <a href="membership.html" class="cta-button">Join the Chamber</a>
+        </div>
     </section>
 
-    <!-- Community Information -->
-    <section class="community-info">
-        <h2>Community Highlights</h2>
-        <p>Get the latest updates on community initiatives, events, and other news happening around Kweneng.</p>
-        <!-- Placeholder for dynamic community info -->
-        <div class="info-box"> 
-            <p>Upcoming Event: Local Farmers' Market - October 30th</p>
-        </div>
-        <div class="info-box">
-            <p>Workshop: Sustainable Farming Practices - November 5th</p>
-        </div>
+    <!-- Current Events -->
+    <section class="events">
+        <h2>Upcoming Events</h2>
+        <ul>
+            <li>Annual Agricultural Summit - November 10th, 2024</li>
+            <li>Local Produce Market Day - December 5th, 2024</li>
+            <!-- Add additional events as needed -->
+        </ul>
     </section>
 
     <!-- Weather Section -->
     <section class="weather">
-        <h2>Current Weather</h2>
-        <!-- Placeholder for weather widget integration -->
+        <h2>Local Weather</h2>
         <div class="weather-widget">
-            <p>🌞 Sunny, 28°C</p>
-            <p>Wind: 10 km/h NE</p>
-            <p>Humidity: 35%</p>
+            <p>Loading weather data...</p>
         </div>
     </section>
 
-    <!-- Calls to Action -->
-    <section class="cta-section">
-        <h2>Get Involved</h2>
-        <div class="cta-container">
-            <a href="events.html" class="cta-link">View Upcoming Events</a>
-            <a href="membership.html" class="cta-link">Join the Chamber</a>
-            <a href="contact.html" class="cta-link">Contact Us</a>
+    <!-- Spotlight Section -->
+    <section class="spotlight">
+        <h2>Member Spotlights</h2>
+        <div class="spotlight-grid" id="spotlightGrid">
+            <!-- Spotlight content will be dynamically inserted here -->
         </div>
     </section>
+</main>
 
-    <!-- Business Spotlights -->
-    <section class="business-spotlight">
-        <h2>Featured Businesses</h2>
-        <div class="spotlight-container">
-            <!-- Placeholder for dynamically loaded business spotlights -->
-            <div class="business-card">
-                <img src="images/business1.jpg" alt="Business Name">
-                <h3>Local Growers Co-op</h3>
-                <p>A cooperative supporting local farmers with resources and market access.</p>
-            </div>
-            <div class="business-card">
-                <img src="images/business2.jpg" alt="Business Name">
-                <h3>Green Agro Solutions</h3>
-                <p>Innovative agricultural solutions for sustainable farming in Botswana.</p>
-            </div>
-        </div>
-    </section>
+<!-- Footer -->
+<footer>
+    <p>© <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
+    <p>Website developed by Tinny Bothepha Mosimanyana, WDD 231 Class Project</p>
+    <p>Last modified: <span id="lastModified"></span></p>
+</footer>
 
-    <!-- Footer -->
-    <footer role="contentinfo">
-        <p>© <time id="year"></time> Kweneng Agriculture Chamber of Commerce</p>
-        <p>Website developed by Tinny Bothepha Mosimanyana, WDD 231 Class Project</p>
-    </footer>
-
-    <!-- JavaScript -->
-    <script src="scripts/main.js" defer></script>
+<!-- JavaScript -->
+<script src="scripts/main.js" defer></script>
 </body>
 </html>
