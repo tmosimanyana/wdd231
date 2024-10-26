@@ -1,64 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kweneng Agriculture Chamber of Commerce Directory">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <title>Kweneng Agriculture Chamber of Commerce Directory</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/styles.min.css">
-    
-    <!-- Social Media Meta -->
-    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce Directory">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/directory.html">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero.webp">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Directory | Kweneng Agriculture Chamber of Commerce</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/directory.js" defer></script>
 </head>
 <body>
 
-    <!-- Header -->
-    <header role="banner">
-        <div class="logo">
-            <h1>Kweneng Agriculture Chamber of Commerce</h1>
-        </div>
-        <nav aria-label="Primary">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html" class="active">Directory</a></li>
-                <li><a href="membership.html">Join</a></li>
-                <li><a href="discover.html">Discover</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Common Header and Navigation -->
+  <header>
+    <div class="container">
+      <img src="images/logo.webp" alt="Kweneng Agriculture Chamber of Commerce Logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="discover.html">Discover</a></li>
+          <li><a href="directory.html" class="active">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Main Content -->
-    <main>
-        <section id="directory" aria-labelledby="directory-title">
-            <h2 id="directory-title">Business Directory</h2>
-            <div id="viewToggle">
-                <button id="gridView" data-view="grid">Grid View</button>
-                <button id="listView" data-view="list">List View</button>
-            </div>
-            <div id="memberList" class="grid" role="list">
-                <!-- Cards or List items will be populated here using JavaScript -->
-            </div>
-        </section>
-    </main>
+  <!-- Main Content -->
+  <main>
+    <section class="directory-hero">
+      <h1>Local Business Directory</h1>
+      <p>Explore local businesses and organizations that make up our community.</p>
+    </section>
 
-    <!-- Footer -->
-    <footer role="contentinfo">
-        <p>© <time id="year"></time> Kweneng Agriculture Chamber of Commerce</p>
-        <p>Website developed by Tinny Bothepha Mosimanyana, WDD 231 Class Project</p>
-        <p>Last modified: <time id="lastModified"></time></p>
-    </footer>
+    <section class="directory-search">
+      <label for="search">Search Businesses:</label>
+      <input type="text" id="search" placeholder="Type to search...">
+    </section>
 
-    <!-- JavaScript -->
-    <script src="scripts/directory.js" defer></script>
+    <section class="directory-list">
+      <div id="directoryContainer" class="business-list">
+        <!-- Business entries will populate here -->
+      </div>
+    </section>
+  </main>
+
+  <!-- Common Footer -->
+  <footer>
+    <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
+  </footer>
+
+  <!-- External JSON data file for Directory (add functionality in directory.js) -->
+  <script>
+    fetch('chamber/data/members.json')
+      .then(response => response.json())
+      .then(data => {
+        const directoryContainer = document.getElementById('directoryContainer');
+        data.members.forEach(member => {
+          const memberCard = document.createElement('div');
+          memberCard.classList.add('member-card');
+          memberCard.innerHTML = `
+            <h3>${member.name}</h3>
+            <p>${member.category}</p>
+            <p>${member.address}</p>
+            <a href="${member.website}" target="_blank">Visit Website</a>
+          `;
+          directoryContainer.appendChild(memberCard);
+        });
+      })
+      .catch(error => console.error('Error fetching directory data:', error));
+  </script>
+
 </body>
 </html>
