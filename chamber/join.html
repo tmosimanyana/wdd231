@@ -1,97 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Join | Kweneng Agriculture Chamber of Commerce</title>
-  <link rel="stylesheet" href="styles/style.css">
-  <script src="scripts/formValidation.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>Join the Chamber</title>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <img src="images/logo.png" alt="Chamber Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="discover.html">Discover</a></li>
+                    <li><a href="directory.html">Directory</a></li>
+                    <li><a href="join.html" class="active">Join</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <div class="container">
+            <h1>Join the Kweneng Agriculture Chamber of Commerce</h1>
+            <form id="join-form" action="thankyou.html" method="POST">
+                <input type="hidden" name="timestamp" id="timestamp" value="">
+                
+                <div class="form-group">
+                    <label for="first-name">First Name</label>
+                    <input type="text" id="first-name" name="first-name" required>
+                </div>
 
-  <!-- Common Header and Navigation -->
-  <header>
-    <div class="container">
-      <img src="images/logo.webp" alt="Kweneng Agriculture Chamber of Commerce Logo" class="logo">
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="discover.html">Discover</a></li>
-          <li><a href="directory.html">Directory</a></li>
-          <li><a href="join.html" class="active">Join</a></li>
-        </ul>
-      </nav>
+                <div class="form-group">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="business">Business/Organization Name</label>
+                    <input type="text" id="business" name="business" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" id="title" name="title" pattern="[A-Za-z\s-]{7,}" required>
+                </div>
+
+                <fieldset>
+                    <legend>Membership Level</legend>
+                    <div class="membership-cards">
+                        <div class="membership-card" id="gold-card">
+                            <h3>Gold Membership</h3>
+                            <button type="button" class="modal-button" data-modal="gold-modal">View Benefits</button>
+                        </div>
+                        <div class="membership-card" id="silver-card">
+                            <h3>Silver Membership</h3>
+                            <button type="button" class="modal-button" data-modal="silver-modal">View Benefits</button>
+                        </div>
+                        <div class="membership-card" id="non-profit-card">
+                            <h3>Non-Profit Membership</h3>
+                            <button type="button" class="modal-button" data-modal="non-profit-modal">View Benefits</button>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <button type="submit">Join Now</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Modals -->
+    <div class="modal" id="gold-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Gold Membership Benefits</h2>
+            <p>Details about Gold membership benefits...</p>
+        </div>
     </div>
-  </header>
-
-  <!-- Main Content -->
-  <main>
-    <!-- Membership Benefits Section -->
-    <section class="benefits">
-      <h1>Join the Kweneng Agriculture Chamber of Commerce</h1>
-      <p>Be part of a growing network dedicated to supporting and advancing local businesses in Kweneng.</p>
-
-      <h2>Membership Benefits</h2>
-      <ul>
-        <li>Access to business resources and support</li>
-        <li>Networking opportunities with other local businesses</li>
-        <li>Promotion through our Chamber's directory and events</li>
-        <li>Special discounts and partnership opportunities</li>
-      </ul>
-    </section>
-
-    <!-- Membership Tiers Section -->
-    <section class="membership-tiers">
-      <h2>Choose Your Membership Level</h2>
-      <div class="tiers">
-        <div class="tier">
-          <h3>Non-Profit</h3>
-          <p>For community-oriented organizations and non-profits.</p>
+    <div class="modal" id="silver-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Silver Membership Benefits</h2>
+            <p>Details about Silver membership benefits...</p>
         </div>
-        <div class="tier">
-          <h3>Silver</h3>
-          <p>Basic membership with access to core benefits and networking.</p>
+    </div>
+    <div class="modal" id="non-profit-modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Non-Profit Membership Benefits</h2>
+            <p>Details about Non-Profit membership benefits...</p>
         </div>
-        <div class="tier">
-          <h3>Gold</h3>
-          <p>Premium membership with added benefits and special promotions.</p>
-        </div>
-      </div>
-    </section>
+    </div>
 
-    <!-- Membership Application Form -->
-    <section class="join-form">
-      <h2>Membership Application</h2>
-      <form action="thankyou.html" method="POST" id="membershipForm">
-        <label for="name">Full Name:</label>
-        <input type="text" id="name" name="name" required>
+    <footer>
+        <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
+    </footer>
 
-        <label for="email">Email Address:</label>
-        <input type="email" id="email" name="email" required>
-
-        <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" required>
-
-        <label for="membershipLevel">Membership Level:</label>
-        <select id="membershipLevel" name="membershipLevel" required>
-          <option value="">Select an option</option>
-          <option value="Non-Profit">Non-Profit</option>
-          <option value="Silver">Silver</option>
-          <option value="Gold">Gold</option>
-        </select>
-
-        <label for="comments">Comments or Questions:</label>
-        <textarea id="comments" name="comments" rows="4"></textarea>
-
-        <button type="submit" class="cta-button">Apply Now</button>
-      </form>
-    </section>
-  </main>
-
-  <!-- Common Footer -->
-  <footer>
-    <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
-  </footer>
-
+    <script src="scripts/main.js"></script>
 </body>
 </html>
