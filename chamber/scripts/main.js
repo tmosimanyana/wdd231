@@ -1,17 +1,3 @@
-// main.js
-export async function fetchMembers() {
-    try {
-        const response = await fetch('./data/members.json');
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        return await response.json();
-    } catch (error) {
-        console.error('There was a problem with the fetch operation:', error);
-        return [];
-    }
-}
-
 export function renderMembers(members, container) {
     container.innerHTML = ''; // Clear existing content
     members.forEach(member => {
@@ -23,18 +9,46 @@ export function renderMembers(members, container) {
             <h3>${member.name}</h3>
             <p>${member.address}</p>
             <p>Phone: ${member.phone}</p>
-            <p><a href="#" class="website-link" target="_blank">Visit Website</a></p>
             <p>Membership Level: ${member.membershipLevel}</p>
         `;
 
-        // If you have specific links for members, you can adjust the `href` in the website link accordingly
-        memberCard.querySelector('.website-link').setAttribute('href', member.website || '#'); // Placeholder if no website is provided
-
+        // Add event listener for opening the modal
         memberCard.addEventListener('click', () => {
-            // Display modal with more information
-            alert(`More info about ${member.name}`);
+            openModal(member);
         });
 
         container.appendChild(memberCard);
     });
+}
+
+function openModal(member) {
+    const modal = document.getElementById('modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalAddress = document.getElementById('modal-address');
+    const modalPhone = document.getElementById('modal-phone');
+    const modalMembership = document.getElementById('modal-membership');
+    const modalImage = document.getElementById('modal-image');
+
+    // Set the modal content
+    modalTitle.textContent = member.name;
+    modalAddress.textContent = `Address: ${member.address}`;
+    modalPhone.textContent = `Phone: ${member.phone}`;
+    modalMembership.textContent = `Membership Level: ${member.membershipLevel}`;
+    modalImage.src = member.image;
+
+    // Display the modal
+    modal.style.display = "block";
+
+    // Close modal when clicking the close button
+    const closeButton = document.querySelector('.close-button');
+    closeButton.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Close modal when clicking outside of the modal content
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = "none";
+        }
+    };
 }

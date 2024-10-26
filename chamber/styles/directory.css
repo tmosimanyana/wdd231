@@ -1,5 +1,5 @@
-/* styles.css */
 @import url('normalize.css'); /* Importing Normalize.css at the beginning */
+
 /* General Styles */
 body {
     font-family: Arial, sans-serif;
@@ -45,11 +45,6 @@ h2 {
     padding: 1rem;
 }
 
-/* Grid View */
-.grid-view {
-    display: flex;
-}
-
 /* Member Card Styles */
 .member-card {
     background-color: #fff;
@@ -57,14 +52,20 @@ h2 {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 1rem;
-    width: 250px; /* Fixed width for grid */
     text-align: center;
+    transition: box-shadow 0.3s; /* Smooth shadow transition */
+    width: 250px; /* Fixed width for grid */
 }
 
 .member-card img {
     width: 100%;
     height: auto;
     border-radius: 8px;
+}
+
+/* Hover Effect for Member Cards */
+.member-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 /* List View */
@@ -95,6 +96,7 @@ h2 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
 #toggle-view:hover {
@@ -124,3 +126,8 @@ footer {
     }
 }
 
+@media (max-width: 600px) {
+    .member-card {
+        width: 100%; /* Full width on small screens */
+    }
+}
