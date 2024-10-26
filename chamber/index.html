@@ -8,6 +8,10 @@
     <meta name="author" content="Tinny Bothepha Mosimanyana">
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.min.css">
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp">
 </head>
 <body>
 
@@ -30,7 +34,7 @@
 <main>
     <!-- Hero Image -->
     <section class="hero">
-        <img src="images/hero.webp" alt="Kweneng Agriculture Chamber Hero">
+        <img src="images/hero-medium.webp" alt="Kweneng Agriculture Chamber Hero" class="hero-image">
         <div class="hero-text">
             <h2>Empowering Agriculture in Kweneng</h2>
             <a href="membership.html" class="cta-button">Join the Chamber</a>
@@ -48,18 +52,18 @@
     </section>
 
     <!-- Weather Section -->
-    <section class="weather">
-        <h2>Local Weather</h2>
-        <div class="weather-widget">
-            <p>Loading weather data...</p>
+    <section id="weather" class="weather">
+        <h2>Current Weather</h2>
+        <div id="weather-content">
+            <!-- Weather data will load here dynamically -->
         </div>
     </section>
-
-    <!-- Spotlight Section -->
-    <section class="spotlight">
+    
+    <!-- Member Spotlights Section -->
+    <section id="spotlight" class="spotlight">
         <h2>Member Spotlights</h2>
-        <div class="spotlight-grid" id="spotlightGrid">
-            <!-- Spotlight content will be dynamically inserted here -->
+        <div id="spotlight-grid" class="spotlight-grid">
+            <!-- Spotlight members will load here dynamically -->
         </div>
     </section>
 </main>
