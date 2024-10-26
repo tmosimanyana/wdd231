@@ -1,19 +1,26 @@
-@import url('normalize.css'); /* Importing Normalize.css at the beginning */
+/* Normalize styles */
+@import url('normalize.css');
 
-/* General Styles */
+/* Global Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f9f9f9;
+    line-height: 1.6;
     color: #333;
+    background-color: #f4f4f4;
 }
 
+/* Header Styles */
 header {
-    background-color: #3c763d; /* Dark Green */
+    background: #006400; /* Dark green */
     color: #fff;
-    padding: 1rem;
+    padding: 1rem 0;
     text-align: center;
+}
+
+nav {
+    margin: 0 auto;
 }
 
 nav ul {
@@ -29,126 +36,137 @@ nav ul li {
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    transition: color 0.3s;
 }
 
-h2 {
-    text-align: center;
-    margin: 1.5rem 0;
+nav ul li a:hover,
+nav ul li a:focus {
+    text-decoration: underline;
+    color: #ffeb3b; /* Highlight color on hover */
 }
 
-/* Member Container */
-#member-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem; /* Spacing between items */
-    padding: 1rem;
+/* Main Content Styles */
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #004d00; /* Slightly lighter green */
 }
 
 /* Member Card Styles */
-.member-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    text-align: center;
-    transition: box-shadow 0.3s; /* Smooth shadow transition */
-    width: 250px; /* Fixed width for grid */
-}
-
-.member-card img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-}
-
-/* Hover Effect for Member Cards */
-.member-card:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-}
-
-/* List View */
-.list-view {
-    display: block;
-}
-
-.list-item {
+#member-container {
     display: flex;
-    align-items: center;
-    border-bottom: 1px solid #ddd;
-    padding: 1rem 0;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.list-item img {
-    width: 50px; /* Smaller size for list view */
-    height: auto;
-    margin-right: 15px;
-}
-
-/* Toggle Button */
-#toggle-view {
-    margin: 1rem auto;
-    display: block;
-    padding: 0.5rem 1rem;
-    background-color: #3c763d;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s; /* Smooth transition */
-}
-
-#toggle-view:hover {
-    background-color: #2a542c; /* Darker Green */
-}
-
-/* Footer Styles */
-footer {
-    background-color: #3c763d;
-    color: #fff;
-    text-align: center;
-    padding: 1rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    #member-container {
-        flex-direction: column; /* Stack items on small screens */
-        align-items: center;
-    }
-
-    .member-card {
-        width: 90%; /* Wider cards for mobile */
-    }
-}
-
-@media (max-width: 600px) {
-    .member-card {
-        width: 100%; /* Full width on small screens */
-    }
-}
 .member-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    padding: 16px;
-    margin: 16px;
-    text-align: center;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 15px;
+    flex: 1 1 calc(30% - 20px); /* Responsive layout */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for shadow */
+}
+
+.member-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 .member-card img {
     max-width: 100%;
     height: auto;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
+.member-card h3 {
+    margin: 10px 0 5px; /* Margin for spacing */
+}
+
+.member-card p {
+    color: #666; /* Slightly darker color for description text */
+}
+
+/* List Styles */
+.member-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.member-list li {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+/* Button Styles */
+#toggle-view {
+    background-color: #004d00; /* Darker green */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#toggle-view:hover,
+#toggle-view:focus {
+    background-color: #006400; /* Highlight color on hover */
+}
+
+/* Footer Styles */
+footer {
+    background: #006400; /* Dark green */
+    color: #fff;
+    text-align: center;
+    padding: 15px 0;
+}
+
+#year {
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide by default */
+        flex-direction: column;
+        background: #006400; /* Same background as header */
+    }
+
+    nav ul.expanded {
+        display: flex; /* Show when expanded */
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Stack links vertically */
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    #member-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .member-card {
+        flex: 1 1 100%; /* Full width on mobile */
+    }
+}
+
+/* Additional Utility Classes */
 .grid-view {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 16px;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .list-view {

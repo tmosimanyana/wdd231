@@ -1,51 +1,45 @@
-// Fetch members data from JSON file
-async function fetchMembers() {
-    try {
-        const response = await fetch('data/members.json'); // Updated path if necessary
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const members = await response.json();
-        displayMembers(members, 'grid');
-    } catch (error) {
-        console.error('There has been a problem with your fetch operation:', error);
-    }
-}
+document.addEventListener("DOMContentLoaded", function() {
+    // Set current year
+    const yearElement = document.getElementById('year');
+    const currentYear = new Date().getFullYear();
+    yearElement.textContent = currentYear;
 
-// Function to display members in grid or list view
-function displayMembers(members, view) {
-    const container = document.getElementById('member-container');
-    container.innerHTML = ''; // Clear existing entries
+    // Set last modified date
+    const lastModifiedElement = document.getElementById('last-modified');
+    lastModifiedElement.textContent = document.lastModified;
+
+    // Toggle view between grid and list
+    const toggleViewButton = document.getElementById('toggle-view');
+    const memberContainer = document.getElementById('member-container');
+
+    toggleViewButton.addEventListener('click', function() {
+        if (memberContainer.classList.contains('grid-view')) {
+            memberContainer.classList.remove('grid-view');
+            memberContainer.classList.add('list-view');
+            toggleViewButton.textContent = 'Switch to Grid View';
+        } else {
+            memberContainer.classList.remove('list-view');
+            memberContainer.classList.add('grid-view');
+            toggleViewButton.textContent = 'Switch to List View';
+        }
+    });
+
+    // Example of adding member cards dynamically (You would replace this with your actual data fetching logic)
+    const members = [
+        { name: "Member One", description: "Description for Member One", imageUrl: "path/to/image1.jpg" },
+        { name: "Member Two", description: "Description for Member Two", imageUrl: "path/to/image2.jpg" },
+        { name: "Member Three", description: "Description for Member Three", imageUrl: "path/to/image3.jpg" },
+        // Add more members as needed
+    ];
 
     members.forEach(member => {
-        const memberCard = document.createElement('div');
-        memberCard.className = view === 'grid' ? 'member-card grid' : 'member-card list';
-
-        // Create HTML structure for member details
-        memberCard.innerHTML = `
-            <img src="${member.image}" alt="${member.name}" class="member-image">
+        const card = document.createElement('div');
+        card.classList.add('member-card');
+        card.innerHTML = `
+            <img src="${member.imageUrl}" alt="${member.name}">
             <h3>${member.name}</h3>
-            <p><strong>Address:</strong> ${member.address}</p>
-            <p><strong>Phone:</strong> ${member.phone}</p>
-            <p><strong>Membership Level:</strong> ${member.membershipLevel}</p>
+            <p>${member.description}</p>
         `;
-        container.appendChild(memberCard);
+        memberContainer.appendChild(card);
     });
-}
-
-// Toggle view functionality
-document.getElementById('toggle-view').addEventListener('click', function() {
-    const currentView = this.textContent.includes('List') ? 'grid' : 'list';
-    const members = JSON.parse(localStorage.getItem('members')) || []; // Check localStorage for members
-    displayMembers(members, currentView);
-    this.textContent = currentView === 'grid' ? 'Switch to List View' : 'Switch to Grid View';
 });
-
-// Call fetchMembers to load members on page load
-fetchMembers();
-
-// Update the last modified date
-document.getElementById('last-modified').textContent = document.lastModified;
-
-// Update the current year
-document.getElementById('year').textContent = new Date().getFullYear();
