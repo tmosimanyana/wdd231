@@ -1,73 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Business Directory | Kweneng Agriculture Chamber of Commerce</title>
-  <link rel="stylesheet" href="styles/style.css">
-  <script src="scripts/main.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Directory of members for the Kweneng Agriculture Chamber of Commerce">
+    <meta name="author" content="Tinny Bothepha Msimanyana">
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp"> <!-- Updated with actual image -->
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/directory.html">
+    <link rel="icon" href="favicon.ico"> <!-- Updated with actual favicon path -->
+    <title>Kweneng Agriculture Chamber of Commerce Directory</title>
+
+    <!-- Normalize.css -->
+    <link rel="stylesheet" href="styles/normalize.css"> <!-- Adjusted the path as needed -->
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="styles/styles.css"> <!-- Main CSS file -->
+    <link rel="stylesheet" href="styles/directory.css"> <!-- Directory-specific styles -->
 </head>
 <body>
+    <header>
+        <h1>Kweneng Agriculture Chamber of Commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Common Header and Navigation -->
-  <header>
-    <div class="container">
-      <img src="images/logo.webp" alt="Kweneng Agriculture Chamber of Commerce Logo" class="logo">
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="discover.html">Discover</a></li>
-          <li><a href="directory.html" class="active">Directory</a></li>
-          <li><a href="join.html">Join</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <main>
+        <h2>Member Directory</h2>
+        <button id="toggle-view">Toggle View</button>
+        <div id="member-container" class="grid-view">
+            <!-- Member cards will be dynamically inserted here -->
+        </div>
+    </main>
 
-  <!-- Main Content -->
-  <main>
-    <section class="directory-hero">
-      <h1>Local Business Directory</h1>
-      <p>Explore local businesses and organizations that make up our community.</p>
-    </section>
+    <footer>
+        <p>&copy; <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Contact: info@kwenengchamber.com | Phone: +267 123 4567</p>
+        <p>Developed by Your Full Name for WDD 231</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
 
-    <section class="directory-search">
-      <label for="search">Search Businesses:</label>
-      <input type="text" id="search" placeholder="Type to search...">
-    </section>
-
-    <section class="directory-list">
-      <div id="directoryContainer" class="business-list">
-        <!-- Business entries will populate here -->
-      </div>
-    </section>
-  </main>
-
-  <!-- Common Footer -->
-  <footer>
-    <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
-  </footer>
-
-  <!-- External JSON data file for Directory (add functionality in directory.js) -->
-  <script>
-    fetch('chamber/data/members.json')
-      .then(response => response.json())
-      .then(data => {
-        const directoryContainer = document.getElementById('directoryContainer');
-        data.members.forEach(member => {
-          const memberCard = document.createElement('div');
-          memberCard.classList.add('member-card');
-          memberCard.innerHTML = `
-            <h3>${member.name}</h3>
-            <p>${member.category}</p>
-            <p>${member.address}</p>
-            <a href="${member.website}" target="_blank">Visit Website</a>
-          `;
-          directoryContainer.appendChild(memberCard);
-        });
-      })
-      .catch(error => console.error('Error fetching directory data:', error));
-  </script>
-
+    <!-- JavaScript files -->
+    <script src="scripts/main.js" defer></script>
+    <script src="scripts/directory.js" defer></script> <!-- Include your directory-specific JavaScript here -->
 </body>
 </html>
