@@ -1,45 +1,78 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Set current year
-    const yearElement = document.getElementById('year');
-    const currentYear = new Date().getFullYear();
-    yearElement.textContent = currentYear;
+// scripts/directory.js
 
-    // Set last modified date
-    const lastModifiedElement = document.getElementById('last-modified');
-    lastModifiedElement.textContent = document.lastModified;
+const memberContainer = document.getElementById('member-container');
+const modal = document.createElement('div'); // Create modal
+modal.classList.add('modal');
+document.body.appendChild(modal);
 
-    // Toggle view between grid and list
-    const toggleViewButton = document.getElementById('toggle-view');
-    const memberContainer = document.getElementById('member-container');
+const closeModal = document.createElement('span');
+closeModal.classList.add('close');
+closeModal.textContent = '×';
+modal.appendChild(closeModal);
 
-    toggleViewButton.addEventListener('click', function() {
-        if (memberContainer.classList.contains('grid-view')) {
-            memberContainer.classList.remove('grid-view');
-            memberContainer.classList.add('list-view');
-            toggleViewButton.textContent = 'Switch to Grid View';
-        } else {
-            memberContainer.classList.remove('list-view');
-            memberContainer.classList.add('grid-view');
-            toggleViewButton.textContent = 'Switch to List View';
-        }
-    });
+const modalTitle = document.createElement('h3');
+modal.appendChild(modalTitle);
 
-    // Example of adding member cards dynamically (You would replace this with your actual data fetching logic)
-    const members = [
-        { name: "Member One", description: "Description for Member One", imageUrl: "path/to/image1.jpg" },
-        { name: "Member Two", description: "Description for Member Two", imageUrl: "path/to/image2.jpg" },
-        { name: "Member Three", description: "Description for Member Three", imageUrl: "path/to/image3.jpg" },
-        // Add more members as needed
-    ];
+const modalDetails = document.createElement('p');
+modal.appendChild(modalDetails);
 
+// Function to render members
+export function renderMembers(members) {
+    memberContainer.innerHTML = ''; // Clear existing members
     members.forEach(member => {
-        const card = document.createElement('div');
-        card.classList.add('member-card');
-        card.innerHTML = `
-            <img src="${member.imageUrl}" alt="${member.name}">
+        const memberCard = document.createElement('div');
+        memberCard.classList.add('member-card');
+        memberCard.innerHTML = `
+            <img src="${member.image}" alt="${member.name}" />
             <h3>${member.name}</h3>
-            <p>${member.description}</p>
+            <p>${member.address}</p>
+            <button class="view-details" data-name="${member.name}" data-info="${member.phone}, ${member.membershipLevel}">View Details</button>
         `;
-        memberContainer.appendChild(card);
+        memberContainer.appendChild(memberCard);
+
+        // Add event listener for the modal
+        const viewDetailsButton = memberCard.querySelector('.view-details');
+        viewDetailsButton.addEventListener('click', () => {
+            showModal(member.name, `Phone: ${member.phone}<br>Membership Level: ${member.membershipLevel}`);
+        });
     });
+}
+
+// Function to toggle between list and grid view
+export function toggleView() {
+    memberContainer.classList.toggle('grid-view');
+    memberContainer.classList.toggle('list-view');
+    const currentView = memberContainer.classList.contains('grid-view') ? 'grid' : 'list';
+    document.getElementById('toggle-view').textContent = currentView === 'grid' ? 'Switch to List View' : 'Switch to Grid View';
+
+    // Store user preference in localStorage
+    localStorage.setItem('viewMode', currentView);
+}
+
+// Function to show modal with member details
+export function showModal(name, info) {
+    modal.style.display = 'block';
+    modalTitle.textContent = name;
+    modalDetails.innerHTML = info;
+
+    // Close modal when clicking on <span> (x)
+    closeModal.onclick = function() {
+        modal.style.display = 'none';
+    };
+
+    // Close modal when clicking anywhere outside of the modal
+    window.onclick = function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+}
+
+// Initialize view mode from localStorage
+document.addEventListener('DOMContentLoaded', () => {
+    const storedViewMode = localStorage.getItem('viewMode');
+    if (storedViewMode) {
+        memberContainer.classList.toggle(storedViewMode === 'grid' ? 'grid-view' : 'list-view');
+        document.getElementById('toggle-view').textContent = storedViewMode === 'grid' ? 'Switch to List View' : 'Switch to Grid View';
+    }
 });
