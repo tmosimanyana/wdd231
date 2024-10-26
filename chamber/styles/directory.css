@@ -1,49 +1,126 @@
 /* styles.css */
 @import url('normalize.css'); /* Importing Normalize.css at the beginning */
-
-/* General styles */
+/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    background-color: #f4f4f4;
+    background-color: #f9f9f9;
     color: #333;
 }
 
 header {
-    background: #35424a;
-    color: #ffffff;
+    background-color: #3c763d; /* Dark Green */
+    color: #fff;
     padding: 1rem;
     text-align: center;
 }
 
-nav {
-    display: flex;
-    justify-content: center;
-    background: #35424a;
+nav ul {
+    list-style-type: none;
+    padding: 0;
 }
 
-nav a {
-    color: #ffffff;
-    padding: 1rem;
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
     text-decoration: none;
 }
 
-nav a:hover {
-    background: #e8491d;
+h2 {
+    text-align: center;
+    margin: 1.5rem 0;
 }
 
+/* Member Container */
+#member-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem; /* Spacing between items */
+    padding: 1rem;
+}
+
+/* Grid View */
+.grid-view {
+    display: flex;
+}
+
+/* Member Card Styles */
+.member-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    width: 250px; /* Fixed width for grid */
+    text-align: center;
+}
+
+.member-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* List View */
+.list-view {
+    display: block;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+}
+
+.list-item img {
+    width: 50px; /* Smaller size for list view */
+    height: auto;
+    margin-right: 15px;
+}
+
+/* Toggle Button */
+#toggle-view {
+    margin: 1rem auto;
+    display: block;
+    padding: 0.5rem 1rem;
+    background-color: #3c763d;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#toggle-view:hover {
+    background-color: #2a542c; /* Darker Green */
+}
+
+/* Footer Styles */
 footer {
+    background-color: #3c763d;
+    color: #fff;
     text-align: center;
     padding: 1rem;
-    background: #35424a;
-    color: #ffffff;
     position: relative;
     bottom: 0;
     width: 100%;
 }
 
-#year, #last-modified {
-    font-weight: bold;
+/* Responsive Design */
+@media (max-width: 768px) {
+    #member-container {
+        flex-direction: column; /* Stack items on small screens */
+        align-items: center;
+    }
+
+    .member-card {
+        width: 90%; /* Wider cards for mobile */
+    }
 }
+
