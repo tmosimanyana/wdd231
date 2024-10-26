@@ -1,88 +1,2029 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Home page of the Kweneng Agriculture Chamber of Commerce">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <title>Kweneng Agriculture Chamber of Commerce</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- Version 2.2.2 -->
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="none" />
+    <link
+      rel="icon"
+      href="https://edge.ldscdn.org/cdn2/common/images/logos/favicon-lds-1.ico"
+    />
+    <link
+      href="https://foundry.churchofjesuschrist.org/Foundry/v1/Ensign:Sans:300/css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script>
+      window.onerror = function (e) {
+        console.log(e);
+      };
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/styles.min.css">
-    
-    <!-- Social Media Meta -->
-    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero.webp">
-</head>
-<body>
+    <!-- Session Coordinator Script -->
+    <script src="https://op.churchofjesuschrist.org/id.js"></script>
 
-    <!-- Header -->
-    <header role="banner">
-        <div class="logo">
-            <h1>Kweneng Agriculture Chamber of Commerce</h1>
+    <!-- Core widget js and css -->
+<script type="text/javascript"
+        src="https://ok7static.oktacdn.com/assets/js/sdk/okta-signin-widget/7.11.3/js/okta-sign-in.min.js" integrity="sha384-hERZas4gLX9JIlbgLqH4t5X5ergQR7Qh1Nw4LHiyUCjuNfN33ai1N3/sKu4OLF/w" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+      type="text/css"
+      href="https://ok7static.oktacdn.com/assets/js/sdk/okta-signin-widget/7.11.3/css/okta-sign-in.min.css"
+      integrity="sha384-YtU89lM0fecOULmzvCevpy8Mwpfa2V1C9JG+K57ceTle0dj6yZKAQ/t6ZEmGlK7c"
+      crossorigin="anonymous">
+
+<!-- Customizable css theme options. Link your own stylesheet or override styles inline. -->
+<link rel="stylesheet"
+      type="text/css" href="" integrity="" crossorigin="anonymous">
+
+<!-- styles for custom sign in -->
+<link rel="stylesheet" type="text/css" href="https://ok7static.oktacdn.com/assets/loginpage/css/custom-signin.a91af2abfd04662e499bd3e151150dbf.css" integrity="sha384-BhMidK4jYIQaVFKNVHUvbfdgrt4NVlnlTZMsOMWLdWkme3j1JcshKDNQiMssd7sN" crossorigin="anonymous">
+
+
+    <script>
+      function getClientId() {
+        if (!OktaUtil) return "";
+
+        var requestContext = OktaUtil.getRequestContext();
+        if (
+          requestContext &&
+          requestContext.target &&
+          requestContext.target.clientId
+        ) {
+          return requestContext.target.clientId;
+        } else if (
+          requestContext &&
+          requestContext.authentication &&
+          requestContext.authentication.issuer &&
+          requestContext.authentication.issuer.id
+        ) {
+          return requestContext.authentication.issuer.id;
+        } else {
+          return "";
+        }
+      }
+
+      function getScope() {
+        if (!OktaUtil) return "";
+        var requestContext = OktaUtil.getRequestContext();
+        if (
+          requestContext &&
+          requestContext.authentication &&
+          requestContext.authentication.request &&
+          requestContext.authentication.request.scope
+        ) {
+          return requestContext.authentication.request.scope;
+        } else {
+          return "";
+        }
+      }
+    </script>
+    <style>
+      /* Globals */
+
+      * {
+        font-size: 100%;
+        font-family: "Ensign:Sans", Open Sans, noto sans, Helvetica, Arial,
+          system-ui, -apple-system !important;
+      }
+
+      body {
+        min-height: 100vh;
+        display: grid;
+        grid-template-rows: 80px 1fr 400px;
+        grid-template-columns: 100%;
+        background-color: #ffffff;
+      }
+
+      #okta-sign-in a {
+        text-decoration: none;
+        color: #157493 !important;
+      }
+
+      #okta-sign-in p {
+        font-size: 14px !important;
+        color: #212225;
+      }
+
+      #okta-sign-in.auth-container.main-container {
+        color: #212225 !important;
+      }
+
+      /* Header */
+      #header-bar {
+        display: flex;
+        height: 80px;
+        border-bottom: 1px solid #d0d3d3;
+      }
+
+      /* Language Select */
+      #language-selection {
+        position: absolute;
+        top: -35px;
+        width: 100%;
+        right: 10px;
+      }
+      #language-options {
+        color: #212225;
+      }
+      .cust-sub-header-span {
+        font-size: 16px;
+        position: absolute;
+        top: 63px;
+        right: 10px;
+        color: #212225;
+      }
+      .cust-sub-header-span:hover {
+        color: #007da5;
+      }
+      .cust-sub-header-lang {
+        list-style-type: none;
+        text-align: left;
+        position: absolute;
+        right: 10px;
+        top: 95px;
+        height: 45%;
+        min-height: 500px;
+        display: none;
+        z-index: 10;
+        margin: 0;
+        overflow: auto;
+        padding: 16px;
+        box-shadow: 0 2px 4px 0 #a9adad;
+        background-color: #ffffff;
+        border: 1px solid #e0e2e2;
+        border-radius: 2px;
+        width: 168px;
+      }
+      .lang-item {
+        cursor: pointer;
+        padding: 6px 25px 6px 20px !important;
+        background: #ffffff;
+        text-decoration: none;
+        font-family: "Ensign:Sans", Arial, "noto sans", sans-serif;
+        font-weight: 400;
+        line-height: 1.4;
+        font-size: 0.875rem;
+        text-align: left;
+        border-inline-start: 4px solid transparent;
+        color: #212225;
+        text-decoration: none;
+        padding-block: 0.5rem !important;
+        padding-inline: 20px 1rem !important;
+      }
+      .lang-item:hover {
+        color: #157493;
+        border-inline-start: 4px solid #157493;
+      }
+      .lang-item-active {
+        cursor: pointer;
+        padding: 6px 25px 6px 20px !important;
+        background: #eff0f0;
+        text-decoration: none;
+        font-family: "Ensign:Sans", Arial, "noto sans", sans-serif;
+        font-weight: 400;
+        line-height: 1.4;
+        font-size: 0.875rem;
+        text-align: left;
+        border-inline-start: 4px solid #157493;
+        color: #157493;
+        text-decoration: none;
+        padding-block: 0.5rem !important;
+        padding-inline: 20px 1rem !important;
+      }
+      .cust-lang-box {
+        display: grid;
+        gap: 0px;
+        grid-auto-columns: 100%;
+        align-content: normal;
+        box-sizing: border-box;
+      }
+
+      /* Global Protect Graphic */
+      #globalProtectContainer {
+        display: none;
+        margin-top: 10px;
+        height: 100px;
+      }
+
+      /* Widget */
+      #okta-sign-in {
+        overflow: visible;
+        margin: 64px auto 8px;
+        min-width: 400px;
+        min-height: 350px;
+        border-radius: 2px;
+        border-color: #e4e6e6 !important;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) !important;
+      }
+
+      /* Password Header */
+      #okta-sign-in .auth-org-logo {
+        display: none !important;
+      }
+      #okta-sign-in .auth-content {
+        padding: 16px 32px;
+      }
+      #okta-sign-in .auth-header {
+        display: none !important;
+      }
+      #okta-sign-in .siw-main-header .beacon-container {
+        position: relative !important;
+        top: -25px !important;
+        right: unset !important;
+        bottom: unset !important;
+        left: unset !important;
+        height: 50px !important;
+      }
+      .mfa-verify-password h2 {
+        display: none;
+      }
+      #okta-sign-in.auth-container .mfa-okta-password {
+        height: 40px;
+        width: 40px;
+        margin: 0px auto;
+        border-radius: 50%;
+        border: 1px solid #a7a7a7;
+      }
+      #okta-sign-in .auth-beacon-border {
+        display: none !important;
+      }
+      #okta-sign-in .auth-beacon {
+        background-clip: content-box;
+        background-position: 50%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        border-radius: 50%;
+        color: #fff;
+        margin: 0 auto;
+        top: 30px;
+        height: 50px;
+        width: 50px;
+      }
+      #okta-sign-in .beacon-blank {
+        display: none !important;
+      }
+
+      /* Username Identifier */
+      #okta-sign-in .siw-main-view .siw-main-body .identifier-container {
+        margin: 24px auto 32px;
+      }
+      #okta-sign-in .siw-main-view .siw-main-body .identifier {
+        font-weight: 400;
+        color: #212225;
+        font-size: 18px;
+      }
+
+      /* Forgot Password and Create Account Links */
+      #okta-sign-in .link {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      /* Password Input */
+      #okta-sign-in div[data-se="o-form-fieldset-credentials.passcode"] {
+        margin-top: 16px !important;
+      }
+      #okta-sign-in .o-form .input-fix input[type="password"] {
+        border-radius: 2px;
+        border: 1px solid #878a8c !important;
+        height: 40px;
+      }
+
+      /* Password Toggle */
+      .password-toggle {
+        position: relative;
+        bottom: 5px;
+      }
+      .o-form-has-errors .password-toggle {
+        right: 25px;
+      }
+
+      /* Main Title */
+      #okta-sign-in.auth-container h2 {
+        font-size: 32px;
+        text-align: center;
+        color: #212225;
+        margin-top: 0px;
+        margin-bottom: 16px;
+        font-weight: 300;
+      }
+
+      /* Form Labels */
+      #okta-sign-in.auth-container .okta-form-label {
+        margin-left: 8px;
+        font-weight: 400;
+        color: #53575b;
+        font-size: 14px;
+      }
+      /* Password Heading */
+      #form45 > div.o-form-content.o-form-theme.clearfix > h2 {
+        display: none;
+      }
+
+      /* Input Boxes */
+      #okta-sign-in .o-form .input-fix input[type="text"] {
+        border-radius: 2px;
+        border: 1px solid #878a8c !important;
+        height: 40px;
+      }
+      #okta-sign-in .o-form .input-fix input[type="text"]:focus,
+      #okta-sign-in .o-form .input-fix input[type="password"]:focus {
+        border: 1px solid #007da5 !important;
+        box-shadow: none !important;
+      }
+      #okta-sign-in .o-form .input-fix {
+        border: none !important;
+        box-shadow: none !important;
+      }
+      #okta-sign-in .o-form .o-form-has-errors input[type="text"],
+      #okta-sign-in .o-form .o-form-has-errors input[type="password"] {
+        border-radius: 2px;
+        border: 1px solid #b00504 !important;
+        height: 40px;
+      }
+
+      /* Check Box Label */
+      #okta-sign-in .o-form .custom-checkbox label {
+        font-weight: 400;
+        color: #53575b;
+        font-size: 14px;
+      }
+
+      /* Buttons */
+      #okta-sign-in .button {
+        line-height: unset !important;
+      }
+      #okta-sign-in.auth-container .button-primary,
+      #okta-sign-in.auth-container a.retry-webauthn {
+        border: none !important;
+        box-shadow: none !important;
+        background: #006184 !important;
+        background-image: none !important;
+        border-radius: 2px !important;
+        font-family: "Ensign:Sans", ldslat, Open Sans, noto sans, Helvetica,
+          Arial, system-ui, -apple-system !important;
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-size: 16px !important;
+        text-align: center !important;
+        color: #ffffff !important;
+        padding: 7px 16px !important;
+        width: unset !important;
+        height: unset !important;
+      }
+      #okta-sign-in .button-primary:hover {
+        background-color: #007da5 !important;
+      }
+      #okta-sign-in .o-form-button-bar {
+        padding: 8px 0px 24px !important;
+        margin-top: 0px !important;
+      }
+      #okta-sign-in .o-form-button-bar .button {
+        height: 40px;
+        width: unset !important;
+        margin-top: 16px;
+      }
+      #okta-sign-in .o-form .o-form-fieldset:last-child {
+        margin-bottom: 0px;
+      }
+      #okta-sign-in a.js-cancel {
+        border: 0px !important;
+        background-image: none !important;
+        box-shadow: none !important;
+        background: #ffffff !important;
+        border-radius: 2px !important;
+        font-family: "Ensign:Sans", ldslat, Open Sans, noto sans, Helvetica,
+          Arial, system-ui, -apple-system !important;
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-size: 14px !important;
+        text-align: center !important;
+        color: #006184 !important;
+        padding: 7px 16px !important;
+        margin-top: 8px;
+        overflow: visible;
+        display: inline-flex;
+        align-items: center;
+        border-radius: 0.125rem;
+        width: fit-content;
+        max-width: 18rem;
+        vertical-align: top;
+        text-decoration: none;
+      }
+      #okta-sign-in a.js-cancel:hover {
+        background: #eff0f0 !important;
+      }
+      #okta-sign-in a.js-cancel:focus {
+        background: #ffffff !important;
+        border: 2px solid #2360c5 !important;
+      }
+      #okta-sign-in a.js-cancel:active {
+        background: #e0e2e2 !important;
+        border: 0px !important;
+      }
+      #okta-sign-in a.select-factor {
+        border: none !important;
+        box-shadow: none !important;
+        background: #006184 !important;
+        background-image: none !important;
+        border-radius: 2px !important;
+        font-family: "Ensign:Sans", ldslat, Open Sans, noto sans, Helvetica,
+          Arial, system-ui, -apple-system !important;
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-size: 14px !important;
+        text-align: center !important;
+        color: #ffffff !important;
+        padding: 7px 16px !important;
+        height: unset !important;
+      }
+      #okta-sign-in a.select-factor:hover {
+        background-color: #007da5 !important;
+      }
+      #okta-sign-in a.button-primary.link-button-disabled {
+        border: none !important;
+        box-shadow: none !important;
+        background: #e2e2e2 !important;
+        background-image: none !important;
+        border-radius: 2px !important;
+        font-family: "Ensign:Sans", ldslat, Open Sans, noto sans, Helvetica,
+          Arial, system-ui, -apple-system !important;
+        font-style: normal !important;
+        font-weight: normal !important;
+        font-size: 16px !important;
+        text-align: center !important;
+        color: #9b9c9c !important;
+        padding: 7px 16px !important;
+        width: unset !important;
+        height: unset !important;
+      }
+      #okta-sign-in .default-custom-button.link-button {
+        display: inline;
+      }
+      #okta-sign-in .o-form-theme {
+        padding: 0px !important;
+      }
+      .back-to-settings .back-to-settings-link-tb {
+        top: 92px;
+      }
+
+      /* Password Links */
+      #okta-sign-in .auth-footer a[data-se="forgot-password"] {
+        display: none !important;
+      }
+      #okta-sign-in .auth-footer {
+        font-size: 14px;
+      }
+
+      /* Explain Sub Heading */
+      #okta-sign-in.auth-container .o-form-explain,
+      #okta-sign-in div.okta-form-subtitle {
+        color: #212225 !important;
+        font-size: 16px !important;
+        margin: 16px 0px 32px !important;
+      }
+      #okta-sign-in div.okta-form-subtitle p {
+        color: #212225 !important;
+        font-size: 14px !important;
+        margin: 16px 0px -25px !important;
+      }
+
+      /* Password Screen Icon */
+      .authenticator-icon-container .mfa-okta-password {
+        position: relative !important;
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+        background-size: 38px 38px;
+        border: 1px solid #ccc !important;
+        border-radius: 50% !important;
+        height: 38px !important;
+        width: 38px !important;
+        margin: 0px !important;
+        top: 0px !important;
+        left: 0px !important;
+        right: 0px !important;
+        bottom: 0px !important;
+      }
+
+      /* MFA TOTP Input */
+      #okta-sign-in
+        .o-form-content
+        div[data-se="o-form-fieldset-credentials.totp"] {
+        margin-top: 45px;
+      }
+
+      /* MFA Headers */
+      #okta-sign-in form .identifier-container {
+        margin-bottom: 32px;
+      }
+
+      /* Google Authenticator Code */
+      #okta-sign-in form.oie-enroll-google-authenticator .o-form-fieldset {
+        margin: 16px 0px !important;
+      }
+
+      /* MFA Secutiy Key Text */
+      #okta-sign-in
+        .siw-main-view
+        .oie-verify-webauthn
+        .idx-webauthn-verify-text {
+        margin: 45px 0px 16px !important;
+      }
+
+      /* MFA Enrollment Methods */
+      #okta-sign-in .authenticator-row .authenticator-usage-text {
+        display: none;
+      }
+      #okta-sign-in.auth-container h3 {
+        font-family: "Ensign:Sans", Roboto, Arial, sans-serif;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 21.6px;
+        color: #212225;
+      }
+      #okta-sign-in .authenticator-enroll-list .authenticator-list-title {
+        margin-bottom: 16px !important;
+        color: #212225 !important;
+        font-size: 16px !important;
+        font-weight: bold !important;
+      }
+      #okta-sign-in.auth-container .okta-form-input-field input[disabled] {
+        background-color: #eff0f0 !important;
+        color: #53575b !important;
+      }
+      #okta-sign-in.auth-container
+        .okta-form-input-field
+        input[disabled]::placeholder {
+        color: #53575b !important;
+      }
+      #okta-sign-in .o-form-disabled {
+        opacity: unset !important;
+      }
+
+      /* Footer */
+      footer {
+        padding: 30px 16px 16px;
+        background: #eff0f0;
+        font-size: 12px;
+        font-weight: 200;
+        line-height: 1.4;
+        z-index: 99;
+        margin-top: 50px;
+      }
+      #PFfooterLegal {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        line-height: 1.4;
+        position: relative;
+        text-align: center;
+        font-weight: 300;
+      }
+      .pf-footer * {
+        font-size: 13px;
+        color: #212225;
+      }
+      .pf-footer__legal {
+        padding-top: 16px;
+      }
+      .pf-footer__legal a,
+      .pf-footer__legal a:hover,
+      .pf-footer__legal a:visited {
+        color: #212225;
+        padding-right: 5px;
+      }
+      .pf-footer__cells {
+        margin: 9px auto -7px;
+      }
+      #PFfooterLegal p {
+        font-size: 12px;
+      }
+      #PFmainFooter #PFsymbol img {
+        height: 228px;
+      }
+      #PFmainFooter #PFfooterLogo .mainLogo {
+        position: absolute;
+        left: 2px;
+        bottom: 4px;
+        height: 57px;
+        width: 113px;
+      }
+      #copyright-text {
+        color: #53575b;
+        font-weight: 300;
+        line-height: 16.8px;
+      }
+      #rights-url:hover,
+      #privacy-url:hover {
+        text-decoration: underline;
+      }
+      #rights-url,
+      #privacy-url {
+        text-decoration: none;
+      }
+
+      /* Error Boxes */
+      #okta-sign-in .o-form-error-container {
+        top: 8px !important;
+      }
+      #okta-sign-in div.infobox-error {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) !important;
+        border-radius: 2px;
+        border: 1px solid #a7a7a7;
+      }
+      #okta-sign-in .infobox-error:before {
+        background-color: #b00504;
+      }
+      #okta-sign-in .infobox:before {
+        width: 8px;
+      }
+      #okta-sign-in
+        .o-form-error-container
+        .infobox-error
+        span[class*="error"]:before {
+        color: #b00504 !important;
+        content: "\e055";
+        font-size: 24px;
+        margin-left: 7px;
+      }
+      #okta-sign-in .infobox-error p {
+        font-size: 14px !important;
+        color: #212225;
+      }
+
+      /* Warning Boxes */
+      #okta-sign-in div.infobox-warning {
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2) !important;
+        border-radius: 2px;
+        border: 1px solid #a7a7a7;
+      }
+      #okta-sign-in .infobox-warning:before {
+        background-color: #ec7000;
+      }
+      #okta-sign-in span[class*="warning"]:before {
+        color: #ec7000 !important;
+        content: "\e055";
+        font-size: 24px;
+        margin-left: 7px;
+      }
+      #okta-sign-in .infobox-warning p {
+        font-size: 14px !important;
+        color: #212225;
+      }
+
+      /* Input Error */
+      #okta-sign-in.auth-container .o-form-explain.okta-form-input-error {
+        left: -10px;
+        font-size: 13px !important;
+        color: #b00504 !important;
+        font-weight: 400;
+        margin: 0px !important;
+      }
+      #okta-sign-in .o-form-input-error .icon-16 {
+        position: absolute !important;
+        top: -30px;
+        right: 20px;
+        left: unset !important;
+      }
+      #okta-sign-in .error-16-small:before {
+        color: #b00504 !important;
+      }
+      #okta-sign-in [class*="-16"]:before {
+        font-size: 20px !important;
+      }
+
+      /* Mobile Styles */
+      @media only screen and (max-width: 600px) {
+        body {
+          grid-template-rows: 75px 1fr 400px;
+        }
+
+        #header-bar {
+          height: 74px;
+        }
+
+        .logo {
+          position: absolute;
+          left: 50%;
+          margin-left: -75px;
+        }
+
+        .cust-sub-header-lang {
+          min-height: 350px;
+          z-index: 99999;
+        }
+
+        #okta-sign-in {
+          margin: 0px auto 32px !important;
+        }
+
+        #okta-sign-in.auth-container.main-container {
+          box-shadow: none !important;
+          border: 0px !important;
+        }
+
+        #okta-sign-in .auth-content {
+          padding: 0px 32px;
+        }
+
+        .back-to-settings .back-to-settings-link-tb {
+          top: 590px;
+        }
+        #okta-sign-in .siw-main-header .beacon-container {
+          top: -15px !important;
+        }
+        #okta-sign-in .siw-main-body .identifier-container {
+          margin: 32px auto 0px !important;
+        }
+      }
+    </style>
+    <title>The Church of Jesus Christ of Latter-day Saints</title>
+  </head>
+
+  <body style="margin: 0px">
+    <div id="header-bar">
+      <div class="symbol">
+        <div
+          style="
+            background-color: #007da5;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 62px;
+            padding: 0;
+            cursor: pointer;
+          "
+        >
+          <img
+            src="https://assets.churchofjesuschrist.org/7b55cb4ed77bf166bb87a86696c4f7e5375908ac.png"
+            alt="The Church of Jesus Christ of Latter-day Saints"
+            loading="lazy"
+            style="height: 44px; margin-bottom: 4px"
+            class="sc-voqve2-0 ktWpyD"
+          />
         </div>
-        <nav aria-label="Primary">
-            <ul>
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="membership.html">Join</a></li>
-                <li><a href="discover.html">Discover</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <!-- Main Content -->
-    <main>
-        <!-- Hero Image -->
-        <section class="hero">
-            <img src="images/hero-medium.webp" alt="Kweneng Agriculture Chamber Hero" class="hero-image">
-            <div class="hero-text">
-                <h2>Empowering Agriculture in Kweneng</h2>
-                <a href="membership.html" class="cta-button">Join the Chamber</a>
-            </div>
-        </section>
-
-        <!-- Current Events -->
-        <section class="events" aria-labelledby="events-title">
-            <h2 id="events-title">Upcoming Events</h2>
-            <ul>
-                <li>Annual Agricultural Summit - November 10th, 2024</li>
-                <li>Local Produce Market Day - December 5th, 2024</li>
-                <!-- Add additional events as needed -->
-            </ul>
-        </section>
-
-        <!-- Weather Section -->
-        <section id="weather" class="weather" aria-labelledby="weather-title">
-            <h2 id="weather-title">Current Weather</h2>
-            <div id="weather-content">
-                <!-- Weather data will load here dynamically -->
-            </div>
-        </section>
-
-        <!-- Member Spotlights Section -->
-        <section id="spotlight" class="spotlight" aria-labelledby="spotlight-title">
-            <h2 id="spotlight-title">Member Spotlights</h2>
-            <div id="spotlight-grid" class="spotlight-grid">
-                <!-- Spotlight members will load here dynamically -->
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer role="contentinfo">
-        <p>© <time id="year"></time> Kweneng Agriculture Chamber of Commerce</p>
-        <p>Website developed by Tinny Bothepha Mosimanyana, WDD 231 Class Project</p>
-        <p>Last modified: <time id="lastModified"></time></p>
+      </div>
+      <svg
+        origin="start"
+        viewBox="8 0 42 40"
+        xmlns="http://www.w3.org/2000/svg"
+        style="border-left: 2px solid #007da5"
+        class="sc-18mnlt2-1 kQikTT"
+      >
+        <defs>
+          <linearGradient
+            x1="50%"
+            y1="0%"
+            x2="50%"
+            y2="100%"
+            id="eden-light-rays-regular-a-007da5"
+          >
+            <stop stop-color="#007da5" stop-opacity=".6" offset="0%"></stop>
+            <stop stop-color="#007da5" stop-opacity=".25" offset="100%"></stop>
+          </linearGradient>
+          <linearGradient
+            x1="50%"
+            y1="0%"
+            x2="50%"
+            y2="100%"
+            id="eden-light-rays-regular-b-007da5"
+          >
+            <stop stop-color="#007da5" stop-opacity=".35" offset="0%"></stop>
+            <stop stop-color="#007da5" stop-opacity=".15" offset="100%"></stop>
+          </linearGradient>
+          <linearGradient
+            x1="0%"
+            y1="50%"
+            x2="98.607%"
+            y2="50%"
+            id="eden-light-rays-regular-c-007da5"
+          >
+            <stop stop-color="#007da5" stop-opacity=".6" offset="0%"></stop>
+            <stop stop-color="#007da5" stop-opacity=".35" offset="100%"></stop>
+          </linearGradient>
+        </defs>
+        <path
+          fill="url(#eden-light-rays-regular-a-007da5)"
+          d="M0 0v2.586l39.992 7.757V0z"
+          transform="rotate(-90 24 16)"
+        ></path>
+        <path
+          fill="url(#eden-light-rays-regular-b-007da5)"
+          d="M0 0v25.984L36.07 0z"
+          transform="rotate(-90 24 16)"
+        ></path>
+        <path
+          fill="url(#eden-light-rays-regular-a-007da5)"
+          d="M0 0v15.641L39.992 0z"
+          transform="rotate(-90 24 16)"
+        ></path>
+        <path
+          fill="url(#eden-light-rays-regular-c-007da5)"
+          d="M0 2.598h39.992V0H0z"
+          transform="rotate(-90 24 16)"
+        ></path>
+        <path fill="#007da5" transform="scale(1.05,1)" d="M0 0h8v40H0z"></path>
+      </svg>
+      <div class="logo">
+        <a id="headerLink">
+          <img
+            id="headerLogo"
+            src="https://www.churchofjesuschrist.org/services/platform/v4/resources/static/logo/eng.svg"
+            alt="The Church of Jesus Christ of Latter-day Saints"
+            loading="lazy"
+            height="78px"
+            style="margin: 0px; padding: 0px"
+            class="sc-voqve2-0 ktWpyD"
+          />
+        </a>
+      </div>
+    </div>
+    <div id="language-selection" data-breadcrumbs="false">
+      <span
+        id="language-selector"
+        style="cursor: pointer"
+        role="button"
+        tabindex="0"
+      >
+        <span class="cust-sub-header-span">
+          <svg
+            style="width: 24px; height: 24px"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+            role="presentation"
+            class="language-icon"
+          >
+            <path
+              class="language-icon"
+              fill="currentColor"
+              d="M13.251 15.256c-.992-1-2.413-2.37-2.719-2.662l.3-.334c.933-1.05 1.566-1.906 2.197-3.038.539-.968 1.049-2.108 1.567-3.522H17.5V4.2h-7.25V2h-1.5v2.2H1.5v1.5h11.494c-.425 1.106-.843 2.015-1.275 2.792-.572 1.027-1.142 1.797-2.009 2.772l-.22.246C8.33 10.24 7.508 9.1 7.01 8h-1.62c.549 1.509 1.565 2.975 3.081 4.618a84.95 84.95 0 0 1-1.727 1.754l-.231.23a213.472 213.472 0 0 1-3.24 3.128l1.03 1.091a130.917 130.917 0 0 0 1.02-.972c.764-.733 1.529-1.475 2.243-2.18l.234-.232a87.831 87.831 0 0 0 1.716-1.74c.457.439 2.313 2.23 3.146 3.098l.59-1.539zM20.707 22h1.967l-4.325-11.978h-2.008L12.016 22h1.934l1.096-3.237h4.565L20.707 22zm-3.404-9.986h.05l1.785 5.255h-3.62l1.785-5.255z"
+            ></path>
+          </svg>
+        </span>
+        <span id="headerSelectedLang" style="display: none">English</span>
+      </span>
+      <div class="cust-lang-box">
+        <ul id="language-options" class="cust-sub-header-lang">
+          <li id="dan" class="lang-item">Dansk</li>
+          <li id="deu" class="lang-item">Deutsch</li>
+          <li id="ell" class="lang-item">Ελληνικά</li>
+          <li id="eng" class="lang-item">English</li>
+          <li id="spa" class="lang-item">Español</li>
+          <li id="fra" class="lang-item">Français</li>
+          <li id="ind" class="lang-item">Indonesia</li>
+          <li id="ita" class="lang-item">Italiano</li>
+          <li id="hun" class="lang-item">Magyar</li>
+          <li id="msa" class="lang-item">Malay</li>
+          <li id="nld" class="lang-item">Nederlands</li>
+          <li id="nor" class="lang-item">Norsk</li>
+          <li id="pol" class="lang-item">polski</li>
+          <li id="por" class="lang-item">Português</li>
+          <li id="ron" class="lang-item">română</li>
+          <li id="fin" class="lang-item">suomi</li>
+          <li id="swe" class="lang-item">Svenska</li>
+          <li id="tur" class="lang-item">Türkçe</li>
+          <li id="vie" class="lang-item">Tiếng Việt</li>
+          <li id="ces" class="lang-item">Čeština</li>
+          <li id="rus" class="lang-item">Pу́сский</li>
+          <li id="ukr" class="lang-item">українська</li>
+          <li id="tha" class="lang-item">ไทย</li>
+          <li id="zho" class="lang-item">中文</li>
+          <li id="jpn" class="lang-item">日本語</li>
+          <li id="zhs" class="lang-item">简体中文</li>
+          <li id="kor" class="lang-item">한국어</li>
+        </ul>
+      </div>
+    </div>
+    <div id="globalProtectContainer" class="center">
+      <img
+        id="globalProtect"
+        src="https://d1uwgx1g29ldj8.cloudfront.net/global-protect/images/PaloAlto-GlobalProtect-image.jpg"
+        alt="Global Protect"
+        style="display: none; margin: auto"
+        height="100px"
+      />
+    </div>
+    <div id="okta-login-container" style="margin-top: 0px"></div>
+    <footer id="PFmainFooter" role="contentinfo" style="text-align: center">
+      <div id="PFfooterLogo">
+        <a
+          class="PFhomeLink"
+          style="position: relative"
+          target="_blank"
+          id="footerLink"
+        >
+          <picture id="PFsymbol" loading="lazy" alt="" height="225" width="115">
+            <source
+              srcset="
+                https://www.churchofjesuschrist.org/services/platform/v4/resources/static/logo/symbol.webp
+              "
+              type="image/webp"
+            />
+            <source
+              srcset="
+                https://www.churchofjesuschrist.org/services/platform/v4/resources/static/logo/symbol.png
+              "
+              sizes="2x"
+              type="image/png"
+            />
+            <img
+              src="https://www.churchofjesuschrist.org/services/platform/v4/resources/static/logo/symbol.png"
+              height="225"
+            />
+          </picture>
+          <picture class="mainLogo" loading="lazy" height="58" width="113">
+            <img
+              id="footerLogo"
+              src="https://www.churchofjesuschrist.org/services/platform/v4/resources/static/logo/eng.svg"
+              alt="The Church of Jesus Christ of Latter-day Saints"
+            />
+          </picture>
+        </a>
+      </div>
+      <div id="PFfooterLegal" class="pf-footer__legal">
+        <p style="margin-bottom: 5px" class="pf-footer">
+          <a id="rights-url" target="_blank" rel="noreferrer noopener">
+            Terms of Use (Updated 2021-04-13)</a
+          >
+          <a id="privacy-url" target="_blank" rel="noreferrer noopener">
+            Privacy Notice (Updated 2021-04-06)</a
+          >
+        </p>
+        <p style="margin-top: 0px">
+          <span id="copyright-text"
+            >© 2024 by Intellectual Reserve, Inc. All rights reserved.</span
+          >
+        </p>
+      </div>
     </footer>
+    <!-- 
+      "OktaUtil" defines a global OktaUtil object
+       that contains methods used to complete the Okta login flow.
+    -->
+    
+<div id="okta-sign-in" class="auth-container main-container unsupported-message-container" style="display:none">
+    <div id="unsupported-cookie" class="unsupported-message" style="display:none">
+        <h2 class="o-form-head">Cookies are required</h2>
+        <p>Cookies are disabled on your browser. Please enable Cookies and refresh this page.</p>
+        <a class="button button-primary" target="_blank" href=".">
+            Refresh
+        </a>
+    </div>
+</div>
+<div id="inactive-tab-main-div" style="display:none;">
+    <div class="inactive-tab-container">
+        <div class="inactive-tab-header">
+            <img src="https://ok7static.oktacdn.com/assets/img/logos/okta-logo.1e146cad5713da744492be95eb0f7793.png" alt="The Church of Jesus Christ of Latter-day Saints" class="report-org-logo">
+            <div class="divider"></div>
+        </div>
+        <div class="inactive-tab-content">
+            <h2 class="inactive-tab-content-title">The page has timed out</h2>
+            <p class="inactive-tab-details">If this page does not reload automatically, please refresh your browser.</p>
+        </div>
+    </div>
+</div>
 
-    <!-- JavaScript -->
-    <script src="scripts/main.js" defer></script>
-</body>
+<script type="text/javascript" nonce="Aplzod8mA8syScFDIHhPFQ">
+  var signInSuccessCallBackFunction;
+  var oktaData = {"redirectUri":"\x2Fapp\x2Fchurchofjesuschrist_samlsecurebyui_2\x2Fexknz5uojaXqRR2LJ357\x2Fsso\x2Fsaml","isMobileSso":false,"fromUri":"","isMobileClientLogin":false,"requestContext":{"app":{"type":"object","value":{"name":"churchofjesuschrist_samlsecurebyui_2","label":"SAML\x20\x2D\x20secure.byui","id":"0oanz5uojbTI0zUHz357"}},"authentication":{"request":{},"protocol":{},"client":{"name":"churchofjesuschrist_samlsecurebyui_2","label":"SAML\x20\x2D\x20secure.byui","id":"0oanz5uojbTI0zUHz357"},"type":"object","value":{"request":{},"protocol":{}}},"target":{"clientId":"0oanz5uojbTI0zUHz357","name":"churchofjesuschrist_samlsecurebyui_2","label":"SAML\x20\x2D\x20secure.byui"}},"countryIso":"BW","inactiveTab":{"elementId":"inactive\x2Dtab\x2Dmain\x2Ddiv","avoidPageRefresh":true,"enabled":true},"signIn":{"logoText":"The\x20Church\x20of\x20Jesus\x20Christ\x20of\x20Latter\x2Dday\x20Saints\x20logo","brandName":"The\x20Church\x20of\x20Jesus\x20Christ\x20of\x20Latter\x2Dday\x20Saints","language":"en","consent":{"cancel":function(){window.location.href='https\x3A\x2F\x2Fid.churchofjesuschrist.org\x2Flogin\x2Fstep\x2Dup\x2Fredirect\x3FstateToken\x3DeyJ6aXAiOiJERUYiLCJhbGlhcyI6ImVuY3J5cHRpb25rZXkiLCJ2ZXIiOiIxIiwib2lkIjoiMDBvem13Y2lpZndPdUVuMEIzNTYiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiZGlyIn0..0CdpOcasyUwjkTRI.CWbR7tIi\x2DYnzu13S2TuGSPMznTQhNEGBq4RM8CHkWE30ZQOAOnH\x2DOUD4kfI\x2Dsc6bhv39QhSQ2ORn44pnOnh0A5OY8pVU7E9ViGPqg3WWlxMk5WF6grh\x2Dado5jFm_uBzXSrH7E\x2DpHmDcxXvKFVl0xrPN0SPt8gABe1ShtIEdghrsiAKxGSgiAX\x2DGAxDqaRMh8rMkXejUiAn1uLCfm088WkRGjG4ZHoR0u8fNkTUZIQGwr2rCR4KwR8iqklwhdxpij6XkeqV0rW8SfnHfX54edyt368PUYh9tdmnst47C0rowSwrCj8ZXZahTdeBf9votqF3mcRyZQ67PcGgxJu9khsRKkf9VJhOJ3gppW\x2DvYPzUER0Wkr7TDeHFid0mcJGiilotRtwlCfx731khY7_YSTPrVnfXM9dqGx0Y9jHlsj86ukNKMHkDx\x2D4_zL6T\x2DfaoRZGWopEAM3rLZyvLoT0etx0PtIrrm4sBae6Cy4EwygEO49vVlyENr4iRRHRtH4Vilj8qWaeQxw6A4xJvnMGzyteGZORm9nylCQE7L3zEpuWD7G49TJDCQvf8jACZWF9w2zq0sO\x2DdqbquR_Hw7dz8UMWFj2zNTPvU3Cpyjtmn5DrJzyW1zVFtRKLDvBHkdIEO9iip75jmv6VwSM\x2DasMkUyTNioQwvbL_xUenbR0Hwp1AqPKD1D4cfKnxqJiO_4\x2DHI8IGvjy2cnhMRQNNEzRo_twc4LblJKITpf44JoVps8zPuG2xTMvbxndK5ALUbKn6vnrxj\x2DY00PDzV_BuWxhf9_XVPgCZzWhgIBx\x2DiKfbk22Hzd5Ql19Bhjx7i3FwVRKdTIgQlrqT8At43tANjkOXbKWov4qzz_at4pP7GKZSAoygD5l6nM6rkQz5SOA3VEl16wnmOzOkGWF0OpPi3yk3CJQssr1aH\x2D47JAzTJxMeNITOplRWxoWlq8C63Pr8RNwFkDFSUln_JRweYbIR61PZ5yUkJUgZSRTvyvL2KDkVlI_sHAH5PVNQkvpuyhAbgSkscLB12ze2eLDzmPV0AOhDQ3N0k67q_tnnVBRB7ZEMqtmMLx1I8Of3plMa6gJl3mOI9BHAHyjTvtZQKAGYAOR7CdGQvRsKipEdwn9OOP\x2DdhlkVfsrUcW6l1OUnM63cPbC6bHmWC43ZLtvH97FbkOGbmacHiAO3PB3oW\x2DdDShY_9r9L_N4mSERqFOcv1DEYBoCcsevtVfrEdDJ1DB6HCZzGNRYaDDABGtadUb5SgwZmpUOec7rsq4fSH5ALhO4vvv8\x2DlcHvnPmyQSqc1chWBs7C6uzOHXH3yUalSkZkuZtsxJZ34cTXTCxBzqV0rgD3eHj5EhVTrMqVJSqSfFtJIN6T0mia8KApYDVx2FG5icGQhVHjy5ezG1waMMGYqxxrpMJd647z9zZaYxkxyeqtbPjiN5OsRqFJ1R7\x2DV5OjckHz7qk1S\x2Do747wSohfoht9kUuqc3x8joTEKT9MS0iWsmt4v5H89kHlZvKOIKIRlgmwBww2rQ8phkhTNwb9l6ePGwGxbFvrOlRuFY0EIQ_NVroOoZYND7A_CZBIFtTn2GP2GeR64SqUdmkqvrA_mDE76Y3Atph2EOtGX3LpTPPy9D4ewvIZ_oxZhWe43RSsCqZ9gssf7w4Z_P46Z3h4ymIEleLlLJgNNwj1antQebjp89M9x7cdtfEBLla7zaTZ\x2D0Qf3dab436tGAfRPXkQFZFGiTDkbL8qLnN9_E5YZv39RJjUMUr2SsTeIBx_U1G_\x2DyTivBk61pcszeSEOCrxYJaKvhi8OC3_pbNV9taKLnmq7CXg3OP4XnFGRqOH6kLdb6cXAMRDdPO9yFS1EoxLW1w4V0vfwWZq1cZlvYgNorxGnLaLeFshXqYJ_0_aHKy0\x2DoWZsdXkxo0PVmDv_zpNljahnXJ61ru1X\x2Dcpo7HSRVcnupFGgZ_O\x2DwWOyHWWCHEfgKzmmjaM\x2D7EmK9YbJXFDfnhPK3ecx_cGRGKdc2JkjKkIMO4c7VZbfgQI0VnRgiJsdRDNK9y\x2D9rtg0NnARpNND5Da9gtLqbQv9deZhRqKUYLrkoSaH8i7di6RjiNQiVL\x2DmvuDPegT\x2DR9BkoWDApuVrjI0qYAnCrc1lHaKTJMqvsktXbRVUYPWF54ukFrZ32BWCb6Jew8m09ST8fes0OTbdnQhwvLvXRa4TnuUkUQuUy7V\x2DcePzZXH_dqQmiPbHa5HH3fLCp8Ly92sYZM3gDBrYesPPqxsTvyKeRlCsxXxf5QCkz05vaM1LGI4hBnQXigqhay5CwSNze85TT1IlDy53A9cWHv7Y02pxnCc5dSU4vQV5kf615YA79fyMCLFxA5zBsiNEyQ2hpIpniWzUocFRuJblMwM58_TXkIWZd_2RQCfzj8uLah0hwJ6wcZd2qyJgX0iIk06ZF84D0jjpRNdUSsH\x2DMFp\x2DVQ4kxOmFpTaJOXEku9IbYkmwTi\x2DBfJREo4If7js0qylIBgjTR1bcoeQs7Env2B3z3HgcpBnSY92PPS74uQ5lq7\x2DJtrBjqPZ0MbgQS4mAl7BJtWPAYnVSlUjdCFpuxF9z0JLglUO6K_zQ3XbO3s6ZvS\x2DMBAfiYOoPdfuHAAeoP73jbA8IGAWy9\x2DG4Z1O68EeFn3SMagiTvytqF0vZJzoS2AE7H1eXkP8X0QzdXRMKcsMfqmOeu9jzD8beI0gcWbMTrVn\x2DL6v2rnvdE7dx5GFgGNFTmR40hsVHDa2wmvponKYB\x2DhS6u8gmx6_nD4IRVApXFg1zIuM8RELPn2bp_0ENOmVSH8ZighzExjqppwl1Qp68LiCPRVVkgF21eX5QZ2PNLMuqAZwlLbfcHL3dUOlawgmZmb5oCHpJ_POCebFphEzF3jGueHOyGMnl44sTJzFr0fcEYWe_Y3\x2DcRF1o4G5u2Q5enc0R7NQ7icCD76kaciB9nDPzfxEo215fY6y7RJ\x2D4oH4SaHaLliHnQ97jZs6Vhj9OD2mdDKwnug5IaPUFRKmcFc3bCzoow0s87B93monOfFajboY5mzh4ASbsd0KRux8Or6KwVNjUYl7ZqGFnsse83cqJLTsundFM72CmESrVhVpSr4tcN69fiiRlQ.5VE9UE007pzDepCApMXbpw';}},"i18n":{"en":{"mfa.challenge.password.placeholder":"Password","help":"Help","password.forgot.email.or.username.tooltip":"Email\x20or\x20Username","needhelp":"Need\x20help\x20signing\x20in\x3F","primaryauth.username.placeholder":"Username","password.forgot.email.or.username.placeholder":"Email\x20or\x20Username","account.unlock.email.or.username.tooltip":"Email\x20or\x20Username","unlockaccount":"Unlock\x20account\x3F","account.unlock.email.or.username.placeholder":"Email\x20or\x20Username","primaryauth.password.placeholder":"Password","primaryauth.title":"Sign\x20In","forgotpassword":"Forgot\x20password\x3F"}},"features":{"hideSignOutLinkInMFA":false,"emailRecovery":true,"deviceFingerprinting":true,"showIdentifier":true,"consent":true,"useDeviceFingerprintForSecurityImage":false,"customExpiredPassword":true,"router":true,"showPasswordToggleOnSignInPage":true,"securityImage":true,"autoPush":true,"smsRecovery":true,"idpDiscovery":false,"selfServiceUnlock":true,"webauthn":true,"passwordlessAuth":true,"showPasswordRequirementsAsHtmlList":true,"registration":false,"rememberMe":false,"callRecovery":false,"multiOptionalFactorEnroll":true},"baseUrl":"https\x3A\x2F\x2Fid.churchofjesuschrist.org","assets":{"baseUrl":"https\x3A\x2F\x2Fok7static.oktacdn.com\x2Fassets\x2Fjs\x2Fsdk\x2Fokta\x2Dsignin\x2Dwidget\x2F7.11.3"},"customButtons":[],"idpDiscovery":{"requestContext":""},"logo":"https\x3A\x2F\x2Fok7static.oktacdn.com\x2Fassets\x2Fimg\x2Flogos\x2Fokta\x2Dlogo.1e146cad5713da744492be95eb0f7793.png","stateToken":"eyJ6aXAiOiJERUYiLCJhbGlhcyI6ImVuY3J5cHRpb25rZXkiLCJ2ZXIiOiIxIiwib2lkIjoiMDBvem13Y2lpZndPdUVuMEIzNTYiLCJlbmMiOiJBMjU2R0NNIiwiYWxnIjoiZGlyIn0..0CdpOcasyUwjkTRI.CWbR7tIi\x2DYnzu13S2TuGSPMznTQhNEGBq4RM8CHkWE30ZQOAOnH\x2DOUD4kfI\x2Dsc6bhv39QhSQ2ORn44pnOnh0A5OY8pVU7E9ViGPqg3WWlxMk5WF6grh\x2Dado5jFm_uBzXSrH7E\x2DpHmDcxXvKFVl0xrPN0SPt8gABe1ShtIEdghrsiAKxGSgiAX\x2DGAxDqaRMh8rMkXejUiAn1uLCfm088WkRGjG4ZHoR0u8fNkTUZIQGwr2rCR4KwR8iqklwhdxpij6XkeqV0rW8SfnHfX54edyt368PUYh9tdmnst47C0rowSwrCj8ZXZahTdeBf9votqF3mcRyZQ67PcGgxJu9khsRKkf9VJhOJ3gppW\x2DvYPzUER0Wkr7TDeHFid0mcJGiilotRtwlCfx731khY7_YSTPrVnfXM9dqGx0Y9jHlsj86ukNKMHkDx\x2D4_zL6T\x2DfaoRZGWopEAM3rLZyvLoT0etx0PtIrrm4sBae6Cy4EwygEO49vVlyENr4iRRHRtH4Vilj8qWaeQxw6A4xJvnMGzyteGZORm9nylCQE7L3zEpuWD7G49TJDCQvf8jACZWF9w2zq0sO\x2DdqbquR_Hw7dz8UMWFj2zNTPvU3Cpyjtmn5DrJzyW1zVFtRKLDvBHkdIEO9iip75jmv6VwSM\x2DasMkUyTNioQwvbL_xUenbR0Hwp1AqPKD1D4cfKnxqJiO_4\x2DHI8IGvjy2cnhMRQNNEzRo_twc4LblJKITpf44JoVps8zPuG2xTMvbxndK5ALUbKn6vnrxj\x2DY00PDzV_BuWxhf9_XVPgCZzWhgIBx\x2DiKfbk22Hzd5Ql19Bhjx7i3FwVRKdTIgQlrqT8At43tANjkOXbKWov4qzz_at4pP7GKZSAoygD5l6nM6rkQz5SOA3VEl16wnmOzOkGWF0OpPi3yk3CJQssr1aH\x2D47JAzTJxMeNITOplRWxoWlq8C63Pr8RNwFkDFSUln_JRweYbIR61PZ5yUkJUgZSRTvyvL2KDkVlI_sHAH5PVNQkvpuyhAbgSkscLB12ze2eLDzmPV0AOhDQ3N0k67q_tnnVBRB7ZEMqtmMLx1I8Of3plMa6gJl3mOI9BHAHyjTvtZQKAGYAOR7CdGQvRsKipEdwn9OOP\x2DdhlkVfsrUcW6l1OUnM63cPbC6bHmWC43ZLtvH97FbkOGbmacHiAO3PB3oW\x2DdDShY_9r9L_N4mSERqFOcv1DEYBoCcsevtVfrEdDJ1DB6HCZzGNRYaDDABGtadUb5SgwZmpUOec7rsq4fSH5ALhO4vvv8\x2DlcHvnPmyQSqc1chWBs7C6uzOHXH3yUalSkZkuZtsxJZ34cTXTCxBzqV0rgD3eHj5EhVTrMqVJSqSfFtJIN6T0mia8KApYDVx2FG5icGQhVHjy5ezG1waMMGYqxxrpMJd647z9zZaYxkxyeqtbPjiN5OsRqFJ1R7\x2DV5OjckHz7qk1S\x2Do747wSohfoht9kUuqc3x8joTEKT9MS0iWsmt4v5H89kHlZvKOIKIRlgmwBww2rQ8phkhTNwb9l6ePGwGxbFvrOlRuFY0EIQ_NVroOoZYND7A_CZBIFtTn2GP2GeR64SqUdmkqvrA_mDE76Y3Atph2EOtGX3LpTPPy9D4ewvIZ_oxZhWe43RSsCqZ9gssf7w4Z_P46Z3h4ymIEleLlLJgNNwj1antQebjp89M9x7cdtfEBLla7zaTZ\x2D0Qf3dab436tGAfRPXkQFZFGiTDkbL8qLnN9_E5YZv39RJjUMUr2SsTeIBx_U1G_\x2DyTivBk61pcszeSEOCrxYJaKvhi8OC3_pbNV9taKLnmq7CXg3OP4XnFGRqOH6kLdb6cXAMRDdPO9yFS1EoxLW1w4V0vfwWZq1cZlvYgNorxGnLaLeFshXqYJ_0_aHKy0\x2DoWZsdXkxo0PVmDv_zpNljahnXJ61ru1X\x2Dcpo7HSRVcnupFGgZ_O\x2DwWOyHWWCHEfgKzmmjaM\x2D7EmK9YbJXFDfnhPK3ecx_cGRGKdc2JkjKkIMO4c7VZbfgQI0VnRgiJsdRDNK9y\x2D9rtg0NnARpNND5Da9gtLqbQv9deZhRqKUYLrkoSaH8i7di6RjiNQiVL\x2DmvuDPegT\x2DR9BkoWDApuVrjI0qYAnCrc1lHaKTJMqvsktXbRVUYPWF54ukFrZ32BWCb6Jew8m09ST8fes0OTbdnQhwvLvXRa4TnuUkUQuUy7V\x2DcePzZXH_dqQmiPbHa5HH3fLCp8Ly92sYZM3gDBrYesPPqxsTvyKeRlCsxXxf5QCkz05vaM1LGI4hBnQXigqhay5CwSNze85TT1IlDy53A9cWHv7Y02pxnCc5dSU4vQV5kf615YA79fyMCLFxA5zBsiNEyQ2hpIpniWzUocFRuJblMwM58_TXkIWZd_2RQCfzj8uLah0hwJ6wcZd2qyJgX0iIk06ZF84D0jjpRNdUSsH\x2DMFp\x2DVQ4kxOmFpTaJOXEku9IbYkmwTi\x2DBfJREo4If7js0qylIBgjTR1bcoeQs7Env2B3z3HgcpBnSY92PPS74uQ5lq7\x2DJtrBjqPZ0MbgQS4mAl7BJtWPAYnVSlUjdCFpuxF9z0JLglUO6K_zQ3XbO3s6ZvS\x2DMBAfiYOoPdfuHAAeoP73jbA8IGAWy9\x2DG4Z1O68EeFn3SMagiTvytqF0vZJzoS2AE7H1eXkP8X0QzdXRMKcsMfqmOeu9jzD8beI0gcWbMTrVn\x2DL6v2rnvdE7dx5GFgGNFTmR40hsVHDa2wmvponKYB\x2DhS6u8gmx6_nD4IRVApXFg1zIuM8RELPn2bp_0ENOmVSH8ZighzExjqppwl1Qp68LiCPRVVkgF21eX5QZ2PNLMuqAZwlLbfcHL3dUOlawgmZmb5oCHpJ_POCebFphEzF3jGueHOyGMnl44sTJzFr0fcEYWe_Y3\x2DcRF1o4G5u2Q5enc0R7NQ7icCD76kaciB9nDPzfxEo215fY6y7RJ\x2D4oH4SaHaLliHnQ97jZs6Vhj9OD2mdDKwnug5IaPUFRKmcFc3bCzoow0s87B93monOfFajboY5mzh4ASbsd0KRux8Or6KwVNjUYl7ZqGFnsse83cqJLTsundFM72CmESrVhVpSr4tcN69fiiRlQ.5VE9UE007pzDepCApMXbpw","helpLinks":{"help":"","forgotPassword":"","unlock":"","custom":[]},"piv":{}},"accountChooserDiscoveryUrl":"https\x3A\x2F\x2Flogin.okta.com\x2Fdiscovery\x2Fiframe.html"};
+
+  var runLoginPage = function(fn) {
+    var mainScript = document.createElement('script');
+    mainScript.src = "https://ok7static.oktacdn.com/assets/js/mvc/loginpage/initLoginPage.pack.58de3be0c9b511a0fdfd7ea4f69b56fc.js";
+    mainScript.integrity = "sha384-cJ4LGViZBmIttMPH+ao2RyPuN5BztKWYWIa4smbm56r1cUhkU/Dr6vTS3UoPbKTI";
+    mainScript.crossOrigin = "anonymous";
+    document.getElementsByTagName('head')[0].appendChild(mainScript);
+    fn && mainScript.addEventListener('load', function () { setTimeout(fn, 1) });
+  };
+
+  var OktaUtil = {
+    _addClass: function(el, className) {
+      if(el) {
+        var elementClasses = el.className.split(" ");
+        if (elementClasses.indexOf(className) == -1) {
+          el.className += " " + className;
+        }
+      }
+    },
+
+    _removeElement: function(el) {
+      if(el) {
+        el.parentNode.removeChild(el);
+      }
+    },
+
+    _hideElement: function(el) {
+      if(el) {
+        el.style.display = 'none';
+      }
+    },
+
+    _isDocumentVisible: function() {
+      return document.visibilityState === 'visible';
+    },
+
+    addLoginContainerClass: function () {
+      this._addClass(document.getElementById('okta-login-container'), 'login-container');
+    },
+
+    showUnsupportedCookieWarning: function () {
+      document.getElementById('okta-sign-in').removeAttribute('style');
+      document.getElementById('unsupported-cookie').removeAttribute('style');
+    },
+
+    removeUnsupportedCookieWarning: function () {
+      this._removeElement(document.getElementById('okta-sign-in'));
+    },
+
+    hideOktaLoginContainer: function () {
+      this._hideElement(document.getElementById('okta-login-container'));
+    },
+
+    isChromeOs:  function () {
+      return /\bCrOS\b/.test(navigator.userAgent);
+    },
+
+    addChromeOSScript: function() {
+      var chromeOSScript = document.createElement('script');
+      chromeOSScript.src = "/js/google/users-1.0.js";
+      document.getElementsByTagName('head')[0].appendChild(chromeOSScript);
+    },
+
+    getSignInWidgetConfig: function () {
+        if (oktaData.inactiveTab && oktaData.inactiveTab.enabled && !this._isDocumentVisible() && !oktaData.inactiveTab.avoidPageRefresh) {
+            // Show a loading state and wait for the visibility event
+            this.hideOktaLoginContainer();
+            // remove stateToken so SIW does not attempt a login flow
+            oktaData.signIn.stateToken = undefined;
+        }
+        return oktaData.signIn;
+    },
+
+    completeLogin: function (res) {
+      signInSuccessCallBackFunction(res);
+    },
+
+    getRequestContext: function () {
+      return oktaData.requestContext;
+    },
+
+    setRedirectUri: function (uri) {
+      oktaData.redirectUri = uri;
+    },
+
+    init: function () {
+      if (!navigator.cookieEnabled) {
+        this.showUnsupportedCookieWarning();
+        this.hideOktaLoginContainer();
+      } else {
+        this.removeUnsupportedCookieWarning();
+
+        if (oktaData.inactiveTab && oktaData.inactiveTab.enabled && !this._isDocumentVisible()) {
+          try {
+            oktaData.inactiveTab.renderFnBackup = OktaSignIn.prototype.renderEl;
+          } catch (err) {
+            // no op - graceful handling OktaSignIn undefined case
+          }
+
+          // pause render sign-in widget when browser tab is inactive
+          if (!oktaData.inactiveTab.renderFnBackup) {
+            // for older SIW, renderFnBackup is undefined, fallback to full page reload
+            oktaData.inactiveTab.fallbackFullPageReload = true;
+            // Show a loading state and wait for the visibility event
+            this.hideOktaLoginContainer();
+            // remove stateToken so SIW does not attempt a login flow
+            oktaData.signIn.stateToken = undefined;
+          } else {
+            // for newer SIW, override renderEl function so SIW does not attempt a login flow
+            OktaSignIn.prototype.renderEl = function () {
+              oktaData.inactiveTab.renderArgsBackup = arguments;
+              oktaData.inactiveTab.signInInstance = this;
+              try {
+                return new Promise(function (resolve, reject) {
+                  oktaData.inactiveTab.renderResolve = resolve;
+                  oktaData.inactiveTab.renderReject = reject;
+                });
+              } catch (err) {
+                // return nothing if promise is not supported, since promise chaining won't work anyway
+              }
+            }
+          }
+
+          // event handler to resume render sign-in widget
+          document.addEventListener('visibilitychange', function checkVisibilityAndCallSuccess() {
+            if (document.visibilityState === 'visible') {
+              try {
+                document.removeEventListener('visibilitychange', checkVisibilityAndCallSuccess);
+                const inactiveTabDiv = document.getElementById(oktaData.inactiveTab.elementId);
+                inactiveTabDiv.style.display = 'none';
+
+                // resume render sign-in widget
+                if (oktaData.inactiveTab.renderFnBackup && oktaData.inactiveTab.renderArgsBackup) {
+                  OktaSignIn.prototype.renderEl = oktaData.inactiveTab.renderFnBackup;
+                  var result = oktaData.inactiveTab.signInInstance.renderEl.apply(oktaData.inactiveTab.signInInstance, oktaData.inactiveTab.renderArgsBackup);
+                  if (result && result.then) {
+                    result.then(oktaData.inactiveTab.renderResolve, oktaData.inactiveTab.renderReject);
+                  }
+                }
+              } catch (err) {
+                oktaData.inactiveTab.fallbackFullPageReload = true;
+              }
+              if (oktaData.inactiveTab.fallbackFullPageReload) {
+                location.reload();
+              }
+            }
+          });
+        }
+
+        // add class if app login banner is present
+        if (oktaData.isAppBannerVisible) {
+          this.addLoginContainerClass();
+        }
+
+        oktaData.isCustomSignIn = true;
+        oktaData.hasChromeOSFeature = this.isChromeOs();
+        if (oktaData.hasChromeOSFeature) {
+          this.addChromeOSScript();
+        }
+        runLoginPage(function () {
+          var res = OktaLogin.initLoginPage(oktaData);
+          oktaData.signIn = res.signIn;
+          signInSuccessCallBackFunction = res.signInSuccessCallbackFn;
+
+        });
+      }
+    }
+  };
+  OktaUtil.init();
+  //# sourceURL=OktaUtil.js
+</script>
+
+
+    <script type="text/javascript">
+      // Polyfill for IE 11
+      (function (w) {
+        w.URLSearchParams =
+          w.URLSearchParams ||
+          function (searchString) {
+            var self = this;
+            self.searchString = searchString;
+            self.get = function (name) {
+              var results = new RegExp("[\?&]" + name + "=([^&#]*)").exec(
+                self.searchString
+              );
+              if (results == null) {
+                return null;
+              } else {
+                return decodeURI(results[1]) || 0;
+              }
+            };
+          };
+      })(window);
+
+      (function (w) {
+        w.replaceUrlParam =
+          w.replaceUrlParam ||
+          function replaceUrlParam(url, paramName, paramValue) {
+            if (paramValue == null) {
+              paramValue = "";
+            }
+            var pattern = new RegExp("\\b(" + paramName + "=).*?(&|#|$)");
+            if (url.search(pattern) >= 0) {
+              return url.replace(pattern, "$1" + paramValue + "$2");
+            }
+            url = url.replace(/[?#]$/, "");
+            return (
+              url +
+              (url.indexOf("?") > 0 ? "&" : "?") +
+              paramName +
+              "=" +
+              paramValue
+            );
+          };
+      })(window);
+
+      // Handle Language Menu Show/Hide
+      var handler = function (event) {
+        if (
+          $(event.target).is(
+            ".language-icon, .cust-sub-header-span, .lang-item, .language-icon *"
+          )
+        ) {
+          // Toggle
+          SelectLanguage();
+          return;
+        } else if ($("#language-options").is(":visible")) {
+          // Hide
+          $("#language-options").hide();
+          return;
+        } else {
+          return;
+        }
+      };
+      $(document).on("click", handler);
+
+      // MISSIONARY-2 Remove Hyperlinks
+      var clientId = getClientId();
+      var missionaryClientId = "0oamp96vniZFHtcPf357";
+      var currentYear = new Date().getFullYear();
+      var languages3 = {
+        ceb: "ceb",
+        dan: "da",
+        deu: "de",
+        est: "et",
+        eng: "en",
+        spa: "es",
+        ton: "to",
+        fra: "fr",
+        hrv: "hr",
+        ind: "id",
+        ita: "it",
+        lav: "lv",
+        lit: "lt",
+        hun: "hu",
+        nld: "nl",
+        nor: "nb",
+        pol: "pl",
+        por: "pt",
+        ron: "ro",
+        smo: "sm",
+        sqi: "sq",
+        fin: "fi",
+        swe: "sv",
+        tgl: "tl",
+        vie: "vi",
+        ces: "cs",
+        bul: "bg",
+        mon: "mn",
+        rus: "ru",
+        ukr: "uk",
+        hye: "hy",
+        tha: "th",
+        zho: "zh",
+        jpn: "ja",
+        zhs: "zhs",
+        usa: "us",
+        kor: "ko",
+        ell: "el",
+        msa: "ms",
+        tur: "tr",
+      };
+
+      var languages2 = {
+        da: {
+          language3: "dan",
+          language: "Dansk",
+          langCode: "da",
+          signout: "Log ud",
+          forgotPassword: "Jeg har glemt mit brugernavn eller adgangskode",
+          createNewAccount: "Opret en ny konto",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy: "Meddelelse om personoplysninger (Updated 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Alle rettigheder forbeholdes.",
+          legalDisclaimer:
+            'Ved at klikke »Bekræft« accepterer jeg <a href="https://www.churchofjesuschrist.org/services/platform/v4/resources/terms-of-use?lang=dan" target="_blank">Regler for anvendelse (opdateret 13-04-2021)</a>, og jeg har læst <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=dan&country=go" target="_blank">Meddelelse om persondata (opdateret 06-04-2021)</a>.',
+        },
+
+        de: {
+          language3: "deu",
+          language: "Deutsch",
+          langCode: "de",
+          signout: "Abmelden",
+          forgotPassword:
+            "Ich habe meinen Benutzernamen oder mein Passwort vergessen",
+          createNewAccount: "Neues Benutzerkonto anlegen",
+          terms: "Nutzungsbedingungen (aktualisiert 2021-04-13)",
+          privacy: "Datenschutzmitteilung (aktualisiert 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Alle Rechte vorbehalten.",
+          legalDisclaimer:
+            'Indem Sie auf „Bestätigen“ klicken, stimmen <a href="https://www.churchofjesuschrist.org/legal/terms-of-use?lang=deu&country=go" target="_blank">Sie den Nutzungsbedingungen (aktualisiert: 2021-04-13)</a> zu und bestätigen, dass <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=deu&country=go" target="_blank">Sie die Datenschutzmitteilung (aktualisiert: 2021-04-06) gelesen haben</a>.',
+        },
+        en: {
+          language3: "eng",
+          language: "English",
+          langCode: "en",
+          signout: "Sign Out",
+          forgotPassword: "I forgot my username or password",
+          createNewAccount: "Create a new Account",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy: "Privacy Notice (Updated 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " by Intellectual Reserve, Inc. All rights reserved.",
+          legalDisclaimer:
+            'By clicking "Verify" I agree to the <a href="https://www.churchofjesuschrist.org/legal/terms-of-use?lang=eng&country=go" target="_blank">Terms of Use (Updated 2021-04-13)</a> and have read the <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=eng&country=go" target="_blank">Privacy Notice (Updated 2021-04-06).</a>',
+        },
+        es: {
+          language3: "spa",
+          language: "Español",
+          langCode: "es",
+          signout: "Cerrar sesi\u00F3n",
+          forgotPassword: "He olvidado el nombre de usuario o la contraseña",
+          createNewAccount: "Crear una cuenta nueva",
+          terms: "Términos de uso (Actualizado 2021-04-13)",
+          privacy: "Aviso sobre la privacidad (Actualizado 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " por Intellectual Reserve, Inc. Todos los derechos reservados.",
+          legalDisclaimer:
+            'Al hacer clic en "Verificar" acepto los <a href="https://www.churchofjesuschrist.org/legal/terms-of-use?lang=spa&country=go" target="_blank">Términos de usos (Actualizados el 13-4-2021)</a> y he leído las <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=spa&country=go" target="_blank">Normas de privacidad (Actualizadas el 6-4-2021).</a>',
+        },
+        fr: {
+          language3: "fra",
+          language: "Français",
+          langCode: "fr",
+          signout: "Se d\u00E9connecter",
+          forgotPassword:
+            "J’ai oublié mon nom d’utilisateur ou mon mot de passe",
+          createNewAccount: "Créer un nouveau compte",
+          terms: "Conditions d’utilisation (Actualisé 2021-04-13)",
+          privacy: "Déclaration de Confidentialité (Actualisé 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Tous droits réservés.",
+          legalDisclaimer:
+            'En cliquant sur « Vérifier » j’accepte les <a href="https://www.churchofjesuschrist.org/legal/terms-of-use?lang=fra&country=go" target="_blank">Conditions d’utilisation (mises à jour le 13/04/2021)</a> et j’ai lu les <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=fra&country=go" target="_blank">Règles de confidentialité (mises à jour le 06/04/2021)</a>.',
+        },
+        id: {
+          language3: "ind",
+          language: "Indonesia",
+          langCode: "id",
+          signout: "Se d\u00E9connecter",
+          forgotPassword: "Saya lupa nama pengguna atau password saya",
+          createNewAccount: "Buat Akun baru",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy: "Pemberitahuan Privasi (Updated 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " oleh Intellectual Reserve, Inc. Hak cipta dilindungi Undang-Undang.",
+          legalDisclaimer:
+            'Dengan mengeklik "Verifikasi" saya setuju dengan <a href="https://www.churchofjesuschrist.org/services/platform/v4/resources/terms-of-use?lang=ind" target="_blank">Syarat Penggunaan (Dimutakhirkan 13-04-2021)</a> dan telah membaca <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=ind&country=go" target="_blank">Pemberitahuan Privasi (Dimutakhirkan 06-04-2021)</a>.',
+        },
+        it: {
+          language3: "ita",
+          language: "Italiano",
+          langCode: "it",
+          signout: "Esci",
+          forgotPassword: "Ho dimenticato il nome utente o la password",
+          createNewAccount: "Crea un nuovo account",
+          terms: "Condizioni di utilizzo (Aggiornate 2021-04-13)",
+          privacy: "Informativa sulla privacy (Aggiornato 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " by Intellectual Reserve, Inc. Tutti i diritti riservati.",
+          legalDisclaimer:
+            'Cliccando "Verifica" accetto le <a href="https://www.churchofjesuschrist.org/legal/terms-of-use?lang=ita&country=go" target="_blank">Condizioni di utilizzo (aggiornate il 13/04/2021)</a> e dichiaro di avere letto <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=ita&country=go" target="_blank">l’Informativa sulla privacy (aggiornata il 06/04/2021)</a>.',
+        },
+        hu: {
+          language3: "hun",
+          language: "Magyar",
+          langCode: "hu",
+          signout: "Kijelentkez\u00E9s",
+          forgotPassword: "Elfelejtettem a felhasználónevem vagy a jelszavam",
+          createNewAccount: "Új fiók létrehozása",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy: "Adatvédelmi nyilatkozat (Updated 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc., Minden jog fenntartva.",
+          legalDisclaimer:
+            'A Jóváhagy gombra kattintva elfogadom a <a href="https://www.churchofjesuschrist.org/services/platform/v4/resources/terms-of-use?lang=hun" target="_blank">Felhasználási feltételeket (frissítve: 2021. 04. 13.)</a>, és elolvastam az <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=hun&country=go" target="_blank">Adatvédelmi nyilatkozatot (frissítve: 2021. 04. 06.)</a>.',
+        },
+        nb: {
+          language3: "nor",
+          language: "Norsk",
+          langCode: "nb",
+          signout: "Logg ut",
+          forgotPassword: "Jeg har glemt brukernavnet eller passordet",
+          createNewAccount: "Opprett en ny konto",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy: "Personvernerklæring (Updated 2021-04-06)",
+          copyright:
+            "© " + currentYear + " Intellectual Reserve, Inc. Med enerett.",
+          legalDisclaimer:
+            'Ved å klikke på "Bekreft" godtar jeg <a href="https://www.churchofjesuschrist.org/services/platform/v4/resources/terms-of-use?lang=nor" target="_blank">Betingelser for bruk (oppdatert 13.04.2021)</a> og har lest <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=nor&country=go" target="_blank">Personvernretningslinjer (oppdatert 06.04.2021)</a>.',
+        },
+        nl: {
+          language3: "nld",
+          language: "Nederlands",
+          langCode: "nl-NL",
+          signout: "Afmelden",
+          forgotPassword: "Ik ben mijn gebruikersnaam of wachtwoord vergeten",
+          createNewAccount: "Nieuwe account aanmaken",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy: "Privacykennisgeving (Bijgewerkt 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Alle rechten voorbehouden.",
+          legalDisclaimer:
+            'Door op "Bevestigen" te klikken, stem ik in met de <a href="https://www.churchofjesuschrist.org/services/platform/v4/resources/terms-of-use?lang=nld" target="_blank">Gebruiksvoorwaarden (bijgewerkt op 13/4/2021)</a> en geef ik aan de <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=nld&country=go" target="_blank">Privacykennisgeving (bijgewerkt op 6/4/2021) te hebben gelezen</a>.',
+        },
+        pl: {
+          language3: "pol",
+          language: "polski",
+          langCode: "pl",
+          signout: "Wyloguj",
+          forgotPassword: "Zapomniałem nazwę użytkownika lub hasło",
+          createNewAccount: "Utwórz nowe konto",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy: "Polityka prywatności (Zaktualizowano 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Wszelkie prawa zastrzeżone.",
+          legalDisclaimer:
+            'Klikając przycisk „Weryfikuj”, zgadzam się z <a href="https://www.churchofjesuschrist.org/services/platform/v4/resources/terms-of-use?lang=pol" target="_blank">Warunkami użytkowania (aktualizacja 2021-04-13)</a> i zapoznałem się z <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=pol&country=go" target="_blank">Polityką prywatności (aktualizacja 2021-04-06)</a>.',
+        },
+        pt: {
+          language3: "por",
+          language: "Português",
+          langCode: "pt-BR",
+          signout: "Sair",
+          forgotPassword: "Esqueci meu nome de usuário ou minha senha",
+          createNewAccount: "Criar uma conta nova",
+          terms: "Termos de uso (Atualizados 2021-04-13)",
+          privacy: "Notificação de Privacidade (Atualizada 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Todos os direitos reservados.",
+          legalDisclaimer:
+            'Ao clicar em "Confirmar" <a href="https://www.churchofjesuschrist.org/legal/terms-of-use?lang=por&country=go" target="_blank">Concordo com os Termos de uso (atualizados em 13/04/2021)</a> e declaro que li a <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=por&country=go" target="_blank">Política de privacidade (atualizada em 06/04/2021)</a>.',
+        },
+        ro: {
+          language3: "ron",
+          language: "română",
+          langCode: "ro",
+          signout: "Deconectare",
+          forgotPassword: "Mi-am uitat numele de utilizator sau parola",
+          createNewAccount: "Creează un nou cont",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy:
+            "Înștiințare privind confidențialitatea informațiilor (Updated 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Toate drepturile rezervate.",
+          legalDisclaimer:
+            'Apăsând pe „Verifică”, sunt de acord cu <a href="https://www.churchofjesuschrist.org/services/platform/v4/resources/terms-of-use?lang=ron" target="_blank">Termenii de utilizare (actualizați la 13-04-2021)</a> și am citit <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=ron&country=go" target="_blank">Înștiințarea privind confidențialitatea informațiilor (actualizată la 06-04-2021)</a>.',
+        },
+        fi: {
+          language3: "fin",
+          language: "suomi",
+          langCode: "fi",
+          signout: "Kirjaudu ulos",
+          forgotPassword: "Unohdin oman käyttäjätunnukseni tai salasanani",
+          createNewAccount: "Luo uusi tili",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy: "Tietosuojailmoitus (Updated 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Kaikki oikeudet pidätetään.",
+          legalDisclaimer:
+            'Napsauttamalla "Varmista" hyväksyn <a href="https://www.churchofjesuschrist.org/services/platform/v4/resources/terms-of-use?lang=fin" target="_blank">käyttöehdot (päivitetty 2021-04-13)</a> ja että olen lukenut <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=fin&country=go" target="_blank">tietosuojailmoituksen (päivitetty 2021-04-06)</a>.',
+        },
+        sv: {
+          language3: "swe",
+          language: "Svenska",
+          langCode: "sv",
+          signout: "Logga ut",
+          forgotPassword: "Jag har glömt användarnamn eller lösenord",
+          createNewAccount: "Skapa ett nytt konto",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy: "Integritetspolicy (Uppdaterad 2021-04-06)",
+          copyright:
+            "© " + currentYear + " Intellectual Reserve, Inc. Med ensamrätt.",
+          legalDisclaimer:
+            'Genom att klicka på "Verifiera" samtycker jag till <a href="https://www.churchofjesuschrist.org/services/platform/v4/resources/terms-of-use?lang=swe" target="_blank">användarvillkoren (uppdaterade 20210413)</a>, och jag har läst <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=swe&country=go" target="_blank">integritetspolicyn (uppdaterad 20210406)</a>.',
+        },
+        vi: {
+          language3: "vie",
+          language: "Tiếng Việt",
+          langCode: "vi",
+          signout: "\u0610\u0603ng Xu\u1EA5t",
+          forgotPassword: "Tôi đã quên tên đăng nhập hoặc mật khẩu của mình",
+          createNewAccount: "Tạo một Tài Khoản mới",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy: "Thông Báo về Quyền Riêng Tư (Updated 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " do Intellectual Reserve, Inc. Giữ mọi bản quyền.",
+          legalDisclaimer:
+            'Bằng cách bấm vào "Kiểm chứng" Tôi đồng ý với <a href="https://www.churchofjesuschrist.org/services/platform/v4/resources/terms-of-use?lang=vie" target="_blank">Các Điều Khoản Sử Dụng (Cập Nhật 13-04-2021)</a> và đã đọc <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=vie&country=go" target="_blank">Thông Báo về Quyền Riêng Tư (Cập Nhật 06-04-2021)</a>.',
+        },
+        cs: {
+          language3: "ces",
+          language: "Čeština",
+          langCode: "cs",
+          signout: "Odhl\u00E1sit se",
+          forgotPassword: "Zapomněl(a) jsem své uživatelské jméno nebo heslo",
+          createNewAccount: "Vytvořit nový účet",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy: "Sdělení o ochraně osobních údajů (Updated 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Všechna práva vyhrazena.",
+          legalDisclaimer:
+            'Kliknutím na „Potvrdit“ souhlasím s <a href="https://www.churchofjesuschrist.org/services/platform/v4/resources/terms-of-use?lang=ces" target="_blank">Podmínkami použití (aktualizovány 13. 4. 2021)</a> a přečetl(a) jsem si <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=ces&country=go" target="_blank">Sdělení o ochraně osobních údajů (aktualizováno 6. 4. 2021)</a>.',
+        },
+        ru: {
+          language3: "rus",
+          language: "Pу́сский",
+          langCode: "ru",
+          signout:
+            "\u0412\u044B\u0439\u0442\u0438 \u0438\u0437 \u0441\u0438\u0441\u0442\u0435\u043C\u044B",
+          forgotPassword: "Я забыл мое имя пользователя или пароль",
+          createNewAccount: "Создать новую учетную запись",
+          terms: "Условия использования (обновлено 2021-04-13)",
+          privacy: "Заявление о конфиденциальности (обновленный 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " by Intellectual Reserve, Inc. Все права защищены.",
+          legalDisclaimer:
+            'Нажимая «Подтвердить», я признаю, что согласен с <a href="https://www.churchofjesuschrist.org/legal/terms-of-use?lang=rus&country=go" target="_blank">Условиями использования (последнее обновление: 13-04-2021)</a> и прочитал <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=rus&country=go" target="_blank">Уведомление о конфиденциальности (последнее обновление: 06-04-2021)</a>.',
+        },
+        uk: {
+          language3: "ukr",
+          language: "українська",
+          langCode: "uk",
+          signout: "\u0412\u0438\u0439\u0442\u0438",
+          forgotPassword: "Я забув(ла) своє ім’я користувача або пароль",
+          createNewAccount: "Створити новий акаунт",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy:
+            "Повідомлення щодо політики захисту персональних даних (Updated 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " by Intellectual Reserve, Inc. Усі права застережено.",
+          legalDisclaimer:
+            'Клацнувши на "Підтвердити", я погоджуюся з <a href="https://www.churchofjesuschrist.org/services/platform/v4/resources/terms-of-use?lang=ukr" target="_blank">Умовами використання (Оновлено 13.04.2021)</a> та зазначаю, що прочитав(ла) <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=ukr&country=go" target="_blank">Повідомлення щодо політики захисту персональних даних (Оновлено 06.04.2021)</a>.',
+        },
+        th: {
+          language3: "tha",
+          language: "ไทย",
+          langCode: "th",
+          signout: "\u0E25\u0E07\u0E0A\u0E37\u0E48\u0E2D\u0E2D\u0E2D\u0E06",
+          forgotPassword: "ฉันลืมชื่อผู้ใช้หรือรหัสผ่าน",
+          createNewAccount: "สร้างบัญชีใหม่",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy: "ข้อประกาศเรื่องความเป็นส่วนตวั (Updated 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " โดย Intellectual Reserve, Inc. สงวนสิทธิ์ทุกประการ",
+          legalDisclaimer:
+            'โดยคลิก “ยืนยัน” <a href="https://www.churchofjesuschrist.org/services/platform/v4/resources/privacy-policy?lang=tha" target="_blank">ฉันยอมรับเงื่อนไขการใช้งาน (อัปเดตเมื่อ 2021-04-13)</a> <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=tha&country=go" target="_blank">และได้อ่านข้อประกาศเรื่องความเป็นส่วนตัว (อัปเดตเมื่อ 2021-04-06)</a> แล้ว',
+        },
+        zh: {
+          language3: "zho",
+          language: "中文",
+          langCode: "zh-TW",
+          signout: "\u767B\u51FA",
+          forgotPassword: "我忘記了自己的用戶名或密碼。",
+          createNewAccount: "建立新帳號",
+          terms: "使用條款（更新 2021-04-13）",
+          privacy: "隱私聲明 (更新 2021-04-06)",
+          copyright:
+            "© " + currentYear + " Intellectual Reserve, Inc. 版權所有",
+          legalDisclaimer:
+            '點選驗證，<a href="https://www.churchofjesuschrist.org/legal/terms-of-use?lang=zho&country=go" target="_blank">表示我同意使用條款（2021-04-13更新）</a>，<a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=zho&country=go" target="_blank">並已閱讀隱私聲明（2021-04-06更新）</a>。',
+        },
+        ja: {
+          language3: "jpn",
+          language: "日本語",
+          langCode: "ja",
+          signout: "\u30B5\u30A4\u30F3\u30A2\u30A6\u30C8",
+          forgotPassword: "自分のユーザー名またはパスワードを忘れた。",
+          createNewAccount: "新規アカウントの作成",
+          terms: "利用規約（更新日 2021-04-13）",
+          privacy: "個人情報に関する通知 (Updated 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. All Rights Reserved.",
+          legalDisclaimer:
+            '「確認」をクリックすることで，<a href="https://www.churchofjesuschrist.org/legal/terms-of-use?lang=jpn&country=go" target="_blank">わたしは利用規約（更新日 2021/04/13)</a>に同意し，<a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=jpn&country=go" target="_blank">個人情報に関する通知（更新日 2021/04/06）</a>を確認したものとします。',
+        },
+        ko: {
+          language3: "kor",
+          language: "한국어",
+          langCode: "ko",
+          signout: "\uB85C\uADF8\uC544\uC6C3",
+          forgotPassword: "사용자 이름 또는 비밀번호를 잊었습니다",
+          createNewAccount: "새 계정 만들기",
+          terms: "이용 약관(업데이트 날짜 2021-04-13)",
+          privacy: "개인 정보 보호 알림 (업데이트 됨 2021-04-06)",
+          copyright:
+            "© " + currentYear + " by Intellectual Reserve, Inc. 판권 소유.",
+          legalDisclaimer:
+            '"확인"을 클릭하면, <a href="https://www.churchofjesuschrist.org/legal/terms-of-use?lang=kor&country=go" target="_blank">이용 약관(업데이트 날짜: 2021-04-13)</a>에 동의하고 <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=kor&country=go" target="_blank">개인 정보 보호 알림(업데이트 날짜: 2021-04-06)</a>을 읽었음을 뜻합니다.',
+        },
+        zhs: {
+          language3: "zhs",
+          language: "简体中文",
+          langCode: "zh-CN",
+          signout: "\u9000\u51FA",
+          forgotPassword: "忘记使用者名称或密码。",
+          createNewAccount: "建立新帐号",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy: "隐私声明 (更新 2021-04-06)",
+          copyright:
+            "© " + currentYear + " Intellectual Reserve,Inc.版权所有。",
+          legalDisclaimer:
+            '点选验证，<a href="https://www.churchofjesuschrist.org/legal/terms-of-use?lang=zhs&country=go" target="_blank">表示我同意使用条款（2021-04-13更新）</a>，<a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=zhs&country=go" target="_blank">并已阅读隐私声明（2021-04-06更新）</a>。',
+        },
+        el: {
+          language3: "ell",
+          language: "Ελληνικά",
+          langCode: "el",
+          signout: "\u0388\u03BE\u03BF\u03B4\u03BF\u03C2",
+          forgotPassword: "Ξέχασα το όνομα χρήστη ή τον κωδικό πρόσβασής μου",
+          createNewAccount: "Δημιουργία νέου Λογαριασμού",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy: "Γνωστοποίηση περί απορρήτου (Updated 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " υπό Intellectual Reserve, Inc. Διατηρούνται όλα τα δικαιώματα.",
+          legalDisclaimer:
+            'Κάνοντας κλικ στο «Επαλήθευση», συμφωνώ με τους <a href="https://www.churchofjesuschrist.org/services/platform/v4/resources/terms-of-use?lang=ell" target="_blank">Όρους Χρήσης (ενημέρωση 2021-04-13)</a> και έχω διαβάσει την <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=ell&country=go" target="_blank">Πολιτική Απορρήτου (ενημέρωση 2021-04-06)</a>.',
+        },
+        ms: {
+          language3: "msa",
+          language: "Malay",
+          langCode: "ms",
+          signout: "Log Keluar",
+          forgotPassword: "Saya lupa nama pengguna atau kata laluan",
+          createNewAccount: "Cipta Akaun baharu",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy: "Pemberitahuan Privasi (Updated 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " by Intellectual Reserve, Inc. All rights reserved.",
+          legalDisclaimer:
+            'Dengan mengklik "Mengesah" Saya bersetuju kepada <a href="https://www.churchofjesuschrist.org/services/platform/v4/resources/terms-of-use?lang=msa" target="_blank">Syarat Penggunaan (Dikemas kini 13-04-2021)</a> dan telah membaca <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=msa&country=go" target="_blank">Pemberitahuan Privasi (Dikemas kini 06-04-2021)</a>.',
+        },
+        tr: {
+          language3: "tur",
+          language: "Türkçe",
+          langCode: "tr",
+          signout: "Oturumu Kapat",
+          forgotPassword: "Kullanıcı adımı veya şifremi unuttum",
+          createNewAccount: "Yeni Bir Hesap Oluşturun",
+          terms: "Terms of Use (Updated 2021-04-13)",
+          privacy: "Gizlilik Bildirimi (Updated 2021-04-06)",
+          copyright:
+            "© " +
+            currentYear +
+            " Intellectual Reserve, Inc. Her hakkı saklıdır.",
+          legalDisclaimer:
+            '"Onayla" üzerine tıklayarak, <a href="https://www.churchofjesuschrist.org/services/platform/v4/resources/terms-of-use?lang=tur" target="_blank">Kullanım Koşullarını (Güncelleme tarihi: 13-04-2021)</a> kabul ediyorum ve <a href="https://www.churchofjesuschrist.org/legal/privacy-notice?lang=tur&country=go" target="_blank">Gizlilik Politikasını (Güncelleme tarihi: 06-04-2021)</a> okudum.',
+        },
+      };
+
+      // Detect if lang was passes as a param
+      var urlParams = new URLSearchParams(window.location.search);
+      var langParam = urlParams.get("lang");
+
+      // Set Deafults
+      var browserLanguage =
+        (window && window.navigator && window.navigator.language) || "en";
+      var language2 = "en";
+      var language3 = "eng";
+      var langCode = "en";
+
+      // Set languages
+      if (langParam && (langParam.length === 2 || langParam.length === 3)) {
+        if (langParam.length === 3) {
+          language2 = languages3[langParam];
+          language3 = langParam;
+        } else if (langParam.length === 2) {
+          language2 = langParam;
+          language3 = languages2[langParam] && languages2[langParam].language3;
+        }
+      } else {
+        // No Lang Param, Set based on browser language
+        if (browserLanguage === "zh-CN") {
+          language2 = "zhs";
+        } else if (browserLanguage.indexOf("-") > 0) {
+          language2 = browserLanguage.substring(
+            browserLanguage.indexOf("-") - 2,
+            2
+          );
+        } else {
+          language2 = browserLanguage;
+        }
+        language3 = languages2[language2] && languages2[language2].language3;
+      }
+
+      // Set langCode used to render the widget
+      langCode = languages2[language2] && languages2[language2].langCode;
+
+      // Check to make sure the language we got back is supported or default to english
+      if (!languages2[language2]) {
+        language2 = "en";
+        language3 = "eng";
+        langCode = "en";
+      }
+
+      var oktaSignIn;
+      var scope = getScope();
+      var removeLinks =
+        clientId === missionaryClientId ||
+        scope.indexOf("no_enroll") >= 0 ||
+        scope.indexOf("no_links") >= 0;
+
+      // Update elements based on language
+      if (!removeLinks) {
+        document.getElementById("headerLink").href =
+          "https://www.churchofjesuschrist.org/?lang=" + language3;
+        document.getElementById("footerLink").href =
+          "https://www.churchofjesuschrist.org/?lang=" + language3;
+        document.getElementById("rights-url").href =
+          "https://www.churchofjesuschrist.org/services/platform/v4/resources/terms-of-use?lang=" +
+          language3;
+        document.getElementById("privacy-url").href =
+          "https://www.churchofjesuschrist.org/services/platform/v4/resources/privacy-policy?lang=" +
+          language3;
+      }
+      document.getElementById("headerLogo").src =
+        "https://www.churchofjesuschrist.org/services/platform/v4/resources/static/logo/" +
+        language3 +
+        ".svg";
+      document.getElementById("footerLogo").src =
+        "https://www.churchofjesuschrist.org/services/platform/v4/resources/static/logo/" +
+        language3 +
+        ".svg";
+      document.getElementById("rights-url").innerHTML =
+        languages2[language2] && languages2[language2].terms;
+      document.getElementById("privacy-url").innerHTML =
+        languages2[language2] && languages2[language2].privacy;
+      document.getElementById("copyright-text").innerHTML =
+        languages2[language2] && languages2[language2].copyright;
+      document.getElementById("headerSelectedLang").innerHTML =
+        languages2[language2] && languages2[language2].language;
+      $("#" + language3).addClass("lang-item-active");
+
+      // capture urls for redirection
+      var actualURL = decodeURIComponent(window.location.href);
+      var redirectUrl = urlParams.get("fromURI");
+
+      //get signin widget default configuration
+      var config = OktaUtil.getSignInWidgetConfig();
+
+      //render signin widget
+      function RenderSignInWidget() {
+        config = OktaUtil.getSignInWidgetConfig();
+        //registration link redirection
+        config.registration = {
+          click: function () {
+            window.location.href =
+              "https://account.churchofjesuschrist.org/register";
+          },
+        };
+        //links help
+        config.helpLinks = {
+          help:
+            "https://account.churchofjesuschrist.org/help?lang=" +
+            language3 +
+            "",
+          forgotPassword:
+            "https://account.churchofjesuschrist.org/recovery?lang=" +
+            language3,
+        };
+        config.features.securityImage = false;
+        config.features.registration = true;
+        config.features.hideSignOutLinkInMFA = false;
+        config.features.customExpiredPassword = true;
+        config.language = langCode;
+        if (oktaSignIn != undefined) {
+          oktaSignIn.hide();
+        }
+
+        oktaSignIn = new OktaSignIn(config);
+        oktaSignIn.renderEl(
+          {
+            el: "#okta-login-container",
+          },
+          function success(res) {
+            // debugger;
+            if (res.type === "SESSION_STEP_UP") {
+              res.stepUp.finish();
+              return;
+            } else {
+              if (actualURL.includes("?fromURI")) {
+                res.session.setCookieAndRedirect(redirectUrl);
+              } else {
+                res.session.setCookieAndRedirect(
+                  "https://www.churchofjesuschrist.org"
+                );
+              }
+              return;
+            }
+          },
+          function error(err) {
+            // handleError(err)
+          }
+        );
+
+        oktaSignIn.on("ready", function (context) {
+          // ACCOUNT-7870, OPS-20 Get Client ID for App Specific Logo
+          var clientId = getClientId();
+          if (
+            clientId === "0oaacgc826teBWExi357" ||
+            clientId === "0oaqkmv6qsQCuEC6C357"
+          ) {
+            // Set application-specific logo
+            document.getElementById("globalProtect").style.display = "block";
+            document.getElementById("globalProtectContainer").style.display =
+              "block";
+            document.body.style.gridTemplateRows = "107px 110px 1fr 400px";
+          }
+        });
+
+        //call after signin widget is rendered
+        oktaSignIn.on("afterRender", function (data) {
+          //scroll top after rendering to address designing team request/issue
+          $(window).scrollTop(0);
+          var clientId = getClientId();
+          // Adjust manual Setup Google Auth Code
+          $(".o-form-input-name-sharedSecret input").replaceWith(function () {
+            return '<span id="manual-secret-code">' + this.value + "</span>";
+          });
+          // Adjust Back to Settings Link CHAPP-897
+          $(".back-to-settings-link-tb").attr(
+            "href",
+            "https://account.churchofjesuschrist.org/twoStepVerification"
+          );
+          //on primary authentication screen
+          if (data.controller === "primary-auth") {
+            // MISSIONARY-2 Remove Hyperlinks
+            if (removeLinks) {
+              $(".registration-container").hide();
+              $("#pwdForgotPasswordNav").hide();
+              $(".auth-footer").hide();
+              $("html").css({ "user-select": "none" });
+            }
+            // ACCOUNT-6800 Set focus when saving username
+            // ACCOUNT-6924 Set Focus when not saving
+            if ($('input[name="remember"]:checked').length > 0) {
+              $("#okta-signin-submit").focus();
+            } else {
+              $('input[name="username"]').focus();
+            }
+            //hide auth header
+            $(".okta-sign-in-header.auth-header").hide();
+            //display placeholder
+            $("#okta-signin-username").attr(
+              "placeholder",
+              langCode == "en"
+                ? "Username"
+                : JSON.parse(window.localStorage["osw.languages"])[langCode]
+                    .login["primaryauth.username.placeholder"]
+            );
+
+            // overwrite Need Help Menu
+            $(".auth-footer").hide();
+
+            if ($("#pwdForgotPasswordNav").length == 0 && !removeLinks) {
+              $(".auth-footer").before(
+                '<a target="_blank" id="pwdForgotPasswordNav" href="https://account.churchofjesuschrist.org/recovery?lang=' +
+                  language3 +
+                  '" data-se="forgot-password" class="link">' +
+                  languages2[language2].forgotPassword +
+                  "</a>" +
+                  '<a target="_blank" id="registerNav" href="https://account.churchofjesuschrist.org/register?lang=' +
+                  language3 +
+                  '" data-se="register" class="link">' +
+                  languages2[language2].createNewAccount +
+                  "</a>"
+              );
+            }
+          } else if (data.controller === "mfa-verify-password") {
+            // Password Page
+            // Adjust Identifier
+            $("#okta-sign-in form .identifier-container").css({
+              "margin-bottom": "0px",
+            });
+            // Adjust Button
+            $("input.button-primary").css({ "margin-top": "18px" });
+            // Adjust Error Container
+            $(".o-form-error-container").css({
+              position: "relative",
+              top: "30px",
+            });
+
+            if (!removeLinks) {
+              $(".auth-footer").before(
+                '<p style="font-size: 14px">' +
+                  languages2[language2].legalDisclaimer +
+                  "</p><br />" +
+                  '<a target="_blank" id="pwdForgotPasswordNav" href="https://account.churchofjesuschrist.org/recovery?lang=' +
+                  language3 +
+                  '" data-se="forgot-password" class="link js-forgot-password">' +
+                  languages2[language2].forgotPassword +
+                  "</a>"
+              );
+            }
+          } else if (
+            data.controller === "forgot-password" ||
+            data.controller === "mfa-verify-passcode" ||
+            data.controller === "enroll-webauthn"
+          ) {
+            // Hide Heading
+            $(".okta-form-title").hide();
+            // Hide Header
+            $(".okta-sign-in-header.auth-header").hide();
+          } else if (
+            data.controller === "mfa-verify" ||
+            data.controller === "mfa-verify-webauthn"
+          ) {
+            // Adjust Error Container
+            $(".o-form-error-container").css({
+              position: "relative",
+              top: "30px",
+            });
+            // Hide Heading
+            $("h2.okta-form-title").hide();
+          } else if (data.controller === "enroll-choices") {
+            // Hide Header
+            $(".okta-sign-in-header.auth-header").hide();
+            // Reset identifier
+            $(
+              "#okta-sign-in .siw-main-view .siw-main-body .identifier-container"
+            ).css({
+              top: "0px",
+            });
+          } else if (data.controller === null) {
+            // Hide Heading
+            $("h2.okta-form-title").hide();
+            // Hide Header
+            $(".okta-sign-in-header.auth-header").hide();
+            // Auto Click SMS
+            var sms_button = $(
+              "form.phone-authenticator-challenge .o-form-button-bar input"
+            );
+            if (sms_button) {
+              sms_button.click();
+            }
+          } else {
+            $(".okta-sign-in-header.auth-header").show();
+          }
+        });
+      }
+
+      $(document).ready(function () {
+        RenderSignInWidget();
+
+        var allOptions = $("#language-options").children("li:not(.init)");
+        $("#language-options").on("click", ".init", function () {
+          $(this).closest("ul").children("li:not(.init)").toggle();
+        });
+
+        $("#language-options").on("click", "li:not(.init)", function () {
+          allOptions.removeClass("selected");
+          $(this).addClass("selected");
+          $("#language-options").children(".init").html($(this).html());
+          allOptions.toggle();
+        });
+
+        $("#language-options li").click(function (e) {
+          language3 = $(this).attr("id");
+          window.location.href = replaceUrlParam(
+            window.location.href,
+            "lang",
+            language3
+          );
+        });
+      });
+
+      // Select language dropdown
+      function SelectLanguage() {
+        $("#language-options").toggle();
+      }
+    </script>
+  </body>
 </html>

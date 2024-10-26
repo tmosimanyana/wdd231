@@ -1,108 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover Kweneng's Agriculture Chamber with insights into the area, its demographics, and local businesses">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <title>Discover | Kweneng Agriculture Chamber of Commerce</title>
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Discover Agricultural Opportunities in Kweneng">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/discover.html">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/discover-hero.webp">
-    <meta property="og:description" content="Explore Kweneng through demographic content, statistics, and area imagery.">
-    <meta property="og:site_name" content="Kweneng Agriculture Chamber of Commerce">
-
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover | Kweneng Agriculture Chamber of Commerce</title>
+  <link rel="stylesheet" href="styles/style.css">
+  <script src="scripts/events.js" defer></script>
 </head>
 <body>
 
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <h1>Kweneng Agriculture Chamber of Commerce</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="membership.html">Join</a></li>
-                <li><a href="discover.html" class="active">Discover</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Common Header and Navigation -->
+  <header>
+    <div class="container">
+      <img src="images/logo.png" alt="Kweneng Agriculture Chamber of Commerce Logo" class="logo">
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="discover.html" class="active">Discover</a></li>
+          <li><a href="directory.html">Directory</a></li>
+          <li><a href="join.html">Join</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-    <!-- Discover Page Content -->
-    <main class="discover-container">
-        <!-- Sidebar with visitor message, demographics, and statistics -->
-        <aside class="sidebar">
-            <div id="visitorMessage" class="visitor-message"></div>
+  <!-- Main Content -->
+  <main>
+    <!-- Local History Section -->
+    <section class="local-history">
+      <h1>Discover Kweneng</h1>
+      <p>Explore the rich history and vibrant culture that make Kweneng unique.</p>
+      <p>Kweneng has a deep agricultural tradition and a thriving community focused on sustainable development and growth.</p>
+    </section>
 
-            <h2>Demographics</h2>
-            <p>Population: 120,000</p>
-            <p>Main Industries: Agriculture, Tourism</p>
+    <!-- Demographics Section -->
+    <section class="demographics">
+      <h2>Community Demographics</h2>
+      <p>Understanding our population helps us build better support and resources for local businesses.</p>
+      <ul>
+        <li><strong>Population:</strong> 50,000</li>
+        <li><strong>Primary Industries:</strong> Agriculture, Tourism, and Small Business</li>
+        <li><strong>Median Age:</strong> 30 years</li>
+        <li><strong>Employment Rate:</strong> 85%</li>
+      </ul>
+    </section>
 
-            <h2>Statistics</h2>
-            <p>Yearly Rainfall: 500mm</p>
-            <p>Average Farm Size: 50 hectares</p>
+    <!-- Events Section -->
+    <section class="events">
+      <h2>Upcoming Events</h2>
+      <div id="eventsContainer">
+        <!-- Community event details will populate here -->
+      </div>
+    </section>
 
-            <h2>Upcoming Events</h2>
-            <p>Harvest Festival: June 24, 2024</p>
-            <p>View our events on our <a href="https://calendar.google.com/calendar/u/0/r?cid=mbothepha@gmail.com" target="_blank">Google Calendar</a>.</p>
-        </aside>
+    <!-- Image Montage Section -->
+    <section class="image-montage">
+      <h2>Our Community in Photos</h2>
+      <div class="montage-gallery">
+        <img src="images/community1.jpg" alt="Community gathering" loading="lazy">
+        <img src="images/community2.jpg" alt="Local farmers market" loading="lazy">
+        <img src="images/community3.jpg" alt="Agriculture field" loading="lazy">
+        <img src="images/community4.jpg" alt="Local art event" loading="lazy">
+        <img src="images/community5.jpg" alt="Business networking event" loading="lazy">
+      </div>
+    </section>
+  </main>
 
-        <!-- Main Content with Images -->
-        <section class="main-content">
-            <h2>Explore Kweneng</h2>
+  <!-- Common Footer -->
+  <footer>
+    <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
+  </footer>
 
-            <figure>
-                <img src="images/photo1.webp" alt="A lush green local farmland in Kweneng during the early morning light" loading="lazy" srcset="images/photo1.webp 500w, images/photo1.webp 800w, images/photo1.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw">
-                <figcaption>Beautiful farmlands of Kweneng.</figcaption>
-            </figure>
-
-            <figure>
-                <img src="images/photo2.webp" alt="Advanced agricultural equipment on display in Kweneng farms" loading="lazy" srcset="images/photo2.webp 500w, images/photo2.webp 800w, images/photo2.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw">
-                <figcaption>Agricultural equipment used in the region.</figcaption>
-            </figure>
-
-            <figure>
-                <img src="images/photo3.webp" alt="Fresh local produce arranged in stalls at a farmers' market in Kweneng" loading="lazy" srcset="images/photo3.webp 500w, images/photo3.webp 800w, images/photo3.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw">
-                <figcaption>Fresh produce at the farmers' market.</figcaption>
-            </figure>
-
-            <figure>
-                <img src="images/photo4.webp" alt="Cattle grazing on a farm in Kweneng under the blue sky" loading="lazy" srcset="images/photo4.webp 500w, images/photo4.webp 800w, images/photo4.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw">
-                <figcaption>Cattle farming in Kweneng.</figcaption>
-            </figure>
-
-            <figure>
-                <img src="images/photo5.webp" alt="Irrigation system spraying water over crops in a farm in Kweneng" loading="lazy" srcset="images/photo5.webp 500w, images/photo5.webp 800w, images/photo5.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw">
-                <figcaption>Irrigation systems supporting local farms.</figcaption>
-            </figure>
-
-            <figure>
-                <img src="images/photo6.webp" alt="A modern tractor plowing fields efficiently in a farm in Kweneng" loading="lazy" srcset="images/photo6.webp 500w, images/photo6.webp 800w, images/photo6.webp 1200w" sizes="(max-width: 600px) 100vw, (max-width: 1200px) 50vw, 33vw">
-                <figcaption>Modern tractors enhancing farm efficiency.</figcaption>
-            </figure>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
-        <p>© <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
-        <p>Website developed by Tinny Bothepha Mosimanyana, WDD 231 Class Project</p>
-        <p>Last modified: <span id="lastModified"></span></p>
-    </footer>
-
-    <!-- JavaScript for Visitor Message, Lazy Load Images, and Dynamic Date -->
-    <script src="scripts/discover.js" defer></script>
+  <!-- Fetch and Display Events Data -->
+  <script>
+    fetch('chamber/data/events.json')
+      .then(response => response.json())
+      .then(data => {
+        const eventsContainer = document.getElementById('eventsContainer');
+        data.events.forEach(event => {
+          const eventCard = document.createElement('div');
+          eventCard.classList.add('event-card');
+          eventCard.innerHTML = `
+            <h3>${event.title}</h3>
+            <p><strong>Date:</strong> ${event.date}</p>
+            <p>${event.description}</p>
+          `;
+          eventsContainer.appendChild(eventCard);
+        });
+      })
+      .catch(error => console.error('Error fetching events data:', error));
+  </script>
 
 </body>
 </html>
