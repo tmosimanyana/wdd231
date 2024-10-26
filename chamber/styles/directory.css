@@ -131,3 +131,26 @@ footer {
         width: 100%; /* Full width on small screens */
     }
 }
+.member-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    text-align: center;
+}
+
+.member-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+.grid-view {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.list-view {
+    display: block;
+}
