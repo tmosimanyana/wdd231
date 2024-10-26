@@ -3,79 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kweneng Agriculture Chamber of Commerce</title>
-    <meta name="description" content="Home page of the Kweneng Agriculture Chamber of Commerce, featuring events, weather, and business spotlights.">
+    <meta name="description" content="Home page of the Kweneng Agriculture Chamber of Commerce">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <title>Kweneng Agriculture Chamber of Commerce</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.min.css">
-    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce Directory">
+    
+    <!-- Social Media Meta -->
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp">
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero.webp">
 </head>
 <body>
 
-<!-- Header -->
-<header>
-    <div class="logo">
-        <h1>Kweneng Agriculture Chamber of Commerce</h1>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="directory.html">Directory</a></li>
-            <li><a href="membership.html">Join</a></li>
-            <li><a href="discover.html">Discover</a></li>
-        </ul>
-    </nav>
-</header>
-
-<!-- Main Content -->
-<main>
-    <!-- Hero Image -->
-    <section class="hero">
-        <img src="images/hero-medium.webp" alt="Kweneng Agriculture Chamber Hero" class="hero-image">
-        <div class="hero-text">
-            <h2>Empowering Agriculture in Kweneng</h2>
-            <a href="membership.html" class="cta-button">Join the Chamber</a>
+    <!-- Header -->
+    <header role="banner">
+        <div class="logo">
+            <h1>Kweneng Agriculture Chamber of Commerce</h1>
         </div>
-    </section>
+        <nav aria-label="Primary">
+            <ul>
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="membership.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- Current Events -->
-    <section class="events">
-        <h2>Upcoming Events</h2>
-        <ul>
-            <li>Annual Agricultural Summit - November 10th, 2024</li>
-            <li>Local Produce Market Day - December 5th, 2024</li>
-            <!-- Add additional events as needed -->
-        </ul>
-    </section>
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Image -->
+        <section class="hero">
+            <img src="images/hero-medium.webp" alt="Kweneng Agriculture Chamber Hero" class="hero-image">
+            <div class="hero-text">
+                <h2>Empowering Agriculture in Kweneng</h2>
+                <a href="membership.html" class="cta-button">Join the Chamber</a>
+            </div>
+        </section>
 
-    <!-- Weather Section -->
-    <section id="weather" class="weather">
-        <h2>Current Weather</h2>
-        <div id="weather-content">
-            <!-- Weather data will load here dynamically -->
-        </div>
-    </section>
-    
-    <!-- Member Spotlights Section -->
-    <section id="spotlight" class="spotlight">
-        <h2>Member Spotlights</h2>
-        <div id="spotlight-grid" class="spotlight-grid">
-            <!-- Spotlight members will load here dynamically -->
-        </div>
-    </section>
-</main>
+        <!-- Current Events -->
+        <section class="events" aria-labelledby="events-title">
+            <h2 id="events-title">Upcoming Events</h2>
+            <ul>
+                <li>Annual Agricultural Summit - November 10th, 2024</li>
+                <li>Local Produce Market Day - December 5th, 2024</li>
+                <!-- Add additional events as needed -->
+            </ul>
+        </section>
 
-<!-- Footer -->
-<footer>
-    <p>© <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
-    <p>Website developed by Tinny Bothepha Mosimanyana, WDD 231 Class Project</p>
-    <p>Last modified: <span id="lastModified"></span></p>
-</footer>
+        <!-- Weather Section -->
+        <section id="weather" class="weather" aria-labelledby="weather-title">
+            <h2 id="weather-title">Current Weather</h2>
+            <div id="weather-content">
+                <!-- Weather data will load here dynamically -->
+            </div>
+        </section>
 
-<!-- JavaScript -->
-<script src="scripts/main.js" defer></script>
+        <!-- Member Spotlights Section -->
+        <section id="spotlight" class="spotlight" aria-labelledby="spotlight-title">
+            <h2 id="spotlight-title">Member Spotlights</h2>
+            <div id="spotlight-grid" class="spotlight-grid">
+                <!-- Spotlight members will load here dynamically -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>© <time id="year"></time> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Website developed by Tinny Bothepha Mosimanyana, WDD 231 Class Project</p>
+        <p>Last modified: <time id="lastModified"></time></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/main.js" defer></script>
 </body>
 </html>
