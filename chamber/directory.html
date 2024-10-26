@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Kweneng Agriculture Chamber of Commerce Directory">
-    <meta name="author" content="Tinn Bothepha Mosimanyana">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
     <title>Kweneng Agriculture Chamber of Commerce Directory</title>
+    
     <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico">
+
     <!-- CSS -->
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="styles/styles.min.css">
+    
     <!-- Social Media Meta -->
     <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce Directory">
     <meta property="og:type" content="website">
@@ -20,11 +23,11 @@
 <body>
 
     <!-- Header -->
-    <header>
+    <header role="banner">
         <div class="logo">
             <h1>Kweneng Agriculture Chamber of Commerce</h1>
         </div>
-        <nav>
+        <nav aria-label="Primary">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="directory.html" class="active">Directory</a></li>
@@ -36,23 +39,23 @@
 
     <!-- Main Content -->
     <main>
-        <section id="directory">
-            <h2>Business Directory</h2>
+        <section id="directory" aria-labelledby="directory-title">
+            <h2 id="directory-title">Business Directory</h2>
             <div id="viewToggle">
-                <button id="gridView">Grid View</button>
-                <button id="listView">List View</button>
+                <button id="gridView" data-view="grid">Grid View</button>
+                <button id="listView" data-view="list">List View</button>
             </div>
-            <div id="memberList" class="grid">
+            <div id="memberList" class="grid" role="list">
                 <!-- Cards or List items will be populated here using JavaScript -->
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>© <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
+    <footer role="contentinfo">
+        <p>© <time id="year"></time> Kweneng Agriculture Chamber of Commerce</p>
         <p>Website developed by Tinny Bothepha Mosimanyana, WDD 231 Class Project</p>
-        <p>Last modified: <span id="lastModified"></span></p>
+        <p>Last modified: <time id="lastModified"></time></p>
     </footer>
 
     <!-- JavaScript -->
