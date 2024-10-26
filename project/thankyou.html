@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Join Kweneng Agriculture Chamber of Commerce and connect with agriculture professionals.">
+        <meta name="author" content="Tinn Bothepha Mosimanyana">
+        <title>Join | Kweneng Agriculture Chamber of Commerce</title>
+    
+        <!-- Open Graph Meta Tags -->
+        <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce - Join">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/join.html">
+        <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero.webp">
+
+    
+        <!-- Favicon -->
+        <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+        <!-- CSS -->
+        <link rel="stylesheet" href="styles/normalize.css">
+        <link rel="stylesheet" href="styles/styles.css">
+        <link rel="stylesheet" href="styles/membership.css">
+    
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Kweneng Agriculture Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="membership-form">
+            <h2>Become a Member</h2>
+            <p>Fill out the form below to join our chamber of commerce.</p>
+
+            <!-- Join Form -->
+            <form action="thankyou.html" method="get">
+                <!-- First Name -->
+                <label for="firstName">First Name:
+                    <input type="text" id="firstName" name="firstName" required title="Please enter your first name" autocomplete="given-name">
+                </label>
+
+                <!-- Last Name -->
+                <label for="lastName">Last Name:
+                    <input type="text" id="lastName" name="lastName" required title="Please enter your last name" autocomplete="family-name">
+                </label>
+
+                <!-- Organizational Title -->
+                <label for="orgTitle">Organization Title:
+                    <input type="text" id="orgTitle" name="orgTitle" title="Please enter your title" autocomplete="organization-title" pattern="[A-Za-z-\s]{7,}">
+                </label>
+
+                <!-- Email -->
+                <label for="email">Email Address:
+                    <input type="email" id="email" name="email" required title="Please enter a valid email address" placeholder="example@example.com" autocomplete="email">
+                </label>
+
+                <!-- Phone Number -->
+                <label for="phone">Phone Number:
+                    <input type="tel" id="phone" name="phone" required title="Please enter a valid phone number" autocomplete="tel">
+                </label>
+
+                <!-- Organization Name -->
+                <label for="organization">Organization Name:
+                    <input type="text" id="organization" name="organization" required title="Please enter your organization's name" autocomplete="organization">
+                </label>
+
+                <!-- Membership Level -->
+                <label for="membershipLevel">Membership Level:
+                    <select id="membershipLevel" name="membershipLevel">
+                        <option value="NP">NP Membership (Non-profit)</option>
+                        <option value="Bronze">Bronze Membership</option>
+                        <option value="Silver">Silver Membership</option>
+                        <option value="Gold">Gold Membership</option>
+                    </select>
+                </label>
+
+                <!-- Organization Description -->
+                <label for="description">Organization Description:
+                    <textarea id="description" name="description" title="Please provide a description of your business"></textarea>
+                </label>
+
+                <!-- Hidden Timestamp -->
+                <input type="hidden" id="timestamp" name="timestamp">
+
+                <!-- Submit Button -->
+                <input type="submit" value="Submit Application">
+            </form>
+        </section>
+
+        <!-- Membership Cards Section -->
+        <section id="membership-cards">
+            <div class="card np-card">
+                <h3>NP Membership</h3>
+                <p>For non-profit organizations. <a href="#" class="info-link" data-modal="npModal">More info</a></p>
+            </div>
+            <div class="card bronze-card">
+                <h3>Bronze Membership</h3>
+                <p>Basic membership level. <a href="#" class="info-link" data-modal="bronzeModal">More info</a></p>
+            </div>
+            <div class="card silver-card">
+                <h3>Silver Membership</h3>
+                <p>Intermediate level. <a href="#" class="info-link" data-modal="silverModal">More info</a></p>
+            </div>
+            <div class="card gold-card">
+                <h3>Gold Membership</h3>
+                <p>Highest level membership. <a href="#" class="info-link" data-modal="goldModal">More info</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals for Membership Levels -->
+    <div id="npModal" class="modal">
+        <div class="modal-content">
+            <span class="close" data-close="npModal">&times;</span>
+            <h3>NP Membership Benefits</h3>
+            <p>No fee for non-profit organizations. Access to basic chamber events and resources.</p>
+        </div>
+    </div>
+
+    <div id="bronzeModal" class="modal">
+        <div class="modal-content">
+            <span class="close" data-close="bronzeModal">&times;</span>
+            <h3>Bronze Membership Benefits</h3>
+            <p>Basic membership with access to all events, training, and networking.</p>
+        </div>
+    </div>
+
+    <div id="silverModal" class="modal">
+        <div class="modal-content">
+            <span class="close" data-close="silverModal">&times;</span>
+            <h3>Silver Membership Benefits</h3>
+            <p>Includes all bronze benefits plus advertising options and discounts on events.</p>
+        </div>
+    </div>
+
+    <div id="goldModal" class="modal">
+        <div class="modal-content">
+            <span class="close" data-close="goldModal">&times;</span>
+            <h3>Gold Membership Benefits</h3>
+            <p>Premium membership with VIP access to all events, personalized advertising, and special privileges.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Website developed by Tinny Bothepha Mosimanyana, WDD 231 Class Project</p>
+        <p>Last modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/membership.js"></script>
+</body>
+</html>

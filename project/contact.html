@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Kweneng Agriculture Chamber of Commerce">
+    <meta name="author" content="Tinn Bothepha Mosimanyana">
+    <title>Contact Us | Kweneng Agriculture Chamber of Commerce</title>
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>Kweneng Agriculture Chamber of Commerce</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="membership.html">Join</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or inquiries, feel free to reach out to us using the form below.</p>
+
+            <!-- Contact Form -->
+            <form action="thankyou_contact.html" method="get">
+                <!-- First Name -->
+                <label for="firstName">First Name:</label>
+                <input type="text" id="firstName" name="firstName" required title="Please enter your first name" autocomplete="given-name">
+
+                <!-- Last Name -->
+                <label for="lastName">Last Name:</label>
+                <input type="text" id="lastName" name="lastName" required title="Please enter your last name" autocomplete="family-name">
+
+                <!-- Email Address -->
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required title="Please enter a valid email address" placeholder="example@example.com" autocomplete="email">
+
+                <!-- Mobile Phone Number -->
+                <label for="phone">Mobile Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required title="Please enter a valid phone number" autocomplete="tel">
+
+                <!-- Subject -->
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required title="Please enter the subject of your inquiry">
+
+                <!-- Message -->
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required title="Please enter your message"></textarea>
+
+                <!-- Timestamp (Hidden) -->
+                <input type="hidden" id="timestamp" name="timestamp">
+
+                <!-- Submit Button -->
+                <input type="submit" value="Send Message">
+            </form>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© <span id="year"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Website developed by Tinny Bothepha Mosimanyana, WDD 231 Class Project</p>
+        <p>Last modified: <span id="lastModified"></span></p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="scripts/contact.js"></script>
+</body>
+</html>
