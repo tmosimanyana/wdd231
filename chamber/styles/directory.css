@@ -1,82 +1,59 @@
-/* Normalize styles */
-@import url('normalize.css');
+/* directory.css */
 
-/* Global Styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+/* Modal styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
 }
 
-/* Header Styles */
-header {
-    background: #006400; /* Dark green */
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-nav {
-    margin: 0 auto;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover,
-nav ul li a:focus {
-    text-decoration: underline;
-    color: #ffeb3b; /* Highlight color on hover */
-}
-
-/* Main Content Styles */
-main {
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
 }
 
-h1, h2 {
-    color: #004d00; /* Slightly lighter green */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
 }
 
-/* Member Card Styles */
-#member-container {
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* List and Grid View styles */
+.grid-view {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+}
+
+.list-view {
+    display: block;
 }
 
 .member-card {
-    background: white;
-    border: 1px solid #ddd;
-    border-radius: 5px;
     margin: 10px;
     padding: 15px;
-    flex: 1 1 calc(30% - 20px); /* Responsive layout */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Added transition for shadow */
-}
-
-.member-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
 }
 
 .member-card img {
@@ -85,90 +62,14 @@ h1, h2 {
     border-radius: 5px;
 }
 
-.member-card h3 {
-    margin: 10px 0 5px; /* Margin for spacing */
-}
-
-.member-card p {
-    color: #666; /* Slightly darker color for description text */
-}
-
-/* List Styles */
-.member-list {
-    list-style-type: none;
-    padding: 0;
-}
-
-.member-list li {
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
-}
-
-/* Button Styles */
-#toggle-view {
-    background-color: #004d00; /* Darker green */
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#toggle-view:hover,
-#toggle-view:focus {
-    background-color: #006400; /* Highlight color on hover */
-}
-
-/* Footer Styles */
-footer {
-    background: #006400; /* Dark green */
-    color: #fff;
-    text-align: center;
-    padding: 15px 0;
-}
-
-#year {
-    font-weight: bold;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    nav ul {
-        display: none; /* Hide by default */
-        flex-direction: column;
-        background: #006400; /* Same background as header */
-    }
-
-    nav ul.expanded {
-        display: flex; /* Show when expanded */
-    }
-
-    nav ul li {
-        margin: 10px 0; /* Stack links vertically */
-    }
-
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    #member-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .member-card {
-        flex: 1 1 100%; /* Full width on mobile */
-    }
-}
-
-/* Additional Utility Classes */
-.grid-view {
+/* Styles specific to list view */
+.list-view .member-card {
     display: flex;
-    flex-wrap: wrap;
+    align-items: center;
 }
 
-.list-view {
-    display: block;
+.list-view .member-card img {
+    width: 50px; /* Smaller image for list view */
+    height: auto;
+    margin-right: 15px;
 }
