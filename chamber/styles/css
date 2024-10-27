@@ -1,265 +1,118 @@
 /* Import Normalize CSS */
 @import url('./normalize.css');
 /* General Reset */
+/* Basic Reset */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Header Styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Section */
 header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #e6e6e6;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    position: relative;
 }
 
-.logo {
+header .logo {
     display: flex;
     align-items: center;
 }
 
-.logo img {
-    height: 40px; /* Adjust size as needed */
+header .logo img {
+    width: 50px;
+    height: 50px;
     margin-right: 10px;
 }
-
-.logo span {
-    font-size: 1.5rem;
+header .logo span {
+    font-size: 1.2em;
     font-weight: bold;
-    color: #333;
 }
-
-/* Circle Icon Styling */
+/* Circle Styling and Position Adjustment */
 .header-circle {
-    font-size: 1.2rem;
-    padding: 5px;
-    border: 2px solid #333;
+    width: 40px;
+    height: 40px;
+    background-color: #4CAF50; /* Customize color if needed */
     border-radius: 50%;
-    cursor: pointer;
-    margin-left: auto;
-}
-
-/* Navigation Styling */
-#main-nav ul {
-    list-style: none;
     display: flex;
-    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    color: #fff;
+    position: absolute;
+    top: 15px; /* Adjusted for vertical alignment */
+    right: 20px; /* Adjusted for horizontal alignment */
 }
 
-#main-nav a {
-    text-decoration: none;
-    color: #333;
-    font-size: 1rem;
-}
-
-#main-nav a:hover {
-    text-decoration: underline;
-}
-
-/* Button Styling for Mobile Menu Toggle */
 .menu-toggle {
-    font-size: 1.5rem;
+    font-size: 1.5em;
     background: none;
     border: none;
-    display: none; /* Show only on mobile */
+    color: #fff;
+    cursor: pointer;
+    display: none; /* Hidden on desktop */
 }
 
-/* Responsive Layout */
+/* Navigation */
+nav {
+    background-color: #333;
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* Responsive Menu */
 @media (max-width: 768px) {
-    /* Show mobile menu button */
     .menu-toggle {
         display: block;
     }
 
-    #main-nav ul {
-        display: none; /* Hide the main nav on mobile */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        background-color: #333;
+    }
+
+    nav ul.active {
+        display: flex;
     }
 }
-    
-    /* Menu Toggle (Mobile) */
-    .menu-toggle {
-        font-size: 1.5em;
-        background: none;
-        border: none;
-        color: #fff;
-        cursor: pointer;
-        display: none; /* Hidden on desktop */
-    }
-    
-    /* Navigation */
-    nav ul {
-        list-style-type: none;
-        display: flex;
-        justify-content: center;
-        padding: 0;
-        margin: 0;
-        background-color: #333;
-    }
-    
-    nav ul li {
-        margin: 0 20px;
-    }
-    
-    nav ul li a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-        padding: 10px 15px;
-        display: block;
-    }
-    
-    nav ul li a:hover {
-        background-color: #4CAF50;
-        color: #fff;
-        border-radius: 5px;
-    }
-    
-    /* Hero Section */
-    #hero {
-        background-image: url("images/hero-background.webp");
-        background-size: cover;
-        background-position: center;
-        padding: 100px 20px;
-        text-align: center;
-        color: #fff;
-    }
-    
-    #hero .hero-content {
-        max-width: 600px;
-        margin: 0 auto;
-    }
-    
-    #hero button {
-        background-color: #4CAF50;
-        color: #fff;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        font-size: 1.1em;
-        cursor: pointer;
-    }
-    
-    #hero button:hover {
-        background-color: #45a049;
-    }
-    
-    /* Main Content */
-    main {
-        padding: 20px;
-    }
-    
-    .section-container {
-        margin-bottom: 30px;
-    }
-    
-    h1, h2 {
-        color: #333;
-    }
-    
-    /* Business Directory */
-    #business-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 16px;
-        justify-content: center;
-    }
-    
-    .business-card {
-        width: calc(50% - 16px);
-        border: 1px solid #ddd;
-        padding: 1em;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        background-color: #fff;
-    }
-    
-    .business-card img {
-        width: 80px;
-        height: 80px;
-        margin-right: 16px;
-        border-radius: 50%;
-    }
-    
-    .business-info h3 {
-        margin-bottom: 8px;
-        font-size: 1.1em;
-        color: #4CAF50;
-    }
-    
-    .business-info p {
-        margin-bottom: 5px;
-        font-size: 0.9em;
-        color: #555;
-    }
-    
-    /* Join Us Section */
-    #join p {
-        font-size: 1em;
-        color: #666;
-    }
-    
-    /* Footer */
-    footer {
-        background-color: #333;
-        color: #fff;
-        padding: 40px 20px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-    
-    .footer-content {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        margin-bottom: 10px;
-    }
-    
-    .footer-content p {
-        margin: 5px 0;
-    }
-    
-    .social-links {
-        display: flex;
-        gap: 15px;
-    }
-    
-    .social-links a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 1.2em;
-    }
-    
-    .social-links a:hover {
-        color: #4CAF50;
-    }
-    
-    .footer-note {
-        font-size: 0.85em;
-        color: #ccc;
-    }
-    
-    /* Responsive Design */
-    @media (max-width: 768px) {
-        .menu-toggle {
-            display: block;
-        }
-    
-        nav ul {
-            display: none;
-            flex-direction: column;
-            text-align: center;
-        }
-    
-        nav ul.active {
-            display: flex;
-        }
-    }
-    
