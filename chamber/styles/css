@@ -1,6 +1,5 @@
 /* Import Normalize CSS */
 @import url('./normalize.css');
-/* General Reset */
 /* Basic Reset */
 * {
     box-sizing: border-box;
@@ -22,7 +21,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px 20px;
     background-color: #333;
     color: #fff;
     position: relative;
@@ -31,40 +30,34 @@ header {
 header .logo {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 header .logo img {
-    width: 50px;
-    height: 50px;
-    margin-right: 10px;
-}
-header .logo span {
-    font-size: 1.2em;
-    font-weight: bold;
-}
-/* Circle Styling and Position Adjustment */
-.header-circle {
     width: 40px;
     height: 40px;
-    background-color: #4CAF50; /* Customize color if needed */
+}
+
+header .logo span {
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+/* Circle opposite the logo */
+.header-circle {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
+    background-color: #4CAF50;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.2em;
     color: #fff;
-    position: absolute;
-    top: 15px; /* Adjusted for vertical alignment */
-    right: 20px; /* Adjusted for horizontal alignment */
-}
-
-.menu-toggle {
-    font-size: 1.5em;
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
-    display: none; /* Hidden on desktop */
 }
 
 /* Navigation */
@@ -76,13 +69,10 @@ nav {
 nav ul {
     list-style-type: none;
     display: flex;
+    gap: 30px;
     justify-content: center;
     padding: 0;
     margin: 0;
-}
-
-nav ul li {
-    margin: 0 20px;
 }
 
 nav ul li a {
@@ -99,20 +89,149 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-/* Responsive Menu */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block;
-    }
+/* Hero Section */
+#hero {
+    background-image: url("images/hero-background.webp");
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: #fff;
+}
 
+#hero .hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#hero button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+#hero button:hover {
+    background-color: #45a049;
+}
+
+/* Main Content */
+main {
+    padding: 20px;
+}
+
+.section-container {
+    margin-bottom: 30px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* Business Directory */
+#business-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+}
+
+.business-card {
+    width: calc(50% - 16px);
+    border: 1px solid #ddd;
+    padding: 1em;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.business-card img {
+    width: 80px;
+    height: 80px;
+    margin-right: 16px;
+    border-radius: 50%;
+}
+
+.business-info h3 {
+    margin-bottom: 8px;
+    font-size: 1.1em;
+    color: #4CAF50;
+}
+
+.business-info p {
+    margin-bottom: 5px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+/* Join Us Section */
+#join p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.footer-content p {
+    margin: 5px 0;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.social-links a:hover {
+    color: #4CAF50;
+}
+
+.footer-note {
+    font-size: 0.85em;
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     nav ul {
-        display: none;
         flex-direction: column;
-        text-align: center;
+        display: none;
         background-color: #333;
     }
 
     nav ul.active {
         display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
     }
 }
