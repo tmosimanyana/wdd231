@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Kweneng Agriculture Chamber of Commerce - Supporting local businesses">
-    <meta name="author" content="Tinny Bothepha Mosimanyana"> <!-- Your name added -->
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
     
     <!-- Open Graph meta tags -->
     <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="images/hero-medium.webp"> <!-- Updated to ensure it's a local path -->
-    <meta property="og:url" content="http://tmosimanyana.github.io/wdd231/chamber/index.html"> <!-- Correct URL -->
+    <meta property="og:image" content="http://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp">
+    <meta property="og:url" content="http://tmosimanyana.github.io/wdd231/chamber/index.html">
     
     <title>Kweneng Agriculture Chamber of Commerce</title>
+
+    <!-- Normalize CSS for cross-browser consistency -->
+    <link rel="stylesheet" href="styles/normalize.css"> <!-- Local path to normalize.css -->
+    
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    
     <script src="scripts/main.js" defer></script>
 </head>
 <body>
@@ -25,51 +31,13 @@
                 <li><a href="#company-spotlight">Company Spotlight</a></li>
                 <li><a href="#current-events">Current Events</a></li>
                 <li><a href="#weather">Weather</a></li>
-                <li><a href="#join">Join Us</a></li> <!-- Updated from Contact Us to Join Us -->
+                <li><a href="#join">Join Us</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <section id="hero">
-            <img src="images/hero-medium.webp" alt="Agriculture" loading="lazy">
-            <h2>Welcome to Our Chamber</h2>
-            <p>Connecting local farmers and businesses for a sustainable future.</p>
-        </section>
-
-        <section id="company-spotlight">
-            <h2>Company Spotlight</h2>
-            <div id="spotlight-container"></div>
-        </section>
-
-        <section id="current-events">
-            <h2>Current Events</h2>
-            <p>Check back soon for updates!</p>
-        </section>
-
-        <section id="weather">
-            <h2>Current Weather</h2>
-            <p id="weather-data">Loading weather data...</p>
-        </section>
-
-        <section id="join">
-            <h2>Join Us</h2>
-            <p>Become a member of the Kweneng Agriculture Chamber of Commerce and enjoy the following benefits:</p>
-            <ul>
-                <li>Networking opportunities with local businesses.</li>
-                <li>Access to industry resources and support.</li>
-                <li>Participation in local events and workshops.</li>
-            </ul>
-            <form id="join-form">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" required></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </section>
+        <!-- Page content here -->
     </main>
 
     <footer>
