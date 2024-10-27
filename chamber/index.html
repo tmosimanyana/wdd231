@@ -1,112 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Kweneng Agriculture Chamber of Commerce</title>
-  <link rel="stylesheet" href="styles/style.css">
-  <script src="scripts/main.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kweneng Agriculture Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/css">
 </head>
 <body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="images/hero-medium.webp" alt="Kweneng Agriculture Chamber of Commerce Logo">
+            <span>Kweneng Agriculture Chamber of Commerce</span>
+        </div>
+        <button class="menu-toggle" id="menu-toggle">☰</button>
+    </header>
 
-  <!-- Common Header and Navigation -->
-  <header>
-    <div class="container">
-      <img src="images/logo.webp" alt="Kweneng Agriculture Chamber of Commerce Logo" class="logo">
-      <nav>
+    <!-- Navigation -->
+    <nav id="main-nav">
         <ul>
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="discover.html">Discover</a></li>
-          <li><a href="directory.html">Directory</a></li>
-          <li><a href="join.html">Join</a></li>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#directory">Business Directory</a></li>
+            <li><a href="#join">Join</a></li>
         </ul>
-      </nav>
-    </div>
-  </header>
+    </nav>
 
-  <!-- Main Content -->
-  <main>
     <!-- Hero Section -->
-    <section class="hero">
-      <h1>Welcome to the Kweneng Agriculture Chamber of Commerce</h1>
-      <a href="#join" class="cta-button">Join Us</a>
-    </section>
-  
-    <!-- Current Weather Section -->
-    <section id="current-weather" class="weather-section"></section>
-    <section id="weather-forecast" class="weather-section"></section>
-  
-    <!-- Current Events Section -->
-    <section class="current-events">
-      <h2>Current Events</h2>
-      <p>Upcoming events will be displayed here.</p>
-    </section>
-  
-    <!-- Company Spotlight Section -->
-    <section id="company-spotlight" class="company-spotlight">
-      <h2>Company Spotlight</h2>
-      <!-- Random members will be injected here -->
-    </section>
-  </main>
-  
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <h1>Welcome to the Kweneng Agriculture Chamber of Commerce</h1>
-      <p>Supporting local businesses and fostering economic growth in our community.</p>
-      <a href="join.html" class="cta-button">Join Us Today</a>
+    <section id="hero">
+        <div class="hero-content">
+            <button>Keynote Tickets</button>
+        </div>
     </section>
 
-    <!-- Community Information Section -->
-    <section class="community-info">
-      <h2>About Our Community</h2>
-      <p>Learn about the unique opportunities, resources, and networks available to support local businesses in Kweneng.</p>
-      <a href="discover.html" class="cta-link">Discover More</a>
-    </section>
+    <!-- Main Content -->
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <h1>Welcome to the Kweneng Agriculture Chamber of Commerce</h1>
+            <p>Your resource for agriculture businesses and networking in Kweneng.</p>
+        </section>
 
-    <!-- Weather Section -->
-    <section class="weather">
-      <h2>Current Weather</h2>
-      <div id="weatherContainer">
-        <!-- Weather data will populate here -->
-      </div>
-    </section>
+        <!-- Business Directory Section -->
+        <section id="directory" class="section-container">
+            <h2>Business Directory</h2>
+            <div id="business-list"></div> <!-- Placeholder for dynamically generated business cards -->
+        </section>
 
-    <!-- Spotlight Section -->
-    <section class="spotlight">
-      <h2>Member Spotlight</h2>
-      <div id="spotlightContainer" class="spotlight-members">
-        <!-- Spotlight member entries will populate here -->
-      </div>
-    </section>
-  </main>
+        <!-- Join Section -->
+        <section id="join" class="section-container">
+            <h2>Join Us</h2>
+            <p>Interested in becoming a member of the Kweneng Agriculture Chamber of Commerce? Contact us for more information.</p>
+        </section>
+    </main>
 
-  <!-- Common Footer -->
-  <footer>
-    <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
-  </footer>
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <p>Kweneng Agriculture Chamber of Commerce</p>
+            <p>P O Box 894, Molepolole, Botswana</p>
+            <p>Email: mbothepha@gmail.com | Phone: (267) 763-736661</p>
+        </div>
+        <div class="social-links">
+            <a href="#">Twitter</a>
+            <a href="#">YouTube</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <p class="footer-note">WDD231 Class Project by Tinny Bothepha Mosimanyana | Last Modified: 10/21/2022 22:12:35</p>
+    </footer>
 
-  <!-- Fetch and Display Spotlight Members -->
-  <script>
-    fetch('chamber/data/members.json')
-      .then(response => response.json())
-      .then(data => {
-        const spotlightContainer = document.getElementById('spotlightContainer');
-        const spotlightMembers = data.members.filter(member => member.membershipLevel === "Gold" || member.membershipLevel === "Silver");
-
-        spotlightMembers.slice(0, 3).forEach(member => {
-          const memberCard = document.createElement('div');
-          memberCard.classList.add('spotlight-card');
-          memberCard.innerHTML = `
-            <h3>${member.name}</h3>
-            <p>${member.category}</p>
-            <a href="${member.website}" target="_blank">Learn More</a>
-          `;
-          spotlightContainer.appendChild(memberCard);
-        });
-      })
-      .catch(error => console.error('Error fetching spotlight data:', error));
-  </script>
-
+    <script src="script/js" defer></script>
 </body>
 </html>
