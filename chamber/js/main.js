@@ -27,7 +27,7 @@ async function fetchWeather() {
 }
 
 // Fetch company spotlight data from JSON
-const members = [
+const directory = [
     {
         "name": "BAMB Headquarters",
         "address": "123 BAMB Rd, Kweneng",
