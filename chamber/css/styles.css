@@ -1,0 +1,156 @@
+/* General Reset */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+/* Header Styles */
+.header {
+    background: #007A33; /* Green header */
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.header .logo {
+    max-width: 100px; /* Adjust logo size */
+}
+
+/* Navigation Styles */
+.nav-list {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+
+.nav-list li {
+    margin: 0 15px;
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.nav-list a:hover {
+    text-decoration: underline; /* Add underline on hover */
+}
+
+/* Main Content Styles */
+.main-content {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover; /* Cover the area without distortion */
+}
+
+.cta-button {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background: #007A33; /* Green button */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+.cta-button:hover {
+    background: #005b26; /* Darker green on hover */
+}
+
+/* Events and Weather Sections */
+h2 {
+    color: #007A33; /* Green headings */
+    margin: 20px 0;
+}
+
+.events-list, #weather-info {
+    padding: 10px;
+    background: #ffffff; /* White background for sections */
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Company Spotlight Styles */
+#spotlight-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between cards */
+}
+
+.company-card {
+    flex: 1 1 calc(33% - 20px); /* Three columns on larger screens */
+    background: #eaeaea; /* Light grey background for cards */
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.company-card img {
+    max-width: 100%; /* Responsive images */
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Footer Styles */
+.footer {
+    background: #007A33; /* Green footer */
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: relative;
+}
+
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+}
+
+.social-icons img {
+    width: 30px; /* Set icon size */
+    height: auto;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .nav-list {
+        flex-direction: column; /* Stack navigation on smaller screens */
+    }
+    
+    #spotlight-container {
+        flex-direction: column; /* Stack company cards on smaller screens */
+    }
+    
+    .company-card {
+        flex: 1 1 100%; /* Full width for company cards on smaller screens */
+    }
+    
+    .hero-image {
+        max-height: 300px; /* Reduce hero image height on smaller screens */
+    }
+}
