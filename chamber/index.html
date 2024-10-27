@@ -6,20 +6,17 @@
     <title>Kweneng Agriculture Chamber of Commerce</title>
     <meta name="author" content="Tinny Bothepha Mosimanyana">
     
-        <!-- Open Graph Meta Tags -->
-        <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
-        <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp">
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp">
     
-        <!-- Favicon -->
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="styles/normalize.css">
-        <link rel="stylesheet" href="styles/css">
-        <script src="scripts/main.js" defer></script>
-        <script src="scripts/weather.js" defer></script>
-        <script src="scripts/spotlights.js" defer></script>
-    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css"> <!-- Ensure correct file name -->
+    <script src="scripts/main.js" defer></script>
 </head>
 <body>
     <!-- Header Section -->
@@ -44,7 +41,7 @@
     <!-- Hero Section -->
     <section id="hero">
         <div class="hero-content">
-          <img src="images/hero-large.webp" alt="Kweneng Agriculture Chamber of Commerce hero">
+            <img src="images/hero-large.webp" alt="Kweneng Agriculture Chamber of Commerce hero">
             <button>Keynote Tickets</button>
         </div>
     </section>
@@ -57,9 +54,9 @@
             <p>Your resource for agriculture businesses and networking in Kweneng.</p>
         </section>
 
-        <!-- Business Directory Section -->
+        <!-- Directory Section -->
         <section id="directory" class="section-container">
-            <h2>Business Directory</h2>
+            <h2>Directory</h2>
             <div id="business-list"></div> <!-- Placeholder for dynamically generated business cards -->
         </section>
 
@@ -78,11 +75,14 @@
             <p>Email: mbothepha@gmail.com | Phone: (267) 763-736661</p>
         </div>
         <div class="social-links">
-            <a href="#">Twitter</a>
+            <a href="#">facebook</a>
             <a href="#">YouTube</a>
             <a href="#">LinkedIn</a>
         </div>
         <p class="footer-note">WDD231 Class Project by Tinny Bothepha Mosimanyana | Last Modified: 10/21/2022 22:12:35</p>
+        <p>Current Year: <span id="year"></span></p>
+        <p id="last-modified"></p>
     </footer>
+    <button id="toggle-view">Toggle View</button>
 </body>
 </html>
