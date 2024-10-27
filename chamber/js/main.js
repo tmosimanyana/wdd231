@@ -1,6 +1,32 @@
-// JavaScript for Kweneng Agriculture Chamber of Commerce
+// Set current year in footer
+const currentYearSpan = document.getElementById('currentyear');
+currentYearSpan.textContent = new Date().getFullYear();
 
-// Sample data for company spotlight
+// Set last modified date in footer
+const lastModifiedParagraph = document.getElementById('lastModified');
+lastModifiedParagraph.textContent = `Last updated: ${document.lastModified}`;
+
+// Fetch weather data from OpenWeatherMap API
+async function fetchWeather() {
+    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replaced with your OpenWeatherMap API key
+    const city = 'Molepolole,Botswana'; // Change as necessary
+    const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+    try {
+        const response = await fetch(weatherUrl);
+        const data = await response.json();
+        const weatherData = `
+            Current Temperature: ${Math.round(data.main.temp)}°C<br>
+            Weather: ${data.weather.map(item => item.description.charAt(0).toUpperCase() + item.description.slice(1)).join(', ')}
+        `;
+        document.getElementById('weather-data').innerHTML = weatherData;
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
+        document.getElementById('weather-data').textContent = 'Unable to retrieve weather data.';
+    }
+}
+
+// Fetch company spotlight data from JSON
 const members = [
     {
         "name": "BAMB Headquarters",
@@ -60,55 +86,30 @@ const members = [
     }
 ];
 
-// Function to display company spotlight information
-function displayCompanySpotlight() {
+
+// Function to randomly display spotlight members
+function displaySpotlights() {
     const spotlightContainer = document.getElementById('spotlight-container');
-    companies.forEach(company => {
-        const card = document.createElement('div');
-        card.classList.add('company-card');
-        card.innerHTML = `
-            <img src="${company.image}" alt="${company.name}" />
+    const qualifiedCompanies = companies.filter(company => company.membershipLevel.includes("2") || company.membershipLevel.includes("3"));
+    const randomCompanies = [];
+
+    while (randomCompanies.length < 3 && qualifiedCompanies.length > 0) {
+        const randomIndex = Math.floor(Math.random() * qualifiedCompanies.length);
+        randomCompanies.push(qualifiedCompanies[randomIndex]);
+        qualifiedCompanies.splice(randomIndex, 1);
+    }
+
+    randomCompanies.forEach(company => {
+        const companyDiv = document.createElement('div');
+        companyDiv.innerHTML = `
             <h3>${company.name}</h3>
+            <img src="${company.image}" alt="${company.name} logo" class="company-image">
             <p>${company.address}</p>
             <p>${company.phone}</p>
             <p>${company.membershipLevel}</p>
         `;
-        spotlightContainer.appendChild(card);
+        spotlightContainer.appendChild(companyDiv);
     });
 }
 
-// Function to fetch weather data
-async function fetchWeather() {
-    const apiKey = 'dd06ad9a935ec994d44179b8b6867bca'; // Replace with your actual API key
-    const city = 'molepolole'; // Changed to the appropriate city if needed
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-
-    try {
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error('Weather data could not be fetched.');
-        }
-        const data = await response.json();
-        displayWeather(data);
-    } catch (error) {
-        document.getElementById('weather-data').textContent = 'Failed to load weather data.';
-        console.error('Error fetching weather data:', error);
-    }
-}
-
-// Function to display fetched weather data
-function displayWeather(data) {
-    const weatherInfo = document.getElementById('weather-data');
-    const temperature = Math.round(data.main.temp);
-    const description = data.weather[0].description;
-
-    weatherInfo.innerHTML = `
-        <strong>${temperature}°C</strong> - ${description.charAt(0).toUpperCase() + description.slice(1)}
-    `;
-}
-
-// Initialize functions
-document.addEventListener('DOMContentLoaded', () => {
-    displayCompanySpotlight(); // Load company spotlight on page load
-    fetchWeather(); // Fetch weather data on page load
-});
+//

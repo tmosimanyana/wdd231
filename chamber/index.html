@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="css/styles.css">
 
     <!-- JavaScript File -->
-    <script src="scripts/home.js" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
 <body>
 
@@ -42,10 +42,9 @@
         <h1 class="title">Kweneng Agriculture Chamber of Commerce</h1>
         <nav>
             <ul class="nav-list">
-                <li><a href="#company-spotlight" aria-label="View Company Spotlight">Company Spotlight</a></li>
-                <li><a href="#current-events" aria-label="View Current Events">Current Events</a></li>
-                <li><a href="#weather" aria-label="View Current Weather">Weather</a></li>
-                <li><a href="#join" aria-label="Join the Chamber">Join Us</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
             </ul>
         </nav>
     </header>
@@ -87,23 +86,10 @@
         </section>
     </main>
 
-    <!-- Footer Section with Social Media Links -->
+    <!-- Footer Section -->
     <footer class="footer">
-        <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
-        <div class="social-icons">
-            <a href="https://facebook.com/KwenengChamber" aria-label="Facebook" target="_blank">
-                <img src="images/facebook-icon.png" alt="Facebook icon">
-            </a>
-            <a href="https://twitter.com/KwenengChamber" aria-label="Twitter" target="_blank">
-                <img src="images/twitter-icon.png" alt="Twitter icon">
-            </a>
-            <a href="https://instagram.com/KwenengChamber" aria-label="Instagram" target="_blank">
-                <img src="images/instagram-icon.png" alt="Instagram icon">
-            </a>
-            <a href="https://linkedin.com/company/KwenengChamber" aria-label="LinkedIn" target="_blank">
-                <img src="images/linkedin-icon.png" alt="LinkedIn icon">
-            </a>
-        </div>
+        <p>&copy; <span id="currentyear"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p id="lastModified"></p>
     </footer>
 </body>
 </html>
