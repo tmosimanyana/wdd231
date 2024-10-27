@@ -58,15 +58,16 @@ const companyData = [
 ];
 
 function displayCompanySpotlight() {
+    // Filter eligible members for spotlight
     const eligibleMembers = companyData.filter(member =>
         member.membershipLevel === "Membership Level 2" || member.membershipLevel === "Membership Level 3"
     );
 
+    // Randomly select two members for spotlight
     const selectedMembers = eligibleMembers.sort(() => 0.5 - Math.random()).slice(0, 2);
     
-    const spotlightContainer = document.getElementById('spotlight-container');
-    
-    spotlightContainer.innerHTML = selectedMembers.map(member => `
+    // Create HTML for each selected member
+    const spotlightHTML = selectedMembers.map(member => `
         <div class="member-card">
             <img src="${member.image}" alt="${member.name}" class="member-image" loading="lazy">
             <h3>${member.name}</h3>
@@ -75,15 +76,38 @@ function displayCompanySpotlight() {
             <p>Membership Level: ${member.membershipLevel}</p>
         </div>
     `).join('');
+
+    // Insert HTML into spotlight container
+    document.getElementById('spotlight-container').innerHTML = spotlightHTML;
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     displayCompanySpotlight();
-    // Fetch weather data (mock function)
-    fetchWeatherData();
+    fetchWeatherData(); // Call the weather data fetching function
 });
 
-function fetchWeatherData() {
-    const weatherData = "Sunny, 25°C"; // Mock data; replace with real API call
-    document.getElementById('weather-data').innerText = weatherData;
+// Fetch weather data from OpenWeatherMap API
+async function fetchWeatherData() {
+    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replaced with your OpenWeatherMap API key
+    const city = 'molepolole'; // location here
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        // Extract relevant weather information
+        const temperature = Math.round(data.main.temp); // Rounded temperature
+        const weatherDescription = data.weather.map(event => event.description.charAt(0).toUpperCase() + event.description.slice(1)).join(', '); // Capitalized descriptions
+
+        // Create a string for weather display
+        const weatherData = `Current Weather: ${weatherDescription}, ${temperature}°C`;
+        document.getElementById('weather-data').innerText = weatherData;
+
+        // Forecast (3-day forecast can be fetched separately)
+        // Example: Use the forecast endpoint to fetch 3-day data
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
+        document.getElementById('weather-data').innerText = 'Failed to load weather data.';
+    }
 }
