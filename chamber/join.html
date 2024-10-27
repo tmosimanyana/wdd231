@@ -3,110 +3,189 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/style.css">
-    <title>Join the Chamber</title>
+    <meta name="description" content="Join the Kweneng Agriculture Chamber of Commerce">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Join the Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        /* Add styles for the membership cards */
+        .card {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            transition: transform 0.3s ease, background-color 0.5s ease;
+        }
+        .card:hover {
+            background-color: #f0f8ff; /* Light color change on hover */
+        }
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            padding-top: 60px;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .card {
+            animation: fadeIn 1s;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <div class="container">
-            <img src="images/logo.png" alt="Chamber Logo" class="logo">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="discover.html">Discover</a></li>
-                    <li><a href="directory.html">Directory</a></li>
-                    <li><a href="join.html" class="active">Join</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Kweneng Agriculture Chamber of Commerce</h1>
     </header>
-    
     <main>
-        <div class="container">
-            <h1>Join the Kweneng Agriculture Chamber of Commerce</h1>
-            <form id="join-form" action="thankyou.html" method="POST">
-                <input type="hidden" name="timestamp" id="timestamp" value="">
-                
-                <div class="form-group">
-                    <label for="first-name">First Name</label>
-                    <input type="text" id="first-name" name="first-name" required>
-                </div>
+        <h2>Membership Application</h2>
+        <form method="get" action="thankyou.html">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required autocomplete="given-name" title="Enter your first name."><br><br>
 
-                <div class="form-group">
-                    <label for="last-name">Last Name</label>
-                    <input type="text" id="last-name" name="last-name" required>
-                </div>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required autocomplete="family-name" title="Enter your last name."><br><br>
 
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" placeholder="example@domain.com" required>
-                </div>
+            <label for="orgTitle">Organizational Title:</label>
+            <input type="text" id="orgTitle" name="orgTitle" pattern="[A-Za-z\s\-]{7,}" title="Must be at least 7 characters long with letters, spaces, and hyphens." autocomplete="organization-title"><br><br>
 
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required placeholder="example@domain.com" autocomplete="email" title="Enter your email address."><br><br>
 
-                <div class="form-group">
-                    <label for="business">Business/Organization Name</label>
-                    <input type="text" id="business" name="business" required>
-                </div>
+            <label for="phone">Mobile Phone:</label>
+            <input type="tel" id="phone" name="phone" required autocomplete="tel"><br><br>
 
-                <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" id="title" name="title" pattern="[A-Za-z\s-]{7,}" required>
-                </div>
+            <label for="orgName">Business/Organization Name:</label>
+            <input type="text" id="orgName" name="orgName" required autocomplete="organization" title="Enter your business or organization name."><br><br>
 
-                <fieldset>
-                    <legend>Membership Level</legend>
-                    <div class="membership-cards">
-                        <div class="membership-card" id="gold-card">
-                            <h3>Gold Membership</h3>
-                            <button type="button" class="modal-button" data-modal="gold-modal">View Benefits</button>
-                        </div>
-                        <div class="membership-card" id="silver-card">
-                            <h3>Silver Membership</h3>
-                            <button type="button" class="modal-button" data-modal="silver-modal">View Benefits</button>
-                        </div>
-                        <div class="membership-card" id="non-profit-card">
-                            <h3>Non-Profit Membership</h3>
-                            <button type="button" class="modal-button" data-modal="non-profit-modal">View Benefits</button>
-                        </div>
-                    </div>
-                </fieldset>
+            <label for="membershipLevel">Membership Level:</label>
+            <select id="membershipLevel" name="membershipLevel" title="Select your membership level.">
+                <option value="NP">NP Membership (No Fee)</option>
+                <option value="Bronze">Bronze Membership</option>
+                <option value="Silver">Silver Membership</option>
+                <option value="Gold">Gold Membership</option>
+            </select><br><br>
 
-                <button type="submit">Join Now</button>
-            </form>
+            <label for="description">Business/Organization Description:</label>
+            <textarea id="description" name="description" title="Describe your business or organization."></textarea><br><br>
+
+            <input type="hidden" id="dateTimestamp" name="dateTimestamp">
+            <script>
+                document.getElementById('dateTimestamp').value = new Date().toISOString();
+            </script>
+
+            <input type="submit" value="Submit Application">
+        </form>
+
+        <h3>Membership Levels</h3>
+        <div class="membership-cards">
+            <div class="card" id="npCard">
+                <h4>NP Membership</h4>
+                <p>No Fee - Non-Profit Organizations</p>
+                <a href="#" onclick="openModal('npModal')">Learn More</a>
+            </div>
+            <div class="card" id="bronzeCard">
+                <h4>Bronze Membership</h4>
+                <p>Entry Level Membership</p>
+                <a href="#" onclick="openModal('bronzeModal')">Learn More</a>
+            </div>
+            <div class="card" id="silverCard">
+                <h4>Silver Membership</h4>
+                <p>Includes additional benefits</p>
+                <a href="#" onclick="openModal('silverModal')">Learn More</a>
+            </div>
+            <div class="card" id="goldCard">
+                <h4>Gold Membership</h4>
+                <p>Premium Membership with maximum benefits</p>
+                <a href="#" onclick="openModal('goldModal')">Learn More</a>
+            </div>
+        </div>
+
+        <!-- Modals for membership benefits -->
+        <div id="npModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('npModal')">&times;</span>
+                <h4>NP Membership Benefits</h4>
+                <p>Details about NP Membership benefits...</p>
+            </div>
+        </div>
+        <div id="bronzeModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('bronzeModal')">&times;</span>
+                <h4>Bronze Membership Benefits</h4>
+                <p>Details about Bronze Membership benefits...</p>
+            </div>
+        </div>
+        <div id="silverModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('silverModal')">&times;</span>
+                <h4>Silver Membership Benefits</h4>
+                <p>Details about Silver Membership benefits...</p>
+            </div>
+        </div>
+        <div id="goldModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('goldModal')">&times;</span>
+                <h4>Gold Membership Benefits</h4>
+                <p>Details about Gold Membership benefits...</p>
+            </div>
         </div>
     </main>
 
-    <!-- Modals -->
-    <div class="modal" id="gold-modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Gold Membership Benefits</h2>
-            <p>Details about Gold membership benefits...</p>
-        </div>
-    </div>
-    <div class="modal" id="silver-modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Silver Membership Benefits</h2>
-            <p>Details about Silver membership benefits...</p>
-        </div>
-    </div>
-    <div class="modal" id="non-profit-modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Non-Profit Membership Benefits</h2>
-            <p>Details about Non-Profit membership benefits...</p>
-        </div>
-    </div>
-
     <footer>
-        <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
+        <p>&copy; <span id="year"></span> Kweneng Agriculture Chamber of Commerce | Last modified: <span id="lastModified"></span></p>
+        <script>
+            document.getElementById('year').textContent = new Date().getFullYear();
+            document.getElementById('lastModified').textContent = document.lastModified;
+        </script>
     </footer>
 
-    <script src="scripts/main.js"></script>
+    <script>
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+        }
+
+        // Close the modals when clicking outside
+        window.onclick = function(event) {
+            var modals = document.getElementsByClassName('modal');
+            for (var i = 0; i < modals.length; i++) {
+                if (event.target == modals[i]) {
+                    modals[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 </body>
 </html>
