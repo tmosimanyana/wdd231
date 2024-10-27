@@ -102,12 +102,12 @@ async function fetchWeatherData() {
 
         // Create a string for weather display
         const weatherData = `Current Weather: ${weatherDescription}, ${temperature}°C`;
-        document.getElementById('weather-data').innerText = weatherData;
+        document.getElementById('weather-info').innerText = weatherData;
 
         // Forecast (3-day forecast can be fetched separately)
         // Example: Use the forecast endpoint to fetch 3-day data
     } catch (error) {
         console.error('Error fetching weather data:', error);
-        document.getElementById('weather-data').innerText = 'Failed to load weather data.';
+        document.getElementById('weather-info').innerText = 'Failed to load weather data.';
     }
 }
