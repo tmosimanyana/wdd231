@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Kweneng Agriculture Chamber of Commerce Directory</title>
-        <meta name="description" content="Directory of members of the Kweneng Agriculture Chamber of Commerce">
-        <meta name="author" content="Your Name">
-    
-        <!-- Open Graph Meta Tags -->
-        <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce - Directory">
-        <meta property="og:type" content="website">
-        <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/project/directory.html">
-        <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/project/images/hero-medium.webp">
-    
-        <!-- Favicon -->
-        <link rel="icon" href="favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="styles/normalize.css">
-        <link rel="stylesheet" href="styles/styles.css">
-        <script src="scripts/directory.js" defer></script>
-    </head>
-    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to the Kweneng Agriculture Chamber of Commerce. Engage with local businesses and stay updated with current events.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <!-- Preconnect for Google Fonts and CDN -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Open Graph meta tags for social media sharing -->
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce-Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp">
+    <meta property="og:url" content="http://tmosimanyana.github.io/wdd231/chamber/directory.html">
+    <meta property="og:description" content="Join the Kweneng Agriculture Chamber of Commerce to connect with local businesses and contribute to community growth.">
+
+    <!-- Page Title -->
+    <title>Kweneng Agriculture Chamber of Commerce - Home</title>
+
+    <!-- Import Roboto Font -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+    <!-- Normalize CSS from CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- JavaScript File -->
+    <script src="js/main.js" defer></script>
 </head>
 <body>
     <header>
@@ -28,21 +40,72 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="discover.html">Discover</a></li>
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
+                
             </ul>
         </nav>
     </header>
+
     <main>
-        <h2>Directory of Businesses</h2>
-        <div id="business-list"></div>
+        <section>
+            <h2>Local Businesses Directory</h2>
+            <button id="toggleView">Toggle View</button>
+            <div id="directory" class="grid-view"></div>
+        </section>
     </main>
+
     <footer>
-        <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
+        <p>&copy; <span id="currentyear"></span> Tinny Bothepha Mosimanyana, Botswana.</p>
+        <p id="lastModified"></p>
     </footer>
-    <script src="scripts/main.js" defer></script>
+    
+    <script>
+        // Display the current year
+        document.getElementById("currentyear").textContent = new Date().getFullYear();
+
+        // Display the last modified date
+        document.getElementById("lastModified").textContent = "Last modified: " + document.lastModified;
+
+        async function fetchMembers() {
+            try {
+                const response = await fetch('data/members.json');
+                const companies = await response.json();
+                displayCompanies(companies);
+            } catch (error) {
+                console.error('Error fetching member data:', error);
+            }
+        }
+
+        function displayCompanies(companies) {
+            const directory = document.getElementById('directory');
+            directory.innerHTML = ''; // Clear existing content
+            
+            companies.forEach(company => {
+                const companyCard = document.createElement('div');
+                companyCard.classList.add('company-card');
+                companyCard.innerHTML = `
+                    <img src="${company.image}" alt="${company.name}" class="company-image">
+                    <h3>${company.name}</h3>
+                    <p>Address: ${company.address}</p>
+                    <p>Phone: ${company.phone}</p>
+                    <p>Website: <a href="${company.website}" target="_blank">${company.website}</a></p>
+                    <p>Membership Level: ${company.membershipLevel}</p>
+                    <p>${company.additionalInfo}</p>
+                `;
+                directory.appendChild(companyCard);
+            });
+        }
+
+        // Toggle between grid and list view
+        document.getElementById('toggleView').addEventListener('click', () => {
+            const directory = document.getElementById('directory');
+            directory.classList.toggle('grid-view');
+            directory.classList.toggle('list-view');
+        });
+
+        // Fetch member data on page load
+        window.onload = fetchMembers;
+    </script>
 </body>
 </html>
-
