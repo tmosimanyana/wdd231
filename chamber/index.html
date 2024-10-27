@@ -3,86 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kweneng Agriculture Chamber of Commerce - Supporting local businesses">
     <title>Kweneng Agriculture Chamber of Commerce</title>
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp">
-    
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="styles/normalize.css">
-    <link rel="stylesheet" href="styles/style.css"> <!-- Ensure correct file name -->
+    <link rel="stylesheet" href="styles.css">
     <script src="scripts/main.js" defer></script>
 </head>
 <body>
-    <!-- Header Section -->
     <header>
-        <div class="logo">
-            <img src="images/logo.webp" alt="Kweneng Agriculture Chamber of Commerce Logo">
-            <span>Kweneng Agriculture Chamber of Commerce</span>
-        </div>
-        <div class="header-circle">⚙️</div> <!-- Circle element -->
-        <button class="menu-toggle">☰</button>
+        <h1>Kweneng Agriculture Chamber of Commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="#company-spotlight">Company Spotlight</a></li>
+                <li><a href="#current-events">Current Events</a></li>
+                <li><a href="#weather">Weather</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Navigation -->
-    <nav id="main-nav">
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#directory">Business Directory</a></li>
-            <li><a href="#join">Join</a></li>
-        </ul>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="hero-content">
-            <img src="images/hero-large.webp" alt="Kweneng Agriculture Chamber of Commerce hero">
-            <button>Keynote Tickets</button>
-        </div>
-    </section>
-
-    <!-- Main Content -->
     <main>
-        <!-- Home Section -->
-        <section id="home">
-            <h1>Welcome to the Kweneng Agriculture Chamber of Commerce</h1>
-            <p>Your resource for agriculture businesses and networking in Kweneng.</p>
+        <section id="hero">
+            <img src="images/hero-image.jpg" alt="Agriculture" loading="lazy">
+            <h2>Welcome to Our Chamber</h2>
+            <p>Connecting local farmers and businesses for a sustainable future.</p>
         </section>
 
-        <!-- Directory Section -->
-        <section id="directory" class="section-container">
-            <h2>Directory</h2>
-            <div id="business-list"></div> <!-- Placeholder for dynamically generated business cards -->
+        <section id="company-spotlight">
+            <h2>Company Spotlight</h2>
+            <div id="spotlight-container"></div>
         </section>
 
-        <!-- Join Section -->
-        <section id="join" class="section-container">
-            <h2>Join Us</h2>
-            <p>Interested in becoming a member of the Kweneng Agriculture Chamber of Commerce? Contact us for more information.</p>
+        <section id="current-events">
+            <h2>Current Events</h2>
+            <p>Check back soon for updates!</p>
+        </section>
+
+        <section id="weather">
+            <h2>Current Weather</h2>
+            <p id="weather-data">Loading weather data...</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form id="contact-form">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
         </section>
     </main>
 
-    <!-- Footer Section -->
     <footer>
-        <div class="footer-content">
-            <p>Kweneng Agriculture Chamber of Commerce</p>
-            <p>P O Box 894, Molepolole, Botswana</p>
-            <p>Email: mbothepha@gmail.com | Phone: (267) 763-736661</p>
-        </div>
-        <div class="social-links">
-            <a href="#">facebook</a>
-            <a href="#">YouTube</a>
-            <a href="#">LinkedIn</a>
-        </div>
-        <p class="footer-note">WDD231 Class Project by Tinny Bothepha Mosimanyana | Last Modified: 10/21/2022 22:12:35</p>
-        <p>Current Year: <span id="year"></span></p>
-        <p id="last-modified"></p>
+        <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
     </footer>
-    <button id="toggle-view">Toggle View</button>
 </body>
 </html>
