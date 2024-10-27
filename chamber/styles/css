@@ -1,5 +1,6 @@
 /* Import Normalize CSS */
-@import url('./normalize.css');
+@import url('normalize.css');
+
 /* Basic Reset */
 * {
     box-sizing: border-box;
@@ -12,8 +13,6 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
-    margin: 0;
-    padding: 0;
 }
 
 /* Header Section */
@@ -43,10 +42,10 @@ header .logo span {
     font-weight: bold;
 }
 
-/* Circle opposite the logo */
+/* Circle positioned in the far-right corner */
 .header-circle {
     position: absolute;
-    right: 40px;
+    right: 10px;  /* Move the circle closer to the right edge */
     top: 50%;
     transform: translateY(-50%);
     width: 40px;
