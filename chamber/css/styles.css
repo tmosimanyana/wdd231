@@ -10,30 +10,71 @@ body {
 
 /* Header Styling */
 .header {
-    background: #4CAF50;
+    background: #4CAF50; /* Header background color */
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 80%; /* Centers content within header */
+    position: relative;
+}
+
+/* Logo and Circle Decoration */
+.header-logo-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    height: auto;
+    margin-right: 15px;
+}
+
+/* Circle Shape for Wireframe Design */
+.circle-decoration {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #FFD700; /* Gold color for circle */
+    position: absolute;
+    top: -10px;
+    left: 40px;
+}
+
+/* Header Title Styling */
+.title {
+    font-size: 1.8em;
     color: white;
-    text-align: center;
-    padding: 10px 0;
+    margin-left: 15px;
+    font-weight: 700;
 }
 
-.header .nav-list {
+/* Navigation Styling */
+.primary-nav {
+    margin-left: auto;
+}
+
+.nav-list {
     list-style: none;
-    padding: 0;
-    margin: 0;
+    display: flex;
+    gap: 20px;
 }
 
-.header .nav-list li {
-    display: inline;
-    margin: 0 15px;
-}
-
-.header .nav-list a {
+.nav-list a {
     color: white;
     text-decoration: none;
+    font-weight: 700;
     transition: color 0.3s;
 }
 
-.header .nav-list a:hover {
+.nav-list a:hover {
     color: #FFD700; /* Gold */
 }
 
@@ -44,14 +85,15 @@ body {
     margin: auto;
 }
 
-h2 {
-    color: #4CAF50;
+.hero-image {
+    width: 100%;
+    height: auto;
 }
 
 .cta-button {
     display: inline-block;
     padding: 10px 20px;
-    background: #FFD700; /* Gold */
+    background: #FFD700;
     color: #333;
     text-decoration: none;
     border-radius: 5px;
@@ -60,39 +102,6 @@ h2 {
 
 .cta-button:hover {
     background: #FFC107; /* Darker Gold */
-}
-
-.hero-image {
-    width: 100%;
-    height: auto;
-}
-
-#weather-info, #spotlight-container {
-    margin: 20px 0;
-}
-
-/* Directory Section Styling */
-#directory {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.company-card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 10px;
-    width: calc(33% - 20px); /* Adjust width for grid layout */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.company-card img {
-    max-width: 100%;
-    border-radius: 5px;
-}
-
-.list-view .company-card {
-    width: 100%; /* Full width for list view */
 }
 
 /* Footer Styling */
@@ -106,19 +115,24 @@ h2 {
     width: 100%;
 }
 
-/* Responsive Styles */
+/* Responsive Styling */
 @media (max-width: 768px) {
-    .header .nav-list {
-        display: flex;
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .primary-nav {
+        margin-left: 0;
+    }
+
+    .nav-list {
         flex-direction: column;
         align-items: center;
+        gap: 10px;
     }
 
-    .header .nav-list li {
-        margin: 10px 0;
-    }
-
-    #directory .company-card {
-        width: 100%; /* Stack company cards in smaller screens */
+    .hero-image {
+        margin-top: 20px;
     }
 }
