@@ -1,92 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to the Kweneng Agriculture Chamber of Commerce. Join us for networking and business opportunities.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <title>Kweneng Agriculture Chamber of Commerce</title>
-    
-    <!-- Normalize.css for consistent styling -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    
-    <link rel="stylesheet" href="styles/style.css">
-    <script src="scripts/weather.js" defer></script>
-    <script src="scripts/menu-toggle.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kweneng Agriculture Chamber of Commerce</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
 </head>
+
 <body>
-    <header>
-        <div class="logo-container">
-            <img src="images/logo.webp" alt="Kweneng Agriculture Chamber of Commerce Logo" class="logo">
-            <div class="chamber-name">
-                <h1>Kweneng</h1>
-                <p>Chamber of Commerce</p>
-            </div>
-        </div>
-        
-        <div class="menu-toggle" id="menu-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+  <header>
+    <div class="page">
+      <h1>Kweneng Agriculture Chamber of Commerce</h1>
+      <img src="images/logo.png" alt="Kweneng Agriculture Chamber logo" class="logo">
+    </div>
+  </header>
 
-        <nav id="navbar">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
-                <li><a href="discover.html">Discover</a></li>
-            </ul>
-        </nav>
+  <main class="page">
+    <nav>
+      <span class="active"><a href="#">Home</a></span>
+      <span><a href="services.html">Services</a></span>
+      <span><a href="membership.html">Membership</a></span>
+      <span><a href="events.html">Events</a></span>
+      <span><a href="resources.html">Resources</a></span>
+      <span><a href="contact.html">Contact Us</a></span>
+    </nav>
 
-        <div class="header-icon">
-            <a href="#"><img src="images/icon.webp" alt="Circle Icon"></a>
-        </div>
+    <div class="callout info">
+      <p style="margin: 0;">Don't forget to <strong>bookmark</strong> this page in your browser!</p>
+    </div>
 
-        <div class="keynote-tickets">
-            <a href="#" class="button">Get Keynote Tickets</a>
-        </div>
-    </header>
-    
-    <main>
-        <section id="hero">
-            <img src="images/hero-medium.webp" alt="Hero Image" class="hero-image">
-            <h2>Join Us Today!</h2>
-            <a href="join.html" class="cta-button">Become a Member</a>
-        </section>
+    <h2>Welcome to Kweneng Agriculture Chamber of Commerce</h2>
+    <p>Your central hub for agriculture support and resources in Kweneng. We aim to foster growth, support local farmers, and promote sustainable agricultural practices.</p>
 
-        <section id="events">
-            <h2>Events</h2>
-            <p>Join us for our upcoming events!</p>
-            <!-- Event details go here -->
-        </section>
+    <h2>Upcoming Events</h2>
+    <ul>
+      <li><a href="events.html">Annual Agricultural Fair</a> - Date: TBA</li>
+      <li><a href="events.html">Monthly Farmers Meeting</a> - Date: Last Friday of each month</li>
+    </ul>
 
-        <section id="weather">
-            <h2>Current Weather</h2>
-            <div id="weather-info">
-                <!-- Weather data will be populated here -->
-            </div>
-        </section>
+    <h2>Useful Links</h2>
+    <ul>
+      <li><a href="membership.html">Become a Member</a></li>
+      <li><a href="resources.html">Agricultural Resources</a></li>
+      <li><a href="contact.html">Contact Information</a></li>
+      <li><a href="https://example.com" target="_blank">External Agricultural Resources</a></li>
+    </ul>
+  </main>
 
-        <section id="company-spotlights">
-            <h2>Company Spotlights</h2>
-            <div id="spotlights-container">
-                <!-- Company spotlight cards will be populated here -->
-            </div>
-        </section>
-    </main>
+  <footer>
+    <p>Copyright &copy; 2024 Kweneng Agriculture Chamber of Commerce | All rights reserved</p>
+  </footer>
 
-    <footer>
-        <p>Contact us: mbothepha@gmail.com | +267 763 76661</p>
-        <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce</p>
-        <p>Last Modified: <span id="last-modified"></span></p>
-    </footer>
-    
-    <script>
-        // Set current year and last modified date
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        document.getElementById('last-modified').textContent = document.lastModified;
-    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
+  <script>
+    hljs.highlightAll();
+  </script>
 </body>
+
 </html>
+
