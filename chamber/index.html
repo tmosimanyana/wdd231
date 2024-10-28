@@ -1,44 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kweneng Agriculture Chamber of Commerce</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Welcome to the Kweneng Agriculture Chamber of Commerce. Join us for networking and business opportunities.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Kweneng Agriculture Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/weather.js" defer></script>
 </head>
 <body>
-  
-  <header class="header-container">
-    <div class="logo">Kweneng Agriculture Chamber of Commerce</div>
-    
-    <!-- Main Navigation Links -->
-    <nav class="main-nav">
-      <a href="#">Home</a>
-      <a href="#">Directory</a>
-      <a href="#">Join</a>
-      <a href="#">Discover</a>
-    </nav>
-    
-    <!-- Menu Toggle for Mobile -->
-    <div class="menu-toggle">☰</div>
-    
-    <!-- Circle Decoration for Dark Mode Toggle -->
-    <div class="circle-decoration">☾</div> <!-- Circle with moon symbol -->
-  </header>
-  
-  <!-- Main Content Placeholder -->
-  <main>
-    <section>
-      <h1>Welcome to the Kweneng Agriculture Chamber of Commerce</h1>
-      <p>Your go-to resource for agriculture-related businesses and information in Botswana.</p>
-    </section>
-  </main>
-  
-  <!-- Footer Placeholder -->
-  <footer>
-    <p>© Kweneng Agriculture Chamber of Commerce - All rights reserved.</p>
-  </footer>
+    <header>
+        <h1>Kweneng Agriculture Chamber of Commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <script src="script.js"></script>
+    <main>
+        <section id="hero">
+            <img src="images/hero.jpg" alt="Hero Image" />
+            <h2>Join Us Today!</h2>
+            <a href="join.html" class="cta-button">Become a Member</a>
+        </section>
+
+        <section id="current-events">
+            <h2>Current Events</h2>
+            <p>Join us for our upcoming events!</p>
+            <!-- Event details go here -->
+        </section>
+
+        <section id="weather">
+            <h2>Current Weather</h2>
+            <div id="weather-info">
+                <!-- Weather data will be populated here -->
+            </div>
+        </section>
+
+        <section id="company-spotlights">
+            <h2>Company Spotlights</h2>
+            <div id="spotlights-container">
+                <!-- Company spotlight cards will be populated here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Contact us: info@kwenengchamber.co.bw | +267 123 4567</p>
+        <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+    
+    <script>
+        // Set current year and last modified date
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.getElementById('last-modified').textContent = document.lastModified;
+    </script>
 </body>
 </html>

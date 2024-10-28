@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Directory of Kweneng Agriculture Chamber of Commerce members.">
+    <meta name="description" content="Thank you for joining the Kweneng Agriculture Chamber of Commerce.">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <title>Kweneng Agriculture Chamber Directory</title>
+    <title>Thank You for Joining</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -23,12 +23,10 @@
     </header>
 
     <main>
-        <h2>Member Directory</h2>
-        <button onclick="toggleView('grid')">Grid View</button>
-        <button onclick="toggleView('list')">List View</button>
-        <div id="members-container" class="grid-view">
-            <!-- Member cards will be populated here -->
-        </div>
+        <h2>Thank You for Joining Us!</h2>
+        <p>Your application has been received. We will review it and get back to you shortly.</p>
+        <p>If you have any questions, feel free to <a href="contact.html">contact us</a>.</p>
+        <a href="index.html" class="cta-button">Return to Home</a>
     </main>
 
     <footer>
@@ -37,7 +35,6 @@
         <p>Last Modified: <span id="last-modified"></span></p>
     </footer>
 
-    <script src="scripts/directory.js" defer></script>
     <script>
         // Set current year and last modified date
         document.getElementById('current-year').textContent = new Date().getFullYear();

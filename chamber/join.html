@@ -3,189 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join the Kweneng Agriculture Chamber of Commerce">
+    <meta name="description" content="Join the Kweneng Agriculture Chamber of Commerce.">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <title>Join the Chamber of Commerce</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <style>
-        /* Add styles for the membership cards */
-        .card {
-            margin: 20px;
-            padding: 20px;
-            border: 1px solid #ccc;
-            transition: transform 0.3s ease, background-color 0.5s ease;
-        }
-        .card:hover {
-            background-color: #f0f8ff; /* Light color change on hover */
-        }
-        .modal {
-            display: none; /* Hidden by default */
-            position: fixed; /* Stay in place */
-            z-index: 1; /* Sit on top */
-            left: 0;
-            top: 0;
-            width: 100%; /* Full width */
-            height: 100%; /* Full height */
-            overflow: auto; /* Enable scroll if needed */
-            background-color: rgb(0,0,0); /* Fallback color */
-            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-            padding-top: 60px;
-        }
-        .modal-content {
-            background-color: #fefefe;
-            margin: 5% auto; /* 15% from the top and centered */
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%; /* Could be more or less, depending on screen size */
-        }
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .card {
-            animation: fadeIn 1s;
-        }
-    </style>
+    <title>Join Kweneng Agriculture Chamber</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
     <header>
         <h1>Kweneng Agriculture Chamber of Commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
     </header>
+
     <main>
-        <h2>Membership Application</h2>
-        <form method="get" action="thankyou.html">
-            <label for="firstName">First Name:</label>
-            <input type="text" id="firstName" name="firstName" required autocomplete="given-name" title="Enter your first name."><br><br>
+        <h2>Join Us</h2>
+        <form action="thankyou.html" method="GET">
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" name="first-name" title="First Name" required autocomplete="given-name">
 
-            <label for="lastName">Last Name:</label>
-            <input type="text" id="lastName" name="lastName" required autocomplete="family-name" title="Enter your last name."><br><br>
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" name="last-name" title="Last Name" required autocomplete="family-name">
 
-            <label for="orgTitle">Organizational Title:</label>
-            <input type="text" id="orgTitle" name="orgTitle" pattern="[A-Za-z\s\-]{7,}" title="Must be at least 7 characters long with letters, spaces, and hyphens." autocomplete="organization-title"><br><br>
+            <label for="org-title">Organizational Title:</label>
+            <input type="text" id="org-title" name="org-title" title="Organizational Title" pattern="[A-Za-z\- ]{7,}" required>
 
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required placeholder="example@domain.com" autocomplete="email" title="Enter your email address."><br><br>
+            <input type="email" id="email" name="email" title="Email" required autocomplete="email" placeholder="example@example.com">
 
             <label for="phone">Mobile Phone:</label>
-            <input type="tel" id="phone" name="phone" required autocomplete="tel"><br><br>
+            <input type="tel" id="phone" name="phone" title="Mobile Phone" required>
 
-            <label for="orgName">Business/Organization Name:</label>
-            <input type="text" id="orgName" name="orgName" required autocomplete="organization" title="Enter your business or organization name."><br><br>
+            <label for="organization-name">Organization Name:</label>
+            <input type="text" id="organization-name" name="organization-name" title="Organization Name" required autocomplete="organization">
 
-            <label for="membershipLevel">Membership Level:</label>
-            <select id="membershipLevel" name="membershipLevel" title="Select your membership level.">
-                <option value="NP">NP Membership (No Fee)</option>
-                <option value="Bronze">Bronze Membership</option>
-                <option value="Silver">Silver Membership</option>
-                <option value="Gold">Gold Membership</option>
-            </select><br><br>
+            <label for="membership-level">Membership Level:</label>
+            <select id="membership-level" name="membership-level">
+                <option value="NP Membership">NP Membership (No Fee)</option>
+                <option value="Bronze Membership">Bronze Membership</option>
+                <option value="Silver Membership">Silver Membership</option>
+                <option value="Gold Membership">Gold Membership</option>
+            </select>
 
             <label for="description">Business/Organization Description:</label>
-            <textarea id="description" name="description" title="Describe your business or organization."></textarea><br><br>
+            <textarea id="description" name="description" title="Business Description"></textarea>
 
-            <input type="hidden" id="dateTimestamp" name="dateTimestamp">
-            <script>
-                document.getElementById('dateTimestamp').value = new Date().toISOString();
-            </script>
-
-            <input type="submit" value="Submit Application">
+            <input type="hidden" name="timestamp" id="timestamp" value="">
+            <button type="submit">Submit</button>
         </form>
-
-        <h3>Membership Levels</h3>
-        <div class="membership-cards">
-            <div class="card" id="npCard">
-                <h4>NP Membership</h4>
-                <p>No Fee - Non-Profit Organizations</p>
-                <a href="#" onclick="openModal('npModal')">Learn More</a>
-            </div>
-            <div class="card" id="bronzeCard">
-                <h4>Bronze Membership</h4>
-                <p>Entry Level Membership</p>
-                <a href="#" onclick="openModal('bronzeModal')">Learn More</a>
-            </div>
-            <div class="card" id="silverCard">
-                <h4>Silver Membership</h4>
-                <p>Includes additional benefits</p>
-                <a href="#" onclick="openModal('silverModal')">Learn More</a>
-            </div>
-            <div class="card" id="goldCard">
-                <h4>Gold Membership</h4>
-                <p>Premium Membership with maximum benefits</p>
-                <a href="#" onclick="openModal('goldModal')">Learn More</a>
-            </div>
-        </div>
-
-        <!-- Modals for membership benefits -->
-        <div id="npModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('npModal')">&times;</span>
-                <h4>NP Membership Benefits</h4>
-                <p>Details about NP Membership benefits...</p>
-            </div>
-        </div>
-        <div id="bronzeModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('bronzeModal')">&times;</span>
-                <h4>Bronze Membership Benefits</h4>
-                <p>Details about Bronze Membership benefits...</p>
-            </div>
-        </div>
-        <div id="silverModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('silverModal')">&times;</span>
-                <h4>Silver Membership Benefits</h4>
-                <p>Details about Silver Membership benefits...</p>
-            </div>
-        </div>
-        <div id="goldModal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('goldModal')">&times;</span>
-                <h4>Gold Membership Benefits</h4>
-                <p>Details about Gold Membership benefits...</p>
-            </div>
-        </div>
     </main>
 
     <footer>
-        <p>&copy; <span id="year"></span> Kweneng Agriculture Chamber of Commerce | Last modified: <span id="lastModified"></span></p>
-        <script>
-            document.getElementById('year').textContent = new Date().getFullYear();
-            document.getElementById('lastModified').textContent = document.lastModified;
-        </script>
+        <p>Contact us: info@kwenengchamber.co.bw | +267 123 4567</p>
+        <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
     </footer>
 
     <script>
-        // Modal functions
-        function openModal(modalId) {
-            document.getElementById(modalId).style.display = "block";
-        }
+        // Set the current timestamp
+        document.getElementById('timestamp').value = new Date().toISOString();
 
-        function closeModal(modalId) {
-            document.getElementById(modalId).style.display = "none";
-        }
-
-        // Close the modals when clicking outside
-        window.onclick = function(event) {
-            var modals = document.getElementsByClassName('modal');
-            for (var i = 0; i < modals.length; i++) {
-                if (event.target == modals[i]) {
-                    modals[i].style.display = "none";
-                }
-            }
-        }
+        // Set current year and last modified date
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.getElementById('last-modified').textContent = document.lastModified;
     </script>
 </body>
 </html>
