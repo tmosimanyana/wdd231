@@ -1,23 +1,36 @@
-/* General header styling */
+/* Reset and basic styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* 1. Header styling */
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
     padding: 10px 20px;
-    background-color: #f0f0f0; /* Adjust based on your brand colors */
-    border-bottom: 2px solid #cccccc; /* Adds a divider effect */
+    background-color: #f0f0f0;
+    border-bottom: 2px solid #ccc;
 }
 
-/* Logo styling */
 header .logo {
-    display: flex;
-    align-items: center;
     font-size: 24px;
     font-weight: bold;
-    color: #333;
 }
 
-/* Navigation styling */
 header nav {
     display: flex;
     gap: 20px;
@@ -33,23 +46,130 @@ header nav a {
 }
 
 header nav a:hover {
-    background-color: #e0e0e0; /* Subtle hover effect */
+    background-color: #e0e0e0;
 }
 
-/* Dark mode toggle button */
 header .dark-mode-toggle {
-    background-color: #333;
-    color: #fff;
     width: 30px;
     height: 30px;
     border-radius: 50%;
+    background-color: #333;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-header .dark-mode-toggle:hover {
-    background-color: #555;
+/* 2. Hero Section */
+.hero {
+    width: 100%;
+    max-width: 1200px;
+    height: 300px;
+    margin: 20px 0;
+    background-color: #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero button {
+    position: absolute;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* 3. Main Content Section */
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.events, .weather, .forecast {
+    flex: 1;
+    min-width: 250px;
+    background-color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.weather img {
+    width: 50px;
+    height: 50px;
+}
+
+/* 4. Business Directory Section */
+.business-directory {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+.business-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.business-card h4 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.business-card p {
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+.business-card .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 12px;
+}
+
+/* 5. Footer */
+footer {
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+footer .social-icons {
+    display: flex;
+    gap: 15px;
+    margin: 10px 0;
+}
+
+footer .social-icons a {
+    color: #fff;
+    font-size: 20px;
+}
+
+footer p {
+    font-size: 12px;
 }
