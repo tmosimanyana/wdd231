@@ -10,7 +10,6 @@
     <!-- Preconnect for Google Fonts and CDN -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
     <!-- Open Graph meta tags for social media sharing -->
     <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
@@ -25,9 +24,6 @@
     <!-- Import Roboto Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 
-    <!-- Normalize CSS from CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
 
@@ -37,21 +33,20 @@
 <body>
 
     <!-- Header Section -->
-    <header class="header">
-        <img src="images/logo.webp" alt="Kweneng Agriculture Chamber Logo" class="logo">
+    <header class="header" aria-label="Main Header">
+        <img src="images/logo.webp" alt="Kweneng Agriculture Chamber Logo" class="logo" aria-hidden="true">
         <h1 class="title">Kweneng Agriculture Chamber of Commerce</h1>
-        <nav>
+        <nav aria-label="Primary Navigation">
             <ul class="nav-list">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
-                <li><a href="join.html">Join</a></li>
+                <li><a href="index.html" aria-label="Home Page">Home</a></li>
+                <li><a href="directory.html" aria-label="Business Directory">Directory</a></li>
+                <li><a href="join.html" aria-label="Join the Chamber">Join</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Main Content -->
     <main class="main-content">
-
         <!-- Hero Section -->
         <section id="hero">
             <img src="images/hero-medium.webp" alt="Hero image representing the chamber's agricultural focus" class="hero-image">
@@ -73,7 +68,7 @@
         <section id="weather">
             <h2>Current Weather</h2>
             <div id="weather-info">
-                <p id="weather-data">Loading weather data...</p> <!-- Weather data will load here -->
+                <p id="weather-data">Loading weather data...</p>
             </div>
         </section>
 
