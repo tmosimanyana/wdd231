@@ -1,5 +1,5 @@
 /* Import Normalize.css */
-@import url('normalize.css'); 
+@import url('normalize.css');
 
 /* Reset and Normalize Styles */
 body, h1, h2, p {
@@ -20,6 +20,7 @@ header {
     position: relative;
 }
 
+/* Logo */
 .logo {
     font-size: 2rem;
     font-weight: bold;
@@ -51,8 +52,8 @@ header {
 /* Circle Positioning for Wireframe */
 .header-circle {
     position: absolute;
-    top: -10px; /* Adjust for precise alignment */
-    right: -10px; /* Adjust for precise alignment */
+    top: -20px; /* Adjust for precise alignment */
+    right: -50px; /* Increase this value to push it further from the links */
     width: 100px;
     height: 100px;
     background-color: #FFD700;
@@ -151,4 +152,3 @@ main {
         width: 120px;
     }
 }
-
