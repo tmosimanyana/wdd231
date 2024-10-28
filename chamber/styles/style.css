@@ -154,3 +154,72 @@ footer p {
         font-size: 0.9rem;
     }
 }
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ccc;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+.chamber-name h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+.chamber-name p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+.header-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Responsive Header for Mobile */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .chamber-name h1 {
+        font-size: 1.2rem;
+    }
+
+    .header-icon {
+        align-self: flex-end;
+    }
+}
