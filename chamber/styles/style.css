@@ -30,6 +30,21 @@ header h1 {
     font-weight: normal;
 }
 
+/* Menu Toggle Styles */
+.menu-toggle {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    height: 3px;
+    width: 25px;
+    background: #333;
+    margin: 3px 0;
+}
+
+/* Navigation Styles */
 nav ul {
     display: flex;
     gap: 15px;
@@ -41,6 +56,23 @@ nav ul li a {
     text-decoration: none;
     color: #333;
     font-weight: bold;
+}
+
+.keynote-tickets {
+    margin-left: 20px;
+}
+
+.keynote-tickets .button {
+    background-color: #007acc;
+    color: #fff;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.keynote-tickets .button:hover {
+    background-color: #005b99;
 }
 
 main {
@@ -129,12 +161,26 @@ footer p {
     nav ul {
         flex-direction: column;
         align-items: center;
+        display: none; /* Hide by default on mobile */
     }
-    
+
+    nav.active ul {
+        display: flex; /* Show when active */
+    }
+
+    .menu-toggle {
+        display: flex; /* Show toggle on mobile */
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
     #hero {
         padding: 0;
     }
-    
+
     .cta-button {
         padding: 8px 16px;
     }
@@ -154,6 +200,7 @@ footer p {
         font-size: 0.9rem;
     }
 }
+
 /* Header Styles */
 header {
     display: flex;

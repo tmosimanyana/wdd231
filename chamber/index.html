@@ -23,7 +23,14 @@
                 <p>Chamber of Commerce</p>
             </div>
         </div>
-        <nav>
+        
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <nav id="navbar">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="directory.html">Directory</a></li>
@@ -31,8 +38,13 @@
                 <li><a href="discover.html">Discover</a></li>
             </ul>
         </nav>
+
         <div class="header-icon">
             <a href="#"><img src="images/starmap.svg" alt="Circle Icon"></a>
+        </div>
+
+        <div class="keynote-tickets">
+            <a href="#" class="button">Get Keynote Tickets</a>
         </div>
     </header>
     
@@ -74,6 +86,12 @@
         // Set current year and last modified date
         document.getElementById('current-year').textContent = new Date().getFullYear();
         document.getElementById('last-modified').textContent = document.lastModified;
+
+        // Menu toggle functionality
+        document.getElementById('menu-toggle').addEventListener('click', function () {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        });
     </script>
 </body>
 </html>
