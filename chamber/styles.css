@@ -55,6 +55,22 @@
     cursor: pointer;
   }
   
+  /* Spotlight section styling */
+  .spotlight {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .spotlight h2 {
+    font-size: 24px;
+  }
+  
+  .spotlight p {
+    margin-top: 10px;
+    color: #555;
+  }
+  
   /* Main content styling */
   .main-content {
     display: flex;
@@ -73,6 +89,26 @@
   .weather img {
     display: block;
     margin: 0 auto;
+  }
+  
+  /* Join Us section styling */
+  .join-us {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .join-us h2 {
+    font-size: 24px;
+  }
+  
+  .join-us button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
   }
   
   /* Business directory styling */
