@@ -40,7 +40,7 @@
                 <div class="circle-decoration"></div> <!-- Circular Shape -->
             </div>
             <h1 class="title">Kweneng Agriculture Chamber of Commerce</h1>
-            <nav aria-label="Primary Navigation">
+            <nav class="primary-nav" aria-label="Primary Navigation">
                 <ul class="nav-list">
                     <li><a href="index.html" aria-label="Home Page">Home</a></li>
                     <li><a href="directory.html" aria-label="Business Directory">Directory</a></li>
@@ -58,12 +58,30 @@
             <p>Join us and engage with local businesses to foster community growth.</p>
             <a href="#join" class="cta-button">Join Us Today</a>
         </section>
+
+        <section id="weather-info">
+            <h3>Weather Information</h3>
+            <div id="weather-container">
+                <!-- Weather API data will be injected here -->
+            </div>
+        </section>
+
+        <section id="spotlight-container">
+            <h3>Spotlight on Local Businesses</h3>
+            <div class="business-spotlight">
+                <!-- Content for spotlight businesses -->
+            </div>
+        </section>
     </main>
 
     <!-- Footer Section -->
     <footer class="footer">
         <p>&copy; <span id="currentyear"></span> Kweneng Agriculture Chamber of Commerce</p>
         <p id="lastModified"></p>
+        <nav aria-label="Footer Navigation">
+            <a href="#privacy-policy">Privacy Policy</a>
+            <a href="#terms-of-service">Terms of Service</a>
+        </nav>
     </footer>
 </body>
 </html>
