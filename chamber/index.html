@@ -1,66 +1,64 @@
 <!DOCTYPE html>
-<html lang="en-us">
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kweneng Agriculture Chamber of Commerce</title>
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles/home.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kweneng Agriculture Chamber of Commerce</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/course.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
+
+    <!-- Include external JavaScript files with defer -->
+    <script src="path/to/your/weather.js" defer></script>
+    <script src="path/to/your/spotlights.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js" defer></script>
+    <script>
+        // Initialize highlight.js once the document is parsed
+        document.addEventListener("DOMContentLoaded", function() {
+            hljs.highlightAll();
+        });
+    </script>
 </head>
-
 <body>
-  <header>
-    <div class="page">
-      <h1>Kweneng Agriculture Chamber of Commerce</h1>
-      <img src="images/logo.webp" alt="Kweneng Agriculture Chamber logo" class="logo">
-    </div>
-  </header>
+    <header>
+        <h1>Welcome to the Kweneng Agriculture Chamber of Commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <main class="page">
-    <nav>
-      <span class="active"><a href="#">Home</a></span>
-      <span><a href="services.html">Services</a></span>
-      <span><a href="membership.html">Membership</a></span>
-      <span><a href="events.html">Events</a></span>
-      <span><a href="resources.html">Resources</a></span>
-      <span><a href="contact.html">Contact Us</a></span>
-    </nav>
+    <main>
+        <section id="home">
+            <h2>Home</h2>
+            <p>Welcome to our Chamber of Commerce. We support local agriculture and promote sustainable practices.</p>
+        </section>
 
-    <div class="callout info">
-      <p style="margin: 0;">Join Us <strong>to enjoy</strong> the benefits of membership!</p>
-    </div>
+        <section id="about">
+            <h2>About Us</h2>
+            <p>Learn more about our mission, vision, and the team behind the Kweneng Agriculture Chamber of Commerce.</p>
+        </section>
 
-    <h2>Welcome to Kweneng Agriculture Chamber of Commerce</h2>
-    <p>Your central hub for agriculture support and resources in Kweneng. We aim to foster growth, support local farmers, and promote sustainable agricultural practices.</p>
+        <section id="services">
+            <h2>Our Services</h2>
+            <p>Explore the various services we offer to our members and the agricultural community.</p>
+        </section>
 
-    <h2>Upcoming Events</h2>
-    <ul>
-      <li><a href="events.html">Annual Agricultural Fair</a> - Date: TBA</li>
-      <li><a href="events.html">Monthly Farmers Meeting</a> - Date: Last Friday of each month</li>
-    </ul>
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>If you have any questions or need further information, please reach out to us.</p>
+        </section>
+    </main>
 
-    <h2>Atrributes</h2>
-    <ul>
-      <li><a href="membership.html">Become a Member</a></li>
-      <li><a href="resources.html">Agricultural Resources</a></li>
-      <li><a href="contact.html">Contact Information</a></li>
-      <li><a href="https://example.com" target="_blank">External Agricultural Resources</a></li>
-    </ul>
-  </main>
-
-  <footer>
-    <p>Copyright &copy; 2024 Kweneng Agriculture Chamber of Commerce | All rights reserved</p>
-  </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
-  <script>
-    hljs.highlightAll();
-  </script>
+    <footer>
+        <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
+    </footer>
 </body>
-
 </html>
-
