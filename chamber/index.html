@@ -13,6 +13,7 @@
     
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/weather.js" defer></script>
+    <script src="scripts/menu-toggle.js" defer></script>
 </head>
 <body>
     <header>
@@ -86,12 +87,6 @@
         // Set current year and last modified date
         document.getElementById('current-year').textContent = new Date().getFullYear();
         document.getElementById('last-modified').textContent = document.lastModified;
-
-        // Menu toggle functionality
-        document.getElementById('menu-toggle').addEventListener('click', function () {
-            const navbar = document.getElementById('navbar');
-            navbar.classList.toggle('active');
-        });
     </script>
 </body>
 </html>
