@@ -3,58 +3,82 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chamber of Commerce - Responsive Layout</title>
+  
+  <!-- Meta Tags for SEO -->
+  <meta name="description" content="Welcome to the Kweneng Chamber of Commerce, empowering local agriculture and businesses in Botswana.">
+  <meta name="keywords" content="Kweneng Chamber of Commerce, local business, agriculture, Botswana">
+  <meta name="author" content="Tinny Bothepha Mosimanyana">
+
+  <!-- Social Media Meta Tags -->
+  <!-- Open Graph for Facebook -->
+  <meta property="og:title" content="Kweneng Chamber of Commerce - Empowering Local Businesses">
+  <meta property="og:description" content="Join us in promoting agriculture and supporting local businesses in Botswana.">
+  <meta property="og:image" content="https://tmosimanyana.github.io/wdd231//chamber/images/hero-medium.webp"> <!-- Replace with your image path -->
+  <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.htm"> <!-- Replace with your website URL -->
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card for Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kweneng Chamber of Commerce - Empowering Local Businesses">
+  <meta name="twitter:description" content="Join us in promoting agriculture and supporting local businesses in Botswana.">
+  <meta name="twitter:image" content="images/your-image.webp"> <!-- Replace with your image path -->
+  <meta name="twitter:url" content="https://yourwebsite.com"> <!-- Replace with your website URL -->
+
+  <!-- Normalize CSS for consistent styling across browsers -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+  <!-- Preconnect to Google Fonts for faster loading -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- Google Fonts - Roboto, weight 400 -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
+  
+  <title>Chamber of Commerce - Responsive Layout</title>
 </head>
-<body>
-  <!-- Header with Logo and Navigation -->
+<body style="font-family: 'Roboto', sans-serif;"> <!-- Applying Roboto font to the body -->
   <header>
     <div class="logo">
-      <img src="images/logo.webp" alt="Chamber Logo" /> <!-- Adjust the src attribute to the correct path of your logo image -->
+      <img src="images/logo.webp" alt="Kweneng Chamber Logo" />
     </div>
     <nav>
       <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Directory</a></li>
-        <li><a href="#">Join Us</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="directory.html">Directory</a></li>
+        <li><a href="join.html">Join Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
     <div class="header-circle"></div>
   </header>
 
-  <!-- Hero Section with Image and Text Overlay -->
   <section class="hero">
     <div class="hero-text">
       <h1>Welcome to the Kweneng Chamber of Commerce</h1>
       <p>Empowering Local Agriculture and Businesses in Botswana</p>
-      <button class="cta-button">Join Us</button>
+      <a href="join.html" class="cta-button">Join Us</a>
     </div>
   </section>
 
-  <!-- Main Content Sections -->
   <main>
-    <!-- About Section -->
     <section class="about">
       <h2>About Us</h2>
       <p>Our mission is to support and promote local businesses in the Kweneng region.</p>
     </section>
 
-    <!-- Spotlight Section -->
     <section class="spotlight">
       <h2>Member Spotlight</h2>
-      <!-- Example spotlighted business -->
       <article class="member">
         <h3>Gold Member: Local Farm</h3>
         <p>Leading the way in sustainable agriculture.</p>
       </article>
     </section>
 
-    <!-- Directory Preview Section -->
     <section class="directory-preview">
       <h2>Our Members</h2>
-      <!-- Example member listing -->
       <article class="member">
         <h3>Silver Member: Farm Co.</h3>
         <p>Supporting Botswana’s agriculture sector.</p>
@@ -62,7 +86,6 @@
     </section>
   </main>
 
-  <!-- Footer with Contact and Social Media Links -->
   <footer>
     <p>Contact us: <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
     <ul class="social-links">
