@@ -1,12 +1,12 @@
-/* Importing Normalize.css at the beginning */
+/* Import Normalize.css */
 @import url('normalize.css'); 
 
-/* Reset and normalize styles */
+/* Reset and Normalize Styles */
 body, h1, h2, p {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif; /* Set font-family once for the body */
-    line-height: 1.6; /* Improve readability */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
 }
 
 header, footer {
@@ -17,19 +17,19 @@ header, footer {
 }
 
 nav ul {
-    list-style: none; /* Reset list styles */
+    list-style: none;
     padding: 0;
 }
 
 nav li {
     display: inline;
-    margin: 0 15px; /* Consolidate margin */
+    margin: 0 15px;
 }
 
 main {
-    padding: 1rem; /* Consistent padding */
-    max-width: 1200px; /* Set max-width for main content */
-    margin: 0 auto; /* Center main content */
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 /* Hero Section */
@@ -43,13 +43,13 @@ main {
     height: auto;
 }
 
-/* Sections */
+/* Section Styling */
 #current-events, #weather, #company-spotlight {
-    margin: 2rem 0; /* Consistent margin for sections */
-    padding: 1rem; /* Padding for better spacing */
-    border: 1px solid #ddd; /* Light border for definition */
-    border-radius: 8px; /* Rounded corners */
-    background-color: #f9f9f9; /* Light background */
+    margin: 2rem 0;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
 }
 
 /* Member Card Style */
@@ -60,18 +60,18 @@ main {
     margin: 15px 0;
     display: flex;
     align-items: center;
-    transition: box-shadow 0.3s; /* Smooth shadow effect */
+    transition: box-shadow 0.3s;
 }
 
 .member-card:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .member-image {
     width: 100px;
     height: auto;
     margin-right: 15px;
-    border-radius: 5px; /* Slight rounding for images */
+    border-radius: 5px;
 }
 
 /* Call to Action Button */
@@ -81,14 +81,14 @@ main {
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s; /* Smooth color transition */
+    transition: background-color 0.3s;
 }
 
 .cta-button:hover {
-    background-color: #FFC300; /* Darker shade on hover */
+    background-color: #FFC300;
 }
 
-/* Footer */
+/* Footer Positioning */
 footer {
     position: relative;
     bottom: 0;
@@ -105,12 +105,11 @@ footer {
 }
 
 @media (min-width: 900px) {
-    /* Additional styles for larger screens can be added here */
     .member-card {
-        flex-direction: row; /* Row layout for larger screens */
+        flex-direction: row;
     }
 
     .member-image {
-        width: 120px; /* Larger images for better visibility */
+        width: 120px;
     }
 }

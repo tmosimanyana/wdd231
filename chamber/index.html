@@ -1,87 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Welcome to the Kweneng Agriculture Chamber of Commerce. Engage with local businesses and stay updated with current events.">
-    <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-
-    <!-- Preconnect for Google Fonts and CDN -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Open Graph meta tags for social media sharing -->
-    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="http://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp">
-    <meta property="og:url" content="http://tmosimanyana.github.io/wdd231/chamber/index.html">
-    <meta property="og:description" content="Join the Kweneng Agriculture Chamber of Commerce to connect with local businesses and contribute to community growth.">
-
-    <!-- Page Title -->
-    <title>Kweneng Agriculture Chamber of Commerce - Home</title>
-
-    <!-- Import Roboto Font -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/styles.css">
-
-    <!-- JavaScript File -->
-    <script src="js/main.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chamber of Commerce - Responsive Layout</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <!-- Header with Logo and Navigation -->
+  <header>
+    <div class="logo">Kweneng Chamber</div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Directory</a></li>
+        <li><a href="#">Join Us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <!-- Header Section -->
-    <header class="header" aria-label="Main Header">
-        <div class="header-content">
-            <div class="header-logo-container">
-                <img src="images/logo.webp" alt="Kweneng Agriculture Chamber Logo" class="logo" aria-hidden="true">
-                <div class="circle-decoration"></div> <!-- Circular Shape -->
-            </div>
-            <h1 class="title">Kweneng Agriculture Chamber of Commerce</h1>
-            <nav class="primary-nav" aria-label="Primary Navigation">
-                <ul class="nav-list">
-                    <li><a href="index.html" aria-label="Home Page">Home</a></li>
-                    <li><a href="directory.html" aria-label="Business Directory">Directory</a></li>
-                    <li><a href="join.html" aria-label="Join the Chamber">Join</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <!-- Hero Section with Image and Text Overlay -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Welcome to the Kweneng Chamber of Commerce</h1>
+      <p>Empowering Local Agriculture and Businesses in Botswana</p>
+      <button class="cta-button">Learn More</button>
+    </div>
+  </section>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <section id="hero">
-            <img src="images/hero-medium.webp" alt="Hero image representing the chamber's agricultural focus" class="hero-image">
-            <h2>Welcome to the Kweneng Agriculture Chamber of Commerce</h2>
-            <p>Join us and engage with local businesses to foster community growth.</p>
-            <a href="#join" class="cta-button">Join Us Today</a>
-        </section>
+  <!-- Main Content Sections -->
+  <main>
+    <!-- About Section -->
+    <section class="about">
+      <h2>About Us</h2>
+      <p>Our mission is to support and promote local businesses in the Kweneng region.</p>
+    </section>
 
-        <section id="weather-info">
-            <h3>Weather Information</h3>
-            <div id="weather-container">
-                <!-- Weather API data will be injected here -->
-            </div>
-        </section>
+    <!-- Spotlight Section -->
+    <section class="spotlight">
+      <h2>Member Spotlight</h2>
+      <!-- Example spotlighted business -->
+      <div class="member">
+        <h3>Gold Member: Local Farm</h3>
+        <p>Leading the way in sustainable agriculture.</p>
+      </div>
+    </section>
 
-        <section id="spotlight-container">
-            <h3>Spotlight on Local Businesses</h3>
-            <div class="business-spotlight">
-                <!-- Content for spotlight businesses -->
-            </div>
-        </section>
-    </main>
+    <!-- Directory Preview Section -->
+    <section class="directory-preview">
+      <h2>Our Members</h2>
+      <!-- Example member listing -->
+      <div class="member">
+        <h3>Silver Member: Farm Co.</h3>
+        <p>Supporting Botswana’s agriculture sector.</p>
+      </div>
+    </section>
+  </main>
 
-    <!-- Footer Section -->
-    <footer class="footer">
-        <p>&copy; <span id="currentyear"></span> Kweneng Agriculture Chamber of Commerce</p>
-        <p id="lastModified"></p>
-        <nav aria-label="Footer Navigation">
-            <a href="#privacy-policy">Privacy Policy</a>
-            <a href="#terms-of-service">Terms of Service</a>
-        </nav>
-    </footer>
+  <!-- Footer with Contact and Social Media Links -->
+  <footer>
+    <p>Contact us: info@kwenengchamber.com</p>
+    <ul class="social-links">
+      <li><a href="#">Facebook</a></li>
+      <li><a href="#">Twitter</a></li>
+      <li><a href="#">LinkedIn</a></li>
+    </ul>
+  </footer>
 </body>
 </html>
