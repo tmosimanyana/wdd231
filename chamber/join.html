@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join the Kweneng Agriculture Chamber of Commerce.">
+    <meta name="description" content="Join the Kweneng Agriculture Chamber of Commerce and become part of a growing community.">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
     <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-    <title>Join Kweneng Agriculture Chamber</title>
+    <title>Join Us - Kweneng Agriculture Chamber of Commerce</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -15,48 +15,20 @@
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="directory.html">Directory</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Business Directory</a></li>
                 <li><a href="join.html">Join Us</a></li>
-                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Join Us</h2>
-        <form action="thankyou.html" method="GET">
-            <label for="first-name">First Name:</label>
-            <input type="text" id="first-name" name="first-name" title="First Name" required autocomplete="given-name">
-
-            <label for="last-name">Last Name:</label>
-            <input type="text" id="last-name" name="last-name" title="Last Name" required autocomplete="family-name">
-
-            <label for="org-title">Organizational Title:</label>
-            <input type="text" id="org-title" name="org-title" title="Organizational Title" pattern="[A-Za-z\- ]{7,}" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" title="Email" required autocomplete="email" placeholder="example@example.com">
-
-            <label for="phone">Mobile Phone:</label>
-            <input type="tel" id="phone" name="phone" title="Mobile Phone" required>
-
-            <label for="organization-name">Organization Name:</label>
-            <input type="text" id="organization-name" name="organization-name" title="Organization Name" required autocomplete="organization">
-
-            <label for="membership-level">Membership Level:</label>
-            <select id="membership-level" name="membership-level">
-                <option value="NP Membership">NP Membership (No Fee)</option>
-                <option value="Bronze Membership">Bronze Membership</option>
-                <option value="Silver Membership">Silver Membership</option>
-                <option value="Gold Membership">Gold Membership</option>
-            </select>
-
-            <label for="description">Business/Organization Description:</label>
-            <textarea id="description" name="description" title="Business Description"></textarea>
-
-            <input type="hidden" name="timestamp" id="timestamp" value="">
-            <button type="submit">Submit</button>
-        </form>
+        <!-- Join page content -->
+        <section id="membership-info">
+            <h2>Join the Chamber</h2>
+            <p>Become a part of our community and enjoy exclusive benefits.</p>
+            <!-- Membership application form will go here -->
+        </section>
     </main>
 
     <footer>
@@ -64,12 +36,8 @@
         <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce</p>
         <p>Last Modified: <span id="last-modified"></span></p>
     </footer>
-
+    
     <script>
-        // Set the current timestamp
-        document.getElementById('timestamp').value = new Date().toISOString();
-
-        // Set current year and last modified date
         document.getElementById('current-year').textContent = new Date().getFullYear();
         document.getElementById('last-modified').textContent = document.lastModified;
     </script>

@@ -1,95 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Discover | Kweneng Agriculture Chamber of Commerce</title>
-  <link rel="stylesheet" href="styles/style.css">
-  <script src="scripts/main.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover local agricultural businesses and opportunities in Kweneng.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <title>Discover - Kweneng Agriculture Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
+    <header>
+        <h1>Kweneng Agriculture Chamber of Commerce</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Business Directory</a></li>
+                <li><a href="join.html">Join Us</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Common Header and Navigation -->
-  <header>
-    <div class="container">
-      <img src="images/logo.png" alt="Kweneng Agriculture Chamber of Commerce Logo" class="logo">
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="discover.html" class="active">Discover</a></li>
-          <li><a href="directory.html">Directory</a></li>
-          <li><a href="join.html">Join</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+    <main>
+        <!-- Discover page content -->
+        <section id="discover-info">
+            <h2>Discover Local Agriculture</h2>
+            <p>Explore the agricultural landscape of Kweneng and connect with businesses that support our community.</p>
+        </section>
+    </main>
 
-  <!-- Main Content -->
-  <main>
-    <!-- Local History Section -->
-    <section class="local-history">
-      <h1>Discover Kweneng</h1>
-      <p>Explore the rich history and vibrant culture that make Kweneng unique.</p>
-      <p>Kweneng has a deep agricultural tradition and a thriving community focused on sustainable development and growth.</p>
-    </section>
-
-    <!-- Demographics Section -->
-    <section class="demographics">
-      <h2>Community Demographics</h2>
-      <p>Understanding our population helps us build better support and resources for local businesses.</p>
-      <ul>
-        <li><strong>Population:</strong> 50,000</li>
-        <li><strong>Primary Industries:</strong> Agriculture, Tourism, and Small Business</li>
-        <li><strong>Median Age:</strong> 30 years</li>
-        <li><strong>Employment Rate:</strong> 85%</li>
-      </ul>
-    </section>
-
-    <!-- Events Section -->
-    <section class="events">
-      <h2>Upcoming Events</h2>
-      <div id="eventsContainer">
-        <!-- Community event details will populate here -->
-      </div>
-    </section>
-
-    <!-- Image Montage Section -->
-    <section class="image-montage">
-      <h2>Our Community in Photos</h2>
-      <div class="montage-gallery">
-        <img src="images/community1.jpg" alt="Community gathering" loading="lazy">
-        <img src="images/community2.jpg" alt="Local farmers market" loading="lazy">
-        <img src="images/community3.jpg" alt="Agriculture field" loading="lazy">
-        <img src="images/community4.jpg" alt="Local art event" loading="lazy">
-        <img src="images/community5.jpg" alt="Business networking event" loading="lazy">
-      </div>
-    </section>
-  </main>
-
-  <!-- Common Footer -->
-  <footer>
-    <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
-  </footer>
-
-  <!-- Fetch and Display Events Data -->
-  <script>
-    fetch('chamber/data/events.json')
-      .then(response => response.json())
-      .then(data => {
-        const eventsContainer = document.getElementById('eventsContainer');
-        data.events.forEach(event => {
-          const eventCard = document.createElement('div');
-          eventCard.classList.add('event-card');
-          eventCard.innerHTML = `
-            <h3>${event.title}</h3>
-            <p><strong>Date:</strong> ${event.date}</p>
-            <p>${event.description}</p>
-          `;
-          eventsContainer.appendChild(eventCard);
-        });
-      })
-      .catch(error => console.error('Error fetching events data:', error));
-  </script>
-
+    <footer>
+        <p>Contact us: info@kwenengchamber.co.bw | +267 123 4567</p>
+        <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>Last Modified: <span id="last-modified"></span></p>
+    </footer>
+    
+    <script>
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        document.getElementById('last-modified').textContent = document.lastModified;
+    </script>
 </body>
 </html>
