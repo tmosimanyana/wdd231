@@ -1,175 +1,134 @@
-/* Reset and basic styles */
+/* Reset some default styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+  }
+  
+  body {
     font-family: Arial, sans-serif;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #f9f9f9;
-    color: #333;
-}
-
-/* 1. Header styling */
-header {
+    line-height: 1.6;
+  }
+  
+  /* Header styling */
+  header {
+    background-color: #f1f1f1;
+    padding: 10px 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-    padding: 10px 20px;
-    background-color: #f0f0f0;
-    border-bottom: 2px solid #ccc;
-}
-
-header .logo {
-    font-size: 24px;
+  }
+  
+  .logo {
     font-weight: bold;
-}
-
-header nav {
-    display: flex;
-    gap: 20px;
-}
-
-header nav a {
-    text-decoration: none;
+  }
+  
+  nav a {
+    margin: 0 10px;
     color: #333;
-    font-weight: 500;
-    padding: 8px 12px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
-}
-
-header nav a:hover {
-    background-color: #e0e0e0;
-}
-
-header .dark-mode-toggle {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    background-color: #333;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    text-decoration: none;
+  }
+  
+  .dark-mode-toggle {
     cursor: pointer;
-}
-
-/* 2. Hero Section */
-.hero {
-    width: 100%;
-    max-width: 1200px;
-    height: 300px;
-    margin: 20px 0;
+  }
+  
+  /* Hero section styling */
+  .hero {
+    text-align: center;
+    padding: 20px;
     background-color: #ddd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-}
-
-.hero img {
+  }
+  
+  .hero img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.hero button {
-    position: absolute;
+    max-width: 600px;
+    height: auto;
+  }
+  
+  .hero button {
+    margin-top: 10px;
     padding: 10px 20px;
     background-color: #333;
     color: #fff;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-}
-
-/* 3. Main Content Section */
-.main-content {
+  }
+  
+  /* Main content styling */
+  .main-content {
     display: flex;
-    flex-wrap: wrap;
     gap: 20px;
-    max-width: 1200px;
     padding: 20px;
-}
-
-.events, .weather, .forecast {
+    background-color: #f9f9f9;
+  }
+  
+  .events, .weather, .forecast {
     flex: 1;
-    min-width: 250px;
-    background-color: #e0e0e0;
-    padding: 15px;
-    border-radius: 8px;
-}
-
-.weather img {
-    width: 50px;
-    height: 50px;
-}
-
-/* 4. Business Directory Section */
-.business-directory {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    max-width: 1200px;
+    background-color: #eee;
     padding: 20px;
-}
-
-.business-card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
-}
-
-.business-card h4 {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.business-card p {
-    font-size: 14px;
-    margin: 8px 0;
-}
-
-.business-card .contact-info {
+    border-radius: 5px;
+  }
+  
+  .weather img {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  /* Business directory styling */
+  .business-directory {
     display: flex;
-    flex-direction: column;
-    gap: 5px;
-    font-size: 12px;
-}
-
-/* 5. Footer */
-footer {
-    width: 100%;
-    max-width: 1200px;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .business-card {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+  
+  .contact-info p {
+    margin: 5px 0;
+  }
+  
+  /* Footer styling */
+  footer {
+    text-align: center;
     padding: 20px;
     background-color: #333;
     color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-footer .social-icons {
-    display: flex;
-    gap: 15px;
-    margin: 10px 0;
-}
-
-footer .social-icons a {
+  }
+  
+  footer .social-icons a {
+    margin: 0 10px;
     color: #fff;
-    font-size: 20px;
-}
-
-footer p {
-    font-size: 12px;
-}
+    text-decoration: none;
+  }
+  
+  /* Responsive Styling */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+    }
+  
+    .hero img {
+      width: 100%;
+    }
+  
+    .main-content {
+      flex-direction: column;
+    }
+  
+    .business-directory {
+      flex-direction: column;
+    }
+  
+    footer .social-icons a {
+      display: inline-block;
+      margin: 0 5px;
+    }
+  }
+  

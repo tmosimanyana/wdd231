@@ -3,105 +3,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Meta Tags for SEO -->
-  <meta name="description" content="Welcome to the Kweneng Chamber of Commerce, empowering local agriculture and businesses in Botswana.">
-  <meta name="keywords" content="Kweneng Chamber of Commerce, local business, agriculture, Botswana">
-  <meta name="author" content="Tinny Bothepha Mosimanyana">
-
-  <!-- Social Media Meta Tags -->
-  <!-- Open Graph for Facebook -->
-  <meta property="og:title" content="Kweneng Chamber of Commerce - Empowering Local Businesses">
-  <meta property="og:description" content="Join us in promoting agriculture and supporting local businesses in Botswana.">
-  <meta property="og:image" content="https://tmosimanyana.github.io/wdd231//chamber/images/hero-medium.webp"> <!-- Replace with your image path -->
-  <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.htm"> <!-- Replace with your website URL -->
-  <meta property="og:type" content="website">
-
-  <!-- Twitter Card for Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Kweneng Chamber of Commerce - Empowering Local Businesses">
-  <meta name="twitter:description" content="Join us in promoting agriculture and supporting local businesses in Botswana.">
-  <meta name="twitter:image" content="images/your-image.webp"> <!-- Replace with your image path -->
-  <meta name="twitter:url" content="https://yourwebsite.com"> <!-- Replace with your website URL -->
-
-  <!-- Normalize CSS for consistent styling across browsers -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-
-  <!-- Preconnect to Google Fonts for faster loading -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Google Fonts - Roboto, weight 400 -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
-
+  <title>Kweneng Agriculture Chamber of Commerce</title>
   <link rel="stylesheet" href="styles.css">
-  
-  <title>Chamber of Commerce - Responsive Layout</title>
 </head>
-<body style="font-family: 'Roboto', sans-serif;"> <!-- Applying Roboto font to the body -->
+<body>
+
+  <!-- Header Section -->
   <header>
-    <body>
-      <!-- Header -->
-      <header>
-          <div class="logo">Kweneng Agriculture  Chamber of Commerce</div>
-          <nav>
-              <a href="#">Home</a>
-              <a href="#">Directory</a>
-              <a href="#">Join</a>
-              <a href="#">Discover</a>
-          </nav>
-          <div class="dark-mode-toggle">☾</div>
-      </header>
-  
-      <!-- Hero Section -->
-      <section class="hero">
-          <img src="images/hero-medium.webp" alt="Hero Image">
-          <button>Keynote Tickets</button>
-      </section>
-  
-      <!-- Main Content -->
-      <section class="main-content">
-          <div class="events">
-              <h2>Events</h2>
-              <!-- Events Content Here -->
-          </div>
-          <div class="weather">
-              <h2>Current Weather</h2>
-              <img src="weather-icon.png" alt="Weather Icon">
-              <p>75°F, Party Cloudy</p>
-          </div>
-          <div class="forecast">
-              <h2>Weather Forecast</h2>
-              <p>Today: 90°F</p>
-              <p>Wednesday: 89°F</p>
-              <p>Thursday: 68°F</p>
-          </div>
-      </section>
-  
-      <!-- Business Directory -->
-      <section class="business-directory">
-          <div class="business-card">
-              <h4>Business Name</h4>
-              <p>Tagline</p>
-              <div class="contact-info">
-                  <p>Email: info@business.com</p>
-                  <p>Phone: 123-456-7890</p>
-                  <p>URL: www.business.com</p>
-              </div>
-          </div>
-          <!-- Repeat for other business cards -->
-      </section>
-  
-      <!-- Footer -->
-      <footer>
-          <p>Kweneng Agriculture Chamber of Commerce, PO BOX 894 Molepolole, Botswana</p>
-          <div class="social-icons">
-              <a href="#">📘</a>
-              <a href="#">🐦</a>
-              <a href="#">🔗</a>
-          </div>
-          <p>WDD231 Class Project by Tinny Bothepha Mosimanyana</p>
-          <p>Last Modified: 10/21/2022</p>
-      </footer>
-  </body>
-  
+    <div class="header-container">
+      <div class="logo">Kweneng Agriculture Chamber of Commerce</div>
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">Directory</a>
+        <a href="#">Join</a>
+        <a href="#">Discover</a>
+      </nav>
+      <div class="dark-mode-toggle">☾</div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="images/hero-medium.webp" alt="Scalable, responsive hero image">
+    <button>Keynote Tickets</button>
+  </section>
+
+  <!-- Main Content Section -->
+  <main class="main-content">
+    <div class="events">
+      <h2>Events</h2>
+      <!-- Events Content Here -->
+    </div>
+    <div class="weather">
+      <h2>Current Weather</h2>
+      <p>75°F, Partly Cloudy</p>
+      <p>High: 85°F | Low: 52°F</p>
+      <p>Humidity: 34%</p>
+      <p>Sunrise: 7:30am | Sunset: 9:59pm</p>
+    </div>
+    <div class="forecast">
+      <h2>Weather Forecast</h2>
+      <p>Today: 90°F</p>
+      <p>Wednesday: 89°F</p>
+      <p>Thursday: 68°F</p>
+    </div>
+  </main>
+
+  <!-- Business Directory Section -->
+  <section class="business-directory">
+    <div class="business-card">
+      <h4>Business Name</h4>
+      <p>Business Tag Line</p>
+      <div class="contact-info">
+        <p>Email: info@gmail.com</p>
+        <p>Phone: 800-555-1234</p>
+        <p>URL: mybusiness.com</p>
+      </div>
+    </div>
+    <!-- Additional business cards can be added here -->
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>Kweneng Agriculture Chamber of Commerce<br>PO BOX 894 Molepolole, Botswana</p>
+    <div class="social-icons">
+      <a href="#">📘</a>
+      <a href="#">🐦</a>
+      <a href="#">🔗</a>
+    </div>
+    <p>WDD231 Class Project by Tinny Bothepha Mosimanyana</p>
+    <p>Last Modified: 10/21/2022</p>
+  </footer>
+
+</body>
+</html>
