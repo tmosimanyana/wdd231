@@ -172,3 +172,9 @@
 .business-card h3 {
   color: #333;
 }
+.hero {
+  background-image: url('../images/hero-image.jpg');
+  background-size: cover;
+  background-position: center;
+  /* Other styles for the hero section, if needed */
+}
