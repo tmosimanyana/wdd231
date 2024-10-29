@@ -1,36 +1,11 @@
-document.addEventListener("DOMContentLoaded", () => {
-    loadDirectory();
-    loadWeather();
+// script.js
 
-    const form = document.getElementById("membership-form");
-    form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        alert("Thank you for applying!");
-    });
-});
-
-// Fetching directory data (placeholder JSON data)
-async function loadDirectory() {
-    const directoryContent = document.getElementById("directory-content");
-    try {
-        const response = await fetch("directory.json"); // Adjust with actual path
-        const data = await response.json();
-        directoryContent.innerHTML = data.map(business => 
-            `<div><h3>${business.name}</h3><p>${business.services}</p></div>`
-        ).join("");
-    } catch (error) {
-        directoryContent.textContent = "Failed to load directory.";
-    }
+// Example function to fetch weather information
+async function fetchWeather() {
+    const response = await fetch('https://api.weatherapi.com/v1/current.json?key=5c7e429e1b20f30b60de00a18bcc0e92KEY&q=Molepolole');
+    const data = await response.json();
+    document.getElementById('weather-info').textContent = `Current temperature in Molepolole: ${data.current.temp_c}°C`;
 }
 
-// Weather API Integration (fetch data and display it)
-async function loadWeather() {
-    const weatherInfo = document.getElementById("weather-info");
-    try {
-        const response = await fetch("https://api.open-meteo.com/weather?location=Molepolole"); // Adjust API as needed
-        const weatherData = await response.json();
-        weatherInfo.textContent = `Current weather: ${weatherData.current.temp}°C, ${weatherData.current.condition}`;
-    } catch (error) {
-        weatherInfo.textContent = "Weather information unavailable.";
-    }
-}
+// Call the fetchWeather function when the page loads
+document.addEventListener('DOMContentLoaded', fetchWeather);

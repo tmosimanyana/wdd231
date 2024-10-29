@@ -4,34 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kweneng Agriculture Chamber of Commerce</title>
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="The Kweneng Agriculture Chamber of Commerce website supports local agricultural businesses in Botswana by providing resources, a member directory, and event information.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    
+    <!-- Social Media Meta Tags for Facebook -->
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="path_to_image.jpg"> <!-- Replace with actual image path -->
+    <meta property="og:url" content="https://yourwebsite.com"> <!-- Replace with your website URL -->
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Path to your favicon -->
+    <link rel="stylesheet" href="normalize.css"> <!-- Normalize CSS -->
+    <link rel="stylesheet" href="styles.css"> <!-- Custom CSS -->
 </head>
 <body>
 
 <header>
-    <h1>Welcome to Kweneng Agriculture Chamber of Commerce</h1>
+    <div class="logo">
+        <h1>Kweneng Agriculture Chamber of Commerce</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#discover">Discover</a></li>
+            <li><a href="#directory">Directory</a></li>
+            <li><a href="#join-us">Join Us</a></li>
+            <li><a href="#weather">Weather</a></li>
+            <li><a href="#spotlight">Spotlight</a></li>
+        </ul>
+    </nav>
 </header>
-
-<nav>
-    <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#discover">Discover</a></li>
-        <li><a href="#directory">Directory</a></li>
-        <li><a href="#join-us">Join Us</a></li>
-        <li><a href="#weather">Weather</a></li>
-        <li><a href="#spotlight">Spotlight</a></li>
-    </ul>
-</nav>
 
 <main>
     <section id="home">
-        <h2>About the Chamber</h2>
-        <p>Welcome to the Kweneng Agriculture Chamber of Commerce. We support local agriculture in Botswana.</p>
+        <h2>Welcome to Kweneng Agriculture Chamber of Commerce</h2>
+        <p>We support local agriculture in Botswana by connecting businesses and providing essential resources.</p>
     </section>
 
     <section id="discover">
         <h2>Discover Events & Resources</h2>
-        <p>Upcoming workshops and resources for local businesses.</p>
+        <p>Find out about upcoming workshops, events, and resources available for local businesses.</p>
     </section>
 
     <section id="directory">
@@ -62,14 +74,22 @@
 
     <section id="spotlight">
         <h2>Monthly Spotlight</h2>
-        <p>Highlighting standout member companies.</p>
+        <p>Highlighting standout member companies to enhance visibility.</p>
     </section>
 </main>
 
 <footer>
-    <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
+    <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce</p>
+    <p>Contact: info@kwenengagriculture.org</p>
+    <p>Last modified: <span id="last-modified"></span></p>
+    <p>Developed by Tinny Bothepha Mosimanyana for WDD 231</p>
 </footer>
 
 <script src="script.js" defer></script>
+<script>
+// JavaScript to dynamically display the current year and last modification date
+document.getElementById("current-year").textContent = new Date().getFullYear();
+document.getElementById("last-modified").textContent = document.lastModified;
+</script>
 </body>
 </html>
