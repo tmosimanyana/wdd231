@@ -4,24 +4,31 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kweneng Agriculture Chamber of Commerce</title>
+  <title>Kweneng Agriculture Chamber of Commerce | Home</title>
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="crossorigin">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
 </head>
 
 <body>
   <header>
-    <div class="logo">
+    <div class="page">
       <h1>Kweneng Agriculture Chamber of Commerce</h1>
-      <img src="images/logo.svg" alt=" Chamber of Commerce Logo" class="logo">
+      <img src="images/logo.svg" alt="Chamber of Commerce Logo" class="logo">
     </div>
   </header>
 
   <main class="page">
+    <!-- Hero Section -->
+    <section class="hero">
+      <h2>Supporting Local Agriculture in Kweneng</h2>
+      <p>Your gateway to resources, networking, and community for agricultural businesses in the Kweneng region.</p>
+      <button onclick="window.location.href='join.html'">Join Us Today</button>
+    </section>
+
+    <!-- Navigation -->
     <nav>
       <span class="active"><a href="#">Home</a></span>
       <span><a href="directory.html">Directory</a></span>
@@ -31,41 +38,61 @@
       <span><a href="weather.html">Weather</a></span>
     </nav>
 
-    <div class="callout info">
-      <p>Don't forget to <strong>Join Us</strong> and enjoy membership benefits!</p>
-    </div>
-
-    <section>
-      <h2>About Us</h2>
-      <p>The Kweneng Agriculture Chamber of Commerce is dedicated to supporting local agricultural businesses by providing resources, networking opportunities, and advocacy for the interests of our members.</p>
-
-      <h2>Our Services</h2>
-      <ul>
-        <li>Networking opportunities for local farmers and agribusinesses</li>
-        <li>Access to resources and training programs</li>
-        <li>Information on agricultural events and workshops</li>
-        <li>Advocacy for agricultural policy and development in Kweneng</li>
-      </ul>
+    <!-- Community Information -->
+    <section class="community-info">
+      <h2>Community News & Updates</h2>
+      <p>Stay informed about the latest developments in the local agricultural community, including news, events, and announcements.</p>
+      <!-- Example news item -->
+      <div class="news-item">
+        <h3>Upcoming Workshop on Sustainable Farming</h3>
+        <p>Join us for an interactive workshop on sustainable farming practices in the Kweneng region.</p>
+      </div>
     </section>
 
-    <footer>
-      <div class="footer-content">
-        <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
-        <p>Contact us: <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
-        <div class="social-media">
-          <a href="https://www.linkedin.com/in/tinny29" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://x.com/mbothepha" target="_blank" rel="noopener noreferrer">Twitter</a>
-          <a href="http://www.youtube.com/@tinymosimanyana8302" target="_blank" rel="noopener noreferrer">YouTube</a>
-        </div>
+    <!-- Weather Information -->
+    <section class="weather">
+      <h2>Weather Update</h2>
+      <p>Current weather information is essential for our members. Check here for the latest updates.</p>
+      <!-- Placeholder for dynamic weather data -->
+      <div class="weather-widget">
+        <p>Sunny, 28°C</p>
       </div>
-    </footer>
+    </section>
+
+    <!-- Calls to Action -->
+    <section class="cta">
+      <h2>Get Involved</h2>
+      <button onclick="window.location.href='join.html'">Become a Member</button>
+      <button onclick="window.location.href='events.html'">Explore Events</button>
+      <button onclick="window.location.href='resources.html'">Access Resources</button>
+    </section>
+
+    <!-- Business Spotlights -->
+    <section class="spotlight">
+      <h2>Business Spotlight</h2>
+      <p>Discover featured businesses in the Kweneng region that are making a difference in agriculture.</p>
+      <div class="business-card">
+        <img src="images/business1.jpg" alt="Business 1">
+        <h3>Green Acres Farm</h3>
+        <p>Specializing in organic produce and sustainable practices.</p>
+      </div>
+      <div class="business-card">
+        <img src="images/business2.jpg" alt="Business 2">
+        <h3>Kweneng Dairy Co-op</h3>
+        <p>Providing fresh dairy products to the community.</p>
+      </div>
+    </section>
   </main>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/highlight.min.js"></script>
-  <script>
-    hljs.highlightAll();
-  </script>
-
+  <footer>
+    <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
+    <p>Contact us: <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
+    <div class="social-media">
+      <a href="https://www.linkedin.com/in/tinny29" target="_blank">LinkedIn</a>
+      <a href="https://x.com/mbothepha" target="_blank">Twitter</a>
+      <a href="http://www.youtube.com/@tinymosimanyana8302" target="_blank">YouTube</a>
+    </div>
+  </footer>
 </body>
 
 </html>
