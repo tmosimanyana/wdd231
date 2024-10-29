@@ -257,3 +257,27 @@ a:hover {
 nav span a {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+/* Grid view styles */
+.directory-container #directory-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+/* List view styles */
+.directory-container #directory-content.list-view {
+  display: block;
+}
+
+.directory-container #directory-content.list-view .directory-entry {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.view-toggle {
+  margin-bottom: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
