@@ -61,3 +61,23 @@ document.addEventListener('DOMContentLoaded', () => {
     setupViewToggle();
     setupFooterDates();
 });
+const weatherCard = document.querySelector('.weather-card');
+
+async function fetchWeather() {
+    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92';  // replace with your OpenWeather API key
+    const lat = '-24.4062';
+    const lon = '25.4951';  // Approximate coordinates for Molepolole
+    const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+        weatherCard.querySelector('.temperature').textContent = `${data.main.temp} °C`;
+        weatherCard.querySelector('.conditions').textContent = data.weather[0].description;
+        weatherCard.querySelector('.humidity').textContent = `Humidity: ${data.main.humidity}%`;
+    } catch (error) {
+        console.error("Error fetching weather data:", error);
+    }
+}
+
+fetchWeather();
