@@ -14,72 +14,81 @@
 
 <body>
   <header>
-    <div class="page">
+    <div class="header-container">
       <h1>Kweneng Agriculture Chamber of Commerce</h1>
       <img src="images/logo.svg" alt="Chamber of Commerce Logo" class="logo">
     </div>
-  </header>
-
-  <main class="page">
-    <!-- Hero Section -->
-    <section class="hero">
-      <h2>Supporting Local Agriculture in Kweneng</h2>
-      <p>Your gateway to resources, networking, and community for agricultural businesses in the Kweneng region.</p>
-      <button onclick="window.location.href='join.html'">Join Us Today</button>
-    </section>
-
-    <!-- Navigation -->
     <nav>
-      <span class="active"><a href="#">Home</a></span>
+      <span class="active"><a href="index.html">Home</a></span>
       <span><a href="directory.html">Directory</a></span>
       <span><a href="events.html">Events</a></span>
       <span><a href="resources.html">Resources</a></span>
       <span><a href="join.html">Join Us</a></span>
       <span><a href="weather.html">Weather</a></span>
     </nav>
+  </header>
 
-    <!-- Community Information -->
-    <section class="community-info">
-      <h2>Community News & Updates</h2>
-      <p>Stay informed about the latest developments in the local agricultural community, including news, events, and announcements.</p>
-      <!-- Example news item -->
-      <div class="news-item">
-        <h3>Upcoming Workshop on Sustainable Farming</h3>
-        <p>Join us for an interactive workshop on sustainable farming practices in the Kweneng region.</p>
+  <main>
+    <!-- Hero Section with Call to Action -->
+    <section class="hero" style="background-image: url('images/hero-image.jpg');">
+      <div class="hero-text">
+        <h2>Empowering Agriculture in Kweneng</h2>
+        <p>Connecting local agricultural businesses with resources and support.</p>
+        <a href="join.html" class="cta-button">Join the Chamber of Commerce</a>
       </div>
     </section>
 
-    <!-- Weather Information -->
+    <!-- Current Events Section -->
+    <section class="current-events">
+      <h2>Current Events</h2>
+      <div class="event">
+        <h3>Annual Farmers Meeting</h3>
+        <p>Date: November 10, 2024</p>
+        <p>Location: Kweneng Community Center</p>
+        <p>Join us to discuss the latest in agricultural developments and network with other local farmers.</p>
+      </div>
+      <!-- Additional events could be dynamically inserted here -->
+    </section>
+
+    <!-- Weather Section -->
     <section class="weather">
-      <h2>Weather Update</h2>
-      <p>Current weather information is essential for our members. Check here for the latest updates.</p>
-      <!-- Placeholder for dynamic weather data -->
-      <div class="weather-widget">
-        <p>Sunny, 28°C</p>
+      <h2>Weather Updates</h2>
+      <div class="weather-info">
+        <p><strong>Today’s Forecast:</strong> Sunny, 28°C</p>
+        <p>Stay updated with the latest weather conditions important for your agricultural activities.</p>
       </div>
     </section>
 
-    <!-- Calls to Action -->
-    <section class="cta">
-      <h2>Get Involved</h2>
-      <button onclick="window.location.href='join.html'">Become a Member</button>
-      <button onclick="window.location.href='events.html'">Explore Events</button>
-      <button onclick="window.location.href='resources.html'">Access Resources</button>
-    </section>
-
-    <!-- Business Spotlights -->
+    <!-- Business Spotlights Section -->
     <section class="spotlight">
-      <h2>Business Spotlight</h2>
-      <p>Discover featured businesses in the Kweneng region that are making a difference in agriculture.</p>
-      <div class="business-card">
-        <img src="images/business1.jpg" alt="Business 1">
-        <h3>Green Acres Farm</h3>
-        <p>Specializing in organic produce and sustainable practices.</p>
-      </div>
-      <div class="business-card">
-        <img src="images/business2.jpg" alt="Business 2">
-        <h3>Kweneng Dairy Co-op</h3>
-        <p>Providing fresh dairy products to the community.</p>
+      <h2>Business Spotlights</h2>
+      <div class="spotlights-container">
+        <!-- Spotlight 1 -->
+        <div class="business-card">
+          <img src="images/bamb.webp" alt="BAMB Headquarters">
+          <h3>BAMB Headquarters</h3>
+          <p>Address: 123 BAMB Rd, Kweneng</p>
+          <p>Phone: +267 123 4567</p>
+          <p>Membership Level 3</p>
+        </div>
+        
+        <!-- Spotlight 2 -->
+        <div class="business-card">
+          <img src="images/agrifeed.webp" alt="AgriFeed GICP">
+          <h3>AgriFeed GICP</h3>
+          <p>Address: 456 Agri Rd, Kweneng</p>
+          <p>Phone: +267 765 4321</p>
+          <p>Membership Level 2</p>
+        </div>
+        
+        <!-- Spotlight 3 -->
+        <div class="business-card">
+          <img src="images/greenhouse.webp" alt="Greenhouse Technologies">
+          <h3>Greenhouse Technologies</h3>
+          <p>Address: 789 Greenhouse Ave, Kweneng</p>
+          <p>Phone: +267 111 2222</p>
+          <p>Membership Level 2</p>
+        </div>
       </div>
     </section>
   </main>

@@ -112,4 +112,63 @@
   footer p {
     margin: 0;
   }
-  
+  /* Hero Section */
+.hero {
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero-text {
+  background: rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #005ea3;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+}
+
+/* Sections */
+.current-events, .weather, .spotlight {
+  margin: 20px;
+  padding: 20px;
+  background-color: #eaf4fb;
+  border-radius: 8px;
+}
+
+.current-events h2, .weather h2, .spotlight h2 {
+  color: #005ea3;
+}
+
+/* Business Spotlights */
+.spotlights-container {
+  display: flex;
+  gap: 20px;
+}
+
+.business-card {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  flex: 1;
+}
+
+.business-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+.business-card h3 {
+  color: #333;
+}
