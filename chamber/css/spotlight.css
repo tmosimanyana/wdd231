@@ -1,0 +1,24 @@
+.spotlight-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px;
+}
+
+.spotlight {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+}
+
+.spotlight img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.spotlight h3 {
+    font-size: 1.2em;
+    margin: 5px 0;
+}

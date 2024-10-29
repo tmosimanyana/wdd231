@@ -1,0 +1,85 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Header */
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: #f3f3f3;
+    padding: 20px;
+}
+
+.logo {
+    height: 50px;
+}
+
+.keynote-btn {
+    background-color: #005bbb;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.circle-decoration {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 40px;
+    height: 40px;
+    background-color: #e3e3e3;
+    border-radius: 50%;
+}
+
+/* Navigation */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+}
+
+.cta a {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background-color: #005bbb;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Footer */
+.footer-content {
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+}
+
+.social-icons img {
+    height: 25px;
+    margin: 0 10px;
+}
