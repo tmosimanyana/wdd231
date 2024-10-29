@@ -11,23 +11,53 @@ async function fetchMemberData() {
 
 // Function to display the weather data
 async function displayWeather() {
-    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replaced with my OpenWeatherMap API key
-    const city = 'Molepolole,BW'; // location to get weather for
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+    const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
+    const city = 'Molepolole,BW'; // The city to get weather for
+    const url = `https://api.openweathermap.org/data/2.5/onecall?lat=-24.5833&lon=25.1833&exclude=minutely,hourly&units=metric&appid=${apiKey}`;
     
     try {
         const response = await fetch(url);
         const weatherData = await response.json();
-        const currentTemp = Math.round(weatherData.main.temp);
-        const weatherDescription = weatherData.weather.map(event => capitalizeWords(event.description)).join(', ');
+
+        // Current weather data
+        const currentTemp = Math.round(weatherData.current.temp);
+        const weatherDescription = weatherData.current.weather.map(event => capitalizeWords(event.description)).join(', ');
         
-        // Update the weather section in the HTML
+        // Update current weather in the HTML
         document.getElementById('current-temperature').innerText = `${currentTemp}°C`;
         document.getElementById('weather-description').innerText = weatherDescription;
 
-        //  can also add a three-day forecast here if needed
+        // Display the three-day forecast
+        displayThreeDayForecast(weatherData.daily);
     } catch (error) {
         console.error('Error fetching weather data:', error);
+    }
+}
+
+// Function to display the three-day forecast
+function displayThreeDayForecast(dailyData) {
+    const forecastSection = document.getElementById('three-day-forecast');
+    forecastSection.innerHTML = ''; // Clear previous forecast
+
+    // Loop through the first three days of the forecast
+    for (let i = 1; i <= 3; i++) {
+        const dayData = dailyData[i]; // Get the forecast for each day
+
+        // Create an HTML element for each day's forecast
+        const forecastDiv = document.createElement('div');
+        forecastDiv.className = 'forecast-day';
+        
+        const date = new Date(dayData.dt * 1000).toLocaleDateString(); // Convert UNIX timestamp to date
+        const dayTemp = Math.round(dayData.temp.day); // Day temperature
+        const dayWeather = capitalizeWords(dayData.weather.map(event => event.description).join(', '));
+
+        forecastDiv.innerHTML = `
+            <h4>${date}</h4>
+            <p>Temperature: ${dayTemp}°C</p>
+            <p>Weather: ${dayWeather}</p>
+        `;
+
+        forecastSection.appendChild(forecastDiv);
     }
 }
 
