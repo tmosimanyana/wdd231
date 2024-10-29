@@ -10,7 +10,7 @@
     --red: rgb(182, 0, 19);
     --purple: rgba(103, 48, 155, .2);
     --ccl: rgba(125, 90, 160, 0.45);
-    --disciples: rgba(158,116,171,.4);
+    --disciples: rgba(158, 116, 171, .4);
     --mustard: rgb(182, 163, 0);
     --callout: rgb(230, 243, 254);
     --error: rgb(255, 215, 225);
@@ -19,430 +19,8 @@
   
     --padd: 0.5rem;
     --bord: 1px solid rgba(0, 0, 0, 0.1);
-  }
-  
-  body {
-    font: 400 16px / 1.5 Montserrat, Helvetica, sans-serif;
-    margin: 0;
-    -webkit-font-smoothing: antialiased;
-    background-color: #fff; /* Set a default background color */
-    color: #333; /* Default text color */
-  }
-  
-  .page {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: var(--padd);
-  }
-  
-  h1, h2, h3, h4, h5 {
-    margin: 0;
-  }
-  
-  h1 {
-    color: #fff;
-    font-size: 1.1rem;
-    margin-left: 1rem;
-    font-weight: normal;
-  }
-  
-  #coursetitle {
-    display: none;
-  }
-  
-  h2 {
-    font-size: 1.6rem;
-    margin: 1.2rem 0.25rem;
-    color: var(--navy); /* Set a color for h2 */
-  }
-  
-  h3 {
-    font-size: 1.4rem;
-    margin: 1.5rem 0.5rem 0.5rem;
-    border-top: 1px solid #ddd;
-    color: var(--darkgray); /* Set a color for h3 */
-  }
-  
-  h4 {
-    font-size: 1.2rem;
-    margin: 0.75rem;
-    color: var(--gray); /* Set a color for h4 */
-  }
-  
-  h5 {
-    font-size: 1rem;
-    color: var(--navy);
-    margin: 0.75rem 1.2rem;
-  }
-  
-  a {
-    color: var(--navy);
-    text-decoration: none; /* Remove underline from links */
-  }
-  
-  a:link {
-    color: var(--alink);
-  }
-  
-  a:active {
-    color: var(--red);
-  }
-  
-  a:visited, a:focus {
-    color: var(--avisited);
-  }
-  
-  p {
-    margin: 1rem 0;
-  }
-  
-  h4 + p {
-    margin-left: 1.25rem;
-  }
-  
-  h5 ~ p {
-    margin-left: 1.5rem;
-  }
-  
-  ol ol, ul ul {
-    margin-top: 1rem;
-  }
-  
-  li {
-    margin-bottom: 0.5rem;
-  }
-  
-  li ul li:nth-child(1) {
-    margin-top: 0.5rem;
-  }
-  
-  li ul li, li ol li {
-    margin-bottom: 0.5rem;
-  }
-  
-  li p {
-    margin: 0;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-  }
-  
-  header {
-    background-color: var(--byuiblue);
-    padding: var(--padd);
-  }
-  
-  .logo {
-    width: 50px;
-    height: auto;
-    background-color: #000;
-    padding: 12px 11px;
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
-  
-  main {
-    margin: 1.5rem 1rem;
-  }
-  
-  nav {
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  nav span {
-    font-size: .8rem;
-    font-weight: 700;
-    background-color: var(--lightgray);
-    margin: 0 .25rem .25rem;
-  }
-  
-  nav span a:link,
-  nav span a:visited,
-  nav span a:active,
-  nav span a:focus {
-    color: #000;
-    text-decoration: none;
-    display: block;
-    padding: .5rem 1rem;
-  }
-  
-  nav span a:hover {
-    background-color: var(--byuiblue);
-    color: #fff;
-  }
-  
-  footer {
-    border-top: var(--bord);
-    font-size: smaller;
-    background-color: var(--lightgray);
-    padding: var(--padd);
-    text-align: center;
-  }
-  
-  footer p {
-    margin: 0 0 0 0.5rem;
-  }
-  
-  details {
-    margin: 1rem 2rem;
-    border: var(--bord);
-    padding: 0.5rem;
-    color: #000;
-    background-color: var(--details);
-  }
-  
-  details p {
-    margin: 0.5rem 0 0 0.5rem;
-  }
-  
-  .clo {
-    margin: 1rem .25rem;
-  }
-  
-  pre {
-    line-height: 1.2;
-    margin: 0.5rem;
-  }
-  
-  code {
-    font-weight: 700;
-    color: rgb(1, 100, 1);
-  }
-  
-  .html,
-  .css,
-  .javascript,
-  .cli,
-  .json {
-    font-weight: 400;
-    padding: .75rem;
-  }
-  
-  .character {
-    color: rgb(1, 100, 1);
-    font-size: smaller;
-  }
-  
-  kbd {
-    color: red;
-  }
-  
-  mark {
-    padding: 0.5rem;
-    font-style: italic;
-  }
-  
-  mark::before {
-    content: '⚒️';
-  }
-  
-  figure {
-    margin: 1rem 0;
-    text-align: center;
-  }
-  
-  figcaption {
-    font-size: smaller;
-    margin: 0 0 1rem 0;
-  }
-  
-  .video-container {
-    position: relative;
-    overflow: hidden;
-    height: 0;
-    padding-bottom: calc(var(--aspect-ratio, 0.5625) * 90%);
-    margin: 0.5em auto;
-    width: 90%;
-  }
-  
-  .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  
-  table {
-    border-collapse: collapse;
-    margin: 1rem auto;
-    width: 80%;
-    border: var(--bord);
-    background-color: var(--lightgray);
-  }
-  
-  table caption {
-    color: var(--navy);
-    font-weight: 700;
-  }
-  
-  th {
-    background-color: var(--darkgray);
-    color: #fff;
-  }
-  
-  th, td {
-    border: var(--bord);
-    padding: 0.5rem;
-    text-align: center;
-  }
-  
-  .active {
-    background-color: #000;
-    color: #fff;
-    text-decoration: none;
-  }
-  
-  .active a:link,
-  .active a:visited,
-  .active a:active,
-  .active a:focus {
-    color: #fff;
-  }
-  
-  td.detailed-text-cell {
-    text-align: left;
-    font-size: 90%;
-  }
-  
-  td.detailed-text-cell ul,
-  td.detailed-text-cell ol {
-    padding-left: 1rem;
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
-  }
-  
-  td.detailed-text-cell li {
-    margin-bottom: 0.1rem;
-  }
-  
-  .team::after {
-    content: " \1F465"
-  }
-  
-  .callout {
-    margin: 1rem;
-    border: var(--bord);
-    padding: 0.5rem;
-    color: #000;
-  }
-  
-  .reference {
-    background-color: var(--lightgray);
-    margin-left: 1.5rem;
-    margin-right: 1.5rem;
-  }
-  
-  .info {
-    background-color: var(--callout);
-  }
-  
-  .error {
-    background-color: var(--error);
-  }
-  
-  .warning {
-    background-color: var(--warning);
-  }
-  
-  .ai {
-    background-color: var(--purple);
-  }
-  
-  .ccl {
-    background-color: var(--ccl);
-  }
-  
-  .disciples {
-    position: relative;
-    background-color: var(--disciples);
-    background-image: url(../images/disciples.png);
-    background-repeat: no-repeat;
-    background-position-x: calc(100% - 10px);
-    background-position-y: calc(100% - 10px);
-    background-size: 35px;
-  }
-  
-  .mastery {
-    margin: 2rem .5rem;
-    background-color: var(--ccl);
-  }
-  
-  .mastery summary {
-    font-weight: 700;
-    font-size: larger;
-  }
-  
-  .mastery ul li {
-    list-style: '🎓 ';
-  }
-  
-  .discussion {
-    background-color: var(--details);
-  }
-  
-  .discussion h5 {
-    color: var(--black);
-  }
-  
-  .question {
-    color: var(--navy);
-    border-top: var(--bord);
-  }
-  
-  blockquote {
-    border-left: 3px solid var(--darkgray);
-  }
-  
-  .smaller {
-    font-size: smaller;
-  }
-  
-  .no-results {
-    color: red;
-    font-weight: 700;
-    text-align: center;
-    margin: 1rem;
-  }
-  
-  /* Responsive Styles */
-  @media (max-width: 768px) {
-    .page {
-      padding: 1rem; /* Add some padding for smaller screens */
-    }
-  
-    h1 {
-      font-size: 1.3rem; /* Adjust the size for smaller screens */
-    }
-  
-    h2 {
-      font-size: 1.4rem; /* Adjust the size for smaller screens */
-    }
-  
-    nav {
-      flex-direction: column; /* Stack navigation links vertically */
-    }
-  
-    footer {
-      font-size: smaller; /* Make footer font smaller */
-      padding: 1rem; /* Adjust padding */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 1.1rem; /* Further adjustment for mobile */
-    }
-  
-    h2 {
-      font-size: 1.2rem; /* Further adjustment for mobile */
-    }
-  }
-  /* General Reset and Body Styles */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -450,16 +28,117 @@
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+    font: 400 16px / 1.5 Montserrat, Helvetica, sans-serif;
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
     background-color: #f4f4f4; /* Adjust based on your design */
+    color: #333; /* Default text color */
+}
+
+.page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: var(--padd);
+}
+
+h1, h2, h3, h4, h5 {
+    margin: 0;
+}
+
+h1 {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-left: 1rem;
+    font-weight: normal;
+}
+
+#coursetitle {
+    display: none;
+}
+
+h2 {
+    font-size: 1.6rem;
+    margin: 1.2rem 0.25rem;
+    color: var(--navy); /* Set a color for h2 */
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin: 1.5rem 0.5rem 0.5rem;
+    border-top: 1px solid #ddd;
+    color: var(--darkgray); /* Set a color for h3 */
+}
+
+h4 {
+    font-size: 1.2rem;
+    margin: 0.75rem;
+    color: var(--gray); /* Set a color for h4 */
+}
+
+h5 {
+    font-size: 1rem;
+    color: var(--navy);
+    margin: 0.75rem 1.2rem;
+}
+
+a {
+    color: var(--navy);
+    text-decoration: none; /* Remove underline from links */
+}
+
+a:link {
+    color: var(--alink);
+}
+
+a:active {
+    color: var(--red);
+}
+
+a:visited, a:focus {
+    color: var(--avisited);
+}
+
+p {
+    margin: 1rem 0;
+}
+
+h4 + p {
+    margin-left: 1.25rem;
+}
+
+h5 ~ p {
+    margin-left: 1.5rem;
+}
+
+ol ol, ul ul {
+    margin-top: 1rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+}
+
+li ul li:nth-child(1) {
+    margin-top: 0.5rem;
+}
+
+li ul li, li ol li {
+    margin-bottom: 0.5rem;
+}
+
+li p {
+    margin: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Header Styles */
 header {
-    background-color: #4a7c8c; /* Header background color */
-    color: #ffffff; /* Header text color */
-    padding: 20px 0; /* Top and bottom padding */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+    background-color: var(--byuiblue);
+    padding: var(--padd);
 }
 
 .page {
@@ -471,56 +150,55 @@ header {
 }
 
 .logo {
-    max-width: 150px; /* Adjust logo size */
+    width: 50px;
+    height: auto;
+    background-color: #000;
+    padding: 12px 11px;
+    position: absolute;
+    top: 0;
+    right: 0;
 }
 
 /* Navigation Styles */
 nav {
     display: flex;
-    justify-content: center;
-    margin-top: 10px; /* Space between title and nav */
+    flex-wrap: wrap;
 }
 
-.navigation {
-    list-style-type: none; /* Remove bullets */
-    display: flex;
-    gap: 20px; /* Space between navigation items */
+nav span {
+    font-size: .8rem;
+    font-weight: 700;
+    background-color: var(--lightgray);
+    margin: 0 .25rem .25rem;
 }
 
-.navigation li {
-    position: relative; /* For underline effect */
+nav span a:link,
+nav span a:visited,
+nav span a:active,
+nav span a:focus {
+    color: #000;
+    text-decoration: none;
+    display: block;
+    padding: .5rem 1rem;
 }
 
-.navigation a {
-    text-decoration: none; /* Remove underline */
-    color: #ffffff; /* Link color */
-    font-weight: 700; /* Bold font for links */
-    padding: 10px 15px; /* Padding for better click area */
-    transition: color 0.3s; /* Transition for hover effect */
+nav span a:hover {
+    background-color: var(--byuiblue);
+    color: #fff;
 }
 
-.navigation a:hover {
-    color: #c9d9da; /* Hover color */
+/* Main Styles */
+main {
+    margin: 1.5rem 1rem;
 }
 
-/* Mobile Responsive Styles */
-@media (max-width: 768px) {
-    .navigation {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        align-items: center; /* Center items */
-    }
-
-    .navigation li {
-        margin: 5px 0; /* Space between items */
-    }
-}
 /* Footer Styles */
 footer {
-    background-color: #4a7c8c; /* Footer background color matching header */
-    color: #ffffff; /* Text color */
-    padding: 20px 0; /* Padding for top and bottom */
-    text-align: center; /* Centered text */
-    margin-top: 20px; /* Space above footer */
+    border-top: var(--bord);
+    font-size: smaller;
+    background-color: var(--lightgray);
+    padding: var(--padd);
+    text-align: center;
 }
 
 .footer-container {
@@ -546,8 +224,46 @@ footer {
     font-size: 14px; /* Smaller font size for footer text */
 }
 
-/* Responsive Footer Styles */
+footer p {
+    margin: 0 0 0 0.5rem;
+}
+
+/* Details Styles */
+details {
+    margin: 1rem 2rem;
+    border: var(--bord);
+    padding: 0.5rem;
+    color: #000;
+    background-color: var(--details);
+}
+
+details p {
+    margin: 0.5rem 0 0 0.5rem;
+}
+
+/* Responsive Styles */
 @media (max-width: 768px) {
+    .page {
+        padding: 1rem; /* Add some padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 1.3rem; /* Adjust the size for smaller screens */
+    }
+
+    h2 {
+        font-size: 1.4rem; /* Adjust the size for smaller screens */
+    }
+
+    nav {
+        flex-direction: column; /* Stack navigation links vertically */
+    }
+
+    footer {
+        font-size: smaller; /* Make footer font smaller */
+        padding: 1rem; /* Adjust padding */
+    }
+
     .footer-container {
         flex-direction: column; /* Stack sections vertically on smaller screens */
         align-items: center; /* Center items */
@@ -557,4 +273,111 @@ footer {
         width: 100%; /* Full width on smaller screens */
         text-align: center; /* Center text on small screens */
     }
+
+    .navigation {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items */
+    }
+
+    .navigation li {
+        margin: 5px 0; /* Space between items */
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.1rem; /* Further adjustment for mobile */
+    }
+
+    h2 {
+        font-size: 1.2rem; /* Further adjustment for mobile */
+    }
+}
+
+/* Additional Styles */
+pre {
+    line-height: 1.2;
+    margin: 0.5rem;
+}
+
+code {
+    font-weight: 700;
+    color: rgb(1, 100, 1);
+}
+
+.character {
+    color: rgb(1, 100, 1);
+    font-size: smaller;
+}
+
+kbd {
+    color: red;
+}
+
+mark {
+    padding: 0.5rem;
+    font-style: italic;
+}
+
+mark::before {
+    content: '⚒️';
+}
+
+figure {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+figcaption {
+    font-size: smaller;
+    margin: 0 0 1rem 0;
+}
+
+.video-container {
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    padding-bottom: calc(var(--aspect-ratio, 0.5625) * 90%);
+    margin: 0.5em auto;
+    width: 90%;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    margin: 1rem auto;
+    width: 80%;
+    border: var(--bord);
+    background-color: var(--lightgray);
+}
+
+table caption {
+    margin: 0.5rem;
+}
+
+table th,
+table td {
+    padding: 0.5rem 1rem;
+    text-align: left;
+    border: var(--bord);
+}
+
+table th {
+    background-color: var(--navy);
+    color: white;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #e0e0e0;
 }
