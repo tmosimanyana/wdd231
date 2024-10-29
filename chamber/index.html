@@ -3,105 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Home page of the Kweneng Agriculture Chamber of Commerce. Discover local businesses and community events.">
-    <meta name="author" content="Tinnt Bothepha Mosimanyana">
-    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp">
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
-    <link rel="icon" href="images/favicon.ico">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/weather.css">
-    <link rel="stylesheet" href="css/spotlight.css"
-    <title>Kweneng Agriculture Chamber of Commerce</title>
+    <title>Timbuktu Chamber of Commerce</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <div class="header-container">
-            <img src="images/logo.webp" alt="Kweneng Agriculture Chamber of Commerce Logo" class="logo">
-            <h1>Kweneng Agriculture Chamber of Commerce</h1>
-            <button class="keynote-btn">Keynote Tickets</button>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="directory.html">Directory</a></li>
-                    <li><a href="join.html">Join</a></li>
-                    <li><a href="discover.html">Discover</a></li>
-                </ul>
-            </nav>
-            <div class="circle-decoration"></div>
+        <div class="header-logo">
+            <img src="logo.png" alt="Timbuktu Chamber of Commerce">
+            <h1>Timbuktu Chamber of Commerce</h1>
         </div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Directory</a>
+            <a href="#">Join</a>
+            <a href="#">Discover</a>
+            <button id="theme-toggle">🌓</button>
+        </nav>
     </header>
 
-    <!-- Main Content -->
     <main>
-        <!-- Hero Section -->
         <section class="hero">
-            <img src="images/hero-medium.webp" alt="Community agriculture field" class="hero-image">
-            <div class="cta"><a href="join.html">Join the Chamber of Commerce</a></div>
+            <img src="hero-image.jpg" alt="Hero Image">
+            <button class="keynote-button">Keynote Tickets</button>
         </section>
 
-        <!-- Events Section -->
-        <section class="events">
-            <h2>Events</h2>
-            <p>Upcoming events and community activities</p>
-            <!-- Event details will go here -->
-        </section>
-
-        <!-- Weather Section -->
-        <section class="weather">
-            <h2>Current Weather</h2>
-            <div class="<div id="weather-card" class="weather-card">
-                <h2>Current Weather</h2>
-                <p id="temp"></p>
-                <p id="description"></p>
-                <div class="forecast">
-                  <div class="forecast-day" id="day1"></div>
-                  <div class="forecast-day" id="day2"></div>
-                  <div class="forecast-day" id="day3"></div>
+        <section class="content">
+            <div class="events">
+                <h2>Events</h2>
+                <!-- Event content goes here -->
+            </div>
+            <div class="weather">
+                <h2>Weather</h2>
+                <div class="current-weather">
+                    <h3>Current Weather</h3>
+                    <p><strong>Temperature:</strong> <span id="current-temp">-</span></p>
+                    <p><strong>Conditions:</strong> <span id="current-description">-</span></p>
+                    <p><strong>Humidity:</strong> <span id="current-humidity">-</span></p>
+                    <p><strong>Sunrise:</strong> <span id="sunrise">-</span>, <strong>Sunset:</strong> <span id="sunset">-</span></p>
                 </div>
-              </div>
-              weather-details">
-
-                <!-- Weather data populated via JavaScript -->
-            </div>
-        
+                <div class="forecast">
+                    <h3>3-Day Forecast</h3>
+                    <div id="forecast-container"></div>
+                </div>
             </div>
         </section>
 
-        <!-- Business Spotlights -->
-        <div id="spotlight-section" class="spotlight-container">
-            <!-- Spotlight members will be rendered here -->
-        </div>
-        
+        <section id="directory" class="directory-container">
+            <!-- Business entries will be dynamically injected here -->
+        </section>
+
+        <section id="spotlight-section" class="spotlight-container">
+            <h2>Member Spotlight</h2>
+            <div id="spotlight-container">
+                <!-- Spotlight members will be injected here -->
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <div class="footer-content">
+        <address>
             <p>Kweneng Agriculture Chamber of Commerce</p>
-            <address>
-                <p>10 Rue De La Paix, Molepolole, Kweneng</p>
-                <p>Email: info@kwenengchamber.org | Phone: (223) 555-2300</p>
-            </address>
-            <div class="social-icons">
-                <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
-                <a href="#"><img src="images/twitter.png" alt="Twitter"></a>
-                <a href="#"><img src="images/linkedin.png" alt="LinkedIn"></a>
-            </div>
-            <p>WDD231 Class Project by Tinny Bothepha Mosimanyana</p>
-            <p>&copy; <span id="year"></span> Kweneng Agriculture Chamber of Commerce. Last Modified: <span id="lastModified"></span></p>
+            <p>P O Box 89 Molepolole, Gaborone, Botswana</p>
+            <p>Email: mbothepha@gmail.com</p>
+            <p>Phone: (+267 76376661)</p>
+        </address>
+        <div class="social-media">
+            <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
         </div>
+        <p class="modified-date">WDD231 Class Project | Last Modified: 10/21/20XX</p>
     </footer>
 
-    <script src="js/main.js" defer></script>
-    <script src="js/weather.js" defer></script>
-   
-
-
+    <script src="script.js"></script>
 </body>
 </html>
