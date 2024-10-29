@@ -442,4 +442,119 @@
       font-size: 1.2rem; /* Further adjustment for mobile */
     }
   }
-  
+  /* General Reset and Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4; /* Adjust based on your design */
+}
+
+/* Header Styles */
+header {
+    background-color: #4a7c8c; /* Header background color */
+    color: #ffffff; /* Header text color */
+    padding: 20px 0; /* Top and bottom padding */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow effect */
+}
+
+.page {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%; /* Adjust width based on your layout */
+    margin: 0 auto; /* Center the header */
+}
+
+.logo {
+    max-width: 150px; /* Adjust logo size */
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px; /* Space between title and nav */
+}
+
+.navigation {
+    list-style-type: none; /* Remove bullets */
+    display: flex;
+    gap: 20px; /* Space between navigation items */
+}
+
+.navigation li {
+    position: relative; /* For underline effect */
+}
+
+.navigation a {
+    text-decoration: none; /* Remove underline */
+    color: #ffffff; /* Link color */
+    font-weight: 700; /* Bold font for links */
+    padding: 10px 15px; /* Padding for better click area */
+    transition: color 0.3s; /* Transition for hover effect */
+}
+
+.navigation a:hover {
+    color: #c9d9da; /* Hover color */
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+    .navigation {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center items */
+    }
+
+    .navigation li {
+        margin: 5px 0; /* Space between items */
+    }
+}
+/* Footer Styles */
+footer {
+    background-color: #4a7c8c; /* Footer background color matching header */
+    color: #ffffff; /* Text color */
+    padding: 20px 0; /* Padding for top and bottom */
+    text-align: center; /* Centered text */
+    margin-top: 20px; /* Space above footer */
+}
+
+.footer-container {
+    display: flex; /* Flexbox for layout */
+    justify-content: space-between; /* Space between items */
+    align-items: center; /* Center items vertically */
+    width: 90%; /* Full width of the footer */
+    margin: 0 auto; /* Center the footer container */
+}
+
+.contact-info, .dev-info {
+    flex: 1; /* Allow sections to grow and take up space */
+    padding: 10px; /* Padding around sections */
+}
+
+.contact-info h2, .dev-info h2 {
+    margin-bottom: 10px; /* Space below headings */
+    font-weight: 700; /* Bold font for headings */
+}
+
+.footer-container p {
+    margin: 5px 0; /* Space between paragraphs */
+    font-size: 14px; /* Smaller font size for footer text */
+}
+
+/* Responsive Footer Styles */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Stack sections vertically on smaller screens */
+        align-items: center; /* Center items */
+    }
+
+    .contact-info, .dev-info {
+        width: 100%; /* Full width on smaller screens */
+        text-align: center; /* Center text on small screens */
+    }
+}
