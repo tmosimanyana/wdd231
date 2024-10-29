@@ -7,11 +7,12 @@
     <meta name="description" content="Join the Kweneng Agriculture Chamber of Commerce to connect with local agricultural businesses, resources, and community events.">
     <meta name="author" content="Your Name">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Fonts and Stylesheets -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/default.min.css">
 
     <!-- Open Graph Meta Tags -->
     <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
@@ -22,70 +23,79 @@
     <meta property="og:site_name" content="Kweneng Agriculture Chamber of Commerce">
 </head>
 <body>
+    <!-- Header with Improved Accessibility -->
     <header>
         <div class="header-container">
-            <h1>Kweneng Agriculture Chamber of Commerce<span id="title"></span></h1>
-            <img src="images/logo.svg" alt="Kweneng Agriculture Chamber of Commerce logo" class="logo">
+            <h1>Kweneng Agriculture Chamber of Commerce</h1>
+            <img src="images/logo.svg" alt="Logo of Kweneng Agriculture Chamber of Commerce" class="logo">
         </div>
-        <div class="circle-decoration"></div>
-        <button class="menu-toggle">
-            <span class="menu-icon">&#9776;</span>
+        <div class="circle-decoration" aria-hidden="true"></div> <!-- Decorative element hidden from screen readers -->
+        <button class="menu-toggle" aria-label="Toggle navigation menu">
+            <span class="menu-icon" aria-hidden="true">&#9776;</span>
         </button>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Directory</a>
-            <a href="#">Join</a>
-            <button id="theme-toggle">🌓</button>
+            <a href="index.html">Home</a>
+            <a href="directory.html">Directory</a>
+            <a href="join.html">Join</a>
+            <button id="theme-toggle" aria-label="Switch theme">🌓</button>
         </nav>
     </header>
 
+    <!-- Main content with lazy-loaded images and improved structure -->
     <main>
+        <!-- Hero Section -->
         <section>
-            <img src="images/hero-medium.webp" alt="Agricultural landscape" class="hero-image">
+            <img src="images/hero-medium.webp" alt="Agricultural landscape" class="hero-image" loading="lazy">
             <div class="hero-text">
-                <h2>Welcome to Our Chamber</h2> <!-- Update or remove this if needed -->
+                <h2>Welcome to Our Chamber</h2>
                 <p>Your gateway to connecting with local agricultural businesses and resources.</p>
                 <a href="join.html" class="cta-button">Join the Chamber</a>
                 <button class="keynote-button">Keynote Tickets</button>
             </div>
         </section>
 
-        <section class="content">
-            <div class="weather">
-                <h2>Weather</h2>
-                <div class="current-weather">
-                    <h3>Current Weather</h3>
-                    <p><strong>Temperature:</strong> <span id="current-temp">-</span></p>
-                    <p><strong>Conditions:</strong> <span id="current-description">-</span></p>
-                    <p><strong>Humidity:</strong> <span id="current-humidity">-</span></p>
-                    <p><strong>Sunrise:</strong> <span id="sunrise">-</span>, <strong>Sunset:</strong> <span id="sunset">-</span></p>
-                </div>
-                <div class="forecast">
-                    <h3>3-Day Forecast</h3>
-                    <div id="forecast-container"></div>
+        <!-- Weather Section with Dynamic Content from API -->
+        <section class="content weather">
+            <h2>Weather in Molepolole</h2>
+            <div class="current-weather">
+                <h3>Current Weather</h3>
+                <p><strong>Temperature:</strong> <span id="current-temp">-</span>°C</p>
+                <p><strong>Conditions:</strong> <span id="current-description">-</span></p>
+                <p><strong>Humidity:</strong> <span id="current-humidity">-</span>%</p>
+                <p><strong>Sunrise:</strong> <span id="sunrise">-</span>, <strong>Sunset:</strong> <span id="sunset">-</span></p>
+            </div>
+            <div class="forecast">
+                <h3>3-Day Forecast</h3>
+                <div id="forecast-container">
+                    <!-- Forecast data dynamically populated here -->
                 </div>
             </div>
         </section>
 
+        <!-- Directory Section with JSON Data -->
         <section id="directory" class="directory-container">
             <h2>Business Directory</h2>
-            <!-- Business entries will be dynamically injected here -->
+            <div id="directory-content">
+                <!-- Directory entries dynamically injected here -->
+            </div>
         </section>
 
+        <!-- Spotlight Section with Filtered Members from JSON Data -->
         <section id="spotlight-section" class="spotlight-container">
             <h2>Member Spotlight</h2>
             <div id="spotlight-container">
-                <!-- Spotlight members will be injected here -->
+                <!-- Spotlight members dynamically injected here, filtered for gold/silver members -->
             </div>
         </section>
     </main>
 
+    <!-- Footer with Contact and Social Media Links -->
     <footer>
         <address>
             <p>Kweneng Agriculture Chamber of Commerce</p>
             <p>P O Box 89 Molepolole, Gaborone, Botswana</p>
-            <p>Email: mbothepha@gmail.com</p>
-            <p>Phone: (+267 76376661)</p>
+            <p>Email: <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
+            <p>Phone: <a href="tel:+26776376661">(+267 76376661)</a></p>
         </address>
         <div class="social-media">
             <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
@@ -98,6 +108,7 @@
         <p class="modified-date">WDD231 Class Project | Last Modified: 29/10/2024</p>
     </footer>
 
-    <script src="script.js" defer></script>
+    <!-- JavaScript for API calls, theme toggle, and dynamic content -->
+    <script src="scripts/script.js" defer></script>
 </body>
 </html>
