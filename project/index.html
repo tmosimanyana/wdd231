@@ -4,92 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kweneng Agriculture Chamber of Commerce</title>
-    <meta name="description" content="The Kweneng Agriculture Chamber of Commerce website supports local agricultural businesses in Botswana by providing resources, a member directory, and event information.">
+    <meta name="description" content="Supporting local agricultural businesses in the Kweneng region of Botswana.">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
-    
-    <!-- Social Media Meta Tags for Facebook -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- OpenGraph Meta Tags for Facebook -->
     <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
     <meta property="og:type" content="website">
-    <meta property="og:image" content="path_to_image.jpg"> <!-- Replace with actual image path -->
-    <meta property="og:url" content="https://yourwebsite.com"> <!-- Replace with your website URL -->
-
-    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Path to your favicon -->
+    <meta property="og:image" content="path/to/image.jpg"> <!-- Update with actual image path -->
+    <meta property="og:url" content="https://kwenengchamber.org">
     <link rel="stylesheet" href="normalize.css"> <!-- Normalize CSS -->
-    <link rel="stylesheet" href="styles.css"> <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css"> <!-- Custom styles -->
 </head>
 <body>
 
-<header>
-    <div class="logo">
+    <header>
         <h1>Kweneng Agriculture Chamber of Commerce</h1>
-    </div>
-    <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#discover">Discover</a></li>
-            <li><a href="#directory">Directory</a></li>
-            <li><a href="#join-us">Join Us</a></li>
-            <li><a href="#weather">Weather</a></li>
-            <li><a href="#spotlight">Spotlight</a></li>
-        </ul>
-    </nav>
-</header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join Us</a></li>
+                <li><a href="weather.html">Weather</a></li>
+                <li><a href="spotlight.html">Spotlight</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<main>
-    <section id="home">
-        <h2>Welcome to Kweneng Agriculture Chamber of Commerce</h2>
-        <p>We support local agriculture in Botswana by connecting businesses and providing essential resources.</p>
-    </section>
+    <main>
+        <section class="hero">
+            <img src="path/to/hero-image.jpg" alt="Kweneng Agriculture">
+            <a href="join.html" class="cta-button">Join the Chamber</a>
+        </section>
 
-    <section id="discover">
-        <h2>Discover Events & Resources</h2>
-        <p>Find out about upcoming workshops, events, and resources available for local businesses.</p>
-    </section>
+        <section class="events">
+            <h2>Current Events</h2>
+            <ul>
+                <li>Event 1 Details</li>
+                <li>Event 2 Details</li>
+                <li>Event 3 Details</li>
+            </ul>
+        </section>
 
-    <section id="directory">
-        <h2>Member Directory</h2>
-        <div id="directory-content"></div> <!-- Dynamic content loading here -->
-    </section>
+        <section class="weather">
+            <h2>Current Weather</h2>
+            <div id="weather-data">
+                <!-- Weather data will be inserted here via JavaScript -->
+            </div>
+        </section>
 
-    <section id="join-us">
-        <h2>Join Us</h2>
-        <form id="membership-form" action="#">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            <label for="membership-level">Membership Level:</label>
-            <select id="membership-level" name="membership-level">
-                <option value="standard">Standard</option>
-                <option value="premium">Premium</option>
-            </select>
-            <button type="submit">Apply</button>
-        </form>
-    </section>
+        <section class="spotlights">
+            <h2>Company Spotlights</h2>
+            <div id="spotlight-data">
+                <!-- Company data will be inserted here via JavaScript -->
+            </div>
+        </section>
+    </main>
 
-    <section id="weather">
-        <h2>Weather</h2>
-        <p id="weather-info">Loading weather...</p>
-    </section>
+    <footer>
+        <div class="footer-container">
+            <div class="contact-info">
+                <h2>Contact Us</h2>
+                <p>Email: info@kwenengchamber.org</p>
+                <p>Phone: +267 123 4567</p>
+            </div>
+            <div class="dev-info">
+                <h2>Development Information</h2>
+                <p>© <span id="current-year"></span> Tinny Bothepha Mosimanyana</p>
+                <p>Course: WDD 231</p>
+                <p>Last Modified: <span id="last-modified"></span></p>
+            </div>
+        </div>
+    </footer>
 
-    <section id="spotlight">
-        <h2>Monthly Spotlight</h2>
-        <p>Highlighting standout member companies to enhance visibility.</p>
-    </section>
-</main>
-
-<footer>
-    <p>&copy; <span id="current-year"></span> Kweneng Agriculture Chamber of Commerce</p>
-    <p>Contact: info@kwenengagriculture.org</p>
-    <p>Last modified: <span id="last-modified"></span></p>
-    <p>Developed by Tinny Bothepha Mosimanyana for WDD 231</p>
-</footer>
-
-<script src="script.js" defer></script>
-<script>
-// JavaScript to dynamically display the current year and last modification date
-document.getElementById("current-year").textContent = new Date().getFullYear();
-document.getElementById("last-modified").textContent = document.lastModified;
-</script>
+    <script src="script.js"></script> <!-- Your JavaScript file -->
 </body>
 </html>

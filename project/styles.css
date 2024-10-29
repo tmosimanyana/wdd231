@@ -1,91 +1,111 @@
 /* styles.css */
 
-/* Resetting default styles */
-* {
+/* Normalize CSS */
+@import url('normalize.css');
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
     color: #333;
-    line-height: 1.6;
 }
 
 /* Header Styles */
 header {
-    background-color: #4CAF50; /* Green */
+    background-color: #4CAF50; /* Green background */
     color: white;
-    padding: 20px 0;
     text-align: center;
-}
-
-header .logo h1 {
-    margin: 0;
-}
-
-/* Navigation Styles */
-nav {
-    background-color: #333; /* Dark */
+    padding: 1rem 0;
 }
 
 nav ul {
-    display: flex;
-    justify-content: center;
-    list-style-type: none;
+    list-style: none;
     padding: 0;
 }
 
 nav ul li {
-    margin: 0 15px;
+    display: inline; /* Horizontal navigation */
+    margin: 0 10px;
 }
 
-nav ul li a {
+nav a {
     color: white;
     text-decoration: none;
-    padding: 14px 20px;
-    transition: background 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #575757; /* Darker on hover */
 }
 
 /* Main Content Styles */
 main {
-    padding: 20px;
+    padding: 1rem;
 }
 
-main section {
-    background-color: white;
-    border: 1px solid #ddd;
+/* Hero Section */
+.hero {
+    position: relative;
+    text-align: center;
+}
+
+.hero img {
+    width: 100%;
+    height: auto;
+}
+
+.cta-button {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #FF5722; /* Orange */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
     border-radius: 5px;
-    margin: 10px 0;
-    padding: 20px;
+}
+
+/* Events and Weather Sections */
+.events, .weather, .spotlights {
+    margin: 20px 0;
 }
 
 h2 {
-    color: #4CAF50; /* Green */
+    margin-bottom: 10px;
 }
 
 /* Footer Styles */
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #4CAF50; /* Same green as header */
-    color: white;
+    background-color: #333; /* Dark background color */
+    color: white;           /* White text color */
+    padding: 2rem 0;       /* Padding for top and bottom */
+    text-align: center;     /* Centered text */
 }
 
-/* Responsive Design */
+.footer-container {
+    display: flex;          /* Flexbox layout for responsiveness */
+    justify-content: space-around; /* Space between items */
+    align-items: flex-start; /* Align items at the start */
+    flex-wrap: wrap;       /* Allow wrapping on smaller screens */
+}
+
+.contact-info, .dev-info {
+    flex: 1;               /* Each section takes equal space */
+    min-width: 250px;      /* Minimum width for smaller screens */
+    margin: 0 10px;        /* Margin between sections */
+}
+
+/* Responsive Design for Mobile */
 @media (max-width: 600px) {
     nav ul {
-        flex-direction: column;
-        align-items: center;
+        display: block;  /* Vertical navigation on mobile */
+        text-align: center;
     }
 
-    main {
-        padding: 10px;
+    nav ul li {
+        display: block; /* Each link on a new line */
+        margin: 10px 0;
+    }
+
+    .footer-container {
+        flex-direction: column; /* Stack sections on small screens */
+        align-items: center;    /* Center items */
     }
 }
