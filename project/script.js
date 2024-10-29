@@ -11,7 +11,7 @@ async function fetchMemberData() {
 
 // Function to display the weather data
 async function displayWeather() {
-    const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
+    const apiKey = '5c7e429e1b20f30b60de00a18bcc0e92'; // Replace with your OpenWeatherMap API key
     const city = 'Molepolole,BW'; // The city to get weather for
     const url = `https://api.openweathermap.org/data/2.5/onecall?lat=-24.5833&lon=25.1833&exclude=minutely,hourly&units=metric&appid=${apiKey}`;
     
