@@ -1,22 +1,17 @@
 // Function to populate the directory
 async function populateDirectory() {
-    const directoryContent = document.getElementById('directory-content');
+    const directoryContent = document.getElementById('members-container');
     directoryContent.innerHTML = ''; // Clear existing content
 
     try {
-        // Fetch the JSON data
         const response = await fetch('data/members.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const directoryData = await response.json(); // Parse JSON data
+        if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
+        const directoryData = await response.json();
 
         // Loop through the directory data and create entries
         directoryData.forEach(entry => {
             const entryDiv = document.createElement('div');
-            entryDiv.className = 'directory-entry';
-
+            entryDiv.className = 'member-card';
             entryDiv.innerHTML = `
                 <img src="${entry.image}" alt="${entry.name} Logo" class="business-logo" loading="lazy">
                 <h3>${entry.name}</h3>
@@ -24,7 +19,6 @@ async function populateDirectory() {
                 <p>Phone: <a href="tel:${entry.phone.replace(/\s+/g, '')}">${entry.phone}</a></p>
                 <p>Membership Level: ${entry.membershipLevel}</p>
             `;
-
             directoryContent.appendChild(entryDiv);
         });
     } catch (error) {
@@ -33,35 +27,37 @@ async function populateDirectory() {
     }
 }
 
-// Combined DOMContentLoaded event to handle all functionalities at once
-document.addEventListener('DOMContentLoaded', function () {
-    populateDirectory(); // Call the function to populate the directory
+// Toggle between grid and list view
+function setupViewToggle() {
+    const viewToggleBtn = document.getElementById('view-toggle');
+    const directoryContent = document.getElementById('members-container');
 
-    // Toggle between grid and list view
-    const directoryContent = document.getElementById('directory-content');
-    const viewToggle = document.createElement('button');
-    viewToggle.textContent = 'Switch to List View';
-    viewToggle.classList.add('view-toggle');
-    directoryContent.insertAdjacentElement('beforebegin', viewToggle);
+    viewToggleBtn.addEventListener('click', () => {
+        directoryContent.classList.toggle('list-view');
+        directoryContent.classList.toggle('grid-view');
 
-    viewToggle.addEventListener('click', () => {
-        if (directoryContent.classList.toggle('list-view')) {
-            viewToggle.textContent = 'Switch to Grid View';
-        } else {
-            viewToggle.textContent = 'Switch to List View';
-        }
+        viewToggleBtn.textContent =
+            directoryContent.classList.contains('list-view') ? 'Switch to Grid View' : 'Switch to List View';
     });
+}
 
-    // Display current year and last modification date
+// Display current year and last modification date
+function setupFooterDates() {
     const currentYear = new Date().getFullYear();
     const lastModified = new Date(document.lastModified);
-    const footer = document.querySelector('footer');
 
     // Update copyright year
-    const copyrightYear = footer.querySelector('.social-media p');
+    const copyrightYear = document.querySelector('.social-media p');
     copyrightYear.innerHTML = `&copy; ${currentYear} Kweneng Agriculture Chamber of Commerce`;
 
     // Update last modification date
-    const modifiedDate = footer.querySelector('.modified-date');
+    const modifiedDate = document.querySelector('.modified-date');
     modifiedDate.textContent = `WDD231 Class Project | Last Modified: ${lastModified.toLocaleDateString('en-GB')}`;
+}
+
+// Initialize functions on DOM load
+document.addEventListener('DOMContentLoaded', () => {
+    populateDirectory();
+    setupViewToggle();
+    setupFooterDates();
 });
