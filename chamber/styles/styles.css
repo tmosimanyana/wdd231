@@ -156,3 +156,37 @@ body.dark-theme footer {
 .spotlight .business-card p {
     margin: 5px 0;
 }
+/* styles/styles.css */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header, main {
+    max-width: 800px;
+    margin: auto;
+}
+
+button {
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.current-weather, .forecast, .spotlight {
+    margin-bottom: 1.5em;
+}
+
+.spotlight-member {
+    border: 1px solid #ccc;
+    padding: 1em;
+    margin: 0.5em 0;
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #f1f1f1;
+}
+
+.dark-mode .spotlight-member {
+    border-color: #555;
+}
