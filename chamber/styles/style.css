@@ -1,100 +1,93 @@
-/* reset.css */
-
-/* Font Import */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-/* Global Styles */
+/* General styling */
 body {
-    font-family: 'Montserrat', sans-serif;
-    color: #333;
-    background-color: #f8f9fa;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
 }
 
-/* Header */
 header {
-    background-color: #007b5e;
-    color: white;
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.header-container h1 {
-    font-size: 1.8rem;
+.header-container {
+  display: flex;
+  align-items: center;
 }
 
 .logo {
-    width: 50px;
-    height: auto;
+  height: 50px;
+  margin-right: 15px;
 }
 
-/* Navigation */
-nav {
-    display: flex;
-    gap: 15px;
+nav a {
+  margin: 0 10px;
+  color: #fff;
+  text-decoration: none;
 }
 
-nav span a {
-    color: #fff;
-    padding: 8px 12px;
-    transition: background-color 0.3s;
+nav a.active {
+  font-weight: bold;
 }
 
-nav span a:hover,
-.active a {
-    background-color: #005a42;
-    border-radius: 4px;
-}
-
-/* Hero Section */
 .hero {
-    background-image: url('images/hero-medium.webp'); /* Set the hero image here */
-    background-size: cover; /* Ensure the image covers the entire section */
-    background-position: center; /* Center the image */
-    padding: 100px 20px; /* Add padding for spacing */
-    text-align: center;
-    color: white; /* Text color for better contrast against the image */
+  background: url('images/hero-medium.webp') center/cover no-repeat;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hero-text {
-    max-width: 600px; /* Limit the width of the text container */
-    margin: 0 auto; /* Center the text container */
-}
-
-.hero h2 {
-    font-size: 2.5rem; /* Size of the main heading */
-    margin-bottom: 10px; /* Space below the heading */
-}
-
-.hero p {
-    font-size: 1.1rem; /* Size of the paragraph text */
-    margin-bottom: 20px; /* Space below the paragraph */
+.hero-content h2 {
+  color: #fff;
+  font-size: 2em;
 }
 
 .cta-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007b5e; /* Button background color */
-    color: #fff; /* Button text color */
-    font-weight: 700;
-    border-radius: 5px; /* Rounded corners for button */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #4CAF50;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.cta-button:hover {
-    background-color: #005a42; /* Darker shade on hover */
+.business-spotlight {
+  padding: 2em;
+  background-color: #f4f4f4;
+  text-align: center;
 }
 
-/* Responsive Adjustments */
-@media (min-width: 768px) {
-    .hero h2 {
-        font-size: 3rem; /* Increase heading size for larger screens */
-    }
+.business-spotlight h2 {
+  margin-bottom: 1em;
 }
 
-@media (min-width: 1024px) {
-    .hero h2 {
-        font-size: 3.5rem; /* Further increase heading size for even larger screens */
-    }
+.business-card {
+  background-color: #fff;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin: 1em auto;
+  max-width: 300px;
+}
+
+.weather {
+  padding: 2em;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 1em;
+  text-align: center;
+}
+
+.social-media img {
+  width: 30px;
+  margin: 0 5px;
 }

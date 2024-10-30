@@ -10,41 +10,53 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp">
   <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
-
-  <!-- Link to Reset CSS -->
   <link rel="stylesheet" href="reset.css">
-  <!-- Link to Main CSS -->
   <link rel="stylesheet" href="styles/style.css">
 </head>
 
 <body>
   <header>
     <div class="header-container">
-      <h1>Kweneng Agriculture Chamber of Commerce</h1>
       <img src="images/logo.svg" alt="Chamber of Commerce Logo" class="logo">
+      <h1>Kweneng Agriculture Chamber of Commerce</h1>
     </div>
     <nav aria-label="Main navigation">
-      <span class="active"><a href="index.html">Home</a></span>
-      <span><a href="directory.html">Directory</a></span>
-      <span><a href="events.html">Events</a></span>
-      <span><a href="resources.html">Resources</a></span>
-      <span><a href="join.html">Join Us</a></span>
-      <span><a href="weather.html">Weather</a></span>
+      <a href="index.html" class="active">Home</a>
+      <a href="directory.html">Directory</a>
+      <a href="events.html">Events</a>
+      <a href="resources.html">Resources</a>
+      <a href="join.html">Join Us</a>
+      <a href="weather.html">Weather</a>
     </nav>
   </header>
 
   <main>
-   <!-- Hero Section with Call to Action -->
-<section class="hero">
-  
-  </div>
-</section>
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h2>Empowering Local Agriculture</h2>
+        <button class="cta-button">Learn More</button>
+      </div>
+    </section>
 
+    <!-- Spotlight Section -->
+    <section class="business-spotlight">
+      <h2>Featured Members</h2>
+      <!-- Spotlight cards will be dynamically injected here by JavaScript -->
+    </section>
+
+    <!-- Weather Section -->
+    <section class="weather">
+      <h2>Current Weather</h2>
+      <div id="weather-info">Loading...</div>
+    </section>
   </main>
 
-  <footer aria-label="Footer">
-    <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
-    <p>Contact us: <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
+  <footer>
+    <div class="footer-info">
+      <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce. All rights reserved.</p>
+      <p>Contact us: <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
+    </div>
     <div class="social-media">
       <a href="https://www.linkedin.com/in/tinny29" target="_blank">
         <img src="images/linkedin-icon.png" alt="LinkedIn">
