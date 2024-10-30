@@ -134,3 +134,25 @@ body.dark-theme footer {
     right: 10px;
     cursor: pointer;
 }
+.spotlight {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+.spotlight .business-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    width: 30%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.spotlight .business-card img {
+    max-width: 100px;
+    margin-bottom: 10px;
+}
+.spotlight .business-card h3 {
+    font-size: 1.2em;
+    margin: 0;
+}
+.spotlight .business-card p {
+    margin: 5px 0;
+}
