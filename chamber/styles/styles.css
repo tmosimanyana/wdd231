@@ -120,3 +120,38 @@ footer address, .social-media {
 .business-card:hover {
     transform: scale(1.05);
 }
+.hero {
+    position: relative;
+    text-align: center;
+    color: white; /* Adjust this color based on your design */
+}
+
+.hero img {
+    width: 100%; /* Makes the image responsive */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Prevents extra spacing */
+}
+
+.hero-content {
+    position: absolute; /* Positions the content over the image */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the content */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for better readability */
+    padding: 20px; /* Space around the text */
+    border-radius: 10px; /* Optional rounded corners */
+}
+
+.cta-button {
+    padding: 10px 20px;
+    background-color: #FFA500; /* Button color */
+    color: white; /* Text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px; /* Space between buttons */
+}
+
+.cta-button:hover {
+    background-color: #FF8C00; /* Darker shade on hover */
+}
