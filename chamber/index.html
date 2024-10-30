@@ -3,95 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kweneng Agriculture Chamber of Commerce</title>
-    
-    <!-- Meta Tags -->
-    <meta name="description" content="The Kweneng Agriculture Chamber of Commerce promotes agricultural businesses in Kweneng, Botswana. Discover member resources, events, and directory listings for local businesses." />
-    <meta name="author" content="Tinny Bothepha Mosimanyana" />
-    <link rel="icon" href="images/favicon.png" type="image/png">
-    
-    <!-- Open Graph Meta Tags for Social Sharing -->
-    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="images/og-image.jpg" />
-    <meta property="og:url" content="https://kwenengchamber.org" />
-    <meta property="og:description" content="Join the Kweneng Agriculture Chamber of Commerce to support local agricultural businesses in Kweneng, Botswana. Explore resources, events, and business directory." />
-
-    <!-- Styles and Scripts -->
+    <meta name="description" content="Kweneng Agriculture Chamber of Commerce - Supporting local agricultural businesses in Botswana.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/script.js" defer></script>
-    <script src="scripts/weather.js" defer></script>
-    <script src="scripts/spotlights.js" defer></script>
+    <title>Kweneng Agriculture Chamber of Commerce</title>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="images/logo.webp" alt="Kweneng Agriculture Chamber of Commerce">
-            <h1>Kweneng Agriculture Chamber of Commerce</h1>
+            <img src="images/logo.svg" alt="Kweneng Agriculture Chamber of Commerce">
         </div>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
+                <li><a href="#">Discover</a></li>
                 <li><a href="#">Directory</a></li>
                 <li><a href="#">Join</a></li>
-                <li><a href="#">Discover</a></li>
-                <li><button id="darkModeToggle">🌙</button></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Podcast</a></li>
+                <li><a href="#">Events</a></li>
+                <li><button id="themeToggle">🌙</button></li>
             </ul>
         </nav>
     </header>
 
     <main>
         <section class="hero">
-            <div class="hero-image">Scalable, responsive hero image</div>
-            <button class="keynote-btn">Keynote Tickets</button>
+            <img src="images/hero-medium.webp" alt="Kweneng Agriculture Chamber of Commerce Hero Image">
+            <div class="hero-content">
+                <h1>Don't forget to join and enjoy membership benefits!</h1>
+                <button class="cta-button">Join the Chamber</button>
+                <button class="cta-button">Keynote Tickets</button>
+            </div>
+        </section>
+    
+        <section class="info-panels">
+            <div class="panel events">
+                <h2>Events</h2>
+                <p>Details about upcoming events.</p>
+            </div>
+            <div class="panel weather">
+                <h2>Current Weather</h2>
+                <p id="currentWeather">75°F - Partly Cloudy</p>
+                <ul>
+                    <li>High: 85°F</li>
+                    <li>Low: 52°F</li>
+                    <li>Humidity: 34%</li>
+                    <li>Sunrise: 7:30am</li>
+                    <li>Sunset: 9:59pm</li>
+                </ul>
+            </div>
+            <div class="panel forecast">
+                <h2>Weather Forecast</h2>
+                <ul>
+                    <li>Today: 90°F</li>
+                    <li>Wednesday: 89°F</li>
+                    <li>Thursday: 68°F</li>
+                </ul>
+            </div>
         </section>
 
-        <section class="content">
-            <h2>Home</h2>
-            <div class="events-weather">
-                <div class="events">
-                    <h3>Events</h3>
-                    <!-- Event details here -->
-                </div>
-                <div class="current-weather">
-                    <h3>Current Weather</h3>
-                    <p>75°F - Partly Cloudy</p>
-                    <p>High: 85°F, Low: 52°F</p>
-                    <p>Humidity: 34%</p>
-                    <p>Sunrise: 7:30 AM, Sunset: 7:59 PM</p>
-                </div>
-                <div class="forecast">
-                    <h3>Weather Forecast</h3>
-                    <p>Today: 90°F</p>
-                    <p>Wednesday: 89°F</p>
-                    <p>Thursday: 68°F</p>
-                </div>
-            </div>
-
-            <div class="directory">
-                <div class="business-card">
-                    <section class="spotlight">
-                        <h2>Member Spotlights</h2>
-                        <!-- Spotlight members will be loaded here by JavaScript -->
-                    </section>
-                </div>
+        <section class="business-spotlight">
+            <h2>Business Spotlights</h2>
+            <div id="businessSpotlightContent">
+                <!-- Business cards will be populated here by JavaScript -->
             </div>
         </section>
     </main>
 
     <footer>
         <address>
-            Kweneng Agriculture Chamber of Commerce<br>
-            P.O. BOX 894, Molepolole, Gaborone<br>
-            Email: mbothepha@gmail.com<br>
-            Phone: (267) 763-76661
+            <p>Kweneng Agriculture Chamber of Commerce</p>
+            <p>Address, Kweneng, Botswana</p>
+            <p>Email: mbothepha@gmail.com</p>
+            <p>Phone: (267) 763-76661</p>
         </address>
         <div class="social-media">
             <a href="#"><img src="images/youtube.jpeg" alt="YouTube"></a>
             <a href="#"><img src="images/twitter.jpeg" alt="Twitter"></a>
             <a href="#"><img src="images/linkedin.jpeg" alt="LinkedIn"></a>
         </div>
-        <p>WDD231 Class Project by Tinny Bothepha Mosimanyana &copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
+        <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
     </footer>
+
+    <script src="scripts/script.js"></script>
 </body>
 </html>
