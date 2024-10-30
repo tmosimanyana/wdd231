@@ -1,4 +1,4 @@
-/* style.css */
+
 
 /* Font Import */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
@@ -37,7 +37,7 @@ nav {
 
 nav span a {
   color: #fff;
-  padding: 8px 12px;
+  padding: 8px 12px; /* Consider increasing padding for better touch targets */
   transition: background-color 0.3s;
 }
 
@@ -49,10 +49,10 @@ nav span a:hover,
 
 /* Hero Section */
 .hero {
-  background-image: url('images/hero-medium.webp');
+  background-image: url('images/hero-medium.webp'); /* Ensure this path is correct */
   background-size: cover;
   background-position: center;
-  padding: 100px 20px;
+  padding: 100px 20px; /* Adjust padding for responsiveness */
   text-align: center;
   color: white;
 }
@@ -63,18 +63,19 @@ nav span a:hover,
 }
 
 .hero h2 {
-  font-size: 2.5rem;
+  font-size: 2.5rem; /* Base font size */
   margin-bottom: 10px;
 }
 
 .hero p {
-  font-size: 1.1rem;
+  font-size: 1.1rem; /* Base font size */
   margin-bottom: 20px;
 }
 
+/* CTA Button */
 .cta-button {
   display: inline-block;
-  padding: 10px 20px;
+  padding: 10px 20px; /* Adjust for better accessibility */
   background-color: #007b5e;
   color: #fff;
   font-weight: 700;
@@ -89,12 +90,24 @@ nav span a:hover,
 /* Responsive Adjustments */
 @media (min-width: 768px) {
   .hero h2 {
-    font-size: 3rem;
+    font-size: 3rem; /* Increase font size for medium screens */
+  }
+
+  .hero p {
+    font-size: 1.2rem; /* Slightly larger font for medium screens */
   }
 }
 
 @media (min-width: 1024px) {
+  .hero {
+    padding: 120px 20px; /* Increase padding for larger screens */
+  }
+
   .hero h2 {
-    font-size: 3.5rem;
+    font-size: 3.5rem; /* Increase font size for larger screens */
+  }
+
+  .cta-button {
+    padding: 12px 24px; /* Larger padding for larger screens */
   }
 }
