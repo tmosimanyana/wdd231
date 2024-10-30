@@ -190,3 +190,23 @@ button {
 .dark-mode .spotlight-member {
     border-color: #555;
 }
+.member-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.member-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+.member-card h3 {
+    margin: 0.5rem 0;
+    color: #333;
+}
+.member-card p {
+    color: #666;
+}

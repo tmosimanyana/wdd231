@@ -1,48 +1,30 @@
-// scripts/weather.js
+document.addEventListener("DOMContentLoaded", () => {
+    fetchMembers();
+});
 
-export async function fetchWeatherData(apiKey, location) {
-    const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&units=imperial&appid=${apiKey}`;
-
+async function fetchMembers() {
     try {
-        const response = await fetch(weatherUrl);
-        const data = await response.json();
-        displayCurrentWeather(data);
-        displayForecast(data);
+        const response = await fetch("members.json"); // Make sure this path points to the correct location
+        const members = await response.json();
+
+        const spotlightContainer = document.getElementById("businessSpotlightContent");
+        spotlightContainer.innerHTML = ""; // Clear any existing content
+
+        members.forEach(member => {
+            const memberCard = document.createElement("div");
+            memberCard.classList.add("member-card");
+
+            memberCard.innerHTML = `
+                <img src="${member.image}" alt="${member.name}" loading="lazy">
+                <h3>${member.name}</h3>
+                <p><strong>Address:</strong> ${member.address}</p>
+                <p><strong>Phone:</strong> ${member.phone}</p>
+                <p><strong>Membership Level:</strong> ${member.membershipLevel}</p>
+            `;
+
+            spotlightContainer.appendChild(memberCard);
+        });
     } catch (error) {
-        console.error("Error fetching weather data:", error);
+        console.error("Error fetching member data:", error);
     }
-}
-
-function displayCurrentWeather(data) {
-    const current = data.list[0];
-    const weatherElement = document.querySelector('.current-weather');
-
-    const temperature = Math.round(current.main.temp);
-    const weatherDescription = current.weather.map(w => capitalizeWords(w.description)).join(", ");
-    const humidity = current.main.humidity;
-    const sunrise = new Date(data.city.sunrise * 1000).toLocaleTimeString();
-    const sunset = new Date(data.city.sunset * 1000).toLocaleTimeString();
-
-    weatherElement.innerHTML = `
-        <p>Temperature: ${temperature}°F</p>
-        <p>Description: ${weatherDescription}</p>
-        <p>Humidity: ${humidity}%</p>
-        <p>Sunrise: ${sunrise}, Sunset: ${sunset}</p>
-    `;
-}
-
-function displayForecast(data) {
-    const forecastElement = document.querySelector('.forecast');
-    const forecastDays = [8, 16, 24]; // Indices for three different days in the forecast data
-
-    forecastElement.innerHTML = forecastDays.map(index => {
-        const forecast = data.list[index];
-        const day = new Date(forecast.dt * 1000).toLocaleDateString("en-US", { weekday: 'long' });
-        const temp = Math.round(forecast.main.temp);
-        return `<p>${day}: ${temp}°F</p>`;
-    }).join("");
-}
-
-function capitalizeWords(str) {
-    return str.replace(/\b\w/g, char => char.toUpperCase());
 }
