@@ -11,14 +11,20 @@
     <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/script.js" defer></script> <!-- Script placed in the head with defer -->
     <title>Kweneng Agriculture Chamber of Commerce</title>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="images/logo.svg" alt="Kweneng Agriculture Chamber of Commerce">
+            <img src="images/logo.svg" alt="Kweneng Agriculture Chamber of Commerce" loading="lazy">
         </div>
         <nav>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Discover</a></li>
@@ -34,7 +40,7 @@
 
     <main>
         <section class="hero">
-            <img src="images/hero-medium.webp" alt="Kweneng Agriculture Chamber of Commerce Hero Image">
+            <img src="images/hero-medium.webp" alt="Kweneng Agriculture Chamber of Commerce Hero Image" loading="lazy">
             <div class="hero-content">
                 <h1>Join Us and enjoy membership benefits!</h1>
                 <button class="cta-button">Join the Chamber</button>
@@ -84,13 +90,11 @@
             <p>Phone: (267) 763-76661</p>
         </address>
         <div class="social-media">
-            <a href="#"><img src="images/youtube.jpeg" alt="YouTube"></a>
-            <a href="#"><img src="images/twitter.jpeg" alt="Twitter"></a>
-            <a href="#"><img src="images/linkedin.jpeg" alt="LinkedIn"></a>
+            <a href="#"><img src="images/youtube.jpeg" alt="YouTube" loading="lazy"></a>
+            <a href="#"><img src="images/twitter.jpeg" alt="Twitter" loading="lazy"></a>
+            <a href="#"><img src="images/linkedin.jpeg" alt="LinkedIn" loading="lazy"></a>
         </div>
         <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
     </footer>
-
-    <script src="scripts/script.js"></script>
 </body>
 </html>
