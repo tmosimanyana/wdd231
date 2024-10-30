@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kweneng Agriculture Chamber of Commerce - Directory of members supporting local agricultural businesses in Botswana.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    
+    <!-- Open Graph meta tags -->
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce - Directory">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/directory.html">
+    <meta property="og:description" content="Explore our directory of members supporting local agricultural businesses.">
+    
+    <link rel="icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Chamber Directory</title>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.svg" alt="Kweneng Agriculture Chamber of Commerce" loading="lazy">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="discover.html">Discover</a></li>
+                <li><a href="directory.html">Directory</a></li>
+                <li><a href="join.html">Join</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="podcast.html">Podcast</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><button id="themeToggle">🌙</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Chamber Directory</h1>
+        <button id="toggleView" onclick="toggleView()">Toggle View</button>
+        <div id="memberContainer" class="grid-view">
+            <!-- Member cards will be populated here by JavaScript -->
+        </div>
+    </main>
+
+    <footer>
+        <address>
+            <p>Kweneng Agriculture Chamber of Commerce</p>
+            <p>Address, Kweneng, Botswana</p>
+            <p>Email: mbothepha@gmail.com</p>
+            <p>Phone: (267) 763-76661</p>
+        </address>
+        <div class="social-media">
+            <a href="#"><img src="images/youtube.jpeg" alt="YouTube" loading="lazy"></a>
+            <a href="#"><img src="images/twitter.jpeg" alt="Twitter" loading="lazy"></a>
+            <a href="#"><img src="images/linkedin.jpeg" alt="LinkedIn" loading="lazy"></a>
+        </div>
+        <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
+    </footer>
+
+    <script src="scripts/script.js" defer></script>
+</body>
+</html>

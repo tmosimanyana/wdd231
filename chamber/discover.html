@@ -3,12 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kweneng Agriculture Chamber of Commerce - Supporting local agricultural businesses in Botswana.">
+    <meta name="author" content="Tinny Bothepha Mosimanyana">
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp">
+    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
+    <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="styles/styles.css">
-    <title>Kweneng Agriculture Chamber of Commerce - Directory</title>
+    <title>Kweneng Agriculture Chamber of Commerce</title>
 </head>
 <body>
     <header>
-        <!-- Navigation goes here -->
+        <div class="logo">
+            <img src="images/logo.svg" alt="Kweneng Agriculture Chamber of Commerce" loading="lazy">
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -24,13 +33,64 @@
     </header>
 
     <main>
-        <h1>Member Directory</h1>
-        <p>Explore our directory of local agricultural businesses.</p>
-        <!-- Directory content here -->
+        <section class="hero">
+            <img src="images/hero-medium.webp" alt="Kweneng Agriculture Chamber of Commerce Hero Image" loading="lazy">
+            <div class="hero-content">
+                <h1>Don't forget to join and enjoy membership benefits!</h1>
+                <button class="cta-button">Join the Chamber</button>
+                <button class="cta-button">Keynote Tickets</button>
+            </div>
+        </section>
+    
+        <section class="info-panels">
+            <div class="panel events">
+                <h2>Events</h2>
+                <p>Details about upcoming events.</p>
+            </div>
+            <div class="panel weather">
+                <h2>Current Weather</h2>
+                <p id="currentWeather">Loading...</p>
+                <ul>
+                    <li id="weatherHigh">High: --</li>
+                    <li id="weatherLow">Low: --</li>
+                    <li id="weatherHumidity">Humidity: --</li>
+                    <li id="weatherSunrise">Sunrise: --</li>
+                    <li id="weatherSunset">Sunset: --</li>
+                </ul>
+            </div>
+            <div class="panel forecast">
+                <h2>Weather Forecast</h2>
+                <ul>
+                    <li>Today: 90°F</li>
+                    <li>Wednesday: 89°F</li>
+                    <li>Thursday: 68°F</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="business-spotlight">
+            <h2>Business Spotlights</h2>
+            <div id="businessSpotlightContent">
+                <!-- Business cards will be populated here by JavaScript -->
+            </div>
+        </section>
     </main>
 
     <footer>
+        <address>
+            <p>Kweneng Agriculture Chamber of Commerce</p>
+            <p>Address, Kweneng, Botswana</p>
+            <p>Email: mbothepha@gmail.com</p>
+            <p>Phone: (267) 763-76661</p>
+        </address>
+        <div class="social-media">
+            <a href="#"><img src="images/youtube.jpeg" alt="YouTube" loading="lazy"></a>
+            <a href="#"><img src="images/twitter.jpeg" alt="Twitter" loading="lazy"></a>
+            <a href="#"><img src="images/linkedin.jpeg" alt="LinkedIn" loading="lazy"></a>
+        </div>
         <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
     </footer>
+
+    <script src="scripts/directory.js" defer></script>
 </body>
 </html>
