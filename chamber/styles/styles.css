@@ -102,3 +102,21 @@ footer address, .social-media {
     width: 30px;
     margin: 0 0.5em;
 }
+.business-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+.business-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.business-card:hover {
+    transform: scale(1.05);
+}
