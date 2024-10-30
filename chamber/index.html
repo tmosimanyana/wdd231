@@ -27,7 +27,7 @@
                 <li><a href="#">About</a></li>
                 <li><a href="#">Podcast</a></li>
                 <li><a href="#">Events</a></li>
-                <li><button id="themeToggle" aria-label="Toggle Dark/Light Theme">🌙</button></li>
+                <li><button id="themeToggle">🌙</button></li>
             </ul>
         </nav>
     </header>
@@ -35,7 +35,7 @@
     <main>
         <section class="hero">
             <h1>Welcome to Kweneng Agriculture Chamber of Commerce</h1>
-            <button class="cta-button" onclick="window.location.href='tickets.html'">Keynote Tickets</button>
+            <button class="cta-button">Keynote Tickets</button>
         </section>
 
         <section class="info-panels">
@@ -45,15 +45,21 @@
             </div>
             <div class="panel weather">
                 <h2>Current Weather</h2>
-                <p id="currentWeather">Loading...</p>
-                <ul id="weatherDetails">
-                    <!-- Weather details will be populated here by JavaScript -->
+                <p id="currentWeather">75°F - Partly Cloudy</p>
+                <ul>
+                    <li>High: 85°F</li>
+                    <li>Low: 52°F</li>
+                    <li>Humidity: 34%</li>
+                    <li>Sunrise: 7:30am</li>
+                    <li>Sunset: 9:59pm</li>
                 </ul>
             </div>
             <div class="panel forecast">
                 <h2>Weather Forecast</h2>
-                <ul id="forecastList">
-                    <!-- Forecast details will be populated here by JavaScript -->
+                <ul>
+                    <li>Today: 90°F</li>
+                    <li>Wednesday: 89°F</li>
+                    <li>Thursday: 68°F</li>
                 </ul>
             </div>
         </section>
@@ -81,7 +87,6 @@
         <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
     </footer>
 
-    <script src="scripts/weather.js"></script>
-    <script src="scripts/spotlights.js"></script>
+    <script src="scripts/script.js"></script>
 </body>
 </html>
