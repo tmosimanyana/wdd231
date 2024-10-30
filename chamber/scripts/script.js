@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 async function fetchMembers() {
     try {
-        const response = await fetch("members.json"); // Make sure this path points to the correct location
+        const response = await fetch("data/members.json"); // Make sure this path points to the correct location
         const members = await response.json();
 
         const spotlightContainer = document.getElementById("businessSpotlightContent");
