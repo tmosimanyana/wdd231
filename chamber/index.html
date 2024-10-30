@@ -10,14 +10,25 @@
     <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp">
     <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html">
     <link rel="icon" href="favicon.ico">
+    
+    <!-- Preconnect for external resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Normalize CSS and stylesheets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha384-oSRXUpaTW0pVp8d6QyB4pHl1GbXbB0ik3BLS2FbUw8Ni5BGASLgklbqulyKFs7bJ" crossorigin="anonymous">
+    <link rel="preload" href="styles/styles.css" as="style">
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/script.js" defer></script> <!-- Script placed in the head with defer -->
+    
     <title>Kweneng Agriculture Chamber of Commerce</title>
+    
+    <!-- Main script file -->
+    <script src="scripts/script.js" defer type="module"></script>
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="images/logo.svg" alt="Kweneng Agriculture Chamber of Commerce" loading="lazy">
+            <img src="images/logo.svg" alt="Kweneng Agriculture Chamber of Commerce Logo" width="120" height="40" loading="lazy">
         </div>
         <nav>
             <div class="menu-toggle" id="mobile-menu">
@@ -40,7 +51,7 @@
 
     <main>
         <section class="hero">
-            <img src="images/hero-medium.webp" alt="Kweneng Agriculture Chamber of Commerce Hero Image" loading="lazy">
+            <img src="images/hero-medium.webp" alt="Kweneng Agriculture Chamber of Commerce Hero Image" width="600" height="400" loading="eager">
             <div class="hero-content">
                 <h1>Join Us and enjoy membership benefits!</h1>
                 <button class="cta-button">Join the Chamber</button>
@@ -55,29 +66,14 @@
             </div>
             <div class="panel weather">
                 <h2>Current Weather</h2>
-                <p id="currentWeather">75°F - Partly Cloudy</p>
-                <ul>
-                    <li>High: 85°F</li>
-                    <li>Low: 52°F</li>
-                    <li>Humidity: 34%</li>
-                    <li>Sunrise: 7:30am</li>
-                    <li>Sunset: 9:59pm</li>
-                </ul>
-            </div>
-            <div class="panel forecast">
-                <h2>Weather Forecast</h2>
-                <ul>
-                    <li>Today: 90°F</li>
-                    <li>Wednesday: 89°F</li>
-                    <li>Thursday: 68°F</li>
-                </ul>
+                <p id="currentWeather">Loading...</p>
             </div>
         </section>
 
         <section class="business-spotlight">
             <h2>Business Spotlights</h2>
             <div id="businessSpotlightContent">
-                <!-- Business cards will be populated here by JavaScript -->
+                <!-- Business cards populated by JavaScript -->
             </div>
         </section>
     </main>
@@ -90,9 +86,9 @@
             <p>Phone: (267) 763-76661</p>
         </address>
         <div class="social-media">
-            <a href="#"><img src="images/youtube.jpeg" alt="YouTube" loading="lazy"></a>
-            <a href="#"><img src="images/twitter.jpeg" alt="Twitter" loading="lazy"></a>
-            <a href="#"><img src="images/linkedin.jpeg" alt="LinkedIn" loading="lazy"></a>
+            <a href="#"><img src="images/youtube.jpeg" alt="YouTube" width="24" height="24" loading="lazy"></a>
+            <a href="#"><img src="images/twitter.jpeg" alt="Twitter" width="24" height="24" loading="lazy"></a>
+            <a href="#"><img src="images/linkedin.jpeg" alt="LinkedIn" width="24" height="24" loading="lazy"></a>
         </div>
         <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
     </footer>
