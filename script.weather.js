@@ -1,86 +1,53 @@
-const API_KEY = '5c7e429e1b20f30b60de00a18bcc0e92';
-const CITY_ID = '933773'; // Gaborone City ID
+// script.weather.js
 
-// Dark Mode Toggle
-const darkModeToggle = document.querySelector('.dark-mode-toggle');
-darkModeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('dark-mode');
-});
+const API_KEY = "YOUR_API_KEY";
+const CITY = "Molepolole,BW"; // Adjust the city as necessary
+const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&units=metric&appid=${API_KEY}`;
 
-// Fetch current weather data with error handling
-async function fetchCurrentWeather() {
+async function getWeather() {
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?id=${CITY_ID}&units=imperial&appid=${API_KEY}`);
-        if (!response.ok) throw new Error('Failed to fetch current weather data');
+        const response = await fetch(weatherUrl);
         const data = await response.json();
 
-        return {
-            temperature: `${data.main.temp}°F`,
-            condition: data.weather[0].description,
-            high: `${data.main.temp_max}°F`,
-            low: `${data.main.temp_min}°F`,
-            humidity: `${data.main.humidity}%`,
-            sunrise: new Date(data.sys.sunrise * 1000).toLocaleTimeString(),
-            sunset: new Date(data.sys.sunset * 1000).toLocaleTimeString()
-        };
-    } catch (error) {
-        console.error(error);
-        return null;
-    }
-}
+        if (data.cod !== 200) {
+            throw new Error(data.message);
+        }
 
-// Fetch 3-day weather forecast with error handling
-async function fetchWeatherForecast() {
-    try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?id=${CITY_ID}&units=imperial&appid=${API_KEY}`);
-        if (!response.ok) throw new Error('Failed to fetch weather forecast data');
-        const data = await response.json();
-
-        const forecast = data.list
-            .filter((item, index) => index % 8 === 0) // Get data for every 8th item (3-hour intervals)
-            .slice(0, 3) // Limit to 3 days
-            .map(item => ({
-                day: new Date(item.dt * 1000).toLocaleDateString('en-US', { weekday: 'long' }),
-                temp: `${item.main.temp}°F`
-            }));
-            
-        return forecast;
-    } catch (error) {
-        console.error(error);
-        return null;
-    }
-}
-
-// Display weather data with error messages
-async function displayWeather() {
-    const currentWeather = await fetchCurrentWeather();
-    const weatherForecast = await fetchWeatherForecast();
-
-    const currentWeatherContainer = document.querySelector('.current-weather ul');
-    const forecastContainer = document.querySelector('.weather-forecast ul');
-
-    if (currentWeather) {
-        currentWeatherContainer.innerHTML = `
-            <li>Temperature: ${currentWeather.temperature}</li>
-            <li>Condition: ${currentWeather.condition}</li>
-            <li>High: ${currentWeather.high}</li>
-            <li>Low: ${currentWeather.low}</li>
-            <li>Humidity: ${currentWeather.humidity}</li>
-            <li>Sunrise: ${currentWeather.sunrise}</li>
-            <li>Sunset: ${currentWeather.sunset}</li>
+        const temperature = Math.round(data.main.temp);
+        const weatherDescription = data.weather.map(item => item.description.charAt(0).toUpperCase() + item.description.slice(1)).join(", ");
+        const weatherOutput = `
+            <h3>${temperature}°C</h3>
+            <p>${weatherDescription}</p>
         `;
-    } else {
-        currentWeatherContainer.innerHTML = `<li>Unable to load current weather data.</li>`;
-    }
+        document.getElementById("weather-info").innerHTML = weatherOutput;
 
-    if (weatherForecast) {
-        forecastContainer.innerHTML = weatherForecast.map(forecast => `
-            <li>${forecast.day}: ${forecast.temp}</li>
-        `).join('');
-    } else {
-        forecastContainer.innerHTML = `<li>Unable to load weather forecast data.</li>`;
+        // Call for forecast data
+        getForecast(data.coord.lat, data.coord.lon);
+    } catch (error) {
+        document.getElementById("weather-info").innerHTML = `<p>Error fetching weather data: ${error.message}</p>`;
     }
 }
 
-// Call the function to display weather data
-displayWeather();
+async function getForecast(lat, lon) {
+    const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`;
+    
+    try {
+        const response = await fetch(forecastUrl);
+        const data = await response.json();
+
+        let forecastHtml = "<h3>3-Day Forecast</h3><ul>";
+        for (let i = 0; i < 3; i++) {
+            const day = data.list[i * 8]; // Each day has 8 entries
+            const dayTemp = Math.round(day.main.temp);
+            const dayDesc = day.weather.map(item => item.description.charAt(0).toUpperCase() + item.description.slice(1)).join(", ");
+            forecastHtml += `<li>${day.dt_txt.split(" ")[0]}: ${dayTemp}°C, ${dayDesc}</li>`;
+        }
+        forecastHtml += "</ul>";
+
+        document.getElementById("weather-info").innerHTML += forecastHtml;
+    } catch (error) {
+        console.error("Error fetching forecast data:", error);
+    }
+}
+
+getWeather();

@@ -3,14 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kweneng Agriculture Chamber of Commerce</title>
+    <meta name="description" content="Kweneng Agriculture Chamber of Commerce - Supporting agriculture in Kweneng, Botswana. Join us for events and resources.">
+    <meta name="keywords" content="Agriculture, Commerce, Kweneng, Botswana">
+    <meta name="author" content="Your Full Name">
+    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://example.com/images/logo.webp" />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:description" content="Supporting agriculture in Kweneng, Botswana. Join us for events, member information, and resources." />
+    <title>Kweneng Agriculture Chamber of Commerce - Home</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon"> <!-- Favicon -->
 </head>
 <body>
     <!-- Header Section -->
     <header>
         <div class="logo">
-            <img src="path/to/logo.png" alt="Kweneng Agriculture Chamber of Commerce Logo">
+            <img src="images/logo.webp" alt="Kweneng Agriculture Chamber of Commerce Logo">
             <h1>Kweneng Agriculture Chamber of Commerce</h1>
         </div>
         <nav>
@@ -21,7 +30,7 @@
                 <li><a href="#">Discover</a></li>
             </ul>
         </nav>
-        <button class="dark-mode-toggle">Dark Mode</button>
+        <button class="dark-mode-toggle" aria-label="Toggle Dark Mode">Dark Mode</button>
     </header>
 
     <!-- Main Content Section -->
@@ -29,52 +38,34 @@
         <!-- Hero Section -->
         <section class="banner">
             <div class="hero-image">
-                <button class="keynote-button">Keynote Tickets</button>
-            </div>
-        </section>
-        
-        <!-- Info Section with Events, Weather, and Forecast -->
-        <section class="info">
-            <div class="events">
-                <h2>Events</h2>
-                <!-- Event details go here -->
-            </div>
-            <div class="current-weather">
-                <h2>Current Weather</h2>
-                <ul>
-                    <!-- JavaScript will populate weather data here -->
-                </ul>
-            </div>
-            <div class="weather-forecast">
-                <h2>Weather Forecast</h2>
-                <ul>
-                    <!-- JavaScript will populate forecast data here -->
-                </ul>
+                <img src="images/hero.jpg" alt="Hero Image" />
+                <a href="#" class="cta-button">Join the Chamber of Commerce</a>
             </div>
         </section>
 
-        <!-- Business Listings Section -->
-        <section class="business-listings">
-            <div class="business">
-                <h3>Business Name</h3>
-                <p>Business Tag Line</p>
-                <p>Email: info@gmail.com</p>
-                <p>Phone: 800-555-1234</p>
-                <p>URL: mybusiness.com</p>
+        <!-- Current Events Section -->
+        <section class="events">
+            <h2>Current Events</h2>
+            <ul>
+                <li>Event 1: Date and Time</li>
+                <li>Event 2: Date and Time</li>
+                <li>Event 3: Date and Time</li>
+            </ul>
+        </section>
+
+        <!-- Weather Section -->
+        <section class="weather">
+            <h2>Current Weather</h2>
+            <div id="weather-info">
+                <p>Loading weather data...</p>
             </div>
-            <div class="business">
-                <h3>Business Name</h3>
-                <p>Business Tag Line</p>
-                <p>Email: info@gmail.com</p>
-                <p>Phone: 800-555-1234</p>
-                <p>URL: mybusiness.com</p>
-            </div>
-            <div class="business">
-                <h3>Business Name</h3>
-                <p>Business Tag Line</p>
-                <p>Email: info@gmail.com</p>
-                <p>Phone: 800-555-1234</p>
-                <p>URL: mybusiness.com</p>
+        </section>
+
+        <!-- Company Spotlights Section -->
+        <section class="spotlights">
+            <h2>Company Spotlights</h2>
+            <div class="spotlight-container" id="spotlight-container">
+                <!-- JavaScript will populate spotlight member data here -->
             </div>
         </section>
     </main>
@@ -83,18 +74,27 @@
     <footer>
         <p>Kweneng Agriculture Chamber of Commerce</p>
         <p>P O BOX 894, Molepolole, Botswana</p>
-        <p>Email: mbothepha@gmail.com</p>
+        <p>Email: <a href="mailto:mbothepha@gmail.com">mbothepha@gmail.com</a></p>
         <p>Phone: (267) 76376661</p>
         <div class="social-links">
             <a href="#">YouTube</a>
             <a href="#">Twitter</a>
             <a href="#">LinkedIn</a>
         </div>
-        <p>© 2024 Kweneng Agriculture Chamber of Commerce</p>
+        <p id="copyrightYear">© <span id="currentYear"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p id="lastModified"></p> <!-- Last modified date -->
     </footer>
 
-    <!-- Linking JavaScript file -->
+    <!-- Linking JavaScript files -->
     <script src="script.js"></script>
     <script src="script.weather.js"></script>
+    <script src="script.members.js"></script>
+    <script>
+        // Get current year for copyright
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Display last modified date
+        document.getElementById('lastModified').textContent = `Last modified: ${document.lastModified}`;
+    </script>
 </body>
 </html>
