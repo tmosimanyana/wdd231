@@ -254,3 +254,35 @@ header.dark-mode {
 .weather-icon {
     filter: brightness(1.2); /* Adjust icon brightness for visibility */
 }
+
+/* Forced Colors Mode Styles */
+@media (forced-colors: active) {
+    body {
+        background-color: Window; /* Use the system's window color */
+        color: WindowText; /* Use the system's text color */
+    }
+
+    header {
+        background-color: Highlight; /* Use system highlight color for header */
+    }
+
+    nav ul li a {
+        color: HighlightText; /* Use system highlight text color */
+    }
+
+    footer {
+        background-color: Highlight; /* Use system highlight color for footer */
+        color: HighlightText; /* Use system highlight text color for footer */
+    }
+
+    .weather-card-content {
+        background-color: Window; /* Use window color for cards */
+        color: WindowText; /* Use window text color for cards */
+        border: 1px solid Highlight; /* Highlight border for better visibility */
+    }
+
+    .cta-button {
+        background-color: Highlight; /* Highlight color for button */
+        color: HighlightText; /* Highlight text color for button */
+    }
+}
