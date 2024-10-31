@@ -1,6 +1,6 @@
 // script.weather.js
 
-const API_KEY = "YOUR_API_KEY";
+const API_KEY = "5c7e429e1b20f30b60de00a18bcc0e92";
 const CITY = "Molepolole,BW"; // Adjust the city as necessary
 const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${CITY}&units=metric&appid=${API_KEY}`;
 
