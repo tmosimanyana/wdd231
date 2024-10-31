@@ -92,3 +92,46 @@ main {
     text-align: center;
     flex: 1 1 200px; /* Flexbox for responsive card layout */
 }
+/* Base styles for light mode */
+body {
+    background-color: white; /* Light background */
+    color: black; /* Light text color */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+}
+
+/* Header styles */
+header {
+    background-color: #f8f9fa; /* Light header background */
+    transition: background-color 0.3s ease;
+}
+
+/* Button styles */
+button {
+    cursor: pointer;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #121212; /* Dark background */
+    color: white; /* Dark text color */
+}
+
+header.dark-mode {
+    background-color: #1e1e1e; /* Dark header background */
+}
+
+.cta-button {
+    background-color: #28a745; /* Light mode button color */
+    color: white;
+}
+
+body.dark-mode .cta-button {
+    background-color: #006400; /* Dark mode button color */
+}
+
+/* Hero Section Specific Styles */
+.banner {
+    height: 400px;
+}
+
+/* Additional responsive styles as necessary */
