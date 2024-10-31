@@ -1,53 +1,62 @@
+// Fetching and displaying member data
 async function fetchMembers() {
     try {
-        const response = await fetch('chamber/data/members.json');
+        const response = await fetch('data/members.json');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const membersData = await response.json();
-        displaySpotlights(membersData);
+        displayMembers(membersData); // Display members dynamically
     } catch (error) {
-        console.error('There was a problem with the fetch operation:', error);
+        console.error('Error fetching member data:', error);
     }
 }
 
-function displaySpotlights(membersData) {
-    const silverGoldMembers = membersData.filter(member => 
-        member.membershipLevel.includes("Level 2") || member.membershipLevel.includes("Level 3")
-    );
+// Display members with grid or list view classes
+function displayMembers(membersData) {
+    const membersContainer = document.getElementById("members-container");
+    membersContainer.innerHTML = ""; // Clear any existing content
 
-    if (silverGoldMembers.length === 0) {
-        document.getElementById("spotlight-container").innerHTML = "<p>No spotlight members available.</p>";
-        return;
-    }
+    membersData.forEach(member => {
+        const memberItem = document.createElement('div');
+        memberItem.className = `members-item grid`; // Default to grid view
 
-    const spotlights = [];
-    const numberOfSpotlights = Math.min(3, silverGoldMembers.length);
-    while (spotlights.length < numberOfSpotlights) {
-        const randomIndex = Math.floor(Math.random() * silverGoldMembers.length);
-        const selectedMember = silverGoldMembers[randomIndex];
-
-        if (!spotlights.includes(selectedMember)) {
-            spotlights.push(selectedMember);
-        }
-    }
-
-    const spotlightContainer = document.getElementById("spotlight-container");
-    spotlightContainer.innerHTML = "";
-    spotlights.forEach(member => {
-        const memberHtml = `
-            <div class="spotlight">
-                <img src="${member.image}" alt="${member.name} Logo" />
-                <h3>${member.name}</h3>
-                <p>Phone: ${member.phone}</p>
-                <p>Address: ${member.address}</p>
-                <p>Membership Level: ${member.membershipLevel}</p>
-                <a href="#" class="website-link">Visit Website</a>
-            </div>
+        memberItem.innerHTML = `
+            <img src="${member.image}" alt="${member.name}" loading="lazy">
+            <h3>${member.name}</h3>
+            <p>Phone: ${member.phone}</p>
+            <p>Address: ${member.address}</p>
+            <p>Membership Level: ${member.membershipLevel}</p>
+            <a href="#" aria-label="Visit ${member.name} website">Visit Website</a>
         `;
-        spotlightContainer.innerHTML += memberHtml;
+        membersContainer.appendChild(memberItem);
     });
 }
 
-// Call the function on page load
+// Toggle between grid and list views
+function toggleView(isGridView) {
+    const membersContainer = document.getElementById("members-container");
+    const memberItems = membersContainer.querySelectorAll('.members-item');
+
+    if (isGridView) {
+        memberItems.forEach(item => item.className = 'members-item grid');
+        document.getElementById("view-toggle").textContent = "Switch to List View";
+    } else {
+        memberItems.forEach(item => item.className = 'members-item list');
+        document.getElementById("view-toggle").textContent = "Switch to Grid View";
+    }
+}
+
+// Set current year and last modified date in the footer
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = `Last modified: ${document.lastModified}`;
+
+// Fetch members on page load
 fetchMembers();
+
+// Toggle view button functionality
+document.getElementById("view-toggle").addEventListener("click", () => {
+    const viewToggleButton = document.getElementById("view-toggle");
+    const isGridView = viewToggleButton.textContent.includes("Grid");
+    toggleView(isGridView);
+});

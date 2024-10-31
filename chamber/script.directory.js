@@ -1,24 +1,26 @@
+// Fetching and displaying member data
 async function fetchMembers() {
     try {
-        const response = await fetch('chamber/data/members.json');
+        const response = await fetch('data/members.json');
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
         const membersData = await response.json();
-        displayMembers(membersData); // Display all members dynamically
+        displayMembers(membersData); // Display members dynamically
     } catch (error) {
-        console.error('There was a problem with the fetch operation:', error);
+        console.error('Error fetching member data:', error);
     }
 }
 
-// Function to display members in grid or list view
+// Display members with grid or list view classes
 function displayMembers(membersData) {
     const membersContainer = document.getElementById("members-container");
     membersContainer.innerHTML = ""; // Clear any existing content
 
     membersData.forEach(member => {
         const memberItem = document.createElement('div');
-        memberItem.className = `members-item grid`; // Default to grid class
+        memberItem.className = `members-item grid`; // Default to grid view
+
         memberItem.innerHTML = `
             <img src="${member.image}" alt="${member.name}" loading="lazy">
             <h3>${member.name}</h3>
@@ -31,7 +33,7 @@ function displayMembers(membersData) {
     });
 }
 
-// Function to toggle between grid and list view
+// Toggle between grid and list views
 function toggleView(isGridView) {
     const membersContainer = document.getElementById("members-container");
     const memberItems = membersContainer.querySelectorAll('.members-item');
@@ -45,7 +47,11 @@ function toggleView(isGridView) {
     }
 }
 
-// Call the function on page load
+// Set current year and last modified date in the footer
+document.getElementById('currentYear').textContent = new Date().getFullYear();
+document.getElementById('lastModified').textContent = `Last modified: ${document.lastModified}`;
+
+// Fetch members on page load
 fetchMembers();
 
 // Toggle view button functionality
