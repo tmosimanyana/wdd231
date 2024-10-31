@@ -1,7 +1,7 @@
 // script.members.js
 
-const membersData = [
-    // Your JSON data here
+const directory = [
+    //  JSON data here
 ];
 
 function getRandomSpotlights() {
