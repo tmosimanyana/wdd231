@@ -1,6 +1,7 @@
 // script.js
 
-const API_URL = 'https://example.com/members.json'; // Replace with your actual JSON data source
+// Constants for the JSON data source and the members container
+const API_URL = 'data/members.json'; // Path to your JSON data source
 const membersContainer = document.getElementById('members-container');
 const viewToggle = document.getElementById('view-toggle');
 
