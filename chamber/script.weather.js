@@ -1,30 +1,78 @@
-const weatherCard = document.getElementById("weather-card");
+// script.weather.js
 
-async function fetchWeather(city = "molepolole") {
+// Replaced with your actual OpenWeatherMap API key
+const API_KEY = '5c7e429e1b20f30b60de00a18bcc0e92'; // Insert your API key here
+const CITY = 'Molepolole,BW'; // Example city; replace with the desired location
+const WEATHER_CARD = document.getElementById('weather-card');
+
+async function fetchWeather() {
     try {
-        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=5c7e429e1b20f30b60de00a18bcc0e92&q=${city}&aqi=no`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${CITY}&appid=${API_KEY}&units=metric`);
         const data = await response.json();
-        
-        weatherCard.innerHTML = `
-            <div class="weather-header">
-                <h3>${data.location.name}</h3>
-                <p>${data.location.localtime}</p>
-            </div>
-            <div class="weather-main">
-                <img src="${data.current.condition.icon}" alt="${data.current.condition.text}">
-                <p class="temp">${data.current.temp_c}°C</p>
-                <p>${data.current.condition.text}</p>
-            </div>
-            <div class="weather-details">
-                <p>Feels Like: ${data.current.feelslike_c}°C</p>
-                <p>Humidity: ${data.current.humidity}%</p>
-                <p>Wind: ${data.current.wind_kph} km/h</p>
-            </div>
-        `;
+
+        if (response.ok) {
+            displayWeather(data);
+        } else {
+            WEATHER_CARD.innerHTML = `<p>Error: ${data.message}</p>`;
+        }
     } catch (error) {
-        weatherCard.innerHTML = `<p>Unable to load weather data. Please try again later.</p>`;
+        WEATHER_CARD.innerHTML = `<p>Error: ${error.message}</p>`;
     }
 }
 
-// Load weather data on page load
-document.addEventListener("DOMContentLoaded", () => fetchWeather("molepolole"));
+function displayWeather(data) {
+    const { main, weather, name } = data;
+    const temperature = Math.round(main.temp);
+    const weatherDescription = weather[0].description;
+    const iconUrl = `https://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+
+    // Create the HTML structure for the weather card
+    WEATHER_CARD.innerHTML = `
+        <img src="${iconUrl}" alt="${weatherDescription}" class="weather-icon" loading="lazy">
+        <h3>${name}</h3>
+        <p class="temperature">${temperature}°C</p>
+        <p class="weather-description">${weatherDescription}</p>
+    `;
+
+    // Optional: Fetch and display 3-day forecast
+    fetchForecast();
+}
+
+async function fetchForecast() {
+    try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${CITY}&appid=${API_KEY}&units=metric`);
+        const data = await response.json();
+
+        if (response.ok) {
+            displayForecast(data);
+        } else {
+            console.error(data.message);
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+function displayForecast(data) {
+    const forecastContainer = document.createElement('ul');
+    forecastContainer.classList.add('forecast-list');
+
+    // Get the next 3 days forecast
+    for (let i = 0; i < 3; i++) {
+        const forecast = data.list[i * 8]; // 8 data points per day
+        const date = new Date(forecast.dt * 1000).toLocaleDateString();
+        const temp = Math.round(forecast.main.temp);
+        const description = forecast.weather[0].description;
+
+        const forecastItem = document.createElement('li');
+        forecastItem.innerHTML = `
+            <strong>${date}</strong>: ${temp}°C, ${description}
+        `;
+        forecastContainer.appendChild(forecastItem);
+    }
+
+    WEATHER_CARD.appendChild(forecastContainer);
+}
+
+// Fetch weather data on page load
+fetchWeather();
