@@ -1,49 +1,30 @@
-const spotlightContainer = document.getElementById("spotlight-container");
+const weatherCard = document.getElementById("weather-card");
 
-// Simulated data for member companies
-const memberData = [
-    {
-        name: "Notwane Poultry",
-        phone: "+267 999 0000",
-        address: "543 Notwane Rd, Kweneng",
-        membershipLevel: "Membership Level 2",
-        image: "images/notwane-poultry.webp",
-        website: "#"
-    },
-    {
-        name: "Greenhouse Technologies",
-        phone: "+267 111 2222",
-        address: "789 Greenhouse Ave, Kweneng",
-        membershipLevel: "Membership Level 2",
-        image: "images/greenhouse-technologies.webp",
-        website: "#"
-    },
-    {
-        name: "BAMB Headquarters",
-        phone: "+267 123 4567",
-        address: "123 BAMB Rd, Kweneng",
-        membershipLevel: "Membership Level 3",
-        image: "images/bamb-headquarters.webp",
-        website: "#"
-    }
-];
-
-// Populate spotlights section with member data
-function loadMemberSpotlights() {
-    memberData.forEach(member => {
-        const spotlightItem = document.createElement("div");
-        spotlightItem.classList.add("spotlight-item");
-        spotlightItem.innerHTML = `
-            <img src="${member.image}" alt="${member.name}" loading="lazy">
-            <h3>${member.name}</h3>
-            <p>Phone: ${member.phone}</p>
-            <p>Address: ${member.address}</p>
-            <p>Membership Level: ${member.membershipLevel}</p>
-            <a href="${member.website}">Visit Website</a>
+async function fetchWeather(city = "Molepolole") {
+    try {
+        const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=5c7e429e1b20f30b60de00a18bcc0e92&q=${city}&aqi=no`);
+        const data = await response.json();
+        
+        weatherCard.innerHTML = `
+            <div class="weather-header">
+                <h3>${data.location.name}</h3>
+                <p>${data.location.localtime}</p>
+            </div>
+            <div class="weather-main">
+                <img src="${data.current.condition.icon}" alt="${data.current.condition.text}">
+                <p class="temp">${data.current.temp_c}°C</p>
+                <p>${data.current.condition.text}</p>
+            </div>
+            <div class="weather-details">
+                <p>Feels Like: ${data.current.feelslike_c}°C</p>
+                <p>Humidity: ${data.current.humidity}%</p>
+                <p>Wind: ${data.current.wind_kph} km/h</p>
+            </div>
         `;
-        spotlightContainer.appendChild(spotlightItem);
-    });
+    } catch (error) {
+        weatherCard.innerHTML = `<p>Unable to load weather data. Please try again later.</p>`;
+    }
 }
 
-// Load member spotlights on page load
-document.addEventListener("DOMContentLoaded", loadMemberSpotlights);
+// Load weather data on page load
+document.addEventListener("DOMContentLoaded", () => fetchWeather("Molepolole"));
