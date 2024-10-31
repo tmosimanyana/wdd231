@@ -229,3 +229,47 @@ nav a {
 nav a:hover {
     background-color: #555; /* Change background on hover */
 }
+/* Styles for the weather card */
+.weather-card-content {
+    background-color: #f0f8ff; /* Light blue background for the weather card */
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth shadow and scaling */
+}
+
+.weather-card-content:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.weather-icon {
+    width: 80px; /* Adjust icon size */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Add a hover effect */
+}
+
+.weather-icon:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+/* Forecast List Styles */
+.forecast-list {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 20px 0 0; /* Margin above forecast list */
+}
+
+.forecast-list li {
+    background: #e7f3fe; /* Light background for forecast items */
+    margin: 5px 0; /* Space between items */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; /* Add transition for scaling */
+}
+
+.forecast-list li:hover {
+    transform: scale(1.02); /* Scale up on hover */
+}
