@@ -53,10 +53,21 @@ document.getElementById('lastModified').textContent = `Last modified: ${document
 
 // Fetch members on page load
 fetchMembers();
+const membersContainer = document.getElementById('members-container');
+const viewToggle = document.getElementById('view-toggle');
 
-// Toggle view button functionality
-document.getElementById("view-toggle").addEventListener("click", () => {
-    const viewToggleButton = document.getElementById("view-toggle");
-    const isGridView = viewToggleButton.textContent.includes("Grid");
-    toggleView(isGridView);
+let isListView = false;
+
+viewToggle.addEventListener('click', () => {
+    isListView = !isListView; // Toggle the view state
+    if (isListView) {
+        membersContainer.classList.add('list-view');
+        membersContainer.classList.remove('grid-view');
+        viewToggle.textContent = 'Switch to Grid View';
+    } else {
+        membersContainer.classList.add('grid-view');
+        membersContainer.classList.remove('list-view');
+        viewToggle.textContent = 'Switch to List View';
+    }
 });
+
