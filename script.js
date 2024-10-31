@@ -1,5 +1,6 @@
-// Fetch weather data from a mock API and update the page
-const weatherApiUrl = "https://5c7e429e1b20f30b60de00a18bcc0e92.mockweather.com/weather?location=Molepolole"; // Replaced with actual weather API URL
+const apiKey = "5c7e429e1b20f30b60de00a18bcc0e92"; // Replace with actual API key
+const location = "Molepolole";
+const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=imperial&appid=${apiKey}`;
 const weatherElement = document.querySelector(".current-weather ul");
 const forecastElement = document.querySelector(".weather-forecast ul");
 
@@ -8,22 +9,28 @@ async function fetchWeatherData() {
         const response = await fetch(weatherApiUrl);
         const data = await response.json();
 
+        // Check for a successful response
+        if (data.cod !== 200) {
+            throw new Error(data.message);
+        }
+
         // Update Current Weather section
         weatherElement.innerHTML = `
-            <li>${data.current.temp}°F</li>
-            <li>${data.current.condition}</li>
-            <li>High: ${data.current.high}°F</li>
-            <li>Low: ${data.current.low}°F</li>
-            <li>Humidity: ${data.current.humidity}%</li>
-            <li>Sunrise: ${data.current.sunrise}</li>
-            <li>Sunset: ${data.current.sunset}</li>
+            <li>${data.main.temp}°F</li>
+            <li>${data.weather[0].description}</li>
+            <li>High: ${data.main.temp_max}°F</li>
+            <li>Low: ${data.main.temp_min}°F</li>
+            <li>Humidity: ${data.main.humidity}%</li>
+            <li>Sunrise: ${new Date(data.sys.sunrise * 1000).toLocaleTimeString()}</li>
+            <li>Sunset: ${new Date(data.sys.sunset * 1000).toLocaleTimeString()}</li>
         `;
 
-        // Update Weather Forecast section
+        // OpenWeatherMap free tier only includes current weather in this endpoint.
+        // For multi-day forecast, you would need a different endpoint or plan.
         forecastElement.innerHTML = `
-            <li>Today: ${data.forecast[0].temp}°F</li>
-            <li>Wednesday: ${data.forecast[1].temp}°F</li>
-            <li>Thursday: ${data.forecast[2].temp}°F</li>
+            <li>Today: ${data.main.temp}°F</li>
+            <li>Tomorrow: Forecast not included in this API</li>
+            <li>Day After Tomorrow: Forecast not included in this API</li>
         `;
     } catch (error) {
         console.error("Error fetching weather data:", error);
