@@ -3,15 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kweneng Agriculture Chamber of Commerce - Supporting agriculture in Kweneng, Botswana. Join us for events and resources.">
-    <meta name="keywords" content="Agriculture, Commerce, Kweneng, Botswana">
+    <meta name="description" content="Kweneng Agriculture Chamber of Commerce - Member Directory">
+    <meta name="keywords" content="Agriculture, Commerce, Kweneng, Botswana, Members">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp" />
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html" />
-    <meta property="og:description" content="Supporting agriculture in Kweneng, Botswana. Join us for events, member information, and resources." />
-    <title>Kweneng Agriculture Chamber of Commerce - Home</title>
+    <title>Kweneng Agriculture Chamber of Commerce - Directory</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="styles.directory.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -36,38 +31,19 @@
 
     <!-- Main Content Section -->
     <main role="main">
-        <!-- Hero Section -->
         <section class="banner">
-            <div class="hero-image">
-                <img src="images/hero-medium.webp" alt="Hero Image depicting agriculture in Kweneng" loading="lazy">
-                <a href="#" class="cta-button">Join the Chamber of Commerce</a>
-            </div>
-        </section>
-
-        <!-- Weather Section -->
-        <section class="weather" id="weather">
-            <h2>Current Weather</h2>
-            <div class="weather-card" id="weather-card">
-                <!-- JavaScript will populate weather data here -->
-            </div>
+            <h2>Member Directory</h2>
         </section>
 
         <!-- Company Members Section -->
-            <section class="members" aria-live="polite">
-                <h2>Business Directory</h2>
-                <div class="members-container" id="members-container">
-                    <!-- Member cards will be dynamically added here -->
-                </div>
-                <div>
-                    <button id="view-toggle" class="view-toggle">Switch to Grid View</button>
-                </div>
-            </section>
-            
-            <footer>
-                <p>© <span id="copyrightYear"></span> Kweneng Agriculture Chamber of Commerce</p>
-                <p id="lastModified"></p>
-            </footer>
-            
+        <section class="members" aria-live="polite">
+            <h2>Members</h2>
+            <div class="members-container" id="members-container">
+                <!-- Member cards will be dynamically added here -->
+            </div>
+            <div>
+                <button id="view-toggle" class="view-toggle">Switch to List View</button>
+            </div>
         </section>
     </main>
 
@@ -86,13 +62,11 @@
         <p id="lastModified"></p>
     </footer>
 
-    <!-- JavaScript for dynamic content and accessibility -->
+    <!-- JavaScript for dynamic content -->
     <script src="script.directory.js" defer></script>
-
     <script>
         // Get current year for copyright
         document.getElementById('currentYear').textContent = new Date().getFullYear();
-
         // Display last modified date
         document.getElementById('lastModified').textContent = `Last modified: ${document.lastModified}`;
     </script>
