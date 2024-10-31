@@ -1,7 +1,7 @@
 // Fetch member data and display it
 async function fetchAndDisplayMembers() {
     try {
-        const response = await fetch('members.json'); // Update path as necessary
+        const response = await fetch('data/members.json'); // Update path as necessary
         if (!response.ok) throw new Error('Failed to fetch members data');
         const members = await response.json();
         displayMembers(members);
