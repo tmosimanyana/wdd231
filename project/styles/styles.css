@@ -106,36 +106,45 @@ main {
     margin: 2rem 0;
 }
 
-.weather-card {
+.weather-card-content {
     background-color: #f0f8ff; /* Light blue background */
     border-radius: 10px;
     padding: 20px;
-    margin: 20px 0;
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth shadow and scaling */
 }
 
-.weather-card:hover {
+.weather-card-content:hover {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
     transform: translateY(-5px); /* Slight lift effect on hover */
 }
 
-.weather-card h2 {
+.weather-icon {
+    width: 80px; /* Adjust icon size */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Add a hover effect */
+}
+
+.weather-icon:hover {
+    transform: scale(1.1); /* Scale up on hover */
+}
+
+.weather-card-content h3 {
     color: #333;
 }
 
-.weather-card p {
+.weather-card-content p {
     font-size: 18px;
     margin: 5px 0;
 }
 
-.weather-card ul {
+.weather-card-content ul {
     list-style-type: none;
     padding: 0;
 }
 
-.weather-card li {
+.weather-card-content li {
     margin: 5px 0;
 }
 
@@ -203,18 +212,45 @@ footer a:hover {
 /* Dark Mode Styles */
 body.dark-mode {
     background-color: #121212; /* Dark background */
-    color: white; /* Dark text color */
+    color: white; /* Light text color */
 }
 
 header.dark-mode {
     background-color: #1e1e1e; /* Dark header background */
 }
 
-.cta-button {
-    background-color: #28a745; /* Light mode button color */
-    color: white;
+.weather-card-content {
+    background-color: #1e1e1e; /* Dark background for weather card */
+    color: white; /* Light text color */
+    border: 1px solid #444; /* Darker border for the card */
 }
 
-body.dark-mode .cta-button {
-    background-color: #006400; /* Dark mode button color */
+.weather-card-content h3,
+.weather-card-content p {
+    color: white; /* Ensure text is white for readability */
+}
+
+.forecast-list {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+    margin: 20px 0 0; /* Margin above forecast list */
+}
+
+.forecast-list li {
+    background: #333; /* Dark background for forecast items */
+    color: white; /* Light text color */
+    margin: 5px 0; /* Space between items */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s; /* Add transition for scaling */
+}
+
+.forecast-list li:hover {
+    background: #555; /* Highlight on hover */
+}
+
+/* Weather Icon Styles for Dark Mode */
+.weather-icon {
+    filter: brightness(1.2); /* Adjust icon brightness for visibility */
 }
