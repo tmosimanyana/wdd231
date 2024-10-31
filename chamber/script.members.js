@@ -70,4 +70,8 @@ viewToggle.addEventListener('click', () => {
         viewToggle.textContent = 'Switch to List View';
     }
 });
+// script.members.js
+document.getElementById('theme-toggle').addEventListener('click', function() {
+    document.body.classList.toggle('dark-mode');
+});
 
