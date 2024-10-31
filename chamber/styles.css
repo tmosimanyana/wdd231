@@ -286,3 +286,23 @@ header.dark-mode {
         color: HighlightText; /* Highlight text color for button */
     }
 }
+.members-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.member-item {
+    flex: 1 1 30%; /* Default grid view */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.list-view .member-item {
+    flex: 1 1 100%; /* Full width for list view */
+}
+
+.grid-view .member-item {
+    flex: 1 1 30%; /* 3 items per row for grid view */
+}
