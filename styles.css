@@ -218,3 +218,62 @@ header.dark-mode {
 body.dark-mode .cta-button {
     background-color: #006400; /* Dark mode button color */
 }
+.weather-card {
+    background: linear-gradient(135deg, #f0f8ff, #e6f2ff); /* Gradient background */
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth shadow and scaling */
+    position: relative; /* For positioning elements inside */
+}
+
+.weather-card:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.weather-card h2 {
+    color: #333;
+    font-size: 1.8rem; /* Increased font size */
+    margin-bottom: 10px;
+}
+
+.weather-card p {
+    font-size: 1.2rem; /* Increased font size */
+    margin: 5px 0;
+}
+
+.weather-icon {
+    margin: 10px 0;
+}
+
+.weather-icon img {
+    width: 50px; /* Set a fixed width for icons */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.weather-card ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 15px; /* Space above the list */
+}
+
+.weather-card li {
+    margin: 5px 0;
+    font-size: 1rem; /* Slightly larger font size */
+    color: #555; /* Darker color for list items */
+}
+
+/* Dark Mode Styles for Weather Card */
+body.dark-mode .weather-card {
+    background: linear-gradient(135deg, #1a1a1a, #333); /* Dark gradient for dark mode */
+    color: white; /* White text for contrast */
+}
+
+body.dark-mode .weather-card h2,
+body.dark-mode .weather-card p,
+body.dark-mode .weather-card li {
+    color: #ddd; /* Lighter text color for dark mode */
+}
