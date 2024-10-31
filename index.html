@@ -4,40 +4,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kweneng Agriculture Chamber of Commerce</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Header Section -->
     <header>
-        <div class="logo">Kweneng Agriculture Chamber of Commerce</div>
+        <div class="logo">
+            <h1>Kweneng Agriculture Chamber of Commerce</h1>
+        </div>
         <nav>
-            <a href="#">Home</a>
-            <a href="#">Directory</a>
-            <a href="#">Join</a>
-            <a href="#">Discover</a>
-            <button class="theme-toggle">🌓</button>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Directory</a></li>
+                <li><a href="#">Join</a></li>
+                <li><a href="#">Discover</a></li>
+            </ul>
         </nav>
+        <button class="dark-mode-toggle">Dark Mode</button>
     </header>
 
-    <!-- Hero Image Section -->
-    <section class="hero">
-        <div class="hero-image">
-            <button class="keynote-button">Keynote Tickets</button>
-        </div>
-    </section>
-
-    <!-- Main Content -->
+    <!-- Main Content Section -->
     <main>
-        <section class="info-section">
+        <!-- Hero Section -->
+        <section class="banner">
+            <div class="hero-image">
+                <button class="keynote-button">Keynote Tickets</button>
+            </div>
+        </section>
+
+        <!-- Info Section -->
+        <section class="info">
             <div class="events">
                 <h2>Events</h2>
                 <!-- Event details go here -->
             </div>
             <div class="current-weather">
                 <h2>Current Weather</h2>
-                <p>75°F</p>
-                <p>Party Cloudy</p>
                 <ul>
+                    <li>75°F</li>
+                    <li>Partly Cloudy</li>
                     <li>High: 85°F</li>
                     <li>Low: 52°F</li>
                     <li>Humidity: 34%</li>
@@ -55,28 +60,47 @@
             </div>
         </section>
 
-        <section class="business-directory">
-            <div class="business-card">
-                
+        <!-- Business Listings Section -->
+        <section class="business-listings">
+            <div class="business">
+                <h3>Business Name</h3>
+                <p>Business Tag Line</p>
+                <p>Email: info@gmail.com</p>
+                <p>Phone: 800-555-1234</p>
+                <p>URL: mybusiness.com</p>
             </div>
-            <!-- Repeat business-card for additional businesses -->
+            <div class="business">
+                <h3>Business Name</h3>
+                <p>Business Tag Line</p>
+                <p>Email: info@gmail.com</p>
+                <p>Phone: 800-555-1234</p>
+                <p>URL: mybusiness.com</p>
+            </div>
+            <div class="business">
+                <h3>Business Name</h3>
+                <p>Business Tag Line</p>
+                <p>Email: info@gmail.com</p>
+                <p>Phone: 800-555-1234</p>
+                <p>URL: mybusiness.com</p>
+            </div>
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer Section -->
     <footer>
-        <address>
-            Molepolole Agriculture Chamber of Commerce<br>
-            P O BOX 894, Molepolole, Botswana<br>
-            mbothepha@gmail.com<br>
-            (267) 76376661
-        </address>
+        <p>Kweneng Agriculture Chamber of Commerce</p>
+        <p>P O BOX 894, Molepolole, Botswana</p>
+        <p>Email: mbothepha@gmail.com</p>
+        <p>Phone: (267) 76376661</p>
         <div class="social-links">
             <a href="#">YouTube</a>
             <a href="#">Twitter</a>
             <a href="#">LinkedIn</a>
         </div>
-        <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
+        <p>© 2024 Kweneng Agriculture Chamber of Commerce</p>
     </footer>
+
+    <!-- Linking JavaScript file -->
+    <script src="script.js"></script>
 </body>
 </html>

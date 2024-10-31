@@ -1,0 +1,72 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+header, footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+header .logo h1 {
+    font-size: 1.5em;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+.hero-image {
+    background-color: #ccc;
+    height: 300px;
+    position: relative;
+}
+
+.keynote-button {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 20px;
+    background-color: #555;
+    color: #fff;
+}
+
+.info {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.business-listings {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.dark-mode {
+    background-color: #1e1e1e;
+    color: #f0f0f0;
+}
+
+.dark-mode header,
+.dark-mode footer {
+    background-color: #111;
+}
+
+.dark-mode .keynote-button {
+    background-color: #555;
+    color: #f0f0f0;
+}
