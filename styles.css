@@ -1,72 +1,165 @@
-/* General Styles */
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
     color: #333;
 }
 
-header, footer {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-}
-
-header .logo h1 {
-    font-size: 1.5em;
-}
-
-nav ul {
+/* Header Styling */
+header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #d3d3d3;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header .logo img {
+    width: 50px;
+    height: auto;
+}
+
+header nav ul {
     list-style: none;
-    padding: 0;
+    display: flex;
 }
 
-nav ul li {
-    margin-right: 20px;
+header nav ul li {
+    margin-left: 20px;
 }
 
-.hero-image {
-    background-color: #ccc;
-    height: 300px;
+header nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+header .dark-mode-toggle {
+    background-color: #555;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+
+/* Banner Section */
+.banner {
     position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.keynote-button {
+.banner .hero-image {
+    width: 100%;
+    height: 100%;
+    background: url('placeholder.jpg') center/cover no-repeat;
+}
+
+.banner .keynote-button {
     position: absolute;
     bottom: 20px;
-    left: 20px;
     padding: 10px 20px;
-    background-color: #555;
+    background-color: #333;
     color: #fff;
+    border: none;
+    cursor: pointer;
 }
 
+/* Main Content Section */
 .info {
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
 }
 
+.info > div {
+    flex: 1;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ddd;
+}
+
+.info h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.current-weather ul, .weather-forecast ul {
+    list-style: none;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Business Listings */
 .business-listings {
     display: flex;
-    justify-content: space-around;
-    margin-top: 20px;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
 }
 
-footer {
+.business-listings .business {
+    flex: 1;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border: 1px solid #ddd;
     text-align: center;
-    padding: 20px 10px;
 }
 
-.dark-mode {
-    background-color: #1e1e1e;
-    color: #f0f0f0;
+.business-listings .business h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
 }
 
-.dark-mode header,
-.dark-mode footer {
-    background-color: #111;
+.business-listings .business p {
+    margin: 5px 0;
 }
 
-.dark-mode .keynote-button {
-    background-color: #555;
-    color: #f0f0f0;
+/* Footer Styling */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: #d3d3d3;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 8px 0;
+}
+
+footer .social-links a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .info, .business-listings {
+        flex-direction: column;
+    }
+
+    .banner {
+        height: 200px;
+    }
 }
