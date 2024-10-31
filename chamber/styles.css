@@ -9,13 +9,24 @@ html {
     box-sizing: inherit;
 }
 
+:root {
+    --primary-color: #4CAF50;  /* Main brand color */
+    --secondary-color: #ffffff;  /* Background color */
+    --dark-bg: #121212;  /* Dark mode background */
+    --dark-text: #ffffff;  /* Dark mode text */
+    --light-bg: #f9f9f9;  /* Light mode background for member items */
+    --dark-bg-alt: #1f1f1f;  /* Dark mode background for member items */
+    --text-color: #333;  /* Default text color */
+    --hover-color: rgba(255, 255, 255, 0.2);  /* Hover color for links */
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #333;
-    background-color: #ffffff;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -25,8 +36,8 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #4CAF50; /* Main brand color */
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
 }
 
 .logo img {
@@ -40,21 +51,28 @@ nav ul {
 }
 
 nav a {
-    color: white;
+    color: var(--secondary-color);
     text-decoration: none;
     padding: 10px;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Accessibility: Focus styles for keyboard navigation */
+nav a:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
 }
 
 nav a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* Light hover effect */
+    background-color: var(--hover-color);
 }
 
+/* Dark mode toggle button */
 .dark-mode-toggle {
     background-color: transparent;
-    color: white;
-    border: 1px solid white;
+    color: var(--secondary-color);
+    border: 1px solid var(--secondary-color);
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
@@ -75,7 +93,7 @@ main {
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: var(--light-bg);
     transition: transform 0.2s;
 }
 
@@ -85,8 +103,8 @@ main {
 
 /* Footer styles */
 footer {
-    background-color: #4CAF50; /* Main brand color */
-    color: white;
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
     text-align: center;
     padding: 20px;
 }
@@ -100,15 +118,15 @@ footer p {
 }
 
 .social-links a {
-    color: white;
+    color: var(--secondary-color);
     margin: 0 10px;
     text-decoration: none;
 }
 
 /* Dark mode styles */
 body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
 }
 
 body.dark-mode header {
@@ -116,7 +134,7 @@ body.dark-mode header {
 }
 
 body.dark-mode .member-item {
-    background-color: #1f1f1f;
+    background-color: var(--dark-bg-alt);
     border: 1px solid #333;
 }
 
@@ -146,5 +164,19 @@ body.dark-mode footer {
 
     .member-item {
         margin: 5px 0;
+    }
+}
+
+/* Animation for membership cards on initial load */
+.card {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
