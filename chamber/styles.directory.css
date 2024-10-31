@@ -1,73 +1,31 @@
-/* styles.directory.css */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-header {
-    background-color: #3c8c3f;
-    color: white;
-    padding: 1rem;
-}
-
-.logo img {
-    max-width: 50px;
-    margin-right: 10px;
-}
-
-.members-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
+/* Member card default (grid) styling */
 .member-card {
     border: 1px solid #ddd;
-    border-radius: 8px;
     padding: 1rem;
+    margin: 1rem;
     text-align: center;
-    width: calc(25% - 20px); /* Grid view - 4 items per row */
+    width: calc(33.33% - 2rem); /* 3 columns */
+    box-sizing: border-box;
+    transition: transform 0.3s;
 }
 
 .member-card img {
     max-width: 100%;
-    border-radius: 8px;
+    height: auto;
 }
 
-.member-card.list {
-    width: 100%; /* Full width for list view */
+.member-card h3 {
+    font-size: 1.5rem;
+}
+
+.members-container.list-view .member-card {
+    width: 100%; /* Full-width for list view */
+    text-align: left;
     display: flex;
     align-items: center;
 }
 
-.member-card.list img {
-    max-width: 80px; /* Smaller image for list view */
-    margin-right: 20px;
-}
-
-.view-toggle {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #3c8c3f;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-footer {
-    background-color: #3c8c3f;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-}
-
-.social-links a {
-    margin: 0 10px;
-    color: white;
+.members-container.list-view .member-card img {
+    width: 100px; /* Smaller logo for list view */
+    margin-right: 1rem;
 }

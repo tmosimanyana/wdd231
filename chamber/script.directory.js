@@ -1,62 +1,48 @@
-// Fetching and displaying member data
-async function fetchMembers() {
+// Fetch member data and display it
+async function fetchAndDisplayMembers() {
     try {
-        const response = await fetch('data/members.json');
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
-        }
-        const membersData = await response.json();
-        displayMembers(membersData); // Display members dynamically
+        const response = await fetch('members.json'); // Update path as necessary
+        if (!response.ok) throw new Error('Failed to fetch members data');
+        const members = await response.json();
+        displayMembers(members);
     } catch (error) {
         console.error('Error fetching member data:', error);
     }
 }
 
-// Display members with grid or list view classes
-function displayMembers(membersData) {
-    const membersContainer = document.getElementById("members-container");
-    membersContainer.innerHTML = ""; // Clear any existing content
-
-    membersData.forEach(member => {
-        const memberItem = document.createElement('div');
-        memberItem.className = `members-item grid`; // Default to grid view
-
-        memberItem.innerHTML = `
-            <img src="${member.image}" alt="${member.name}" loading="lazy">
-            <h3>${member.name}</h3>
-            <p>Phone: ${member.phone}</p>
-            <p>Address: ${member.address}</p>
-            <p>Membership Level: ${member.membershipLevel}</p>
-            <a href="#" aria-label="Visit ${member.name} website">Visit Website</a>
+// Function to display members in grid or list view
+function displayMembers(members) {
+    const container = document.getElementById('members-container');
+    container.innerHTML = ''; // Clear existing content
+    members.forEach(member => {
+        const memberCard = document.createElement('div');
+        memberCard.classList.add('member-card');
+        memberCard.innerHTML = `
+            <img src="${member.logo}" alt="${member.name} Logo" class="member-logo" />
+            <h3 class="member-name">${member.name}</h3>
+            <p class="member-phone">Phone: ${member.phone}</p>
+            <p class="member-address">Address: ${member.address}</p>
+            <a href="${member.website}" target="_blank" class="member-website">Website</a>
+            <p class="member-level">Membership Level: ${member.membershipLevel}</p>
         `;
-        membersContainer.appendChild(memberItem);
+        container.appendChild(memberCard);
     });
 }
 
-// Toggle between grid and list views
-function toggleView(isGridView) {
-    const membersContainer = document.getElementById("members-container");
-    const memberItems = membersContainer.querySelectorAll('.members-item');
-
-    if (isGridView) {
-        memberItems.forEach(item => item.className = 'members-item grid');
-        document.getElementById("view-toggle").textContent = "Switch to List View";
+// Toggle between grid and list view
+function toggleView() {
+    const container = document.getElementById('members-container');
+    const toggleButton = document.getElementById('view-toggle');
+    container.classList.toggle('list-view'); // Toggle CSS class for styling
+    if (container.classList.contains('list-view')) {
+        toggleButton.textContent = 'Switch to Grid View';
     } else {
-        memberItems.forEach(item => item.className = 'members-item list');
-        document.getElementById("view-toggle").textContent = "Switch to Grid View";
+        toggleButton.textContent = 'Switch to List View';
     }
 }
 
-// Set current year and last modified date in the footer
-document.getElementById('currentYear').textContent = new Date().getFullYear();
-document.getElementById('lastModified').textContent = `Last modified: ${document.lastModified}`;
+// Event listener for the view toggle button
+document.getElementById('view-toggle').addEventListener('click', toggleView);
 
-// Fetch members on page load
-fetchMembers();
-
-// Toggle view button functionality
-document.getElementById("view-toggle").addEventListener("click", () => {
-    const viewToggleButton = document.getElementById("view-toggle");
-    const isGridView = viewToggleButton.textContent.includes("Grid");
-    toggleView(isGridView);
-});
+// Call the fetch function on page load
+document.addEventListener('DOMContentLoaded', fetchAndDisplayMembers);
