@@ -1,6 +1,5 @@
-// Replace 'YOUR_API_KEY' with your actual OpenWeather API key.
-const API_KEY = 'YOUR_API_KEY';
-const CITY_ID = '2332453'; // Replace this with the city ID for your desired location
+const API_KEY = '5c7e429e1b20f30b60de00a18bcc0e92';
+const CITY_ID = '933773'; // Gaborone City ID
 
 // Dark Mode Toggle
 const darkModeToggle = document.querySelector('.dark-mode-toggle');
@@ -38,8 +37,8 @@ async function fetchWeatherForecast() {
         const data = await response.json();
 
         const forecast = data.list
-            .filter((item, index) => index % 8 === 0)
-            .slice(0, 3)
+            .filter((item, index) => index % 8 === 0) // Get data for every 8th item (3-hour intervals)
+            .slice(0, 3) // Limit to 3 days
             .map(item => ({
                 day: new Date(item.dt * 1000).toLocaleDateString('en-US', { weekday: 'long' }),
                 temp: `${item.main.temp}°F`
