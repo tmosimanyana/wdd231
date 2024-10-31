@@ -3,15 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Kweneng Agriculture Chamber of Commerce - Supporting agriculture in Kweneng, Botswana. Join us for events and resources.">
-    <meta name="keywords" content="Agriculture, Commerce, Kweneng, Botswana">
+    <meta name="description" content="Join the Kweneng Agriculture Chamber of Commerce">
     <meta name="author" content="Tinny Bothepha Mosimanyana">
-    <meta property="og:title" content="Kweneng Agriculture Chamber of Commerce" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://tmosimanyana.github.io/wdd231/chamber/images/hero-medium.webp" />
-    <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html" />
-    <meta property="og:description" content="Supporting agriculture in Kweneng, Botswana. Join us for events, member information, and resources." />
-    <title>Kweneng Agriculture Chamber of Commerce - Home</title>
+    <title>Join Kweneng Agriculture Chamber of Commerce</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
@@ -28,46 +22,115 @@
                 <li><a href="directory.html">Directory</a></li>
                 <li><a href="join.html">Join</a></li>
                 <li><a href="discover.html">Discover</a></li>
-                
             </ul>
         </nav>
         <button class="dark-mode-toggle" aria-label="Toggle Dark Mode" id="theme-toggle">Dark Mode</button>
     </header>
 
     <!-- Main Content Section -->
-    <main>
-        <!-- Hero Section -->
+    <main role="main">
         <section class="banner">
-            <div class="hero-image">
-                <img src="images/hero-medium.webp" alt="Hero Image" loading="lazy" />
-                <a href="#" class="cta-button">Join the Chamber of Commerce</a>
+            <h2>Join Us</h2>
+        </section>
+
+        <!-- Join Form Section -->
+        <section class="join-form">
+            <form action="thankyou.html" method="get" id="membership-form">
+                <label>
+                    First Name:
+                    <input type="text" name="first-name" title="Your first name" required autocomplete="given-name">
+                </label>
+                <label>
+                    Last Name:
+                    <input type="text" name="last-name" title="Your last name" required autocomplete="family-name">
+                </label>
+                <label>
+                    Organizational Title:
+                    <input type="text" name="org-title" title="Your title within the organization" autocomplete="organization-title" pattern="[A-Za-z\- ]{7,}" required>
+                </label>
+                <label>
+                    Email:
+                    <input type="email" name="email" title="Your email address" required autocomplete="email" placeholder="example@example.com">
+                </label>
+                <label>
+                    Mobile Phone:
+                    <input type="tel" name="mobile" title="Your mobile number" required autocomplete="tel">
+                </label>
+                <label>
+                    Organization Name:
+                    <input type="text" name="organization" title="Your organization name" required autocomplete="organization">
+                </label>
+                <label>
+                    Membership Level:
+                    <select name="membership-level" title="Select your membership level" required>
+                        <option value="np">NP Membership (No fee)</option>
+                        <option value="bronze">Bronze Membership</option>
+                        <option value="silver">Silver Membership</option>
+                        <option value="gold">Gold Membership</option>
+                    </select>
+                </label>
+                <label>
+                    Description:
+                    <textarea name="description" title="Tell us about your business/organization"></textarea>
+                </label>
+                <input type="hidden" name="timestamp" id="timestamp" value="">
+                <input type="submit" value="Submit" aria-label="Submit membership application">
+            </form>
+        </section>
+
+        <!-- Membership Level Cards -->
+        <section class="membership-cards">
+            <div class="membership-card" id="np-card">
+                <h3>NP Membership</h3>
+                <p>No fee for non-profit organizations.</p>
+                <a href="#" class="info-link" data-modal="npModal">More Info</a>
+            </div>
+            <div class="membership-card" id="bronze-card">
+                <h3>Bronze Membership</h3>
+                <p>Basic membership with limited benefits.</p>
+                <a href="#" class="info-link" data-modal="bronzeModal">More Info</a>
+            </div>
+            <div class="membership-card" id="silver-card">
+                <h3>Silver Membership</h3>
+                <p>Includes discounts on events and advertising.</p>
+                <a href="#" class="info-link" data-modal="silverModal">More Info</a>
+            </div>
+            <div class="membership-card" id="gold-card">
+                <h3>Gold Membership</h3>
+                <p>All benefits included, plus special events.</p>
+                <a href="#" class="info-link" data-modal="goldModal">More Info</a>
             </div>
         </section>
 
-        <!-- Weather Section -->
-        <section class="weather-card">
-            <h2>Weather in <span id="molepolole">Molepolole</span></h2>
-            <div class="weather-icon">
-                <img id="weather-icon" src="" alt="Weather Icon" />
+        <!-- Modals for Membership Benefits -->
+        <div id="npModal" class="modal">
+            <div class="modal-content">
+                <span class="close" data-modal="npModal">&times;</span>
+                <h2>NP Membership Benefits</h2>
+                <p>No fee, eligibility for grants, and access to resources.</p>
             </div>
-            <p id="temperature">Temperature: <span id="temp-value"></span></p>
-            <p id="description">Description: <span id="weather-description"></span></p>
-            <ul>
-                <li>Humidity: <span id="humidity"></span></li>
-                <li>Wind Speed: <span id="wind-speed"></span></li>
-            </ul>
-        </section>
-
-    </ul>
-        </section>
-
-        <!-- Company Spotlights Section -->
-        <section class="spotlights">
-            <h2>Company Spotlights</h2>
-            <div class="spotlight-container" id="spotlight-container">
-                <!-- JavaScript will populate spotlight member data here -->
+        </div>
+        <div id="bronzeModal" class="modal">
+            <div class="modal-content">
+                <span class="close" data-modal="bronzeModal">&times;</span>
+                <h2>Bronze Membership Benefits</h2>
+                <p>Discounts on events, access to our network, and more.</p>
             </div>
-        </section>
+        </div>
+        <div id="silverModal" class="modal">
+            <div class="modal-content">
+                <span class="close" data-modal="silverModal">&times;</span>
+                <h2>Silver Membership Benefits</h2>
+                <p>Increased advertising opportunities and event discounts.</p>
+            </div>
+        </div>
+        <div id="goldModal" class="modal">
+            <div class="modal-content">
+                <span class="close" data-modal="goldModal">&times;</span>
+                <h2>Gold Membership Benefits</h2>
+                <p>All benefits included, priority access to events, and premium advertising.</p>
+            </div>
+        </div>
     </main>
 
     <!-- Footer Section -->
@@ -81,20 +144,10 @@
             <a href="#">Twitter</a>
             <a href="#">LinkedIn</a>
         </div>
-        <p id="copyrightYear">© <span id="currentYear"></span> Kweneng Agriculture Chamber of Commerce</p>
+        <p>© <span id="currentYear"></span> Kweneng Agriculture Chamber of Commerce</p>
         <p id="lastModified"></p>
     </footer>
 
-    <!-- Linking JavaScript files -->
-    <script src="script.js" defer></script>
-    <script src="script.weather.js" defer></script>
-    <script src="script.members.js" defer></script>
-    <script>
-        // Get current year for copyright
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-
-        // Display last modified date
-        document.getElementById('lastModified').textContent = `Last modified: ${document.lastModified}`;
-    </script>
+    <script src="scripts.js"></script>
 </body>
 </html>
