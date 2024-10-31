@@ -1,146 +1,158 @@
+/* General Reset */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* Body and Global Styles */
 body {
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif; /* Using the imported Google Font */
+    font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: #ffffff;
+    color: #333333;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-header {
-    background-color: #333; /* Dark background for header */
-    color: #fff; /* White text color */
+.dark-mode {
+    background-color: #121212;
+    color: #eeeeee;
+}
+
+header, footer {
+    background-color: #005b96;
+    color: #ffffff;
     padding: 1rem;
-    display: grid;
-    grid-template-columns: auto 1fr; /* Logo and nav side by side */
-    align-items: center; /* Center items vertically */
-}
-
-header img {
-    width: 80px; /* Logo size */
-}
-
-nav {
-    display: flex; /* Using Flexbox for navigation */
-    justify-content: space-around; /* Space between nav items */
-}
-
-nav a {
-    color: #fff;
-    padding: 10px;
-    text-decoration: none;
-    border-radius: 5px; /* Rounded corners for nav items */
-    transition: background-color 0.3s; /* Transition for hover effect */
-}
-
-nav a:hover {
-    background-color: #575757; /* Darker hover effect */
-}
-
-main {
-    max-width: 800px; /* Limit the width of the main content */
-    margin: 0 auto; /* Center align the main content */
-    padding: 1rem;
-}
-
-section {
-    margin: 1.5rem 0; /* Space between sections */
-    padding: 1rem;
-    border: 1px solid #ddd; /* Add a border to sections */
-    border-radius: 5px; /* Rounded corners */
-    background-color: #f9f9f9; /* Light background for sections */
-}
-
-aside {
-    width: 20rem; /* Fixed width for aside */
-    margin: 1rem;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 1rem;
-    background-color: #eee;
-    color: #333;
     text-align: center;
 }
 
-aside img {
-    width: 200px; /* Fixed width for aside images */
-    height: auto; /* Maintain aspect ratio */
+header .logo img {
+    width: 50px;
+    margin-right: 10px;
 }
 
-main img {
-    width: 150px; /* Fixed width for main images */
-    height: auto; /* Maintain aspect ratio */
-}
-
-footer {
-    display: flex; /* Flexbox for footer */
-    justify-content: space-between; /* Space between items */
-    align-items: center; /* Center items vertically */
-    margin-top: 15px; /* Add top margin */
-    padding: 1rem;
-    border-top: 1px solid #000; /* Add top border */
-    background-color: #f4f4f4; /* Light background for footer */
-}
-
-.footer-social {
-    display: flex; /* Flex layout for social icons */
-    gap: 1rem; /* Space between social icons */
-}
-
-.footer-social img {
-    width: 30px; /* Size for social icons */
-}
-
-/* Course card styles */
-.course-card {
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 15px;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.course-card.completed {
-    background-color: #a7ffeb; /* Light blue for completed courses */
-    border-left: 5px solid #007BFF; /* Blue left border */
-}
-
-/* Flex styles for filter buttons */
-.filter-buttons {
+header nav ul {
+    list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 1rem;
 }
 
-/* History section styles */
-#history {
-    margin: 2rem 0;
+header nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.cta-button:hover {
+    background-color: #218838;
+}
+
+/* Main Content */
+.banner {
+    text-align: center;
+    padding: 2rem;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Responsive Weather Section */
+.weather {
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 500px;
+}
+
+.weather-card {
+    background: #f1f1f1;
     padding: 1rem;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9; /* Light background for the History section */
+    border-radius: 5px;
 }
 
-/* Adventures section styles */
-#adventures {
-    margin: 2rem 0;
+/* Responsive Spotlight Section */
+.spotlights {
+    margin: 2rem auto;
+    max-width: 800px;
+    text-align: center;
 }
 
-.adventure-images {
-    display: flex; /* Flex layout for adventure images */
-    gap: 1rem; /* Space between images */
-    justify-content: space-around; /* Distribute space around the images */
-    flex-wrap: wrap; /* Wrap images if necessary */
+.spotlight-container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
 }
 
-figure {
-    text-align: center; /* Center text below images */
+.spotlight-item {
+    background-color: #e0e0e0;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: left;
 }
 
-figure img {
-    width: 150px; /* Set a uniform width for images */
-    border-radius: 10px; /* Rounded corners for images */
+.spotlight-item img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+/* Footer Styles */
+footer p, footer .social-links {
+    margin: 0.5rem 0;
+}
+
+footer .social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+footer .social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    background: transparent;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dark-mode .dark-mode-toggle {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* Responsive Design */
+@media (min-width: 600px) {
+    .spotlight-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 768px) {
+    .spotlight-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
