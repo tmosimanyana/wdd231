@@ -1,0 +1,31 @@
+/* Member card default (grid) styling */
+.member-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+    width: calc(33.33% - 2rem); /* 3 columns */
+    box-sizing: border-box;
+    transition: transform 0.3s;
+}
+
+.member-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.member-card h3 {
+    font-size: 1.5rem;
+}
+
+.members-container.list-view .member-card {
+    width: 100%; /* Full-width for list view */
+    text-align: left;
+    display: flex;
+    align-items: center;
+}
+
+.members-container.list-view .member-card img {
+    width: 100px; /* Smaller logo for list view */
+    margin-right: 1rem;
+}
