@@ -13,6 +13,7 @@
     <meta property="og:description" content="Supporting agriculture in Kweneng, Botswana. Join us for events, member information, and resources." />
     <title>Kweneng Agriculture Chamber of Commerce - Home</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.directory.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
@@ -63,12 +64,12 @@
     </section>
         </section>
 
-        <!-- Company Spotlights Section -->
-        <section class="spotlights" aria-live="polite">
-            <h2>Company Spotlights</h2>
-            <div class="spotlight-container" id="spotlight-container">
+        <!-- Company members  Section -->
+        <section class="members" aria-live="polite">
+            <h2>Business Directory </h2>
+            <div class="members-container" id="members-container">
                 <!-- JavaScript will populate spotlight member data here -->
-                <div class="spotlight-item">
+                <div class="members-item">
                     <img src="images/notwane-poultry.webp" alt="Notwane Poultry" loading="lazy">
                     <h3>Notwane Poultry</h3>
                     <p>Phone: +267 999 0000</p>
@@ -76,7 +77,7 @@
                     <p>Membership Level: Membership Level 2</p>
                     <a href="#">Visit Website</a>
                 </div>
-                <div class="spotlight-item">
+                <div class="members-item">
                     <img src="images/greenhouse-technologies.webp" alt="Greenhouse Technologies" loading="lazy">
                     <h3>Greenhouse Technologies</h3>
                     <p>Phone: +267 111 2222</p>
@@ -84,7 +85,7 @@
                     <p>Membership Level: Membership Level 2</p>
                     <a href="#">Visit Website</a>
                 </div>
-                <div class="spotlight-item">
+                <div class="members-item">
                     <img src="images/bamb-headquarters.webp" alt="BAMB Headquarters" loading="lazy">
                     <h3>BAMB Headquarters</h3>
                     <p>Phone: +267 123 4567</p>
@@ -112,9 +113,8 @@
     </footer>
 
     <!-- JavaScript for dynamic content and accessibility -->
-    <script src="script.js" defer></script>
-    <script src="script.weather.js" defer></script>
-    <script src="script.members.js" defer></script>
+    <script src="script.directory.js" defer></script>
+
     <script>
         // Get current year for copyright
         document.getElementById('currentYear').textContent = new Date().getFullYear();

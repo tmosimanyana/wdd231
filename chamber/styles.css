@@ -218,3 +218,12 @@ header.dark-mode {
 body.dark-mode .cta-button {
     background-color: #006400; /* Dark mode button color */
 }
+nav a {
+    text-decoration: none; /* Remove underline */
+    color: #fff; /* Change link color */
+    padding: 10px; /* Add some padding for better click area */
+}
+
+nav a:hover {
+    background-color: #555; /* Change background on hover */
+}
