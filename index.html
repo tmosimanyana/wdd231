@@ -12,7 +12,7 @@
     <meta property="og:url" content="https://tmosimanyana.github.io/wdd231/chamber/index.html" />
     <meta property="og:description" content="Supporting agriculture in Kweneng, Botswana. Join us for events, member information, and resources." />
     <title>Kweneng Agriculture Chamber of Commerce - Home</title>
-    <link rel="stylesheet" href="styles.css"> <!-- External CSS link -->
+    <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon -->
 </head>
 <body>
@@ -42,15 +42,7 @@
                 <a href="#" class="cta-button">Join the Chamber of Commerce</a>
             </div>
         </section>
-        
-        <!-- Weather Section -->
-        <section class="weather">
-            <h2>Current Weather</h2>
-            <div id="weather-container" class="weather-card">
-                <!-- Weather data will be populated here by JavaScript -->
-            </div>
         </section>
-
         <!-- Company Spotlights Section -->
         <section class="spotlights">
             <h2>Company Spotlights</h2>
@@ -75,12 +67,12 @@
         <p id="lastModified"></p> <!-- Last modified date -->
     </footer>
 
-    <!-- Linking JavaScript files with defer attribute -->
+    <!-- Linking JavaScript files -->
     <script src="script.js" defer></script>
     <script src="script.weather.js" defer></script>
     <script src="script.members.js" defer></script>
     <script>
-        // Display current year for copyright
+        // Get current year for copyright
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
         // Display last modified date
