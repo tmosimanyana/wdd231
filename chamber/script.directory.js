@@ -1,4 +1,3 @@
-// Function to fetch members data
 async function fetchMembers() {
     try {
         const response = await fetch('chamber/data/members.json');
@@ -6,46 +5,42 @@ async function fetchMembers() {
             throw new Error('Network response was not ok');
         }
         const membersData = await response.json();
-        displayMembers(membersData); // Display all members
+        displayMembers(membersData); // Display all members dynamically
     } catch (error) {
         console.error('There was a problem with the fetch operation:', error);
     }
 }
 
-// Function to display members in either grid or list view
+// Function to display members in grid or list view
 function displayMembers(membersData) {
     const membersContainer = document.getElementById("members-container");
-    membersContainer.innerHTML = ""; // Clear existing content
+    membersContainer.innerHTML = ""; // Clear any existing content
 
     membersData.forEach(member => {
-        const memberCard = document.createElement('div');
-        memberCard.className = `member-card grid`; // Default to grid class
-        memberCard.innerHTML = `
-            <img src="${member.image}" alt="${member.name} Logo" />
+        const memberItem = document.createElement('div');
+        memberItem.className = `members-item grid`; // Default to grid class
+        memberItem.innerHTML = `
+            <img src="${member.image}" alt="${member.name}" loading="lazy">
             <h3>${member.name}</h3>
             <p>Phone: ${member.phone}</p>
             <p>Address: ${member.address}</p>
             <p>Membership Level: ${member.membershipLevel}</p>
-            <a href="#" class="website-link">Visit Website</a>
+            <a href="#" aria-label="Visit ${member.name} website">Visit Website</a>
         `;
-        membersContainer.appendChild(memberCard);
+        membersContainer.appendChild(memberItem);
     });
 }
 
-// Function to toggle between grid and list views
+// Function to toggle between grid and list view
 function toggleView(isGridView) {
     const membersContainer = document.getElementById("members-container");
-    const memberCards = membersContainer.querySelectorAll('.member-card');
+    const memberItems = membersContainer.querySelectorAll('.members-item');
 
     if (isGridView) {
-        memberCards.forEach(card => {
-            card.className = 'member-card grid'; // Apply grid class
-        });
+        memberItems.forEach(item => item.className = 'members-item grid');
         document.getElementById("view-toggle").textContent = "Switch to List View";
     } else {
-        memberCards.forEach(card => {
-            card.className = 'member-card list'; // Apply list class
-        });
+        memberItems.forEach(item => item.className = 'members-item list');
         document.getElementById("view-toggle").textContent = "Switch to Grid View";
     }
 }
@@ -53,7 +48,7 @@ function toggleView(isGridView) {
 // Call the function on page load
 fetchMembers();
 
-// Handle view toggle button click
+// Toggle view button functionality
 document.getElementById("view-toggle").addEventListener("click", () => {
     const viewToggleButton = document.getElementById("view-toggle");
     const isGridView = viewToggleButton.textContent.includes("Grid");
