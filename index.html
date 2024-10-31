@@ -3,49 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tinny Bothepha Mosimanyana | Chamber of Commerce</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <script src="script.js" defer></script> <!-- Include external JS -->
+    <title>Kweneng Agriculture Chamber of Commerce</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Header Section -->
     <header>
-        <div class="header-grid">
-            <img src="images/logo.webp" alt="Logo">
-            <h1>Tinny Bothepha Mosimanyana | WDD 231</h1>
-            <nav>
-                <a href="#">Home</a>
-                <a href="wwr/">Chamber</a>
-                <a href="https://github.com/tmosimanyana">GitHub Profile</a>
-                <a href="https://www.linkedin.com/in/tinny29/">LinkedIn</a>
-            </nav>
-        </div>
+        <div class="logo">Kweneng Agriculture Chamber of Commerce</div>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">Directory</a>
+            <a href="#">Join</a>
+            <a href="#">Discover</a>
+            <button class="theme-toggle">🌓</button>
+        </nav>
     </header>
 
+    <!-- Hero Image Section -->
+    <section class="hero">
+        <div class="hero-image">
+            <button class="keynote-button">Keynote Tickets</button>
+        </div>
+    </section>
+
+    <!-- Main Content -->
     <main>
-        <section id="intro">
-            <img src="images/profile.webp" alt="Hello, my name is Tinny Bothepha Mosimanyana" width="200">
-            <p>Hello! My name is Tinny Bothepha Mosimanyana and I am from Botswana. I enjoy web development and am passionate about technology.</p>
-        </section>
-        
-        <section id="weather">
-            <h2>Current Weather</h2>
-            <div id="weather-data"></div>
+        <section class="info-section">
+            <div class="events">
+                <h2>Events</h2>
+                <!-- Event details go here -->
+            </div>
+            <div class="current-weather">
+                <h2>Current Weather</h2>
+                <p>75°F</p>
+                <p>Party Cloudy</p>
+                <ul>
+                    <li>High: 85°F</li>
+                    <li>Low: 52°F</li>
+                    <li>Humidity: 34%</li>
+                    <li>Sunrise: 7:30am</li>
+                    <li>Sunset: 9:59pm</li>
+                </ul>
+            </div>
+            <div class="weather-forecast">
+                <h2>Weather Forecast</h2>
+                <ul>
+                    <li>Today: 90°F</li>
+                    <li>Wednesday: 89°F</li>
+                    <li>Thursday: 68°F</li>
+                </ul>
+            </div>
         </section>
 
-        <section id="spotlights">
-            <h2>Company Spotlights</h2>
-            <div id="spotlight-list"></div>
+        <section class="business-directory">
+            <div class="business-card">
+                
+            </div>
+            <!-- Repeat business-card for additional businesses -->
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>©️ <span id="currentyear"></span> 🌴 Tinny Bothepha Mosimanyana 🌴 Botswana</p>
-        <p id="lastModified"></p>
+        <address>
+            Molepolole Agriculture Chamber of Commerce<br>
+            P O BOX 894, Molepolole, Botswana<br>
+            mbothepha@gmail.com<br>
+            (267) 76376661
+        </address>
+        <div class="social-links">
+            <a href="#">YouTube</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+        <p>&copy; 2024 Kweneng Agriculture Chamber of Commerce</p>
     </footer>
-
 </body>
 </html>

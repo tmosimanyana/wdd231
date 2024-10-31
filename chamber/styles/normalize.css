@@ -1,0 +1,101 @@
+/* normalize.css v9.0.0 | MIT License | github.com/necolas/normalize.css */
+
+/*
+  1. Use a more sensible box model.
+*/
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin and padding
+*/
+html {
+    margin: 0;
+    padding: 0;
+}
+
+/*
+  3. Set the default font for the page
+*/
+body {
+    font-family: sans-serif;
+    line-height: 1.15;
+    margin: 0;
+}
+
+/*
+  4. Improve the readability of preformatted text
+*/
+code {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+/*
+  5. Remove list styles (bullets/numbers) from lists
+*/
+ol,
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+/*
+  6. Ensure buttons have a consistent appearance
+*/
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin: 0; /* Remove margin in older browsers */
+}
+
+/*
+  7. Define the appearance of HTML5 elements in older browsers
+*/
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section {
+    display: block;
+}
+
+/*
+  8. Provide a better default for fieldset
+*/
+fieldset {
+    border: 1px solid #ccc;
+    margin: 0;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+/*
+  9. Correct the inheritance of text transform for buttons in Firefox
+*/
+button,
+input {
+    overflow: visible; /* Allow the button to be resized */
+}
+
+/*
+  10. Allow some elements to be hidden from assistive technology
+*/
+[hidden] {
+    display: none;
+}
+
+/* Add other custom styles as needed */
